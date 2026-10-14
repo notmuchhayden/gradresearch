@@ -52,6 +52,9 @@ Thumbs.db
 /runs/
 /outputs/
 
+# Local paper PDFs and reference materials
+/docs/papers/
+
 # Large model / reconstruction artifacts, including accidental exports
 *.pth
 *.pt

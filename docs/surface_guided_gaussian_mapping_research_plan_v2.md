@@ -178,17 +178,17 @@ Input: Monocular / drone RGB video
 
 ## 5.1 왜 자기 Pointmap만 이용하면 안 되는가
 
-Splatt3R가 pointmap 위치 `x_i`를 바탕으로 `μ_i = x_i + Δμ_i`를 예측하므로, 동일 계열 pointmap으로 surface를 만들면 두 오차가 상관될 수 있다. 예컨대 실제 표면이 `z=0`, 추정 surface가 `z=0.30`, Gaussian이 `z=0.32`이면 자기 추정 surface까지 거리는 0.02지만 실제 오차는 0.32이다.
+Splatt3R가 pointmap 위치 $x_i$를 바탕으로 $\mu_i = x_i + \Delta\mu_i$를 예측하므로, 동일 계열 pointmap으로 surface를 만들면 두 오차가 상관될 수 있다. 예컨대 실제 표면이 $z=0$, 추정 surface가 $z=0.30$, Gaussian이 $z=0.32$이면 자기 추정 surface까지 거리는 0.02지만 실제 오차는 0.32이다.
 
 **자기 표면 거리(self-surface distance)는 디버그/약한 baseline 지표**로 유지하고, 제안 방법의 핵심 근거로 사용하지 않는다.
 
 ## 5.2 Observation ancestry와 Leave-Source-Out 규칙
 
-후보 Gaussian `G_i`를 만든 image pair의 ID 집합을 `S_i`라 하고, surface patch 생성에 사용할 Keyframe 관측 집합을 `O_i`라 한다. 가능하면:
+후보 Gaussian $G_i$를 만든 image pair의 ID 집합을 $S_i$라 하고, surface patch 생성에 사용할 Keyframe 관측 집합을 $O_i$라 한다. 가능하면:
 
-\[
+$$
 O_i \cap S_i = \varnothing.
-\]
+$$
 
 특히 **fused pointmap이 후보 생성 이미지의 정보를 이미 포함한 경우** 이것을 독립 관측으로 세지 않는다. 기본 설계는 다음과 같다.
 
@@ -214,14 +214,14 @@ Known intrinsics가 있는 실험에서는 pinhole reprojection을 사용할 수
 
 ## 5.4 관측 일관성 지표
 
-후보 근처에 도달 가능한 다른 시점의 표면 patch를 `S_{ij}`라 하자. 각 관측의 평면잔차는
+후보 근처에 도달 가능한 다른 시점의 표면 patch를 $S_{ij}$라 하자. 각 관측의 평면잔차는
 
-\[
+$$
 d_{ij}=\left|n_j^{\top}(\mu_i-\bar p_j)\right|,
 \qquad \tilde d_{ij}=\frac{d_{ij}}{h_j+\epsilon}.
-\]
+$$
 
-`h_j`는 local spacing이다. 유효한 관측만 모아 다음과 같은 **설명 가능한** 통계를 우선 계산한다.
+$h_j$는 local spacing이다. 유효한 관측만 모아 다음과 같은 **설명 가능한** 통계를 우선 계산한다.
 
 - `support_count`: 유효한 서로 다른 관측 Keyframe 수
 - `median_normalized_residual`: 유효 관측에서의 거리 중앙값
@@ -244,29 +244,29 @@ d_{ij}=\left|n_j^{\top}(\mu_i-\bar p_j)\right|,
 
 국소 간격은
 
-\[
+$$
 h_i=\operatorname{median}_{p_j\in N_i}\|p_j-p_i\|
-\]
+$$
 
-로 초기화하되, `h_i`가 0 또는 비정상적으로 작으면 최소 간격/자료 유효성 규칙을 적용한다. 단안 SLAM의 scale drift가 있으면 장면별 정규화 값을 함께 기록한다.
+로 초기화하되, $h_i$가 0 또는 비정상적으로 작으면 최소 간격/자료 유효성 규칙을 적용한다. 단안 SLAM의 scale drift가 있으면 장면별 정규화 값을 함께 기록한다.
 
 ## 6.2 Confidence-weighted PCA
 
-\[
+$$
 \bar p_i=\frac{\sum_{j\in N_i}w_jp_j}{\sum_{j\in N_i}w_j},\quad
 M_i=\frac{\sum_{j\in N_i}w_j(p_j-\bar p_i)(p_j-\bar p_i)^\top}{\sum_{j\in N_i}w_j}.
-\]
+$$
 
-고유값을 `λ1 ≥ λ2 ≥ λ3 ≥ 0`로 두면 `n_i = e3`가 국소 법선의 후보이다. MASt3R confidence를 `w_j=c_j`로 바로 사용하기 전에 **실제 confidence 분포와 값 범위를 측정**하고, clipping/rank scaling/softmax 또는 단순 uniform 가중치와 비교한다. 이 값은 calibration된 확률이라고 가정하지 않는다.
+고유값을 $\lambda_1 \ge \lambda_2 \ge \lambda_3 \ge 0$로 두면 $n_i = e_3$가 국소 법선의 후보이다. MASt3R confidence를 $w_j=c_j$로 바로 사용하기 전에 **실제 confidence 분포와 값 범위를 측정**하고, clipping/rank scaling/softmax 또는 단순 uniform 가중치와 비교한다. 이 값은 calibration된 확률이라고 가정하지 않는다.
 
 국소 curvature와 surface spread는
 
-\[
+$$
 \kappa_i=\frac{\lambda_3}{\lambda_1+\lambda_2+\lambda_3+\epsilon},\qquad
 r_{\mathrm{spread},i}=\frac{\lambda_2}{\lambda_1+\epsilon}.
-\]
+$$
 
-`κ_i`가 작기만 하면 직선에 놓인 점들도 통과하므로 `r_spread`에 대한 최소 조건을 함께 둔다. 추가로 fitting residual, neighborhood size, confidence, cross-view support를 검사한다.
+$\kappa_i$가 작기만 하면 직선에 놓인 점들도 통과하므로 $r_{\mathrm{spread}}$에 대한 최소 조건을 함께 둔다. 추가로 fitting residual, neighborhood size, confidence, cross-view support를 검사한다.
 
 ## 6.3 SurfacePatch 상태
 
@@ -284,18 +284,18 @@ r_{\mathrm{spread},i}=\frac{\lambda_2}{\lambda_1+\epsilon}.
 
 ## 7.1 두 종류의 신뢰도를 분리
 
-- **Surface reliability** `R_s`: reference patch가 실제 표면을 제대로 대표할 근거(점 분포, confidence, fitting, 시점 독립성, 관측 합의)
-- **Candidate consistency** `C_g`: candidate Gaussian이 해당 검증 표면과 기하적으로 얼마나 일치하는지(거리, 관측별 합의, depth conflict 등)
+- **Surface reliability** $R_s$: reference patch가 실제 표면을 제대로 대표할 근거(점 분포, confidence, fitting, 시점 독립성, 관측 합의)
+- **Candidate consistency** $C_g$: candidate Gaussian이 해당 검증 표면과 기하적으로 얼마나 일치하는지(거리, 관측별 합의, depth conflict 등)
 
 v1의 곱셈형 단일 score는 **비교 baseline**으로 남기고, 핵심 구현에서는 두 값을 분리한 rule-based gate를 먼저 검증한다.
 
 예시 검사용 점수:
 
-\[
+$$
 C_g=\exp\!\left(-\frac{\operatorname{median}_j(\tilde d_{ij})^2}{2\sigma_d^2}\right),
-\]
+$$
 
-단, `support_count`, `R_s`, `visibility_conflict`는 별도 hard condition으로 관리한다. 숫자와 식은 최초 가설이며 validation을 통해 결정한다.
+단, `support_count`, $R_s$, `visibility_conflict`는 별도 hard condition으로 관리한다. 숫자와 식은 최초 가설이며 validation을 통해 결정한다.
 
 ## 7.2 네 가지 결정
 
@@ -308,7 +308,7 @@ C_g=\exp\!\left(-\frac{\operatorname{median}_j(\tilde d_{ij})^2}{2\sigma_d^2}\ri
 
 초기 필수 실험은 `KEEP/REJECT/DEFER`이며, `DEFER`는 새 관측이 들어오면 재평가하는 큐 상태, `BYPASS`는 근거가 없을 때 원본 Gaussian을 유지하는 안전 baseline 정책으로 구현을 구분한다.
 
-**금지 규칙:** `NO_SURFACE ⇒ REJECT`는 사용하지 않는다. 단일 confidence, opacity, curvature만으로 Gaussian을 확정적으로 제거하지 않는다.
+**금지 규칙:** $\text{NO\_SURFACE} \Rightarrow \text{REJECT}$는 사용하지 않는다. 단일 confidence, opacity, curvature만으로 Gaussian을 확정적으로 제거하지 않는다.
 
 ## 7.3 REJECT에 필요한 엄격한 조건
 
@@ -324,14 +324,14 @@ Reject는 다음 중 하나 이상의 근거를 요구하도록 정책을 설계
 
 표면 신뢰도가 충분하고 이동 거리가 제한적인 경우에만 투영한다.
 
-\[
+$$
 \mu_i'=\mu_i-\eta\,n_jn_j^\top(\mu_i-\bar p_j),
 \qquad 0\le\eta\le1.
-\]
+$$
 
-- `η`는 일단 validation에서 선택하는 **독립 하이퍼파라미터**로 둔다. `η = clamp(S_i,0,1)` 형태로 후보 적합성 점수를 직접 재사용하지 않는다.
-- 최대 이동 거리: `||μ_i'-μ_i|| ≤ τ_move·h_j` 등의 명시적 제한을 둔다.
-- Depth edge, 높은 curvature, 낮은 `R_s`, 서로 다른 surface가 가까운 영역에서는 금지한다.
+- $\eta$는 일단 validation에서 선택하는 **독립 하이퍼파라미터**로 둔다. $\eta = \operatorname{clamp}(S_i,0,1)$ 형태로 후보 적합성 점수를 직접 재사용하지 않는다.
+- 최대 이동 거리: $\lVert\mu_i'-\mu_i\rVert \le \tau_{\mathrm{move}}\cdot h_j$ 등의 명시적 제한을 둔다.
+- Depth edge, 높은 curvature, 낮은 $R_s$, 서로 다른 surface가 가까운 영역에서는 금지한다.
 - 기존 pointmap의 systematic bias가 그대로 표면에 있으면 projection이 GT error를 더 키울 수 있으므로 projection 전/후의 **외부 GT 오차**를 별도로 비교한다.
 - Hard projection은 **ablation baseline**이며 필수 경로가 아니다.
 
@@ -357,18 +357,18 @@ Reject는 다음 중 하나 이상의 근거를 요구하도록 정책을 설계
 
 ## 10.1 좌표계 정의
 
-MASt3R-SLAM의 pose는 scale이 포함된 `Sim(3)`로 표현될 수 있다. anchor keyframe `k`에서 world로 가는 변환을 `T_{w←k}=(s_k,R_k,t_k)`로 정의하면
+MASt3R-SLAM의 pose는 scale이 포함된 `Sim(3)`로 표현될 수 있다. anchor keyframe $k$에서 world로 가는 변환을 $T_{w\leftarrow k}=(s_k,R_k,t_k)$로 정의하면
 
-\[
+$$
 \mu_w=s_kR_k\mu_k+t_k,\qquad
 \Sigma_w=s_k^2R_k\Sigma_kR_k^\top.
-\]
+$$
 
 World에서 수행한 projection을 다시 anchor-local에 저장하려면
 
-\[
+$$
 \mu_k'=\frac{1}{s_k}R_k^\top(\mu_w'-t_k).
-\]
+$$
 
 스케일은 covariance에도 제곱으로 영향을 준다. `q`, `scale`의 저장 규약과 월드 변환 방향, 라이브러리의 행렬 convention을 코드에서 확인해야 한다. 위 식은 **정의한 방향의 변환**에 대한 수학적 규칙이다.
 
@@ -386,16 +386,16 @@ Gaussian 수의 정의를 분리한다.
 
 | 지표 | 정확한 의미 |
 |---|---|
-| `N_candidate` | Splatt3R가 생성한 총 후보 수 |
-| `N_active` | 렌더러에 실제 제출되는 Gaussian 수 |
-| `N_resident` | 현재 GPU Tensor에 공간을 점유하는 Gaussian 수 |
-| `N_rejected` | 편입되지 않은 후보 수 |
-| `N_deferred` | 증거 부족으로 임시 보류 중인 후보 수 |
-| `M_serialized` | 저장된 PLY/모델 크기 |
+| $N_{\mathrm{candidate}}$ | Splatt3R가 생성한 총 후보 수 |
+| $N_{\mathrm{active}}$ | 렌더러에 실제 제출되는 Gaussian 수 |
+| $N_{\mathrm{resident}}$ | 현재 GPU Tensor에 공간을 점유하는 Gaussian 수 |
+| $N_{\mathrm{rejected}}$ | 편입되지 않은 후보 수 |
+| $N_{\mathrm{deferred}}$ | 증거 부족으로 임시 보류 중인 후보 수 |
+| $M_{\mathrm{serialized}}$ | 저장된 PLY/모델 크기 |
 | `VRAM_allocated / peak` | 프레임워크 할당 메모리 / peak |
 | `VRAM_process` | GPU 상 실제 프로세스 점유량(측정 가능 시) |
 
-**주의:** `active=false`만으로 `N_resident`나 GPU VRAM이 감소하지 않는다. 논문에서는 다음을 구분한다.
+**주의:** `active=false`만으로 $N_{\mathrm{resident}}$나 GPU VRAM이 감소하지 않는다. 논문에서는 다음을 구분한다.
 
 - **Logical filtering:** active mask만 적용하여 렌더링 비용 변화 측정
 - **Physical compaction:** 실제 GPU buffer를 재구성·축소하여 resident count 및 memory 변화 측정
@@ -634,11 +634,11 @@ Input: admitted candidate G, spatial index H
 | A4 | O | O | O | O | geometry association 및 occlusion 효과 |
 | A5 | O | O | O | O | DEFER vs BYPASS vs aggressive reject 정책 비교 |
 
-추가 민감도 검사: `K`, `τ_curvature`, `τ_spread`, `min_views`, residual threshold, source-exclusion strategy, projection `η`(확장 시).
+추가 민감도 검사: $K$, $\tau_{\mathrm{curvature}}$, $\tau_{\mathrm{spread}}$, `min_views`, residual threshold, source-exclusion strategy, projection $\eta$(확장 시).
 
 ## 15.3 Matched-budget 핵심 프로토콜
 
-**방법마다 같은 `N_active` 예산을 맞춘 뒤** PSNR/SSIM/LPIPS와 geometry metrics를 비교한다. 예산은 예를 들어 baseline map 크기의 여러 비율로 정의하되 정확한 구간은 validation 계획에 사전 등록한다.
+**방법마다 같은 $N_{\mathrm{active}}$ 예산을 맞춘 뒤** PSNR/SSIM/LPIPS와 geometry metrics를 비교한다. 예산은 예를 들어 baseline map 크기의 여러 비율로 정의하되 정확한 구간은 validation 계획에 사전 등록한다.
 
 - Budget matching 방식(순위별 threshold, deterministic subsampling 등)을 명시한다.
 - 같은 scene/frame 수뿐 아니라 **동일하게 관측된 공간 영역**을 비교한다.
@@ -705,12 +705,12 @@ GT depth, point cloud, mesh 또는 검증 가능한 reference가 있는 장면�
 
 ## 17.3 Outlier 정의와 정상 Gaussian 보존율
 
-사전에 정의한 GT surface distance threshold `τ_o`에서 **평가용 proxy 라벨**을 만든다.
+사전에 정의한 GT surface distance threshold $\tau_o$에서 **평가용 proxy 라벨**을 만든다.
 
-\[
+$$
 R_{\mathrm{outlier}}(\tau_o)
 = \frac{\#\{i:d(\mu_i,S_{GT})>\tau_o\}}{N_{\mathrm{active}}}.
-\]
+$$
 
 그러나 이는 제거된 정상 표면의 손실을 나타내지 못한다. 따라서 다음을 함께 평가한다.
 
@@ -730,7 +730,7 @@ Cross-view consistency residual은 **알고리즘이 사용하는 내부 신호 
 
 ## 18.1 Compactness 및 Memory
 
-- `N_candidate`, `N_active`, `N_resident`, `N_deferred`, `N_rejected`
+- $N_{\mathrm{candidate}}$, $N_{\mathrm{active}}$, $N_{\mathrm{resident}}$, $N_{\mathrm{deferred}}$, $N_{\mathrm{rejected}}$
 - GPU allocated/peak/process VRAM, CPU memory(선택), PLY 저장 크기
 - Rendering FPS와 mapping per-KF time(서로 분리)
 - Compaction 전후의 resident memory 변화
@@ -738,10 +738,10 @@ Cross-view consistency residual은 **알고리즘이 사용하는 내부 신호 
 
 다음 곡선을 기본으로 작성한다.
 
-\[
+$$
 N_{\mathrm{active}},N_{\mathrm{resident}},\mathrm{VRAM}
 \quad\text{vs}\quad N_{\mathrm{keyframe}}.
-\]
+$$
 
 단순 `Gaussian 수 vs Keyframe 수`만으로는 신규 관측 영역과 반복 관측 영역을 구별하기 어렵다. 가능한 경우 **cumulative observed area/volume**, revisit 횟수 또는 동일 patch 재관측 수를 x축으로 추가한다.
 
@@ -778,10 +778,10 @@ N_{\mathrm{active}},N_{\mathrm{resident}},\mathrm{VRAM}
 ### 절차
 
 1. 원본 Splatt3R-SLAM을 동일 구성으로 실행하고 Keyframe Gaussian/Pointmap/pose/source IDs를 export한다.
-2. Candidate `G`의 자기 Pointmap과 외부 관측 Pointmap을 분리할 수 있는지 확인한다.
+2. Candidate $G$의 자기 Pointmap과 외부 관측 Pointmap을 분리할 수 있는지 확인한다.
 3. Self-surface distance 및 source-excluded cross-view residual histogram을 만든다.
 4. 기하 검증 결과와 GT 기반 outlier proxy/held-out 이미지 residual의 상관을 각각 측정한다.
-5. 같은 `N_active`로 **uniform thinning, confidence filter, voxel dedup, self-filter, cross-view filter**를 비교한다.
+5. 같은 $N_{\mathrm{active}}$로 **uniform thinning, confidence filter, voxel dedup, self-filter, cross-view filter**를 비교한다.
 6. Scene 내부 wall/roof/ground와 thin structure/vegetation 등 실패 영역을 분리해 평가한다.
 
 ### 필수 산출물
@@ -844,7 +844,7 @@ N_{\mathrm{active}},N_{\mathrm{resident}},\mathrm{VRAM}
 단순 수치 시험보다 먼저 작성할 **필수 테스트**:
 
 1. **Planar scene:** 약간의 Gaussian offset에서 점-평면 거리 및 법선이 올바르게 계산되는가.
-2. **Line-like distribution:** `κ ≈ 0`이어도 `λ₂/λ₁`가 작으면 평면으로 인정하지 않는가.
+2. **Line-like distribution:** $\kappa \approx 0$이어도 $\lambda_2/\lambda_1$가 작으면 평면으로 인정하지 않는가.
 3. **Two adjacent planes / depth edge:** 서로 다른 두 표면을 동일 neighborhood로 섞지 않는가.
 4. **Occluded surface:** 카메라에서 가려진 관측이 `REJECT` 근거가 되지 않는가.
 5. **No evidence:** surface/관측이 부족하면 `DEFER` 또는 대조 실험의 `BYPASS`를 반환하는가.
@@ -852,7 +852,7 @@ N_{\mathrm{active}},N_{\mathrm{resident}},\mathrm{VRAM}
 7. **Wrong geometry:** 실제 GT와 다르게 동일하게 이동한 Gaussian과 pointmap을 일치로 판정하는 self-filter 오류를 확인하는가.
 8. **Sim(3):** 수동으로 알려진 rotation/translation/scale의 mean/covariance 왕복 변환이 일치하는가.
 9. **Loop closure:** Pose revision 후 surface/spatial index cache가 무효화되는가.
-10. **Compaction:** `N_active`와 `N_resident` 차이가 실제 buffer 재생성 후 사라지며 memory 지표가 정상적으로 측정되는가.
+10. **Compaction:** $N_{\mathrm{active}}$와 $N_{\mathrm{resident}}$ 차이가 실제 buffer 재생성 후 사라지며 memory 지표가 정상적으로 측정되는가.
 11. **Matched budget:** 모든 비교 방법의 active count 목표가 지정한 허용 오차 안에 들어오는가.
 12. **Determinism:** 동일 seed/config/dataset/commit에서 결과가 재현 가능한가(비결정적 GPU 연산은 허용 범위 명시).
 
