@@ -1,0 +1,8 @@
+# Paths in inherit are resolved from the upstream repository working directory.
+inherit: "config/base.yaml"
+use_calib: false
+single_thread: true
+dataset:
+  subsample: 2
+  img_downsample: 1
+  normalize_exposure: true

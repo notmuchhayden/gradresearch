@@ -1,0 +1,13 @@
+{
+  "scene": "office0",
+  "release": "NICE-SLAM rendered Replica",
+  "frame_interval": [0, 120],
+  "interval_stop_exclusive": true,
+  "mapping_input": "even original frame IDs in [0, 120)",
+  "validation": "odd original frame IDs in [0, 40)",
+  "held_out_test": "odd original frame IDs in [40, 120)",
+  "source_id_convention": "export source image IDs are indices in the subsampled input; original frame ID = 2 * input index",
+  "seed": 0,
+  "purpose": "E0 feasibility pilot; no algorithm efficacy claim",
+  "gt_use": "evaluation-only alignment, rendered-depth metrics and camera reference; no admission or tracking supervision"
+}

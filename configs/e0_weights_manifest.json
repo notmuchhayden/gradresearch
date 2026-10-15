@@ -1,0 +1,27 @@
+[
+  {
+    "file": "checkpoints/e0/epoch=19-step=1200.ckpt",
+    "url": "https://huggingface.co/brandonsmart/splatt3r_v1.0/resolve/main/epoch%3D19-step%3D1200.ckpt",
+    "bytes": 3231028127,
+    "sha256": "963a0e9a992150e1509fcc952a45b22d24263167edc814238abcf0dd956e0b18"
+  },
+  {
+    "file": "checkpoints/e0/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric_retrieval_trainingfree.pth",
+    "url": "https://download.europe.naverlabs.com/ComputerVision/MASt3R/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric_retrieval_trainingfree.pth",
+    "bytes": 8399111,
+    "sha256": "000a324f06f9369ab3e32d03dd4b8a838d48e98e3f3bf9d7dd034dce1bfd4c50"
+  },
+  {
+    "file": "checkpoints/e0/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric_retrieval_codebook.pkl",
+    "url": "https://download.europe.naverlabs.com/ComputerVision/MASt3R/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric_retrieval_codebook.pkl",
+    "bytes": 268435691,
+    "sha256": "700af9e31ad0ca6159955dc80b4fd6e14234780b52f5c91884f6553991933c1a"
+  },
+  {
+    "file": "results/E0_baseline_reproduction/setup/torch-cache/hub/checkpoints/alexnet-owt-7be5be79.pth",
+    "url": "https://download.pytorch.org/models/alexnet-owt-7be5be79.pth",
+    "bytes": 244408911,
+    "sha256": "7be5be791159472b1fbf3c69796f7cb30dca7ad8466c2df70058c37116cdee02",
+    "role": "upstream model loss module and evaluation LPIPS backbone"
+  }
+]

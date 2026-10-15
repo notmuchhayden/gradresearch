@@ -1,0 +1,11 @@
+name: splatt3r-slam-e0
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - cmake
+  - ninja
+  - swig
+  - make
+  - pkg-config

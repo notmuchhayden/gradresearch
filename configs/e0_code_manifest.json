@@ -1,0 +1,78 @@
+{
+  "research_parent_commit": "72d34e401c3c6bc25e3923e0226763b1337748dd",
+  "state": "uncommitted source snapshot; file hashes identify the executed implementation",
+  "files": [
+    {
+      "file": "scripts/bootstrap_e0_environment.sh",
+      "sha256": "5900fb79334d378354109ec98a74c6293c320d9ef2fdbae801e8055c2b7d650d"
+    },
+    {
+      "file": "scripts/build_e0_backend.sh",
+      "sha256": "0f80b830de25b984d6164e5eedbf28f40cb01e94b7efbdad3779638e27171475"
+    },
+    {
+      "file": "scripts/build_e0_cuda_wheels.sh",
+      "sha256": "b49fd32fe32c4568fd0a9638effd30a2e4cfd732fa1fe493c65ee894184b1177"
+    },
+    {
+      "file": "scripts/build_e0_extensions.sh",
+      "sha256": "fa8081e261de511d1a390eb58369d7badc78604727f06522798e901f0042dce9"
+    },
+    {
+      "file": "scripts/capture_e0_environment.py",
+      "sha256": "6848d294416409f78c89e9e1d0461f0eb4599385d86c9fac290f9a91b1eb9e4c"
+    },
+    {
+      "file": "scripts/check_e0_exports.py",
+      "sha256": "577f4cdae66f269b2c97eec98c2a618e74b491f086a5249c229fe9f821ec7c9c"
+    },
+    {
+      "file": "scripts/download_e0_replica.py",
+      "sha256": "19df90cac066812dbf62b59487aa8fcf6bfbf4b730a37c6b171ef4b80b3b9cc6"
+    },
+    {
+      "file": "scripts/download_e0_weights.sh",
+      "sha256": "4ac2896128ab44bbcce3564149b499b251510ad48f65911c12178282f359a1e5"
+    },
+    {
+      "file": "scripts/evaluate_e0.py",
+      "sha256": "582cfe257c8379477bc553ce2c58d63a4088b6002b7d97de7c3a4aceb188d016"
+    },
+    {
+      "file": "scripts/evaluate_e0.sh",
+      "sha256": "643f47ded03cc2966485e2520b09e37c4d1a50273c8e3a1a5f81717aa2d56371"
+    },
+    {
+      "file": "scripts/install_e0_dependencies.sh",
+      "sha256": "14b601788ba1a2b0c661c49ef5f622ec405a1a3f5a8345cec274df0993fba764"
+    },
+    {
+      "file": "scripts/run_e0_baseline.sh",
+      "sha256": "904b13ed1231beefe02beaa46be79117e994153943a0821a6c824d9c6f9816ab"
+    },
+    {
+      "file": "scripts/smoke_e0_cuda.py",
+      "sha256": "9c0ab3fce4336c4f513dd1d62a25dc7eeeee69c9b5a6c4d1ef3fcb7d5bcde965"
+    },
+    {
+      "file": "src/e0_export.py",
+      "sha256": "e11384e75b82b7949879f3d40f5b9694fb298c8a3d5e38e14346062e33226067"
+    },
+    {
+      "file": "configs/e0_environment.yml",
+      "sha256": "a31c32183d5d58f297d6d1a11e36ef0260ba024503baa0c2f32ba325569d5881"
+    },
+    {
+      "file": "configs/e0_replica_office0.yaml",
+      "sha256": "df50b315af316d2aba3d13958ae28ed8bccac3cee38025afc74c13e2be27923d"
+    },
+    {
+      "file": "configs/e0_replica_split.json",
+      "sha256": "7deb7f5cec77f9ddb6adf62e6197a120c81a164101d157c9225c048c7eb0c0cc"
+    },
+    {
+      "file": "docs/patches/e0_upstream.patch",
+      "sha256": "e727f7a7e8dc9d2ca42887ed16d52671793b6bc91cb0553c6f5b0db570e894a6"
+    }
+  ]
+}

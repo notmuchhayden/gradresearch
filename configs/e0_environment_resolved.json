@@ -1,0 +1,732 @@
+{
+  "recorded_date": "2026-10-15",
+  "timezone": "Asia/Seoul",
+  "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+  "executable": "/home/hlee221212/works/gradresearch/.venv/bin/python",
+  "os": {
+    "NAME": "Ubuntu",
+    "ID": "ubuntu",
+    "PRETTY_NAME": "Ubuntu 26.04.1 LTS",
+    "VERSION_ID": "26.04",
+    "VERSION": "26.04.1 LTS (Resolute Raccoon)",
+    "VERSION_CODENAME": "resolute",
+    "ID_LIKE": "debian",
+    "HOME_URL": "https://www.ubuntu.com/",
+    "SUPPORT_URL": "https://help.ubuntu.com/",
+    "BUG_REPORT_URL": "https://bugs.launchpad.net/ubuntu/",
+    "PRIVACY_POLICY_URL": "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy",
+    "UBUNTU_CODENAME": "resolute",
+    "LOGO": "ubuntu-logo"
+  },
+  "kernel": "7.0.0-38-generic",
+  "upstream_commit": "74ffc37454dfa7560c9531b1534825c54c36a89e",
+  "upstream_patch": "docs/patches/e0_upstream.patch",
+  "gpu": {
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=name,memory.total,driver_version,compute_cap",
+      "--format=csv,noheader"
+    ],
+    "exit_code": 0,
+    "stdout": "NVIDIA GeForce RTX 5060, 8151 MiB, 595.99.02, 12.0",
+    "stderr": ""
+  },
+  "nvcc": {
+    "command": [
+      "/usr/local/cuda/bin/nvcc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Tue_Sep_01_08:45:21_PDT_2026\nCuda compilation tools, release 13.4, V13.4.92\nBuild cuda_13.4.r13.4/compiler.38855100_0",
+    "stderr": ""
+  },
+  "project_nvcc": {
+    "command": [
+      "/home/hlee221212/works/gradresearch/.venv/lib/python3.11/site-packages/nvidia/cu13/bin/nvcc",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2026 NVIDIA Corporation\nBuilt on Thu_Mar_19_11:12:51_PM_PDT_2026\nCuda compilation tools, release 13.2, V13.2.78\nBuild cuda_13.2.r13.2/compiler.37668154_0",
+    "stderr": ""
+  },
+  "compiler_by_component": {
+    "faiss": "system CUDA 13.4, sm_120",
+    "lietorch_rasterizer_slam_backend_rope": "project CUDA 13.2, sm_120 (verify build logs)"
+  },
+  "torch_cuda_available": true,
+  "torch_cuda_version": "13.2",
+  "torch_compiled_architectures": [
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "distributions": [
+    {
+      "name": "accelerate",
+      "version": "1.15.0"
+    },
+    {
+      "name": "aiohappyeyeballs",
+      "version": "2.7.1"
+    },
+    {
+      "name": "aiohttp",
+      "version": "3.14.5"
+    },
+    {
+      "name": "aiosignal",
+      "version": "1.4.0"
+    },
+    {
+      "name": "annotated-doc",
+      "version": "0.0.5"
+    },
+    {
+      "name": "anyio",
+      "version": "4.15.1"
+    },
+    {
+      "name": "apsw",
+      "version": "3.54.0.0"
+    },
+    {
+      "name": "argcomplete",
+      "version": "3.7.2"
+    },
+    {
+      "name": "asmk",
+      "version": "0.1"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0"
+    },
+    {
+      "name": "backports.zstd",
+      "version": "1.8.0"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.7.22"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2"
+    },
+    {
+      "name": "click",
+      "version": "8.5.0"
+    },
+    {
+      "name": "cloudpickle",
+      "version": "3.1.2"
+    },
+    {
+      "name": "colorama",
+      "version": "0.4.6"
+    },
+    {
+      "name": "colorlog",
+      "version": "6.12.0"
+    },
+    {
+      "name": "contourpy",
+      "version": "1.3.3"
+    },
+    {
+      "name": "cuda-bindings",
+      "version": "13.3.1"
+    },
+    {
+      "name": "cuda-pathfinder",
+      "version": "1.6.0"
+    },
+    {
+      "name": "cuda-toolkit",
+      "version": "13.2.1"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1"
+    },
+    {
+      "name": "diff_gaussian_rasterization",
+      "version": "0.0.0"
+    },
+    {
+      "name": "einops",
+      "version": "0.8.2"
+    },
+    {
+      "name": "embreex",
+      "version": "4.4.0"
+    },
+    {
+      "name": "evo",
+      "version": "1.38.0"
+    },
+    {
+      "name": "faiss",
+      "version": "1.14.3"
+    },
+    {
+      "name": "filelock",
+      "version": "3.32.3"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.67.0"
+    },
+    {
+      "name": "frozenlist",
+      "version": "1.8.0"
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.7.0"
+    },
+    {
+      "name": "gitdb",
+      "version": "4.0.12"
+    },
+    {
+      "name": "GitPython",
+      "version": "3.2.1"
+    },
+    {
+      "name": "glcontext",
+      "version": "3.1.0"
+    },
+    {
+      "name": "glfw",
+      "version": "2.10.2"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0"
+    },
+    {
+      "name": "hf-xet",
+      "version": "1.7.0"
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9"
+    },
+    {
+      "name": "httpcore2",
+      "version": "2.13.1"
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1"
+    },
+    {
+      "name": "httpx2",
+      "version": "2.13.1"
+    },
+    {
+      "name": "huggingface_hub",
+      "version": "2.2.0"
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "ImageIO",
+      "version": "2.38.1"
+    },
+    {
+      "name": "imgui",
+      "version": "2.0.0"
+    },
+    {
+      "name": "in3d",
+      "version": "0.0.1"
+    },
+    {
+      "name": "intel-cmplr-lib-ur",
+      "version": "2026.1.2"
+    },
+    {
+      "name": "intel-openmp",
+      "version": "2026.1.2"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6"
+    },
+    {
+      "name": "joblib",
+      "version": "1.6.0"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.1"
+    },
+    {
+      "name": "lazy-loader",
+      "version": "0.6"
+    },
+    {
+      "name": "lietorch",
+      "version": "0.3"
+    },
+    {
+      "name": "lightning",
+      "version": "2.6.6"
+    },
+    {
+      "name": "lightning-utilities",
+      "version": "0.15.3"
+    },
+    {
+      "name": "lpips",
+      "version": "0.1.4"
+    },
+    {
+      "name": "lxml",
+      "version": "6.1.3"
+    },
+    {
+      "name": "lz4",
+      "version": "4.4.5"
+    },
+    {
+      "name": "manifold3d",
+      "version": "3.5.4"
+    },
+    {
+      "name": "mapbox_earcut",
+      "version": "2.1.0"
+    },
+    {
+      "name": "markdown-it-py",
+      "version": "4.2.0"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.3"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.11.2"
+    },
+    {
+      "name": "mdurl",
+      "version": "0.1.2"
+    },
+    {
+      "name": "mkl",
+      "version": "2026.1.0"
+    },
+    {
+      "name": "mkl-devel",
+      "version": "2026.1.0"
+    },
+    {
+      "name": "mkl-include",
+      "version": "2026.1.0"
+    },
+    {
+      "name": "moderngl",
+      "version": "5.12.0"
+    },
+    {
+      "name": "moderngl-window",
+      "version": "3.1.1"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0"
+    },
+    {
+      "name": "msgpack",
+      "version": "1.2.3"
+    },
+    {
+      "name": "multidict",
+      "version": "7.1.0"
+    },
+    {
+      "name": "multipledispatch",
+      "version": "1.0.0"
+    },
+    {
+      "name": "narwhals",
+      "version": "2.27.1"
+    },
+    {
+      "name": "natsort",
+      "version": "8.4.0"
+    },
+    {
+      "name": "networkx",
+      "version": "3.6.1"
+    },
+    {
+      "name": "numexpr",
+      "version": "2.14.2"
+    },
+    {
+      "name": "numpy",
+      "version": "2.4.6"
+    },
+    {
+      "name": "nvidia-cublas",
+      "version": "13.4.0.1"
+    },
+    {
+      "name": "nvidia-cuda-cccl",
+      "version": "13.2.75"
+    },
+    {
+      "name": "nvidia-cuda-crt",
+      "version": "13.2.78"
+    },
+    {
+      "name": "nvidia-cuda-cupti",
+      "version": "13.2.75"
+    },
+    {
+      "name": "nvidia-cuda-nvcc",
+      "version": "13.2.78"
+    },
+    {
+      "name": "nvidia-cuda-nvrtc",
+      "version": "13.2.78"
+    },
+    {
+      "name": "nvidia-cuda-runtime",
+      "version": "13.2.75"
+    },
+    {
+      "name": "nvidia-cudnn-cu13",
+      "version": "9.20.0.48"
+    },
+    {
+      "name": "nvidia-cufft",
+      "version": "12.2.0.46"
+    },
+    {
+      "name": "nvidia-cufile",
+      "version": "1.17.1.22"
+    },
+    {
+      "name": "nvidia-curand",
+      "version": "10.4.2.55"
+    },
+    {
+      "name": "nvidia-cusolver",
+      "version": "12.2.0.1"
+    },
+    {
+      "name": "nvidia-cusparse",
+      "version": "12.7.10.1"
+    },
+    {
+      "name": "nvidia-cusparselt-cu13",
+      "version": "0.8.1"
+    },
+    {
+      "name": "nvidia-nccl-cu13",
+      "version": "2.29.7"
+    },
+    {
+      "name": "nvidia-nvjitlink",
+      "version": "13.3.33"
+    },
+    {
+      "name": "nvidia-nvshmem-cu13",
+      "version": "3.4.5"
+    },
+    {
+      "name": "nvidia-nvtx",
+      "version": "13.2.75"
+    },
+    {
+      "name": "nvidia-nvvm",
+      "version": "13.2.78"
+    },
+    {
+      "name": "omegaconf",
+      "version": "2.4.0"
+    },
+    {
+      "name": "onemkl-license",
+      "version": "2026.1.0"
+    },
+    {
+      "name": "opencv-python",
+      "version": "5.0.0.93"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pandas",
+      "version": "3.0.6"
+    },
+    {
+      "name": "peft",
+      "version": "0.21.2"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0"
+    },
+    {
+      "name": "pip",
+      "version": "26.2.1"
+    },
+    {
+      "name": "plyfile",
+      "version": "1.1.5"
+    },
+    {
+      "name": "propcache",
+      "version": "0.5.4"
+    },
+    {
+      "name": "psutil",
+      "version": "7.2.2"
+    },
+    {
+      "name": "pyaml",
+      "version": "26.7.0"
+    },
+    {
+      "name": "pycollada",
+      "version": "0.9.3"
+    },
+    {
+      "name": "pyglet",
+      "version": "2.1.19"
+    },
+    {
+      "name": "pyglm",
+      "version": "2.8.3"
+    },
+    {
+      "name": "Pygments",
+      "version": "2.21.0"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3"
+    },
+    {
+      "name": "pyrealsense2",
+      "version": "2.59.1.11053"
+    },
+    {
+      "name": "pyrr",
+      "version": "0.10.3"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "2.9.0.post0"
+    },
+    {
+      "name": "pytorch-lightning",
+      "version": "2.6.6"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0"
+    },
+    {
+      "name": "regex",
+      "version": "2026.9.29"
+    },
+    {
+      "name": "rich",
+      "version": "15.0.0"
+    },
+    {
+      "name": "rosbags",
+      "version": "0.11.7"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1"
+    },
+    {
+      "name": "rtree",
+      "version": "1.4.1"
+    },
+    {
+      "name": "ruamel.yaml",
+      "version": "0.19.1"
+    },
+    {
+      "name": "safetensors",
+      "version": "0.8.0"
+    },
+    {
+      "name": "scikit-image",
+      "version": "0.26.0"
+    },
+    {
+      "name": "scikit-learn",
+      "version": "1.9.1"
+    },
+    {
+      "name": "scipy",
+      "version": "1.17.1"
+    },
+    {
+      "name": "seaborn",
+      "version": "0.13.2"
+    },
+    {
+      "name": "setuptools",
+      "version": "84.0.0"
+    },
+    {
+      "name": "shapely",
+      "version": "2.2.0"
+    },
+    {
+      "name": "shellingham",
+      "version": "1.5.4"
+    },
+    {
+      "name": "six",
+      "version": "1.17.0"
+    },
+    {
+      "name": "smmap",
+      "version": "5.0.3"
+    },
+    {
+      "name": "Splatt3R-SLAM",
+      "version": "0.2.0"
+    },
+    {
+      "name": "svg.path",
+      "version": "7.1"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0"
+    },
+    {
+      "name": "tbb",
+      "version": "2023.1.0"
+    },
+    {
+      "name": "tbb-devel",
+      "version": "2023.1.0"
+    },
+    {
+      "name": "tcmlib",
+      "version": "1.5.0"
+    },
+    {
+      "name": "threadpoolctl",
+      "version": "3.7.0"
+    },
+    {
+      "name": "tifffile",
+      "version": "2026.3.3"
+    },
+    {
+      "name": "tokenizers",
+      "version": "0.23.3"
+    },
+    {
+      "name": "torch",
+      "version": "2.13.0+cu132"
+    },
+    {
+      "name": "torchmetrics",
+      "version": "1.9.0"
+    },
+    {
+      "name": "torchvision",
+      "version": "0.28.0+cu132"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1"
+    },
+    {
+      "name": "transformers",
+      "version": "5.19.0"
+    },
+    {
+      "name": "trimesh",
+      "version": "5.1.1"
+    },
+    {
+      "name": "triton",
+      "version": "3.7.1"
+    },
+    {
+      "name": "truststore",
+      "version": "0.10.5"
+    },
+    {
+      "name": "typer",
+      "version": "0.27.3"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "umf",
+      "version": "1.1.0"
+    },
+    {
+      "name": "vhacdx",
+      "version": "0.1.0"
+    },
+    {
+      "name": "wheel",
+      "version": "0.48.0"
+    },
+    {
+      "name": "xxhash",
+      "version": "4.0.1"
+    },
+    {
+      "name": "yarl",
+      "version": "1.25.1"
+    }
+  ],
+  "pip_check": {
+    "command": [
+      "/home/hlee221212/works/gradresearch/.venv/bin/python",
+      "-m",
+      "pip",
+      "check"
+    ],
+    "exit_code": 0,
+    "stdout": "No broken requirements found.",
+    "stderr": ""
+  },
+  "cuda_matmul_finite": true,
+  "gpu_capability": [
+    12,
+    0
+  ]
+}
