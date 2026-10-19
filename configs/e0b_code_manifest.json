@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-19",
+  "timezone": "Asia/Seoul",
+  "base_commit": "5c4c3b624dd8f0d9481f20de86a626a277fc6f0d",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 7060,
+      "sha256": "e8f6cca5674becf0a92ae83df7758fc115245545c0a68376cf787d0fe2a2c3d0"
+    },
+    {
+      "path": "configs/e0b_audit.json",
+      "bytes": 1681,
+      "sha256": "2119da203adc139df84913d42593b8de77d3fec2232f3b95daec56a40586e299"
+    },
+    {
+      "path": "configs/e0b_replica_download_manifest.json",
+      "bytes": 77687,
+      "sha256": "1e4d66eaa6635112aab0b1fab9e171b497d6f17b4c9da4b5c1c52a27b4879edd"
+    },
+    {
+      "path": "configs/e0b_replica_office0.yaml",
+      "bytes": 136,
+      "sha256": "8baf1e5e256e3c8cf7be25e0eb4b36d32d5f7258a58ad190c357b91ee957fbe7"
+    },
+    {
+      "path": "configs/e0b_results_summary.json",
+      "bytes": 42107,
+      "sha256": "38eec26b2ac5d2299883d0b6a0ec5434ea6e897b10b947c56734ca80d046c2c4"
+    },
+    {
+      "path": "docs/experiments/E0b_ancestry_causality_audit.md",
+      "bytes": 19452,
+      "sha256": "7dbe2b6f236a358681e8d885a65ecd0d41d6456943c5bc344eb3c94c7012ebe5"
+    },
+    {
+      "path": "docs/patches/e0b_upstream.patch",
+      "bytes": 16491,
+      "sha256": "a30f4dfffa8c2d222788cf5c943566a394c3c16c705b486c9c06306de2531d5d"
+    },
+    {
+      "path": "scripts/analyze_e0b.py",
+      "bytes": 468,
+      "sha256": "688dbf79adcc29a892428d8d40e9cc82715b696bc7f9940b731403082d6d0458"
+    },
+    {
+      "path": "scripts/capture_e0b_run.py",
+      "bytes": 1946,
+      "sha256": "b9a6c9b15044ac4eb5e9be410d8dbcbff59bb7bf27002c46b9c00434b3ffde54"
+    },
+    {
+      "path": "scripts/download_e0_replica.py",
+      "bytes": 7614,
+      "sha256": "fb1d35560e41c9838615ae4e4908685acb9482e5a1b9f0cc89425d97305db744"
+    },
+    {
+      "path": "scripts/plot_e0b.py",
+      "bytes": 2213,
+      "sha256": "46c09528c91461c93b1384f9a3229c765516022c8ca943eefebc9dd0bfac38d7"
+    },
+    {
+      "path": "scripts/run_e0b_audit.sh",
+      "bytes": 2671,
+      "sha256": "2de670f927dd8c93ec85291ecdf1e36e4861ef5c040c076723a84b66b721700a"
+    },
+    {
+      "path": "src/e0_export.py",
+      "bytes": 2022,
+      "sha256": "e603a840e44707cd305c8bbed7c9d1d45707c7fee20ad42e3ce4c288b50329a5"
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "bytes": 26184,
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f"
+    },
+    {
+      "path": "src/e0b_export.py",
+      "bytes": 5677,
+      "sha256": "61483425938478f9b674e7a2895a7089035ed6680b367d23379b3d3911e640b2"
+    },
+    {
+      "path": "tests/test_e0b_audit.py",
+      "bytes": 2426,
+      "sha256": "aa7c6ccc969877575349f6377479892c0d9a667093499afef03dca5d666f0222"
+    },
+    {
+      "path": "tests/test_e0b_run_integrity.py",
+      "bytes": 1381,
+      "sha256": "806ef362ce6d3db8100b5dd6dd1e3daa4a7f3cb266883edd8984258adba65a43"
+    }
+  ],
+  "python_dependencies": {
+    "torch": "2.13.0+cu132",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.2",
+    "plyfile": "1.1.5"
+  },
+  "verification_log": "results/E0b_ancestry_causality/verification.log",
+  "per_run_executed_source": "results/E0b_ancestry_causality/{short,extended}/code/",
+  "note": "Final source/analysis/report hashes; per-run manifests and archived sources preserve the exact mapper code executed."
+}

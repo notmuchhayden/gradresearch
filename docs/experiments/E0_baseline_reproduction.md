@@ -261,3 +261,5 @@ Artifact:
 - 가설을 지지하거나 반박하는 결과: 아직 없음. E0는 파이프라인 작동 확인이며 제안 admission의 효능이나 novelty 판정이 아니다.
 - 다음 판단: **E0 통과, E0b 진행.** 원본 논문 수치 재현·전체 16주 연구의 GO 판정과 구분한다.
 - 바로 다음 작업: source ancestry/causality 감사를 구현하고, 이번 2-KF 구간에 더해 추가 KF가 확보되는 구간을 별도 config로 준비한다. Source-disjoint 가용 후보 비율·관측 도착 지연·시차를 확인한 뒤 E1 오류 taxonomy로 진행한다.
+
+후속 기록 (2026-10-19): [E0b 감사 보고서](E0b_ancestry_causality_audit.md)에 기존 60입력 및 확장 180입력/5-KF 실행의 ancestry·인과성·시차 측정을 기록했다. E0의 위 수치와 artifact는 그대로 보존했다.

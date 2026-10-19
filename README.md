@@ -2,11 +2,15 @@
 
 연속 RGB 영상의 3D Gaussian Map에서 다른 Keyframe의 기하 관측을 이용해 이상 Gaussian의 편입을 억제하는 석사학위 논문 연구 저장소입니다.
 
-현재는 **연구 설계 및 구현 준비 단계**입니다. 실행 가능한 연구 파이프라인과 실험 결과는 아직 없으며, 성능 향상과 독창성은 실험을 통해 검증할 예정입니다.
+현재는 **기준선 실행·관측 출처 감사 파일럿을 완료한 단계**입니다. RTX 5060 8GB에서 E0와 E0b를 실행했으며, 제안 admission 정책의 성능 향상과 독창성은 아직 검증하지 않았습니다.
+
+- [E0: 기준선 재현·export·GT 평가](docs/experiments/E0_baseline_reproduction.md)
+- [E0b: 관측 출처·융합 ancestry·판단 시점 감사](docs/experiments/E0b_ancestry_causality_audit.md) — 180입력/5-KF 실행 완료. 다음 단계는 E1 오류 taxonomy이며, 반복 교차관측 가용성은 추가 확인이 필요합니다.
 
 ## 연구 계획
 
-- [연구·실험 계획서 v2](surface_guided_gaussian_mapping_research_plan_v2.md)
+- [연구·실험 계획서 v3](docs/surface_guided_gaussian_mapping_research_plan_v3.md)
+- [이전 계획서 v2](docs/surface_guided_gaussian_mapping_research_plan_v2.md)
 - 현재 논문 제목: **연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구**
 - 작업용 연구 명칭: *Cross-View Surface-Supported Gaussian Admission*
 
@@ -37,7 +41,6 @@ Soft projection과 surface-aware deduplication은 핵심 실험 이후의 선택
 
 ```text
 .
-├── surface_guided_gaussian_mapping_research_plan_v2.md
 ├── README.md
 ├── configs/       # 추적할 실험 설정, 데이터 split 및 환경 명세
 ├── src/           # 자체 연구 구현
@@ -55,7 +58,7 @@ Soft projection과 surface-aware deduplication은 핵심 실험 이후의 선택
 
 ## 환경 준비 및 첫 실행
 
-현재 저장소에는 설치 스크립트와 의존성 명세가 없습니다. Python·PyTorch·CUDA 버전은 GPU 환경과 사용할 외부 저장소 commit을 확인한 뒤 고정합니다.
+E0의 설치·빌드·실행 스크립트와 환경·가중치 명세는 `scripts/`, `configs/`에 있습니다. 실제 설치 순서와 하드웨어 조정 사항은 [E0 보고서](docs/experiments/E0_baseline_reproduction.md), E0b 실행·감사 명령은 [E0b 보고서](docs/experiments/E0b_ancestry_causality_audit.md)를 따릅니다.
 
 1. GPU, VRAM, NVIDIA 드라이버 및 CUDA toolkit 환경을 확인합니다.
 2. Splatt3R-SLAM 소스를 `thirdparty/Splatt3R-SLAM/`에 준비하고 사용할 commit을 기록합니다.
@@ -64,7 +67,7 @@ Soft projection과 surface-aware deduplication은 핵심 실험 이후의 선택
 5. 짧은 공개 시퀀스로 원본 기준선(E0)을 실행하고 export 및 좌표계를 확인합니다.
 6. 동일 입력에서 자체 필터를 먼저 후처리로 검증한 뒤 mapping 과정에 연결합니다.
 
-환경이 재현된 후 실제 사용 버전을 반영한 환경 명세와 실행 명령을 이 저장소에 추가합니다. 상위 프로젝트의 패키지 이름이나 최신 버전만으로 설치 환경을 추정하지 않습니다.
+실제로 사용한 버전과 실행 명령은 각 실험의 명세에 기록합니다. 상위 프로젝트의 패키지 이름이나 최신 버전만으로 설치 환경을 추정하지 않습니다.
 
 ## 실험 기록 원칙
 
@@ -99,10 +102,10 @@ results/<experiment_id>/
 
 ## 초기 진행 항목
 
-- [ ] 사용할 외부 저장소 commit과 실행 환경 고정
-- [ ] E0 기준선 재현
-- [ ] Keyframe export 및 Sim(3) 좌표 변환 검증
-- [ ] 후보 생성 관측과 교차시점 관측의 출처 분리 가능성 확인
+- [x] 사용할 외부 저장소 commit과 실행 환경 고정
+- [x] E0 기준선 재현 (짧은 파일럿; 논문 수치 재현은 미검증)
+- [x] Keyframe export 및 Sim(3) 좌표 변환 검증
+- [x] 후보 생성 관측과 교차시점 관측의 출처 분리 가능성 확인 (E0b; 반복 관측 충분성은 미확인)
 - [ ] 공개 GT benchmark와 초기 드론 파일럿 선정
 - [ ] 보수적 admission 및 matched-budget 비교 구현
 

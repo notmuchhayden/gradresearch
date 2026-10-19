@@ -1,0 +1,21 @@
+{
+  "experiment": "E0b ancestry / causality feasibility audit",
+  "seed": 0,
+  "cases": {
+    "short": {"original_frame_stop_exclusive": 120, "input_subsample": 2, "expected_inputs": 60},
+    "extended": {"original_frame_stop_exclusive": 360, "input_subsample": 2, "expected_inputs": 180}
+  },
+  "evidence_scope": "keyframe self-branch raw pointmaps, and captured fused keyframe pointmaps; non-keyframe evidence is excluded",
+  "source_disjoint": "no shared original images; unknown ancestry is never disjoint",
+  "online_decision": "snapshot immediately after KF insertion, before its backend optimization; deferred rechecks only at new KF arrivals",
+  "pose_policy": "use the snapshot revision at each decision; final-revision hindsight is reported separately",
+  "geometry_sample_grid_stride": 8,
+  "confidence_min": 1.5,
+  "ray_support_max_angle_degrees": 1.0,
+  "parallax_min_degrees": 1.0,
+  "geometry_proxy": "nearest valid predicted pointmap ray, positive forward hemisphere, angular support and camera-center parallax; NOT occlusion-certified visibility or ground truth",
+  "pilot_progress_rule": "all provenance/revision/causality checks pass, at least 3 KFs, and >=10% of sampled candidates have >=1 past source-disjoint ray-supported view with >=1 degree parallax at creation; report >=2-view support separately",
+  "progress_rule_scope": "operational E0b pilot feasibility criterion, not a research-wide GO, efficacy threshold, or statistical-independence claim",
+  "gt_policy": "no GT depth or trajectory used in the audit or mapper",
+  "timing_policy": "input-frame delay, KF-arrival delay, and instrumented wall-clock delay; no assumption of a sensor frame rate"
+}

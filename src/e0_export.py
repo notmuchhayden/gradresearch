@@ -26,6 +26,9 @@ def dump_pair(frame, reference, outputs):
     (root / "raw_pairs").mkdir(parents=True, exist_ok=True)
     torch.save(record, root / "raw_pairs" / f"{event}.pt")
     frame.e0_prediction_event = event
+    if os.environ.get("E0B_AUDIT_DIR"):
+        from e0b_export import pair_created
+        pair_created(frame, reference, record)
 
 
 def record_keyframe(index, frame):

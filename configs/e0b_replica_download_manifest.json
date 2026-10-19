@@ -1,0 +1,2184 @@
+{
+  "url": "https://cvg-data.inf.ethz.ch/nice-slam/data/Replica.zip",
+  "source_script": "https://github.com/cvg/nice-slam/blob/master/scripts/download_replica.sh",
+  "scene": "office0",
+  "frame_start": 0,
+  "frame_stop_exclusive": 360,
+  "rgb_only": true,
+  "files": [
+    {
+      "path": "data/E0b/Replica/cam_params.json",
+      "bytes": 171,
+      "sha256": "ffbefdeb53755e1490d6936dffdee253510e68d5e443e1ba91e60202addc1a0a",
+      "zip_crc": 3320908239
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000181.jpg",
+      "bytes": 417141,
+      "sha256": "d858ec4de047e5c5178e508caa2e521f17c60705813151da1ac18e958c6cfef6",
+      "zip_crc": 2513857086
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000274.jpg",
+      "bytes": 308439,
+      "sha256": "e256af4df0769a5fbee22d1df5b3807983b3175e4e84008c8238ac9664dc54cf",
+      "zip_crc": 883531281
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000202.jpg",
+      "bytes": 411108,
+      "sha256": "709ad1989dc04d2bf12137ca05e1ea4dd21566eb5da42e692ff9607ba274d432",
+      "zip_crc": 1731082432
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000179.jpg",
+      "bytes": 416920,
+      "sha256": "80b8aaa84f26fcb59daccb560231a2575c44ce15c465f042f90768cbb07fed76",
+      "zip_crc": 2706303711
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000265.jpg",
+      "bytes": 323441,
+      "sha256": "d3481e998149add0985b6989cee3832adb074169082c324858d599738ff73041",
+      "zip_crc": 964973873
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000094.jpg",
+      "bytes": 356477,
+      "sha256": "5c38e405020af579a6864159d3d595d91f97d208f5a724e0bcfdc7395a51be6f",
+      "zip_crc": 1028526285
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000143.jpg",
+      "bytes": 402086,
+      "sha256": "bb3c0bc6fe2555a432d332095fb6043418e5eff2b7c24bcce2415941574a6c57",
+      "zip_crc": 2650939424
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000140.jpg",
+      "bytes": 398657,
+      "sha256": "37eb3a542f1d500e80eb24fc76ccd04a0755a0274a8338cca899c8461780f878",
+      "zip_crc": 4167460493
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000259.jpg",
+      "bytes": 336829,
+      "sha256": "5e0ed8034cf923857e0f3078cb73d50c9271d3ddfd83cc8ba9db6349051656eb",
+      "zip_crc": 2737166957
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000261.jpg",
+      "bytes": 331976,
+      "sha256": "702a9a89c692e3871872aa7845024524831e0a7e3aefbc4481f0953ecf63b6b0",
+      "zip_crc": 1277887135
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000016.jpg",
+      "bytes": 332193,
+      "sha256": "02810940463ca0fe9dcb8063163f4b56f96af8f8364e616992b5061f9a5fcf90",
+      "zip_crc": 677910541
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000093.jpg",
+      "bytes": 356380,
+      "sha256": "877bd980691d30b89520d2c4b8ad5ab3e5e02f04579ec6ed3d9b208225212a82",
+      "zip_crc": 4042202179
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000251.jpg",
+      "bytes": 352854,
+      "sha256": "cff7e2ec9a6dcf2c2a57e62a909cc86a2c511e646d98195be83f8fcb04195aef",
+      "zip_crc": 1996492854
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000020.jpg",
+      "bytes": 333188,
+      "sha256": "e4125bf86f5ce57a7250853b74d5615a014bbfbe96b08c91cadce5291a99550f",
+      "zip_crc": 3952399194
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000147.jpg",
+      "bytes": 404833,
+      "sha256": "de8470957fe080ce635f8d731525261fe57efd06d8d7d5d3ee688ec8f6ffd497",
+      "zip_crc": 2374585268
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000339.jpg",
+      "bytes": 337759,
+      "sha256": "588f9cd0f676ef2c01019bfc1598ac9ab8fb91dd32b670730b5304d29e1fb52a",
+      "zip_crc": 840802476
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000252.jpg",
+      "bytes": 351379,
+      "sha256": "9d17546cd676bbdf62e3e46c660e8b071582bf18d8ca8e06052a75ea1f5c866b",
+      "zip_crc": 612228246
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000100.jpg",
+      "bytes": 359225,
+      "sha256": "85a68419e43295d3db9f319d60bfe30151fcd013620ba87a8f2aa852d644234f",
+      "zip_crc": 4231429599
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000303.jpg",
+      "bytes": 325249,
+      "sha256": "dab6cc50646660123a78dbd7aafe813f864c664d8d4d3201320f267ab056effb",
+      "zip_crc": 175628476
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000248.jpg",
+      "bytes": 358811,
+      "sha256": "581fd75fe3469a51558cefc5088824b7b9394ff4332ef05c24366d9ba2eef3b1",
+      "zip_crc": 3228933127
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000031.jpg",
+      "bytes": 337784,
+      "sha256": "861a17d2f0cbc94c0fc58bc5e18e285c82cc0a08fb211e7138e11a1f7cdaca9a",
+      "zip_crc": 24776850
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000141.jpg",
+      "bytes": 400142,
+      "sha256": "62d737dab67686339147e1a050907113b032d373952a4da95368d66b415c77cd",
+      "zip_crc": 989590174
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000230.jpg",
+      "bytes": 390423,
+      "sha256": "6aca90c9a232911f42a2ed35caedd332d0d8a3adc984d7962f9ded7a78d94b5e",
+      "zip_crc": 2102504565
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000054.jpg",
+      "bytes": 338464,
+      "sha256": "201174679faf83d60e33d724769e8e1340e69460bdd360b7c85f9690b87ebd64",
+      "zip_crc": 4158324260
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000191.jpg",
+      "bytes": 414581,
+      "sha256": "ab8c99cd3312e668234b8a1fc6b5c1242b8eb66c4ec198cd877ac90d30dacdce",
+      "zip_crc": 2625876637
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000033.jpg",
+      "bytes": 336980,
+      "sha256": "de2b70fd4727cebc3eb13943db3c448dc2903bd592756477467dc12f33dfc698",
+      "zip_crc": 2435022656
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000177.jpg",
+      "bytes": 416502,
+      "sha256": "bd84217154f18e4eecc5ee8844b60fa9aca1abd7f9d4197a1837941b2b85cf11",
+      "zip_crc": 2901999529
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000306.jpg",
+      "bytes": 328420,
+      "sha256": "e0e68c5ea338334499b89af6debaeecd7ef55df9d7fa17b9d68bc1ccef1a0bd3",
+      "zip_crc": 439021428
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000161.jpg",
+      "bytes": 415157,
+      "sha256": "7c806d7066e72c9775180b831343911ea79fcb79d1d6d2dd52a6b2ede1cf33fb",
+      "zip_crc": 3710871514
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000299.jpg",
+      "bytes": 319975,
+      "sha256": "087f6fe845009becb12c1567f90f7c84af527ea4a44e27f19d682411ef315369",
+      "zip_crc": 1119438176
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000301.jpg",
+      "bytes": 322692,
+      "sha256": "2f5da36ad64304a243e0d22b96f41db9926a8053f6a0c7015d8f1b4702118889",
+      "zip_crc": 3298170265
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000013.jpg",
+      "bytes": 333354,
+      "sha256": "ae6df5a90e38bfae00bbf8307c75b81d5979882ccefe84a002a519ffa0bef638",
+      "zip_crc": 1995193624
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000277.jpg",
+      "bytes": 305750,
+      "sha256": "35bb0586774e8f31d45b32a445e15c76ef42a8388fd0fe8f41c2d8c55c3fd6d4",
+      "zip_crc": 4189214939
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000045.jpg",
+      "bytes": 335430,
+      "sha256": "50e2e42af6161cbfecffe0a484d13d8c0676b959ee64f17d746e8bbf2864ec85",
+      "zip_crc": 3395116174
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000046.jpg",
+      "bytes": 335460,
+      "sha256": "73eb5f78704c011c56591de9892897a8a9e1c44e0c8ba650172d872db9418d2d",
+      "zip_crc": 479715591
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000002.jpg",
+      "bytes": 344436,
+      "sha256": "235f9b49d06b63f6d66dcde6f7a42b49e6073a4f3111f1c7227cf80e24082ee3",
+      "zip_crc": 780368199
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000208.jpg",
+      "bytes": 408663,
+      "sha256": "b26d66a5d5d63a0e783c4be63f8ed6124003333595835f296b1b0b66c4f121ce",
+      "zip_crc": 1299921310
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000284.jpg",
+      "bytes": 303933,
+      "sha256": "7873fdd36ff4f76ff5968e27647d516acd78e88a115be5cc29b701aa3974cdc7",
+      "zip_crc": 1059137295
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000042.jpg",
+      "bytes": 334108,
+      "sha256": "70c384e3934adf8595b7fd21d0d456175f690322f4c32e151376ce0dd8c9e15f",
+      "zip_crc": 311776151
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000183.jpg",
+      "bytes": 417146,
+      "sha256": "8d3a25356b2bb6e4979fea0de99542a84e19d9b1f500151602847ccbd1a831b1",
+      "zip_crc": 3518608285
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000268.jpg",
+      "bytes": 317485,
+      "sha256": "9705397087df08506869aa2e768275c730c9c837ca32d2c3188110cd75dd0520",
+      "zip_crc": 271726474
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000061.jpg",
+      "bytes": 341447,
+      "sha256": "3dd52f19637460aa72ace960c9c151ee998cb3bad90a323cb7e04c4443fef230",
+      "zip_crc": 739118795
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000057.jpg",
+      "bytes": 338984,
+      "sha256": "2d3a6d430320b15eed59aafbffcef5e5bc97c76cc5acd1904cdfc510b3865c97",
+      "zip_crc": 1157587335
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000201.jpg",
+      "bytes": 412333,
+      "sha256": "fa9f59c82b54c15edafdfd303d4325ea4d0e70b78cd442d9118fc4a32eefa83b",
+      "zip_crc": 747654639
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000114.jpg",
+      "bytes": 377212,
+      "sha256": "13a602c9ec294bc38761d0e45b7e1ab2f9b4b2c10ef47393e714d7fc8d6cea6e",
+      "zip_crc": 762692942
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000297.jpg",
+      "bytes": 317226,
+      "sha256": "f47b1d8cf976b933fa034564ea07622ea865ed1eb58af6db4fbe306bb0779d19",
+      "zip_crc": 946404842
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000011.jpg",
+      "bytes": 335611,
+      "sha256": "8306042433fed2f18fcb04ad2dae72516671d697ca13c2b5bfc2211a38e879d8",
+      "zip_crc": 1498524074
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000205.jpg",
+      "bytes": 410373,
+      "sha256": "9581f9bedd48bf48e50f885801acbfb4b6118838be201d77fb0574cc5d1e8f32",
+      "zip_crc": 2691084354
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000189.jpg",
+      "bytes": 414987,
+      "sha256": "e44bc73b38738f57bceb1bd003b1ab42a39275bd032caab668334779ae58f053",
+      "zip_crc": 3340697686
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000342.jpg",
+      "bytes": 339635,
+      "sha256": "5bf12554ce8cc2afb17e8b1c0b691a5bee901ea6f9dc0cdf9f5ed13bc5acb1a0",
+      "zip_crc": 2776734162
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000084.jpg",
+      "bytes": 353092,
+      "sha256": "2de27a006c5aafd67614ee69412900f99670fbbe56da2e548c1924f230a2fe95",
+      "zip_crc": 202912639
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000127.jpg",
+      "bytes": 387786,
+      "sha256": "dc7ad015843847c96219a63c93c5bd519b74d1c973554a8b7d0a5530888327ff",
+      "zip_crc": 602315902
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000082.jpg",
+      "bytes": 353151,
+      "sha256": "ce97bbe92cc031a6a4156a6689704a9b2ae897f3cca2720cae340c9546993b6b",
+      "zip_crc": 2474141628
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000209.jpg",
+      "bytes": 408133,
+      "sha256": "5de8b374af49876e2c86d8405e5b5b03f11088586aeff806fd2520130c1a0cdc",
+      "zip_crc": 1890679435
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000184.jpg",
+      "bytes": 417322,
+      "sha256": "53b5e7e2beb50067ead50da36d47076679b0eb485384c18fd18d331b9f079cfe",
+      "zip_crc": 927532496
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000152.jpg",
+      "bytes": 407540,
+      "sha256": "ce60600072fe9ca79447509e4c34d99a11be3edce95b76faa0e2d6ecdcad7ac8",
+      "zip_crc": 935770044
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000236.jpg",
+      "bytes": 381480,
+      "sha256": "1ec1effb09343459640e689159cf81366dd45d791c548ba703fcc5faa4082651",
+      "zip_crc": 3694327861
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000111.jpg",
+      "bytes": 373121,
+      "sha256": "f2517bc1fc8c665024082b954c73f0401a2634f341110e21321cb2cebe94e433",
+      "zip_crc": 2320185900
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000102.jpg",
+      "bytes": 360220,
+      "sha256": "f16afacc2fa4890981c0a629682b6d9f5d19d9b62dac451e0a5d3fc49ea3a2c6",
+      "zip_crc": 2179300802
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000070.jpg",
+      "bytes": 341230,
+      "sha256": "34a09114a437be2c24650f6953f9cb1530f960d55e8b3a422d243389b691b00a",
+      "zip_crc": 3246235829
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000354.jpg",
+      "bytes": 349327,
+      "sha256": "cac51af558441987e10675e4c954189a65a65194d6e2a0887d1aedb9b7a1eba5",
+      "zip_crc": 526486179
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000323.jpg",
+      "bytes": 337259,
+      "sha256": "bd4c1b7549b64e717fcc75009f39e781ab47748d65fc8434b7f8a0036aeff7d0",
+      "zip_crc": 3189025736
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000087.jpg",
+      "bytes": 354494,
+      "sha256": "48b29431602c628eafa523d3ef8111fae6857789fb591dda119399e3553c9875",
+      "zip_crc": 1038191516
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000032.jpg",
+      "bytes": 337220,
+      "sha256": "68f8d60bd363e0325440ada031bec4eca5dae5aa0cd9839740910ed8295fce8f",
+      "zip_crc": 1425423400
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000106.jpg",
+      "bytes": 364630,
+      "sha256": "5c7c355e82c2c0b71f1b69b9d4c8f4b526df7c16af244b5793b82a1bb56b2175",
+      "zip_crc": 1586363136
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000005.jpg",
+      "bytes": 342514,
+      "sha256": "1a878fdef7e163185f14b22297b7a2b4acb98e7d07c19263da2425940666f7ae",
+      "zip_crc": 473812069
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000327.jpg",
+      "bytes": 336348,
+      "sha256": "7c891983c1aec3fabad76aa571c57c74da00ca432213a321bac3949da6955ce9",
+      "zip_crc": 3136969640
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000090.jpg",
+      "bytes": 354844,
+      "sha256": "ea8ca38855bc715969973954e7bd1e9276f3dccd107e96506231b1801ba996be",
+      "zip_crc": 207251319
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000343.jpg",
+      "bytes": 340607,
+      "sha256": "1319f52c484d225b3eaeedf36192caca08c546462b121613ba922a776ed6687d",
+      "zip_crc": 3586799506
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000153.jpg",
+      "bytes": 408051,
+      "sha256": "4d11c43dc1f6511fa4ae2ee1c5dd8acc74c2604ab3bc89c98c2af7f893d9b63a",
+      "zip_crc": 769912268
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000336.jpg",
+      "bytes": 336506,
+      "sha256": "30918ba5273dbe624cd2bafc24d28e3f10fb7964b7bbc56d73e4e1172423f565",
+      "zip_crc": 718524584
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000258.jpg",
+      "bytes": 339071,
+      "sha256": "ecb387a36a4f4a820f35035162792556c362c99849201b49dc816e8274d29f4d",
+      "zip_crc": 1507592354
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000026.jpg",
+      "bytes": 335406,
+      "sha256": "c503dea93c95c0f78f473caa8991961d644f417569356f78a510ed6689ad1426",
+      "zip_crc": 1036285039
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000312.jpg",
+      "bytes": 333485,
+      "sha256": "98aa60fce9d2605c1bf4963eef9c79fb44d47a91b03361b19ad07e7409ca33ea",
+      "zip_crc": 4037243524
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000305.jpg",
+      "bytes": 327575,
+      "sha256": "cfddc31e512a1762c1c457d96537b5beb64e5d505a3bb10c8caf6e57d7ba5fbc",
+      "zip_crc": 2707365690
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000073.jpg",
+      "bytes": 343290,
+      "sha256": "0ec1928aa5f0c4f037b8b54bdef40316b094ef3b8baa5af71ab38e86fd3a50c8",
+      "zip_crc": 3753685562
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000212.jpg",
+      "bytes": 404392,
+      "sha256": "7f9d23f8df46b5eb0ea7330cf4ceca06e660781858e70323ecd00a71868f9102",
+      "zip_crc": 3453173880
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000112.jpg",
+      "bytes": 372983,
+      "sha256": "374b81b632a73d528cca7b83139b51f99670975cf95b54241cc5c7f62ab1d4bc",
+      "zip_crc": 4074782241
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000052.jpg",
+      "bytes": 337928,
+      "sha256": "2d71a872ecf6a46ab5e0ad30f5804d638edbf20fd306988cf1a3ea742e06b3a9",
+      "zip_crc": 2446476048
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000146.jpg",
+      "bytes": 404463,
+      "sha256": "cde36a79edc45e03e7f7bda74cd3107a7371a7b8602609db75ee5d7a6c827591",
+      "zip_crc": 3965248583
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000348.jpg",
+      "bytes": 344127,
+      "sha256": "e5e87b76c41e1702db74ab734e96b8c721ae897500fb34b6de506fe3ac7d5532",
+      "zip_crc": 2221420707
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000018.jpg",
+      "bytes": 332924,
+      "sha256": "acb9f95c411c92ea8aa84a5c5d368f970979811b2a4eee584d6fea71ffc3ba73",
+      "zip_crc": 3396729690
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000321.jpg",
+      "bytes": 337504,
+      "sha256": "563b976088746cbd8b3b8b7ccadf344e3a7595210fd08c53b396fbde29e26f5a",
+      "zip_crc": 2429094234
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000064.jpg",
+      "bytes": 340589,
+      "sha256": "2ae829c81e55d04078c664931753d22a9e6e842309072acba13c3eec9088571d",
+      "zip_crc": 1916240478
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000254.jpg",
+      "bytes": 347020,
+      "sha256": "1ac6f91758bfa9c7a959b75ed4a733a807a865d2ce504c2e832dd9e36295e808",
+      "zip_crc": 2434721019
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000038.jpg",
+      "bytes": 334656,
+      "sha256": "a3fb5d1357002de98908b2a2221b08dfebc9e2222aee9faf03c204642c96cec8",
+      "zip_crc": 1083050624
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000315.jpg",
+      "bytes": 335327,
+      "sha256": "6db8862c532ebd04a0bf0716fb6007618d8c379beddcc9d0f1dd3b83d59bcda3",
+      "zip_crc": 2505854463
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000193.jpg",
+      "bytes": 414097,
+      "sha256": "eb86d74d2c67502e127bbd7ad688f2d75ae10ed3a35a089b4911f60a0e5a5c0a",
+      "zip_crc": 2819383010
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000257.jpg",
+      "bytes": 340643,
+      "sha256": "a87f25963a84540d4915bce3b8b09c57abe53dd6425131a7225767f8338a82df",
+      "zip_crc": 2376041082
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000137.jpg",
+      "bytes": 394236,
+      "sha256": "2b8127b847e5628e0e7759b45b6cdb3e6ccfc910f332c431c78a3d096adf3d14",
+      "zip_crc": 4195684723
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000328.jpg",
+      "bytes": 335875,
+      "sha256": "c037e71c8c5a9694a0b0fe10f926e41708de2a782f6bc3858339e681b8b5317e",
+      "zip_crc": 1395766742
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000049.jpg",
+      "bytes": 336154,
+      "sha256": "0b94b8313fb953ce13502f77343ef0e1447f0ddec20122902586deeb93014965",
+      "zip_crc": 3627690766
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000180.jpg",
+      "bytes": 416677,
+      "sha256": "cfcd9808e7edbf0c5a891c1895232ea1e47b5604ac6dec3ab9aad89d4d63bad4",
+      "zip_crc": 3046486682
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000148.jpg",
+      "bytes": 406373,
+      "sha256": "4034623a854978fd333024a47f8c6167ebd6d6788350ddd3a37a7cbe71e5ff9e",
+      "zip_crc": 3356652127
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000171.jpg",
+      "bytes": 417042,
+      "sha256": "195ce6b975ff46e4136ea0d06785eaab4df599f0f330a1c8e714eca7760c3a8a",
+      "zip_crc": 2389875660
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000195.jpg",
+      "bytes": 414109,
+      "sha256": "04eae634dcb048be6643788a6f539106e5f7e9b05a97c0d0730783bc753a7a80",
+      "zip_crc": 3494405180
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000014.jpg",
+      "bytes": 332958,
+      "sha256": "9fa17f1ae4b4a2a12ec2b08cd830680a27c432d5b65d2f7b65487153e0f1296a",
+      "zip_crc": 1437796174
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000203.jpg",
+      "bytes": 410913,
+      "sha256": "006daf45f5ae7cdfc4e7eb9f32659fbfb4c90c53df96f9f6a7d23984923d3de8",
+      "zip_crc": 2079694347
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000085.jpg",
+      "bytes": 353551,
+      "sha256": "f463fe4450f87359b84c8d48160acb9c6009dd59715e99b581e2d9c37d792d68",
+      "zip_crc": 90501526
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000304.jpg",
+      "bytes": 326014,
+      "sha256": "d4d794898bf8ea4ae5125008374544e57c3be7b2fe5c6701b1eca3870759711b",
+      "zip_crc": 3751946421
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000095.jpg",
+      "bytes": 355545,
+      "sha256": "e1906a00dcc66faff77621585fbdb405d38fcc54eff0d3f930702bf4d13d4d2c",
+      "zip_crc": 3809206101
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000316.jpg",
+      "bytes": 336202,
+      "sha256": "2cb2a6999590086a7308b86f9fff603ac8754f81fdcb71748c64d5821cd854fa",
+      "zip_crc": 1765544773
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000319.jpg",
+      "bytes": 336712,
+      "sha256": "052bd9cc38fde14005d81b17614ce8fd1b147b55d0759943dc6c5858d22d3f0d",
+      "zip_crc": 3571559380
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000047.jpg",
+      "bytes": 335942,
+      "sha256": "e457f9bbe9c504774dc79a1de62abb4711f3c090e16b109bf85ea2e62514a514",
+      "zip_crc": 366350589
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000062.jpg",
+      "bytes": 341002,
+      "sha256": "d3eddfd2bfd685f1b118b47f3608c79a6f479f8e2c81cebccfc8dadb6346de6d",
+      "zip_crc": 1529465108
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000029.jpg",
+      "bytes": 336129,
+      "sha256": "a9ad247ce893e1ee41d72673b47f49b17b510cc8116e16cb6195e1a7ad8f8125",
+      "zip_crc": 423019641
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000124.jpg",
+      "bytes": 387635,
+      "sha256": "f8e1665aac09dfaec0801eb4c9caf3a1452ab2c96f790ba9b181d50336ba2bdf",
+      "zip_crc": 2775194080
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000145.jpg",
+      "bytes": 403786,
+      "sha256": "1ac74e150857d732f130c0ec38fa6507ee602e67b6fc0528e653ad40caf3042f",
+      "zip_crc": 1943163898
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000338.jpg",
+      "bytes": 337286,
+      "sha256": "1bb8e7f22d268e306d032526d213e06d7fb0a68786cf2c9648b95987342600e2",
+      "zip_crc": 3928909071
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000293.jpg",
+      "bytes": 311513,
+      "sha256": "cc6bf32e6ffc408b031f12c32268313b875f379becbe637cd2cc87022bd33e6c",
+      "zip_crc": 1619764073
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000115.jpg",
+      "bytes": 378498,
+      "sha256": "08e5175184362235f649c72bca5f69a187bf3f24da4bc319352784543078b788",
+      "zip_crc": 1835377806
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000300.jpg",
+      "bytes": 321272,
+      "sha256": "0a5af81c23a31c53ab2f71197f7b983e26c76fa40416b6f047cf2a2ab6297315",
+      "zip_crc": 3188152518
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000068.jpg",
+      "bytes": 341507,
+      "sha256": "78cda2bf8c4275f612cccdaf60892f922a55b3106f83e4d3933107bfb8c74a49",
+      "zip_crc": 426181682
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000010.jpg",
+      "bytes": 335712,
+      "sha256": "348b77f5e5346cd05ddabc27ca8be705a9f18119dc3d7fe381e4168fe50b7b92",
+      "zip_crc": 3370594829
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000166.jpg",
+      "bytes": 417914,
+      "sha256": "87699e742b681409d365b5141793a047bd438b0dcda8039cff863e7bb419d386",
+      "zip_crc": 2078823457
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000330.jpg",
+      "bytes": 335835,
+      "sha256": "37dd3a0937aa56c5ebc4bde9fc816208f8c0b3f31f8e6fd3255c0d6e81a5cf48",
+      "zip_crc": 2221135823
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000185.jpg",
+      "bytes": 416737,
+      "sha256": "c188f527325d80beaa108d4c323d127e5cd2b256b932419f53de657865ac4695",
+      "zip_crc": 2580436416
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000092.jpg",
+      "bytes": 355221,
+      "sha256": "0f80775745167c538d2f02633e88883237f6403c4f127dd3799ab8898f752cab",
+      "zip_crc": 867556614
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000264.jpg",
+      "bytes": 325412,
+      "sha256": "46f10bb09eb0708b7cdf914c99ae23c7b7f4262867874f8acfd98bbec2f7ca9d",
+      "zip_crc": 2006701786
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000349.jpg",
+      "bytes": 345044,
+      "sha256": "ad017777d9bd7a6d34701e506717e29aba50ebacb4e95c3e9485ea8d6aeb78c8",
+      "zip_crc": 2149841919
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000186.jpg",
+      "bytes": 416860,
+      "sha256": "e6eaca52941be121c5f98c903c9db9e38eb497cec9ecec72f07aa5cfd97ae63b",
+      "zip_crc": 455670792
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000228.jpg",
+      "bytes": 392959,
+      "sha256": "6d96b0fbf049f8a872dd066bd21a290c4a548391167454222f77199c821c22bc",
+      "zip_crc": 2472465410
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000174.jpg",
+      "bytes": 416632,
+      "sha256": "c12191881e473af6dcac09b4e44e00bd56bf4b8f58ff50d29cfcfcc57c5a55f7",
+      "zip_crc": 4016403900
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000341.jpg",
+      "bytes": 339272,
+      "sha256": "709d8172874e39031c7856677ca74e4cbbd9f2249d1d0172a14b07e10404a501",
+      "zip_crc": 3308365776
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000080.jpg",
+      "bytes": 350559,
+      "sha256": "2ca903d4444beb799ba0f3e1ad1003f0554faed11cfd1dacdd95735aa0dd6fb5",
+      "zip_crc": 3348387208
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000149.jpg",
+      "bytes": 407097,
+      "sha256": "c5aec12b755a6c10e6c5be96bdcd1272a359598fa0417037e8f4d45c65470632",
+      "zip_crc": 3103121972
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000037.jpg",
+      "bytes": 335003,
+      "sha256": "a5baa3dfe03115ae0b8d199b1847d3e2d4cad091ec298fe1b6d15613cb965417",
+      "zip_crc": 1285210780
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000337.jpg",
+      "bytes": 336708,
+      "sha256": "0f0e48cb5398ae64885143244e6af376c0515630aa35879117e480c3d581f66f",
+      "zip_crc": 3864448422
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000278.jpg",
+      "bytes": 304560,
+      "sha256": "b54f71a88a9783671a80566346e3469561cc170dd1818b444c89e8b4cd664dd5",
+      "zip_crc": 464195999
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000283.jpg",
+      "bytes": 303195,
+      "sha256": "8f2dc64d83a45cdd8a2ad66a4129a2256c36193f9eb46f08c86a65fba5c481f2",
+      "zip_crc": 1472948364
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000214.jpg",
+      "bytes": 402627,
+      "sha256": "c910ae6ba25a3a2076a333758cf2b4c9291a8ca45a1a094f57789dea0df3c272",
+      "zip_crc": 277135272
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000318.jpg",
+      "bytes": 336440,
+      "sha256": "a7ff3efd13e5ac73b659fd7ee1e4a9ded064dd654221a3ab15d2b438f99d7db8",
+      "zip_crc": 1547051358
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000099.jpg",
+      "bytes": 359003,
+      "sha256": "812fd5d7a92d27b9a93ef987f15c4de174ca9d436c0ea875e4d3730819d99ffc",
+      "zip_crc": 1153897876
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000355.jpg",
+      "bytes": 350643,
+      "sha256": "9b256374d2c1be0ea4bb3695984a1b8fab3f71b62e5423a658bb4180a5149440",
+      "zip_crc": 1841894089
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000192.jpg",
+      "bytes": 414590,
+      "sha256": "0dacf72f8c9df74655942f5ebed0e7f9136fc50debee8bf1a200247436bd3cde",
+      "zip_crc": 571256622
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000271.jpg",
+      "bytes": 311767,
+      "sha256": "e0d32d3b875a11ad4fd947b14bccdb9e7432817151f506a053e41e0d40052f03",
+      "zip_crc": 650494678
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000347.jpg",
+      "bytes": 344148,
+      "sha256": "01ad08c86eba8d8a1e34cd71063498f45f7b9927969e27bf9210db46ccff91a5",
+      "zip_crc": 109045904
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000226.jpg",
+      "bytes": 394238,
+      "sha256": "646f8fbdb4d7b06fd65ce4ec6266f88e80867d6245f46a2704011d7c89e768c3",
+      "zip_crc": 2409549075
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000003.jpg",
+      "bytes": 344487,
+      "sha256": "26190b8d8d6c0da9c349499b62f96c208ceb91d7194ccd4616f64b2052fdee76",
+      "zip_crc": 1249873961
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000229.jpg",
+      "bytes": 392062,
+      "sha256": "36725251384d7bcfad76f0dbb8451fbd14a1061ef147d9ac3a3d7d5f8883c7a7",
+      "zip_crc": 1492992461
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000285.jpg",
+      "bytes": 304337,
+      "sha256": "4936029c88829e6a8b9c1a5911f126dc3981549fb4e7aae89edaefd9d961b37d",
+      "zip_crc": 2041076843
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000158.jpg",
+      "bytes": 412591,
+      "sha256": "8acccc7704aeb9cf2821be3d5c03ce865aed6acd593fedcaa3196e41b3d8275b",
+      "zip_crc": 2734700884
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000320.jpg",
+      "bytes": 336858,
+      "sha256": "c9607b7f8706c6b75f4e743ae873a77425112c5520caaf93144cbfd26c49c9d2",
+      "zip_crc": 1195719811
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000091.jpg",
+      "bytes": 355532,
+      "sha256": "5874d60cb4df8761404867b64be101e142616376570b01ee85d95d002719beae",
+      "zip_crc": 3499682594
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000223.jpg",
+      "bytes": 395966,
+      "sha256": "d26dd592890e6bfcdd8bbf9a3725eb872a453221eeab3c22ed8553760c63929f",
+      "zip_crc": 3496034085
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000317.jpg",
+      "bytes": 336261,
+      "sha256": "574b0a2e3d4e65b92bf468295e5d03a12c2fe5c6118668e4059460b9909ed47b",
+      "zip_crc": 1257979678
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000287.jpg",
+      "bytes": 305781,
+      "sha256": "00c6e9c92f347168d5722fa3cbe826f68d6d2a0b1e1d52cf4ea5e96a7f8011aa",
+      "zip_crc": 349791116
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000144.jpg",
+      "bytes": 403017,
+      "sha256": "8cbe976fe82a4f51d41c85dd45e4e4e1bae42068166b069dba1659d6cd16b90a",
+      "zip_crc": 4106929782
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000298.jpg",
+      "bytes": 318281,
+      "sha256": "c86673a650aca1a570be33c56bfb4e7d99c07af9e3fca5f96bd32801d27ddec4",
+      "zip_crc": 3829766685
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000163.jpg",
+      "bytes": 416660,
+      "sha256": "d37cb3a3c56bf1e892805f8cfae4622c3db8d37de8d5a72d51c31713e595a858",
+      "zip_crc": 1842698519
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000200.jpg",
+      "bytes": 412402,
+      "sha256": "a0497cc4b2b50f39c92b3bfeaa3b61dae20755ee921db48d921a19fad1198293",
+      "zip_crc": 817173322
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000325.jpg",
+      "bytes": 337079,
+      "sha256": "f53a377e6cf350bc5f3cf791452ce6879dfb075f8fadb0455309b694e85ae7ea",
+      "zip_crc": 493532814
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000210.jpg",
+      "bytes": 406472,
+      "sha256": "3c1e7ae0d9f7e26df7b9edbe79667f55aeaaca42d97cdd310e3b594d1fd2efa4",
+      "zip_crc": 3237448302
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000294.jpg",
+      "bytes": 313650,
+      "sha256": "f2d45043f15c18126b741bc8bd4551f800bbb709fbce39619201c7ec3b09d5e0",
+      "zip_crc": 2507231430
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000272.jpg",
+      "bytes": 310861,
+      "sha256": "9338468676db0f3a50fbbe52abb9d283f053a446a102ee2e02d42fb5a8d32579",
+      "zip_crc": 1231590471
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000220.jpg",
+      "bytes": 397935,
+      "sha256": "873791254e84b2a09bbddf9e1c0dfd7778b5d327dbad078460fea6d6bb739f91",
+      "zip_crc": 1276766766
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000028.jpg",
+      "bytes": 336191,
+      "sha256": "f66dda5545242775706c76abb9180dc28c20f1c2058c1f67307cf22832d1d0cf",
+      "zip_crc": 318452574
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000310.jpg",
+      "bytes": 331945,
+      "sha256": "d820a0a8097e5dec003fb5e0d94407f476fe00cb4023ac4da9a32459cebd553d",
+      "zip_crc": 383813517
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000219.jpg",
+      "bytes": 399076,
+      "sha256": "9d62743d4bd1d8cc5a563054fe04b26438f26717a2495bfb424ee87ff8489a9a",
+      "zip_crc": 3350574460
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000015.jpg",
+      "bytes": 332571,
+      "sha256": "5aaf7aa0c1c6d8fb83a668fb5c3a6549ec97810f7b6acba6bc13e6a3e98a4d87",
+      "zip_crc": 3338143951
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000218.jpg",
+      "bytes": 399874,
+      "sha256": "496856b1ac6377ecf841daa015a972a3baf32f37214a27218ccd860c082093cd",
+      "zip_crc": 2999875157
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000135.jpg",
+      "bytes": 389321,
+      "sha256": "ac96b34ad155f610f42228d65b2b048c4314959a29a9e5ecec6cb0caeb728347",
+      "zip_crc": 2936732121
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000168.jpg",
+      "bytes": 417534,
+      "sha256": "0034d35fe55828489b1843f7f91a61c753afd9eaf2d71c5d51c5d44b18d85220",
+      "zip_crc": 534601733
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000006.jpg",
+      "bytes": 341768,
+      "sha256": "f8b718f1c4951b71227608caafa52df3130993b3898e142a4cb9849e22306b5c",
+      "zip_crc": 2125884393
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000119.jpg",
+      "bytes": 383999,
+      "sha256": "bed3f3c3e04558897f7fb356f7bceeb91821073dfc8290b87b732c52cdee3e56",
+      "zip_crc": 2461111800
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000238.jpg",
+      "bytes": 378665,
+      "sha256": "668890e88dd4b9c9ae4693bc4f6c05c4771e16fe89277a294430d6cb0e2067f1",
+      "zip_crc": 3367669362
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000034.jpg",
+      "bytes": 336848,
+      "sha256": "c97570e5cc57245f3768e83aa8ac2bbac6375a70ddb396999374d85fa8da183c",
+      "zip_crc": 687460214
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000188.jpg",
+      "bytes": 415962,
+      "sha256": "bb35ca9b9c1537a3cb82ac1d0d8d830300c8b34c91cf6b9c64e7cbb8a687026b",
+      "zip_crc": 3224065587
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000322.jpg",
+      "bytes": 337624,
+      "sha256": "2bf01bbe65253125a52c3026ae59d68718e18a94e4521be2af999934d0e0adb5",
+      "zip_crc": 815098338
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000233.jpg",
+      "bytes": 386644,
+      "sha256": "a7b7fd50f5620a7976aa96d76f4b7fc7252f0090d5a396ef42ff8863305578d6",
+      "zip_crc": 2417879252
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000286.jpg",
+      "bytes": 305136,
+      "sha256": "481ea1a2bcf9b76b2dd2f7bab9b1c0489381c91354d6869c4564d571bfbf86bf",
+      "zip_crc": 2896547489
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000039.jpg",
+      "bytes": 335109,
+      "sha256": "2fdc9ffe6494a5add289b2e0faf1659f162f85e9669e2527af125b2a3840aa07",
+      "zip_crc": 866245190
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000072.jpg",
+      "bytes": 341504,
+      "sha256": "4d86944c168e6f3c37ef0cd0cc9ffa330d79f8f8f1c476d65a40a87212e4e70d",
+      "zip_crc": 3864176953
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000065.jpg",
+      "bytes": 340128,
+      "sha256": "a9568095985830d35b846e80bc673ea499b1d052467504f26c5da725e6e7be68",
+      "zip_crc": 3052454417
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000216.jpg",
+      "bytes": 400719,
+      "sha256": "e840d1324358bae49ef0029a0a47993722b389c1b83df108e69de5d03e117d28",
+      "zip_crc": 1532761877
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000117.jpg",
+      "bytes": 382754,
+      "sha256": "14f98bcdd87d4bfe792f0b937afa1f1d2bd9ecc9c77c9fc3f3d636af511af2d3",
+      "zip_crc": 1532774413
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000129.jpg",
+      "bytes": 384957,
+      "sha256": "ff2688f49a0840f779e2d4f1b9a5fe2697057b61ed6f04cdfbf8614e15b54245",
+      "zip_crc": 1259096423
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000055.jpg",
+      "bytes": 338707,
+      "sha256": "cb82d9e1e337b1ee6377cfcc98daaa9625e3d746a68649eb38899638495fe014",
+      "zip_crc": 3899223556
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000358.jpg",
+      "bytes": 354465,
+      "sha256": "62e3f8c5f914fee0be04f417c544d4094ab3b370ddef5200a064618bf5429950",
+      "zip_crc": 869806065
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000067.jpg",
+      "bytes": 340652,
+      "sha256": "6de06fa194e38c72a28ea7a0565415b12800c23d5910e62dde81cf26328fa0fe",
+      "zip_crc": 2906175516
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000351.jpg",
+      "bytes": 346112,
+      "sha256": "69fd463f13b792f74370d041437aa68daf72767c5fad1feec083bc33af81cca7",
+      "zip_crc": 4019842739
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000107.jpg",
+      "bytes": 365342,
+      "sha256": "f13b0e7df0733a8603c846032271438e6cc2a21ac98160510abb0b4ea9f8aa5d",
+      "zip_crc": 3743641060
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000079.jpg",
+      "bytes": 348208,
+      "sha256": "a7400e7ddc7bbad9db4c06335be458061d9c0f3c6a8b55148a31f912263d14a5",
+      "zip_crc": 649327459
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000207.jpg",
+      "bytes": 409548,
+      "sha256": "29688e363c88b2203c3acb29cfe86faa1e28efe5b3328d100a188f1f1e17629b",
+      "zip_crc": 3247960002
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000063.jpg",
+      "bytes": 340224,
+      "sha256": "48b41d985d04ae0eb80792289b097e701d04af0358a2996648abd8f8e9c5f504",
+      "zip_crc": 818124205
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000308.jpg",
+      "bytes": 330670,
+      "sha256": "737cd3da1f6f84cb3998c3a128be2879e9b2b62d41aaab9be748a831e8dc62fa",
+      "zip_crc": 2347597971
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000132.jpg",
+      "bytes": 384273,
+      "sha256": "39d1eb46ca52bfca1c4db46141357dd6474dea16dca67fcb023ebfdf3da4ba80",
+      "zip_crc": 2971360816
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000197.jpg",
+      "bytes": 413372,
+      "sha256": "b58962a3ecfa8b6ca24a313a974dd3c2f74a5687fa4bb0d956e939d0ffd202bb",
+      "zip_crc": 2167589730
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000243.jpg",
+      "bytes": 370088,
+      "sha256": "da31f27331b181c580968a80124a3817ae045e5efdf946a9a992b4ec794aceec",
+      "zip_crc": 2361171724
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000170.jpg",
+      "bytes": 417332,
+      "sha256": "7b5d5a8bfc88dd49039f7959469ca79ff8ac8c87efc6347964112f039ac193b6",
+      "zip_crc": 2299205187
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000022.jpg",
+      "bytes": 333694,
+      "sha256": "dd7471ae13b3ac7c90d060bc248a5fab2701d7f78ce51f84314ac2d16a45c927",
+      "zip_crc": 396009923
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000276.jpg",
+      "bytes": 306491,
+      "sha256": "94766bc85150b06994ad9404ca522d29368792d7d4017f4e0bb5d96aff321fef",
+      "zip_crc": 2226206084
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000154.jpg",
+      "bytes": 409083,
+      "sha256": "837b312c5206e8dcf3f848bb207e259292ab86df1d397e176b15dbd7330ab416",
+      "zip_crc": 1524144015
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000262.jpg",
+      "bytes": 329856,
+      "sha256": "e9e100b4d01d85b30be418fc9b2cf2bd6915ae6d36d7b8a8c691b9d4f1f22951",
+      "zip_crc": 581619139
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000162.jpg",
+      "bytes": 416043,
+      "sha256": "cb6fd5077d13e6adc1eaf8f0fbacff1f80ecd849754068027173a3fdaaeb1e2e",
+      "zip_crc": 2796145868
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000240.jpg",
+      "bytes": 375149,
+      "sha256": "5796f1145ebdf2553ae22c2c090d4762d89225bbac67e107748e863ecc533043",
+      "zip_crc": 1189598678
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000232.jpg",
+      "bytes": 387736,
+      "sha256": "2e2274da7951eb063f2b7c060b415e4c9898303a7ebe7d3530ec0769b51f10c1",
+      "zip_crc": 3449914855
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000270.jpg",
+      "bytes": 313880,
+      "sha256": "ea5c1e80732779876f5e3e0e87b8552532c989f8ff02b1c41a48f2705ac96528",
+      "zip_crc": 2902581539
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000076.jpg",
+      "bytes": 343972,
+      "sha256": "73c74baea1663acd1362835481610f49580004a1df38e91283a49ac470e454ae",
+      "zip_crc": 3100882785
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000260.jpg",
+      "bytes": 334276,
+      "sha256": "d146cddb7d733bfe3b0fa4cba9a8478fef1f96f052d27f026e9a15de79d12721",
+      "zip_crc": 3596798475
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000350.jpg",
+      "bytes": 345642,
+      "sha256": "dcff155bcc7fa1c4251b9f55bf82cfe952ba7be419299ff5af1dac5c8479b049",
+      "zip_crc": 1420455596
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000105.jpg",
+      "bytes": 363947,
+      "sha256": "e43fb3d937ce328f736e2f147eca0a0679cf5f95f50ae6ef4bf52bcba6bd43ba",
+      "zip_crc": 2524492070
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000289.jpg",
+      "bytes": 307610,
+      "sha256": "f44a5ee1db5759401a6d45e85e1c00bdb7fdbff61f41623893f320b1dcc2181b",
+      "zip_crc": 374892152
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000340.jpg",
+      "bytes": 338687,
+      "sha256": "a92ce21a38c412bea62e2b43451814667c04eafa148dd9e8cfd9b7ad974b6705",
+      "zip_crc": 1387372906
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000138.jpg",
+      "bytes": 395972,
+      "sha256": "e7bf323c48c635053b28214e0969c951ccbcf35b13eee92413c845454690c13c",
+      "zip_crc": 4193634821
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000066.jpg",
+      "bytes": 340203,
+      "sha256": "df23fdaba02f8843b495d226d70678388b434ba8d9c801b0c8573fd6bbf6242c",
+      "zip_crc": 2217456479
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000088.jpg",
+      "bytes": 354201,
+      "sha256": "821710d8f29cd1d559e1ebc7565437c5a3301849f4b8becc5d7b9621c4ef9428",
+      "zip_crc": 2791119746
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000155.jpg",
+      "bytes": 409957,
+      "sha256": "48bf36da147fa9f4529c2e2a57e76abc3558b31d52c280c1571a59ce45bbcb79",
+      "zip_crc": 440100307
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000313.jpg",
+      "bytes": 334432,
+      "sha256": "55944110adaa7b9a378f888a7fb9634c9ad1fccf70c05e394261477ce292dc71",
+      "zip_crc": 3553810048
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000291.jpg",
+      "bytes": 310007,
+      "sha256": "0094807f3021b07c7936953747ba035b7cce67fa139a1d1a6ee095d828a5efef",
+      "zip_crc": 668332802
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000256.jpg",
+      "bytes": 343287,
+      "sha256": "5a912c3463fb3f76431c7349e053cedebabf3653a3be318bac8248286a2c41c5",
+      "zip_crc": 2714308692
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000173.jpg",
+      "bytes": 417470,
+      "sha256": "7baa6d17e92cebdb15b383c7bf1bf2e8d126ba1b29e8a1ac45e154b673c33685",
+      "zip_crc": 4005161210
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000101.jpg",
+      "bytes": 359649,
+      "sha256": "de16177cf6bb41df389e2948b34b1f81ef6860aaa43dcf75b3caa4f71744a736",
+      "zip_crc": 3686089777
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000239.jpg",
+      "bytes": 376792,
+      "sha256": "9cc7658c7dbc7587a3e648bc0e895ae510dca8ce759d326a737c90af19751c42",
+      "zip_crc": 299940719
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000281.jpg",
+      "bytes": 303875,
+      "sha256": "3a6b18829560893767fb61936f2979b869c05bb086ee22cfc843d593df8f4eae",
+      "zip_crc": 2324737588
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000157.jpg",
+      "bytes": 411547,
+      "sha256": "f674ad44eb5508f19a226555534b0529a4543feddb0c9f195e8aeb1a056fe7cc",
+      "zip_crc": 2669975017
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000221.jpg",
+      "bytes": 397638,
+      "sha256": "ed654e2879c13fb60e951bad30b2f0aa4cff029bf6e1d3df2293b84bf9a9d056",
+      "zip_crc": 1342782354
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000217.jpg",
+      "bytes": 400348,
+      "sha256": "d4c25e7c122467919413c6e9fef33a2e4d31bb394e2377c822a4d51204ee638d",
+      "zip_crc": 2232870736
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000356.jpg",
+      "bytes": 351518,
+      "sha256": "d4212d24d97f7f5a1eafa14c6039b59673d724ea9e99b09b950e9151399216b2",
+      "zip_crc": 2568341441
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000290.jpg",
+      "bytes": 308936,
+      "sha256": "d7fef9c564c27befa5b42226be34f0b8b447d54eb4f06100000da1d3b9322d9e",
+      "zip_crc": 3256340361
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000198.jpg",
+      "bytes": 413207,
+      "sha256": "0420b62d6c271f8889768d7570422417fc5124cf5b59fbf59e0b54bfc8a98d13",
+      "zip_crc": 3542771712
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000275.jpg",
+      "bytes": 307370,
+      "sha256": "527fdd08863378104cd47785c63c3bb2274f8150ebd8b35f00837cd95b1eb408",
+      "zip_crc": 3025014586
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000083.jpg",
+      "bytes": 353390,
+      "sha256": "07c18bd1eb5d17421e05dc5a41cfd60a2fa5d5bf6a5322a5e7d000010575b3ee",
+      "zip_crc": 416472602
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000164.jpg",
+      "bytes": 417520,
+      "sha256": "9554e0746f06cdb8dc9437f9f4fe8627a432560675a2840dbef8b9fb0ccd7dcc",
+      "zip_crc": 566336123
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000213.jpg",
+      "bytes": 403876,
+      "sha256": "07412f9011b8d78cf384bbeb221f7a9645055863f72d3cdadc696454ad144a14",
+      "zip_crc": 8308702
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000110.jpg",
+      "bytes": 371125,
+      "sha256": "5fc0c407bcfae9b67a3ab798f846109735b923e2fe71a21c7db1c401ec2147b4",
+      "zip_crc": 1645054305
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000113.jpg",
+      "bytes": 374446,
+      "sha256": "7c256e1726d095afbfe02bf881b92cfa5a78257ab012632bb4615ebd03b69d1e",
+      "zip_crc": 673542559
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000235.jpg",
+      "bytes": 383734,
+      "sha256": "60a0b6e146e246ece521a7fb07e48c53b551a680564e4a3327a42af7e11e299e",
+      "zip_crc": 4097996299
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000246.jpg",
+      "bytes": 362575,
+      "sha256": "d75bbb2a13193a7441a92552b35061a2f7fade7eab3f216800869036079ec605",
+      "zip_crc": 2021861897
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000344.jpg",
+      "bytes": 341495,
+      "sha256": "2d75218f7f5d04cd3b4ae8f03e8921dd36d80cde70df4e56f5133b8fea68f240",
+      "zip_crc": 3535385156
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000244.jpg",
+      "bytes": 367757,
+      "sha256": "6bdcc5f953cae38a5eb9f36b2d11d6b8dd483c372ac3a4de1075f92b99790e1b",
+      "zip_crc": 4180242126
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000030.jpg",
+      "bytes": 337116,
+      "sha256": "4fb6626b05ce3fd0e5c0876fdae777de3b5b4613bfacca63f5ffaefc68ed16d0",
+      "zip_crc": 272342752
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000249.jpg",
+      "bytes": 356788,
+      "sha256": "6a295ae17daaff1d6fa1c2610007247d59fbf1ce272a434623c989af81b8574e",
+      "zip_crc": 1762458717
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000178.jpg",
+      "bytes": 416466,
+      "sha256": "ae8e6d5092b165b4e2a22c9b9a4c1cc1cd37f729ac644e670bebb41295192c87",
+      "zip_crc": 30504
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000237.jpg",
+      "bytes": 380607,
+      "sha256": "3910b143539ad1838ace61c65af38b665d6bda0c03bf63131d17a90d7d55168f",
+      "zip_crc": 1722010765
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000334.jpg",
+      "bytes": 336005,
+      "sha256": "2ca3194879ffa951f4aac0905d98ff9293533c180f11356f2a9a1d797ce6ebeb",
+      "zip_crc": 456380192
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000122.jpg",
+      "bytes": 385103,
+      "sha256": "b91aa82ecc609763a8abc7c712bc9701e29ca3dc6d27d8d32a420f5b3121f4ec",
+      "zip_crc": 1696324716
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000206.jpg",
+      "bytes": 409763,
+      "sha256": "173de2be355582ba66b174bf865d235b837cc1eb28258bcb28fc6b39664728f3",
+      "zip_crc": 185706749
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000108.jpg",
+      "bytes": 367716,
+      "sha256": "61d111dd7ac662547f3a6a82721313437e877dfcf14aeb54cdaa9d3465a30454",
+      "zip_crc": 3657811967
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000077.jpg",
+      "bytes": 345216,
+      "sha256": "9cf6d0754a24312929ffdea849060229f23530c518dbf40a483a4a00d09e33d4",
+      "zip_crc": 940997755
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000081.jpg",
+      "bytes": 352691,
+      "sha256": "bdc0453ebafbd21f0554abb356f98b6202563c8d3aca88e58510cd73e160e35d",
+      "zip_crc": 1822580549
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000190.jpg",
+      "bytes": 414686,
+      "sha256": "e1d6542bb14966a75153b749c6743ed2b10bae5e0afc8569460d2c7d036fbaef",
+      "zip_crc": 1138581352
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000234.jpg",
+      "bytes": 385276,
+      "sha256": "986d62a5ab29648981fe5c5364201c43105ddd8e16ea49e36853707c6d7ba888",
+      "zip_crc": 3627535952
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000292.jpg",
+      "bytes": 311157,
+      "sha256": "b905d81206c7b20c6fd4d6e96eeeca1ad231a051efa18b72cc2f3ec26f25d899",
+      "zip_crc": 663470181
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000199.jpg",
+      "bytes": 413495,
+      "sha256": "12872fbf091abb3622c9e3381546f750ed63087bea171340e425213b1da849e6",
+      "zip_crc": 4023016879
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000329.jpg",
+      "bytes": 336217,
+      "sha256": "55979a01b5d808731993accb893ed5a2f2daa5009c6bb1ea7d5a0dae4c320022",
+      "zip_crc": 3497372163
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000043.jpg",
+      "bytes": 334610,
+      "sha256": "f76ced881f03a862bdabd8ebb1bc7132d426f3ead9d7aa8904c7dbe8adafaa68",
+      "zip_crc": 3747951756
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000266.jpg",
+      "bytes": 320620,
+      "sha256": "35d17fcc6dd901be29f47cef2098a5e8a23cfb36be2ce05ce5658c6d970f7223",
+      "zip_crc": 1132745996
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000273.jpg",
+      "bytes": 309354,
+      "sha256": "c83f5abfd402befe98abe54225d061d96aa292ba3a7a71eda740dd49bc52c77a",
+      "zip_crc": 3708328631
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000288.jpg",
+      "bytes": 306688,
+      "sha256": "dd599d4613d1d666d72bb2c9f791c176d69cef6b1a91679b5caa9a469e8d983b",
+      "zip_crc": 4064285561
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000296.jpg",
+      "bytes": 316513,
+      "sha256": "477f15501866988dafd028f4224f262269967ac66f1079c2f71facfbc254fc49",
+      "zip_crc": 3555366269
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000332.jpg",
+      "bytes": 335931,
+      "sha256": "2337f6787d621439b17f4308a4fd5608829c4c742724ce5b96f97b16c3ccac86",
+      "zip_crc": 3107528877
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000027.jpg",
+      "bytes": 335603,
+      "sha256": "633eb25bcca293d965b0e02488c42cfe59729889fe37b8a59a566a383385ccff",
+      "zip_crc": 4124017791
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000142.jpg",
+      "bytes": 400524,
+      "sha256": "57ac43847d51aec487e9884b103d0153497df14a4615ec2973e567f1b48ac704",
+      "zip_crc": 801187711
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000058.jpg",
+      "bytes": 339655,
+      "sha256": "2be0668eb0c9baf937fbeac0df517109eee58c61db07a2de0b6162e6e8421f39",
+      "zip_crc": 1017467156
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000121.jpg",
+      "bytes": 385236,
+      "sha256": "1be1ddb0342f2ecb2c66caf866833d27877cd7c5ab6f4d0d480cc5837b1820a8",
+      "zip_crc": 3954965849
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000231.jpg",
+      "bytes": 389059,
+      "sha256": "3b885272f20ddb53acfaffa2982d0101cc44009ba4d87b0bd98cb026f07b3080",
+      "zip_crc": 2689045831
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000051.jpg",
+      "bytes": 337517,
+      "sha256": "7481c10a15a247eedadc6cc146ac9556ef664728049d4a7e733da1bb798312f8",
+      "zip_crc": 3453551375
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000125.jpg",
+      "bytes": 387923,
+      "sha256": "6c3b2b16e10b22b14bbfd756d438f35250e0927c07febf794adc3f78d91b5f76",
+      "zip_crc": 524741982
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000242.jpg",
+      "bytes": 371661,
+      "sha256": "ab63a74c324929884ea22c46df354b2058f4701dd63171478eb485de3bb0ac76",
+      "zip_crc": 429875193
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000204.jpg",
+      "bytes": 411007,
+      "sha256": "e0541140be7d9200f3e69777130916d6f4f5d1fbef63099d3714b385618cb96f",
+      "zip_crc": 2727404961
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000215.jpg",
+      "bytes": 402110,
+      "sha256": "136def6274d10dfdd2f3a5e48ec2b299d55ad6d4ce00257c43f21ba6e0d06a01",
+      "zip_crc": 3718289234
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000048.jpg",
+      "bytes": 336102,
+      "sha256": "a046bb468b0b18d6c4be87bfd406adbb9cbe406be6bc7298a2cb3817a7c8f58f",
+      "zip_crc": 2540630387
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000353.jpg",
+      "bytes": 347956,
+      "sha256": "01578dd9722b98e27a5c7d7399e0ca100af086aa91e14859538dbabb4142e8e2",
+      "zip_crc": 2054457863
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000008.jpg",
+      "bytes": 339110,
+      "sha256": "01ba555890af73a3bbe9887a7f84c4ce2c494cca589bd7db42afc7d334f53dec",
+      "zip_crc": 3359735
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000267.jpg",
+      "bytes": 319277,
+      "sha256": "9743fe329cd33adf2c30e328274eb2b66d042beb884dd4cbe8113f28b84bdb0f",
+      "zip_crc": 4121933743
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000263.jpg",
+      "bytes": 327568,
+      "sha256": "a84d465112b26462416a75446feb1c5eaf7750c6302c8635237aeb799b503f22",
+      "zip_crc": 1397634342
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000187.jpg",
+      "bytes": 415947,
+      "sha256": "c5c8b1cffedfb9934fa0cee7ef64dd88385f2ab040b49d4c810607b7803e96f8",
+      "zip_crc": 252688462
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000176.jpg",
+      "bytes": 415555,
+      "sha256": "a0944aee2bd60ad0ad89a6fa6450ae3b88332106fdd474a3722cb8147461165b",
+      "zip_crc": 2763405386
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000324.jpg",
+      "bytes": 337408,
+      "sha256": "0019b011b7175c210e8908c0a02b2aeae7044fb925f2cb72979a59015f8d743b",
+      "zip_crc": 1982232295
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000309.jpg",
+      "bytes": 331655,
+      "sha256": "f49f5113c8dbf1706b90aad339d5f0de7f33a74a2f5095d26fd66b8b7b315dcf",
+      "zip_crc": 1622638670
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000352.jpg",
+      "bytes": 346931,
+      "sha256": "5587a7e305cf4f4bc4121eba0bbdbeaa9ea9c19b2034321bb3d070cc58b17386",
+      "zip_crc": 1717979932
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000224.jpg",
+      "bytes": 395770,
+      "sha256": "4cdb23677e449033818895add347f9b67b41e3b5d987f4f15671b50e03657e07",
+      "zip_crc": 3368401818
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000227.jpg",
+      "bytes": 393316,
+      "sha256": "52372468cbaa6cce7527678463172d6931f5d0ec50e196a58951e57c32fd45ab",
+      "zip_crc": 2801952455
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000075.jpg",
+      "bytes": 343965,
+      "sha256": "32d1ea020bb43f2fc0a3e3b601d510675350aaf6d224ec676c1dcef0e9b8e5df",
+      "zip_crc": 454959770
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000167.jpg",
+      "bytes": 417900,
+      "sha256": "6f796f8d57a782d501037ec95b02e73a099bb7325434b7f278b0b754ac032b30",
+      "zip_crc": 2110045149
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000159.jpg",
+      "bytes": 413051,
+      "sha256": "ea6cd293b94ef9e6805fe65af15a58657895f78d4ed6ac7ad19b789114df2142",
+      "zip_crc": 2736163305
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000172.jpg",
+      "bytes": 417049,
+      "sha256": "b97f21b50666c09db044189166324bbae619d3ec08be3920c0d99be6a4a483cf",
+      "zip_crc": 2975541757
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000311.jpg",
+      "bytes": 332653,
+      "sha256": "5a9d1e6b94d665466b8b852ebabfedbf180d0af76f55417af4fca3b543e58377",
+      "zip_crc": 523039953
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000314.jpg",
+      "bytes": 334655,
+      "sha256": "dec656c95227f6c21f36999b3a1e7eb6c107b82e8674592e3d00043cb1a36842",
+      "zip_crc": 1162273450
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000331.jpg",
+      "bytes": 335528,
+      "sha256": "a708cee0b8f9ffdd5c49b43c10076d9ccf00b8eed6a5443482b63bde80b1bdc3",
+      "zip_crc": 4111244046
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000194.jpg",
+      "bytes": 414193,
+      "sha256": "78a3e2e5b6fd22affd81596c36d1fbb8b21de2aa114bddc31c4ceaf12b7d8f8f",
+      "zip_crc": 3576174342
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000098.jpg",
+      "bytes": 357588,
+      "sha256": "49a08f38316b3133460bf42ccd0c90cd763090b2f27c85d494b7474bb2877ef9",
+      "zip_crc": 215837058
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000335.jpg",
+      "bytes": 336420,
+      "sha256": "8e64731a5ff811b9275b246adde14b7769672423023c2901a0659695c1a0297a",
+      "zip_crc": 1819547388
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000280.jpg",
+      "bytes": 304091,
+      "sha256": "e03546b2f4b533877ff814c28f10b69a4776de5076411a290fe11f331038d8b1",
+      "zip_crc": 2200741983
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000245.jpg",
+      "bytes": 364650,
+      "sha256": "c2246334794adca725dfdb4e28f93105935904e6088aa3dd3720b5a89c3a8ba0",
+      "zip_crc": 3717183637
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000326.jpg",
+      "bytes": 337019,
+      "sha256": "bcd5f63342814952621502c6bb1fde9fbfd6b7440f47c88b81bb38b07884c56f",
+      "zip_crc": 3553216691
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000302.jpg",
+      "bytes": 324085,
+      "sha256": "f6de985c39d6fbbcc876761704b0e821b0c45075c6569363a022b4c13edca15f",
+      "zip_crc": 263601789
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000307.jpg",
+      "bytes": 329838,
+      "sha256": "354e8f45a6b6585a6d9eade9f4f79479f63ad8eb695301aba2d2c627d560c9fe",
+      "zip_crc": 792590359
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000165.jpg",
+      "bytes": 416973,
+      "sha256": "c5120a4901fd237403bda60335008453d1193df8ab00e329644a424cb9d996f2",
+      "zip_crc": 963376422
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000096.jpg",
+      "bytes": 356858,
+      "sha256": "b90aeb9023d76c3fea88a0ad86362f372a48e3d3d0de954ee852b19c5755e7e2",
+      "zip_crc": 2176938847
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000131.jpg",
+      "bytes": 383845,
+      "sha256": "41f5b99b91896ffd5f24dc03f43b33809eb781dde8ccc0d1b2b033b3925ea598",
+      "zip_crc": 1182634468
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000041.jpg",
+      "bytes": 334080,
+      "sha256": "d3aacb163c58b56c4fae67162dd895e3ef8e58cf4e9c6d9a565ad9be3db1ef1a",
+      "zip_crc": 1302800904
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000116.jpg",
+      "bytes": 380548,
+      "sha256": "1ed9d7086a9361ee2d25e2dad616eb59bbc9ae9206774b366a91295ded312476",
+      "zip_crc": 3419653564
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000069.jpg",
+      "bytes": 341744,
+      "sha256": "d11710713c5285c5b295971f95ba67300f53ef21fdee23c5fb52f44bf2392d20",
+      "zip_crc": 3615398952
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000247.jpg",
+      "bytes": 360534,
+      "sha256": "12d14015fd1715fdd34f75df2c9b08024ddd6aa54f0e38c651188c20e2087075",
+      "zip_crc": 1769792251
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000359.jpg",
+      "bytes": 355415,
+      "sha256": "6b7a6c14d395e788b5a1294d865997ae26f9903f2535afe23aeeb8b3684958a9",
+      "zip_crc": 2486668662
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000056.jpg",
+      "bytes": 339295,
+      "sha256": "ba251ab90000dd801bdf91bc08bd571cf134b2906968ff21829be0bae215d076",
+      "zip_crc": 2564080476
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000017.jpg",
+      "bytes": 332220,
+      "sha256": "e4c34722a5c46440570cc4a7e411002e2d8c1eca1b5935423b7448c88e016494",
+      "zip_crc": 805464511
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000128.jpg",
+      "bytes": 386462,
+      "sha256": "d602afe0a06a069855b0cd41dec7e5d1b93bfc52810fe67b3346ef07b70c0b8c",
+      "zip_crc": 150034392
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000050.jpg",
+      "bytes": 336685,
+      "sha256": "b47233f15b893f9a11bdc934524d35d67c9a5f7406bf44b0cad1640dab8c7c67",
+      "zip_crc": 2100283477
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000104.jpg",
+      "bytes": 362295,
+      "sha256": "c9a1c9bb4f2d8f1d1b0230cec63c5c77624adb33047241fa101e876bb2307c58",
+      "zip_crc": 2567017670
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000345.jpg",
+      "bytes": 342442,
+      "sha256": "cbcca25e8225a6bd7c3f4380f6e82b6ea3960f1f9a913d31c6b49667e18a8ad9",
+      "zip_crc": 2821170122
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000023.jpg",
+      "bytes": 334025,
+      "sha256": "95b2a17e92dc9996b8c0aeabbf89a8f33850fc68d4ead6f0b7784a45f18b25fd",
+      "zip_crc": 4216321516
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000151.jpg",
+      "bytes": 407548,
+      "sha256": "b17b01097820b02361d4929219ac4602b3e7cb3aa1e50efcf57cef8abbc2f02d",
+      "zip_crc": 975300419
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000059.jpg",
+      "bytes": 339705,
+      "sha256": "7450afbbcdb9d933eda944e7c7ad7357e62bb10a1cf7a036d48c1efe7197466a",
+      "zip_crc": 2770117731
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000357.jpg",
+      "bytes": 352925,
+      "sha256": "45df1636221221ae0924a88404cd323448ea0ed255cd9fbf445af464d6b2a244",
+      "zip_crc": 2694866187
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000255.jpg",
+      "bytes": 345053,
+      "sha256": "309ad60459ff8d90490461804299c4a84588708e6c79362afb2e5bcc5fd75bcc",
+      "zip_crc": 1252467930
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000133.jpg",
+      "bytes": 385744,
+      "sha256": "f18c1a05ed0326702c58b7b1b5e4dd04c472feb20884f2fbedd56bfbd013a8e3",
+      "zip_crc": 598097818
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000333.jpg",
+      "bytes": 336320,
+      "sha256": "a79c10a70d7298a2948e3a28f17828b9cc29ad085b046cb111599208667f48b8",
+      "zip_crc": 1451982813
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000078.jpg",
+      "bytes": 345867,
+      "sha256": "3e3a97aba8904153d86eabe42f0b512603dd4c1d828d7ac2493d30d9694b72eb",
+      "zip_crc": 2211995701
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000103.jpg",
+      "bytes": 361532,
+      "sha256": "2a4c050b7882204178277e88cfd83446e75b4c37e1a9e4c7c18a66def84bc770",
+      "zip_crc": 3507145135
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000012.jpg",
+      "bytes": 333935,
+      "sha256": "fb07e170eafad19028637e832c72b6a62a19021eb55064a4c24d663f34fdcb9a",
+      "zip_crc": 510918220
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000269.jpg",
+      "bytes": 315305,
+      "sha256": "7c71db773fe9d51f3c860431b0ca1d157639a0bbb10f2752e4ade397fc768f32",
+      "zip_crc": 20012940
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000060.jpg",
+      "bytes": 340158,
+      "sha256": "440b991c2f18918f63b4c837526a8f77e6b684f90c094b3ff09a8b9ebcf37578",
+      "zip_crc": 3590306966
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000136.jpg",
+      "bytes": 390955,
+      "sha256": "f7a1dfab6ff9d6e604ca9685647a72f4276c026e58b0bcc5ab88850b5c9c0ba0",
+      "zip_crc": 1507190524
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000086.jpg",
+      "bytes": 353810,
+      "sha256": "fd7d3bbb27a67d95f52c8f762a60f802bf95e7d0cc8ef19cb2cc3fd6ec91759b",
+      "zip_crc": 3866330612
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000123.jpg",
+      "bytes": 386715,
+      "sha256": "1f542a5eae2ebf8e15a875e73b45795ae6ffd62011e5edd5b4279676bfa60a31",
+      "zip_crc": 169204314
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000134.jpg",
+      "bytes": 386690,
+      "sha256": "9c6637a1e89403ace90db056c46aaa21f0ce16f6b02a45ec0a80d6f73da1854b",
+      "zip_crc": 4038757979
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000295.jpg",
+      "bytes": 314768,
+      "sha256": "169363f1d51f43bb9a4c0b08652caa299811b1d04cb59d003871920ebb7bb3f0",
+      "zip_crc": 3344289946
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000241.jpg",
+      "bytes": 373415,
+      "sha256": "25d39e7918ca775f8348b295610e195b1b2b7042a80ef66f989ede002bdd12c5",
+      "zip_crc": 1272211047
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000250.jpg",
+      "bytes": 354912,
+      "sha256": "3118d78439d314348307a00c414e28eb5165caa21bc19ffcd4daf6a635b8472c",
+      "zip_crc": 4254804087
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000089.jpg",
+      "bytes": 354669,
+      "sha256": "a9a9a80fdfeb539c556a67dda0623100578d5d878799c6a7396cd529178a5a6e",
+      "zip_crc": 960354825
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000025.jpg",
+      "bytes": 335621,
+      "sha256": "2e46807967a7711c97a763c087a13b6cacd9648031ead20936dcb4ef9930d797",
+      "zip_crc": 2383263220
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000000.jpg",
+      "bytes": 344488,
+      "sha256": "208ff66d25f97abd991829998f164222b705ac5573463eebeeee341a1449f92c",
+      "zip_crc": 1025494139
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000019.jpg",
+      "bytes": 332828,
+      "sha256": "1ed6ec52c0ec1e13eaf97b388feea2b45cfd07ad5ebae2aa094f157cabb88df7",
+      "zip_crc": 3224066835
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000139.jpg",
+      "bytes": 397646,
+      "sha256": "47d29aeafa1d41e441363707621ed52548f8437e25edae628d270ef17ccc2db8",
+      "zip_crc": 1033157034
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000071.jpg",
+      "bytes": 341781,
+      "sha256": "fa496185aa7dbdf818cbb0d065ce5e22a74e9aa0e8477ad82b7f9718067f26bd",
+      "zip_crc": 1662265508
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000130.jpg",
+      "bytes": 384251,
+      "sha256": "23897e2088c72712b2384d2529ee4254bc1dde742d7bf7eb3cf62142dd9707bd",
+      "zip_crc": 1358072443
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000040.jpg",
+      "bytes": 334887,
+      "sha256": "4c47da6afb1f575a76c176cd33ceeb4db141e73b6e47629088dab7eb67a7a9c2",
+      "zip_crc": 193156744
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000253.jpg",
+      "bytes": 349249,
+      "sha256": "7775e0e9485c39133d14d231d6bcb2bed4042834237988ed55c04711da1b7341",
+      "zip_crc": 837957840
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000346.jpg",
+      "bytes": 343197,
+      "sha256": "bbfb7e4ec74bf53047c64e1a074f590293485f54da7a436e71080722f2b48760",
+      "zip_crc": 801678766
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000044.jpg",
+      "bytes": 334407,
+      "sha256": "61d8eef7d0b7186bc83517b34a4d0f84f0c2f539dbb925271e547cc5da152c19",
+      "zip_crc": 295450395
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000035.jpg",
+      "bytes": 336028,
+      "sha256": "3f7d413689ddd476bdbb4f31497df2f33d61fc612921db47201481eb9151306f",
+      "zip_crc": 1931983389
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000109.jpg",
+      "bytes": 368964,
+      "sha256": "e92c322beb58551708096033701dc21be0606503ea5ce0ff7e2a565dc0ee1969",
+      "zip_crc": 1894171360
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000175.jpg",
+      "bytes": 416403,
+      "sha256": "855cee93c534b5090171056fc28f87341d35c4dd70a51489ab73214a74d8ea0d",
+      "zip_crc": 2726749896
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000118.jpg",
+      "bytes": 382337,
+      "sha256": "3f851da84744c429dbf2fd30bcdecfcf80ba064aa5eae5c542b1689397735b25",
+      "zip_crc": 191655151
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000156.jpg",
+      "bytes": 411058,
+      "sha256": "a8ec0561451f9d59f4e14e3cfbce19eef200d4126d9b32b5adf8c3b7b9d8d095",
+      "zip_crc": 1012781913
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000279.jpg",
+      "bytes": 304721,
+      "sha256": "9c3e8abc9dc6de6872b75fe78c975205d543c956c42476330b3fd8375487b9a0",
+      "zip_crc": 333402909
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000007.jpg",
+      "bytes": 340631,
+      "sha256": "a3e91a529115bd4ae193b81b67b8d1ef58ea9f22e8038685f23f606c07d044a4",
+      "zip_crc": 595954631
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000222.jpg",
+      "bytes": 396985,
+      "sha256": "7e961f78b769d8e791457caec27f3a442de39cdde21f5744302d3fd4438c1bdf",
+      "zip_crc": 3077615831
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000225.jpg",
+      "bytes": 395031,
+      "sha256": "b3a5177d76752d125ca6c6dcebb79f19ec5c2ccf4be8230da3e0473375786d5e",
+      "zip_crc": 805170015
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000004.jpg",
+      "bytes": 343033,
+      "sha256": "09f8b54746b4287da986a033c23bfc59e1ff077e3dfc186f77d054fb6624221c",
+      "zip_crc": 1940776341
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000074.jpg",
+      "bytes": 343657,
+      "sha256": "d012de0d2542445d4fee36360903f0b8882b1969c3651415ab580c6523236e59",
+      "zip_crc": 2539036985
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000001.jpg",
+      "bytes": 343822,
+      "sha256": "c9078eab4cd2e51b2ba25dae4ca151d6d096a4743d56df3275b8b46e8b22f910",
+      "zip_crc": 2194934508
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000021.jpg",
+      "bytes": 332966,
+      "sha256": "44007ad39c3008c3bdbe411a8d735da43cfb587c50f80dc40337456d0bc22c40",
+      "zip_crc": 2753338905
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000182.jpg",
+      "bytes": 417652,
+      "sha256": "c1e6f1c72c7c55eb5d065df64d282a30670235f81a44060ae15713c9251b0d9f",
+      "zip_crc": 1138383488
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000196.jpg",
+      "bytes": 413524,
+      "sha256": "1e462b8050c9e75543f66c11bacc9a1b3c71533501edc5e0329eb455f137a56a",
+      "zip_crc": 559163431
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000024.jpg",
+      "bytes": 334500,
+      "sha256": "9f551e65c15a83e8f35ead1d6a1640babb68a75a620b92669b3a2f0ed89f6a41",
+      "zip_crc": 2320230712
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000053.jpg",
+      "bytes": 338003,
+      "sha256": "65afaef0777ab39ecf93e5422190db5fcc31578be2eb67bb438233d5d5681523",
+      "zip_crc": 1123568538
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000120.jpg",
+      "bytes": 385136,
+      "sha256": "0729d80914ef943b1145537e02cc888666c8299a2fc1ba8327b6766272a29c0f",
+      "zip_crc": 1560986469
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000211.jpg",
+      "bytes": 405129,
+      "sha256": "2e859d6361123e3ce28a6d9b35b04b99d991bab53f5368992031eb0bb9b38b85",
+      "zip_crc": 1165975626
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000169.jpg",
+      "bytes": 417774,
+      "sha256": "b6e64ae916b7d0ca52e888c459df431009fee7e9ed5066d92a2b484efd86bbe5",
+      "zip_crc": 2684942432
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000282.jpg",
+      "bytes": 303393,
+      "sha256": "34de531d0a228867656f47aa83a6527649a62598ac97feb378494c2e32399ba4",
+      "zip_crc": 4107748831
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000097.jpg",
+      "bytes": 357408,
+      "sha256": "4fc03f946f65c24d57b7d0a6026703ca83118305fa6a0574a4864b9d9bbb08b9",
+      "zip_crc": 3757633521
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000160.jpg",
+      "bytes": 413800,
+      "sha256": "ae583e23dd7243cae293e2c17c978579e06c8d9f17f19a606b29e72405a18faa",
+      "zip_crc": 3592818302
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000036.jpg",
+      "bytes": 335582,
+      "sha256": "2b0636462294b10ea63b1d70b1f4b956eeacb5441c299de7fdbb796fc07bf5e0",
+      "zip_crc": 2550274460
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000150.jpg",
+      "bytes": 406949,
+      "sha256": "11588eb40ddaff296486d4f0b825f898707f933d49c4c2fa317602e988e9ab95",
+      "zip_crc": 3229441937
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000126.jpg",
+      "bytes": 387779,
+      "sha256": "a2f8a5cbafe6daf274df3cdbda6fd8c7491a5902b8d7d23d1e004dd47b2f6739",
+      "zip_crc": 3027411507
+    },
+    {
+      "path": "data/E0b/Replica/office0/results/frame000009.jpg",
+      "bytes": 337091,
+      "sha256": "279c8a482f244c41bae6f1ea7b24739f4c4ab202f81f7a9f5a57ca9e77731776",
+      "zip_crc": 1501503375
+    },
+    {
+      "path": "data/E0b/Replica/office0/traj.txt",
+      "bytes": 812289,
+      "sha256": "6fdf15ff9a85626e0fd2f5f65ade95cd403d8043054701f3398aaf277d5cf602",
+      "zip_crc": 1032998471
+    }
+  ],
+  "archive_bytes": 12442855671,
+  "archive_etag": "\"2e5a6e8f7-5dbe690e59caa\""
+}
