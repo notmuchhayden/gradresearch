@@ -2,15 +2,15 @@
 
 ## 연구 설계·구현·실험 계획서 v3.0 — GeoGS-SLAM 2026 두 편 검토 반영
 
-- **개정일:** 2026-10-14
-- **상태:** 실험 전 설계 문서. **가설·차별화·재현성·효능을 입증한 문서가 아니다.**
+- **개정일:** 2026-10-20 — E2 결과에 따른 E2b 보완 실험 추가
+- **상태:** 연구 설계 및 단계별 검증 계획. E0/E0b/E1/E2 파일럿은 개별 보고서에 기록했으며, **E2b는 계획 단계이고 E3 이후 효능은 아직 입증하지 않았다.**
 - **상위 문서:** `surface_guided_gaussian_mapping_research_plan_v2.md` (2026-10-13)
 - **제출 계획서 제목(유지 가능):** 연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구
 - **작업용 제목(권장):** **연속 영상 기반 Feed-forward 3DGS에서 증거 신뢰도를 고려한 Gaussian 편입 및 보류 정책의 실험적 평가**
 - **작업용 영문 제목:** *Evidence-Aware Gaussian Admission and Deferral for Feed-Forward 3D Gaussian Mapping from Video*
 - **핵심 연구 범위:** pose 및 Gaussian 후보 풀을 고정하고, 새로운 Gaussian을 전역 Map에 **언제/왜 편입·보류·거부할지**를 연구한다. 광범위한 Gaussians 재최적화, 새로운 SLAM backbone, 일반적인 geometry prior 융합은 핵심 기여에서 제외한다.
 
-> **읽기 안내:** 이 문서의 ‘[논문 사실]’은 아래 두 첨부 논문에 직접 기술된 내용이며, ‘[해석/가설]’과 ‘[제안 실험]’은 본 연구를 위한 새 설계다. 논문에 나오지 않은 기능이나 코드를 제공한다고 가정하지 않는다. 본 문서의 결과표는 계획표이며 측정 결과가 아니다.
+> **읽기 안내:** 이 문서의 ‘[논문 사실]’은 아래 두 첨부 논문에 직접 기술된 내용이며, ‘[해석/가설]’과 ‘[제안 실험]’은 본 연구를 위한 새 설계다. 논문에 나오지 않은 기능이나 코드를 제공한다고 가정하지 않는다. 본 문서의 결과표 서식은 계획표이며, 측정값은 출처를 연결한 파일럿 경과에만 기재한다.
 
 ---
 
@@ -312,7 +312,8 @@ admit(candidate G, evidence available by now):
 | **E0b: Ancestry/causality audit** | self/E1/E2 | source disjoint 가능 후보 비율, parallax, temporal delay, fused contamination | source-분리 관측이 의미 있는 양 존재하거나 pivot |
 | **E1: Error taxonomy** | B1 | GT depth/mesh vs candidate center/ellipsoid/rasterized depth, floaters/duplicates/missing | 실제 outlier가 유의미하게 존재해야 함 |
 | **E2: Signal discriminability** | B2/B5/B6/B7/B8/P1 | GT bad-candidate PR-AUC, high-inlier-recall precision, coverage of evaluable candidates, false rejection | P1이 교차시점 약한 baseline에 유용한 증가분을 보이는지 |
-| **E3: Admission decision** | B6/B7/B8/P1/P2/P3 | GT error, inlier retention, DEFER delay, policy support/unknown | P2/P3가 강한 대조군보다 유용한지 |
+| **E2b: Repeated observations & threshold transfer** | B2/B6/B7/B8/P1, 기존 점수 vs 개발 구간에서 정한 정규화 | 동시 2+ 유효 관측 coverage, 첫 반복 관측까지 지연, 분리된 개발·평가 구간의 정상 보존율·bad recall·정밀도 | 반복 관측과 봉인된 임계값의 유효 거부 운영점을 모두 확보해야 E3 검증 진행 (§8.1) |
+| **E3: Admission decision** | B6/B7/B8/P1/P2/P3 | GT error, inlier retention, DEFER delay, policy support/unknown | E2b 통과 후 실제 정책 비교; P2/P3가 강한 대조군보다 유용한지 |
 | **E4: Matched budget** | B1~B8/P1~P3 | active/resident/sh/MB, PSNR/SSIM/LPIPS, TSDF accuracy/completion | 적어도 사전 정의된 효과 기준에서 비열등/개선 |
 | **E5: Shared-bias synthetic stress** | E0/E2/P2, optional model-disjoint | 공통 depth offset, scale bias, pose error, occlusion, textureless | failure envelope 정량화 |
 | **E6: Causal online replay** | B8/P2/P3, DEFER vs BYPASS | real-time availability, queue age/size, time-to-admit, temporary holes | offline oracle 이득이 online에서도 유지되는지 |
@@ -321,7 +322,21 @@ admit(candidate G, evidence available by now):
 | **E9: Drone pilot/domain shift** | B1/B8/P2 | geometry failure taxonomy, held-out view, scale & rolling shutter | 결과는 정성 또는 독립 GT 가능 시 정량 |
 | **E10 (선택): correction/dedup** | matched controls | soft projection, keep-best, compact VRAM | E4 성공 후 선택 |
 
-**우선순위:** E0 → E0b → E1 → E2 → **Go/No-Go** → E3/E4 → E5/E6 → E7/E8/E9. 첫 8주 안에 강한 baseline 대비 가설의 효용 여부를 판단한다.
+**우선순위:** E0 → E0b → E1 → E2 → **E2b → Go/Revise/No-Go** → E3/E4 → E5/E6 → E7/E8/E9. 첫 8주를 목표로 강한 baseline 대비 가설의 효용 여부를 판단하되, E2b 미통과 시 E3/E4 효능 검증을 앞당기지 않고 일정을 재조정한다.
+
+## 8.1. E2b: 반복 유효 관측 확보 및 임계값 전이 검증
+
+**상태: 계획·미실행.** 상세 절차와 지표·판정 정의는 [E2b 실험 계획](experiments/E2b_repeated_observations_threshold_transfer.md)에 둔다. §4의 증거 등급 `E2 source-disjoint`와 이 절의 실험 ID `E2b`를 구별한다.
+
+**추가 근거:** [E2 단일 장면 파일럿](experiments/E2_signal_discriminability.md)은 좁은 공통 집합의 제한적 AP 기준을 통과했지만, 동시 2+ 유효 plane 관측 후보가 0개였고 개발 임계값을 평가 구간에 적용한 P1 bad recall도 0%였다. E2b는 이 결과를 실패로 소급 재판정하지 않고, **반복 증거를 이용한 유효 거부 운영점을 새 분할에서 검증**한다.
+
+1. **관측 확보:** 더 긴 연속 구간·재방문 시퀀스를 우선 사용한다. 원본 KF 선택·후보 생성·tracking은 유지하며, 별도 raw 관측 풀 확장은 분리된 arm으로 기록한다. 후보 출처와 분리되고 시차·가시성·깊이 경계·평면 신뢰도 조건을 만족하는 **서로 다른 관측 2개 이상이 같은 판단 snapshot에 존재**해야 한다. 과거와 미래 snapshot의 유효 관측 수를 합산하지 않는다. 관측 간 공유 이미지·모델 bias도 별도 기록한다.
+2. **개발·평가 분리:** 기존 office0/E2는 개발·실패 분석용이다. 주 전이 검증은 개발과 평가를 서로 다른 장면으로 나누고, 후보·관측의 원본 이미지/pair가 분할을 가로지르지 않게 한다. 같은 장면의 시간 분할만 가능하면 보조 파일럿으로 명시한다. 입력 RGB는 인과적으로 관측에 사용할 수 있지만 GT와 NVS held-out RGB는 편입 증거로 쓰지 않는다.
+3. **점수·임계값 봉인:** 기존 E2 점수를 기준으로 두고, 정규화 수정은 개발 구간에서만 선택한다. 정상 보존 목표 99%가 주 운영점, 95%는 민감도 분석이다. 관측 자격·최소 시차·patch 조건·정규화·집계·재판정 시점·임계값을 평가 전에 설정/코드 hash와 함께 봉인한다. 평가 결과에 맞춘 수정은 새 개발 iteration이며 새 평가 분할이 필요하다.
+4. **인과적 거부 진단:** 새 KF가 도착할 때만 재평가하고 동일 revision에서 2개 이상 관측의 front/free-space 충돌이 각각 봉인된 기준을 넘을 때만 `would_reject`를 기록한다. 관측 부재·가림·상충 증거는 `UNKNOWN/DEFER`이며 정상·불량으로 치환하지 않는다. E2b는 고정 후보에 대한 거부 가능성 진단이고, 정책별 Map 갱신·실제 DEFER queue·삭제 후 품질 검증은 E3 이후에 수행한다.
+5. **비교·진행 기준:** B2/B6/B7/B8/P1을 동일 후보 공통 집합과 각 방법의 전체 적용 범위에서 비교한다. **계획값**으로 평가 장면별 2+ 관측 coverage ≥1%, 해당 GT-labeled 후보 bad/normal 각각 ≥100개를 요구한다. P1 반복 충돌 운영점은 **전체 및 관측 가능한 normal 보존율 각각 ≥99%, 전체 bad recall ≥1%, 관측 가능한 bad recall ≥5%, GT bad 거부 판정 ≥30개**를 모두 만족해야 한다. 아무것도 거부하지 않는 운영점은 통과가 아니다. 수치는 E2 결과에서 달성한 값이 아니며 새 평가를 열기 전에 봉인한다.
+
+**E3 진행 판단:** 위 관측·운영점·누설 방지 조건을 충족하면 **E3 검증을 위한 GO**로 기록한다. Confidence/B6/B7 대비 추가 이익은 동일 정상 보존 제약과 공통 후보에서 보고하고, 아직 확인되지 않으면 E3의 필수 비교 가설로 유지한다. 이는 연구 전체 GO, 장면 일반화, 실제 Map 품질 개선의 입증이 아니다. 관측 부족 또는 높은 정상 손실/무효한 bad recall이면 **REVISE**, 추가 장면이 없어 시간 분할만 수행했다면 **파일럿 결과만 보고**한다. 평가 장면 중 기준 미달 장면을 제외해 통과시키지 않는다.
 
 ---
 
@@ -387,6 +402,7 @@ Replica 1개 + ScanNet++ 1개(확보 가능한 경우), 드론 짧은 시퀀스 
 3. E0/E1/E2/E4 evidence grade별 eligible candidate 비율과 평가 가능한 면적·시차 분포를 계산.
 4. 공통 후보에서 confidence/self/B6 depth/B7 photometric/B8 DoG/P1 후보 score를 모두 추출 (가능한 후보에 한정).
 5. GT outlier PR-AUC, fixed-inlier-retention에서의 outlier 제거율, false reject, coverage/geometry와의 상관을 비교.
+   - **E2b 보완 단계:** §8.1에 따라 반복 관측을 확보하고 개발·평가 분할을 봉인한 뒤, 정상 보존과 유효 bad recall을 동시에 검증한다. E2의 AP 개선만으로 E3 진행을 확정하지 않는다.
 6. 동일한 naturally achieved budget과 사전등록된 budget-constrained ranking을 **구분해서** 비교. 삽입 수·runtime·queue memory·temporary hole을 기록.
 7. **상관 bias 합성 실험**: 같은 방향으로 모든 pointmap과 Gaussian을 0.1–0.3m 등 다양한 크기로 이동시켜(Eval scale에 맞춘 별도 범위 포함), cross-view consensus가 참이라고 오판하는 조건을 확인. 같은 위치로 pose도 함께 바뀌는 설정과 geometry-only bias를 분리.
 8. 과거 관측만 존재할 때 결과와 미래 관측 허용 oracle 결과를 분리.
@@ -395,7 +411,9 @@ Replica 1개 + ScanNet++ 1개(확보 가능한 경우), 드론 짧은 시퀀스 
 
 | 관측 결과 | 판정 | 조치 |
 |---|---|---|
-| E2 관측이 충분하고 P2/P3가 B6/B7/B8보다 false reject·coverage 제약 하에서 outlier 정밀도를 개선 | **GO** | candidate admission 연구 진행, online replay 통과 시 제목 확정 |
+| E2에서 제한적 ranking 개선은 있으나 2+ 유효 관측 또는 전이된 거부 운영점이 없음 | **REVISE → E2b** | 반복 관측 확보·개발/평가 분리·정규화/임계값 전이를 먼저 검증 |
+| E2b의 관측·정상 보존·bad recall 기준을 봉인된 장면 분할에서 충족 | **GO for E3 validation** | 실제 admission 비교 진행; 연구 전체 GO와 구별 |
+| E2b 관측·전이 조건을 충족하고 E3/E4에서 P2/P3가 B6/B7/B8보다 false reject·coverage 제약 하에서 outlier 정밀도를 개선 | **GO** | candidate admission 연구 진행, online replay 통과 시 제목 확정 |
 | E2는 유용하나 B7과 차이가 없어 photo-only가 사실상 충분 | **REVISE** | 복잡한 PCA/ancestry gate 축소; ‘언제 교차 기하 추가가 필요한가’ 실패 조건 연구로 전환 |
 | B8만으로 중복/메모리 문제가 해결되고 outlier 문제는 작음 | **PIVOT** | outlier 감소로 novelty 주장 중단; admission에서 redundancy 보호/계층화 과제로 수정 |
 | source-disjoint가 불가하거나 공유 bias로 E2가 무력 | **NO-GO for independence claim** | 별도 predictor/원본 RGB 교차검증 또는 문제 범위 변경. 정량 독립성 주장하지 않음 |
@@ -477,6 +495,7 @@ research/
     E0_exports.py
     E1_error_taxonomy.py
     E2_score_ablation.py
+    E2b_observation_threshold_transfer.py
     E3_decision_ablation.py
     E4_matched_budget.py
     E5_correlated_bias.py
@@ -485,7 +504,7 @@ research/
   configs/  results/  tests/
 ```
 
-구현에 필요한 원본 저장소 CLI와 tensor 형태는 아직 확인되지 않았다. 위 디렉터리와 인터페이스는 제안 구조다.
+위 디렉터리와 인터페이스는 제안 구조다. E0–E2에서 확인한 실제 CLI·tensor·구현 경로는 각 실험 보고서와 실행 manifest를 따른다. E2b 항목은 추가할 모듈의 역할을 나타내며 구현 완료를 뜻하지 않는다.
 
 ## 12.2. 기록 자료구조(최소 계약)
 
@@ -554,8 +573,8 @@ class Decision:
 | **1–2주** | repo/weight/환경 고정, candidate+raw/fused exports, Replica GT evaluator | E0, A/B 논문 주장 구분표, candidate provenance 1개 장면 검증 |
 | **3–4주** | drone 1–2 short pilots, source disjoint 추적, simulated visibility test, basic DoG B8 | 독립성 계층표·source availability·B8 preview |
 | **5–6주** | geometric depth/reprojection B6, masked RGB reprojection B7, confidence/self baselines | B1–B8 공정 baseline score, GT precision/coverage |
-| **7–8주** | P1/P2 gate 및 DEFER vs BYPASS, E1/E2/E3 preliminary | **Go/Revise/No-Go** 결정; 그래프·오판 사례 |
-| **9–10주** | E4 matched-budget + GT rendered depth/TSDF geometry/held-out NVS | strong baseline 대비 Pareto 결과·paired scenes |
+| **7–8주** | E1/E2 결과 점검, E2b 긴/재방문 시퀀스·분리된 개발/평가·반복 관측·임계값 전이 | **E2b Go/Revise/No-Go** 결정; 정상 보존과 유효 bad recall 동시 검증 |
+| **9–10주** | E2b 통과 후 E3 admission/DEFER vs BYPASS, E4 matched-budget + GT rendered depth/TSDF geometry/held-out NVS | strong baseline 대비 정책/Pareto 결과·paired scenes; E2b 미달 시 보완 우선 및 일정 재조정 |
 | **11–12주** | shared-bias synthetic, causal replay, optional E3 model-disjoint | online-eligibility/queue harm, failure envelope |
 | **13주** | 동일 refiner/no refiner/pose revision & compaction | 외생 최적화 영향·resident VRAM 결과 |
 | **14주** | drone extrapolation/viewpoint coverage, long sequences | domain failure/latency 결과 |

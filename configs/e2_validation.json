@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "raw_candidates": 737280,
+  "active_candidates": 705772,
+  "score_gt_reads": "forbidden",
+  "current_or_future_map_in_B8": false,
+  "input_code_and_evaluation_hashes": "PASS",
+  "creation_pose_revisions": [
+    1,
+    43,
+    78,
+    117,
+    157
+  ],
+  "feature_arrays_unchanged_after_integrity_and_plot_revision": "PASS",
+  "development_only_calibration_checks": 108,
+  "independent_sklearn_ap_comparisons": 48,
+  "two_view_eligible": 0,
+  "tests_passed": 25,
+  "recommendation": "REVISE; hold E3/E4",
+  "versions": {
+    "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "opencv": "5.0.0",
+    "torch": "2.13.0+cu132"
+  },
+  "external_covariance_code_sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496"
+}
