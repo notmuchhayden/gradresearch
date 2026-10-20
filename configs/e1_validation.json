@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "frozen_input_and_code_sha256": "PASS",
+  "render_taxonomy_binding": "PASS",
+  "raw_candidates": 737280,
+  "active_candidates": 705772,
+  "label_partitions_and_conservative_front_conditions": "PASS",
+  "taxonomy_even_gt_views": 22,
+  "held_out_odd_render_views_per_arm": 180,
+  "coverage_depth_accuracy_invariants": "PASS",
+  "synthetic_and_integrity_unittests": 16
+}

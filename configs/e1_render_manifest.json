@@ -1,0 +1,18 @@
+{
+  "code": {
+    "path": "scripts/render_e1.py",
+    "sha256": "e8a70a041be64cc29cb20997793aea78499c9f296dd73a0adc0f80bd2af309a4",
+    "bytes": 11276
+  },
+  "taxonomy_sha256": "857eaf87f8079ac1e9c38c0b34cdc1160c520544bc9387e5b7b630a72553695c",
+  "labels_sha256": "0ea1b6f767ee202207cf9054ad86650d490379fa9100e8febabad9b397c6de33",
+  "cuda": "13.2",
+  "torch": "2.13.0+cu132",
+  "gpu": "NVIDIA GeForce RTX 5060",
+  "peak_torch_allocated_bytes": 217153536,
+  "peak_torch_reserved_bytes": 257949696,
+  "environment": {
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2"
+  }
+}

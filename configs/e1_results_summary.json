@@ -1,0 +1,812 @@
+{
+  "specification": {
+    "experiment": "E1 frozen-baseline error taxonomy pilot",
+    "scene": "office0",
+    "baseline_run": "results/E0b_ancestry_causality/extended",
+    "evaluation_dataset": "data/E1/Replica",
+    "output": "results/E1_error_taxonomy",
+    "original_frame_stop_exclusive": 360,
+    "input_subsample": 2,
+    "seed": 0,
+    "evaluation_pose": "final revision 188; one Sim(3) fitted on all 180 mapping-input camera centers only; no geometry fitting",
+    "gt_pose_diagnostic": "replace each anchor rigid pose with GT; retain global-aligned predicted anchor scale; no local GT depth scale fitting",
+    "taxonomy_views": "even original IDs 0,20,...,340 plus all five original KF IDs",
+    "gt_surface_cloud_pixel_stride": 4,
+    "candidate_placement": "active candidates use exact persisted PLY world parameters, verified against original TF32 GPU bake; inactive raw candidates use float64 Sim(3) placement; CPU-vs-Ply placement discrepancy is recorded",
+    "depth_valid_range_m": [
+      0.1,
+      10.0
+    ],
+    "depth_tolerance_abs_m": 0.05,
+    "depth_tolerance_relative": 0.02,
+    "tolerance_rule": "max(abs_m, relative * GT z-depth); pilot operating values fixed before E1 measurements, not tuned performance thresholds",
+    "sensitivity_absolute_tolerances_m": [
+      0.02,
+      0.05,
+      0.1
+    ],
+    "depth_edge_abs_m": 0.05,
+    "depth_edge_relative": 0.02,
+    "depth_edge_dilation_pixels": 2,
+    "ellipsoid_sigma": 3.0,
+    "repeated_front_min_views": 2,
+    "repeated_front_min_parallax_degrees": 1.0,
+    "label_rule": "front: >=2 reliable GT-view front conflicts with >=1 degree angular separation and zero support; valid: >=1 support and zero front conflicts; all other cases ambiguous; behind-surface alone is never front error",
+    "duplicate_distance_m": 0.02,
+    "duplicate_normal_max_angle_degrees": 20.0,
+    "duplicate_rule": "valid center near a valid center from an earlier KF with compatible nearest-GT-surfel normal; spatial redundancy proxy, no removal claim",
+    "projected_footprint": "opacity * 2*pi*sqrt(det(J Sigma J^T + 0.3 I)) at the projected mean; repeated-front ellipsoid subset only; isolated mass proxy without transmittance, separate from actual composited class weights",
+    "render_views": "all 180 odd original frame IDs; E0 validation 1..39, E0 held-out test 41..119, extension held-out diagnostic 121..359",
+    "render_depth": "alpha-weighted expected camera z; covered if composited weight > 0.001",
+    "render_camera": "same compiled upstream rasterizer; E1 evaluation wrapper applies exact fx,fy,cx,cy, including pixel-center convention; older E0 helper assumed centered principal point",
+    "render_coverage_weight_min": 0.001,
+    "split_policy": "no held-out RGB or depth used to build candidate labels, fit alignment, choose thresholds, or update map; odd GT used only for final rendering evaluation",
+    "scope": "single-scene descriptive pilot; center/ellipsoid/footprint are diagnostics, not a strict GT floater oracle; no efficacy, statistical significance, or research-wide GO claim"
+  },
+  "alignment": {
+    "matrix": [
+      [
+        0.9848822446987582,
+        -0.3316734359372985,
+        0.2877497966195382,
+        -0.34797617990066765
+      ],
+      [
+        -0.4368295202033344,
+        -0.668348250736545,
+        0.7247695050843606,
+        -0.649551538238681
+      ],
+      [
+        -0.04457784023440218,
+        -0.7785265551764123,
+        -0.7447882038063495,
+        0.7951252991201176
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "scale": 1.078332161017144,
+    "matched_mapping_input_poses": 180,
+    "ate_rmse_m": 0.03053973309605581,
+    "ate_p95_m": 0.06125663575903506
+  },
+  "final_pose_revision": 188,
+  "intrinsics": [
+    [
+      256.0,
+      0.0,
+      255.78666666666666
+    ],
+    [
+      0.0,
+      255.88235294117646,
+      143.78676470588235
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "rgb_hw": [
+    288,
+    512
+  ],
+  "raw_camera": {
+    "w": 1200,
+    "h": 680,
+    "fx": 600.0,
+    "fy": 600.0,
+    "cx": 599.5,
+    "cy": 339.5,
+    "scale": 6553.5
+  },
+  "resize_hw": [
+    290,
+    512
+  ],
+  "crop_top_left_height_width": [
+    1,
+    0,
+    288,
+    512
+  ],
+  "gpu_baseline_integrity": {
+    "status": "PASS",
+    "active": 705772,
+    "numeric_mode": "original upstream TF32 enabled",
+    "means_max_abs_error": 0.0,
+    "covariance_max_abs_error": 4.656612873077393e-10,
+    "gpu": "NVIDIA GeForce RTX 5060",
+    "ply_sha256": "128910fa1b52257cac3c68b2d503c5c8dd9d5f92fe407831b242d07ead5ac713",
+    "keyframe_dump_sha256": "b39dfcb325068abb00411b1505e7a66735dd0e7ff08b118d5fd834be3af2b51e"
+  },
+  "cpu_placement_vs_persisted": {
+    "mean_max_euclidean_m": 0.0025629268668569166,
+    "covariance_max_abs_m2": 1.5747365585091263e-06
+  },
+  "lineage": [
+    {
+      "anchor_kf": 0,
+      "original_frame_id": 0,
+      "prediction_event_id": "13776_1792394016428798971",
+      "original_source_frame_ids": [
+        0
+      ],
+      "candidate_id_format": "13776_1792394016428798971:self:<pixel_index>",
+      "count": 147456,
+      "active_count": 142432
+    },
+    {
+      "anchor_kf": 1,
+      "original_frame_id": 82,
+      "prediction_event_id": "13776_1792394023840928374",
+      "original_source_frame_ids": [
+        0,
+        82
+      ],
+      "candidate_id_format": "13776_1792394023840928374:self:<pixel_index>",
+      "count": 147456,
+      "active_count": 143776
+    },
+    {
+      "anchor_kf": 2,
+      "original_frame_id": 148,
+      "prediction_event_id": "13776_1792394029908551240",
+      "original_source_frame_ids": [
+        82,
+        148
+      ],
+      "candidate_id_format": "13776_1792394029908551240:self:<pixel_index>",
+      "count": 147456,
+      "active_count": 144323
+    },
+    {
+      "anchor_kf": 3,
+      "original_frame_id": 222,
+      "prediction_event_id": "13776_1792394036402430921",
+      "original_source_frame_ids": [
+        148,
+        222
+      ],
+      "candidate_id_format": "13776_1792394036402430921:self:<pixel_index>",
+      "count": 147456,
+      "active_count": 139540
+    },
+    {
+      "anchor_kf": 4,
+      "original_frame_id": 298,
+      "prediction_event_id": "13776_1792394043076957629",
+      "original_source_frame_ids": [
+        222,
+        298
+      ],
+      "candidate_id_format": "13776_1792394043076957629:self:<pixel_index>",
+      "count": 147456,
+      "active_count": 135701
+    }
+  ],
+  "taxonomy_gt_view_ids": [
+    0,
+    20,
+    40,
+    60,
+    80,
+    82,
+    100,
+    120,
+    140,
+    148,
+    160,
+    180,
+    200,
+    220,
+    222,
+    240,
+    260,
+    280,
+    298,
+    300,
+    320,
+    340
+  ],
+  "gt_surface_samples": 180735,
+  "integrity": {
+    "raw_candidate_identity": "PASS",
+    "final_snapshot_pose_identity": "PASS",
+    "active_count_and_ply_parameter_order": "PASS",
+    "evaluation_data_sha256": "PASS",
+    "baseline_rgb_identity": "PASS"
+  },
+  "arms": {
+    "estimated_pose": {
+      "raw": {
+        "unobserved_or_ambiguous": {
+          "count": 331354,
+          "fraction": 0.44942762586805557
+        },
+        "well_placed_proxy": {
+          "count": 280781,
+          "fraction": 0.38083360460069443
+        },
+        "redundant_but_valid_proxy": {
+          "count": 32647,
+          "fraction": 0.044280327690972225
+        },
+        "repeated_front_error_proxy": {
+          "count": 92498,
+          "fraction": 0.12545844184027777
+        }
+      },
+      "active": {
+        "unobserved_or_ambiguous": {
+          "count": 315072,
+          "fraction": 0.44642179060659815
+        },
+        "well_placed_proxy": {
+          "count": 268883,
+          "fraction": 0.3809771427599848
+        },
+        "redundant_but_valid_proxy": {
+          "count": 31441,
+          "fraction": 0.04454838106357294
+        },
+        "repeated_front_error_proxy": {
+          "count": 90376,
+          "fraction": 0.1280526855698441
+        }
+      },
+      "evaluable_active_fraction": 0.5535782093934019,
+      "center_only_repeated_front_raw": 139940,
+      "center_only_repeated_front_active": 136567,
+      "center_front_but_extent_not_certified_active": 46191,
+      "raw_no_reliable_gt_view": 37932,
+      "active_no_reliable_gt_view": 37351,
+      "nearest_sampled_gt_surface_distance_m": {
+        "n": 705772,
+        "p05": 0.009453792959304158,
+        "median": 0.05606316018950039,
+        "p95": 0.15710043656355047
+      },
+      "center_distance_gt_threshold_fractions": {
+        "0.02": 0.8443066599411708,
+        "0.05": 0.5521825745424868,
+        "0.1": 0.20054776896788198
+      },
+      "repeated_front_opacity_area_max_px2": {
+        "n": 90376,
+        "p05": 3.2049834728240967,
+        "median": 8.190958023071289,
+        "p95": 36.746925354003906
+      },
+      "by_kf": [
+        {
+          "anchor_kf": 0,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 60074,
+              "fraction": 0.4074028862847222
+            },
+            "well_placed_proxy": {
+              "count": 47280,
+              "fraction": 0.3206380208333333
+            },
+            "redundant_but_valid_proxy": {
+              "count": 0,
+              "fraction": 0.0
+            },
+            "repeated_front_error_proxy": {
+              "count": 40102,
+              "fraction": 0.2719590928819444
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 56633,
+              "fraction": 0.397614300157268
+            },
+            "well_placed_proxy": {
+              "count": 45905,
+              "fraction": 0.32229414738261064
+            },
+            "redundant_but_valid_proxy": {
+              "count": 0,
+              "fraction": 0.0
+            },
+            "repeated_front_error_proxy": {
+              "count": 39894,
+              "fraction": 0.2800915524601213
+            }
+          }
+        },
+        {
+          "anchor_kf": 1,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 61509,
+              "fraction": 0.4171346028645833
+            },
+            "well_placed_proxy": {
+              "count": 80297,
+              "fraction": 0.5445488823784722
+            },
+            "redundant_but_valid_proxy": {
+              "count": 949,
+              "fraction": 0.006435818142361111
+            },
+            "repeated_front_error_proxy": {
+              "count": 4701,
+              "fraction": 0.031880696614583336
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 59357,
+              "fraction": 0.4128435900289339
+            },
+            "well_placed_proxy": {
+              "count": 79151,
+              "fraction": 0.5505160805697752
+            },
+            "redundant_but_valid_proxy": {
+              "count": 773,
+              "fraction": 0.005376418873803694
+            },
+            "repeated_front_error_proxy": {
+              "count": 4495,
+              "fraction": 0.031263910527487206
+            }
+          }
+        },
+        {
+          "anchor_kf": 2,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 85430,
+              "fraction": 0.5793592664930556
+            },
+            "well_placed_proxy": {
+              "count": 42200,
+              "fraction": 0.2861870659722222
+            },
+            "redundant_but_valid_proxy": {
+              "count": 3398,
+              "fraction": 0.023044162326388888
+            },
+            "repeated_front_error_proxy": {
+              "count": 16428,
+              "fraction": 0.11140950520833333
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 84644,
+              "fraction": 0.5864900258448065
+            },
+            "well_placed_proxy": {
+              "count": 40177,
+              "fraction": 0.27838251699313343
+            },
+            "redundant_but_valid_proxy": {
+              "count": 3147,
+              "fraction": 0.021805256265460114
+            },
+            "repeated_front_error_proxy": {
+              "count": 16355,
+              "fraction": 0.11332220089659999
+            }
+          }
+        },
+        {
+          "anchor_kf": 3,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 50922,
+              "fraction": 0.3453369140625
+            },
+            "well_placed_proxy": {
+              "count": 71804,
+              "fraction": 0.4869520399305556
+            },
+            "redundant_but_valid_proxy": {
+              "count": 14820,
+              "fraction": 0.10050455729166667
+            },
+            "repeated_front_error_proxy": {
+              "count": 9910,
+              "fraction": 0.06720648871527778
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 47055,
+              "fraction": 0.3372151354450337
+            },
+            "well_placed_proxy": {
+              "count": 68495,
+              "fraction": 0.49086283502938227
+            },
+            "redundant_but_valid_proxy": {
+              "count": 14388,
+              "fraction": 0.10311021929195929
+            },
+            "repeated_front_error_proxy": {
+              "count": 9602,
+              "fraction": 0.06881181023362477
+            }
+          }
+        },
+        {
+          "anchor_kf": 4,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 73419,
+              "fraction": 0.4979044596354167
+            },
+            "well_placed_proxy": {
+              "count": 39200,
+              "fraction": 0.2658420138888889
+            },
+            "redundant_but_valid_proxy": {
+              "count": 13480,
+              "fraction": 0.09141710069444445
+            },
+            "repeated_front_error_proxy": {
+              "count": 21357,
+              "fraction": 0.14483642578125
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 67383,
+              "fraction": 0.49655492590327266
+            },
+            "well_placed_proxy": {
+              "count": 35155,
+              "fraction": 0.2590622029314449
+            },
+            "redundant_but_valid_proxy": {
+              "count": 13133,
+              "fraction": 0.09677894783384057
+            },
+            "repeated_front_error_proxy": {
+              "count": 20030,
+              "fraction": 0.14760392333144193
+            }
+          }
+        }
+      ],
+      "sensitivity": {
+        "0.02": {
+          "conservative_front_active": 106968,
+          "center_front_active": 171656,
+          "center_valid_active": 244238
+        },
+        "0.05": {
+          "conservative_front_active": 90376,
+          "center_front_active": 136567,
+          "center_valid_active": 300324
+        },
+        "0.1": {
+          "conservative_front_active": 46798,
+          "center_front_active": 74852,
+          "center_valid_active": 489807
+        }
+      }
+    },
+    "gt_anchor_pose_diagnostic": {
+      "raw": {
+        "unobserved_or_ambiguous": {
+          "count": 254617,
+          "fraction": 0.34534640842013886
+        },
+        "well_placed_proxy": {
+          "count": 318803,
+          "fraction": 0.43240424262152777
+        },
+        "redundant_but_valid_proxy": {
+          "count": 89288,
+          "fraction": 0.12110460069444444
+        },
+        "repeated_front_error_proxy": {
+          "count": 74572,
+          "fraction": 0.10114474826388889
+        }
+      },
+      "active": {
+        "unobserved_or_ambiguous": {
+          "count": 238900,
+          "fraction": 0.3384945846534008
+        },
+        "well_placed_proxy": {
+          "count": 311415,
+          "fraction": 0.4412402305560436
+        },
+        "redundant_but_valid_proxy": {
+          "count": 82380,
+          "fraction": 0.11672324773439581
+        },
+        "repeated_front_error_proxy": {
+          "count": 73077,
+          "fraction": 0.10354193705615979
+        }
+      },
+      "evaluable_active_fraction": 0.6615054153465992,
+      "center_only_repeated_front_raw": 119833,
+      "center_only_repeated_front_active": 117310,
+      "center_front_but_extent_not_certified_active": 44233,
+      "raw_no_reliable_gt_view": 40242,
+      "active_no_reliable_gt_view": 38901,
+      "nearest_sampled_gt_surface_distance_m": {
+        "n": 705772,
+        "p05": 0.0064293074504671215,
+        "median": 0.046126874503747306,
+        "p95": 0.13892304602936467
+      },
+      "center_distance_gt_threshold_fractions": {
+        "0.02": 0.7429453137840549,
+        "0.05": 0.4599644077690812,
+        "0.1": 0.12239788486933458
+      },
+      "repeated_front_opacity_area_max_px2": {
+        "n": 73077,
+        "p05": 2.7627060413360596,
+        "median": 7.658472537994385,
+        "p95": 30.480815887451172
+      },
+      "by_kf": [
+        {
+          "anchor_kf": 0,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 57344,
+              "fraction": 0.3888888888888889
+            },
+            "well_placed_proxy": {
+              "count": 42712,
+              "fraction": 0.2896592881944444
+            },
+            "redundant_but_valid_proxy": {
+              "count": 0,
+              "fraction": 0.0
+            },
+            "repeated_front_error_proxy": {
+              "count": 47400,
+              "fraction": 0.3214518229166667
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 54077,
+              "fraction": 0.37966889463042014
+            },
+            "well_placed_proxy": {
+              "count": 41200,
+              "fraction": 0.2892608402606156
+            },
+            "redundant_but_valid_proxy": {
+              "count": 0,
+              "fraction": 0.0
+            },
+            "repeated_front_error_proxy": {
+              "count": 47155,
+              "fraction": 0.33107026510896426
+            }
+          }
+        },
+        {
+          "anchor_kf": 1,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 44649,
+              "fraction": 0.30279541015625
+            },
+            "well_placed_proxy": {
+              "count": 101804,
+              "fraction": 0.6904025607638888
+            },
+            "redundant_but_valid_proxy": {
+              "count": 303,
+              "fraction": 0.0020548502604166665
+            },
+            "repeated_front_error_proxy": {
+              "count": 700,
+              "fraction": 0.004747178819444444
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 42682,
+              "fraction": 0.2968645671043846
+            },
+            "well_placed_proxy": {
+              "count": 100435,
+              "fraction": 0.6985519140885822
+            },
+            "redundant_but_valid_proxy": {
+              "count": 234,
+              "fraction": 0.0016275317160026708
+            },
+            "repeated_front_error_proxy": {
+              "count": 425,
+              "fraction": 0.002955987091030492
+            }
+          }
+        },
+        {
+          "anchor_kf": 2,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 65594,
+              "fraction": 0.4448377821180556
+            },
+            "well_placed_proxy": {
+              "count": 45640,
+              "fraction": 0.3095160590277778
+            },
+            "redundant_but_valid_proxy": {
+              "count": 25627,
+              "fraction": 0.1737942165798611
+            },
+            "repeated_front_error_proxy": {
+              "count": 10595,
+              "fraction": 0.07185194227430555
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 65201,
+              "fraction": 0.4517713739320829
+            },
+            "well_placed_proxy": {
+              "count": 44929,
+              "fraction": 0.31130866182105416
+            },
+            "redundant_but_valid_proxy": {
+              "count": 23718,
+              "fraction": 0.16433971023329616
+            },
+            "repeated_front_error_proxy": {
+              "count": 10475,
+              "fraction": 0.0725802540135668
+            }
+          }
+        },
+        {
+          "anchor_kf": 3,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 50108,
+              "fraction": 0.3398166232638889
+            },
+            "well_placed_proxy": {
+              "count": 72452,
+              "fraction": 0.4913465711805556
+            },
+            "redundant_but_valid_proxy": {
+              "count": 19481,
+              "fraction": 0.1321139865451389
+            },
+            "repeated_front_error_proxy": {
+              "count": 5415,
+              "fraction": 0.036722819010416664
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 47820,
+              "fraction": 0.3426974344274043
+            },
+            "well_placed_proxy": {
+              "count": 69582,
+              "fraction": 0.49865271606707756
+            },
+            "redundant_but_valid_proxy": {
+              "count": 16737,
+              "fraction": 0.11994410204959151
+            },
+            "repeated_front_error_proxy": {
+              "count": 5401,
+              "fraction": 0.038705747455926615
+            }
+          }
+        },
+        {
+          "anchor_kf": 4,
+          "raw": {
+            "unobserved_or_ambiguous": {
+              "count": 36922,
+              "fraction": 0.2503933376736111
+            },
+            "well_placed_proxy": {
+              "count": 56195,
+              "fraction": 0.3810967339409722
+            },
+            "redundant_but_valid_proxy": {
+              "count": 43877,
+              "fraction": 0.2975599500868056
+            },
+            "repeated_front_error_proxy": {
+              "count": 10462,
+              "fraction": 0.0709499782986111
+            }
+          },
+          "active": {
+            "unobserved_or_ambiguous": {
+              "count": 29120,
+              "fraction": 0.21458942822823707
+            },
+            "well_placed_proxy": {
+              "count": 55269,
+              "fraction": 0.40728513422892976
+            },
+            "redundant_but_valid_proxy": {
+              "count": 41691,
+              "fraction": 0.30722691800355195
+            },
+            "repeated_front_error_proxy": {
+              "count": 9621,
+              "fraction": 0.07089851953928121
+            }
+          }
+        }
+      ],
+      "sensitivity": {
+        "0.02": {
+          "conservative_front_active": 92116,
+          "center_front_active": 142558,
+          "center_valid_active": 325894
+        },
+        "0.05": {
+          "conservative_front_active": 73077,
+          "center_front_active": 117310,
+          "center_valid_active": 393795
+        },
+        "0.1": {
+          "conservative_front_active": 22912,
+          "center_front_active": 44567,
+          "center_valid_active": 563625
+        }
+      }
+    }
+  },
+  "cross_pose_active_label_disagreement_fraction": 0.4540361476510828,
+  "cross_pose_active_label_contingency": [
+    [
+      157416,
+      104614,
+      32198,
+      20844
+    ],
+    [
+      48209,
+      176403,
+      32052,
+      12219
+    ],
+    [
+      1935,
+      17799,
+      11600,
+      107
+    ],
+    [
+      31340,
+      12599,
+      6530,
+      39907
+    ]
+  ],
+  "cpu_analysis_wall_seconds": 18.596608567000658,
+  "not_measured": [
+    "GT mesh distance / TSDF accuracy-completeness",
+    "admission efficacy / false rejection",
+    "strict per-candidate floater ground truth",
+    "novel-view independence or additional scenes"
+  ]
+}

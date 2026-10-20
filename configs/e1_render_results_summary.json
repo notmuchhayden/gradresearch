@@ -1,0 +1,228 @@
+{
+  "device": "NVIDIA GeForce RTX 5060",
+  "summaries": {
+    "estimated_pose": {
+      "validation": {
+        "n_frames": 20,
+        "aggregation": "unweighted per-frame means; single scene; covered-only L1 accompanies all-GT coverage",
+        "class_weight_partition_max_abs_error": 7.152557373046875e-07,
+        "gt_depth_coverage": 0.9902186786974969,
+        "missing_coverage_fraction": 0.009781321302502963,
+        "depth_correct_coverage": 0.4411175070364376,
+        "depth_l1_m": 0.10887660197913647,
+        "depth_absrel": 0.05718140229582787,
+        "mean_composited_front_class_weight": 0.29646761119365694,
+        "front_class_fraction_of_render_weight": 0.3006255328655243,
+        "interior": {
+          "coverage": 0.9914407825113377,
+          "depth_correct_coverage": 0.4609941693554928,
+          "rendered_too_front_fraction": 0.4277457337391666
+        },
+        "depth_boundary": {
+          "coverage": 0.9782265441477218,
+          "depth_correct_coverage": 0.2437227609045737,
+          "rendered_too_front_fraction": 0.5559838213880038
+        },
+        "sensitivity_depth_correct_coverage": {
+          "0.02": 0.4146480488412407,
+          "0.05": 0.4411175070364376,
+          "0.1": 0.6022124550280429
+        }
+      },
+      "held_out_test": {
+        "n_frames": 40,
+        "aggregation": "unweighted per-frame means; single scene; covered-only L1 accompanies all-GT coverage",
+        "class_weight_partition_max_abs_error": 7.152557373046875e-07,
+        "gt_depth_coverage": 0.9116587146840585,
+        "missing_coverage_fraction": 0.08834128531594147,
+        "depth_correct_coverage": 0.46442273122679173,
+        "depth_l1_m": 0.09963765498250723,
+        "depth_absrel": 0.04766040802933276,
+        "mean_composited_front_class_weight": 0.1632184734568,
+        "front_class_fraction_of_render_weight": 0.17774136671796442,
+        "interior": {
+          "coverage": 0.9112547838956739,
+          "depth_correct_coverage": 0.48365443234162697,
+          "rendered_too_front_fraction": 0.2262355732596825
+        },
+        "depth_boundary": {
+          "coverage": 0.917642588720577,
+          "depth_correct_coverage": 0.2773605788453074,
+          "rendered_too_front_fraction": 0.41579160567006834
+        },
+        "sensitivity_depth_correct_coverage": {
+          "0.02": 0.4265517031402978,
+          "0.05": 0.46442273122679173,
+          "0.1": 0.6334015320179572
+        }
+      },
+      "extension_held_out_diagnostic": {
+        "n_frames": 120,
+        "aggregation": "unweighted per-frame means; single scene; covered-only L1 accompanies all-GT coverage",
+        "class_weight_partition_max_abs_error": 7.152557373046875e-07,
+        "gt_depth_coverage": 0.8805633078152737,
+        "missing_coverage_fraction": 0.11943669218472638,
+        "depth_correct_coverage": 0.3722503462778468,
+        "depth_l1_m": 0.09813847492138544,
+        "depth_absrel": 0.04572138817360004,
+        "mean_composited_front_class_weight": 0.15148655315861106,
+        "front_class_fraction_of_render_weight": 0.18119922261685134,
+        "interior": {
+          "coverage": 0.8777256279892949,
+          "depth_correct_coverage": 0.39490069329591576,
+          "rendered_too_front_fraction": 0.34964294837609095
+        },
+        "depth_boundary": {
+          "coverage": 0.9165340558064367,
+          "depth_correct_coverage": 0.1993365873987196,
+          "rendered_too_front_fraction": 0.5239844878512473
+        },
+        "sensitivity_depth_correct_coverage": {
+          "0.02": 0.27879966412768364,
+          "0.05": 0.3722503462778468,
+          "0.1": 0.6365828603493985
+        }
+      },
+      "all": {
+        "n_frames": 180,
+        "aggregation": "unweighted per-frame means; single scene; covered-only L1 accompanies all-GT coverage",
+        "class_weight_partition_max_abs_error": 7.152557373046875e-07,
+        "gt_depth_coverage": 0.8996573283285839,
+        "missing_coverage_fraction": 0.100342671671416,
+        "depth_correct_coverage": 0.400385005239678,
+        "depth_l1_m": 0.09966475127471817,
+        "depth_absrel": 0.047425616377343736,
+        "mean_composited_front_class_weight": 0.17020265300654702,
+        "front_class_fraction_of_render_weight": 0.19370040022250679,
+        "interior": {
+          "coverage": 0.8978115686931618,
+          "depth_correct_coverage": 0.42196746597936,
+          "rendered_too_front_fraction": 0.33089717450167533
+        },
+        "depth_boundary": {
+          "coverage": 0.9236351173808329,
+          "depth_correct_coverage": 0.221607049220834,
+          "rendered_too_front_fraction": 0.5034971066484026
+        },
+        "sensitivity_depth_correct_coverage": {
+          "0.02": 0.3267277155431042,
+          "0.05": 0.400385005239678,
+          "0.1": 0.632056964573372
+        }
+      }
+    },
+    "gt_anchor_pose_diagnostic": {
+      "validation": {
+        "n_frames": 20,
+        "aggregation": "unweighted per-frame means; single scene; covered-only L1 accompanies all-GT coverage",
+        "class_weight_partition_max_abs_error": 6.556510925292969e-07,
+        "gt_depth_coverage": 0.9815403864897265,
+        "missing_coverage_fraction": 0.01845961351027351,
+        "depth_correct_coverage": 0.44315145160670183,
+        "depth_l1_m": 0.09955442957580089,
+        "depth_absrel": 0.052127589099109174,
+        "mean_composited_front_class_weight": 0.3126599907875061,
+        "front_class_fraction_of_render_weight": 0.31986143440008163,
+        "interior": {
+          "coverage": 0.983669770751367,
+          "depth_correct_coverage": 0.47064247824601485,
+          "rendered_too_front_fraction": 0.49364110325656824
+        },
+        "depth_boundary": {
+          "coverage": 0.9606221814434395,
+          "depth_correct_coverage": 0.17101016061769142,
+          "rendered_too_front_fraction": 0.7701718519644153
+        },
+        "sensitivity_depth_correct_coverage": {
+          "0.02": 0.4243086128680343,
+          "0.05": 0.44315145160670183,
+          "0.1": 0.6215981748817985
+        }
+      },
+      "held_out_test": {
+        "n_frames": 40,
+        "aggregation": "unweighted per-frame means; single scene; covered-only L1 accompanies all-GT coverage",
+        "class_weight_partition_max_abs_error": 6.556510925292969e-07,
+        "gt_depth_coverage": 0.9206873956046217,
+        "missing_coverage_fraction": 0.0793126043953783,
+        "depth_correct_coverage": 0.5446591824830265,
+        "depth_l1_m": 0.08877857271581888,
+        "depth_absrel": 0.04118720181286335,
+        "mean_composited_front_class_weight": 0.14503122637979687,
+        "front_class_fraction_of_render_weight": 0.15702934889122844,
+        "interior": {
+          "coverage": 0.921166249271209,
+          "depth_correct_coverage": 0.5685287741443514,
+          "rendered_too_front_fraction": 0.23946693789900658
+        },
+        "depth_boundary": {
+          "coverage": 0.917587118855276,
+          "depth_correct_coverage": 0.31343956975416143,
+          "rendered_too_front_fraction": 0.5503139477790004
+        },
+        "sensitivity_depth_correct_coverage": {
+          "0.02": 0.5079645620597295,
+          "0.05": 0.5446591824830265,
+          "0.1": 0.7092102854061386
+        }
+      },
+      "extension_held_out_diagnostic": {
+        "n_frames": 120,
+        "aggregation": "unweighted per-frame means; single scene; covered-only L1 accompanies all-GT coverage",
+        "class_weight_partition_max_abs_error": 6.556510925292969e-07,
+        "gt_depth_coverage": 0.8922108975704234,
+        "missing_coverage_fraction": 0.10778910242957658,
+        "depth_correct_coverage": 0.524092428039023,
+        "depth_l1_m": 0.0698174220820268,
+        "depth_absrel": 0.032436177724351485,
+        "mean_composited_front_class_weight": 0.10628560154388349,
+        "front_class_fraction_of_render_weight": 0.12669629817828537,
+        "interior": {
+          "coverage": 0.8905024451142595,
+          "depth_correct_coverage": 0.5570264843592639,
+          "rendered_too_front_fraction": 0.252409008469413
+        },
+        "depth_boundary": {
+          "coverage": 0.9190515765952177,
+          "depth_correct_coverage": 0.27208843522764,
+          "rendered_too_front_fraction": 0.5852744478029831
+        },
+        "sensitivity_depth_correct_coverage": {
+          "0.02": 0.4543631268586109,
+          "0.05": 0.524092428039023,
+          "0.1": 0.7385154686257224
+        }
+      },
+      "all": {
+        "n_frames": 180,
+        "aggregation": "unweighted per-frame means; single scene; covered-only L1 accompanies all-GT coverage",
+        "class_weight_partition_max_abs_error": 6.556510925292969e-07,
+        "gt_depth_coverage": 0.9084645070135012,
+        "missing_coverage_fraction": 0.09153549298649885,
+        "depth_correct_coverage": 0.5196693760896548,
+        "depth_l1_m": 0.07733512305551105,
+        "depth_absrel": 0.03656878434121609,
+        "mean_composited_front_class_weight": 0.13782622809004452,
+        "front_class_fraction_of_render_weight": 0.15489976902802785,
+        "interior": {
+          "coverage": 0.9076685488865935,
+          "depth_correct_coverage": 0.549984325854478,
+          "rendered_too_front_fraction": 0.2763365588745622
+        },
+        "depth_boundary": {
+          "coverage": 0.9233450976361443,
+          "depth_correct_coverage": 0.27004665683242823,
+          "rendered_too_front_fraction": 0.5980496038155906
+        },
+        "sensitivity_depth_correct_coverage": {
+          "0.02": 0.46293516645990657,
+          "0.05": 0.5196693760896548,
+          "0.1": 0.7190123952720455
+        }
+      }
+    }
+  },
+  "smoke": "PASS",
+  "definition": "full-map expected z and transmittance-weighted class opacity; class labels use even GT views only; no policy update",
+  "wall_seconds": 15.8861035609998
+}

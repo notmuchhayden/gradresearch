@@ -1,0 +1,145 @@
+{
+  "specification_sha256": "24a52648a495a07cce4381eef1a4f5e0591784acf2a61b68a4e233e47aa9c9df",
+  "repository_head": "3110a681b43f2a1f6bc0e8252cb0aeb0e5a5dfeb",
+  "inputs": [
+    {
+      "path": "configs/e1_taxonomy.json",
+      "sha256": "24a52648a495a07cce4381eef1a4f5e0591784acf2a61b68a4e233e47aa9c9df",
+      "bytes": 2951
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/run_manifest.json",
+      "sha256": "7d952a426634fc6bfda9f002d8f60ef85efa4da35ea5d241a230e4d81c89ab47",
+      "bytes": 37629
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/audit/events.jsonl",
+      "sha256": "1cebea76f843fb3e8af679b454f6f58789cffb173d4d61fa52c141dbc9576eff",
+      "bytes": 611083
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/audit/snapshots/input000179_final.pt",
+      "sha256": "96a87b1274988f369a84400f47e6f2b7f73a356b7e42bf4896fbe7820a06c40c",
+      "bytes": 11809409
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/map/office0_kfgauss.pt",
+      "sha256": "b39dfcb325068abb00411b1505e7a66735dd0e7ff08b118d5fd834be3af2b51e",
+      "bytes": 64895949
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/map/office0_gaussians.ply",
+      "sha256": "128910fa1b52257cac3c68b2d503c5c8dd9d5f92fe407831b242d07ead5ac713",
+      "bytes": 50110288
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/map/office0_frames.txt",
+      "sha256": "1cbbee93a6ed9acc1cb47fed2acecccc56fac0bfac5bbfe087ba78078cd7cccd",
+      "bytes": 25985
+    },
+    {
+      "path": "configs/e1_replica_download_manifest.json",
+      "sha256": "4da1da0a31173022b3a4a5e483f602a6536bbb08445022277a74a8a1a6cb1bc3",
+      "bytes": 150941
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/exports/raw_pairs/13776_1792394016428798971.pt",
+      "sha256": "14047c4c201ed0231d4b4c6c819df0df4b63646697811ef2443f4ad00be62d6d",
+      "bytes": 21239521
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/exports/raw_pairs/13776_1792394023840928374.pt",
+      "sha256": "55a03c9488ed30d5c83607efd0ed21f1e0550f6c16c3fb91bac89f78d4e5f2cc",
+      "bytes": 21239521
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/exports/raw_pairs/13776_1792394029908551240.pt",
+      "sha256": "5ed7a095c3e6cb7ce038173c23ff8a514a86fb0d863010cecbaf09c19f31a47f",
+      "bytes": 21239521
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/exports/raw_pairs/13776_1792394036402430921.pt",
+      "sha256": "3b5f0f3f743e2e1918c4a20506fdb0dd06ec4712345dcea9a8cb8d1d8a65e45d",
+      "bytes": 21239521
+    },
+    {
+      "path": "results/E0b_ancestry_causality/extended/exports/raw_pairs/13776_1792394043076957629.pt",
+      "sha256": "e743c583964720be197a9040400d36e2715699b3edb1776a55ae739764a58cb4",
+      "bytes": 21239521
+    },
+    {
+      "path": "results/E1_error_taxonomy/baseline_gpu_integrity.json",
+      "sha256": "325f9c7f5df28296e07678f2845530d3c47ed5586cb8d345481ccd4631df45f2",
+      "bytes": 392
+    }
+  ],
+  "code": [
+    {
+      "path": "src/e1_taxonomy.py",
+      "sha256": "09b8c89028b05ad4e0702c570865e302f31276e94c7f4b638b66e3931bbd146d",
+      "bytes": 9880
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f",
+      "bytes": 26184
+    },
+    {
+      "path": "scripts/analyze_e1.py",
+      "sha256": "3bc056cefc2d6077803f591f4f5399e254c1057c532428ce8d543a557faf3ea4",
+      "bytes": 17541
+    },
+    {
+      "path": "scripts/download_e1_gt.py",
+      "sha256": "95a2fa5ee25d40e4becffaaae3d2d1d857af4c4cf1ce961e0a8b6b667cf2c68d",
+      "bytes": 7814
+    },
+    {
+      "path": "scripts/render_e1.py",
+      "sha256": "e8a70a041be64cc29cb20997793aea78499c9f296dd73a0adc0f80bd2af309a4",
+      "bytes": 11276
+    },
+    {
+      "path": "scripts/plot_e1.py",
+      "sha256": "506032de73721fff14310dccb6d1126942aaffe3706f78ed76f58e44b7a9a677",
+      "bytes": 4957
+    },
+    {
+      "path": "scripts/run_e1.sh",
+      "sha256": "b75be054f6beb2cf26748390b73a48dc34e7c14821fd8902addfa9cde14075c2",
+      "bytes": 1152
+    },
+    {
+      "path": "tests/test_e1_taxonomy.py",
+      "sha256": "c9a27737827340f27f840d3a902a4ae499d12d867e56c6521745a01967c2ef5c",
+      "bytes": 5575
+    },
+    {
+      "path": "scripts/check_e1_baseline.py",
+      "sha256": "7ab2798c2fcb69074df9375ef9e5928fc1124ad266d8597bbd19e434ca7760fa",
+      "bytes": 2627
+    },
+    {
+      "path": "tests/test_e1_download.py",
+      "sha256": "a7c64bb9b033639145cbd1f0ffdba2fee2fbd18a645909d6638eb1f17a91768e",
+      "bytes": 1330
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_core/utils/geometry.py",
+      "sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496",
+      "bytes": 5885
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_slam/gaussian_ply_codec.py",
+      "sha256": "db757a82663fdae09c50eea967000e7d80110d3c146c152b0ac998c0ee396b1f",
+      "bytes": 8739
+    }
+  ],
+  "versions": {
+    "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+    "numpy": "2.4.6",
+    "torch": "2.13.0+cu132",
+    "opencv": "5.0.0"
+  },
+  "gt_separation": "evaluation-only; baseline artifacts read-only; no mapper/model execution"
+}
