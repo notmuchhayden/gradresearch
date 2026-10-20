@@ -80,7 +80,7 @@ class RemoteZip(io.RawIOBase):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--scene", default="office0", choices=["office0"])
+    ap.add_argument("--scene", default="office0", choices=["office0", "office1", "office2", "office3", "office4", "room0", "room1", "room2"])
     ap.add_argument("--frames", type=int, default=120)
     ap.add_argument("--destination", type=Path, default=ROOT / "data" / "Replica")
     ap.add_argument("--manifest", type=Path, default=ROOT / "configs" / "e0_replica_download_manifest.json")

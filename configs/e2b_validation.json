@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "scenes": {
+    "office0": {
+      "status": "PASS",
+      "raw": 1622016,
+      "keyframes": 11,
+      "active_ply_vertices": 1547680,
+      "source_causal_pairs_checked": 330
+    },
+    "room0": {
+      "status": "PASS",
+      "raw": 1032192,
+      "keyframes": 7,
+      "active_ply_vertices": 1008252,
+      "source_causal_pairs_checked": 70
+    }
+  },
+  "cross_scene_shared_rgb_hashes": 0,
+  "development_thresholds_recomputed": 36,
+  "sklearn_ap_comparisons": 9,
+  "cumulative_first_crossing": "PASS",
+  "sealed_code": "PASS",
+  "threshold_hash": "1b1ba3e9bf074389ba40396b998319a8f85d86ce90a087af5e03196af5fad8e7",
+  "decision": {
+    "checks": {
+      "repeat_coverage": true,
+      "eligible_bad": true,
+      "eligible_normal": true,
+      "global_normal_retention": true,
+      "eligible_normal_retention": true,
+      "global_bad_recall": true,
+      "eligible_bad_recall": true,
+      "bad_rejected": true,
+      "calibrated": true,
+      "scene_separated": true,
+      "gt_free_features": true,
+      "sealed_thresholds": true
+    },
+    "go_for_e3_validation": true,
+    "status": "GO_FOR_E3_VALIDATION",
+    "research_wide_go": false,
+    "failed_checks": [],
+    "map_admission_executed": false
+  },
+  "code": {
+    "path": "scripts/check_e2b.py",
+    "bytes": 7772,
+    "sha256": "f035016aedded9bd273c8a3f1eeaa2a67d24f87f9073ef847e33e70a149520f4"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "experiment": "E2b repeated observations and sealed threshold transfer",
+  "output": "results/E2b_repeated_observations_threshold_transfer",
+  "scenes": {
+    "office0": {"partition": "development", "original_frame_stop": 1000},
+    "room0": {"partition": "evaluation", "original_frame_stop": 1000}
+  },
+  "selection": "fixed office0 development and room0 evaluation before new GT or scores; no failed-scene replacement",
+  "input_subsample": 2,
+  "keyframe_buffer": 32,
+  "seed": 0,
+  "observation_arm": "longer input interval; raw original KF self branches only; no extra predictor or relaxed masks",
+  "feature_base_config": "configs/e2_discriminability.json",
+  "label_base_config": "configs/e1_taxonomy.json",
+  "methods": ["B2_confidence", "B6_depth_front", "B7_rgb_ncc_region", "B8_dog_redundancy", "P1_second_front_spacing", "P1_second_front_relative", "P1_second_front_spacing_no_veto", "P1_second_front_relative_no_veto", "P1_median_1view"],
+  "primary_method_selection": "development only: among spacing and relative with support veto, maximize global bad recall under 99% global and eligible normal retention; tie prefer spacing",
+  "normalizations": {"spacing": "existing E2 positive front margin / local raw point spacing", "relative": "existing E2 spacing-normalized margin * local spacing / observed point radius"},
+  "repeat_score": "second largest finite per-view front score at same decision revision; >=2 distinct raw events; no union across snapshots",
+  "support_veto": "a finite reliable plane front score of zero from any source-disjoint view vetoes repeated rejection in that snapshot; unknown/occluded views neither reject nor certify support",
+  "decision": "strict score > development threshold at actual KF snapshot; lock first crossing; no actual map deletion; cumulative maximum score used only to calibrate the equivalent any-crossing rule",
+  "normal_retention_targets": [0.99, 0.95],
+  "calibration": "higher quantile of development normal per-candidate cumulative maximum over all causal re-evaluations; missing kept; no eligible development normal => uncalibrated, no GO",
+  "gt_views": "even original frame IDs every 20 frames plus actual original KF IDs; GT never features",
+  "evaluation_pose": "creation snapshot; evaluation-only global Sim3 fitted on mapping trajectory camera centers; GT-anchor sensitivity retains predicted scale",
+  "progress": {"repeat_coverage_min": 0.01, "eligible_bad_min": 100, "eligible_normal_min": 100, "global_normal_retention_min": 0.99, "eligible_normal_retention_min": 0.99, "global_bad_recall_min": 0.01, "eligible_bad_recall_min": 0.05, "bad_rejected_min": 30},
+  "scope": "one development scene and one different evaluation scene; diagnostic would_reject only; E3 decision readiness, not map efficacy or statistical independence",
+  "evaluation_rule": "seal rules and selected development method/thresholds before evaluating room0 labels; every registered evaluation scene retained"
+}

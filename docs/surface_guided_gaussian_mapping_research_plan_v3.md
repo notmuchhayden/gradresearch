@@ -2,8 +2,8 @@
 
 ## 연구 설계·구현·실험 계획서 v3.0 — GeoGS-SLAM 2026 두 편 검토 반영
 
-- **개정일:** 2026-10-20 — E2 결과에 따른 E2b 보완 실험 추가
-- **상태:** 연구 설계 및 단계별 검증 계획. E0/E0b/E1/E2 파일럿은 개별 보고서에 기록했으며, **E2b는 계획 단계이고 E3 이후 효능은 아직 입증하지 않았다.**
+- **개정일:** 2026-10-20 — E2b 보완 실험 및 장면 전이 결과 반영
+- **상태:** 연구 설계 및 단계별 검증 계획. E0/E0b/E1/E2/E2b 파일럿은 개별 보고서에 기록했으며, **E2b는 E3 검증 진행 기준을 통과했다. E3 이후 정책 효능은 아직 입증하지 않았다.**
 - **상위 문서:** `surface_guided_gaussian_mapping_research_plan_v2.md` (2026-10-13)
 - **제출 계획서 제목(유지 가능):** 연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구
 - **작업용 제목(권장):** **연속 영상 기반 Feed-forward 3DGS에서 증거 신뢰도를 고려한 Gaussian 편입 및 보류 정책의 실험적 평가**
@@ -326,7 +326,9 @@ admit(candidate G, evidence available by now):
 
 ## 8.1. E2b: 반복 유효 관측 확보 및 임계값 전이 검증
 
-**상태: 계획·미실행.** 상세 절차와 지표·판정 정의는 [E2b 실험 계획](experiments/E2b_repeated_observations_threshold_transfer.md)에 둔다. §4의 증거 등급 `E2 source-disjoint`와 이 절의 실험 ID `E2b`를 구별한다.
+**상태: 실행 완료(2026-10-20), GO for E3 validation.** 상세 절차와 지표·판정 정의는 [E2b 실험 보고서](experiments/E2b_repeated_observations_threshold_transfer.md)에 둔다. §4의 증거 등급 `E2 source-disjoint`와 이 절의 실험 ID `E2b`를 구별한다.
+
+**측정 경과:** office0 개발 / room0 평가를 각각 원본 1,000프레임·짝수 500입력으로 실행했다. 인과적 재평가 후 동시 2+ 관측 coverage는 **20.58% / 16.14%**였다. 개발에서 선택한 relative 정규화·반대 증거 보호 규칙과 임계값 **0.03581599**를 고정 적용한 room0 결과는 **GT bad 거부 판정 1,107개, normal 오거부 80개, 판정불명 거부 40개**, 전체/2+ 관측 normal 보존 **99.9887% / 99.9444%**, 전체/2+ 관측 bad recall **3.3742% / 31.8286%**로 사전 기준을 충족했다. 실제 Map 삭제는 수행하지 않았다. 유한 점수 normal 집합의 보존율은 **98.53%**이며 공통 집합에서 B6/confidence 대비 일관된 우위는 없어, **E3에서 부분집합 위험과 강한 대조군 대비 정책 순이익을 검증**한다. 연구 전체 GO로 확대하지 않는다.
 
 **추가 근거:** [E2 단일 장면 파일럿](experiments/E2_signal_discriminability.md)은 좁은 공통 집합의 제한적 AP 기준을 통과했지만, 동시 2+ 유효 plane 관측 후보가 0개였고 개발 임계값을 평가 구간에 적용한 P1 bad recall도 0%였다. E2b는 이 결과를 실패로 소급 재판정하지 않고, **반복 증거를 이용한 유효 거부 운영점을 새 분할에서 검증**한다.
 

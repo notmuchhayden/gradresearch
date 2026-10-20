@@ -1,0 +1,27 @@
+{
+  "sealed_at_utc": "2026-10-20T08:13:06.616728+00:00",
+  "configuration": {
+    "path": "configs/e2b_observation_transfer.json",
+    "bytes": 2965,
+    "sha256": "8c2147f7962cbb06330483b13697b5fd290dd46b44ff262822f8ce293ff3ed55"
+  },
+  "feature_base": {
+    "path": "configs/e2_discriminability.json",
+    "bytes": 4543,
+    "sha256": "86007883fb06ef02840a327366f6f7440237faab457e0c1a02b4a024a6527a6c"
+  },
+  "label_base": {
+    "path": "configs/e1_taxonomy.json",
+    "bytes": 2951,
+    "sha256": "24a52648a495a07cce4381eef1a4f5e0591784acf2a61b68a4e233e47aa9c9df"
+  },
+  "protocol": {
+    "path": "docs/experiments/E2b_repeated_observations_threshold_transfer.md",
+    "bytes": 13859,
+    "sha256": "95d8e5cf2431be16416a311bfe248d781b63f0e3460b22a48be3cee9a7b294e7"
+  },
+  "evaluation_scene": "room0",
+  "development_scene": "office0",
+  "new_gt_labels_read": false,
+  "stage": "before baselines and new GT label extraction"
+}

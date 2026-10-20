@@ -2,12 +2,13 @@
 
 연속 RGB 영상의 3D Gaussian Map에서 다른 Keyframe의 기하 관측을 이용해 이상 Gaussian의 편입을 억제하는 석사학위 논문 연구 저장소입니다.
 
-현재는 **기준선 실행·관측 출처 감사·GT 오류 분해·신호 판별력 비교 파일럿을 완료한 단계**입니다. RTX 5060 8GB에서 E0, E0b, E1, E2를 수행했으며, 제안 admission 정책의 성능 향상과 독창성은 아직 검증하지 않았습니다.
+현재는 **기준선 실행·관측 출처 감사·GT 오류 분해·신호 판별력·반복 관측 및 임계값 전이 파일럿을 완료한 단계**입니다. RTX 5060 8GB에서 E0, E0b, E1, E2, E2b를 수행했습니다. E2b는 E3 검증 진행 기준을 충족했으며, 제안 admission 정책의 최종 성능 향상과 독창성은 아직 검증하지 않았습니다.
 
 - [E0: 기준선 재현·export·GT 평가](docs/experiments/E0_baseline_reproduction.md)
 - [E0b: 관측 출처·융합 ancestry·판단 시점 감사](docs/experiments/E0b_ancestry_causality_audit.md) — 180입력/5-KF 실행 완료. 반복 교차관측 가용성은 추가 확인이 필요합니다.
 - [E1: GT 오류 taxonomy·pose 민감도·held-out 깊이 평가](docs/experiments/E1_error_taxonomy.md) — 원본 active 후보의 반복 front 오류 proxy 12.81%, GT-anchor 진단 10.35%.
-- [E2: confidence·교차 깊이/RGB·DoG·plane 판별력 비교](docs/experiments/E2_signal_discriminability.md) — 좁은 공통 집합에서 P1 AP 0.4268, confidence 0.4830. P1 개발 임계값의 시간 평가 거절 0개, 유효 2-view 후보 0개. E3 진행은 관측 확보·임계값 전이 검증까지 보류합니다.
+- [E2: confidence·교차 깊이/RGB·DoG·plane 판별력 비교](docs/experiments/E2_signal_discriminability.md) — 좁은 공통 집합에서 P1 AP 0.4268, confidence 0.4830. P1 개발 임계값의 시간 평가 거절 0개, 유효 2-view 후보 0개로 후속 보완이 필요했습니다.
+- [E2b: 반복 유효 관측·개발/평가 장면 간 임계값 전이](docs/experiments/E2b_repeated_observations_threshold_transfer.md) — office0 개발 → room0 평가. 반복 관측 coverage 16.14%, GT bad 1,107개 거부 판정, 정상 보존 99.99%, 전체 bad recall 3.37%. **E3 검증 진행 가능**이며 대조군 우위와 실제 Map 품질은 추가 검증합니다.
 
 ## 연구 계획
 
