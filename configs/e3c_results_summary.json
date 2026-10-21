@@ -1,0 +1,154 @@
+{
+  "status": "GO_FOR_E4",
+  "go_for_e4": true,
+  "research_wide_go": false,
+  "fresh_scene": "room2",
+  "fresh_passed": true,
+  "regression_safety": true,
+  "primary_pair": [
+    "D_shared",
+    "P_shared"
+  ],
+  "fresh_comparison": {
+    "shared": {
+      "depth": {
+        "candidates": 70621,
+        "normal": 44904,
+        "bad": 6903,
+        "active": 65575,
+        "rejected": 5046,
+        "bad_rejected": 4971,
+        "normal_rejected": 0,
+        "unknown_rejected": 75,
+        "precision": 1.0,
+        "bad_recall": 0.7201216862233811,
+        "normal_active_retention": 1.0,
+        "finite_normal_retention": 1.0,
+        "finite_normal": 44904,
+        "finite_candidates": 70621,
+        "provisional": 0,
+        "deferred": 0
+      },
+      "plane": {
+        "candidates": 70621,
+        "normal": 44904,
+        "bad": 6903,
+        "active": 65056,
+        "rejected": 5565,
+        "bad_rejected": 5491,
+        "normal_rejected": 0,
+        "unknown_rejected": 74,
+        "precision": 1.0,
+        "bad_recall": 0.7954512530783717,
+        "normal_active_retention": 1.0,
+        "finite_normal_retention": 1.0,
+        "finite_normal": 44904,
+        "finite_candidates": 70621,
+        "provisional": 0,
+        "deferred": 0
+      },
+      "eligible_recall_gain": 0.07532956685499059,
+      "precision_delta": 0.0,
+      "checks": {
+        "both_safe": true,
+        "recall_gain": true,
+        "precision_noninferior": true
+      },
+      "passed": true
+    },
+    "union": {
+      "depth": {
+        "candidates": 67397,
+        "normal": 42243,
+        "bad": 6890,
+        "active": 62352,
+        "rejected": 5045,
+        "bad_rejected": 4970,
+        "normal_rejected": 0,
+        "unknown_rejected": 75,
+        "precision": 1.0,
+        "bad_recall": 0.7213352685050798,
+        "normal_active_retention": 1.0,
+        "finite_normal_retention": 1.0,
+        "finite_normal": 42243,
+        "finite_candidates": 67397,
+        "provisional": 0,
+        "deferred": 0
+      },
+      "plane": {
+        "candidates": 67397,
+        "normal": 42243,
+        "bad": 6890,
+        "active": 61836,
+        "rejected": 5561,
+        "bad_rejected": 5487,
+        "normal_rejected": 0,
+        "unknown_rejected": 74,
+        "precision": 1.0,
+        "bad_recall": 0.7963715529753266,
+        "normal_active_retention": 1.0,
+        "finite_normal_retention": 1.0,
+        "finite_normal": 42243,
+        "finite_candidates": 67397,
+        "provisional": 0,
+        "deferred": 0
+      },
+      "eligible_recall_gain": 0.0750362844702468,
+      "precision_delta": 0.0,
+      "checks": {
+        "both_safe": true,
+        "recall_gain": true,
+        "precision_noninferior": true
+      },
+      "passed": true
+    }
+  },
+  "completed": [
+    "office0",
+    "room0",
+    "room1",
+    "room2"
+  ],
+  "pending": [],
+  "validation": {
+    "path": "results/E3c_matched_evidence/validation.json",
+    "bytes": 3380,
+    "sha256": "3c6669130ceb1e090db7f0222573402213f99b55b465145bbbe36a846148d049"
+  },
+  "seal": {
+    "path": "results/E3c_matched_evidence/seal.json",
+    "bytes": 24186,
+    "sha256": "ee8993b23457b070e8bae7e44bae01e6446cad08026aa85d9f7cf6de8655b662"
+  },
+  "scene_metrics": {
+    "office0": {
+      "path": "results/E3c_matched_evidence/evaluation/office0/metrics.json",
+      "bytes": 148783,
+      "sha256": "590363de6b1d46af22d625e999bc84e68d1fd6b17c78bcf629cb2503c946fc12"
+    },
+    "room0": {
+      "path": "results/E3c_matched_evidence/evaluation/room0/metrics.json",
+      "bytes": 120086,
+      "sha256": "c96ea35330f8ffa69a03f7f7c090a3ff620a0895e64e13ba103c604dfb45195b"
+    },
+    "room1": {
+      "path": "results/E3c_matched_evidence/evaluation/room1/metrics.json",
+      "bytes": 139591,
+      "sha256": "3c56806bacd295d90fcc8612b5b679a0f934006fe904a6d9f6e3186650349376"
+    },
+    "room2": {
+      "path": "results/E3c_matched_evidence/evaluation/room2/metrics.json",
+      "bytes": 119846,
+      "sha256": "b355177240731a602c42ef26e0f536b107424fa0ddd6c1dfd742810aa31b1dc6"
+    }
+  },
+  "next_step": "Conditionally enter a separately registered E4 comparison, retaining D_maskmedian as well as D_shared and P_shared; no broad plane superiority claim",
+  "aggregation_ablation": {
+    "scene": "room2",
+    "depth_method": "D_maskmedian",
+    "plane_extra_bad": 13,
+    "eligible_recall_gain": 0.0018832391713747842,
+    "interpretation": "Secondary ablation, not a replacement for the registered primary test; retain median depth in E4"
+  },
+  "scope": "Single fresh scene passes the registered matched-second-largest comparison; room0 and room1 favor depth. Broad superiority and superiority over median-depth ablation remain unproven."
+}

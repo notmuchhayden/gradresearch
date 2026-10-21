@@ -1,0 +1,868 @@
+{
+  "sealed_at_utc": "2026-10-22T01:35:14.565848+00:00",
+  "specification": {
+    "experiment": "E3c matched causal evidence: radial depth versus plane residual",
+    "output": "results/E3c_matched_evidence",
+    "source": "results/E3c_matched_evidence",
+    "fresh_source": "results/E3c_matched_evidence",
+    "development_scene": "office0",
+    "regression_scenes": [
+      "room0",
+      "room1"
+    ],
+    "fresh_scene": "room2",
+    "fresh_dataset": "data/E3c/Replica",
+    "fresh_original_frames": 1000,
+    "input_subsample": 2,
+    "feature_base_config": "configs/e2_discriminability.json",
+    "label_base_config": "configs/e1_taxonomy.json",
+    "previous_sources": {
+      "office0": "results/E2b_repeated_observations_threshold_transfer",
+      "room0": "results/E2b_repeated_observations_threshold_transfer",
+      "room1": "results/E3b_provisional_admission/fresh"
+    },
+    "datasets": {
+      "office0": "data/E2b/Replica",
+      "room0": "data/E2b/Replica",
+      "room1": "data/E3b/Replica",
+      "room2": "data/E3c/Replica"
+    },
+    "methods": {
+      "B1": {
+        "kind": "original"
+      },
+      "D_native": {
+        "kind": "review",
+        "score": "D_native"
+      },
+      "D_maskmedian": {
+        "kind": "review",
+        "score": "D_maskmedian"
+      },
+      "D_shared": {
+        "kind": "review",
+        "score": "D_shared"
+      },
+      "P_shared": {
+        "kind": "review",
+        "score": "P_shared"
+      },
+      "D_union": {
+        "kind": "review",
+        "score": "D_union"
+      },
+      "P_union": {
+        "kind": "review",
+        "score": "P_union"
+      }
+    },
+    "primary_pair": [
+      "D_shared",
+      "P_shared"
+    ],
+    "sensitivity_pair": [
+      "D_union",
+      "P_union"
+    ],
+    "shared_evidence": "At each actual KF snapshot: source-disjoint, already arrived views; intersection of finite radial-depth and relative-plane scores per view. Both use >=2 views, second-largest score, same plane-zero support veto, relative predicted-radius normalization and identical subgroup calibration. Common mask is applied before aggregation, never from future eligibility.",
+    "support_sensitivity": "Both D_union and P_union veto if ANY shared view has depth==0 OR plane==0. This tests dependence on the primary plane-defined support veto.",
+    "ablation": "D_native reproduces original B6 median. D_maskmedian uses the shared view mask, >=2 count and shared plane support veto but median aggregation. Shared gates inherit PCA quality; this is a conditional score comparison, not a PCA-free depth baseline or computational advantage claim.",
+    "risk_calibration": {
+      "normal_retention": 0.99,
+      "anchor_group_min_normal": 100,
+      "mandatory_groups": [
+        "own finite normal",
+        "shared-pair ever-finite normal"
+      ],
+      "selection": "office0 cumulative maximum; maximum higher quantile across mandatory groups and each anchor with >=100 finite normals; strict >; unobserved kept"
+    },
+    "admission": "E3b immediate provisional rendering, absorbing rejection, actual snapshot review; no DEFER, no map or pose reoptimization",
+    "render_frames": [
+      1,
+      101,
+      201,
+      301,
+      401,
+      501,
+      601,
+      701,
+      801,
+      901,
+      999
+    ],
+    "progress": {
+      "normal_retention_min": 0.99,
+      "bad_recall_min": 0.01,
+      "bad_rejected_min": 30,
+      "eligible_recall_gain_min": 0.02,
+      "precision_loss_max": 0.001,
+      "coverage_loss_max": 0.005,
+      "depth_l1_increase_max_m": 0.005
+    },
+    "decision": "E3c-specific prospective criterion, not a retroactive E3b pass: on fresh room2 both primary methods must pass risk/coverage/nontrivial rejection constraints, P must improve bad recall on their identical ever-finite cohort by >=2 percentage points with precision loss <=0.1 percentage point. Union sensitivity must have positive P recall gain and both pass safety. Regressions can falsify portability. Failure keeps E4 on hold; report score benefit as unsupported, not a hole-repair failure.",
+    "scope": "office0 development; room0 and room1 previously inspected regressions; room2 is a single fresh scene selected before E3c extraction or GT inspection; no multi-scene generalization claim",
+    "seed": 0
+  },
+  "thresholds": {
+    "B1": null,
+    "D_native": 0.13260461390018463,
+    "D_maskmedian": 0.10340332984924316,
+    "D_shared": 0.10027958452701569,
+    "P_shared": 0.056065499782562256,
+    "D_union": 0.10029378533363342,
+    "P_union": 0.05626993626356125
+  },
+  "calibration": {
+    "D_native": {
+      "threshold": 0.13260461390018463,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 303583,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.12146633863449097
+        },
+        {
+          "group": "common_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.0985678881406784
+        },
+        {
+          "group": "anchor_0",
+          "normal": 25464,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.04251741245388985
+        },
+        {
+          "group": "anchor_1",
+          "normal": 40448,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.06751631945371628
+        },
+        {
+          "group": "anchor_2",
+          "normal": 36486,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.13260461390018463
+        },
+        {
+          "group": "anchor_3",
+          "normal": 43294,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0601201169192791
+        },
+        {
+          "group": "anchor_4",
+          "normal": 14528,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.12736336886882782
+        },
+        {
+          "group": "anchor_5",
+          "normal": 20837,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.12113481014966965
+        },
+        {
+          "group": "anchor_6",
+          "normal": 45627,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.03981894254684448
+        },
+        {
+          "group": "anchor_7",
+          "normal": 31789,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.07227125763893127
+        },
+        {
+          "group": "anchor_8",
+          "normal": 6025,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.04144516587257385
+        },
+        {
+          "group": "anchor_9",
+          "normal": 2450,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.07178664952516556
+        },
+        {
+          "group": "anchor_10",
+          "normal": 36635,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.06686633825302124
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    },
+    "D_maskmedian": {
+      "threshold": 0.10340332984924316,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.06732935458421707
+        },
+        {
+          "group": "common_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.06732935458421707
+        },
+        {
+          "group": "anchor_0",
+          "normal": 2095,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.04712869971990585
+        },
+        {
+          "group": "anchor_1",
+          "normal": 2400,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.06631225347518921
+        },
+        {
+          "group": "anchor_2",
+          "normal": 5058,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.07912643998861313
+        },
+        {
+          "group": "anchor_3",
+          "normal": 326,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.038230132311582565
+        },
+        {
+          "group": "anchor_4",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_5",
+          "normal": 1502,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.10340332984924316
+        },
+        {
+          "group": "anchor_6",
+          "normal": 18716,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.036454468965530396
+        },
+        {
+          "group": "anchor_7",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_8",
+          "normal": 2045,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.04238243028521538
+        },
+        {
+          "group": "anchor_9",
+          "normal": 796,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.043521057814359665
+        },
+        {
+          "group": "anchor_10",
+          "normal": 364,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.025089465081691742
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    },
+    "D_shared": {
+      "threshold": 0.10027958452701569,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.05323773995041847
+        },
+        {
+          "group": "common_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.05323773995041847
+        },
+        {
+          "group": "anchor_0",
+          "normal": 2095,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.03996971249580383
+        },
+        {
+          "group": "anchor_1",
+          "normal": 2400,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.037442080676555634
+        },
+        {
+          "group": "anchor_2",
+          "normal": 5058,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.06739306449890137
+        },
+        {
+          "group": "anchor_3",
+          "normal": 326,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.02793765999376774
+        },
+        {
+          "group": "anchor_4",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_5",
+          "normal": 1502,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.10027958452701569
+        },
+        {
+          "group": "anchor_6",
+          "normal": 18716,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.03078414313495159
+        },
+        {
+          "group": "anchor_7",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_8",
+          "normal": 2045,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.009091794490814209
+        },
+        {
+          "group": "anchor_9",
+          "normal": 796,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.03088507242500782
+        },
+        {
+          "group": "anchor_10",
+          "normal": 364,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0212135948240757
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    },
+    "P_shared": {
+      "threshold": 0.056065499782562256,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.0359322726726532
+        },
+        {
+          "group": "common_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.0359322726726532
+        },
+        {
+          "group": "anchor_0",
+          "normal": 2095,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.031185613945126534
+        },
+        {
+          "group": "anchor_1",
+          "normal": 2400,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.023471774533391
+        },
+        {
+          "group": "anchor_2",
+          "normal": 5058,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.046395156532526016
+        },
+        {
+          "group": "anchor_3",
+          "normal": 326,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.017016056925058365
+        },
+        {
+          "group": "anchor_4",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_5",
+          "normal": 1502,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.056065499782562256
+        },
+        {
+          "group": "anchor_6",
+          "normal": 18716,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.024280505254864693
+        },
+        {
+          "group": "anchor_7",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_8",
+          "normal": 2045,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.007832207717001438
+        },
+        {
+          "group": "anchor_9",
+          "normal": 796,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.017751097679138184
+        },
+        {
+          "group": "anchor_10",
+          "normal": 364,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.009828432463109493
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    },
+    "D_union": {
+      "threshold": 0.10029378533363342,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 32533,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.05338495969772339
+        },
+        {
+          "group": "common_finite",
+          "normal": 32533,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.05338495969772339
+        },
+        {
+          "group": "anchor_0",
+          "normal": 1977,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.04012028127908707
+        },
+        {
+          "group": "anchor_1",
+          "normal": 2249,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.03746258467435837
+        },
+        {
+          "group": "anchor_2",
+          "normal": 4824,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.06784635037183762
+        },
+        {
+          "group": "anchor_3",
+          "normal": 297,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.028183430433273315
+        },
+        {
+          "group": "anchor_4",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_5",
+          "normal": 1500,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.10029378533363342
+        },
+        {
+          "group": "anchor_6",
+          "normal": 18712,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.03078414313495159
+        },
+        {
+          "group": "anchor_7",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_8",
+          "normal": 2027,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.009091794490814209
+        },
+        {
+          "group": "anchor_9",
+          "normal": 637,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.03121667541563511
+        },
+        {
+          "group": "anchor_10",
+          "normal": 310,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.019364841282367706
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    },
+    "P_union": {
+      "threshold": 0.05626993626356125,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 32533,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.036263205111026764
+        },
+        {
+          "group": "common_finite",
+          "normal": 32533,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.036263205111026764
+        },
+        {
+          "group": "anchor_0",
+          "normal": 1977,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.03135251626372337
+        },
+        {
+          "group": "anchor_1",
+          "normal": 2249,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.02348548173904419
+        },
+        {
+          "group": "anchor_2",
+          "normal": 4824,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.04650970920920372
+        },
+        {
+          "group": "anchor_3",
+          "normal": 297,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.019004136323928833
+        },
+        {
+          "group": "anchor_4",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_5",
+          "normal": 1500,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.05626993626356125
+        },
+        {
+          "group": "anchor_6",
+          "normal": 18712,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.024280505254864693
+        },
+        {
+          "group": "anchor_7",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_8",
+          "normal": 2027,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.007832207717001438
+        },
+        {
+          "group": "anchor_9",
+          "normal": 637,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.017834626138210297
+        },
+        {
+          "group": "anchor_10",
+          "normal": 310,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.009828432463109493
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    }
+  },
+  "code": [
+    {
+      "path": "configs/e3c_matched_evidence.json",
+      "bytes": 3697,
+      "sha256": "9778cd0790e41a927bd1ec6de4d7886a54c2b0d13952a65098cdef974b8473bd"
+    },
+    {
+      "path": "src/e3c_matched.py",
+      "bytes": 3780,
+      "sha256": "b4c3eee9a96a9b86e700fa60bf65a34b9cf5f221245673e38774d8beedbc098b"
+    },
+    {
+      "path": "scripts/run_e3c.py",
+      "bytes": 16724,
+      "sha256": "934ab81afd2ce20cadd8f516328c65f8defdfe53b580d587275ac8ef5bded584"
+    },
+    {
+      "path": "scripts/score_e3c.py",
+      "bytes": 12156,
+      "sha256": "d2b5bb326dca7ae35287f1836787ae316e871a4cc3b1c91da2f366280c6d616d"
+    },
+    {
+      "path": "scripts/e3c_fresh.py",
+      "bytes": 9017,
+      "sha256": "245425ed3ae88f4bfbb01a971fbf8e0ab19a4a2eef1dfdb2033dde4b4047be43"
+    },
+    {
+      "path": "tests/test_e3c.py",
+      "bytes": 3230,
+      "sha256": "172d2851e672c1082d62e2db1e2ea0f010225f226138885b0855286c3656db80"
+    },
+    {
+      "path": "scripts/run_e3c.sh",
+      "bytes": 1110,
+      "sha256": "fcc89825bf6944478aacb32367a4a867282a0768cf573f7fde09c7f8835daac9"
+    },
+    {
+      "path": "src/e3b_provisional.py",
+      "bytes": 6287,
+      "sha256": "4e0f3f592ddc9e2fb709857f9cced67adeed3bc2318cab36aa63e3cc1f27a5d3"
+    },
+    {
+      "path": "src/e2b_transfer.py",
+      "bytes": 2780,
+      "sha256": "fc60c6b8b3cf4684a228db69005f41d00eee12677df678a897d07064bec0dd8e"
+    },
+    {
+      "path": "src/e2_signals.py",
+      "bytes": 12591,
+      "sha256": "009645ab2c44aa43e8e0f963499ac44b0ad5903f1ab670959b7767632f99d4aa"
+    },
+    {
+      "path": "scripts/score_e2b.py",
+      "bytes": 12331,
+      "sha256": "0e7d22c7d975484cca1c033dc55701d3f3af3ef4af9cc0cc7e79311e777012e8"
+    },
+    {
+      "path": "scripts/score_e2.py",
+      "bytes": 11509,
+      "sha256": "9585dd7ee8874a3b02f5e4fbed44e36b8edeb183224b57f536f83f922d35ea01"
+    },
+    {
+      "path": "scripts/run_e3.py",
+      "bytes": 24154,
+      "sha256": "ab33d6a05f8457724f6b79c8584688b405119af635781e78c631708142526af9"
+    },
+    {
+      "path": "src/e3_cpu_renderer.py",
+      "bytes": 3153,
+      "sha256": "a81f72fd59ddaa9a7675c6ca4366e61aeca1f7838d22ddd4b0ead4804cd8698e"
+    },
+    {
+      "path": "src/e3_splat_cpu.cpp",
+      "bytes": 2324,
+      "sha256": "a85208b579177e9bbc6d2e1ea7fc96119f354b28d72ccfe8e705d1f29245ceb3"
+    },
+    {
+      "path": "src/e1_taxonomy.py",
+      "bytes": 9880,
+      "sha256": "09b8c89028b05ad4e0702c570865e302f31276e94c7f4b638b66e3931bbd146d"
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "bytes": 26184,
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f"
+    },
+    {
+      "path": "src/e0_export.py",
+      "bytes": 2022,
+      "sha256": "e603a840e44707cd305c8bbed7c9d1d45707c7fee20ad42e3ce4c288b50329a5"
+    },
+    {
+      "path": "src/e0b_export.py",
+      "bytes": 5677,
+      "sha256": "61483425938478f9b674e7a2895a7089035ed6680b367d23379b3d3911e640b2"
+    },
+    {
+      "path": "scripts/prepare_e2b_run.py",
+      "bytes": 2905,
+      "sha256": "09ba962ec6e22697e398324092f60a67cc95c4cbf82ef4e3feb703d468d5280b"
+    },
+    {
+      "path": "scripts/download_e3b_replica.py",
+      "bytes": 4060,
+      "sha256": "755d3eb39ea06119e301425acca1d2248a0d752ed6d9156068efaa52ba87928e"
+    },
+    {
+      "path": "scripts/download_e0_replica.py",
+      "bytes": 7685,
+      "sha256": "7634084644fa0c057702ae1aeecb7f63efc91580f4049c8af73168d0e93de884"
+    },
+    {
+      "path": "configs/e2_discriminability.json",
+      "bytes": 4543,
+      "sha256": "86007883fb06ef02840a327366f6f7440237faab457e0c1a02b4a024a6527a6c"
+    },
+    {
+      "path": "configs/e1_taxonomy.json",
+      "bytes": 2951,
+      "sha256": "24a52648a495a07cce4381eef1a4f5e0591784acf2a61b68a4e233e47aa9c9df"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_core/utils/geometry.py",
+      "bytes": 5885,
+      "sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496"
+    }
+  ],
+  "development_inputs": [
+    {
+      "path": "results/E3c_matched_evidence/evaluation/office0/labels.npz",
+      "bytes": 262061,
+      "sha256": "27fb835220df36038ad1371c68cf48b9709196d544a34a95d2b74ccdd36cc8df"
+    },
+    {
+      "path": "results/E3c_matched_evidence/scores/office0/score_manifest.json",
+      "bytes": 10419,
+      "sha256": "fa1eeb75cc4a2ec391399cf18c15fce237ba201e9f95b7168dc7ad20dc69e19c"
+    },
+    {
+      "path": "results/E3c_matched_evidence/protocol_registration.json",
+      "bytes": 4518,
+      "sha256": "e16c430806dd0162c2487a4734cf1bbb321c687b84638a71bd48b95b08f6ffc2"
+    }
+  ],
+  "development_scene": "office0",
+  "development_common_candidates": 190857,
+  "regression_scenes_previously_inspected": [
+    "room0",
+    "room1"
+  ],
+  "fresh_scene": "room2",
+  "fresh_evaluation_read": false,
+  "inherited_renderer_parity": {
+    "path": "results/E3_admission_decision/renderer_parity.json",
+    "bytes": 1349,
+    "sha256": "62c1c67b997f6f3846f31edc556077ad8a00b22883a07cbedcd51505577119c2"
+  }
+}

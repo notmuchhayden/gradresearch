@@ -1,0 +1,36 @@
+{
+  "code": [
+    {
+      "path": "scripts/check_e3c.py",
+      "bytes": 7746,
+      "sha256": "d19ad55a4b129cf05065e9797e82f9ab789730a5c0fbac28c166385e5e2e340e"
+    },
+    {
+      "path": "scripts/report_e3c.py",
+      "bytes": 18887,
+      "sha256": "881a9f3f4f16830f2f41a5004e503933da826a92b05b232c0bada095c1fc2d7b"
+    }
+  ],
+  "report": {
+    "path": "docs/experiments/E3c_matched_evidence.md",
+    "bytes": 14582,
+    "sha256": "b30ad533e65b85b68546850494720aa4abec90158ab8c966024646438573acc2"
+  },
+  "figures": [
+    {
+      "path": "docs/figures/E3c/fresh_coverage.png",
+      "bytes": 147348,
+      "sha256": "a2e4e7ecd1a84304a7b911fce00fbedd7d4b5ba05b0c289c310edb1caca4f4e2"
+    },
+    {
+      "path": "docs/figures/E3c/fresh_depth_error.png",
+      "bytes": 524037,
+      "sha256": "3a5f81d243caff81007177db236480515abeac44a6c592b69686b8c508cb5bd6"
+    },
+    {
+      "path": "docs/figures/E3c/matched_scores.png",
+      "bytes": 86710,
+      "sha256": "5d68800f5102e976b67dd14f73e768ef63149fc55a3be89447d915187454add7"
+    }
+  ]
+}

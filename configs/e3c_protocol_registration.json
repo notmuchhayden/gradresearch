@@ -1,0 +1,109 @@
+{
+  "registered_at_utc": "2026-10-22T01:27:01.616940+00:00",
+  "specification": {
+    "experiment": "E3c matched causal evidence: radial depth versus plane residual",
+    "output": "results/E3c_matched_evidence",
+    "source": "results/E3c_matched_evidence",
+    "fresh_source": "results/E3c_matched_evidence",
+    "development_scene": "office0",
+    "regression_scenes": [
+      "room0",
+      "room1"
+    ],
+    "fresh_scene": "room2",
+    "fresh_dataset": "data/E3c/Replica",
+    "fresh_original_frames": 1000,
+    "input_subsample": 2,
+    "feature_base_config": "configs/e2_discriminability.json",
+    "label_base_config": "configs/e1_taxonomy.json",
+    "previous_sources": {
+      "office0": "results/E2b_repeated_observations_threshold_transfer",
+      "room0": "results/E2b_repeated_observations_threshold_transfer",
+      "room1": "results/E3b_provisional_admission/fresh"
+    },
+    "datasets": {
+      "office0": "data/E2b/Replica",
+      "room0": "data/E2b/Replica",
+      "room1": "data/E3b/Replica",
+      "room2": "data/E3c/Replica"
+    },
+    "methods": {
+      "B1": {
+        "kind": "original"
+      },
+      "D_native": {
+        "kind": "review",
+        "score": "D_native"
+      },
+      "D_maskmedian": {
+        "kind": "review",
+        "score": "D_maskmedian"
+      },
+      "D_shared": {
+        "kind": "review",
+        "score": "D_shared"
+      },
+      "P_shared": {
+        "kind": "review",
+        "score": "P_shared"
+      },
+      "D_union": {
+        "kind": "review",
+        "score": "D_union"
+      },
+      "P_union": {
+        "kind": "review",
+        "score": "P_union"
+      }
+    },
+    "primary_pair": [
+      "D_shared",
+      "P_shared"
+    ],
+    "sensitivity_pair": [
+      "D_union",
+      "P_union"
+    ],
+    "shared_evidence": "At each actual KF snapshot: source-disjoint, already arrived views; intersection of finite radial-depth and relative-plane scores per view. Both use >=2 views, second-largest score, same plane-zero support veto, relative predicted-radius normalization and identical subgroup calibration. Common mask is applied before aggregation, never from future eligibility.",
+    "support_sensitivity": "Both D_union and P_union veto if ANY shared view has depth==0 OR plane==0. This tests dependence on the primary plane-defined support veto.",
+    "ablation": "D_native reproduces original B6 median. D_maskmedian uses the shared view mask, >=2 count and shared plane support veto but median aggregation. Shared gates inherit PCA quality; this is a conditional score comparison, not a PCA-free depth baseline or computational advantage claim.",
+    "risk_calibration": {
+      "normal_retention": 0.99,
+      "anchor_group_min_normal": 100,
+      "mandatory_groups": [
+        "own finite normal",
+        "shared-pair ever-finite normal"
+      ],
+      "selection": "office0 cumulative maximum; maximum higher quantile across mandatory groups and each anchor with >=100 finite normals; strict >; unobserved kept"
+    },
+    "admission": "E3b immediate provisional rendering, absorbing rejection, actual snapshot review; no DEFER, no map or pose reoptimization",
+    "render_frames": [
+      1,
+      101,
+      201,
+      301,
+      401,
+      501,
+      601,
+      701,
+      801,
+      901,
+      999
+    ],
+    "progress": {
+      "normal_retention_min": 0.99,
+      "bad_recall_min": 0.01,
+      "bad_rejected_min": 30,
+      "eligible_recall_gain_min": 0.02,
+      "precision_loss_max": 0.001,
+      "coverage_loss_max": 0.005,
+      "depth_l1_increase_max_m": 0.005
+    },
+    "decision": "E3c-specific prospective criterion, not a retroactive E3b pass: on fresh room2 both primary methods must pass risk/coverage/nontrivial rejection constraints, P must improve bad recall on their identical ever-finite cohort by >=2 percentage points with precision loss <=0.1 percentage point. Union sensitivity must have positive P recall gain and both pass safety. Regressions can falsify portability. Failure keeps E4 on hold; report score benefit as unsupported, not a hole-repair failure.",
+    "scope": "office0 development; room0 and room1 previously inspected regressions; room2 is a single fresh scene selected before E3c extraction or GT inspection; no multi-scene generalization claim",
+    "seed": 0
+  },
+  "spec_sha256": "9778cd0790e41a927bd1ec6de4d7886a54c2b0d13952a65098cdef974b8473bd",
+  "fresh_room2_features_or_labels_read": false,
+  "thresholds": "pending office0-only development; code and thresholds sealed before evaluation"
+}

@@ -1,0 +1,14 @@
+{
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+  "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+  "torch": "2.13.0+cu132",
+  "numpy": "2.4.6",
+  "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "git_head": "f62d1c90a6a4a28434a3fcff6dc2aa3d40808318",
+  "cpu_count": 10,
+  "threads": {
+    "OMP_NUM_THREADS": "4",
+    "torch": 2,
+    "opencv": 2
+  }
+}

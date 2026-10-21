@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "scenes": [
+    {
+      "scene": "office0",
+      "candidates": 1622016,
+      "active": 1547680,
+      "keyframes": 11,
+      "all_snapshot_score_masks_equal": true,
+      "every_admission_replayed_exactly": true,
+      "legacy_score_equivalence": true,
+      "metrics": {
+        "path": "results/E3c_matched_evidence/evaluation/office0/metrics.json",
+        "bytes": 148783,
+        "sha256": "590363de6b1d46af22d625e999bc84e68d1fd6b17c78bcf629cb2503c946fc12"
+      },
+      "baseline_manifest": {
+        "path": "results/E3c_matched_evidence/baselines/office0/run_manifest.json",
+        "bytes": 99757,
+        "sha256": "aae06f5d6a4b98a85bb664ef8eb5c34e4e3f543fe3bf80d161e43def17de7284"
+      }
+    },
+    {
+      "scene": "room0",
+      "candidates": 1032192,
+      "active": 1008252,
+      "keyframes": 7,
+      "all_snapshot_score_masks_equal": true,
+      "every_admission_replayed_exactly": true,
+      "legacy_score_equivalence": true,
+      "metrics": {
+        "path": "results/E3c_matched_evidence/evaluation/room0/metrics.json",
+        "bytes": 120086,
+        "sha256": "c96ea35330f8ffa69a03f7f7c090a3ff620a0895e64e13ba103c604dfb45195b"
+      },
+      "baseline_manifest": {
+        "path": "results/E3c_matched_evidence/baselines/room0/run_manifest.json",
+        "bytes": 98753,
+        "sha256": "e2f740f94053aad864ee33d0d9dbc6ee522c0e3f546e45845bb40c28e6acd399"
+      }
+    },
+    {
+      "scene": "room1",
+      "candidates": 1474560,
+      "active": 1399108,
+      "keyframes": 10,
+      "all_snapshot_score_masks_equal": true,
+      "every_admission_replayed_exactly": true,
+      "legacy_score_equivalence": true,
+      "metrics": {
+        "path": "results/E3c_matched_evidence/evaluation/room1/metrics.json",
+        "bytes": 139591,
+        "sha256": "3c56806bacd295d90fcc8612b5b679a0f934006fe904a6d9f6e3186650349376"
+      },
+      "baseline_manifest": {
+        "path": "results/E3c_matched_evidence/baselines/room1/run_manifest.json",
+        "bytes": 100341,
+        "sha256": "9a88ac631b75e30d09891e000618d5aecde4ac772a60022f04c3696b78185a80"
+      }
+    },
+    {
+      "scene": "room2",
+      "candidates": 1032192,
+      "active": 999190,
+      "keyframes": 7,
+      "all_snapshot_score_masks_equal": true,
+      "every_admission_replayed_exactly": true,
+      "legacy_score_equivalence": false,
+      "metrics": {
+        "path": "results/E3c_matched_evidence/evaluation/room2/metrics.json",
+        "bytes": 119846,
+        "sha256": "b355177240731a602c42ef26e0f536b107424fa0ddd6c1dfd742810aa31b1dc6"
+      },
+      "baseline_manifest": {
+        "path": "results/E3c_matched_evidence/baselines/room2/run_manifest.json",
+        "bytes": 100490,
+        "sha256": "b2e2fc4c77ff5fdb109404fed207a32dc5417250dd0a447dc2a13310bc6684ee"
+      }
+    }
+  ],
+  "tests": 63,
+  "development_thresholds_recomputed": true,
+  "fresh_evaluation_complete": true,
+  "fresh_backbone_weights_config_unchanged": true,
+  "fresh_rgb_hash_disjoint": true,
+  "fresh_labels_after_all_decisions": true,
+  "seal": {
+    "path": "results/E3c_matched_evidence/seal.json",
+    "bytes": 24186,
+    "sha256": "ee8993b23457b070e8bae7e44bae01e6446cad08026aa85d9f7cf6de8655b662"
+  },
+  "verification_code": {
+    "path": "scripts/check_e3c.py",
+    "bytes": 7746,
+    "sha256": "d19ad55a4b129cf05065e9797e82f9ab789730a5c0fbac28c166385e5e2e340e"
+  }
+}

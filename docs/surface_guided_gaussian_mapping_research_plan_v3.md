@@ -2,8 +2,8 @@
 
 ## 연구 설계·구현·실험 계획서 v3.0 — GeoGS-SLAM 2026 두 편 검토 반영
 
-- **개정일:** 2026-10-21 — E3b 임시 편입·부분집합 보정 및 새 room1 평가 반영
-- **상태:** E0/E0b/E1/E2/E2b/E3/E3b 결과는 개별 보고서에 기록했다. **E3b는 hard DEFER 공백과 부분집합 오거부를 보완했으나, 새 room1 공통 후보에서 B6 대비 추가 우위를 확인하지 못해 REVISE다. E4는 보류하고 동일 관측 자격의 B6/plane 비교(E3c)를 먼저 검토한다.**
+- **개정일:** 2026-10-22 — E3c 동일 관측 조건 비교 및 새 room2 평가 반영
+- **상태:** E0/E0b/E1/E2/E2b/E3/E3b/E3c 결과는 개별 보고서에 기록했다. **E3c는 새 room2의 동일 집계 depth/plane 주 비교를 통과해 E4 비교 실험의 진행 조건을 충족했다. room0·room1은 depth에 유리하고 median-depth 대조군과는 근접해 전반적 plane 우위는 미확인이다. E4는 별도 사전 등록과 강한 대조군을 유지해 진행하며 아직 실행하지 않았다.** E3b의 REVISE 판정은 소급 변경하지 않는다.
 - **상위 문서:** `surface_guided_gaussian_mapping_research_plan_v2.md` (2026-10-13)
 - **제출 계획서 제목(유지 가능):** 연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구
 - **작업용 제목(권장):** **연속 영상 기반 Feed-forward 3DGS에서 증거 신뢰도를 고려한 Gaussian 편입 및 보류 정책의 실험적 평가**
@@ -315,6 +315,7 @@ admit(candidate G, evidence available by now):
 | **E2b: Repeated observations & threshold transfer** | B2/B6/B7/B8/P1, 기존 점수 vs 개발 구간에서 정한 정규화 | 동시 2+ 유효 관측 coverage, 첫 반복 관측까지 지연, 분리된 개발·평가 구간의 정상 보존율·bad recall·정밀도 | 반복 관측과 봉인된 임계값의 유효 거부 운영점을 모두 확보해야 E3 검증 진행 (§8.1) |
 | **E3: Admission decision — 실행 완료·REVISE** | B6/B7/B8/P1/P2/P3 | GT error, inlier retention, DEFER delay, policy support/unknown | hard DEFER의 coverage 손실 및 부분집합 오거부로 개선 주장 보류 (§8.2) |
 | **E3b: Provisional admission — 실행 완료·REVISE** | legacy vs 부분집합 보정 B6/B7/B8/P, 시간 지속성 | 정상 active/finite/common 보존, bad recall, 실제 맵 coverage, 새 room1 전이 | 보존·coverage 보완 통과, 공통 후보 B6 대비 추가 우위 미확인 (§8.3); E4 보류 |
+| **E3c: Matched causal evidence — 실행 완료·주 비교 PASS** | 같은 관측별 gate·support veto·집계·위험 보정의 depth/plane, median ablation | office0 개발, room0·room1 회귀, 새 room2 recall·정상 보존·실제 coverage | room2 공통 bad recall +7.53%p, normal 오거부 0개. E4 비교 실험 진입 조건 충족; median-depth 근접·장면별 혼합 결과 (§8.4) |
 | **E4: Matched budget** | B1~B8/P1~P3 | active/resident/sh/MB, PSNR/SSIM/LPIPS, TSDF accuracy/completion | 적어도 사전 정의된 효과 기준에서 비열등/개선 |
 | **E5: Shared-bias synthetic stress** | E0/E2/P2, optional model-disjoint | 공통 depth offset, scale bias, pose error, occlusion, textureless | failure envelope 정량화 |
 | **E6: Causal online replay** | B8/P2/P3, DEFER vs BYPASS | real-time availability, queue age/size, time-to-admit, temporary holes | offline oracle 이득이 online에서도 유지되는지 |
@@ -381,6 +382,25 @@ room1 원본 active 후보는 **1,399,108개**다. P_safe의 유한 점수 후�
 **보완 목표와 추가 우위를 구별한다.** 주 정책은 두 장면에서 정상 보존·bad recall·coverage 기준을 통과했다. 그러나 room1 모든 신호 공통 후보에서 **B6_safe도 정밀도 100%**로 bad **4,966개**를 제거했고 P_safe는 **4,338개**를 제거했다. “모든 강한 대조군보다 정밀도 +2pp”라는 봉인 기준은 충족하지 못했다. B6가 100%일 때 수학적으로 달성 불가능한 조건이지만, 결과를 보고 기준을 바꾸어 GO로 기록하지 않는다. 같은 공통 집합에서 B6의 회수량도 더 많아 추가 정책의 순이익은 아직 입증되지 않았다.
 
 **다음 조치:** E4로 바로 진행하지 않고 **E3c에서 B6와 plane에 동일한 시점별 관측 자격·support veto·위험 보정을 적용**해 점수 자체의 추가 가치를 분리한다. 고정된 공통 후보 진단과 실제 인과적 자격 gate를 혼동하지 않는다. room1을 사후 재튜닝 test로 써 이번 실행을 성공으로 소급하지 않으며, 이후 진행 조건과 새 평가 분할은 별도 봉인한다. 다장면 일반화·통계적 유의성·메모리 또는 실시간 개선·논문 novelty의 입증은 아니다.
+
+---
+
+## 8.4. E3c: 동일 인과적 관측 조건의 depth/plane 비교
+
+**상태: 실행 완료(2026-10-22), 주 비교 PASS / E4 비교 실험에 조건부 진입 가능.** [E3c 보고서](experiments/E3c_matched_evidence.md)에 7개 정책·4장면의 결과와 봉인·재현 명령을 기록했다. office0만 개발에 사용했고 room0·room1은 기존에 살펴본 회귀 장면이다. 새 room2는 원본 1,000프레임/짝수 500입력에서 같은 RTX 5060·backbone·weights·seed·원본 filter로 **7-KF, 원본 active 999,190개**를 생성했다. 모든 admission 결정 후 room2 GT 라벨을 만들었다.
+
+실제 KF 도착 시점마다 관측별 finite depth ∩ finite plane을 먼저 적용했다. 두 점수에 동일한 2개 이상 관측·두 번째 큰 값 집계·plane support veto·예측 radius 정규화·정상 보존 99% 개발 보정을 적용했다. 대칭 union veto도 함께 비교했다. 공통 gate는 PCA 신뢰성 판정을 사용하므로 PCA를 쓰지 않는 순수 depth baseline이라는 주장은 하지 않는다. 미관측은 즉시 렌더 가능한 provisional로 유지했다.
+
+| 새 room2 정책 | GT bad / normal / unknown 제거 | 공통 bad recall | 깊이 coverage | 깊이 L1 |
+|---|---:|---:|---:|---:|
+| B1 원본 | 0 / 0 / 0 | 0% | 87.5044% | 0.116845 m |
+| D_shared | 4,971 / 0 / 75 | 72.0122% | 87.4992% | 0.107259 m |
+| P_shared | 5,491 / 0 / 74 | 79.5451% | 87.4992% | 0.105758 m |
+| D_maskmedian | 5,478 / 0 / 164 | 79.3568% | 87.4992% | 0.106035 m |
+
+primary 공통 후보 70,621개 중 GT bad는 6,903개, normal은 44,904개다. 정밀도는 unknown을 제외하며 주 비교 두 방법 모두 100%다. P_shared의 전체 bad recall은 19.1805%로 공통 후보 recall과 구별한다. 사전 등록한 새 기준은 정상·coverage·깊이 오차·최소 제거 조건을 두 방법 모두 만족하면서 공통 bad recall ≥2%p 개선, 정밀도 손실 ≤0.1%p다. room2에서 **+7.5330%p**, union veto에서 **+7.5036%p**로 통과했다. E3b의 달성 불가능했던 정밀도 +2%p 기준을 소급 변경한 결과가 아니다.
+
+**효과는 장면과 집계에 의존한다.** room0·room1은 동일 조건의 depth가 더 많은 bad를 제거했다. room2에서도 median-depth는 plane과 **bad 13개 / 공통 recall 0.1883%p 차이**이므로 plane의 전반적 우위·추가 복잡성의 실용 가치를 입증한 것은 아니다. 다음 E4는 D_maskmedian·D_shared·P_shared를 모두 유지한 별도 matched-budget 비교로 진행할 수 있다. E4는 이번 실행에 포함하지 않았다. 63개 테스트와 모든 장면의 점수·실제 admission·봉인·입력·모델·지도 무결성 검사는 PASS다.
 
 ---
 
