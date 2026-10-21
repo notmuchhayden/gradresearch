@@ -1,0 +1,111 @@
+{
+  "sealed_code": [
+    {
+      "path": "configs/e3b_provisional.json",
+      "bytes": 3427,
+      "sha256": "c5425ae31721f287d5240a17a34b7406906a55eceb96636887fa6594b8967897"
+    },
+    {
+      "path": "src/e3b_provisional.py",
+      "bytes": 6287,
+      "sha256": "4e0f3f592ddc9e2fb709857f9cced67adeed3bc2318cab36aa63e3cc1f27a5d3"
+    },
+    {
+      "path": "scripts/run_e3b.py",
+      "bytes": 17696,
+      "sha256": "941c1cd8b157aa456aca5d213de9c3f2a3d68187e736943dcccb17c7cf5f7f4c"
+    },
+    {
+      "path": "scripts/run_e3b.sh",
+      "bytes": 1123,
+      "sha256": "2c2d57d2894cd4cd2bbcbfb7793951feee7f1be6b1b02c825eb250542bd1b2a9"
+    },
+    {
+      "path": "scripts/e3b_fresh.py",
+      "bytes": 10207,
+      "sha256": "aaccef209fffacfcbb7b08c6584fa542898c7d980b64b07c4d9085c13705af73"
+    },
+    {
+      "path": "scripts/score_e3b_fresh.py",
+      "bytes": 12511,
+      "sha256": "103a6d2b29de54112a5156d6ce6720e9d140984f1aacb45b2aa8bf195c240af5"
+    },
+    {
+      "path": "tests/test_e3b.py",
+      "bytes": 3816,
+      "sha256": "b8bf87dda3fc2154214e7e8936c60b7f1d987b74b28db1f20118ccd4c0e54bbd"
+    },
+    {
+      "path": "scripts/run_e3.py",
+      "bytes": 24154,
+      "sha256": "ab33d6a05f8457724f6b79c8584688b405119af635781e78c631708142526af9"
+    },
+    {
+      "path": "src/e3_cpu_renderer.py",
+      "bytes": 3153,
+      "sha256": "a81f72fd59ddaa9a7675c6ca4366e61aeca1f7838d22ddd4b0ead4804cd8698e"
+    },
+    {
+      "path": "src/e3_splat_cpu.cpp",
+      "bytes": 2324,
+      "sha256": "a85208b579177e9bbc6d2e1ea7fc96119f354b28d72ccfe8e705d1f29245ceb3"
+    },
+    {
+      "path": "src/e1_taxonomy.py",
+      "bytes": 9880,
+      "sha256": "09b8c89028b05ad4e0702c570865e302f31276e94c7f4b638b66e3931bbd146d"
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "bytes": 26184,
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f"
+    },
+    {
+      "path": "src/e2_signals.py",
+      "bytes": 12591,
+      "sha256": "009645ab2c44aa43e8e0f963499ac44b0ad5903f1ab670959b7767632f99d4aa"
+    },
+    {
+      "path": "scripts/prepare_e2b_run.py",
+      "bytes": 2905,
+      "sha256": "09ba962ec6e22697e398324092f60a67cc95c4cbf82ef4e3feb703d468d5280b"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_core/utils/geometry.py",
+      "bytes": 5885,
+      "sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496"
+    }
+  ],
+  "reporting_code": [
+    {
+      "path": "scripts/check_e3b.py",
+      "bytes": 8954,
+      "sha256": "14a475daba879cd7a346e1d661ae5f4b816a74fc5b92df053788fef1804ff401"
+    },
+    {
+      "path": "scripts/report_e3b.py",
+      "bytes": 26071,
+      "sha256": "6eff6b59a54d7ca035b764a582c84cff16134db17766f843913b16e0534ba813"
+    },
+    {
+      "path": "scripts/download_e3b_replica.py",
+      "bytes": 4060,
+      "sha256": "755d3eb39ea06119e301425acca1d2248a0d752ed6d9156068efaa52ba87928e"
+    }
+  ],
+  "figures": {
+    "path": "results/E3b_provisional_admission/figure_manifest.json",
+    "bytes": 1046,
+    "sha256": "4994411990ec4c7371daedd2cd29c112e75a3df1a0851994b075b4c974dd661b"
+  },
+  "summary": {
+    "path": "results/E3b_provisional_admission/metrics.json",
+    "bytes": 2140,
+    "sha256": "16eb4815d300ac78447ebcf876a048bf42d4228205e5aeb0954da474ffdbc25e"
+  },
+  "validation": {
+    "path": "results/E3b_provisional_admission/validation.json",
+    "bytes": 1148,
+    "sha256": "ab6466f6eb86486f27233e10aa23a080fbf2d468986628ab0a1621e88278f1f6"
+  }
+}

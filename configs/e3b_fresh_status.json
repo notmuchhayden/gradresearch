@@ -1,0 +1,27 @@
+{
+  "scene": "room1",
+  "cuda_available": true,
+  "nvidia_devices": [
+    "nvidia-modeset",
+    "nvidia-uvm-tools",
+    "nvidia-uvm",
+    "nvidia0",
+    "nvidiactl"
+  ],
+  "baseline_present": true,
+  "scores_present": true,
+  "evaluated": true,
+  "status": "COMPLETE",
+  "go_for_e4": false,
+  "reason": "Fresh scene evaluated; E4 decision uses sealed metrics and verified provenance",
+  "resume_commands": [
+    "bash scripts/run_e3b.sh fresh-download",
+    "bash scripts/run_e3b.sh fresh-baseline",
+    "bash scripts/run_e3b.sh fresh-score",
+    "bash scripts/run_e3b.sh replay room1",
+    "bash scripts/run_e3b.sh fresh-labels",
+    "bash scripts/run_e3b.sh evaluate room1",
+    "bash scripts/run_e3b.sh verify",
+    "bash scripts/run_e3b.sh report"
+  ]
+}

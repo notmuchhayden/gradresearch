@@ -2,8 +2,8 @@
 
 ## 연구 설계·구현·실험 계획서 v3.0 — GeoGS-SLAM 2026 두 편 검토 반영
 
-- **개정일:** 2026-10-21 — E3 실제 admission·DEFER 정책 비교 결과 반영
-- **상태:** 연구 설계 및 단계별 검증 계획. E0/E0b/E1/E2/E2b/E3 결과는 개별 보고서에 기록했다. **E2b는 E3 진행 기준을 통과했으나, E3 판정은 REVISE다. hard DEFER의 정상 구조 가용성·coverage 손실이 커 현재 정책의 효능·우위를 입증하지 못했다.**
+- **개정일:** 2026-10-21 — E3b 임시 편입·부분집합 보정 및 새 room1 평가 반영
+- **상태:** E0/E0b/E1/E2/E2b/E3/E3b 결과는 개별 보고서에 기록했다. **E3b는 hard DEFER 공백과 부분집합 오거부를 보완했으나, 새 room1 공통 후보에서 B6 대비 추가 우위를 확인하지 못해 REVISE다. E4는 보류하고 동일 관측 자격의 B6/plane 비교(E3c)를 먼저 검토한다.**
 - **상위 문서:** `surface_guided_gaussian_mapping_research_plan_v2.md` (2026-10-13)
 - **제출 계획서 제목(유지 가능):** 연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구
 - **작업용 제목(권장):** **연속 영상 기반 Feed-forward 3DGS에서 증거 신뢰도를 고려한 Gaussian 편입 및 보류 정책의 실험적 평가**
@@ -314,6 +314,7 @@ admit(candidate G, evidence available by now):
 | **E2: Signal discriminability** | B2/B5/B6/B7/B8/P1 | GT bad-candidate PR-AUC, high-inlier-recall precision, coverage of evaluable candidates, false rejection | P1이 교차시점 약한 baseline에 유용한 증가분을 보이는지 |
 | **E2b: Repeated observations & threshold transfer** | B2/B6/B7/B8/P1, 기존 점수 vs 개발 구간에서 정한 정규화 | 동시 2+ 유효 관측 coverage, 첫 반복 관측까지 지연, 분리된 개발·평가 구간의 정상 보존율·bad recall·정밀도 | 반복 관측과 봉인된 임계값의 유효 거부 운영점을 모두 확보해야 E3 검증 진행 (§8.1) |
 | **E3: Admission decision — 실행 완료·REVISE** | B6/B7/B8/P1/P2/P3 | GT error, inlier retention, DEFER delay, policy support/unknown | hard DEFER의 coverage 손실 및 부분집합 오거부로 개선 주장 보류 (§8.2) |
+| **E3b: Provisional admission — 실행 완료·REVISE** | legacy vs 부분집합 보정 B6/B7/B8/P, 시간 지속성 | 정상 active/finite/common 보존, bad recall, 실제 맵 coverage, 새 room1 전이 | 보존·coverage 보완 통과, 공통 후보 B6 대비 추가 우위 미확인 (§8.3); E4 보류 |
 | **E4: Matched budget** | B1~B8/P1~P3 | active/resident/sh/MB, PSNR/SSIM/LPIPS, TSDF accuracy/completion | 적어도 사전 정의된 효과 기준에서 비열등/개선 |
 | **E5: Shared-bias synthetic stress** | E0/E2/P2, optional model-disjoint | 공통 depth offset, scale bias, pose error, occlusion, textureless | failure envelope 정량화 |
 | **E6: Causal online replay** | B8/P2/P3, DEFER vs BYPASS | real-time availability, queue age/size, time-to-admit, temporary holes | offline oracle 이득이 online에서도 유지되는지 |
@@ -322,7 +323,7 @@ admit(candidate G, evidence available by now):
 | **E9: Drone pilot/domain shift** | B1/B8/P2 | geometry failure taxonomy, held-out view, scale & rolling shutter | 결과는 정성 또는 독립 GT 가능 시 정량 |
 | **E10 (선택): correction/dedup** | matched controls | soft projection, keep-best, compact VRAM | E4 성공 후 선택 |
 
-**우선순위:** E0 → E0b → E1 → E2 → **E2b → Go/Revise/No-Go** → E3/E4 → E5/E6 → E7/E8/E9. 첫 8주를 목표로 강한 baseline 대비 가설의 효용 여부를 판단하되, E2b 미통과 시 E3/E4 효능 검증을 앞당기지 않고 일정을 재조정한다.
+**우선순위:** E0 → E0b → E1 → E2 → **E2b → Go/Revise/No-Go** → E3 → E3b → 동일 관측 자격 보완(E3c) → 조건 충족 후 E4 → E5/E6 → E7/E8/E9. 첫 8주를 목표로 강한 baseline 대비 가설의 효용 여부를 판단하되, 앞 단계 기준 미달 시 이후 효능 검증을 앞당기지 않고 일정을 재조정한다.
 
 ## 8.1. E2b: 반복 유효 관측 확보 및 임계값 전이 검증
 
@@ -344,7 +345,7 @@ admit(candidate G, evidence available by now):
 
 ## 8.2. E3: 실제 admission·DEFER 정책 비교 결과
 
-**상태: 실행 완료(2026-10-21), REVISE.** [E3 실험 보고서](experiments/E3_admission_decision.md)에 정책 정의·봉인·원본 active 후보 범위·결과·재현 명령을 기록했다. 기존 office0 개발 / room0 평가를 재사용했으므로 새 독립 test로 해석하지 않는다. 현재 환경에 GPU가 없어 개발 장면의 CUDA 저장 RGB pre-map 대조(PSNR 54.7–60.7 dB)를 통과한 CPU 수치 적응 렌더러로 모든 정책을 동일하게 비교했다. GPU latency/VRAM 개선과 E6 온라인 시스템 통과를 주장하지 않는다.
+**상태: 실행 완료(2026-10-21), REVISE.** [E3 실험 보고서](experiments/E3_admission_decision.md)에 정책 정의·봉인·원본 active 후보 범위·결과·재현 명령을 기록했다. 기존 office0 개발 / room0 평가를 재사용했으므로 새 독립 test로 해석하지 않는다. E3 당시 샌드박스에서 GPU가 보이지 않아 개발 장면의 CUDA 저장 RGB pre-map 대조(PSNR 54.7–60.7 dB)를 통과한 CPU 수치 적응 렌더러로 모든 정책을 동일하게 비교했다. 후속 E3b에서 샌드박스 밖 GPU 접근을 확인했다. E3의 GPU latency/VRAM 개선과 E6 온라인 시스템 통과를 주장하지 않는다.
 
 room0 원본 active **1,008,252개**에서 B1/B2/B6/B7/B8/P1 및 DEFER/BYPASS ablation을 포함한 **10개 정책**을 실행하고 실제 membership의 compact map을 렌더했다. E2b office0 개발 전용 **active** 임계값을 유지했으며, P2의 반복 relative 임계값은 **0.0359322727**이다. E2b raw 전체의 임계값·분모와 구별한다.
 
@@ -361,6 +362,25 @@ P2는 종료 시 **282,890개**가 미판정 queue에 남았다. 정상 후보�
 P2의 유한 점수 normal 비거부율은 **98.5489%**, 모든 신호 공통 후보의 normal 비거부율은 **96.6483%**로 99% 부분집합 보호 기준도 충족하지 않았다. 공통 후보에서 P2 정밀도 77.56%는 B6 83.13%, B7 86.96%보다 낮았다. 자연 작동점에서는 P2의 낮은 오거부와 B6의 높은 bad recall 사이 trade-off가 있으며 지배적 우위가 아니다. P3는 과도하게 보수적인 회수율을 보였다. 이 결과에 맞춰 임계값이나 timeout을 이동시키지 않았다.
 
 **후속 조치:** hard DEFER와 RGB AND의 개선 주장을 보류하고, provisional/BYPASS 편입 뒤 재검사·보류 대상 축소를 개발 단계에서 검토한다. E4 matched-budget·TSDF·NVS 및 새 장면 검증은 별도다. 이번 결과를 연구 전체 GO 또는 알고리즘의 보편적 무효로 확대하지 않는다.
+
+---
+
+## 8.3. E3b: 임시 편입·부분집합 보정 및 새 장면 평가
+
+**상태: 실행 완료(2026-10-21), REVISE / E4 보류.** [E3b 실험 보고서](experiments/E3b_provisional_admission.md)에 11개 정책의 개발·회귀·새 장면 결과, 봉인, 후보별 무결성 검증과 재현 명령을 기록했다. GPU 접근 문제는 샌드박스 밖에서 해결해, 동일 RTX 5060·backbone·weights·설정으로 아직 평가하지 않은 **room1 원본 1,000프레임/500입력·10-KF** 기준선을 새로 생성했다. office0 개발 / room0 회귀 / room1 새 평가를 구분하며 room1 결과에 맞춰 정책을 다시 조정하지 않았다.
+
+미관측 후보를 렌더 가능한 `PROVISIONAL`로 즉시 편입하고 실제 KF 도착 시 재검사한다. queue는 0개다. 개발 normal의 자체 유한 점수·모든 신호 공통·충분한 anchor KF별 정상 보존 99% 임계값 중 최댓값을 고정했다. 주 정책의 반복 relative 임계값은 **0.0560654998**이다. 이 방식은 검증 전 차단보다 임시 편입 뒤 사후 제거에 가까우며, 확인 전 불량의 노출 위험을 제거하지 않는다.
+
+| 장면 / 주 정책 | GT bad / normal 제거 | 유한 normal 보존 | 공통 normal 보존 | 전체 bad recall | 깊이 coverage |
+|---|---:|---:|---:|---:|---:|
+| room0 회귀, P_safe | 823 / 6 | 99.8898% | 99.7454% | 2.6436% | 93.8234% — 원본과 동일 |
+| room1 새 평가, P_safe | 5,104 / 0 | 100% | 100% | 1.5354% | 87.8749% — 원본과 동일 |
+
+room1 원본 active 후보는 **1,399,108개**다. P_safe의 유한 점수 후보는 **63,081개(4.51%)**이며 미판정 후보를 정상으로 인증한 것이 아니다. 두 연속 KF 충돌을 요구하는 P_persist는 room0 부분집합 정상 보존에 실패했고 room1은 bad 4,845개·normal 0개를 제거했다. 별도 개발 보정으로 임계값도 달라, 시간 지속성만의 단일 변수 효과로 해석하지 않는다.
+
+**보완 목표와 추가 우위를 구별한다.** 주 정책은 두 장면에서 정상 보존·bad recall·coverage 기준을 통과했다. 그러나 room1 모든 신호 공통 후보에서 **B6_safe도 정밀도 100%**로 bad **4,966개**를 제거했고 P_safe는 **4,338개**를 제거했다. “모든 강한 대조군보다 정밀도 +2pp”라는 봉인 기준은 충족하지 못했다. B6가 100%일 때 수학적으로 달성 불가능한 조건이지만, 결과를 보고 기준을 바꾸어 GO로 기록하지 않는다. 같은 공통 집합에서 B6의 회수량도 더 많아 추가 정책의 순이익은 아직 입증되지 않았다.
+
+**다음 조치:** E4로 바로 진행하지 않고 **E3c에서 B6와 plane에 동일한 시점별 관측 자격·support veto·위험 보정을 적용**해 점수 자체의 추가 가치를 분리한다. 고정된 공통 후보 진단과 실제 인과적 자격 gate를 혼동하지 않는다. room1을 사후 재튜닝 test로 써 이번 실행을 성공으로 소급하지 않으며, 이후 진행 조건과 새 평가 분할은 별도 봉인한다. 다장면 일반화·통계적 유의성·메모리 또는 실시간 개선·논문 novelty의 입증은 아니다.
 
 ---
 

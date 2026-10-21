@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "scenes": [
+    {
+      "scene": "office0",
+      "methods": 11,
+      "snapshots": 11,
+      "status": "PASS",
+      "immediate_provisional": true,
+      "legacy_exact_rejection_match": true,
+      "b8_own_prefix": true
+    },
+    {
+      "scene": "room0",
+      "methods": 11,
+      "snapshots": 7,
+      "status": "PASS",
+      "immediate_provisional": true,
+      "legacy_exact_rejection_match": true,
+      "b8_own_prefix": true
+    },
+    {
+      "scene": "room1",
+      "methods": 11,
+      "snapshots": 10,
+      "status": "PASS",
+      "immediate_provisional": true,
+      "legacy_exact_rejection_match": null,
+      "b8_own_prefix": true
+    }
+  ],
+  "development_quantiles": "PASS",
+  "sealed_code": "PASS",
+  "tests": 56,
+  "fresh_evaluation_complete": true,
+  "go_for_e4": false,
+  "code": {
+    "path": "scripts/check_e3b.py",
+    "bytes": 8954,
+    "sha256": "14a475daba879cd7a346e1d661ae5f4b816a74fc5b92df053788fef1804ff401"
+  },
+  "seal": {
+    "path": "results/E3b_provisional_admission/seal.json",
+    "bytes": 32579,
+    "sha256": "bef4db305319cbc63537d4c9bbef5de86417170e32a9a5e42aaa66f596bfbeaa"
+  }
+}

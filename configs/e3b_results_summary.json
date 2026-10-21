@@ -1,0 +1,63 @@
+{
+  "status": "REVISE",
+  "regression_status": "REGRESSION_PASS_ONLY",
+  "fresh": {
+    "scene": "room1",
+    "cuda_available": true,
+    "nvidia_devices": [
+      "nvidia-modeset",
+      "nvidia-uvm-tools",
+      "nvidia-uvm",
+      "nvidia0",
+      "nvidiactl"
+    ],
+    "baseline_present": true,
+    "scores_present": true,
+    "evaluated": true,
+    "status": "COMPLETE",
+    "go_for_e4": false,
+    "reason": "Fresh scene evaluated; E4 decision uses sealed metrics and verified provenance",
+    "resume_commands": [
+      "bash scripts/run_e3b.sh fresh-download",
+      "bash scripts/run_e3b.sh fresh-baseline",
+      "bash scripts/run_e3b.sh fresh-score",
+      "bash scripts/run_e3b.sh replay room1",
+      "bash scripts/run_e3b.sh fresh-labels",
+      "bash scripts/run_e3b.sh evaluate room1",
+      "bash scripts/run_e3b.sh verify",
+      "bash scripts/run_e3b.sh report"
+    ]
+  },
+  "go_for_e4": false,
+  "research_wide_go": false,
+  "completed": [
+    "office0 calibration and code seal",
+    "office0 and room0 label-free provisional replay",
+    "office0 and room0 actual compact-map GT rendering",
+    "candidate and artifact verification"
+  ],
+  "pending": [],
+  "scene_metrics": {
+    "office0": {
+      "path": "results/E3b_provisional_admission/evaluation/office0/metrics.json",
+      "bytes": 221506,
+      "sha256": "322c9f229b201981f8226fbace705aa952189c524775db04991a4ad48cd2db0e"
+    },
+    "room0": {
+      "path": "results/E3b_provisional_admission/evaluation/room0/metrics.json",
+      "bytes": 176913,
+      "sha256": "49f08afd8cd003ab67216a92982a2b598d768b98ba0168bf78d72ecddb0b2c41"
+    },
+    "room1": {
+      "path": "results/E3b_provisional_admission/evaluation/room1/metrics.json",
+      "bytes": 208520,
+      "sha256": "1582e70cd3b278e47bc477e2688ff0ca2de6444c5fb83db24ed6f1767594a530"
+    }
+  },
+  "seal": {
+    "path": "results/E3b_provisional_admission/seal.json",
+    "bytes": 32579,
+    "sha256": "bef4db305319cbc63537d4c9bbef5de86417170e32a9a5e42aaa66f596bfbeaa"
+  },
+  "next_step": "E3c: compare B6 and plane scores with identical causal observation eligibility and risk calibration before E4"
+}

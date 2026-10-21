@@ -2,7 +2,7 @@
 
 연속 RGB 영상의 3D Gaussian Map에서 다른 Keyframe의 기하 관측을 이용해 이상 Gaussian의 편입을 억제하는 석사학위 논문 연구 저장소입니다.
 
-현재는 **E3의 실제 admission·DEFER 정책 비교까지 완료한 단계**입니다. RTX 5060 8GB에서 E0–E2b를 수행했고, E3는 기존 후보·관측과 CUDA 저장 영상 대조를 통과한 CPU 렌더러로 실행했습니다. **E3 판정은 REVISE**입니다. hard DEFER가 정상 구조의 맵 가용성과 coverage를 크게 낮췄으며, 제안 정책의 우위·독창성을 입증하지 못했습니다.
+현재는 **E3b의 임시 편입·부분집합 보정 및 새 room1 평가까지 완료한 단계**입니다. E3의 hard DEFER 공백은 임시 편입 후 재검사로 해소했고, 개발 전용 보정 후 room1에서 GT bad 5,104개·normal 0개를 제거하며 coverage를 유지했습니다. **E3b 판정은 REVISE, E4 진행은 보류**입니다. 공통 후보에서 B6도 오거부 없이 더 많은 불량을 제거하여 제안 정책의 추가 우위를 입증하지 못했습니다.
 
 - [E0: 기준선 재현·export·GT 평가](docs/experiments/E0_baseline_reproduction.md)
 - [E0b: 관측 출처·융합 ancestry·판단 시점 감사](docs/experiments/E0b_ancestry_causality_audit.md) — 180입력/5-KF 실행 완료. 반복 교차관측 가용성은 추가 확인이 필요합니다.
@@ -10,6 +10,7 @@
 - [E2: confidence·교차 깊이/RGB·DoG·plane 판별력 비교](docs/experiments/E2_signal_discriminability.md) — 좁은 공통 집합에서 P1 AP 0.4268, confidence 0.4830. P1 개발 임계값의 시간 평가 거절 0개, 유효 2-view 후보 0개로 후속 보완이 필요했습니다.
 - [E2b: 반복 유효 관측·개발/평가 장면 간 임계값 전이](docs/experiments/E2b_repeated_observations_threshold_transfer.md) — office0 개발 → room0 평가. 반복 관측 coverage 16.14%, GT bad 1,107개 거부 판정, 정상 보존 99.99%, 전체 bad recall 3.37%. **E3 진행 기준 통과**이며 실제 정책 효능 판정과 구별합니다.
 - [E3: 실제 편입·거부·보류 정책 비교](docs/experiments/E3_admission_decision.md) — 10개 정책, 기존 office0/room0 재사용. P2는 active 후보 중 bad 1,105개·normal 79개를 제거했으나, 보류 때문에 정상 active 보존 77.59%, 깊이 coverage 93.82%→73.97%. 즉시 BYPASS 후 재검사는 같은 후보를 제거하며 coverage를 유지했습니다. **REVISE**, GPU 성능·새 독립 test·matched-budget 우위는 미검증입니다.
+- [E3b: 임시 편입 후 재검사·부분집합 보호 보완](docs/experiments/E3b_provisional_admission.md) — office0에서 보정·봉인, room0 회귀 및 새 room1에서 11개 정책 실행. room0 bad 823개·normal 6개, room1 bad 5,104개·normal 0개 제거. 유한 normal 보존 99.89% / 100%, 깊이 coverage 유지. room1 공통 후보에서 B6와 정밀도 100% 동률이고 제거량은 B6가 더 많아 **추가 우위 미확인**입니다. 다음은 같은 관측 자격을 적용한 B6/plane 비교(E3c)입니다.
 
 ## 연구 계획
 
@@ -112,6 +113,7 @@ results/<experiment_id>/
 - [x] 후보 생성 관측과 교차시점 관측의 출처 분리 가능성 확인 (E0b; 반복 관측 충분성은 미확인)
 - [ ] 공개 GT benchmark와 초기 드론 파일럿 선정
 - [x] 보수적 admission·DEFER/BYPASS 정책 비교 구현 및 E3 실행 (REVISE)
-- [ ] E3 실패 분석에 따른 정책 수정 및 새 평가 장면 검증
+- [x] E3 실패 분석에 따른 임시 편입·부분집합 보정 및 새 room1 평가 (E3b)
+- [ ] E3c: B6와 plane에 같은 인과적 관측 자격을 적용해 추가 가치 분리
 - [ ] E4 matched-budget 비교
 
