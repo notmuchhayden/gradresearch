@@ -1,0 +1,41 @@
+{
+  "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.43",
+  "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "torch": "2.13.0+cu132",
+  "opencv": "5.0.0",
+  "matplotlib": "3.11.2",
+  "cpu_count": 10,
+  "cuda_available": false,
+  "gpu_devices": [],
+  "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "compile_flags": [
+    "-O3",
+    "-std=c++17",
+    "-shared",
+    "-fPIC",
+    "-fopenmp"
+  ],
+  "runtime_threads": {
+    "OMP_NUM_THREADS": 4,
+    "MKL_NUM_THREADS": 2,
+    "OPENBLAS_NUM_THREADS": 2,
+    "torch": 2,
+    "opencv": 2
+  },
+  "git_head": "fdf15fc1fc7717c1e384771c32b347be13dd1c2a",
+  "git_dirty": true,
+  "source_baselines": "results/E2b_repeated_observations_threshold_transfer/baselines",
+  "commands": [
+    "bash scripts/run_e3.sh test",
+    "bash scripts/run_e3.sh prepare",
+    "bash scripts/run_e3.sh replay office0",
+    "bash scripts/run_e3.sh replay room0",
+    "bash scripts/run_e3.sh evaluate office0",
+    "bash scripts/run_e3.sh evaluate room0",
+    "bash scripts/run_e3.sh verify",
+    "bash scripts/run_e3.sh report"
+  ],
+  "parallelism": "office0 and room0 replay/evaluation ran in separate processes; each scene replay before evaluation"
+}

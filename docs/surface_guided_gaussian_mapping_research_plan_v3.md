@@ -2,8 +2,8 @@
 
 ## 연구 설계·구현·실험 계획서 v3.0 — GeoGS-SLAM 2026 두 편 검토 반영
 
-- **개정일:** 2026-10-20 — E2b 보완 실험 및 장면 전이 결과 반영
-- **상태:** 연구 설계 및 단계별 검증 계획. E0/E0b/E1/E2/E2b 파일럿은 개별 보고서에 기록했으며, **E2b는 E3 검증 진행 기준을 통과했다. E3 이후 정책 효능은 아직 입증하지 않았다.**
+- **개정일:** 2026-10-21 — E3 실제 admission·DEFER 정책 비교 결과 반영
+- **상태:** 연구 설계 및 단계별 검증 계획. E0/E0b/E1/E2/E2b/E3 결과는 개별 보고서에 기록했다. **E2b는 E3 진행 기준을 통과했으나, E3 판정은 REVISE다. hard DEFER의 정상 구조 가용성·coverage 손실이 커 현재 정책의 효능·우위를 입증하지 못했다.**
 - **상위 문서:** `surface_guided_gaussian_mapping_research_plan_v2.md` (2026-10-13)
 - **제출 계획서 제목(유지 가능):** 연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구
 - **작업용 제목(권장):** **연속 영상 기반 Feed-forward 3DGS에서 증거 신뢰도를 고려한 Gaussian 편입 및 보류 정책의 실험적 평가**
@@ -313,7 +313,7 @@ admit(candidate G, evidence available by now):
 | **E1: Error taxonomy** | B1 | GT depth/mesh vs candidate center/ellipsoid/rasterized depth, floaters/duplicates/missing | 실제 outlier가 유의미하게 존재해야 함 |
 | **E2: Signal discriminability** | B2/B5/B6/B7/B8/P1 | GT bad-candidate PR-AUC, high-inlier-recall precision, coverage of evaluable candidates, false rejection | P1이 교차시점 약한 baseline에 유용한 증가분을 보이는지 |
 | **E2b: Repeated observations & threshold transfer** | B2/B6/B7/B8/P1, 기존 점수 vs 개발 구간에서 정한 정규화 | 동시 2+ 유효 관측 coverage, 첫 반복 관측까지 지연, 분리된 개발·평가 구간의 정상 보존율·bad recall·정밀도 | 반복 관측과 봉인된 임계값의 유효 거부 운영점을 모두 확보해야 E3 검증 진행 (§8.1) |
-| **E3: Admission decision** | B6/B7/B8/P1/P2/P3 | GT error, inlier retention, DEFER delay, policy support/unknown | E2b 통과 후 실제 정책 비교; P2/P3가 강한 대조군보다 유용한지 |
+| **E3: Admission decision — 실행 완료·REVISE** | B6/B7/B8/P1/P2/P3 | GT error, inlier retention, DEFER delay, policy support/unknown | hard DEFER의 coverage 손실 및 부분집합 오거부로 개선 주장 보류 (§8.2) |
 | **E4: Matched budget** | B1~B8/P1~P3 | active/resident/sh/MB, PSNR/SSIM/LPIPS, TSDF accuracy/completion | 적어도 사전 정의된 효과 기준에서 비열등/개선 |
 | **E5: Shared-bias synthetic stress** | E0/E2/P2, optional model-disjoint | 공통 depth offset, scale bias, pose error, occlusion, textureless | failure envelope 정량화 |
 | **E6: Causal online replay** | B8/P2/P3, DEFER vs BYPASS | real-time availability, queue age/size, time-to-admit, temporary holes | offline oracle 이득이 online에서도 유지되는지 |
@@ -339,6 +339,28 @@ admit(candidate G, evidence available by now):
 5. **비교·진행 기준:** B2/B6/B7/B8/P1을 동일 후보 공통 집합과 각 방법의 전체 적용 범위에서 비교한다. **계획값**으로 평가 장면별 2+ 관측 coverage ≥1%, 해당 GT-labeled 후보 bad/normal 각각 ≥100개를 요구한다. P1 반복 충돌 운영점은 **전체 및 관측 가능한 normal 보존율 각각 ≥99%, 전체 bad recall ≥1%, 관측 가능한 bad recall ≥5%, GT bad 거부 판정 ≥30개**를 모두 만족해야 한다. 아무것도 거부하지 않는 운영점은 통과가 아니다. 수치는 E2 결과에서 달성한 값이 아니며 새 평가를 열기 전에 봉인한다.
 
 **E3 진행 판단:** 위 관측·운영점·누설 방지 조건을 충족하면 **E3 검증을 위한 GO**로 기록한다. Confidence/B6/B7 대비 추가 이익은 동일 정상 보존 제약과 공통 후보에서 보고하고, 아직 확인되지 않으면 E3의 필수 비교 가설로 유지한다. 이는 연구 전체 GO, 장면 일반화, 실제 Map 품질 개선의 입증이 아니다. 관측 부족 또는 높은 정상 손실/무효한 bad recall이면 **REVISE**, 추가 장면이 없어 시간 분할만 수행했다면 **파일럿 결과만 보고**한다. 평가 장면 중 기준 미달 장면을 제외해 통과시키지 않는다.
+
+---
+
+## 8.2. E3: 실제 admission·DEFER 정책 비교 결과
+
+**상태: 실행 완료(2026-10-21), REVISE.** [E3 실험 보고서](experiments/E3_admission_decision.md)에 정책 정의·봉인·원본 active 후보 범위·결과·재현 명령을 기록했다. 기존 office0 개발 / room0 평가를 재사용했으므로 새 독립 test로 해석하지 않는다. 현재 환경에 GPU가 없어 개발 장면의 CUDA 저장 RGB pre-map 대조(PSNR 54.7–60.7 dB)를 통과한 CPU 수치 적응 렌더러로 모든 정책을 동일하게 비교했다. GPU latency/VRAM 개선과 E6 온라인 시스템 통과를 주장하지 않는다.
+
+room0 원본 active **1,008,252개**에서 B1/B2/B6/B7/B8/P1 및 DEFER/BYPASS ablation을 포함한 **10개 정책**을 실행하고 실제 membership의 compact map을 렌더했다. E2b office0 개발 전용 **active** 임계값을 유지했으며, P2의 반복 relative 임계값은 **0.0359322727**이다. E2b raw 전체의 임계값·분모와 구별한다.
+
+| 정책 | GT bad / normal 거부 | 정상 active 보존 | 전체 bad recall | GT 깊이 L1 | held-out 깊이 coverage |
+|---|---:|---:|---:|---:|---:|
+| B1 원본 | 0 / 0 | 100% | 0% | 0.09419 m | 93.8234% |
+| B6 depth proxy | 2,844 / 621 | 99.9103% | 9.1353% | 0.08877 m | 93.8163% |
+| P2 즉시 BYPASS 후 재검사 | 1,105 / 79 | 99.9886% | 3.5494% | 0.09111 m | 93.8234% |
+| P2 DEFER, 2-KF timeout | 1,105 / 79 | 77.5857% | 3.5494% | 0.10729 m | 73.9651% |
+| P3 DEFER + RGB AND | 6 / 0 | 77.5971% | 0.0193% | 0.11053 m | 73.9651% |
+
+P2는 종료 시 **282,890개**가 미판정 queue에 남았다. 정상 후보를 거부하지 않은 비율 99.9886%와 실제 맵에 표현한 비율 77.5857%는 다르다. 동일 기하 gate의 DEFER/BYPASS는 같은 후보를 같은 시점에 거부했으므로 이번 fixed-raw 조건에서 DEFER 자체의 추가 불량 제거 이득은 없었다. 무제한 DEFER는 정상 active 보존 20.07%, 깊이 coverage 26.40%로 더 악화됐다.
+
+P2의 유한 점수 normal 비거부율은 **98.5489%**, 모든 신호 공통 후보의 normal 비거부율은 **96.6483%**로 99% 부분집합 보호 기준도 충족하지 않았다. 공통 후보에서 P2 정밀도 77.56%는 B6 83.13%, B7 86.96%보다 낮았다. 자연 작동점에서는 P2의 낮은 오거부와 B6의 높은 bad recall 사이 trade-off가 있으며 지배적 우위가 아니다. P3는 과도하게 보수적인 회수율을 보였다. 이 결과에 맞춰 임계값이나 timeout을 이동시키지 않았다.
+
+**후속 조치:** hard DEFER와 RGB AND의 개선 주장을 보류하고, provisional/BYPASS 편입 뒤 재검사·보류 대상 축소를 개발 단계에서 검토한다. E4 matched-budget·TSDF·NVS 및 새 장면 검증은 별도다. 이번 결과를 연구 전체 GO 또는 알고리즘의 보편적 무효로 확대하지 않는다.
 
 ---
 

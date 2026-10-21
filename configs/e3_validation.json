@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "scenes": [
+    {
+      "scene": "office0",
+      "policies": 10,
+      "snapshots": 11,
+      "candidate_count": 1622016,
+      "active": 1547680,
+      "status": "PASS",
+      "temporal_crossing_matches": true,
+      "b8_own_map": true,
+      "compact_maps_checked": true
+    },
+    {
+      "scene": "room0",
+      "policies": 10,
+      "snapshots": 7,
+      "candidate_count": 1032192,
+      "active": 1008252,
+      "status": "PASS",
+      "temporal_crossing_matches": true,
+      "b8_own_map": true,
+      "compact_maps_checked": true
+    }
+  ],
+  "code_seal": "PASS",
+  "renderer_parity": "PASS",
+  "tests": "45 passed; see logs/tests.log",
+  "fresh_test": false,
+  "cuda_measured": false,
+  "code": [
+    {
+      "path": "scripts/check_e3.py",
+      "bytes": 6352,
+      "sha256": "6c6acbe3b290706536a691aeeccb7efac2a288d1b9032ea006c902364178af81"
+    }
+  ],
+  "seal": {
+    "path": "results/E3_admission_decision/preregistration.json",
+    "bytes": 5373,
+    "sha256": "c312b725a79ee1f0e7e827b500a3d1be5e04df9a86f8e99a6b84d25d7b71dca9"
+  }
+}

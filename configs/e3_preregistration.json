@@ -1,0 +1,130 @@
+{
+  "sealed_at_utc": "2026-10-21T07:25:32.851932+00:00",
+  "specification": {
+    "experiment": "E3 frozen-pool admission decisions, CPU adaptation",
+    "output": "results/E3_admission_decision",
+    "source": "results/E2b_repeated_observations_threshold_transfer",
+    "development_scene": "office0",
+    "evaluation_scene": "room0",
+    "evaluation_status": "previously inspected E2b scene; descriptive policy validation, not fresh test",
+    "pool": "original-active self-branch candidates only; same frozen poses and Gaussian parameters; no refiner",
+    "policies": [
+      "B1",
+      "B2",
+      "B6",
+      "B7",
+      "B8",
+      "P1",
+      "P2_bypass",
+      "P2",
+      "P2_unbounded",
+      "P3"
+    ],
+    "thresholds": "reuse E2b office0-only active 99% finite-normal cumulative-max thresholds; strict greater; no room0 tuning",
+    "P1": "repeated relative plane conflict plus support veto, at birth only; missing BYPASS; no later review",
+    "P2_bypass": "same geometric test at each actual KF; missing evidence immediately BYPASS; admitted candidates remain reviewable",
+    "P2": "DEFER until simultaneous >=2 reliable plane observations; reject if sealed repeated conflict exceeds threshold; otherwise KEEP including explicit support veto; after 2 subsequent KFs unresolved BYPASS; review admitted candidates; rejection absorbing",
+    "P2_unbounded": "same as P2 without timeout; unresolved end-of-stream stays DEFER and absent from rendering",
+    "P3": "P2 plus AND confirmation by finite B7 NCC exceeding its own development threshold; missing RGB at geometric conflict DEFER until timeout; no RGB retuning",
+    "baseline_semantics": "B2 and B8 decide once at birth; B6/B7 recheck all nonrejected candidates at actual KF arrivals; missing evidence BYPASS; B8 renders its own strictly older admitted map",
+    "defer_timeout_kfs": 2,
+    "end_of_stream": "no force flush or synthetic future KF; queued candidates stay absent",
+    "gt": "evaluation-only stored E2b creation labels primary, final/GT-anchor/consensus sensitivity; no GT inside decision engine",
+    "render": "CPU port of local upstream forward equations for all policies; 512x288; anisotropic covariance; original DC RGB; black background; expected depth; no model training",
+    "parity": {
+      "development_premaps": [
+        1,
+        5,
+        10
+      ],
+      "max_rgb_mae": 0.003,
+      "min_rgb_psnr_db": 35.0
+    },
+    "geometry": "evaluate final frozen pose revision at held-out odd frames; global trajectory Sim3 evaluation only; no TSDF/E4 or system/GPU performance claim",
+    "render_frames": [
+      1,
+      101,
+      201,
+      301,
+      401,
+      501,
+      601,
+      701,
+      801,
+      901,
+      999
+    ],
+    "temporal_render": "after each snapshot use next odd original frame (2*input_frame+1) to measure DEFER gaps; trajectory alignment stays evaluation-only",
+    "progress": {
+      "normal_active_retention_min": 0.99,
+      "finite_normal_retention_min": 0.99,
+      "common_normal_retention_min": 0.99,
+      "bad_recall_min": 0.01,
+      "precision_gain_min": 0.02,
+      "coverage_loss_max": 0.005,
+      "depth_l1_increase_m_max": 0.005
+    },
+    "seed": 0
+  },
+  "code": [
+    {
+      "path": "configs/e3_admission.json",
+      "bytes": 2829,
+      "sha256": "21bbdf7e58f771061c998d0bb2602fb7f0772ae79dd1a023a86fc9669f1aa1f7"
+    },
+    {
+      "path": "scripts/run_e3.py",
+      "bytes": 24154,
+      "sha256": "ab33d6a05f8457724f6b79c8584688b405119af635781e78c631708142526af9"
+    },
+    {
+      "path": "src/e3_admission.py",
+      "bytes": 6053,
+      "sha256": "92910d2c4f4920a20cc781e27aae3d59aba7a10c418fb539a61394bdc1183934"
+    },
+    {
+      "path": "src/e3_cpu_renderer.py",
+      "bytes": 3153,
+      "sha256": "a81f72fd59ddaa9a7675c6ca4366e61aeca1f7838d22ddd4b0ead4804cd8698e"
+    },
+    {
+      "path": "src/e3_splat_cpu.cpp",
+      "bytes": 2324,
+      "sha256": "a85208b579177e9bbc6d2e1ea7fc96119f354b28d72ccfe8e705d1f29245ceb3"
+    },
+    {
+      "path": "tests/test_e3.py",
+      "bytes": 5676,
+      "sha256": "f2c06f5687ef2da74d7295dad9a8c8f13c367a62ba3fd67956d6a2782bae9cd6"
+    }
+  ],
+  "thresholds": {
+    "B2_confidence": -1.7114174365997314,
+    "B6_depth_front": 0.12146633863449097,
+    "B7_rgb_ncc_region": 1.6746114492416382,
+    "B8_dog_redundancy": 0.057468704879283905,
+    "P1_second_front_spacing": 12.761778831481934,
+    "P1_second_front_relative": 0.0359322726726532,
+    "P1_second_front_spacing_no_veto": 9.788192749023438,
+    "P1_second_front_relative_no_veto": 0.027637628838419914,
+    "P1_median_1view": 37.45195770263672
+  },
+  "threshold_source": {
+    "path": "results/E2b_repeated_observations_threshold_transfer/thresholds_development_only.json",
+    "bytes": 34965,
+    "sha256": "1b1ba3e9bf074389ba40396b998319a8f85d86ce90a087af5e03196af5fad8e7"
+  },
+  "parity": {
+    "path": "results/E3_admission_decision/renderer_parity.json",
+    "bytes": 1349,
+    "sha256": "62c1c67b997f6f3846f31edc556077ad8a00b22883a07cbedcd51505577119c2"
+  },
+  "new_evaluation_labels_read": false,
+  "evaluation_previously_inspected": true,
+  "cuda_available": false,
+  "development_label_source": {
+    "path": "results/E2b_repeated_observations_threshold_transfer/evaluation/office0/labels.npz",
+    "bytes": 262061,
+    "sha256": "27fb835220df36038ad1371c68cf48b9709196d544a34a95d2b74ccdd36cc8df"
+  }
+}

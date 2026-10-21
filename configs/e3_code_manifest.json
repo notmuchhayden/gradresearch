@@ -1,0 +1,84 @@
+{
+  "code": [
+    {
+      "path": "configs/e3_admission.json",
+      "bytes": 2829,
+      "sha256": "21bbdf7e58f771061c998d0bb2602fb7f0772ae79dd1a023a86fc9669f1aa1f7"
+    },
+    {
+      "path": "scripts/check_e3.py",
+      "bytes": 6352,
+      "sha256": "6c6acbe3b290706536a691aeeccb7efac2a288d1b9032ea006c902364178af81"
+    },
+    {
+      "path": "scripts/prepare_e2b_run.py",
+      "bytes": 2905,
+      "sha256": "09ba962ec6e22697e398324092f60a67cc95c4cbf82ef4e3feb703d468d5280b"
+    },
+    {
+      "path": "scripts/report_e3.py",
+      "bytes": 20814,
+      "sha256": "97298f81c40e0714b4e214b7e6b31b59948ac101f07269136d49a7be46bb64c8"
+    },
+    {
+      "path": "scripts/run_e3.py",
+      "bytes": 24154,
+      "sha256": "ab33d6a05f8457724f6b79c8584688b405119af635781e78c631708142526af9"
+    },
+    {
+      "path": "scripts/run_e3.sh",
+      "bytes": 810,
+      "sha256": "c96a577646e503045eddeb270598f26945a3b0b8516dfabe3e5ca3b71114e9f9"
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "bytes": 26184,
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f"
+    },
+    {
+      "path": "src/e1_taxonomy.py",
+      "bytes": 9880,
+      "sha256": "09b8c89028b05ad4e0702c570865e302f31276e94c7f4b638b66e3931bbd146d"
+    },
+    {
+      "path": "src/e2_signals.py",
+      "bytes": 12591,
+      "sha256": "009645ab2c44aa43e8e0f963499ac44b0ad5903f1ab670959b7767632f99d4aa"
+    },
+    {
+      "path": "src/e3_admission.py",
+      "bytes": 6053,
+      "sha256": "92910d2c4f4920a20cc781e27aae3d59aba7a10c418fb539a61394bdc1183934"
+    },
+    {
+      "path": "src/e3_cpu_renderer.py",
+      "bytes": 3153,
+      "sha256": "a81f72fd59ddaa9a7675c6ca4366e61aeca1f7838d22ddd4b0ead4804cd8698e"
+    },
+    {
+      "path": "src/e3_splat_cpu.cpp",
+      "bytes": 2324,
+      "sha256": "a85208b579177e9bbc6d2e1ea7fc96119f354b28d72ccfe8e705d1f29245ceb3"
+    },
+    {
+      "path": "tests/test_e3.py",
+      "bytes": 5676,
+      "sha256": "f2c06f5687ef2da74d7295dad9a8c8f13c367a62ba3fd67956d6a2782bae9cd6"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_core/utils/geometry.py",
+      "bytes": 5885,
+      "sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496"
+    }
+  ],
+  "seal": {
+    "path": "results/E3_admission_decision/preregistration.json",
+    "bytes": 5373,
+    "sha256": "c312b725a79ee1f0e7e827b500a3d1be5e04df9a86f8e99a6b84d25d7b71dca9"
+  },
+  "figures": {
+    "path": "results/E3_admission_decision/figure_manifest.json",
+    "bytes": 872,
+    "sha256": "b25af993a61e64a3209dad07ab47db037c06af1755e57404e7bc1f5f6eee7767"
+  }
+}

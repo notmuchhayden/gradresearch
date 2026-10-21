@@ -2,13 +2,14 @@
 
 연속 RGB 영상의 3D Gaussian Map에서 다른 Keyframe의 기하 관측을 이용해 이상 Gaussian의 편입을 억제하는 석사학위 논문 연구 저장소입니다.
 
-현재는 **기준선 실행·관측 출처 감사·GT 오류 분해·신호 판별력·반복 관측 및 임계값 전이 파일럿을 완료한 단계**입니다. RTX 5060 8GB에서 E0, E0b, E1, E2, E2b를 수행했습니다. E2b는 E3 검증 진행 기준을 충족했으며, 제안 admission 정책의 최종 성능 향상과 독창성은 아직 검증하지 않았습니다.
+현재는 **E3의 실제 admission·DEFER 정책 비교까지 완료한 단계**입니다. RTX 5060 8GB에서 E0–E2b를 수행했고, E3는 기존 후보·관측과 CUDA 저장 영상 대조를 통과한 CPU 렌더러로 실행했습니다. **E3 판정은 REVISE**입니다. hard DEFER가 정상 구조의 맵 가용성과 coverage를 크게 낮췄으며, 제안 정책의 우위·독창성을 입증하지 못했습니다.
 
 - [E0: 기준선 재현·export·GT 평가](docs/experiments/E0_baseline_reproduction.md)
 - [E0b: 관측 출처·융합 ancestry·판단 시점 감사](docs/experiments/E0b_ancestry_causality_audit.md) — 180입력/5-KF 실행 완료. 반복 교차관측 가용성은 추가 확인이 필요합니다.
 - [E1: GT 오류 taxonomy·pose 민감도·held-out 깊이 평가](docs/experiments/E1_error_taxonomy.md) — 원본 active 후보의 반복 front 오류 proxy 12.81%, GT-anchor 진단 10.35%.
 - [E2: confidence·교차 깊이/RGB·DoG·plane 판별력 비교](docs/experiments/E2_signal_discriminability.md) — 좁은 공통 집합에서 P1 AP 0.4268, confidence 0.4830. P1 개발 임계값의 시간 평가 거절 0개, 유효 2-view 후보 0개로 후속 보완이 필요했습니다.
-- [E2b: 반복 유효 관측·개발/평가 장면 간 임계값 전이](docs/experiments/E2b_repeated_observations_threshold_transfer.md) — office0 개발 → room0 평가. 반복 관측 coverage 16.14%, GT bad 1,107개 거부 판정, 정상 보존 99.99%, 전체 bad recall 3.37%. **E3 검증 진행 가능**이며 대조군 우위와 실제 Map 품질은 추가 검증합니다.
+- [E2b: 반복 유효 관측·개발/평가 장면 간 임계값 전이](docs/experiments/E2b_repeated_observations_threshold_transfer.md) — office0 개발 → room0 평가. 반복 관측 coverage 16.14%, GT bad 1,107개 거부 판정, 정상 보존 99.99%, 전체 bad recall 3.37%. **E3 진행 기준 통과**이며 실제 정책 효능 판정과 구별합니다.
+- [E3: 실제 편입·거부·보류 정책 비교](docs/experiments/E3_admission_decision.md) — 10개 정책, 기존 office0/room0 재사용. P2는 active 후보 중 bad 1,105개·normal 79개를 제거했으나, 보류 때문에 정상 active 보존 77.59%, 깊이 coverage 93.82%→73.97%. 즉시 BYPASS 후 재검사는 같은 후보를 제거하며 coverage를 유지했습니다. **REVISE**, GPU 성능·새 독립 test·matched-budget 우위는 미검증입니다.
 
 ## 연구 계획
 
@@ -110,5 +111,7 @@ results/<experiment_id>/
 - [x] Keyframe export 및 Sim(3) 좌표 변환 검증
 - [x] 후보 생성 관측과 교차시점 관측의 출처 분리 가능성 확인 (E0b; 반복 관측 충분성은 미확인)
 - [ ] 공개 GT benchmark와 초기 드론 파일럿 선정
-- [ ] 보수적 admission 및 matched-budget 비교 구현
+- [x] 보수적 admission·DEFER/BYPASS 정책 비교 구현 및 E3 실행 (REVISE)
+- [ ] E3 실패 분석에 따른 정책 수정 및 새 평가 장면 검증
+- [ ] E4 matched-budget 비교
 
