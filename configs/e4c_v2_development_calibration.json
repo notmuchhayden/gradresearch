@@ -1,0 +1,1608 @@
+{
+  "created_at_utc": "2026-10-22T04:59:57.718287+00:00",
+  "status": "INCONCLUSIVE",
+  "combinations": {
+    "c3_1": {
+      "status": "INCONCLUSIVE_CALIBRATION",
+      "thresholds": {
+        "s": null,
+        "d": null
+      },
+      "groups": [
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_8",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_9",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_10",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_8",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_9",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_10",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        }
+      ],
+      "failures": [
+        "office0: fewer than 100 common audit O",
+        "office1: fewer than 100 common audit O",
+        "s/office0/own: fewer than 100 finite audit S",
+        "s/office0/common: fewer than 100 finite audit S",
+        "s/office1/own: fewer than 100 finite audit S",
+        "s/office1/common: fewer than 100 finite audit S",
+        "d/office0/own: fewer than 100 finite audit S",
+        "d/office0/common: fewer than 100 finite audit S",
+        "d/office1/own: fewer than 100 finite audit S",
+        "d/office1/common: fewer than 100 finite audit S"
+      ],
+      "metrics": {}
+    },
+    "c3_2": {
+      "status": "INCONCLUSIVE_CALIBRATION",
+      "thresholds": {
+        "s": null,
+        "d": null
+      },
+      "groups": [
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_8",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_9",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_10",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_8",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_9",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_10",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        }
+      ],
+      "failures": [
+        "office0: fewer than 100 common audit O",
+        "office1: fewer than 100 common audit O",
+        "s/office0/own: fewer than 100 finite audit S",
+        "s/office0/common: fewer than 100 finite audit S",
+        "s/office1/own: fewer than 100 finite audit S",
+        "s/office1/common: fewer than 100 finite audit S",
+        "d/office0/own: fewer than 100 finite audit S",
+        "d/office0/common: fewer than 100 finite audit S",
+        "d/office1/own: fewer than 100 finite audit S",
+        "d/office1/common: fewer than 100 finite audit S"
+      ],
+      "metrics": {}
+    },
+    "c5_1": {
+      "status": "INCONCLUSIVE_CALIBRATION",
+      "thresholds": {
+        "s": null,
+        "d": null
+      },
+      "groups": [
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_8",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_9",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_10",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_8",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_9",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_10",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        }
+      ],
+      "failures": [
+        "office0: fewer than 100 common audit O",
+        "office1: fewer than 100 common audit O",
+        "s/office0/own: fewer than 100 finite audit S",
+        "s/office0/common: fewer than 100 finite audit S",
+        "s/office1/own: fewer than 100 finite audit S",
+        "s/office1/common: fewer than 100 finite audit S",
+        "d/office0/own: fewer than 100 finite audit S",
+        "d/office0/common: fewer than 100 finite audit S",
+        "d/office1/own: fewer than 100 finite audit S",
+        "d/office1/common: fewer than 100 finite audit S"
+      ],
+      "metrics": {}
+    },
+    "c5_2": {
+      "status": "INCONCLUSIVE_CALIBRATION",
+      "thresholds": {
+        "s": null,
+        "d": null
+      },
+      "groups": [
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_8",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_9",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office0",
+          "group": "anchor_10",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "s",
+          "scene": "office1",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_8",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_9",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office0",
+          "group": "anchor_10",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "own",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "common",
+          "count": 0,
+          "required": true,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_0",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_1",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_2",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_3",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_4",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_5",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_6",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        },
+        {
+          "method": "d",
+          "scene": "office1",
+          "group": "anchor_7",
+          "count": 0,
+          "required": false,
+          "quantile": null
+        }
+      ],
+      "failures": [
+        "office0: fewer than 100 common audit O",
+        "office1: fewer than 100 common audit O",
+        "s/office0/own: fewer than 100 finite audit S",
+        "s/office0/common: fewer than 100 finite audit S",
+        "s/office1/own: fewer than 100 finite audit S",
+        "s/office1/common: fewer than 100 finite audit S",
+        "d/office0/own: fewer than 100 finite audit S",
+        "d/office0/common: fewer than 100 finite audit S",
+        "d/office1/own: fewer than 100 finite audit S",
+        "d/office1/common: fewer than 100 finite audit S"
+      ],
+      "metrics": {}
+    }
+  },
+  "inputs": [
+    {
+      "path": "results/E4c_surface_consistency_pruning/v2/development/office0/geometry_summary.json",
+      "bytes": 5188,
+      "sha256": "74fe28d81a9b212ff8637ce62e6d22eacfc46a7f76e83ab23803a59ffd1b9d62"
+    },
+    {
+      "path": "results/E4c_surface_consistency_pruning/v2/development/office0/features.npz",
+      "bytes": 6676165,
+      "sha256": "d7b2835d57cd6797fd5460f444a79fd272ebe946306ea4af07a076c375b07a3f"
+    },
+    {
+      "path": "results/E4c_surface_consistency_pruning/v2/development/office0/audit_labels.npz",
+      "bytes": 3860,
+      "sha256": "814b755c03aaafc8d18cd1abdc3491bbd67dd6e020791e18f8b33bf46c4decc6"
+    },
+    {
+      "path": "results/E4c_surface_consistency_pruning/v2/development/office1/geometry_summary.json",
+      "bytes": 4176,
+      "sha256": "5b2d2f27b07b5ec7905042bf49915f8d4c53c748ff9b57393a25c4c890f6a132"
+    },
+    {
+      "path": "results/E4c_surface_consistency_pruning/v2/development/office1/features.npz",
+      "bytes": 2124047,
+      "sha256": "2a703f900e26cfaad0aa070cc88094051ecf6e51d689cd6569de88e9dcddee71"
+    },
+    {
+      "path": "results/E4c_surface_consistency_pruning/v2/development/office1/audit_labels.npz",
+      "bytes": 4147,
+      "sha256": "5af062158519f71100e146c304878ee6bf1361a11e0d902747477964e8249eec"
+    }
+  ],
+  "code": {
+    "path": "scripts/calibrate_e4c_v2.py",
+    "bytes": 6620,
+    "sha256": "9a2c55895dab512b62b5946a40ed2f4cdcd22f3518cb2d1946a657fc516f8483"
+  },
+  "external_GT_used_for_thresholds": false,
+  "fresh_scenes_opened": false,
+  "map_metrics_measured": false,
+  "legacy_comparisons_measured": false,
+  "reason": "Development audit/calibration gate; no efficacy GO issued"
+}

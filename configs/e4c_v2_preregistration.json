@@ -1,0 +1,81 @@
+{
+  "sealed_at_utc": "2026-10-22T04:54:16.420992+00:00",
+  "code": [
+    {
+      "path": "src/e4c_surface_v2.py",
+      "bytes": 10979,
+      "sha256": "0a79f2eef30baa09c4c028583695dfc5ddfb3e1d64329de87c4e6f152597e526"
+    },
+    {
+      "path": "scripts/run_e4c_v2.py",
+      "bytes": 12573,
+      "sha256": "46a69963ce9cfe0dc805dde7fe1d223fe2dbd9978572f559f66ef44d4b66b3ac"
+    },
+    {
+      "path": "tests/test_e4c_v2.py",
+      "bytes": 4974,
+      "sha256": "fc5aeb0d10984b3e0234adbde95c344962295a2e46bf24f40d4c14b3cb89a38c"
+    },
+    {
+      "path": "scripts/run_e4b.py",
+      "bytes": 31280,
+      "sha256": "3ec0506750c606e8e78b38e5748bb7bde339c07042a2c886d55fba8363856462"
+    },
+    {
+      "path": "scripts/run_e3.py",
+      "bytes": 24154,
+      "sha256": "ab33d6a05f8457724f6b79c8584688b405119af635781e78c631708142526af9"
+    },
+    {
+      "path": "scripts/prepare_e2b_run.py",
+      "bytes": 2905,
+      "sha256": "09ba962ec6e22697e398324092f60a67cc95c4cbf82ef4e3feb703d468d5280b"
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "bytes": 26184,
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f"
+    },
+    {
+      "path": "src/e2_signals.py",
+      "bytes": 12591,
+      "sha256": "009645ab2c44aa43e8e0f963499ac44b0ad5903f1ab670959b7767632f99d4aa"
+    },
+    {
+      "path": "src/e3c_matched.py",
+      "bytes": 3780,
+      "sha256": "b4c3eee9a96a9b86e700fa60bf65a34b9cf5f221245673e38774d8beedbc098b"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_core/utils/geometry.py",
+      "bytes": 5885,
+      "sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496"
+    }
+  ],
+  "configuration": {
+    "path": "configs/e4c_v2_surface_consistency_pruning.json",
+    "bytes": 2413,
+    "sha256": "9129a3266111ae46341b2550aa429dc88f91a36e0bcf056b4bc3511ff110143c"
+  },
+  "registration": {
+    "path": "configs/e4c_v2_protocol_registration.json",
+    "bytes": 3413,
+    "sha256": "453eabf88b7417672f8d8bdd741fd51cc487b251e2530feb8993d5f03df4d3d9"
+  },
+  "inputs": {
+    "path": "results/E4c_surface_consistency_pruning/v2/input_manifest.json",
+    "bytes": 24433,
+    "sha256": "21a06d2b5e8cd375f0728954458e6b7fa5c1fd2b81a137d4ed1a9e9e7345e861"
+  },
+  "split": {
+    "path": "results/E4c_surface_consistency_pruning/v2/evidence_split.json",
+    "bytes": 18498,
+    "sha256": "40adf8a124e5b88f430ba18711b6c68d0ce524d150abfcc844062d3f516006b3"
+  },
+  "tests": {
+    "path": "results/E4c_surface_consistency_pruning/v2/logs/tests.log",
+    "bytes": 1408,
+    "sha256": "ec6534d8b8db7dc42593134d1aa34340687a53c0427df6fda6305337d5694e12"
+  },
+  "geometric_analysis_before_seal": false
+}

@@ -1,0 +1,86 @@
+{
+  "experiment": "E4c surface consistency pruning",
+  "stage": "development_feasibility",
+  "output": "results/E4c_surface_consistency_pruning/v2",
+  "development": [
+    "office0",
+    "office1"
+  ],
+  "regression": [
+    "room0",
+    "room1",
+    "room2"
+  ],
+  "fresh_reserved": [
+    "office2",
+    "office3"
+  ],
+  "source_registration": {
+    "path": "configs/e4b_protocol_registration.json",
+    "bytes": 19161,
+    "sha256": "ddfd7c8ad5fc616c214cfc37db2dadc7d019d4b0dc058b6824c2437a1dfd91d0"
+  },
+  "scene_sources": {
+    "office1": {
+      "baseline": "results/E4_matched_budget/baselines/office1",
+      "scores": "results/E4_matched_budget/scores/office1",
+      "labels": "results/E4_matched_budget/evaluation/office1",
+      "replay": "results/E4_matched_budget/replay/office1",
+      "dataset": "data/E4/Replica/office1"
+    },
+    "office0": {
+      "baseline": "results/E4_matched_budget/baselines/office0",
+      "scores": "results/E3c_matched_evidence/scores/office0",
+      "labels": "results/E3c_matched_evidence/evaluation/office0",
+      "replay": "results/E4_matched_budget/replay/office0",
+      "dataset": "data/E2b/Replica/office0"
+    },
+    "room0": {
+      "baseline": "results/E4_matched_budget/baselines/room0",
+      "scores": "results/E3c_matched_evidence/scores/room0",
+      "labels": "results/E3c_matched_evidence/evaluation/room0",
+      "replay": "results/E4_matched_budget/replay/room0",
+      "dataset": "data/E2b/Replica/room0"
+    },
+    "room1": {
+      "baseline": "results/E4_matched_budget/baselines/room1",
+      "scores": "results/E3c_matched_evidence/scores/room1",
+      "labels": "results/E3c_matched_evidence/evaluation/room1",
+      "replay": "results/E4_matched_budget/replay/room1",
+      "dataset": "data/E3b/Replica/room1"
+    },
+    "room2": {
+      "baseline": "results/E4_matched_budget/baselines/room2",
+      "scores": "results/E4_matched_budget/scores/room2",
+      "labels": "results/E3c_matched_evidence/evaluation/room2",
+      "replay": "results/E4_matched_budget/replay/room2",
+      "dataset": "data/E3c/Replica/room2"
+    }
+  },
+  "audit_keyframes": [
+    2,
+    3
+  ],
+  "combinations": [
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      5,
+      1
+    ],
+    [
+      5,
+      2
+    ]
+  ],
+  "amendment": "docs/experiments/E4c_v2_execution_amendment.md",
+  "evaluation_not_opened": true,
+  "seed": 0,
+  "threads": 2
+}

@@ -317,6 +317,8 @@ admit(candidate G, evidence available by now):
 | **E3b: Provisional admission — 실행 완료·REVISE** | legacy vs 부분집합 보정 B6/B7/B8/P, 시간 지속성 | 정상 active/finite/common 보존, bad recall, 실제 맵 coverage, 새 room1 전이 | 보존·coverage 보완 통과, 공통 후보 B6 대비 추가 우위 미확인 (§8.3); E4 보류 |
 | **E3c: Matched causal evidence — 실행 완료·주 비교 PASS** | 같은 관측별 gate·support veto·집계·위험 보정의 depth/plane, median ablation | office0 개발, room0·room1 회귀, 새 room2 recall·정상 보존·실제 coverage | room2 공통 bad recall +7.53%p, normal 오거부 0개. E4 비교 실험 진입 조건 충족; median-depth 근접·장면별 혼합 결과 (§8.4) |
 | **E4: Matched budget — 실행 완료·REVISE** | B1~B8/P1~P3 및 matched/median depth, random 3 seeds | active/resident/52-byte DC buffer, PSNR/SSIM/LPIPS, GT-depth TSDF sampled accuracy/completion | 새 office1·75% 유지 주 비교에서 기하 추가 개선 기준 미달 (§8.5); E5/E6 효능 검증 진행 보류 |
+| **E4b: Reference-plane audit — 진단 완료** | 사실 재현·GT 기준 감사·GT-plane oracle | 기준 평면 오류와 관측/정책 제한 구분 | 사후 진단이며 효능 GO 판정 없음 (§8.6) |
+| **E4c: Surface-consistency pruning — 개발 성립 단계 INCONCLUSIVE** | 명시적 표면 지지·반복 충돌·paired depth | 5장면의 분리 관측 표면 분류와 보정 표본 | 두 개발 장면의 공통 audit S가 각각 0개여서 미보정·새 장면 효능 평가 보류 (§8.7) |
 | **E5: Shared-bias synthetic stress** | E0/E2/P2, optional model-disjoint | 공통 depth offset, scale bias, pose error, occlusion, textureless | failure envelope 정량화 |
 | **E6: Causal online replay** | B8/P2/P3, DEFER vs BYPASS | real-time availability, queue age/size, time-to-admit, temporary holes | offline oracle 이득이 online에서도 유지되는지 |
 | **E7: Refinement sensitivity** | baseline/proposed + **동일** optimizer steps | map repair로 필터 이득이 소멸하는가, online budget | 추가 구현 가치 결정 |
@@ -440,6 +442,18 @@ RGB는 사전 고정한 홀수 11개 temporal held-out view의 전체 영상 PSN
 GT-plane/veto 재계산은 새 bad **5,209개**, 새 normal **409개**, 새 unknown **10,713개**를 제거했다. 전체 bad recall은 0.5865%→2.3987%, B6-only 회복은 265개(2.68%)였다. 기준 오류와 같은 후보의 판정 전환이 함께 확인된 bad는 5,129개다. 정답 평면도 원래의 관측 부재·mask·대응·pose·임계값 제약을 해결하지는 못한다. 이 수치는 GT oracle의 진단이며 실제 RGB-only 개선 알고리즘이나 Chamfer 개선 결과가 아니다.
 
 완료 기준인 사실 재현, 정해진 집합·분모·검사 불가율·원인 tag, 두 oracle 대비, pose/라벨 민감도와 seed 0 고정 예시를 보고했다. 13개 합성 테스트, 5장면 원본 정책 정확 재현·입력 1,155개 재해시·감사 결과와 Parquet 행 수 검증을 통과했다. 후보×시점×관측 116,265,669행, 원본 patch와 snapshot별 patch의 분리 집계, 고정 그림 200개를 보존했다. 효능 GO 임계값이나 단일 지배 원인 판정은 두지 않으며, 개선안을 도출하면 별도 개발·봉인과 아직 살펴보지 않은 평가 데이터가 필요하다.
+
+---
+
+## 8.7. E4c: 추정 표면 일관성 기반 pruning의 개발 성립 검사
+
+**상태: 개발 성립 단계 실행·INCONCLUSIVE(2026-10-22).** [계획](experiments/E4c_surface_consistency_pruning.md)과 [결과 보고서](experiments/E4c_surface_consistency_pruning_results.md)에 구현·등록·개발 수정·5장면 결과·미수행 범위를 기록했다. 일관된 추정 표면을 보존하고 지지 없는 후보의 반복 앞쪽 충돌만으로 제거하는 정책을 개발했다. GT 정확도와 추정 표면 일관성은 별도 축으로 유지한다.
+
+원래 매 3번째 raw-event 분할은 source-image 중첩을 배제하면 다섯 장면 모두 policy 관측이 0개였다. 좌표·GT를 보기 전에 A1로 KF 2·3의 audit 분할을 등록했다. 이후 support 수선점의 hull 조건을 충돌에도 적용한 구현 문제를 고정 fixture로 확인하고, A2/V2에서 광선–평면 교점의 hull로 충돌 자격을 수정했다. 각 버전의 코드·배열·보정 결과는 보존했다.
+
+최종 V2는 office0/office1 개발 및 room0/room1/room2 회귀의 모든 original-active 후보와 실제 KF snapshot에서 네 두께 조합을 계산했다. office0의 audit S/O는 6,258/594개, office1은 10,327/13,926개였지만 **policy 반복 관측도 가능한 공통 audit S/O는 두 개발 장면 모두 0/0개**였다. 필수 보정 표본을 확보하지 못해 임계값과 자연 membership을 만들지 않았다. 새 office2/office3의 데이터·baseline·GT·RGB는 열지 않았고, legacy 효능 비교·ablation 보정·RGB/depth/TSDF·동일 수량·GPU compactness 평가는 미수행이다.
+
+office1의 audit O 중 13,908개는 후보 중심을 제외한 자기 출처 국소 표면 지지를 받았다. 다른 두 관측과 충돌한다는 proxy를 곧바로 표면 밖 고립점의 정답으로 삼으면 보존 목표와 충돌할 수 있다. 후속 개발은 평가 가능한 policy/audit 표면 중첩과 독립적인 표면 소속 판정부터 보완해야 한다. 11개 기전 테스트와 입력 112개 재해시·5장면 분류/반복 mask/시간 revision/결과 해시 검증을 통과했지만, pruning 효능이나 표면 일관성 가설을 확정한 결과는 아니다. E4 REVISE 및 E5/E6 효능 검증 보류를 유지한다.
 
 ---
 

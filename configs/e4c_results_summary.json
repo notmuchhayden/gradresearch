@@ -1,0 +1,2786 @@
+{
+  "status": "INCONCLUSIVE",
+  "scope": "Development gate completed; fresh efficacy phase not entered",
+  "scenes": {
+    "office0": {
+      "scene": "office0",
+      "policy": [
+        0,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "audit": [
+        2,
+        3
+      ],
+      "combinations": {
+        "c3_1": {
+          "active": 1547680,
+          "S": 6258,
+          "O": 594,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 212017,
+          "local_support": 1430238,
+          "unprotected_ever_finite": 4836
+        },
+        "c3_2": {
+          "active": 1547680,
+          "S": 6258,
+          "O": 594,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 212017,
+          "local_support": 1430238,
+          "unprotected_ever_finite": 4835
+        },
+        "c5_1": {
+          "active": 1547680,
+          "S": 6258,
+          "O": 594,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 212017,
+          "local_support": 1430238,
+          "unprotected_ever_finite": 4836
+        },
+        "c5_2": {
+          "active": 1547680,
+          "S": 6258,
+          "O": 594,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 212017,
+          "local_support": 1430238,
+          "unprotected_ever_finite": 4835
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "revision": 1,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 41,
+          "revision": 43,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 74,
+          "revision": 78,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 111,
+          "revision": 117,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 149,
+          "revision": 157,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 184,
+          "revision": 194,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 233,
+          "revision": 245,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 7,
+          "input_frame": 329,
+          "revision": 343,
+          "possible_s": 125
+        },
+        {
+          "snapshot": 8,
+          "input_frame": 366,
+          "revision": 382,
+          "possible_s": 389
+        },
+        {
+          "snapshot": 9,
+          "input_frame": 408,
+          "revision": 426,
+          "possible_s": 940
+        },
+        {
+          "snapshot": 10,
+          "input_frame": 447,
+          "revision": 467,
+          "possible_s": 4425
+        }
+      ],
+      "cpu_seconds": 319.87035081900103,
+      "external_GT_read": false,
+      "artifacts": [
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/audit_labels.npz",
+          "bytes": 3860,
+          "sha256": "814b755c03aaafc8d18cd1abdc3491bbd67dd6e020791e18f8b33bf46c4decc6"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/features.npz",
+          "bytes": 6676165,
+          "sha256": "d7b2835d57cd6797fd5460f444a79fd272ebe946306ea4af07a076c375b07a3f"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0000.npz",
+          "bytes": 13489,
+          "sha256": "9b72a406cbae226799e2fbf9b2a153466fda61a07e55154b4a8720e1eb206ad9"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0001.npz",
+          "bytes": 22626,
+          "sha256": "6ec7cd900045d218fd896a70bcf2738fc810099449c8ccf239546d095f72d050"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0002.npz",
+          "bytes": 31779,
+          "sha256": "253a78872d8dd1e88c95f1511820d28045bac026e7c3e81fc50c30fce6d2fb5f"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0003.npz",
+          "bytes": 40915,
+          "sha256": "ec0813c5561f68db09dfc20f856e320dfc1b91c9297ad5b3935fa635d260aa41"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0004.npz",
+          "bytes": 50067,
+          "sha256": "797202e92c8f978a007d71318ff93c8e6e7c67f771720e12115717b2afb1eb1d"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0005.npz",
+          "bytes": 59203,
+          "sha256": "2e4708c4ffcb7a6933ad60b14738924ddfe82dedb1723be2842cac65b85f4617"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0006.npz",
+          "bytes": 78831,
+          "sha256": "d6ce60c76aff2cc09ac84d0cf7193fb832e15e9763bf68ab079ecf4f77b105fe"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0007.npz",
+          "bytes": 114324,
+          "sha256": "e076bbb3cdb24e2acf78454ca1597c26b27c109ba94661dcc8dd17441ee9c445"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0008.npz",
+          "bytes": 1036108,
+          "sha256": "6f110facb6335fae9586ffcdb056ac1988df2bfdda2a5dfdfe0e50db68273ac5"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0009.npz",
+          "bytes": 1837742,
+          "sha256": "f49865a9f3e867eeb96495a42b2f2ece6199801cb47365a6406e2185f7b152dc"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office0/history/snapshot0010.npz",
+          "bytes": 3341970,
+          "sha256": "9ce59977ac624e9b8ebe278f63307d1a9f77329f913481e5d80f6f41f919daac"
+        }
+      ],
+      "audit_fraction": 0.004427271787449602,
+      "GT_cross_matrix": {
+        "0": {
+          "0": 539559,
+          "1": 629878,
+          "2": 0,
+          "3": 371391
+        },
+        "1": {
+          "0": 993,
+          "1": 5249,
+          "2": 0,
+          "3": 16
+        },
+        "2": {
+          "0": 37,
+          "1": 0,
+          "2": 0,
+          "3": 557
+        }
+      },
+      "protected_local_by_combo": {
+        "c3_1": {
+          "local_protected_S": 5182,
+          "local_protected_O": 137
+        },
+        "c3_2": {
+          "local_protected_S": 5182,
+          "local_protected_O": 137
+        },
+        "c5_1": {
+          "local_protected_S": 5182,
+          "local_protected_O": 137
+        },
+        "c5_2": {
+          "local_protected_S": 5182,
+          "local_protected_O": 137
+        }
+      },
+      "GT_labels": {
+        "path": "results/E3c_matched_evidence/evaluation/office0/labels.npz",
+        "bytes": 262061,
+        "sha256": "27fb835220df36038ad1371c68cf48b9709196d544a34a95d2b74ccdd36cc8df"
+      },
+      "feasibility": {
+        "audit_S_min100": true,
+        "audit_O_min100": true,
+        "audit_fraction_min1percent": false,
+        "common_S_min100": false,
+        "common_O_min100": false
+      }
+    },
+    "office1": {
+      "scene": "office1",
+      "policy": [
+        0,
+        5,
+        6,
+        7
+      ],
+      "audit": [
+        2,
+        3
+      ],
+      "combinations": {
+        "c3_1": {
+          "active": 1147602,
+          "S": 10327,
+          "O": 13926,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 35437,
+          "local_support": 1087050,
+          "unprotected_ever_finite": 394
+        },
+        "c3_2": {
+          "active": 1147602,
+          "S": 10327,
+          "O": 13926,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 35437,
+          "local_support": 1087050,
+          "unprotected_ever_finite": 394
+        },
+        "c5_1": {
+          "active": 1147602,
+          "S": 10327,
+          "O": 13926,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 35437,
+          "local_support": 1087050,
+          "unprotected_ever_finite": 394
+        },
+        "c5_2": {
+          "active": 1147602,
+          "S": 10327,
+          "O": 13926,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 35437,
+          "local_support": 1087050,
+          "unprotected_ever_finite": 394
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "revision": 1,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 141,
+          "revision": 143,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 206,
+          "revision": 210,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 259,
+          "revision": 265,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 326,
+          "revision": 334,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 340,
+          "revision": 350,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 368,
+          "revision": 380,
+          "possible_s": 170
+        },
+        {
+          "snapshot": 7,
+          "input_frame": 443,
+          "revision": 457,
+          "possible_s": 337
+        }
+      ],
+      "cpu_seconds": 99.229014094999,
+      "external_GT_read": false,
+      "artifacts": [
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/audit_labels.npz",
+          "bytes": 4147,
+          "sha256": "5af062158519f71100e146c304878ee6bf1361a11e0d902747477964e8249eec"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/features.npz",
+          "bytes": 2124047,
+          "sha256": "2a703f900e26cfaad0aa070cc88094051ecf6e51d689cd6569de88e9dcddee71"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/history/snapshot0000.npz",
+          "bytes": 13489,
+          "sha256": "9b72a406cbae226799e2fbf9b2a153466fda61a07e55154b4a8720e1eb206ad9"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/history/snapshot0001.npz",
+          "bytes": 22627,
+          "sha256": "0feeadc485d5e466a5f4050d63ed8b79bf8f11120cbb193037033c031de4aec9"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/history/snapshot0002.npz",
+          "bytes": 31779,
+          "sha256": "32e4626d584ba2e216788f0eec935df1db4b7e32f4296bee3fde6a58c3a6b815"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/history/snapshot0003.npz",
+          "bytes": 40917,
+          "sha256": "c2d3205ce7d25cd8d447bc6a081ea3b11ebb6556430817dc3804cdfde0275a5d"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/history/snapshot0004.npz",
+          "bytes": 50069,
+          "sha256": "0f727febb020d09ec417b938e63b25ee8a3204123f7052d716f23c49f5353a40"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/history/snapshot0005.npz",
+          "bytes": 59205,
+          "sha256": "4e113f259afdd3033869eca9d337d2272ecb7c75d8d9068de3a34d4182851adb"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/history/snapshot0006.npz",
+          "bytes": 112045,
+          "sha256": "c074bdc85265c449dbd2229f04a9a7fcad69fa7a55c01e8f2dbf395d4368bbcb"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/office1/history/snapshot0007.npz",
+          "bytes": 234718,
+          "sha256": "83a18b85f627401641ea9749b8774bb063fec57abc9d3989895162d98eb19d03"
+        }
+      ],
+      "audit_fraction": 0.021133633437376374,
+      "GT_cross_matrix": {
+        "0": {
+          "0": 408582,
+          "1": 427337,
+          "2": 0,
+          "3": 287430
+        },
+        "1": {
+          "0": 2772,
+          "1": 7551,
+          "2": 0,
+          "3": 4
+        },
+        "2": {
+          "0": 8675,
+          "1": 5239,
+          "2": 0,
+          "3": 12
+        }
+      },
+      "protected_local_by_combo": {
+        "c3_1": {
+          "local_protected_S": 10071,
+          "local_protected_O": 13908
+        },
+        "c3_2": {
+          "local_protected_S": 10071,
+          "local_protected_O": 13908
+        },
+        "c5_1": {
+          "local_protected_S": 10071,
+          "local_protected_O": 13908
+        },
+        "c5_2": {
+          "local_protected_S": 10071,
+          "local_protected_O": 13908
+        }
+      },
+      "GT_labels": {
+        "path": "results/E4_matched_budget/evaluation/office1/labels.npz",
+        "bytes": 175535,
+        "sha256": "3efb5e6d1b416f2d1573813a71b1f326c684f8997b31ded54848ae82c7fe0c27"
+      },
+      "feasibility": {
+        "audit_S_min100": true,
+        "audit_O_min100": true,
+        "audit_fraction_min1percent": true,
+        "common_S_min100": false,
+        "common_O_min100": false
+      }
+    },
+    "room0": {
+      "scene": "room0",
+      "policy": [
+        0,
+        5,
+        6
+      ],
+      "audit": [
+        2,
+        3
+      ],
+      "combinations": {
+        "c3_1": {
+          "active": 1008252,
+          "S": 24500,
+          "O": 273,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 4935,
+          "local_support": 913073,
+          "unprotected_ever_finite": 118
+        },
+        "c3_2": {
+          "active": 1008252,
+          "S": 24500,
+          "O": 273,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 4935,
+          "local_support": 913073,
+          "unprotected_ever_finite": 118
+        },
+        "c5_1": {
+          "active": 1008252,
+          "S": 24500,
+          "O": 273,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 4935,
+          "local_support": 913073,
+          "unprotected_ever_finite": 118
+        },
+        "c5_2": {
+          "active": 1008252,
+          "S": 24500,
+          "O": 273,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 4935,
+          "local_support": 913073,
+          "unprotected_ever_finite": 118
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "revision": 1,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 104,
+          "revision": 106,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 193,
+          "revision": 197,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 267,
+          "revision": 273,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 312,
+          "revision": 320,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 376,
+          "revision": 386,
+          "possible_s": 117
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 442,
+          "revision": 454,
+          "possible_s": 114
+        }
+      ],
+      "cpu_seconds": 68.78735507800047,
+      "external_GT_read": false,
+      "artifacts": [
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/audit_labels.npz",
+          "bytes": 5018,
+          "sha256": "48faf6bd9aac50f1c7b0fd2bfbc42a80071854aacee14d36d1e47f72b90a9a32"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/features.npz",
+          "bytes": 1805027,
+          "sha256": "cc3719850219d061d68092e7b8a6aacb06be544b24a719a7442783e5bcf8f094"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/history/snapshot0000.npz",
+          "bytes": 13489,
+          "sha256": "9b72a406cbae226799e2fbf9b2a153466fda61a07e55154b4a8720e1eb206ad9"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/history/snapshot0001.npz",
+          "bytes": 22627,
+          "sha256": "990bb127f990e8a92fcd6fdfdf211367e4bcf7433b17dfd16b3bd3a716c29100"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/history/snapshot0002.npz",
+          "bytes": 31779,
+          "sha256": "c03355b85ec66bf7544153c93472913d34b609d7fa25f2dea5f45258b3b95d33"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/history/snapshot0003.npz",
+          "bytes": 40917,
+          "sha256": "2ff2f4bc05196365affc06eee26196a88770e1385225cc9ec2ca107ddc2ed3fd"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/history/snapshot0004.npz",
+          "bytes": 50069,
+          "sha256": "698e57fddf3386a65a1054ecddd28420ff743097849919fe9efd47189f5c6d24"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/history/snapshot0005.npz",
+          "bytes": 121987,
+          "sha256": "8539da6527c9c42247b70b3aff9bab48ca41d0d0f9a1719e27bc53e5e5dca2a0"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room0/history/snapshot0006.npz",
+          "bytes": 125738,
+          "sha256": "ff2fa9489b3d3716b5815d1421b73fae37cf919e2376112dfbb2faa25045b1bd"
+        }
+      ],
+      "audit_fraction": 0.024570246327307064,
+      "GT_cross_matrix": {
+        "0": {
+          "0": 277943,
+          "1": 674713,
+          "2": 0,
+          "3": 30823
+        },
+        "1": {
+          "0": 6893,
+          "1": 17567,
+          "2": 0,
+          "3": 40
+        },
+        "2": {
+          "0": 4,
+          "1": 0,
+          "2": 0,
+          "3": 269
+        }
+      },
+      "protected_local_by_combo": {
+        "c3_1": {
+          "local_protected_S": 23533,
+          "local_protected_O": 7
+        },
+        "c3_2": {
+          "local_protected_S": 23533,
+          "local_protected_O": 7
+        },
+        "c5_1": {
+          "local_protected_S": 23533,
+          "local_protected_O": 7
+        },
+        "c5_2": {
+          "local_protected_S": 23533,
+          "local_protected_O": 7
+        }
+      },
+      "GT_labels": {
+        "path": "results/E3c_matched_evidence/evaluation/room0/labels.npz",
+        "bytes": 172456,
+        "sha256": "4b439b7f3782cdf0fb9eae35ccc0aaf05c484173aa83124fea8eccec37a2fb1a"
+      },
+      "feasibility": {
+        "audit_S_min100": true,
+        "audit_O_min100": true,
+        "audit_fraction_min1percent": true,
+        "common_S_min100": false,
+        "common_O_min100": false
+      }
+    },
+    "room1": {
+      "scene": "room1",
+      "policy": [
+        0,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "audit": [
+        2,
+        3
+      ],
+      "combinations": {
+        "c3_1": {
+          "active": 1399108,
+          "S": 1435,
+          "O": 0,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 81749,
+          "local_support": 1325632,
+          "unprotected_ever_finite": 2514
+        },
+        "c3_2": {
+          "active": 1399108,
+          "S": 1435,
+          "O": 0,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 81749,
+          "local_support": 1325632,
+          "unprotected_ever_finite": 2514
+        },
+        "c5_1": {
+          "active": 1399108,
+          "S": 1435,
+          "O": 0,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 81749,
+          "local_support": 1325632,
+          "unprotected_ever_finite": 2514
+        },
+        "c5_2": {
+          "active": 1399108,
+          "S": 1435,
+          "O": 0,
+          "common_S": 0,
+          "common_O": 0,
+          "common_active": 81749,
+          "local_support": 1325632,
+          "unprotected_ever_finite": 2514
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "revision": 1,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 23,
+          "revision": 25,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 83,
+          "revision": 87,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 107,
+          "revision": 113,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 122,
+          "revision": 130,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 131,
+          "revision": 141,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 141,
+          "revision": 153,
+          "possible_s": 84
+        },
+        {
+          "snapshot": 7,
+          "input_frame": 213,
+          "revision": 227,
+          "possible_s": 435
+        },
+        {
+          "snapshot": 8,
+          "input_frame": 233,
+          "revision": 249,
+          "possible_s": 433
+        },
+        {
+          "snapshot": 9,
+          "input_frame": 466,
+          "revision": 484,
+          "possible_s": 2509
+        }
+      ],
+      "cpu_seconds": 215.99258383100096,
+      "external_GT_read": false,
+      "artifacts": [
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/audit_labels.npz",
+          "bytes": 1995,
+          "sha256": "1aed92614f25c66f7f88e2c5ea3f8092364e8dff52521ecdfdd024bbbd5b40ec"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/features.npz",
+          "bytes": 4272407,
+          "sha256": "d135ae168489f8eeb5b1431941119ea4ec1bd0b1e82e1a7995de31d2e805d296"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0000.npz",
+          "bytes": 13489,
+          "sha256": "9b72a406cbae226799e2fbf9b2a153466fda61a07e55154b4a8720e1eb206ad9"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0001.npz",
+          "bytes": 22626,
+          "sha256": "c992c32d977108b4afff61a20842122c6a8971a1f6761e8decabf1fffd62a4e0"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0002.npz",
+          "bytes": 31779,
+          "sha256": "e777d501bf0b356145b461411c39dcdef096af783bbdb8a4a5528b045ea5476b"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0003.npz",
+          "bytes": 40915,
+          "sha256": "a5ba8f3253d5385b9b351fa17e6813aa8c33c913f2f8f21a3a3b9c9df052cc8b"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0004.npz",
+          "bytes": 50067,
+          "sha256": "4cc4986f88f125ec643a095b6ec733d1718e1456d9da6e660fa69b4ce5c6896c"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0005.npz",
+          "bytes": 59203,
+          "sha256": "cf215a55bad78d7ed75270f7650e7047d36545cd277a90e7d4d24655635592bc"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0006.npz",
+          "bytes": 638670,
+          "sha256": "011875a246aeccd5d4a62ace6acff3c28356d65e3202eec4b3b61d176346f937"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0007.npz",
+          "bytes": 591192,
+          "sha256": "9854d071bfb494659b72e0845b209030454b395b31069c20f6435ee09a63060d"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0008.npz",
+          "bytes": 313924,
+          "sha256": "c01035227ac4802d4b63f31bfb98501ee1254ba6343e397d8dbff929ce273abb"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room1/history/snapshot0009.npz",
+          "bytes": 1582332,
+          "sha256": "49422bf4d3c43b8b78f39b9acf2c689a6d6cbb817c3d03c6c7f19ca1891a5298"
+        }
+      ],
+      "audit_fraction": 0.0010256534877936515,
+      "GT_cross_matrix": {
+        "0": {
+          "0": 542671,
+          "1": 522584,
+          "2": 0,
+          "3": 332418
+        },
+        "1": {
+          "0": 0,
+          "1": 1435,
+          "2": 0,
+          "3": 0
+        },
+        "2": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 0
+        }
+      },
+      "protected_local_by_combo": {
+        "c3_1": {
+          "local_protected_S": 1307,
+          "local_protected_O": 0
+        },
+        "c3_2": {
+          "local_protected_S": 1307,
+          "local_protected_O": 0
+        },
+        "c5_1": {
+          "local_protected_S": 1307,
+          "local_protected_O": 0
+        },
+        "c5_2": {
+          "local_protected_S": 1307,
+          "local_protected_O": 0
+        }
+      },
+      "GT_labels": {
+        "path": "results/E3c_matched_evidence/evaluation/room1/labels.npz",
+        "bytes": 197913,
+        "sha256": "c5825d7a2d14c52675b05bb1f5423770156ca3848498f25a4e828c5ba2ea5180"
+      },
+      "feasibility": {
+        "audit_S_min100": true,
+        "audit_O_min100": false,
+        "audit_fraction_min1percent": false,
+        "common_S_min100": false,
+        "common_O_min100": false
+      }
+    },
+    "room2": {
+      "scene": "room2",
+      "policy": [
+        0,
+        5,
+        6
+      ],
+      "audit": [
+        2,
+        3
+      ],
+      "combinations": {
+        "c3_1": {
+          "active": 999190,
+          "S": 52313,
+          "O": 79,
+          "common_S": 3613,
+          "common_O": 0,
+          "common_active": 142086,
+          "local_support": 917177,
+          "unprotected_ever_finite": 666
+        },
+        "c3_2": {
+          "active": 999190,
+          "S": 52313,
+          "O": 79,
+          "common_S": 3613,
+          "common_O": 0,
+          "common_active": 142086,
+          "local_support": 917177,
+          "unprotected_ever_finite": 666
+        },
+        "c5_1": {
+          "active": 999190,
+          "S": 52313,
+          "O": 79,
+          "common_S": 3613,
+          "common_O": 0,
+          "common_active": 142086,
+          "local_support": 917177,
+          "unprotected_ever_finite": 666
+        },
+        "c5_2": {
+          "active": 999190,
+          "S": 52313,
+          "O": 79,
+          "common_S": 3613,
+          "common_O": 0,
+          "common_active": 142086,
+          "local_support": 917177,
+          "unprotected_ever_finite": 666
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "revision": 1,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 98,
+          "revision": 100,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 178,
+          "revision": 182,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 220,
+          "revision": 226,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 343,
+          "revision": 351,
+          "possible_s": 0
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 429,
+          "revision": 439,
+          "possible_s": 24
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 462,
+          "revision": 474,
+          "possible_s": 665
+        }
+      ],
+      "cpu_seconds": 77.53962921200036,
+      "external_GT_read": false,
+      "artifacts": [
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/audit_labels.npz",
+          "bytes": 8669,
+          "sha256": "78630c67147586699725f330bafd27756923da5d829af2e097fe076fc8c4a47d"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/features.npz",
+          "bytes": 2801626,
+          "sha256": "8adc794e7f2f15040221085e4a79195857c45524a40a6c32c787bd08c5c21c97"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/history/snapshot0000.npz",
+          "bytes": 13489,
+          "sha256": "9b72a406cbae226799e2fbf9b2a153466fda61a07e55154b4a8720e1eb206ad9"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/history/snapshot0001.npz",
+          "bytes": 22627,
+          "sha256": "83d8a13f36859f2b80bee544c31abff9a1d1d4a6f3f56f304e50e9ea024a2859"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/history/snapshot0002.npz",
+          "bytes": 31779,
+          "sha256": "27b386c961d274ba54ae42c79490358d582a8fa0e8930c9e980544bafdbfd843"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/history/snapshot0003.npz",
+          "bytes": 40915,
+          "sha256": "6e5afd9bfa988d8396ad19acd345653c22710fbf959939ec0ba21057524e4775"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/history/snapshot0004.npz",
+          "bytes": 50069,
+          "sha256": "a52bb1532689fc94495e3f69f381befd3f73468df33422b91a909e744092faf8"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/history/snapshot0005.npz",
+          "bytes": 306659,
+          "sha256": "74ebbac2ec2702b3b1c99456f0e1f6084a406c5b46d63a95ce96336d22b61cff"
+        },
+        {
+          "path": "results/E4c_surface_consistency_pruning/v2/development/room2/history/snapshot0006.npz",
+          "bytes": 1083618,
+          "sha256": "06e3b3a137e5044925fc3600a95ce7990bf00a6bd35523e72d539fee5302501d"
+        }
+      ],
+      "audit_fraction": 0.05243447192225703,
+      "GT_cross_matrix": {
+        "0": {
+          "0": 130647,
+          "1": 787668,
+          "2": 0,
+          "3": 28483
+        },
+        "1": {
+          "0": 1807,
+          "1": 50440,
+          "2": 0,
+          "3": 66
+        },
+        "2": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 79
+        }
+      },
+      "protected_local_by_combo": {
+        "c3_1": {
+          "local_protected_S": 50236,
+          "local_protected_O": 1
+        },
+        "c3_2": {
+          "local_protected_S": 50236,
+          "local_protected_O": 1
+        },
+        "c5_1": {
+          "local_protected_S": 50236,
+          "local_protected_O": 1
+        },
+        "c5_2": {
+          "local_protected_S": 50236,
+          "local_protected_O": 1
+        }
+      },
+      "GT_labels": {
+        "path": "results/E3c_matched_evidence/evaluation/room2/labels.npz",
+        "bytes": 152484,
+        "sha256": "bd7186eacee2ec946d38431ab3077ac664d7b06457e0c4a553b63b393fe12bd3"
+      },
+      "feasibility": {
+        "audit_S_min100": true,
+        "audit_O_min100": false,
+        "audit_fraction_min1percent": true,
+        "common_S_min100": true,
+        "common_O_min100": false
+      }
+    }
+  },
+  "calibration": {
+    "created_at_utc": "2026-10-22T04:59:57.718287+00:00",
+    "status": "INCONCLUSIVE",
+    "combinations": {
+      "c3_1": {
+        "status": "INCONCLUSIVE_CALIBRATION",
+        "thresholds": {
+          "s": null,
+          "d": null
+        },
+        "groups": [
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_8",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_9",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_10",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_8",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_9",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_10",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          }
+        ],
+        "failures": [
+          "office0: fewer than 100 common audit O",
+          "office1: fewer than 100 common audit O",
+          "s/office0/own: fewer than 100 finite audit S",
+          "s/office0/common: fewer than 100 finite audit S",
+          "s/office1/own: fewer than 100 finite audit S",
+          "s/office1/common: fewer than 100 finite audit S",
+          "d/office0/own: fewer than 100 finite audit S",
+          "d/office0/common: fewer than 100 finite audit S",
+          "d/office1/own: fewer than 100 finite audit S",
+          "d/office1/common: fewer than 100 finite audit S"
+        ],
+        "metrics": {}
+      },
+      "c3_2": {
+        "status": "INCONCLUSIVE_CALIBRATION",
+        "thresholds": {
+          "s": null,
+          "d": null
+        },
+        "groups": [
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_8",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_9",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_10",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_8",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_9",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_10",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          }
+        ],
+        "failures": [
+          "office0: fewer than 100 common audit O",
+          "office1: fewer than 100 common audit O",
+          "s/office0/own: fewer than 100 finite audit S",
+          "s/office0/common: fewer than 100 finite audit S",
+          "s/office1/own: fewer than 100 finite audit S",
+          "s/office1/common: fewer than 100 finite audit S",
+          "d/office0/own: fewer than 100 finite audit S",
+          "d/office0/common: fewer than 100 finite audit S",
+          "d/office1/own: fewer than 100 finite audit S",
+          "d/office1/common: fewer than 100 finite audit S"
+        ],
+        "metrics": {}
+      },
+      "c5_1": {
+        "status": "INCONCLUSIVE_CALIBRATION",
+        "thresholds": {
+          "s": null,
+          "d": null
+        },
+        "groups": [
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_8",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_9",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_10",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_8",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_9",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_10",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          }
+        ],
+        "failures": [
+          "office0: fewer than 100 common audit O",
+          "office1: fewer than 100 common audit O",
+          "s/office0/own: fewer than 100 finite audit S",
+          "s/office0/common: fewer than 100 finite audit S",
+          "s/office1/own: fewer than 100 finite audit S",
+          "s/office1/common: fewer than 100 finite audit S",
+          "d/office0/own: fewer than 100 finite audit S",
+          "d/office0/common: fewer than 100 finite audit S",
+          "d/office1/own: fewer than 100 finite audit S",
+          "d/office1/common: fewer than 100 finite audit S"
+        ],
+        "metrics": {}
+      },
+      "c5_2": {
+        "status": "INCONCLUSIVE_CALIBRATION",
+        "thresholds": {
+          "s": null,
+          "d": null
+        },
+        "groups": [
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_8",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_9",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office0",
+            "group": "anchor_10",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "s",
+            "scene": "office1",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_8",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_9",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office0",
+            "group": "anchor_10",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "own",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "common",
+            "count": 0,
+            "required": true,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_0",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_1",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_2",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_3",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_4",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_5",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_6",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          },
+          {
+            "method": "d",
+            "scene": "office1",
+            "group": "anchor_7",
+            "count": 0,
+            "required": false,
+            "quantile": null
+          }
+        ],
+        "failures": [
+          "office0: fewer than 100 common audit O",
+          "office1: fewer than 100 common audit O",
+          "s/office0/own: fewer than 100 finite audit S",
+          "s/office0/common: fewer than 100 finite audit S",
+          "s/office1/own: fewer than 100 finite audit S",
+          "s/office1/common: fewer than 100 finite audit S",
+          "d/office0/own: fewer than 100 finite audit S",
+          "d/office0/common: fewer than 100 finite audit S",
+          "d/office1/own: fewer than 100 finite audit S",
+          "d/office1/common: fewer than 100 finite audit S"
+        ],
+        "metrics": {}
+      }
+    },
+    "inputs": [
+      {
+        "path": "results/E4c_surface_consistency_pruning/v2/development/office0/geometry_summary.json",
+        "bytes": 5188,
+        "sha256": "74fe28d81a9b212ff8637ce62e6d22eacfc46a7f76e83ab23803a59ffd1b9d62"
+      },
+      {
+        "path": "results/E4c_surface_consistency_pruning/v2/development/office0/features.npz",
+        "bytes": 6676165,
+        "sha256": "d7b2835d57cd6797fd5460f444a79fd272ebe946306ea4af07a076c375b07a3f"
+      },
+      {
+        "path": "results/E4c_surface_consistency_pruning/v2/development/office0/audit_labels.npz",
+        "bytes": 3860,
+        "sha256": "814b755c03aaafc8d18cd1abdc3491bbd67dd6e020791e18f8b33bf46c4decc6"
+      },
+      {
+        "path": "results/E4c_surface_consistency_pruning/v2/development/office1/geometry_summary.json",
+        "bytes": 4176,
+        "sha256": "5b2d2f27b07b5ec7905042bf49915f8d4c53c748ff9b57393a25c4c890f6a132"
+      },
+      {
+        "path": "results/E4c_surface_consistency_pruning/v2/development/office1/features.npz",
+        "bytes": 2124047,
+        "sha256": "2a703f900e26cfaad0aa070cc88094051ecf6e51d689cd6569de88e9dcddee71"
+      },
+      {
+        "path": "results/E4c_surface_consistency_pruning/v2/development/office1/audit_labels.npz",
+        "bytes": 4147,
+        "sha256": "5af062158519f71100e146c304878ee6bf1361a11e0d902747477964e8249eec"
+      }
+    ],
+    "code": {
+      "path": "scripts/calibrate_e4c_v2.py",
+      "bytes": 6620,
+      "sha256": "9a2c55895dab512b62b5946a40ed2f4cdcd22f3518cb2d1946a657fc516f8483"
+    },
+    "external_GT_used_for_thresholds": false,
+    "fresh_scenes_opened": false,
+    "map_metrics_measured": false,
+    "legacy_comparisons_measured": false,
+    "reason": "Development audit/calibration gate; no efficacy GO issued"
+  },
+  "validation": {
+    "status": "PASS",
+    "scope": "Implemented development gate; not full E4c efficacy validation",
+    "inputs_rehashed": 112,
+    "tests": 11,
+    "scenes": [
+      {
+        "scene": "office0",
+        "status": "PASS",
+        "source_disjoint_pools": true,
+        "paired_finite_equal": true,
+        "audit_partition": true,
+        "snapshot_revisions": true,
+        "counts_verified": true,
+        "artifact_hashes_verified": true
+      },
+      {
+        "scene": "office1",
+        "status": "PASS",
+        "source_disjoint_pools": true,
+        "paired_finite_equal": true,
+        "audit_partition": true,
+        "snapshot_revisions": true,
+        "counts_verified": true,
+        "artifact_hashes_verified": true
+      },
+      {
+        "scene": "room0",
+        "status": "PASS",
+        "source_disjoint_pools": true,
+        "paired_finite_equal": true,
+        "audit_partition": true,
+        "snapshot_revisions": true,
+        "counts_verified": true,
+        "artifact_hashes_verified": true
+      },
+      {
+        "scene": "room1",
+        "status": "PASS",
+        "source_disjoint_pools": true,
+        "paired_finite_equal": true,
+        "audit_partition": true,
+        "snapshot_revisions": true,
+        "counts_verified": true,
+        "artifact_hashes_verified": true
+      },
+      {
+        "scene": "room2",
+        "status": "PASS",
+        "source_disjoint_pools": true,
+        "paired_finite_equal": true,
+        "audit_partition": true,
+        "snapshot_revisions": true,
+        "counts_verified": true,
+        "artifact_hashes_verified": true
+      }
+    ],
+    "report_code": {
+      "path": "scripts/report_e4c_v2.py",
+      "bytes": 17044,
+      "sha256": "29c4d4402efaa03b43f33d5d8e898dc4a4c5f68559d801435f34183383d2f9c9"
+    },
+    "seal": {
+      "path": "results/E4c_surface_consistency_pruning/v2/seal.json",
+      "bytes": 2660,
+      "sha256": "978cac91d017c261128d0be0f7f776f16e2adc903f089ca80d750f1598b6cc94"
+    },
+    "calibration": {
+      "path": "results/E4c_surface_consistency_pruning/v2/development_calibration.json",
+      "bytes": 38775,
+      "sha256": "7e93fc4b11a00e27971f496397e8ec1aea171a44f7de05ed481032e649da4c00"
+    },
+    "fresh_data_opened": false,
+    "source_results_modified": false
+  },
+  "omitted": {
+    "new_baselines": true,
+    "legacy_policy_comparison": true,
+    "ablation_calibration": true,
+    "RGB_depth_TSDF": true,
+    "matched_count": true,
+    "CUDA_compaction": true
+  },
+  "reason": "Insufficient independently audited supported candidates with repeated policy observations",
+  "E4_decision": "REVISE unchanged",
+  "E5_E6": "hold unchanged"
+}
