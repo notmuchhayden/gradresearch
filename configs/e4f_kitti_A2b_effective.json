@@ -1,0 +1,37 @@
+{
+  "experiment": "E4f KITTI outdoor geometry consistency diagnostic",
+  "effective_run_version": "A2b",
+  "selected_drive": "2011_09_26_drive_0015_sync",
+  "selection_config": "configs/e4f_kitti_selection.json",
+  "input_split": "configs/e4f_kitti_input_split.json",
+  "amendments": [
+    "configs/e4f_amendment_A1.json",
+    "configs/e4f_amendment_A2.json",
+    "configs/e4f_amendment_A2b.json"
+  ],
+  "model": "E4 B1 original, seed 0, refinement 0, no new pruning",
+  "rgb_model_input": {
+    "source_records": 240,
+    "sample_stride": 2,
+    "model_inputs": 120,
+    "effective_dataset_subsample": 2,
+    "approximate_rate_hz": 5,
+    "evaluation_lidar_oxts_records": 240
+  },
+  "native_filter": {
+    "keyframe_buffer": 128,
+    "spatial_stride": 1,
+    "max_gaussians": 16777216,
+    "depth_max_percentile": 0.98,
+    "max_scale": 1.0,
+    "min_confidence": 1.5,
+    "refiner_conf_fade": 0
+  },
+  "evaluation": {
+    "lidar_oxts_tracklets_are_evaluation_only": true,
+    "map_to_lidar_icp": false,
+    "per_frame_scale_fit": false,
+    "trajectory_alignment": "one global Sim(3)"
+  },
+  "output": "results/E4f_kitti_geometry_diagnostic/2011_09_26_drive_0015_sync/baseline_A2b"
+}

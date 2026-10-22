@@ -1,0 +1,18 @@
+{
+  "experiment": "E4f KITTI outdoor geometry consistency diagnostic",
+  "amendment": "A2b",
+  "registered_at": "2026-10-22",
+  "registered_before_A2b_model_prediction": true,
+  "reason": "Audit of the A2 failed-run command showed the launcher still passed --keyframe-buffer 32 despite the registered A2 configuration specifying 128. The partial run therefore repeated the initial storage-capacity failure and did not execute the approved A2 settings.",
+  "change": "Correct only the launcher argument to pass --keyframe-buffer 128 and write to a new output directory. Preserve the A2 failure outputs and do not change the selected data, sampled RGB inputs, model, weights, filtering, or evaluation protocol.",
+  "unchanged": [
+    "selected drive and selected 24.75-second interval",
+    "120 RGB inputs sampled at stride 2 from the original 240-frame window",
+    "E4 B1 weights, RGB-only inference, tracker and mapping code",
+    "native filter, no new pruning, seed 0, refinement 0",
+    "LiDAR/OXTS/tracklets remain evaluation-only",
+    "all 240 synchronized LiDAR/OXTS records remain available for evaluation"
+  ],
+  "prior_launcher_mismatch_manifest": "results/E4f_kitti_geometry_diagnostic/2011_09_26_drive_0015_sync/baseline_A2/run_manifest.json",
+  "new_output_version": "results/E4f_kitti_geometry_diagnostic/2011_09_26_drive_0015_sync/baseline_A2b/"
+}

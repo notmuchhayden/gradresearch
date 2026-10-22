@@ -1,0 +1,63 @@
+{
+  "experiment": "E4f KITTI outdoor geometry consistency diagnostic",
+  "stage": "single-drive development diagnostic",
+  "selection": "configs/e4f_kitti_selection.json",
+  "input_split": "configs/e4f_kitti_input_split.json",
+  "dataset_manifest": "configs/e4f_kitti_dataset_manifest.json",
+  "amendment": "configs/e4f_amendment_A1.json",
+  "selected_drive": "2011_09_26_drive_0015_sync",
+  "model": "E4 B1 original, seed 0, refinement 0, no new pruning",
+  "config_base": "configs/e4e_uav_b1.yaml",
+  "config_override": "configs/e4f_kitti_b1.yaml",
+  "weights_manifest": "configs/e0_weights_manifest.json",
+  "mapping": {
+    "camera": "image_02 color only",
+    "rgb_frames": 120,
+    "subsample": 1,
+    "use_calib": false,
+    "refinement": false,
+    "native_filtering": "unchanged E4 B1",
+    "new_pruning": false,
+    "gt_pose_or_lidar_or_tracklets_used": false,
+    "rgb_sample_stride": 2,
+    "approximate_input_rate_hz": 5
+  },
+  "native_filter": {
+    "keyframe_buffer": 128,
+    "spatial_stride": 1,
+    "max_gaussians": 16777216,
+    "depth_max_percentile": 0.98,
+    "max_scale": 1.0,
+    "min_confidence": 1.5,
+    "refiner_conf_fade": 0
+  },
+  "pose_gate": {
+    "coverage_min": 0.95,
+    "longest_tracking_break_seconds_max": 2.0
+  },
+  "timestamp_gate_ms": 50,
+  "depth_range_bins_m": [
+    0,
+    10,
+    20,
+    40,
+    80,
+    200
+  ],
+  "minimum_static_lidar_matches_per_range_bin": 1000,
+  "metrics": [
+    "camera-local raw pointmap vs projected same-frame Velodyne depth residual median/p95",
+    "estimated-vs-OXTS trajectory single-Sim3 scale and residuals",
+    "estimated-pose map vs LiDAR and OXTS-pose oracle diagnostic map vs LiDAR",
+    "LiDAR/static-tracklet evaluation coverage by range and time",
+    "raw pointmap to pre-active Gaussian center offset",
+    "active native-filter and map point counts"
+  ],
+  "map_to_lidar_icp_or_local_scale_fit": false,
+  "pose_oracle": "evaluation-only; raw camera-local pointmaps remain unchanged; requires validated frame/coordinate lineage",
+  "interpretation_limit": "diagnostic for this pipeline and one drive; no MASt3R-only causal attribution or generalization",
+  "amendment_A2": "configs/e4f_amendment_A2.json",
+  "amendment_A2b": "configs/e4f_amendment_A2b.json",
+  "A2b_output": "results/E4f_kitti_geometry_diagnostic/2011_09_26_drive_0015_sync/baseline_A2b",
+  "failed_attempt_10hz_manifest": "results/E4f_kitti_geometry_diagnostic/2011_09_26_drive_0015_sync/baseline/run_manifest.json"
+}

@@ -1,0 +1,3666 @@
+{
+  "experiment": "E4f KITTI outdoor geometry consistency diagnostic",
+  "selected_drive": "2011_09_26_drive_0015_sync",
+  "sources": [
+    {
+      "path": "data/E4f/archives/2011_09_26_drive_0015_sync.zip",
+      "bytes": 1206523127,
+      "sha256": "0d381864e65e032f5203b396ea118b28044ab25393f4f2f685b653c50e21f228",
+      "url": "https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_drive_0015/2011_09_26_drive_0015_sync.zip"
+    },
+    {
+      "path": "data/E4f/archives/2011_09_26_drive_0015_tracklets.zip",
+      "bytes": 725461,
+      "sha256": "14b07f3b594a7f1d10fe0c141995677bc74bacec2f1a62f2df1ee3e5789f9633",
+      "url": "https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_drive_0015/2011_09_26_drive_0015_tracklets.zip"
+    },
+    {
+      "path": "data/E4f/archives/2011_09_26_calib.zip",
+      "bytes": 4068,
+      "sha256": "e0108cfd000cf802c14ed94fba38601185c792e5640abba015a34b7a85b812e0",
+      "url": "https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_calib.zip"
+    }
+  ],
+  "selection_manifest": "configs/e4f_kitti_selection.json",
+  "input_split": "configs/e4f_kitti_input_split.json",
+  "files": [
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/rgb.txt",
+      "bytes": 8303,
+      "sha256": "46400442c4319c99bc84fc7bfd5099d1fc28380b320d039202f4df33d2e53da6"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/calibration.txt",
+      "bytes": 56,
+      "sha256": "1d45d017e78a726fa6353766726910c05da617824dc9f3439ee71543b7de63cb"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/tracklet_labels.xml",
+      "bytes": 725197,
+      "sha256": "b3126239a6d69576b9009d8765bd5064456dfbb198aa092e680e77cd8cc3ab6e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000000.png",
+      "bytes": 852522,
+      "sha256": "2ec99859ea8d652e96032a2b9fbafbb0c3acb661e369bce07393a330c341c7a7"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000001.png",
+      "bytes": 846001,
+      "sha256": "e541bc89ecf7e7e29550c6ca749e2b2e65a6a1c16b764aa56879ffac9c4f878e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000002.png",
+      "bytes": 840651,
+      "sha256": "565b9f962fa57bbc569556b71269ffb43c5e9e66553d67205f8e93a1bbc90095"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000003.png",
+      "bytes": 836282,
+      "sha256": "f8b36d0b0aa5f2e756044fee9252bafc88a3a5e6e2b2663f014f414031edea2c"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000004.png",
+      "bytes": 839507,
+      "sha256": "7cce21ff507014d086b6ab6da5dcfab22f716ffd0f8ae0f62788916b2eea6ac3"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000005.png",
+      "bytes": 842784,
+      "sha256": "c1d3530b788f8269adb1f51baead3c608282f6d8141d9307177fbf00796c97f7"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000006.png",
+      "bytes": 842487,
+      "sha256": "9acb1669042492d18a8b5f5a5bda1ebdb441b75d43a6950c7d0ebbf6253f9ac6"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000007.png",
+      "bytes": 846724,
+      "sha256": "fd7292244699ec9a88e67b928b38581d0f27aedcbb9dfd7efa3ae633db13cea2"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000008.png",
+      "bytes": 847275,
+      "sha256": "f17d87bb6a14cb2f3a052c9f7f4222c2a849c9a83b029320d05116478a12f2ac"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000009.png",
+      "bytes": 832787,
+      "sha256": "ed739ad187460505cc1796d34d569478f6a8a9cfa45e2b756df0f301e85dc60e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000010.png",
+      "bytes": 819276,
+      "sha256": "4c7eb2b2048775225ee2c978b8d26d8e5d4223d3f0eaaf7104b68fc427846716"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000011.png",
+      "bytes": 817068,
+      "sha256": "538a8e3989af72af4d8d196a6b8fc79367902815cdee5b7b14ffa085d16aa613"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000012.png",
+      "bytes": 817155,
+      "sha256": "08f6a443717c1690accf0dc86078ec24e5b5324a19f45a3448b27ad37a7a6b40"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000013.png",
+      "bytes": 816474,
+      "sha256": "450ef49907df87b0b6fa4b32348454a23834fe5c7fabfb8e15cba0fc7e8dbe21"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000014.png",
+      "bytes": 819371,
+      "sha256": "46038ac84632c77b341e7492490446950bd4e3a1504e13a6c4dd22974bfcfb03"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000015.png",
+      "bytes": 818002,
+      "sha256": "b0a168c6b2fc0cebe9c062d3d7453e2fa1eadb8ea8b55f05fe0905e134a05310"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000016.png",
+      "bytes": 816553,
+      "sha256": "ba621fbb6f49560a4d7c43bc0faea1fc7f92cdcba069ca2b51c94180638f4d0f"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000017.png",
+      "bytes": 816415,
+      "sha256": "4fd77c07676c70fd66cd3f6780139af6d354612f2c7bfd33f5f9d11ff3d5f066"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000018.png",
+      "bytes": 827110,
+      "sha256": "e538ddb89f4e32f596105360b62bc2a3af7e19f8e8015f8ca962c629d4204ce0"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000019.png",
+      "bytes": 843240,
+      "sha256": "b0a89f4fd0f7d59b87b321790dae442525d2fcffa346b776900543b3487b6de3"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000020.png",
+      "bytes": 843408,
+      "sha256": "d03a60ea644c293db066894a19746beecbb86b8a0d79a46c43360d433b8f0340"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000021.png",
+      "bytes": 841516,
+      "sha256": "27e280e8275c741cc9a7d68a115f3abfb839ff339c3b06b044ff742c289eb38e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000022.png",
+      "bytes": 838233,
+      "sha256": "81c5271e94b7f8a98b9e0f70cbcd25fc7fa595c13cd9e2596718c70900656e38"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000023.png",
+      "bytes": 828470,
+      "sha256": "b25bad1c4f7872106555e574138cc5c4de4e5c438666dd9cee65f14c0500466e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000024.png",
+      "bytes": 823808,
+      "sha256": "0317f9fd73ec98841096cc45600f3ca5db3d348de48933a2cf8862e8fe4381c2"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000025.png",
+      "bytes": 824091,
+      "sha256": "bfe8fe8ffc9f06098db9ce5846d983c046792c5c7bd9f4fe8fb6e7e891d10f11"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000026.png",
+      "bytes": 825232,
+      "sha256": "6b732c42315c1ebc07e77ea4f0f81802786e5449a2b8656fa26731633e197843"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000027.png",
+      "bytes": 821233,
+      "sha256": "e52ada984b2d55e29475eab32973100eba4f64d92ef7c67280167b5023e22f81"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000028.png",
+      "bytes": 812679,
+      "sha256": "ab50b21fb300c07d7ec62704978c999e49cd7c888ed8114cc27b261b0c3a1617"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000029.png",
+      "bytes": 812071,
+      "sha256": "c734fda21ed487e460446a8f548c39013ff00f85194453ca79c2a89d14b06692"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000030.png",
+      "bytes": 810621,
+      "sha256": "2d532b4961344e0d85d1dbf83a2ae1d57d45b1b7f00937d4ffdfa9a8e6b3f923"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000031.png",
+      "bytes": 807893,
+      "sha256": "88b662f72723141b6304ec91e3f5601b9d1ec9a9a825bd70a78733866e946b3d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000032.png",
+      "bytes": 804329,
+      "sha256": "00fed7e5ec4832f682949241927b2178fabbd963d9da05eeee42090b68b8fe19"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000033.png",
+      "bytes": 800801,
+      "sha256": "f80e158c083dd145813c4362b4d34ec8cd1fbdfb042cffbc444586c37687c34a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000034.png",
+      "bytes": 799075,
+      "sha256": "1f27131b9cb25bebb663a8bf0e8877aa37125ccfe941368f101493c326b18d82"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000035.png",
+      "bytes": 798333,
+      "sha256": "dd7f2ce51c5008ebde7ab25598b5b4ab93c7d3cd84dee1b0a1ed57a4e1eb994d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000036.png",
+      "bytes": 796851,
+      "sha256": "c98eeef5539eb6ef2cfb48572adfd9800d93498a167f4aa1c42fd4098a5344de"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000037.png",
+      "bytes": 798332,
+      "sha256": "97142b24e5f0296372ffdcb172854596fc972ccbae00ed665d2a2e93afcdae3d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000038.png",
+      "bytes": 798782,
+      "sha256": "ca592911b5b859fc0b4b789b0bf3e806abf4d3a3b61fa5dd0cdedfeb20518b2b"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000039.png",
+      "bytes": 796453,
+      "sha256": "9d81245a0e5083947fddcbba09aebcdb1b1201dbd39a7fc12af4e9772a46552e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000040.png",
+      "bytes": 795028,
+      "sha256": "7364e4802009d0ad75feddc148f38062625b8cc0d9666163640e127a1bedbb7e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000041.png",
+      "bytes": 791812,
+      "sha256": "bec843c80bf3b86c945a8ad57a7868d0ef09c480848146174baa9ed87a862911"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000042.png",
+      "bytes": 788879,
+      "sha256": "773b93f058baede4bde3db7956cd56572c43e64189675fdbb5b37f105dcd8d79"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000043.png",
+      "bytes": 788532,
+      "sha256": "59f53fa029e39d99a58c212168e253da83de5aa1aeec5a852c510df569c88970"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000044.png",
+      "bytes": 789088,
+      "sha256": "2a0ceb1d2c5d9bf0be1e1795b23c20480731143e93ccd051f527e13a7f9261b0"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000045.png",
+      "bytes": 786797,
+      "sha256": "ea9c2269751d3b00d179474976935f2b8295e98ef8dee96ba33973afae2018cf"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000046.png",
+      "bytes": 790652,
+      "sha256": "1cb0134cf0bac2b49dc5725b6e82a74095f19d13d996435805bed8c3b2d54ecc"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000047.png",
+      "bytes": 793919,
+      "sha256": "4f6d547362003ab4aaa72b2423f05da30468bd10fea26f57f6862c5622d3afad"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000048.png",
+      "bytes": 797731,
+      "sha256": "a17a06922893f8861f512e183b124990d348f464f81f1af86b1e34a16981d6cb"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000049.png",
+      "bytes": 801145,
+      "sha256": "de36358f51abe96df149ca39505080265a96d7c27c2b3c41eeab11af8c230620"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000050.png",
+      "bytes": 801433,
+      "sha256": "e06078e131175ec89d083bcfcdb83acc533573de2eb7f64595403da43c0db0f0"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000051.png",
+      "bytes": 804678,
+      "sha256": "77a925a5b6cf7a22417f33e01578e04f2762e6e48fb50bcdae51556868b16e53"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000052.png",
+      "bytes": 802947,
+      "sha256": "458d2972e334aecb1ecdcda567fd741aad4e199ddba9a154b51261d3ea80eb81"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000053.png",
+      "bytes": 799486,
+      "sha256": "be1cc3e8f0ac80d036a540d1face6785fda87c4e287984def8b4a0e7ee809ef7"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000054.png",
+      "bytes": 802912,
+      "sha256": "4a59c7250d627e672daad970d524b03ca9bcaadc5eae53f8f017879046d54108"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000055.png",
+      "bytes": 803774,
+      "sha256": "c023aae01dd5c30f6b5517612d9fde1f606a9f3d939c01ec8beb02955a58829b"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000056.png",
+      "bytes": 807654,
+      "sha256": "79918d49497f6e033167f159b045a7bbdd5c35cd98408fd48826980c86a65763"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000057.png",
+      "bytes": 810469,
+      "sha256": "23f2fcf9327f6def808edd84ba5ff113121794f008be3cfbaf1c335305a50b16"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000058.png",
+      "bytes": 806519,
+      "sha256": "d3edcd702dd7d460aefa3d306531725f5c094ba60b30c2255db51a5ca8f0be41"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000059.png",
+      "bytes": 809972,
+      "sha256": "574a282cf47590dbc4707e356d2876f85ee94140ddee1c94a28a01345d872211"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000060.png",
+      "bytes": 814825,
+      "sha256": "26002fed011bd6eb32d98393d54c68c06953e7d35f93f87f03e558afe40320da"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000061.png",
+      "bytes": 818454,
+      "sha256": "3734586149bf6f4793f1ac0e31eeaebfdb7b62a3577a8daee65c9a82105ef482"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000062.png",
+      "bytes": 822602,
+      "sha256": "4ccb6b63d32303da9b3d911af0093f945db6c9cd7b1bcde711034ab7db888e55"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000063.png",
+      "bytes": 827037,
+      "sha256": "6e313f1cdc8c6588b15385be63e2f6dd380ba11026a8c6d4fc303cb13ab64843"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000064.png",
+      "bytes": 828474,
+      "sha256": "8a270ee327142b401b9a10553275ec6af9f436bdac72a916966f1f5b8a15b9d4"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000065.png",
+      "bytes": 834785,
+      "sha256": "fea30da9e2947d9a2f58c59dad9e80aac6f111ec8bc7480be6123fadf0a0518b"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000066.png",
+      "bytes": 837992,
+      "sha256": "a6e00e144ca22531dcdc54e96f706356be745bef30073b8e183c80679fa1e71a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000067.png",
+      "bytes": 841055,
+      "sha256": "883ef28e6f7ebc8e970b07fd3590acd6d3ae4921371d2760d77ca0551dbfc0d9"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000068.png",
+      "bytes": 844979,
+      "sha256": "08d90fdbaeac1015d2f0007d3b61f107f66d84241b6c235d537f5b9d7d8c5ceb"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000069.png",
+      "bytes": 847532,
+      "sha256": "1e1dd7770dfaa8ffd3a302528b0970939d1a8acdee07805abdb226a45d9ecdfe"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000070.png",
+      "bytes": 850478,
+      "sha256": "dd37382a26e13116d0c3360b293434b82410f345da2bd5115709982370c12485"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000071.png",
+      "bytes": 853707,
+      "sha256": "bd150fa68a7d7b17c3e212f2962fc4d150aaa7eb4b7f3a97e9bddd4d3e508bc1"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000072.png",
+      "bytes": 857666,
+      "sha256": "796f8d6d0cb08d990b097ccec2b49924aeff963ac30a7507b129b6638e5fb8ce"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000073.png",
+      "bytes": 859987,
+      "sha256": "ee49f1b2eca482b364349038352a9b645a9c95b8205b5d4dbf304c71a5bfdc9a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000074.png",
+      "bytes": 862044,
+      "sha256": "76a5e20f47b84deafd83948d6e871a57cb9d3cb8ca5cdcb611c57ae56677f2d1"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000075.png",
+      "bytes": 862262,
+      "sha256": "c7de29ae8c55e974b4e01e6481da0fa201de6b301d758f621da1c72fa38444ae"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000076.png",
+      "bytes": 858778,
+      "sha256": "97e33477ad25a5cbd0d4062dd6c22358cb66639cfb685e5f9b58c2a359e6ddcc"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000077.png",
+      "bytes": 858793,
+      "sha256": "bff56c709ee2e0668056ca242c91a9e27110e9c03179e42b1fb7bbf2fc5bf8d1"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000078.png",
+      "bytes": 855166,
+      "sha256": "78eff1ceef1eebb959085cc3500a4d4e8072e6fb85a50a913cb8e81be6053a82"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000079.png",
+      "bytes": 855617,
+      "sha256": "93b07287eb36533687a70d2422127544558366e9527e54bd7acfb684ddf5b725"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000080.png",
+      "bytes": 858741,
+      "sha256": "fe938579ca39dd5d8d653adecc007aefc6ed52a92b16abd37c04b113676c6751"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000081.png",
+      "bytes": 859323,
+      "sha256": "3b3d4491705f73c5b58f33de157897b90ed6c84b743c20bfd84e933150cdbbbe"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000082.png",
+      "bytes": 856044,
+      "sha256": "91b850d566c29daefbb4bd04fb1de8bd9cbd29606f05eae954bb0088502f6e2a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000083.png",
+      "bytes": 850529,
+      "sha256": "f03aa6d66eaeb2732163bc3ae9f89edc596200abec8bda4f37875b9cd7dc9b2b"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000084.png",
+      "bytes": 849363,
+      "sha256": "44b17a76d5c4cb25a3f398794d14f29bc4f4c3f84ca0872fb5e9bac0a61deb68"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000085.png",
+      "bytes": 853164,
+      "sha256": "949a08262edc3b0fca7d7d405370b2bca078fb1200e49688bbc4c79ce28ce8ca"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000086.png",
+      "bytes": 856205,
+      "sha256": "b736136786d00e1b0427d1a3606104082bed47320f9359929eae5063ecd3e109"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000087.png",
+      "bytes": 859634,
+      "sha256": "f27ace806566840208a8702c844e42de9a12dcffd2ff77a8c8d0e30fe6af0618"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000088.png",
+      "bytes": 862630,
+      "sha256": "25b1692414e3f9fde68e3e3a161b44e35f0d097d1078c5343419ba4207cfc66a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000089.png",
+      "bytes": 869154,
+      "sha256": "1ce86f83b177d112fb1bccac1fc4324e8faebe1f5eacf4e9ecf3a97b9918f50f"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000090.png",
+      "bytes": 876614,
+      "sha256": "0252ebb23b9d44f2ce287edc33bbefbd6b8c6339a802ec2fc0d72f615146085a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000091.png",
+      "bytes": 878737,
+      "sha256": "13db86467a74ede467f230cb0b5a2e71502b41d9979bb41a9ce3a8e75f99c570"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000092.png",
+      "bytes": 875575,
+      "sha256": "6c09e98b4937cdba68f7a97256faa91a746f84b790809a828baa72a11481d55d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000093.png",
+      "bytes": 871554,
+      "sha256": "8f52a779e04dfa9b993be61011a77ae9676790b7878e0cf2650da94fd34a6446"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000094.png",
+      "bytes": 863584,
+      "sha256": "3c1932936b2183f7099c5cc6895af9ff519f650bde4e8904197468e74e9cc2e1"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000095.png",
+      "bytes": 863035,
+      "sha256": "d972987fe46b093810db408540ae7502ffb08b2f281f663da1d2ace79af8e052"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000096.png",
+      "bytes": 863929,
+      "sha256": "c9deec3d499d5fd7630bcacf81ba0814184d5022701844bb1198291cc42232b5"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000097.png",
+      "bytes": 862669,
+      "sha256": "cb8de8154d6bdbfc38ac79bcaff749dc195783f6048a5ab44fc5cf11ed739a76"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000098.png",
+      "bytes": 857430,
+      "sha256": "9ed9111ce799ca20628d6b7c0d7c1fd2e31484e992a04abf6f7cfe43824c6eed"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000099.png",
+      "bytes": 852279,
+      "sha256": "5791d19efcb59c645e432d734faaaaafdb1198d876747f31097606ae9cedadf3"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000100.png",
+      "bytes": 846290,
+      "sha256": "78ac7b0e6a37b895cc51d6894d08093d3ab67b552a5c132586e34de63396d03a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000101.png",
+      "bytes": 838274,
+      "sha256": "08a356014a3ecacc80ea9a7afb2e4e79b46b50ce6b4723c553099e9b84397cd9"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000102.png",
+      "bytes": 833597,
+      "sha256": "4fbdd5809af5e69fe56d54851f2703db980b3c698656b903ad7d8c0f9de7ed76"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000103.png",
+      "bytes": 828027,
+      "sha256": "f7a1afdd581b2af2ef9900d5d27e66c3e84ee80d079a87791627433dfb4e2160"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000104.png",
+      "bytes": 827610,
+      "sha256": "169b4d083522f55a1a1f8fd1376fc8f8afbdca57e7147f960c355bbffb33c904"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000105.png",
+      "bytes": 827711,
+      "sha256": "140c305b427bfb4828bddc7a35f96719d392531efed49ed7dd5c3054b99b561d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000106.png",
+      "bytes": 824133,
+      "sha256": "64646eed6999a25cc8491921722edc6e341af89537c28ea0885367780be1e048"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000107.png",
+      "bytes": 820624,
+      "sha256": "5a9d5f35c51ad487e270f85e536a315a7bcfdef9a5c0c06541b403ddf01fe2a0"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000108.png",
+      "bytes": 818441,
+      "sha256": "a9421e64f1ba856fa1c0abf035c18368644cec067e77c267492038f417ce8cc4"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000109.png",
+      "bytes": 816601,
+      "sha256": "640d64f61b4a46ae6a380034a46a2c1d4683dc5c6d8ed5288559e7dda2807cc2"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000110.png",
+      "bytes": 811177,
+      "sha256": "d6a488b88ce31b5609851619831c077d908bae21283f7518baa44f251d73e979"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000111.png",
+      "bytes": 809667,
+      "sha256": "e09ca254959dbd302f3298329270550a1cfdc9fe61a65fef392b46a97cb92cf5"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000112.png",
+      "bytes": 807052,
+      "sha256": "e61efdae625a1d6576ba8c47f5dad7e6b86ce4919798db5b87d1489db55409d1"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000113.png",
+      "bytes": 811999,
+      "sha256": "a977f20e702333e317475b99ab84d70f61cc4ab77ce4119a0a85c96b9647a50e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000114.png",
+      "bytes": 813070,
+      "sha256": "4ab7488ac174d404343255b92197ee7cb41b1cd8dc0d2540ab192fb085294184"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000115.png",
+      "bytes": 809730,
+      "sha256": "21946ab210cfe7fd070d291471ee6fb7e9f084aa8d255f04ef9c7261d1ea8b25"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000116.png",
+      "bytes": 798619,
+      "sha256": "b140664bbe0d951f4f233c94ed004397b61b0915d1d0109bcf8cc42062d71b8c"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000117.png",
+      "bytes": 794939,
+      "sha256": "80013d9f9f43b3a8b1b7193d29da75ec8116544ffb8069e5756eb81cc627262d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000118.png",
+      "bytes": 792418,
+      "sha256": "c56a93f29456ff1bc8335de9ed17fa2a1d49e9a102d869ab3e68197bd223c7ca"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000119.png",
+      "bytes": 794752,
+      "sha256": "e18f57652a2d7af4e508b5278db2a4e406800a6ed0df83748168220887b94e7d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000120.png",
+      "bytes": 800713,
+      "sha256": "5534473b14c5511f3045a8cae9aecd69bd4cca36f0aa03d00a78c147361c0590"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000121.png",
+      "bytes": 808084,
+      "sha256": "7d56a70869162ac3a78e9d9e84e878dc486952763e83578b973ccfb157fcaf22"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000122.png",
+      "bytes": 814398,
+      "sha256": "831ddf34dc8db24911754615ac3a288020086acc06deafec26a25629ed0be401"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000123.png",
+      "bytes": 818726,
+      "sha256": "fbccf11e445f12c987a8ce8bc8f2b3adfdcc0f32661fdebfa2096a93a7c7e312"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000124.png",
+      "bytes": 819237,
+      "sha256": "bda5633c69da48ddc12458a57abfa8c17849f93cbdd72bccf83c478ef1d14a85"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000125.png",
+      "bytes": 817769,
+      "sha256": "36cfc2ce42f992db6168746b423a830825f64d39754e6fde2f11f076b4a6997e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000126.png",
+      "bytes": 819254,
+      "sha256": "451b0d96d165b162b2c8a5670aca2935d7d87ae113cea6e6d4e45693e8d9b91c"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000127.png",
+      "bytes": 820542,
+      "sha256": "34c2259dfe04334675a4f33a85c1eae7f52959ba8c7e68643b05fb1b5b48e848"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000128.png",
+      "bytes": 820103,
+      "sha256": "0a966b64c6229b7a1ca0d1d2af6a22081266807900a3aa9aed6c301325f26d17"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000129.png",
+      "bytes": 821802,
+      "sha256": "d2af458338da61fe0368c882b10359697efe949e79e5f0a3afac16bc588ff328"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000130.png",
+      "bytes": 826835,
+      "sha256": "ad7be95071da4b80ded2641083b5655693f7a0f997c2e72dc3666c92797a06e9"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000131.png",
+      "bytes": 830606,
+      "sha256": "63de628f51adf0ad15b58da068d347cb024ae78444c2b5173cf977c97cffec31"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000132.png",
+      "bytes": 833781,
+      "sha256": "f37076c5bbfcff6041b0d8054613a69d4ecd4341db01c2702d596e82e4c45746"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000133.png",
+      "bytes": 835559,
+      "sha256": "7b7fe92266b824080e959dad43a535a3bfdf41fc9e1794986ca2f942f60b2aac"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000134.png",
+      "bytes": 838093,
+      "sha256": "7df19091ac5097bf6bcef483251b0b9f228f05295bf411d469646f531eb6d110"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000135.png",
+      "bytes": 839017,
+      "sha256": "81dba45434d47d9ef6140c9a1e3465e9aa4de48340182a5467a551a53eac7182"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000136.png",
+      "bytes": 839891,
+      "sha256": "50d8304fb6e702edea95da27a6d30d74d55176db06f9bd866750770b64495168"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000137.png",
+      "bytes": 841782,
+      "sha256": "2d7c7fd03b24968649862f6c1af295a0e8d7ce0b4c43245bfcdbbed5afd3a244"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000138.png",
+      "bytes": 843012,
+      "sha256": "4754b11f04cdb1487881407707c8eb5a5759a3c262ca0b0887820058cd23bd89"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000139.png",
+      "bytes": 843359,
+      "sha256": "58d27edda34f18514bc4c65f9cf5fab61ceffe9e6e15a82dbbb3ed16b04a3add"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000140.png",
+      "bytes": 843371,
+      "sha256": "a9647e2bcd9c3129071bd03c2950182ebaa1435e5b95ccb978dc2d6e8c854b69"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000141.png",
+      "bytes": 836866,
+      "sha256": "4542f90a29afd88eed6cd3bdeaf66f852048fee5bf0c27f1fe3416b87bdfd899"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000142.png",
+      "bytes": 836692,
+      "sha256": "c43224b473a88ba3f931c289fab266bf8a0e62d7e653add81cf36941dd9a9ec2"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000143.png",
+      "bytes": 836612,
+      "sha256": "335042413f0ec95fbd9c24577b5f75a5210fb5aa5d9106ada1fca0944337dd7d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000144.png",
+      "bytes": 836716,
+      "sha256": "92b74583e5114fb9c702a144ec0f4bd2316c92bbc15d4e3c279d66b439da16a1"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000145.png",
+      "bytes": 836321,
+      "sha256": "16a27d0d0661c1a2b16a6ed26f8711aa89ed3d7e41d6fac8f06ee92326f281ed"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000146.png",
+      "bytes": 835525,
+      "sha256": "02810d4743f92f29e88a36cfed66c8bba28a4daa8b06d04a1e57289c3c919f01"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000147.png",
+      "bytes": 832474,
+      "sha256": "b43508b5531b58b800a6a628646681091cfbbcf5ead5e969bc61edc945bdb14d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000148.png",
+      "bytes": 829167,
+      "sha256": "56f4e5f295b8ff1cc35032ac5ee4ba1ba0ebae23d5c1abd3f6e4fa984f6ded87"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000149.png",
+      "bytes": 824940,
+      "sha256": "3eedcd74afe5c1a648ca11c6e9e64607222a17fb66d4b27954cec3e686cc5aab"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000150.png",
+      "bytes": 820389,
+      "sha256": "55d264d58a908e43a40e3ff963318dffe323316aafdf2750142f3d9c6d23e158"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000151.png",
+      "bytes": 818289,
+      "sha256": "ad11d39e6607c042fb3c615d118aebb21e97d3b610656af0b0de59df248d6a62"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000152.png",
+      "bytes": 815597,
+      "sha256": "53121bae92718a9024d76c863b838fd0bbf6d4e90c2c1f919f0407f227854230"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000153.png",
+      "bytes": 814091,
+      "sha256": "824aad3f9ca0558fa1ff690c15b6ab8db00e8abd14e4e7bcb4cd253ba246d4c1"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000154.png",
+      "bytes": 812592,
+      "sha256": "5b2aa2d121504d1ae54e67d3a74ad24eaf54e8e59e7673e6e982cfd2df4a85c5"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000155.png",
+      "bytes": 812288,
+      "sha256": "036d05728abf3ffda2990810b253b9bd34aa89afc0eb5086a9a089dd1220a84d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000156.png",
+      "bytes": 813632,
+      "sha256": "a6a511fc84c7fc97195564f300b76ff42ef9e6a513b141ac0fd33d9f2488499c"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000157.png",
+      "bytes": 814438,
+      "sha256": "597ccc326c30513cc58e9cf5e675a640d8e44f15514ecec4a0233c9dcada526f"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000158.png",
+      "bytes": 816927,
+      "sha256": "742ee8d6edad56ac9e146782b329fc175f2e9e1b68129a02b945f53ecae3f480"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000159.png",
+      "bytes": 817759,
+      "sha256": "8a756c857323ae320c0c459534fdea610ac813013ba640bcc267f9e70e6159aa"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000160.png",
+      "bytes": 816871,
+      "sha256": "ba4a6feda7ebb201a5da8997acf63b9bafbdba5399c3a015f8fc5793c2f46450"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000161.png",
+      "bytes": 814814,
+      "sha256": "71e560911bfc5e009a6db44d3e8cbc9de917152b553146f65403dcdb185ec3b9"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000162.png",
+      "bytes": 815582,
+      "sha256": "ca9660f3ffdd43f5424f18bcef677f81f7e50a207f3db42db331f503983cf0a9"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000163.png",
+      "bytes": 812314,
+      "sha256": "5fc7c05e6ad99edb946501d46e24ed085e218664923144e55479ef89ed2a1b28"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000164.png",
+      "bytes": 806484,
+      "sha256": "666061aa233eea34d0a092cd0a2dc2e7a7a5326794657c3c139256be5a1fa795"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000165.png",
+      "bytes": 796458,
+      "sha256": "80dddcdbedbd0c65b8fe583f06e96b16ba06a9cc9271fc9323f41e4cdd1900ee"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000166.png",
+      "bytes": 778299,
+      "sha256": "07afcc2b31871cf3b6796814235b494dffc78980cec800c1a45e189e436a61b2"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000167.png",
+      "bytes": 762076,
+      "sha256": "92c77cc5ebc0e13665b861dd283c9951aed1404a6e86b004e2a6deadf476fb62"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000168.png",
+      "bytes": 753978,
+      "sha256": "66c4e6bd26826f90c95055704489c5e43be13b2552d296bc8a5571bd080a8c61"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000169.png",
+      "bytes": 766981,
+      "sha256": "768b827da6da8a4d0454897ba81040a582963b18386cbeb94f583e9632b46b1e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000170.png",
+      "bytes": 799255,
+      "sha256": "f2b4cd37c9e4d3fcca74368800fa05196dd13374e44b6341186ff24dfdbf3ff5"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000171.png",
+      "bytes": 822302,
+      "sha256": "e525a9e137571ecaef92b5beb714363ec49dc7f432a3cc1d5402ba39aa174431"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000172.png",
+      "bytes": 816241,
+      "sha256": "e355979005620221f69bbbbdc068a47fdb53ea2c6e8a461adc781397758f1717"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000173.png",
+      "bytes": 809589,
+      "sha256": "3d035c8da6acd17a419266545c0589d159f226a75275df7bb9722de391bde2fc"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000174.png",
+      "bytes": 811974,
+      "sha256": "5f09ba00bdf79d997d9a42df906cf9dbee33fe1d7c5a70bb6122ac71b87e59b2"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000175.png",
+      "bytes": 820816,
+      "sha256": "4ede694120934135338c13f631810e57094362aa319f3d6700c0d16efc40f4a3"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000176.png",
+      "bytes": 830918,
+      "sha256": "be48ff93db4b34dd8c894680046fe4b567c85ad499a6cdaea50c677d540b6fbc"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000177.png",
+      "bytes": 838397,
+      "sha256": "5ae07511aa58b99867286917517085781fe59fe8f93e94cb19718cb3ae4dc340"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000178.png",
+      "bytes": 842383,
+      "sha256": "a7b30ab72173dd81eda1985af70c5984a839465be8bd2d1e98373d1f83f8909a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000179.png",
+      "bytes": 845802,
+      "sha256": "8763ee8fc0dc6602ad4cf1a8f7a75639d79c3b826cbf5d9e9a8cbb6058ed0f69"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000180.png",
+      "bytes": 848887,
+      "sha256": "29173cca85dc4a75559dd02d1ea5da9847bcdbb5580c3df870f0e59a25f53e24"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000181.png",
+      "bytes": 850902,
+      "sha256": "bc974ee2c48322e32b8bc5cac9627f9d140255e9bac18a32bcee4ce26cba985a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000182.png",
+      "bytes": 843993,
+      "sha256": "bb61b39b868969840579490abadf3471ceb397b10aa8851a37d628ced87eada6"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000183.png",
+      "bytes": 831915,
+      "sha256": "192d363fb4ed98bfa5f07fdc496539fc4075f488fadfe7a98b8f9463fe6597b3"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000184.png",
+      "bytes": 828043,
+      "sha256": "2e0b7f0928ae5fa8d2486cf1bac00c177c62e5515d0b796b4e623a7925e73a34"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000185.png",
+      "bytes": 825042,
+      "sha256": "f7c88bac66f45f83dc658a72aa779c53adbbe44b7c76dce0030bfbc6a0825e88"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000186.png",
+      "bytes": 831267,
+      "sha256": "5ff006e97a14ac603a8cfe74b3a52c539d37d1421aa857cd7310bc9eae8fa34a"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000187.png",
+      "bytes": 834343,
+      "sha256": "4c6209e3ae6d8a79a347f840b760a845c3ab52e4e246ae2e6b7e71a15bb86493"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000188.png",
+      "bytes": 827817,
+      "sha256": "cb22e91d4edf85d26ffce2ba89751413a26dc35097e85f3ef2e949e135743930"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000189.png",
+      "bytes": 818911,
+      "sha256": "4a88b84aec5e336659f31f820d7187932547c53c8ed40cc38ad58d10e499eee6"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000190.png",
+      "bytes": 817435,
+      "sha256": "3628f839b2fe4ec7ba54843c9220aa1f60f480ef75154b8fceece12e5093d91d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000191.png",
+      "bytes": 816063,
+      "sha256": "42396d5ded1c32976d003cfac60d84b3b9ce3aabbe80bb671999cca2762623aa"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000192.png",
+      "bytes": 814016,
+      "sha256": "fd51c739665d94ba406e0f0abeb3fdea5a6d74a0ee4695021f3b0bd51ddf45c6"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000193.png",
+      "bytes": 809938,
+      "sha256": "eb426aac65b9322cf412f898158136dbb604b468b13853bc798fe014aea80c04"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000194.png",
+      "bytes": 805537,
+      "sha256": "c9f7038ff71e1f3ac0188260f23d3cefb376af0946f8aec9775bdd5d999eac8d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000195.png",
+      "bytes": 802861,
+      "sha256": "86849dff54f723d7df1f8041ba582c1b4eabf7f9d2a92eea81c0b5468c306a38"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000196.png",
+      "bytes": 803396,
+      "sha256": "761627cb057f9cdf21a297a52713abb76c018d6d66410f207457bffc231cc0bb"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000197.png",
+      "bytes": 803316,
+      "sha256": "ffeaf328ead6527326a24806cbafa357ba0d09f20f9ee10633468b0adbb80148"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000198.png",
+      "bytes": 804286,
+      "sha256": "9f52f1a93bab789621a1ed7994d36ffa36d7a82b1b80ef8404d9cf7f49de1db3"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000199.png",
+      "bytes": 795062,
+      "sha256": "c20afd4500458e5faa675affb9e127eb5bfa1509c68dfd26942855182a5623c0"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000200.png",
+      "bytes": 786507,
+      "sha256": "669616d9224b821599f2213f3e5c6b4ad8a7b5351015a182ec3f5dc38cfd692d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000201.png",
+      "bytes": 775438,
+      "sha256": "b87b3fd897076c93b4803f35c9f4436b34ed52e514beab668e70029dab14ce4d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000202.png",
+      "bytes": 789400,
+      "sha256": "11ec2f738379514d55a26b8527384e5e788d18406b13d81e747a5930f72963a1"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000203.png",
+      "bytes": 799804,
+      "sha256": "369026e6aa65bb15c43a0644b36e3131798b4c09affd9320843c4c3dd67685b6"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000204.png",
+      "bytes": 793547,
+      "sha256": "eb01da26b74b8aa3f3d56111cde364323192bea2cae79ba5eada87270299f64f"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000205.png",
+      "bytes": 795152,
+      "sha256": "d78545d2bba5091e3882586773e345ca40a1891ddbb70a84e562182c49bcd899"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000206.png",
+      "bytes": 796275,
+      "sha256": "c17c75212bb89f62df2d70ca867a95bec1aeed5a60bb7c284558dad30ee6a60c"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000207.png",
+      "bytes": 796605,
+      "sha256": "2023dde364f1469e1b6a5bdd15dc12867b6a09da8d6e6a137eff2b324d55241e"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000208.png",
+      "bytes": 794249,
+      "sha256": "5f5d0920303c33daa729f1f4b80323b81338b4ea8cb8d7b35cbc908e46800417"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000209.png",
+      "bytes": 791784,
+      "sha256": "4d36d741fcdbbce987ecb3644c8e5ed66bdb28a8801f624a4d241537b7d9acc3"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000210.png",
+      "bytes": 791951,
+      "sha256": "3aacdf3b3f3fa50a29703ca84045d3679f86872bae27f553d8fefe7f00ee3e17"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000211.png",
+      "bytes": 791452,
+      "sha256": "d0befcdfcaa3cbbe87a1f8bfb6e320f9eda6b4675aa95aeac90d4b80d4ed7e24"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000212.png",
+      "bytes": 789488,
+      "sha256": "83e21a25fcd6fc07c74d0d8e32887b2b78bee0d55311e42c6e0516d447fa068f"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000213.png",
+      "bytes": 781939,
+      "sha256": "5a4d4dbaead0640754b2eb0dc8594f85e0ff7c794c8fa1e025e136dbadbe02a3"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000214.png",
+      "bytes": 774748,
+      "sha256": "0ef57b309387fadde67e17d3db6f9afd1cd21b4810d1fbc6f90f3270dc1727bf"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000215.png",
+      "bytes": 792006,
+      "sha256": "ae3e1d1168c27cb066acc28299bd6f025cef27777cd4de6a2f218eb891fd169d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000216.png",
+      "bytes": 789222,
+      "sha256": "1c6bce5d49b98682f82d38ce480449b6f9eb5f52abb9f2b43060728036464668"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000217.png",
+      "bytes": 784414,
+      "sha256": "e7611843f8060e0ec65f7377984a00d474e3922a4b4c26ea6e4f7b149c13fc8c"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000218.png",
+      "bytes": 787441,
+      "sha256": "bbff128569abc67f95641c1cddbd91f3af41f5fc8976bfd9909eacd0e7e5928d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000219.png",
+      "bytes": 779076,
+      "sha256": "e3011085a1c187d89e109bfc4faf977d31e54efc1ce63c7958bc52325d2c20c9"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000220.png",
+      "bytes": 776240,
+      "sha256": "a24616851d4797c15dfc32d5fabcfc0c260721fc2e10d2d27e9364b9303c918b"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000221.png",
+      "bytes": 767499,
+      "sha256": "0bb32a50145f34644ee14d2e1e6d49ec2b63dcf91d2005f9a73cc8ae6201cbcd"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000222.png",
+      "bytes": 778065,
+      "sha256": "6ec29938d6282751f933a9bd17530df540140e564013258e1a92598163239924"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000223.png",
+      "bytes": 796230,
+      "sha256": "39501ba430ca10dbda957454edd258350514769da413e03ced21112588bd0026"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000224.png",
+      "bytes": 791701,
+      "sha256": "5a2f1aed3a6494473c0fa1b035a6f1e4ef5fa0349fd021792a84d7089ac08b44"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000225.png",
+      "bytes": 798497,
+      "sha256": "530a700a8ca01e1e2eaf5b279f9a418f3101b6654cb5d93fe8b277ff7fccd114"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000226.png",
+      "bytes": 800042,
+      "sha256": "0fc715ab8ec1c2f09cbf23563e7e646735ce0944f303f388c62c9ea1e676c5b6"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000227.png",
+      "bytes": 794840,
+      "sha256": "5dace4fa07a201d2a610b4fb07e5b765183d037cdfc5c02533e818b6167cdc0d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000228.png",
+      "bytes": 794498,
+      "sha256": "e6b7637ad95f860e6a6ee66e9bb2ba4059e93cf22135c5ed561c26191a965eb2"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000229.png",
+      "bytes": 788553,
+      "sha256": "9049bf914f5f7c44f6d2d4aef0cb12598e60f076126548587114986f3ea2d12d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000230.png",
+      "bytes": 783286,
+      "sha256": "d3a2f6277939eae63d3dd4e629d92972ca1efa603912bd3b550f4ebf0ef83cd5"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000231.png",
+      "bytes": 771792,
+      "sha256": "676eeba7deb5fc2a027afa860126dd4dd36c9a6d1822207d7e4c2d28a329d90f"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000232.png",
+      "bytes": 782558,
+      "sha256": "74e6effd0d720ea7d8660eefb2d8443ec4bf499be35cddd222fae208dc6ca13f"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000233.png",
+      "bytes": 804780,
+      "sha256": "1c25303ed426e917d0938b84fadbeb2c9e8a5006f959d42878d856e11be0d493"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000234.png",
+      "bytes": 811803,
+      "sha256": "7f9e3558cae346e62eb9a766b9e3298e45a33d4a905d85bdb7d6af80803baf68"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000235.png",
+      "bytes": 793623,
+      "sha256": "51f93f375e1cf6ff0c3149776a4e473a5629812db4649edb7784723352843f4d"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000236.png",
+      "bytes": 793690,
+      "sha256": "4c806ce335a928290b9f3fb6489253926d596e18378ef130f4ae13d38654775f"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000237.png",
+      "bytes": 788005,
+      "sha256": "abcb3fd62d0ac2471d2137c96ae9748df153c868a8b0f57c211a9ab3277484e7"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000238.png",
+      "bytes": 785375,
+      "sha256": "5b2c12270ff8eb997a7e6b2391bf56eebeecb280171c9f65307abbecf5817ba8"
+    },
+    {
+      "path": "data/E4f/eth3d/2011_09_26_drive_0015_sync/images/0000000239.png",
+      "bytes": 779259,
+      "sha256": "b05268b65f1d40206a8296e23ac80e75f470640c4bd272dd72d4dee579d3d2e8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000000.bin",
+      "bytes": 1981424,
+      "sha256": "5307a383efe56fa237cf6571547ea86170e5e0b3b5cf44f94e5031cb549bf3cc"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000001.bin",
+      "bytes": 1980624,
+      "sha256": "a774e3c8ec4ec22a5f6ed61b50e5a121ae1e379b33133738b9097069a4286aa7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000002.bin",
+      "bytes": 1980992,
+      "sha256": "cb346cf43274449c731b5460966e6396171686376eb18b8c6f184237316a024e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000003.bin",
+      "bytes": 1983584,
+      "sha256": "f93d971e0df0dc6d30ef365dea2d94d41cb1402ee49bc1a966876ed208e041c0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000004.bin",
+      "bytes": 1981408,
+      "sha256": "fde002553b5b203718d251d5ff19a19134006b4359ddc0669baf17681ca08709"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000005.bin",
+      "bytes": 1981184,
+      "sha256": "847fc689c65f4a8c6d47e96fa64389f2738e1cebcd3bc859d6a3fd30131b25f9"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000006.bin",
+      "bytes": 1979648,
+      "sha256": "eefbed04f15cecbfc3c4101b7ee8afbfc1618eba1b6b9c0e28f2bef30cad9c21"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000007.bin",
+      "bytes": 1980544,
+      "sha256": "217e8b878f63790e0dc382f430bbf0ef2e8b9ae6e1b567f6724a8ee0fa7fa708"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000008.bin",
+      "bytes": 1980880,
+      "sha256": "ac30c76e997f1233aaf454105acc42be3acf11ef2500a2dfef86086b826a58ee"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000009.bin",
+      "bytes": 1981168,
+      "sha256": "3f5815f0af1c177d40faf4ecd305e491f1769d333bf570e3f6a74eca738ca61b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000010.bin",
+      "bytes": 1977904,
+      "sha256": "9c5064ec3e08bde917abc933eddaaeb32517889a395ff19112e5a04dc6868df9"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000011.bin",
+      "bytes": 1978912,
+      "sha256": "aaa0a998d19f2a71599302936321f60efacfcb7e62b111a4af675762d34c0930"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000012.bin",
+      "bytes": 1978592,
+      "sha256": "504acf0ebb07465519fa53338f7ebac07c49260a7cb86f09959221841a926a52"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000013.bin",
+      "bytes": 1978624,
+      "sha256": "73119510dc49c6f08c389d6036820ddbe9f07cf425c2977c9de782cf4dbab325"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000014.bin",
+      "bytes": 1975264,
+      "sha256": "bb68e4b03a70492afa1104c10f6b4f99b2d03a47ceabc5d264957e3ce8591863"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000015.bin",
+      "bytes": 1975104,
+      "sha256": "d65ebbe0793e194149bc54a92974efae4d47caf090d8ed955922a4c42f383602"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000016.bin",
+      "bytes": 1973920,
+      "sha256": "78bc2aa65529911e7e4e421c4ccb116ae4427e2c2878448568dd6cd0608bc0aa"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000017.bin",
+      "bytes": 1974528,
+      "sha256": "087d1c467294fd30428dfa07d6b893b649e2e7aa457e31032b8adc942facd0a3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000018.bin",
+      "bytes": 1974176,
+      "sha256": "29662c8c07748cbcc5157f2baa289ee5b904ce6245d33ca9f73916fea6dae1c8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000019.bin",
+      "bytes": 1975024,
+      "sha256": "683a5ab134673869e11f59b3a2d3618d0ae213682501bffb1a287eedbb64959f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000020.bin",
+      "bytes": 1974224,
+      "sha256": "93d8cdde90aec612d4a71a9df57245deaf896185d41a557c96b516339266238f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000021.bin",
+      "bytes": 1975408,
+      "sha256": "9bc031acc6844cbcf99f533e906cfa687b83da2801af4856d24e1ff02c352032"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000022.bin",
+      "bytes": 1974720,
+      "sha256": "8ac851b67113628e5d7692d996889f8ca7ce0a8307043858505158cde062bf46"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000023.bin",
+      "bytes": 1976224,
+      "sha256": "bdbba53d8220b65925be24cf464ff42ba91e260de34a1133e70b2a5701e2ebff"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000024.bin",
+      "bytes": 1975424,
+      "sha256": "3fd861a9c455ce90f038b72ac3f99a215a633ea17edf15e0f6760f0d8bf5211c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000025.bin",
+      "bytes": 1975936,
+      "sha256": "827b7e5d7f12d86b183d482b6fb49402af0d666b6b46082fb8d9ccaf1d6941eb"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000026.bin",
+      "bytes": 1977136,
+      "sha256": "68fd768664ad65c545eead19d8c42f99c42b8d0bd1dc1484c7c9f85ec0447686"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000027.bin",
+      "bytes": 1979904,
+      "sha256": "850cd833b921b3269576e5f0caa075416a7186eb41eabf53dc011ef21534028a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000028.bin",
+      "bytes": 1980352,
+      "sha256": "02f54737d6674646a1f6e86411da357221a2a92c74046e91f12e7493a8fd5826"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000029.bin",
+      "bytes": 1980784,
+      "sha256": "699e4c9b6162ae38f4c9d41e8a9d380ca7e313e0419ac18eb1367d4129f08ea5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000030.bin",
+      "bytes": 1980512,
+      "sha256": "3139a70b064257343cf5dee5032aed8d31657cd9e260505872387cf9e17a5281"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000031.bin",
+      "bytes": 1981888,
+      "sha256": "199288f6f24600cd55a3de8d429c5e039d02a4daffe8262cbe4a990f9597bd7a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000032.bin",
+      "bytes": 1981520,
+      "sha256": "bbde998cff3c2ec167c6417cea51e4205625c8c75ca087c4476a729b04d0114d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000033.bin",
+      "bytes": 1980992,
+      "sha256": "d1c7b7a32d254d29f6663712c45421d1c1dd7382b8c75338783d883ed08956e0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000034.bin",
+      "bytes": 1980896,
+      "sha256": "5acdccd84dd70f249011e7df70fb88bca03da0b00fd03c53d999cc62b7274171"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000035.bin",
+      "bytes": 1980672,
+      "sha256": "5f30abd9cf762960d97efdd7f44df144a6fa786d304accfdaafad8ecdaa2ee52"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000036.bin",
+      "bytes": 1981280,
+      "sha256": "2598f5c2bc2fd4141d3f0e7655719a565ce6539b9e06ab8adebd2389de343535"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000037.bin",
+      "bytes": 1981680,
+      "sha256": "e678c54a7e8cc8b787a1d15fa420cff4b55665d413e4dfad747214af53066a8f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000038.bin",
+      "bytes": 1983040,
+      "sha256": "dd3000cd306f8b6fcac8e03b640a478876c72070debba3c2e051b0ddf2e2eaa2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000039.bin",
+      "bytes": 1982864,
+      "sha256": "cd7125421dba59e5c0fdd4f67ba520b0651dbe2c1f7db34a2eb08c0aaab266fd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000040.bin",
+      "bytes": 1982976,
+      "sha256": "f77172dc320f414e91f0d8371951e25335aa8fa467a12d38ce322f081fdabc32"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000041.bin",
+      "bytes": 1984304,
+      "sha256": "63a97dd5c02c6e83b7231ae883e6be39d48a7ba8d07f3546e87bc9dd53dcbe14"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000042.bin",
+      "bytes": 1985280,
+      "sha256": "4568b6c88d830c0ad07c5c293c116fed063fbe7405ec36f9e023d5691e000cd3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000043.bin",
+      "bytes": 1984272,
+      "sha256": "8d9c68f8b6657d54ca5ef9e208f084dd9ed641d645c71f4e0da4fa7a13908bb6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000044.bin",
+      "bytes": 1984336,
+      "sha256": "dd4f572608317557186b0e09bbf836fcd87779b29f3dc4edb252b1478bb1f897"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000045.bin",
+      "bytes": 1984768,
+      "sha256": "48f2987142e6804fa6a8b6109bccf8c6f07957506ec32da36c5b0354451d2538"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000046.bin",
+      "bytes": 1983968,
+      "sha256": "83707c610e3157c1ba25a5001ee5ac93c2aaf7bd2515c3348e830d0a11a6bfae"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000047.bin",
+      "bytes": 1984528,
+      "sha256": "86c07c6d5cd8be79fdbdfbc335eef47b3d3089d47ef235ceb6f0113a71443781"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000048.bin",
+      "bytes": 1984064,
+      "sha256": "b1c22a17b4908aef3ec72b75715d858d86dcd812985c17294bc3f074209edf3f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000049.bin",
+      "bytes": 1982000,
+      "sha256": "b07796110d126beb955bb6f6fbebc2c15226864d54d3f2757ef9c38a389bb065"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000050.bin",
+      "bytes": 1980768,
+      "sha256": "cb98a2e05f220cba47862ea55d0662887f789069f3a14e31d0c801f3a80d31b4"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000051.bin",
+      "bytes": 1979248,
+      "sha256": "89aeb16a64faf1f67b004cfef02dd7430a342e71bfeb4ec18893c65168e63373"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000052.bin",
+      "bytes": 1977600,
+      "sha256": "32d3a3b067e099714c4c6d5299a90e816df2e4bfea87df656a8c07dc8dd50225"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000053.bin",
+      "bytes": 1979440,
+      "sha256": "0c1de83b40d3c478b04102243fee69b79be8cf431798692f30da009e43ee5ce6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000054.bin",
+      "bytes": 1980048,
+      "sha256": "ccb17b373fbe5bd7312980119205dc11b3c7f9b0af8ed700fa5d97b104907489"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000055.bin",
+      "bytes": 1981008,
+      "sha256": "e64767fd5658d0987e12f4e71228c28c655c068ebc1f33c56d3f8e5e30c26299"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000056.bin",
+      "bytes": 1980512,
+      "sha256": "9482ecbd5ea9f2018e4852a3305cde25ed71471f9eaf2334cb3fff8c94923e07"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000057.bin",
+      "bytes": 1979504,
+      "sha256": "d842d75764bd87958575d6c7d4cbe61303452270741020ccc1d233063b926248"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000058.bin",
+      "bytes": 1981120,
+      "sha256": "632d31decc7591bc7decf8141f31603e08d8c37161c44a1b0bca82137eb7db75"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000059.bin",
+      "bytes": 1982160,
+      "sha256": "caa7a704c6a84a9fece42f43bc4a33d49350a72178bd11d85d255d14ab9359ec"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000060.bin",
+      "bytes": 1982496,
+      "sha256": "310f7923942e94d824b4dd9e0a98d3aae5f88ec36f4344498f81487814f9dfbe"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000061.bin",
+      "bytes": 1981472,
+      "sha256": "0c054f324c00defabf1cc32afd62f69e21cbad8cec3e48d6fed48a5dda446a21"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000062.bin",
+      "bytes": 1982272,
+      "sha256": "ce172e00ff0f1d9f78a640535cf53ec32d0d1e417ada24b6cc5ef6c46e438b9f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000063.bin",
+      "bytes": 1980896,
+      "sha256": "f4ff0a1ba52ef552c2d54f09edc47cee6ae834cce747aa634463e41daae01611"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000064.bin",
+      "bytes": 1981840,
+      "sha256": "46894d7a5b76b0da78b703e50b636bc4d78806f594eccf9f6bac5e94418ba57a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000065.bin",
+      "bytes": 1978864,
+      "sha256": "7456e8bcd4fb82a033dd8fbe2addd2c245ae9aa0e8286aa9b34314948f0c04d8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000066.bin",
+      "bytes": 1976240,
+      "sha256": "c57c634e5f3739a971296d7ab2725c6fa8f3d35f4a64b5d49ef451fe131a4552"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000067.bin",
+      "bytes": 1977120,
+      "sha256": "a3352aa89a899d67119a0abcaf7464e7705e03861d3cf6ae0ee52419fd17e933"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000068.bin",
+      "bytes": 1976304,
+      "sha256": "5e2999d98060fb976b44b8f9f51c27426114c074ff1370c114a0826f6307742e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000069.bin",
+      "bytes": 1977120,
+      "sha256": "50e4c8d80ea9fd8d34e15fc8bff8beef797704aed4b7b40a772dadcee7d54339"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000070.bin",
+      "bytes": 1975296,
+      "sha256": "734427e70e0b5e6c078ede6219bcd10f8108e7de1c23e71f35ed2665002e9e3c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000071.bin",
+      "bytes": 1976352,
+      "sha256": "d69abcd0e54ffa76ece48d60d134246a49fe7fe4ebd235a5f14d40ae4b355766"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000072.bin",
+      "bytes": 1975216,
+      "sha256": "6acf8670f4605924d8eccdb6f2a09d54192e07981aa49d88967f934d42cf7347"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000073.bin",
+      "bytes": 1975856,
+      "sha256": "7f133547e37cf8f4565c9741c6e727b00430d5c44ac88c450982e324043f781f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000074.bin",
+      "bytes": 1977904,
+      "sha256": "8e2bd721e6c3ed7695daeaa05d6d055734d154e1eb166b06e638d7d8e36c9286"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000075.bin",
+      "bytes": 1977824,
+      "sha256": "1067031d6178f47b914ea0afdf247151319e2ef36105b4de86ccdc75080a3a16"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000076.bin",
+      "bytes": 1977888,
+      "sha256": "2c0bc18c796e19037d587ffac68a4da4b586098ab8c22e2c39e6f75778b34835"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000077.bin",
+      "bytes": 1977984,
+      "sha256": "b9cdf69969bb7934debb0e68c29ab91e88d6a6db13039ce7c51365fbb3410525"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000078.bin",
+      "bytes": 1977888,
+      "sha256": "b46244d5461d8502fc2e3af59696b9adbca99f045e356f8380cf904a19cdcd6e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000079.bin",
+      "bytes": 1977024,
+      "sha256": "ca8d73867820b6c7ab4bf289597b5a88768be3d9fad3040c1fbb811301952af2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000080.bin",
+      "bytes": 1975312,
+      "sha256": "8a615d99c6595a08c143278680269081287261cd114ab4d2d3dd85ef71acade9"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000081.bin",
+      "bytes": 1974384,
+      "sha256": "8614383b2f9878cbb55c09bbf7eb92b1ae0c4dee31d3a8815cc6a61dcf3b64db"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000082.bin",
+      "bytes": 1974752,
+      "sha256": "18c701c2c6686e6916eabb0264278028a30897e044e3626a3995994e35cc6fdd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000083.bin",
+      "bytes": 1973456,
+      "sha256": "ea65e687b782249661458b2d514174af6078f3349bef369cabfc8a83ae3f20ed"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000084.bin",
+      "bytes": 1972544,
+      "sha256": "ac2431ba4631d82ebc0561d9c09cca44d877eee005d7b96b9249efb221a9df2a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000085.bin",
+      "bytes": 1974128,
+      "sha256": "81a307be2c981a43eaa0b892b4fb57f82609618dcfbeb8ec846bb8af5c6ca135"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000086.bin",
+      "bytes": 1975584,
+      "sha256": "61f5f20f3cfdf4f03f30c58dc3e3ae2c5e0ea1bf3e9389a3ce312ead326d9330"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000087.bin",
+      "bytes": 1975504,
+      "sha256": "0f948668856df0a47fae4f2a42e3a615ebf3fa16d9fea965da4c0357a3e3d685"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000088.bin",
+      "bytes": 1978016,
+      "sha256": "15f5b78b01657eb9c7b3f4652a4f9e2f5d9492e0eb46bd88e37c551ba80a7d65"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000089.bin",
+      "bytes": 1976208,
+      "sha256": "3381b3dda45389b55e014aac9cf41d8969727b76ef357780c181c1de8599e9f1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000090.bin",
+      "bytes": 1976096,
+      "sha256": "74a099ac3ac9b1d98c9fbf348e8f15a3cb42c7917e957c13cdd8f11aefe810ea"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000091.bin",
+      "bytes": 1977600,
+      "sha256": "1f54d3dd55d6a09fef93a54f8383a25de01d3eefa77b6d9138573ae3cbb8432b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000092.bin",
+      "bytes": 1976960,
+      "sha256": "b7da85ed058d62dad487b3f2f53f3da129fdc4616c3d57b51e56953f7ff887f5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000093.bin",
+      "bytes": 1974736,
+      "sha256": "ffefbacc8cbed85289fdf6598075d13d6b066ff65d5672c050578cb8a6b8a53e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000094.bin",
+      "bytes": 1973040,
+      "sha256": "d976f750b6dd2a548472df24995b99e5906b149bf9a618a767e8690336350e77"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000095.bin",
+      "bytes": 1973600,
+      "sha256": "cfd7aa414bab7be4f232883d054c218e22672da683713192668a3233cd79ee07"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000096.bin",
+      "bytes": 1973632,
+      "sha256": "c4027cf998aa2a9ffefd2bc3de230a217400e7c5271322b46a519d18ea112ea3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000097.bin",
+      "bytes": 1973568,
+      "sha256": "f223a1f766f76b76999a818cf14518e943d9da25e42cde815a89dff9f9a38dfd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000098.bin",
+      "bytes": 1965968,
+      "sha256": "e57cd19d2e60c8bfa4dbf068122119738c2d67199512c7f8812279fd1f75959c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000099.bin",
+      "bytes": 1969840,
+      "sha256": "bbbd8a3651db330b157582077842602ed77e78e91ba02d22bb09af3b06b18a01"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000100.bin",
+      "bytes": 1970000,
+      "sha256": "d24a9de876049ea6c3d3522a260001cf94379c23bbbe3024444a5c3febb3370f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000101.bin",
+      "bytes": 1969168,
+      "sha256": "8824f1bb2eb9991c70b9aa4f9a982c92f74b88356107b8e94412dd17b33b9d7c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000102.bin",
+      "bytes": 1970304,
+      "sha256": "997c4baffbb7129bd9667d7ee4737969fee62083cb1e8a155aeefadeb1283fb3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000103.bin",
+      "bytes": 1968144,
+      "sha256": "926aeef0495848224b0fd9a5d09b8396bbfcc7d0ce379d8888cd30e90896095a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000104.bin",
+      "bytes": 1966128,
+      "sha256": "073c0f4658965e19f57e86644edd103772aa504a4b2d022f486ae98eb9d08649"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000105.bin",
+      "bytes": 1965952,
+      "sha256": "97ea58646ad39f003448ee1a53f483627842a0b51d4aca0e39335eec5daac31f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000106.bin",
+      "bytes": 1966000,
+      "sha256": "dae3c30c809c44d85f1d26fda8690a415dee5eee467e41ce489b208331ff4fb5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000107.bin",
+      "bytes": 1966880,
+      "sha256": "055409d94fd5288975dc1152051c9518922a36abee94850391815bbc57fda825"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000108.bin",
+      "bytes": 1968000,
+      "sha256": "58f2876881f90c1fe1eadac758cfa3e71ff91fd57d4e4d5a08669708f99a73b3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000109.bin",
+      "bytes": 1967360,
+      "sha256": "4e8df8078a54577ed49f2650620666c4c631178c0b6165c6fa82056e4b1cde48"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000110.bin",
+      "bytes": 1967984,
+      "sha256": "b80d181b0b6ed7b2114897258a9694b0309d0a5c99fbcc55379a3a8ec112c667"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000111.bin",
+      "bytes": 1968880,
+      "sha256": "8502af9fc0c0239e211e7105eb6069c59b6789f86d9124934486221b8d94d7fe"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000112.bin",
+      "bytes": 1968192,
+      "sha256": "430e48b826d6eac49a1ff860bd2c7db0e276bda0e111770ce34438b621d11592"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000113.bin",
+      "bytes": 1969216,
+      "sha256": "d07239f9cb528143c2719068eb9bd62acd0ff91112d71f2c914e02f10ba489f1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000114.bin",
+      "bytes": 1967632,
+      "sha256": "33a46b29e2e3e416d5192a062e928fbfa587f44f6c6e81abd31785c694dcb58e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000115.bin",
+      "bytes": 1969584,
+      "sha256": "3958a76feb18c0e0f40439e16eb3f10d246d3486822a0173994c6cac818ef245"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000116.bin",
+      "bytes": 1967152,
+      "sha256": "0b72d02287a72a276deb6ba0828ed4ab6588d3d426abd4aaeae2bed5990fdb41"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000117.bin",
+      "bytes": 1966448,
+      "sha256": "d8b76d0c1a5e4998ab00e601e2393a707943c96b2276cbe044b2d133c58a0cb5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000118.bin",
+      "bytes": 1965392,
+      "sha256": "28050ea0b2b3815271f1e4af55f0d3c3c7bf1bb04065102f9d160c9df5453a9d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000119.bin",
+      "bytes": 1965872,
+      "sha256": "68fd571ec431c7dcef56d59948cce3a9fccdf7593f4002f61ccdda9bda240412"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000120.bin",
+      "bytes": 1966032,
+      "sha256": "605fc31205d46912cb87a62b01cb88a73c362a24ace548b1628212baf406affe"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000121.bin",
+      "bytes": 1964800,
+      "sha256": "9fd9f71dcd38132f184eb768dbcf5514a44cb3454e8fef2cb09df9e892080cd9"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000122.bin",
+      "bytes": 1964304,
+      "sha256": "a52d00d5988aa5a33b8985489c02cd3924c3affaab593d0caad110ba07d4787c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000123.bin",
+      "bytes": 1964320,
+      "sha256": "4e822fd8323b5639aad775c0ed5bce6c030485330198030a76410db7fbca2c9d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000124.bin",
+      "bytes": 1964304,
+      "sha256": "235e6b8ff8eb1043b8836bcf8951b18c3fd5464c1623c9c70b5da810896af644"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000125.bin",
+      "bytes": 1963216,
+      "sha256": "02fe76439cc015fdb55becf3de435d888d3c0dfb73cfda7bb11c915b8d1644d2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000126.bin",
+      "bytes": 1962608,
+      "sha256": "3a08fdf41d21dfbfa4a31327f9e0cc41f433d496b96e3acfd479c003c091f3ac"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000127.bin",
+      "bytes": 1964432,
+      "sha256": "38943234b262176c12343f21bbb98141a2ef5dee62c399a6dd305ba07e574802"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000128.bin",
+      "bytes": 1962208,
+      "sha256": "b924d280e7c3358a565c50e8a7353ea7c62c8fbf5cc020533f17d0fd68422da8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000129.bin",
+      "bytes": 1962720,
+      "sha256": "e566d6cde819badd186c114e142864a604595eb648d2112334b6ebd44c6fe72b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000130.bin",
+      "bytes": 1963280,
+      "sha256": "37757ead68542f8e237d761ed46da0159f3f228c216bfc2e7738823cc4552324"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000131.bin",
+      "bytes": 1964160,
+      "sha256": "48b01a50bd410d7081696607af04cba6bcc1629a78774ac484554a0eaf18f42d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000132.bin",
+      "bytes": 1965008,
+      "sha256": "68f61371bd97c4bd61920b99480305d9a6507a1b7880dbcb005979b4d934fd4c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000133.bin",
+      "bytes": 1963680,
+      "sha256": "64b3741ca321439ba42e7b833d1862644f88fa393a24fb642e40ac7e32119133"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000134.bin",
+      "bytes": 1961776,
+      "sha256": "e22e5285899ca733ae218266a66c73bd2faa8fca8a822be96ff0ce0759523979"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000135.bin",
+      "bytes": 1961760,
+      "sha256": "a454caa309091e8e7a3d57c9a75a8dc347d83b19b4c9fc4729445ba46234f46e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000136.bin",
+      "bytes": 1964640,
+      "sha256": "c5f27900a21215a07d47641edbf607483334b6fb7cb983893fa4fb65b99701cb"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000137.bin",
+      "bytes": 1962448,
+      "sha256": "1376829c891fc08e0340819b409ee2c658635d8ed3635bae825f69cd8065f704"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000138.bin",
+      "bytes": 1961856,
+      "sha256": "309ae723a3c6087cebc9c91201df40be78cc25b45ef2d48a7fbff5093e31c12e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000139.bin",
+      "bytes": 1962848,
+      "sha256": "400a05b9fbf2e72c53db84c557ea56e3200f4cf5dc673575b7048de831edfb9c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000140.bin",
+      "bytes": 1962272,
+      "sha256": "0e3463938c30949ae76bc7d59b8daff6132ed3e0b6df67bf3069dfa48b6687b5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000141.bin",
+      "bytes": 1963504,
+      "sha256": "15f06f6e376dec1049d9d43e7df38961b53445d70f9705b5b2b5db4cfffea49e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000142.bin",
+      "bytes": 1960912,
+      "sha256": "01659e910b633a0c901e8f755e4c4cb03607bf0df2ed5bc0c0bee7b5c2d879fd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000143.bin",
+      "bytes": 1961552,
+      "sha256": "d2ab5d381878a105e68eda153e392f2bf486c90d54fcb5e6d5c0125cf8e880c7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000144.bin",
+      "bytes": 1961264,
+      "sha256": "c3a5044cfd630c5ed8aac295ee626548c0ca9fa7101cf5d7bc6dbf6a1f0d50bd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000145.bin",
+      "bytes": 1963312,
+      "sha256": "2375468d391d518e63ece4296a0167a3a1ed6e239af775c8a32f3e158eae9de9"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000146.bin",
+      "bytes": 1963360,
+      "sha256": "186f86a372e42ecbc28ca87d77516392a05c68dba418e3ffc57dbdeee77fadb7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000147.bin",
+      "bytes": 1965280,
+      "sha256": "4d1ae3e2dd28b6cddca0361784f4a09ca4e6df4444e20ed643fb64f19e0fee37"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000148.bin",
+      "bytes": 1964496,
+      "sha256": "9a1827cf1efdab1401afd483271329ff5c12bfa34f3acc270a62ae073ca0b81c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000149.bin",
+      "bytes": 1965488,
+      "sha256": "15126760d07ded780716248aaa06a024fe2a7031943e5d520761ff148f1aedc2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000150.bin",
+      "bytes": 1964112,
+      "sha256": "09ef26b866dd4841bb06eb64403af401514048d7aa4f2c55396d53f1d3ff38ad"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000151.bin",
+      "bytes": 1961168,
+      "sha256": "c340ab03b4059474b310884b690d9e1938561582fe5064e563f23b9a597e24d0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000152.bin",
+      "bytes": 1962384,
+      "sha256": "d17f80d5628781a55ce11e29512485decf5ae3059b4f4a1bee459cc92e8eb93a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000153.bin",
+      "bytes": 1961552,
+      "sha256": "daf2a72e1c75d4fea4bf1187b98fb698b8cd36cfbeaae43a8d026cee53541936"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000154.bin",
+      "bytes": 1959360,
+      "sha256": "3d4afb6c15a083d98dd296246b62e3cbd51c73ff07bc441d65d6b627cb035976"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000155.bin",
+      "bytes": 1959472,
+      "sha256": "63633b01bec2e6d4ca756188b360553c693ae50b8c9e34245a5c394f2fa07188"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000156.bin",
+      "bytes": 1960320,
+      "sha256": "e6006ed094bab82480c6e8fa0a796526f3633ef94b254f19fe08c60d0707180a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000157.bin",
+      "bytes": 1959552,
+      "sha256": "ab07069110766601ba0dbf93b55fe24d06a7804596162fd519e608f06e1c6db5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000158.bin",
+      "bytes": 1959312,
+      "sha256": "694b26dc1ed18a16945ab5d6536d347a6c282b6dda509f5a3a86df8019959c0e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000159.bin",
+      "bytes": 1953600,
+      "sha256": "a8c9eb3e04e62aea6077fbdafad996d5106a7bf38e1d28940e8771f79eb1209f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000160.bin",
+      "bytes": 1961696,
+      "sha256": "8f260d1049fe1f8e9b060c02b69b46d4825461924d311443cf0bd3ac06d3f4c6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000161.bin",
+      "bytes": 1962608,
+      "sha256": "6b41cb104ac0caa47e2b076efa1b5b62d749344989914bc25e0b747abc7220b2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000162.bin",
+      "bytes": 1964944,
+      "sha256": "e1209b3e41256d8bda55ce0ed6852d9b2b49d90e6ca406105b2c5677448c48d6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000163.bin",
+      "bytes": 1966432,
+      "sha256": "9a422a9dd2bec7e067dfeddfe5444719036d66829315d86efb23bfb3da65bc84"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000164.bin",
+      "bytes": 1967488,
+      "sha256": "7a739dfd8ea5747d67f459542e06299acb3b77724b47de566007134924131462"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000165.bin",
+      "bytes": 1967904,
+      "sha256": "623ddea85e8fa23f781a7982924755694eff96cb10ec391222f1b9efc6daf4cc"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000166.bin",
+      "bytes": 1962800,
+      "sha256": "94307963e16de87c05c0a466c49cd401ece136a3ce3000d3685060f88b371e3a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000167.bin",
+      "bytes": 1945424,
+      "sha256": "101da02f921503422f34a26b0df9c550345ae18fce465a6b8ef98aa5677eaae8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000168.bin",
+      "bytes": 1911088,
+      "sha256": "782fdcbc1c989040d5476b61623b5c975a208a7f7eb496d9d94cfa90d4e3cfb2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000169.bin",
+      "bytes": 1861520,
+      "sha256": "38f1a34eb935fa5053a0f4c3e779cb3c857b15b33f2b3bbe2d04b4a0405efe07"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000170.bin",
+      "bytes": 1798736,
+      "sha256": "3723ec48d7caf94b832b0f4ac1e62f29370881432f06d67b9b9531328e051ba2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000171.bin",
+      "bytes": 1730960,
+      "sha256": "bf37752477b4d52c30de3c0c26330290a67ec219ad062e11d4b12b56c22ab6a8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000172.bin",
+      "bytes": 1786656,
+      "sha256": "36ffd67d396e68c5e64a0584aaa5ea1bc1772f4aa7ad53171076155387ff604f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000173.bin",
+      "bytes": 1858080,
+      "sha256": "7350c50f23cc015c2de3bab4799caeb132a01d65a4b74cfbe849ec9585fd9fab"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000174.bin",
+      "bytes": 1918576,
+      "sha256": "cfbd14e2a4c234fd199bae344ebe7060dc48d7f0d5a56c01f806bb3289e79807"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000175.bin",
+      "bytes": 1955488,
+      "sha256": "1dd7619ee75e17f9f016be0fbf971b90b9b5c6db729090b3a23305055f211523"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000176.bin",
+      "bytes": 1966672,
+      "sha256": "29be06b5d77e41d6636ef9d9fecffb5345d71c056ffcd9174f171ae9439477a2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000177.bin",
+      "bytes": 1968224,
+      "sha256": "6a1cdd3139a824229504d540161ea98e3246fc092df01c3bfb84943bca9dbf7b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000178.bin",
+      "bytes": 1966160,
+      "sha256": "3fb2574e754614e09954866126196829ca66692d672bdd7d9498c01a3471225b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000179.bin",
+      "bytes": 1965456,
+      "sha256": "09c70874df18d89586389cd3bea91846e0065578be586591e0c41648f71f6a48"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000180.bin",
+      "bytes": 1963504,
+      "sha256": "20872082eadc204b40b6a96479e8faad1e40f5a1b38ac3986a75652d7d0c81cd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000181.bin",
+      "bytes": 1961632,
+      "sha256": "c013b678f5bc77a06af1ebaeb7d1609da1689e96b2e53147468290d18afd1c31"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000182.bin",
+      "bytes": 1961072,
+      "sha256": "1ec3375da4373014736ca6368aca80e87bef611c2a1bd11c557a262ac1ff0e4a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000183.bin",
+      "bytes": 1957344,
+      "sha256": "391ed06b6c5811dffa0f57bc3d066730d6e8ff126fc7eafc9386d1b384136b7b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000184.bin",
+      "bytes": 1955984,
+      "sha256": "a3b8ec7aa55bc80c545209c4a6865ec0d068b138ac3a089cf4bfc0369fb9c873"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000185.bin",
+      "bytes": 1953568,
+      "sha256": "28a0cc9e1cdf5278a613a0d2377c40b92a85ab24ca12f419bbda72e1486c241f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000186.bin",
+      "bytes": 1953952,
+      "sha256": "7e601e2d520f4e772606cd79cef6a8126ece12aad22dc28089d109c2fc9518c4"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000187.bin",
+      "bytes": 1950608,
+      "sha256": "464dc738bcdd28ae95a4f824246479e8b0b8eccf3a1358d50642a81d9f28a7f3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000188.bin",
+      "bytes": 1947280,
+      "sha256": "5d34e38b13166a350375c6bc617c37b9b22e120ba9355715abd6197b65729435"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000189.bin",
+      "bytes": 1944496,
+      "sha256": "303740de76be0973b6fc122c7b160486eab690704d42154a79d4a30f2fb26814"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000190.bin",
+      "bytes": 1940464,
+      "sha256": "ccb803a143b44a7030c99eb61eca29bfb3f78fadf2fe87c1c057b58d30e7ef90"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000191.bin",
+      "bytes": 1932368,
+      "sha256": "77d15dbe526ad5b3eed0930eb0bf2ed7f20ab17e923707c49fa04843ea737d8e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000192.bin",
+      "bytes": 1921584,
+      "sha256": "392302722c24a16f3032fcbc42aef3c9af556113cedc88ec76a6c4ec44d3a192"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000193.bin",
+      "bytes": 1912576,
+      "sha256": "64cf82a7774076d51d9f9fc083c72d0dee78ca4df127ee0ef43f7ec6a32a1a18"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000194.bin",
+      "bytes": 1913648,
+      "sha256": "a2ba616668980263ccd2a9dba5a98afe124cd2f187f882087ab76de040815571"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000195.bin",
+      "bytes": 1918752,
+      "sha256": "004e1bb2f81200f55ac169beea21e0a2c6bf32c13693b40ec36497b40a788c71"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000196.bin",
+      "bytes": 1913648,
+      "sha256": "663851e391c17e16c2b53e4406284e7a2a3e6978e4db99551816684a9a485b31"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000197.bin",
+      "bytes": 1921136,
+      "sha256": "656a490d0c14734e37dfad60467ac7b430192d3e596f5cd68c8fc57e6a9413c7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000198.bin",
+      "bytes": 1924096,
+      "sha256": "64534d8bd428cb042e2cd8c84bdc44105552dd84902b55f0648a45dc2ed8360e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000199.bin",
+      "bytes": 1927312,
+      "sha256": "d54bff6c79a86fd93be9e55cc48d34dec489f8c530767ddebf7e22121a2974dd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000200.bin",
+      "bytes": 1921856,
+      "sha256": "c2aa9dbd044d9cf04274b6e4e39ddfd2b74fbb05ddc95556a51fc1744a4958ce"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000201.bin",
+      "bytes": 1913824,
+      "sha256": "c27886b8253c7c04b95f3298b63a4b4094df13ef512a90cee88fb949080bc87a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000202.bin",
+      "bytes": 1907088,
+      "sha256": "3487271950f6e69bac68471c32ec722455c66741061d7ec96fcd0b5fff5723c5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000203.bin",
+      "bytes": 1902240,
+      "sha256": "79343df33221f7d8e4fb02fc5e9fd21a82b3490856d01753ec8898b342b0c1af"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000204.bin",
+      "bytes": 1903104,
+      "sha256": "ce929fbc551195c3b37094d6ca7030ff8939ee2a01e7a90ac367f32aa2abde5c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000205.bin",
+      "bytes": 1907296,
+      "sha256": "fe9dfbea7588b23ae234396c9ab1dc8535d63126f24eb00ef4a55cd155373f88"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000206.bin",
+      "bytes": 1908048,
+      "sha256": "02e230c20dd8fdde71db18cc8729122d3d83303ccded1dda8f25a364072a16cc"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000207.bin",
+      "bytes": 1913920,
+      "sha256": "c33d7c99725a02551965bfe85d2d5cd27bda8b1dcce19902b6c27765b83c5498"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000208.bin",
+      "bytes": 1917504,
+      "sha256": "0892d00ec82acdf4b0d9ffee4a259076db167fbe37c57f03557aea461606c4db"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000209.bin",
+      "bytes": 1916752,
+      "sha256": "29c675da004fc07ba9d88344120e7cb1ff0d82a27952356553918bd52a47e3c1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000210.bin",
+      "bytes": 1917168,
+      "sha256": "47ba7e3108810803ceb61c355d38505e4a1c8b15fc5f4d29560165c48bf4bdc9"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000211.bin",
+      "bytes": 1916928,
+      "sha256": "fd665eca85d56efb9896b511750e8b77da36f18e84e4e516315b799e7bf05c0f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000212.bin",
+      "bytes": 1918192,
+      "sha256": "36b0555a230454d27beee5cb7b725587a299bbfbbc7cf3a8863b0179415bc7cc"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000213.bin",
+      "bytes": 1916576,
+      "sha256": "8ee47f7cdd91a5e89e30e2594282e6f9b7ac40c6facd085c733c18011343b2c7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000214.bin",
+      "bytes": 1910288,
+      "sha256": "c75d01b3be226b617d89b2556c300fed220d6ae3bc37883ea3950ffa67dafd7c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000215.bin",
+      "bytes": 1900576,
+      "sha256": "747f9016d784e115e3c72399c0a4705379f448be220a5a215e466dbfea188952"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000216.bin",
+      "bytes": 1905232,
+      "sha256": "360e7d1ccd18ae839bccd6b5d340a9ee110d1ffaa127b567a694a4b0d324cc35"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000217.bin",
+      "bytes": 1905168,
+      "sha256": "5415fc889f0e4f1dd88470a23dd2cb2d49ee64e85eb00af9f19b8867ebc4aac7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000218.bin",
+      "bytes": 1903968,
+      "sha256": "591c3b65d094f43ada62249836692de7d9d83290dc1bec9b251d1237d7c48b4e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000219.bin",
+      "bytes": 1913088,
+      "sha256": "eb29b54495a218b3464faf92eacb448cfafbc9a93849079ccaa10c30a74bd08d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000220.bin",
+      "bytes": 1911904,
+      "sha256": "61a150dab3d99de150750fda577442b146028d95773fcdda1f9ab843a61fc1c0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000221.bin",
+      "bytes": 1899904,
+      "sha256": "39c511a0fdefa1626dc47265d8acb52e8278d1729d048e9477ff64a325d28784"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000222.bin",
+      "bytes": 1865088,
+      "sha256": "4b188c435a193e68313fd64c5f2d7c30ee5bf1589324bce3e70395e1f560cbca"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000223.bin",
+      "bytes": 1815040,
+      "sha256": "d0aa8a60e1815866c93cbc45d229585564ad350df6c97190a79290e63ecca6e3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000224.bin",
+      "bytes": 1816272,
+      "sha256": "3a7a18f052cfdcbd5d400c2a2c56f08a45f086c2915b11f6228850eb912b85e5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000225.bin",
+      "bytes": 1841936,
+      "sha256": "6f761c9d0c0ed2fd046b0cbdc993a277c63d18e2bc2ec53c82033453ac3ac49f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000226.bin",
+      "bytes": 1884752,
+      "sha256": "0fe153f2fb3cd581473f5cfb9a9ff4eb517a8f938634783b53898693ede981e8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000227.bin",
+      "bytes": 1895888,
+      "sha256": "10662dec330d1e5cc907614196f5a94fdd7a8e45843b28753e1ff88188a9786a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000228.bin",
+      "bytes": 1906672,
+      "sha256": "6eabfde8837129fb951c86871558711f06d1f4b6a87a186466777e097b688f52"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000229.bin",
+      "bytes": 1908080,
+      "sha256": "53f7bccd66ef1ce2b3ea2cf5c29895306fe2a19c96df436aa68d3c87b784e71c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000230.bin",
+      "bytes": 1900176,
+      "sha256": "9fe3702184fb51721ba457855c85129ab324ecb63f4563165490d3092dc75dc1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000231.bin",
+      "bytes": 1887008,
+      "sha256": "bd20e13081875dca8084866a299b9e09d6cfbf7cd397b130a0d35e4044998232"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000232.bin",
+      "bytes": 1847728,
+      "sha256": "f384024ff31516d9aaa75f58bb0a992be03684580081200c98b7291ea7ddbc77"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000233.bin",
+      "bytes": 1816624,
+      "sha256": "93afb44f72db14b318bb0180a373bf937b2570bc401bd2a61db79620ff571378"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000234.bin",
+      "bytes": 1826368,
+      "sha256": "33b5e676d59c21887e961e3fa040a121c2ea73611f2cf2d16d152d50d8f8920a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000235.bin",
+      "bytes": 1837824,
+      "sha256": "e35d1a2218ff142a9f41e94857a8fbae34f64316ae984a3aa6d72ece21cfcde5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000236.bin",
+      "bytes": 1876688,
+      "sha256": "0ee026d1f88efae33ee6536583028b67ca36ecb2d4b94d1455a27219c9fefcd1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000237.bin",
+      "bytes": 1883552,
+      "sha256": "87ae10350196b44b878fc2e11a7af09510963d1f59e2a66e8878fccbc98de093"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000238.bin",
+      "bytes": 1888784,
+      "sha256": "5b806d1b28d1c08267683d9bb393c075ef0ef634f726b7e1b6ea29330bec9e10"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/lidar/0000000239.bin",
+      "bytes": 1888816,
+      "sha256": "24e8a64f6f739182d30fbe2782fc71c85b85e4e7c17a66702f56640fa27923a7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000000.txt",
+      "bytes": 429,
+      "sha256": "9dfa8982c089a139bc9b92d4e27ec111d8e09d72dac3dde7276f4a73238150b4"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000001.txt",
+      "bytes": 426,
+      "sha256": "8938505f120cb989ea1836ed372d1797b27b88c7d1f35dd4de3d4c23aa9e6dce"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000002.txt",
+      "bytes": 427,
+      "sha256": "5975ad09392f4e15ad91aaaa90bcfb61b83edf85bf5fda13ab0550083bb8f06d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000003.txt",
+      "bytes": 426,
+      "sha256": "0d5c622b64ab37f7c3309bafa2f45ceb5e20c7c1a7b2b626defd5f018051eea7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000004.txt",
+      "bytes": 422,
+      "sha256": "ac8bd67510c7b884c77c8587fce76d43d07c716cec97bf27a9f87d1c7709d76b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000005.txt",
+      "bytes": 431,
+      "sha256": "4a435d43be187283c50e946115b4e3328b034beb813ccc735ea8208317181839"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000006.txt",
+      "bytes": 432,
+      "sha256": "682e59a05cca609bcd28760486ff95826b128637213cdc44beffdfec6796f39b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000007.txt",
+      "bytes": 428,
+      "sha256": "16bc5e119de6a66e660de938d8ecc30f97fe358d376654d588290ebb2af26380"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000008.txt",
+      "bytes": 431,
+      "sha256": "f76f6b02b02dc210c8897d46a1f888b54e8ff5738dd78acac3c3be9ebadcd903"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000009.txt",
+      "bytes": 431,
+      "sha256": "bf870e62f92f31a8797a2fa132187e258d4bca8eb8526a078d902640bec8e6f8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000010.txt",
+      "bytes": 430,
+      "sha256": "8ff837be397f97ffde46bafd03d14db2e363803a8f4f7b78df75d263bc64a4e1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000011.txt",
+      "bytes": 429,
+      "sha256": "f78b41f0ed1f84173744bc8e991f71231f5b727ef229e99ca838983f6e209e78"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000012.txt",
+      "bytes": 433,
+      "sha256": "45e9f265cbc3705f11a8025f15edaaceb5f36986b99cb34d6af7826e3c0038ad"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000013.txt",
+      "bytes": 433,
+      "sha256": "95315149bd8e22b7a9665eeae7a908614f2a2279a8ec6d9bb5ea4f689a8a7d6d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000014.txt",
+      "bytes": 429,
+      "sha256": "966b71456def6735030e473be04925f64f5922c90647991f092d93c06fe8484e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000015.txt",
+      "bytes": 432,
+      "sha256": "b7c7f6ef31d6ad39f1cd84de9e142b614e258b833933dce4e4f698da327b01be"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000016.txt",
+      "bytes": 436,
+      "sha256": "d4d853259c3837346694b0342211ccb1ee10715c021a17c871bb5c9c1538c1ab"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000017.txt",
+      "bytes": 437,
+      "sha256": "44b4ee3aa694e3762e5881dcf03ade2cf4a52f18a892163232bfeff4a2feeefd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000018.txt",
+      "bytes": 429,
+      "sha256": "068b359062e1be56d898212f736b3bf3b10a504934268558f04096fe79bb3788"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000019.txt",
+      "bytes": 435,
+      "sha256": "63497e97e8a2af62101955a8cf13473770b131624776eb63dceb72232e9b0c2c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000020.txt",
+      "bytes": 433,
+      "sha256": "26c546de7c14d62507ffd43b78546e700d832815bff8b5674ad489e4f24aff0c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000021.txt",
+      "bytes": 433,
+      "sha256": "e4aed304e4bedb4d1493061e51d32733ff2d5fe3875294c1a20189d7f13c67d3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000022.txt",
+      "bytes": 428,
+      "sha256": "f5110b4a44f3597d54392570a576ac9b534f1cb89f85d4cd47d23edda0f24038"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000023.txt",
+      "bytes": 431,
+      "sha256": "0ede09d8f98fcfd97f10f79fc7996e055354c9639e065a1ef67b717e8ed1270c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000024.txt",
+      "bytes": 428,
+      "sha256": "922dd131f82fa7bf41648ec691c3b90f0eeca4ce39268b6b16533e3a7aeea27e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000025.txt",
+      "bytes": 429,
+      "sha256": "8b5b4ac1342c0a4cafa9ac231e3e80ce8db38374da18bad7578fae84006f9993"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000026.txt",
+      "bytes": 431,
+      "sha256": "3a78b5719a8768f0caf19b7af308ae533ae7b20853ef6566df589b5f78151b51"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000027.txt",
+      "bytes": 431,
+      "sha256": "477d52128857707e2bcd5f75e0b7beb21d6f7157e547d5a9261e561099b9d230"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000028.txt",
+      "bytes": 436,
+      "sha256": "d1ae7cebba7a838054f720eccc0b16ee4be27897ecf81dffcf29aeca1757668d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000029.txt",
+      "bytes": 433,
+      "sha256": "76fa9a129f580b11e79873af89bdab880fa281be5b8374e19381d5efec3a119b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000030.txt",
+      "bytes": 426,
+      "sha256": "4d0bfe4abeb946159ca4eeb38f1f671057205b58ee44ddc702f63cea8ab5c755"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000031.txt",
+      "bytes": 431,
+      "sha256": "17fa5eeb22c30b506a80343c34ea60cd1ff37a3c4d463e4b174084491c470e9b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000032.txt",
+      "bytes": 432,
+      "sha256": "a2f68332b11a253e33a48826cc7bfdf03d238460cf3d16fb77b13ceceaef7e50"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000033.txt",
+      "bytes": 432,
+      "sha256": "e8da91d1dac4078370dceedda532bd29df30f0ebbf559949416d10d38701f076"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000034.txt",
+      "bytes": 427,
+      "sha256": "4540488b006f70366ccb520ac838183142ff1fe580e167be86fa1e8b811b6e69"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000035.txt",
+      "bytes": 430,
+      "sha256": "9ec2171fdc17c5ddbb26f610760b388dac4fedb3191794b932cf16b01fd71512"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000036.txt",
+      "bytes": 425,
+      "sha256": "ff08eadd55f037f1b3d0d0716481ea1f0e1dabd367cd24c8d9e5fd5e56e2ced3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000037.txt",
+      "bytes": 427,
+      "sha256": "976abb7b30a67527d3d60fdc0cbdf0551e4cadcc13a26c1e219f37dd12934d9d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000038.txt",
+      "bytes": 435,
+      "sha256": "4e41cd177757dfee1cb721d45116f4ce8dc71812af7aa35f7ee2ff14db92c89b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000039.txt",
+      "bytes": 432,
+      "sha256": "9f72e47d853496de41280f18100a138bb79a8029f43ef1b0aa25187b3ee85686"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000040.txt",
+      "bytes": 431,
+      "sha256": "735192bf114134316b6584bb00b150a47ee7f072428c43fe10bd453ad66b3e79"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000041.txt",
+      "bytes": 427,
+      "sha256": "b514332fb3dc2c9c63ac099e591fa911a4fda4ed2775cf90a4d3aff03f38a70e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000042.txt",
+      "bytes": 432,
+      "sha256": "664e0ee44592f6afa297b220eca0446ffcaf1b1d924ca1737d226e367242eab8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000043.txt",
+      "bytes": 430,
+      "sha256": "ed8be398c217fbeb6305f994687d7a9bacc9a8f8292ce8a84ae5d5448c649b4c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000044.txt",
+      "bytes": 434,
+      "sha256": "8f9416d6c32e8d9e3749ec7ea1305198c5f994146d2338f9ec017145842df783"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000045.txt",
+      "bytes": 429,
+      "sha256": "238faaa542bc759aa03abe03bdb541c07b158b1d2bf20b79dd6f451fd7dc127a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000046.txt",
+      "bytes": 429,
+      "sha256": "ae4e1261913a9d41439c215bee3723e3d055cfb320e858a3a588905881029a19"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000047.txt",
+      "bytes": 428,
+      "sha256": "3b2e1734a5cf6327e4806afe88e66414e398a443df942380b76c9462a260bd34"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000048.txt",
+      "bytes": 431,
+      "sha256": "a5357d5a9f2171e787064ad24b06ac7ef988e081ceb97f9eb30af08c45d72167"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000049.txt",
+      "bytes": 425,
+      "sha256": "6d12a87362aebef11646eceab7298854b9c5f53217802a44183f3c6443606422"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000050.txt",
+      "bytes": 433,
+      "sha256": "9f8b919f40a02f73a967b6358f50d271130c5a02ba77abb3b3e0af75069a6154"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000051.txt",
+      "bytes": 430,
+      "sha256": "de2d1f13a26c9e2f439bdbe2803dae63382aa8358bbeecc2506cfa5e33f4ab3e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000052.txt",
+      "bytes": 437,
+      "sha256": "4472aff9e12f4913d4cfed74075b96d3db6f71cdca98f1be4484abdbc9acafff"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000053.txt",
+      "bytes": 422,
+      "sha256": "7f8eb027d6dcc1542b71e1e6634d2795a25acb7e8f869bb3f842f3aa17904fde"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000054.txt",
+      "bytes": 428,
+      "sha256": "d8a4376569375af51dff3e70ec72b8e4492f1cc1f9c8882379bb8fab95d655e3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000055.txt",
+      "bytes": 427,
+      "sha256": "6021f24b0202f20f91b3affb0565b3a191d4ebc0b3767d5f3a417b976aaea55f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000056.txt",
+      "bytes": 423,
+      "sha256": "844924c134818b7875648366e03bdac8434ce57006c0accb1e1f99cfe5c335f3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000057.txt",
+      "bytes": 429,
+      "sha256": "5c2d02a3cb69461c0303d13a7963e96cb39ff51131129b91aea8d3c9c89519dc"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000058.txt",
+      "bytes": 425,
+      "sha256": "8078545f97b530334973722ebfb8750924a2c1458ae3d35845cd5fc35a7e0722"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000059.txt",
+      "bytes": 423,
+      "sha256": "023987ffd4d69e34eca7b934b8f9d7989d6f1b40bcc91dae71d04d40a7b5c3f6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000060.txt",
+      "bytes": 430,
+      "sha256": "00b75b09e61f7be0602ba1c304843899d82aae0f29ab1b8746018e8a5922d4a1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000061.txt",
+      "bytes": 431,
+      "sha256": "572719c11ebd7515689193c77b0791d9efbd7a8259eed850f153db9ac51a031f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000062.txt",
+      "bytes": 431,
+      "sha256": "f2429c1a6c15ba0a5dcbd0a68e6c3c40016ae6390783404452a9f6d96a445938"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000063.txt",
+      "bytes": 432,
+      "sha256": "c902013d728ae3bd8f031eb5aff4e16db0264c1a9a5b3ca1637b62cfe7c386d1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000064.txt",
+      "bytes": 431,
+      "sha256": "4255ceb573e7d7c1dbe592c9cb0291840cc0966e85c87a174c59361b2f1da0e3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000065.txt",
+      "bytes": 433,
+      "sha256": "b0c2ea284d4ed230c0e1e489ca0cd8222cb7db82c70ccef966aeb0eea39baefe"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000066.txt",
+      "bytes": 434,
+      "sha256": "dc586b97eddb61ad2a110162766e4401362c77806f0ee25ba5b5123bf257957d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000067.txt",
+      "bytes": 432,
+      "sha256": "5123bc57c73d2f00f2e15475c13a7c6b445fa509d81aa556aeed14484f304184"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000068.txt",
+      "bytes": 427,
+      "sha256": "7eb9a767ab2b2e0eb6978927143f4976c75b7c16033e38960d288f48286c8609"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000069.txt",
+      "bytes": 429,
+      "sha256": "f4aeeef269c93e8074cc6eae9ef12e9c90038e7548473ec0da25aac569c0eddc"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000070.txt",
+      "bytes": 433,
+      "sha256": "87a2fc01ac015b85b73910a01479ad5d8a05f07ea1db49784d6f00ef298b33ef"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000071.txt",
+      "bytes": 427,
+      "sha256": "8da1aa82a74b82c9ed05acd68116d31358d4665fd0d10604e89398b7b2eea314"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000072.txt",
+      "bytes": 440,
+      "sha256": "25914e3ab262f27f0b61171f9ee940c14ef763d1a20acc2d6735d8cc6b2e8286"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000073.txt",
+      "bytes": 431,
+      "sha256": "983f145f9183c02bd55d14c5eea2a7cc4c1620389b21c4f2758fb8fccdd4eba7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000074.txt",
+      "bytes": 431,
+      "sha256": "ae3b6ca6d154107de3384ae9fe865c48c6a02c82356ab6570b0fff7285c76abd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000075.txt",
+      "bytes": 429,
+      "sha256": "4b8d6ec0abb97dba2b837deb859afc2a8df40bc92526e208382487ca04cea425"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000076.txt",
+      "bytes": 431,
+      "sha256": "2c62e79ab361aea5fcff6b0c9edc0fa6b2b0752c1c6923888a90176851952d58"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000077.txt",
+      "bytes": 430,
+      "sha256": "3a530f920063af05d47306c02340eb3a8aad80811cdc3144b9f4c178e92f68bc"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000078.txt",
+      "bytes": 432,
+      "sha256": "108959b23b295b0f357af086dfd7438adf43603f277b6219042373914fbe82a5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000079.txt",
+      "bytes": 436,
+      "sha256": "146f1a23a20dbe4298e72ebb3fe8d8c40dc35b3290cc034ea88a7b0f95171cdf"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000080.txt",
+      "bytes": 436,
+      "sha256": "4fdf77a55e8b1182b54d4d26de15cb8375cef53acb214729af22020ebd145ef0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000081.txt",
+      "bytes": 434,
+      "sha256": "dd1607b81a9043cd65f3841eef6ae17c84e2b0bb03a86aa02743a0a727468226"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000082.txt",
+      "bytes": 434,
+      "sha256": "45d108b3063e1313ca4fdb4e4a5b4309fa3b956c84cf432645735799a6a2be49"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000083.txt",
+      "bytes": 440,
+      "sha256": "81684359fc22fc2a46cb5489cb633910aa440289ed1d9e23586351c60fac9292"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000084.txt",
+      "bytes": 436,
+      "sha256": "32e1fed069913521810b7573e892e16e1fbdafe9f96107cedb6ed6c08766c5d1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000085.txt",
+      "bytes": 433,
+      "sha256": "9377aaf496de40df4c0a2fd457ebdf02d09fd21760a61e24c5b8982c1e38e535"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000086.txt",
+      "bytes": 434,
+      "sha256": "d506626c76371bce69785710fc6e04ab49e0582c37fa1726f30b6f264ba72696"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000087.txt",
+      "bytes": 429,
+      "sha256": "a52225fb05c4b1fe2368bf5ad0bd472247aee1ba9d658781b41f11b998f5a35a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000088.txt",
+      "bytes": 435,
+      "sha256": "13293efb37ce81df8da3bb05e325a099af729755defddeb689c40152a2b9ab63"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000089.txt",
+      "bytes": 436,
+      "sha256": "73abd48200a05c2a8d80a6ef87a8b0f293b3177103c2b5e0986074e2e24ac813"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000090.txt",
+      "bytes": 434,
+      "sha256": "f2981ffef183f09000c2b9a0c7fb0b07bc8b246ef7ea9549de7e717ecf525745"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000091.txt",
+      "bytes": 430,
+      "sha256": "f735fb6ed9b4a7c4c3e3b4e6da1c8953f3c9c6d0809644244108e969d924ef0c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000092.txt",
+      "bytes": 440,
+      "sha256": "e5a8635bd5e8c6812a5947d8b45883b861fc3146d96d3c9b86811701ab93c665"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000093.txt",
+      "bytes": 434,
+      "sha256": "cd62e4477c06ab315b4efcaa95976e2fe9cc9ff479ee97dc7318c9300b95c511"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000094.txt",
+      "bytes": 434,
+      "sha256": "1ebce4398f83aea8b22cb007451883dcf54f80771a54c6ed5f6d800917527ee2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000095.txt",
+      "bytes": 431,
+      "sha256": "6fdbf15efa894d3740b4dffe98384f544b20557914a96f05167508c940649b7e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000096.txt",
+      "bytes": 431,
+      "sha256": "62736393156cd32f917921e1777b7cf0048b83868a67c84176af87dab6b9d8e3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000097.txt",
+      "bytes": 430,
+      "sha256": "0feb23dda68ecf5c1e3253bff7baefd09f568b1cc66ffe700f5b2615f53898a0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000098.txt",
+      "bytes": 435,
+      "sha256": "af64ca3a341bb15dce55088606a27cba92cfdec732af154e8c7c7181e3008f56"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000099.txt",
+      "bytes": 429,
+      "sha256": "3207c281b5a5fe6d24fa5d06ae331a79f1459c65956d3797c0905c7cfb6b3036"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000100.txt",
+      "bytes": 438,
+      "sha256": "2e547c72ffeb4bf28ad068a0da974448cf69122d984fb8c392d24f5f27e1cfe9"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000101.txt",
+      "bytes": 436,
+      "sha256": "29f59e40ed733315204812ab2e3315fc80e2502c226f8098165c59918ea76ae2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000102.txt",
+      "bytes": 431,
+      "sha256": "b45626dfcb2eb813943c670a13808d324fd78c005eb88d7f031c101d80de6d9a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000103.txt",
+      "bytes": 434,
+      "sha256": "ef0c53a8f9255f5bc816fce5ccd7144e8dfd0f8e4aa902b2050203d2330c14b6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000104.txt",
+      "bytes": 439,
+      "sha256": "3b66cbd2517c51b61e9af5b03f071a4793439264bfba8fb9786a9f06c9db9c42"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000105.txt",
+      "bytes": 434,
+      "sha256": "4f0fc63e59e0f4564b0108ab00242376b2d9a321eeee5c6af767a5c664719c7f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000106.txt",
+      "bytes": 433,
+      "sha256": "008503651bd1ef063bd61b2190bed819e6fcbdabaca9468e5e7f57dc8fa1e9ff"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000107.txt",
+      "bytes": 434,
+      "sha256": "89b5e9efbd4060c75cfa720b081f27eb860eeacf10bca02fcf601f063f9a2936"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000108.txt",
+      "bytes": 436,
+      "sha256": "b89ac3e404c573ca1d257312b07d90db54074d6622c2ff2915c88b6a1d4e01a5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000109.txt",
+      "bytes": 435,
+      "sha256": "20e24aa8a5059c981f77af6722cb912c9d9adc51e171c9af27112c3bb60e2047"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000110.txt",
+      "bytes": 432,
+      "sha256": "cf2ec5a214f9e300fc46db435a9bf28b16134110b653f9dcb36dc83fc4f7a101"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000111.txt",
+      "bytes": 431,
+      "sha256": "483b27faf32e66ce2753c7854a154c1b0e39393cce8236acc4d06a628b54a2cb"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000112.txt",
+      "bytes": 432,
+      "sha256": "e7e12922fb383e519a264c33fb104030e4a8276cd295feb4a1d4f1d73f24c4d0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000113.txt",
+      "bytes": 435,
+      "sha256": "707a9ba24c1a7d84800bd91d7dc0efb44f856db788e02d11acd5026810344e56"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000114.txt",
+      "bytes": 440,
+      "sha256": "990a13e66ea7977404a8dcdf62817adf61e7ee08e26425584ae9b0b6e589f02d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000115.txt",
+      "bytes": 437,
+      "sha256": "5427ff8f892201bbbd2c0986c44ea79a9397639ab95f75fad5efb6835df98948"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000116.txt",
+      "bytes": 435,
+      "sha256": "fd221d5e828f92a6b1fe897377a7072f85a2cc30b1fe66e312e63d112857f2ff"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000117.txt",
+      "bytes": 432,
+      "sha256": "08043dd44eaada61522d39e6fed1b581a803c382fac2340cc27f700eb8544770"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000118.txt",
+      "bytes": 434,
+      "sha256": "b8876d39c0c279d4a1837f8f44e34fc28452cef37d52ed1901f62bbb7828e81d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000119.txt",
+      "bytes": 440,
+      "sha256": "eaf8aadf74c8f278275eee8fd892aadcdff0bfe87d9f92dedddd4ffa8c18d0ce"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000120.txt",
+      "bytes": 433,
+      "sha256": "b56a02c4dcc4988075e66c351a72fe0722be435a1100b81963ba6d3168e0096b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000121.txt",
+      "bytes": 430,
+      "sha256": "f853119d14403a4871ee21012bbcba0b97993f7ee2eab11b9f56b595abdaf91b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000122.txt",
+      "bytes": 430,
+      "sha256": "fba6854e272b5527769d0bb0a44e1d146a9bd20e93d84d151f1187f04cea83b8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000123.txt",
+      "bytes": 433,
+      "sha256": "bed9010af19693102c1e6a1be76ee6339764a3518c157aea4331caf2e3247a51"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000124.txt",
+      "bytes": 432,
+      "sha256": "bddf792e3d2955757fad1c217e8c74475959f43e15efe99392d29ff93639f129"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000125.txt",
+      "bytes": 435,
+      "sha256": "01597dc3f71a435833233d0137b548c2c35da47cfd017dbfd6edab1ddea37b4e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000126.txt",
+      "bytes": 429,
+      "sha256": "e1f54a6ce358f0921100ea610626c5c190c88589e16afe4cb0597fa00dafdece"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000127.txt",
+      "bytes": 429,
+      "sha256": "dbc29a443c30baa19ecb15aebef902d44ab3b20b4a37a9759b7b14b611eeda01"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000128.txt",
+      "bytes": 433,
+      "sha256": "526f8336b0aa4384bded0bbea9bd8c1385edccf3550bdc9e52e02b739b8dd128"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000129.txt",
+      "bytes": 437,
+      "sha256": "0dfd993a58e5188ea6035329aea11e2a21adbf7a91733398f9488f75d53e4bb0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000130.txt",
+      "bytes": 429,
+      "sha256": "04123776e820c623fdfaaa7a68f5c21d6f093d8e291fbdac0d07ba64689d318c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000131.txt",
+      "bytes": 431,
+      "sha256": "75537b6fb0308d3fdea0967215494b5dda0482dfc873d048ccf995271cabbc6a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000132.txt",
+      "bytes": 433,
+      "sha256": "bbb2bdb97cb410abdcce2592f05d52aad29ca1195db9c12d32586d4b2324e56f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000133.txt",
+      "bytes": 434,
+      "sha256": "61616064f902f059f98ae951632916239dcddf32f4c0452b47141c9b7afbe297"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000134.txt",
+      "bytes": 434,
+      "sha256": "93d79c42920af053444f7fd8538a1d1e43d2664cd6ae4a4691b717306821d030"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000135.txt",
+      "bytes": 436,
+      "sha256": "ee73ccad7f9da39901f09b87c92cf8156fdb8955887f1cd5ec9375fdd43892fd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000136.txt",
+      "bytes": 434,
+      "sha256": "70807ea62c203825dd9530ecbb2a322aeed663d94a4700eb9cb9e4d512be0bde"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000137.txt",
+      "bytes": 431,
+      "sha256": "095157699d7f5909f321ab9d9e49eed14d3399d15d7e7ca057c0434f93aa3156"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000138.txt",
+      "bytes": 432,
+      "sha256": "a0f6793b9d7e858007aed81d55ce8cc67625d7e284ec30486024176249dc959a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000139.txt",
+      "bytes": 433,
+      "sha256": "f5ac7b3b5a3cc24c438a53a108325a1391a583c6a97f1357fe72a6bb91af6385"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000140.txt",
+      "bytes": 433,
+      "sha256": "58c55789a562e2be0cb0c13988b7111f01093ec939c538e51c46efe451e461a4"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000141.txt",
+      "bytes": 431,
+      "sha256": "836f75f887bcee6105967a62e32e227100a071ccddd028a4aba0ed7854b2117f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000142.txt",
+      "bytes": 434,
+      "sha256": "965c3086924ce26540b89d75857f26fca7ea0e0c2ab4eb602ccc7d7ffaee4308"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000143.txt",
+      "bytes": 432,
+      "sha256": "6a75b3324dde14de3616c9e9bb06653c8d9020ab225483b88e9de03b75baa775"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000144.txt",
+      "bytes": 433,
+      "sha256": "a64873e37144b8c4bd6ed1a9c7d6f5e3bc3bd86128080d27f55f10f81ed8b917"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000145.txt",
+      "bytes": 435,
+      "sha256": "ea6dff88a1b41a1e52abe35116e3fc21b5c6545cd12f700b99e9d7b6b2c045d7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000146.txt",
+      "bytes": 435,
+      "sha256": "2958d229c379949c3e2ce0333a60d308d1a3b89a7babeed2ceee91f12602b2dd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000147.txt",
+      "bytes": 435,
+      "sha256": "43e4bd234f30e1aa1b6c3a79203acd6da9fb150946a57e3baf27917172a2c48b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000148.txt",
+      "bytes": 437,
+      "sha256": "fab4b8af22baefb8e7179084a893828fbc9b3d4a632f8836f111483c4e5308ff"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000149.txt",
+      "bytes": 437,
+      "sha256": "6eefd9ee85e59b05f2c6b882bc0ebebd152f78fe614add816193487c0d8c1623"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000150.txt",
+      "bytes": 435,
+      "sha256": "039f574af462dd6381dd808e5eecff3f7b012530c07405a82283a9a4aba7047f"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000151.txt",
+      "bytes": 435,
+      "sha256": "8bc03eb095bae943fa171fed4e022d821ff99a5d93994939c7030edd18579bb6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000152.txt",
+      "bytes": 431,
+      "sha256": "2437e05c099f49f33c1f3e3cdb7f65dcb41767e757bac7ec3345baa2d2a38a73"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000153.txt",
+      "bytes": 433,
+      "sha256": "c46ca0d3fa7ed7b5965525f7924e06ae955dbca9bf878bc474ce1abdf41a5dd3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000154.txt",
+      "bytes": 433,
+      "sha256": "d3f5a03b7fcfbb5bdb3e524f1e5cc127511592fb074381323679c0c5eb955afa"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000155.txt",
+      "bytes": 432,
+      "sha256": "6c53d2e8dd3021cef6893f2e9969897b85eb822a763a1bc4cc05061e474d735a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000156.txt",
+      "bytes": 431,
+      "sha256": "8b609c62a2d4b763e73ca362811c18545d504b200f1b4e86e7343d6668c51205"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000157.txt",
+      "bytes": 427,
+      "sha256": "61cf3980ec2948befecf425471df5a3153882c2c6064c478bb9afe14391e01c1"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000158.txt",
+      "bytes": 428,
+      "sha256": "05a816ce4423fda02fed735f9b9f474672cb80328931e475f93097c7db27a5ac"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000159.txt",
+      "bytes": 429,
+      "sha256": "db291d341c164ed27a5a08fc0727cb01ec3d9592bbbe243ee0ce3d340759af7a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000160.txt",
+      "bytes": 431,
+      "sha256": "04a8f1bcceb46b7b7c4fb4bdb116f3464ee92ad3077f5b8bb8127c1aec2d3b1b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000161.txt",
+      "bytes": 433,
+      "sha256": "547b4c994dfef457f07d1fa908b1c91dede3a29bd197a61fd7e0b2e599545ee2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000162.txt",
+      "bytes": 430,
+      "sha256": "aef61b1cd5ce7855ff0e6db31f59e2e817754ffc3f56b177faf5904eaaa9b971"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000163.txt",
+      "bytes": 433,
+      "sha256": "6c6b8ae3b9f9f63d0b042aeb7a05be3255816ed65a70b76dbf6a586fccb87e05"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000164.txt",
+      "bytes": 432,
+      "sha256": "9c852f57f8263e15409258aac80b1d1d452b0140ce3427f69457f1cffb0380ad"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000165.txt",
+      "bytes": 426,
+      "sha256": "2f6908a8ac184e459b3b64f96a9995a48d03283840ef4a371b16a217c670e047"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000166.txt",
+      "bytes": 426,
+      "sha256": "4e9bfd0b6cddfa95e38cdcce092e550d7d1184dd4cbc1844ec82efa6e2816d1e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000167.txt",
+      "bytes": 431,
+      "sha256": "a0e53206caf2c9e309ff4f3ed61091f6170dc2ac216dc6ef20a217a583543fa2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000168.txt",
+      "bytes": 427,
+      "sha256": "4dc3505f08f76932e2abebc6e608518afa32a3709f780d435f74f54e400e8d35"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000169.txt",
+      "bytes": 430,
+      "sha256": "30dd15d5587228db69278c104e7a518c9487c7788f4f1fe15057694e8efcfb3e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000170.txt",
+      "bytes": 428,
+      "sha256": "69b01c402a5878dbc6b9e7625c97f10589f72a9f16cde9337ea0e627603ed044"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000171.txt",
+      "bytes": 423,
+      "sha256": "11545c7940a6727977db4bbd54879c50cdc779ddfc7542719e4466049a368073"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000172.txt",
+      "bytes": 426,
+      "sha256": "2cd8cb7ff70bd0605f6a3995c402659795bc8a78a6f357475d1804e0dbfd0d89"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000173.txt",
+      "bytes": 425,
+      "sha256": "ab4b1ad446e5d7943efed7699e98703ad6e1f6f7ee629435edeab6b26aeaaabd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000174.txt",
+      "bytes": 431,
+      "sha256": "20068cb9c6635e4e648adfb3f02de564383c6b7e926a7987bd893721b2c9062c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000175.txt",
+      "bytes": 423,
+      "sha256": "0dd0172af824d6c32f51d33358ef456269b7980c94b48835a720b0a5fc6952d0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000176.txt",
+      "bytes": 428,
+      "sha256": "23841f9edc899826f14c489f00dc3f0de3d176036584e2506a7d2d08e59ac48c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000177.txt",
+      "bytes": 429,
+      "sha256": "d81a51aa26df58faea0c3099bb7abbfc6f62e4d1ece8a4cbb2c1363db652679a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000178.txt",
+      "bytes": 426,
+      "sha256": "041ac4421f8d9ee4c7d54498ad1473fcae81edbb3ac0596ac20ebed7930d3b61"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000179.txt",
+      "bytes": 422,
+      "sha256": "eb43d721d4a6714031c0d5348784862176a63396785fb72842b552a132594656"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000180.txt",
+      "bytes": 426,
+      "sha256": "55d166c793276b713952f34827809e0f7a8a85c723e1352ddc4f3ff722e3a2c2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000181.txt",
+      "bytes": 434,
+      "sha256": "a82c505e8c76ae89266de716df2b44ee552d059dde1ccaecb5347c2137da8fe8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000182.txt",
+      "bytes": 430,
+      "sha256": "f4ca5fcb205d08e5cc0a18dcce643d9007d4995bb263b45e7332333ae2335dbe"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000183.txt",
+      "bytes": 430,
+      "sha256": "156d124b415b36e9c97133ede80da20a003593cccc334bfc9262dff12f9e1dd0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000184.txt",
+      "bytes": 432,
+      "sha256": "d265821d2482d66ff297e051e0d8f65031c1c2c32babd7d6b4a7d54e87eef153"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000185.txt",
+      "bytes": 428,
+      "sha256": "3c46215edcf4a70ed9df5f0dbf201f765c04a8113b37e2920755c5cd8dbbc73c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000186.txt",
+      "bytes": 430,
+      "sha256": "74b655fad18ef52f8ebd93d30bdea9376785658b7e733c7cd8df8006cd0d8657"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000187.txt",
+      "bytes": 431,
+      "sha256": "ff9535d723d857606f9c5ea2eef8102dd7cdb659e7c8a8823708f4f596f8f4de"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000188.txt",
+      "bytes": 429,
+      "sha256": "b03f94936c8eeeec5bff8a2fbf9e71f291ed94e75cd9428cb40d384ee87f6dda"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000189.txt",
+      "bytes": 434,
+      "sha256": "2f5dad2b261884f33210bd0aa0b5191783141de6c5d2cb21fc1a454eee05e3d5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000190.txt",
+      "bytes": 427,
+      "sha256": "8ac9a6e124db89673190c6adf949554486830ef12d5277091d438e4f09f0a176"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000191.txt",
+      "bytes": 427,
+      "sha256": "6e09f083d6ff67eb93f5c30024eecaf03fbdffd873467936a66fd4934dff90dd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000192.txt",
+      "bytes": 434,
+      "sha256": "b49b6f3accdad95bd2b8d04e614444134dfb136ea1855989be87776d693a347c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000193.txt",
+      "bytes": 433,
+      "sha256": "1863ed1e86b8d61cc94f9d65fb0a146430febfd0cd5cbfa038dd6fd241c25f7b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000194.txt",
+      "bytes": 430,
+      "sha256": "5af76c412192bd4cc99435b4f27a645bcdeb8a5f536d0c1056522225fd1754fd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000195.txt",
+      "bytes": 431,
+      "sha256": "e8bfd19be107d4df1d2e230b59ee76a369c4bd94fcd7d08ac90195a814859ef5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000196.txt",
+      "bytes": 429,
+      "sha256": "9c6db139931911eec0259d7befee4f23067c9349e9ea39bca4a2e14ecd80baff"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000197.txt",
+      "bytes": 430,
+      "sha256": "0ff5f6e555af290dccb63515e59a3d7d76cdb67c70ec029190031ac2fab847c5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000198.txt",
+      "bytes": 436,
+      "sha256": "37ff1c987b8227ffedef55bedf3b80124c6b81e13da8b66ddd8b8962632bb1cd"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000199.txt",
+      "bytes": 432,
+      "sha256": "5d3aaa42db5f6213ad0c0c9be4b5173c47c92d10bd717824601cd6dbdee17a64"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000200.txt",
+      "bytes": 435,
+      "sha256": "32a6b8223433fd0b660bd0691bdc01aece5fde29ddd27f33fcfc3ca59109b6d3"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000201.txt",
+      "bytes": 430,
+      "sha256": "16a35c77647a1d2e5d66644705e91f748c1ef25de253c9bd15f6fbcac13523d2"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000202.txt",
+      "bytes": 429,
+      "sha256": "5ce6821f2c1f4650f8940fdf6e15b00dd58e64fb6e09034d63c7b196c4195e15"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000203.txt",
+      "bytes": 427,
+      "sha256": "85848601fa4eb032468f7d3483f38cc954f47147d2c8abdfd0ca927e13174524"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000204.txt",
+      "bytes": 432,
+      "sha256": "f5a8e8c079af17f1e1ebc6ee772b6d8b10b90337598cd3bdb1dd749729bb0191"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000205.txt",
+      "bytes": 432,
+      "sha256": "f832bf62fef06484390985c93c10d1d6577d3b35efa4301df56b4dc1c096e18b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000206.txt",
+      "bytes": 427,
+      "sha256": "31cd72996e9c80598b4d74d8c1cc4beef2e398ea516e590e5498a00703363b4b"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000207.txt",
+      "bytes": 427,
+      "sha256": "dc6e01f9aa8e99fe518e0b75558b4fa8dd2bf61b68dfe3f2fc8fd53493277711"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000208.txt",
+      "bytes": 430,
+      "sha256": "b64482a45c17af1dbbef0054a61fd49db0de8c1ce820efb7947de794aec07106"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000209.txt",
+      "bytes": 427,
+      "sha256": "2f319fdf6b5de2bd4353d80449023f23ecb2e825aeab4109446541791eb18680"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000210.txt",
+      "bytes": 430,
+      "sha256": "564ffa8516c0b66b45fb158497ab31f597f71b02376074ddc8d7919cbd93c5e5"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000211.txt",
+      "bytes": 430,
+      "sha256": "305a45ee5c753575393aacdabe3aed6aa8e596cb702c3cd0fdd6c0b3dd76f915"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000212.txt",
+      "bytes": 428,
+      "sha256": "e7644262d3d1aedbda2e821e4586ddafd413af37597e1f8d4d35ca7616524387"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000213.txt",
+      "bytes": 432,
+      "sha256": "8ddd6ce79704503339a92cebb5e8f51b9a6b8d7ab634142f125663cdc0ee8b9e"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000214.txt",
+      "bytes": 436,
+      "sha256": "0742f903895a696bf00435229cc057190edf148fc6b60f2c8f06bff9cf3f03f7"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000215.txt",
+      "bytes": 434,
+      "sha256": "b6b73bfa8dc0422352ddf69f464c279a0eb0cb1b9f13d3ac9b01243b095d7d64"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000216.txt",
+      "bytes": 436,
+      "sha256": "fb819334278f9de273c0c3fc85892651f3b7b839eccf15037b66d683bf02f6e6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000217.txt",
+      "bytes": 433,
+      "sha256": "67e92730d8b020bf452dc6fcc210cb577c794979a8f1d4002167566b22df4234"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000218.txt",
+      "bytes": 430,
+      "sha256": "4bf8645c8dc99c645b4b9b9a813cb4df0ce956b1b6bcd7efe0704e72ee4dd4b0"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000219.txt",
+      "bytes": 434,
+      "sha256": "383082a7694ea2873f617080c4dd80c8b552546c9d00c20318730b953afb1105"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000220.txt",
+      "bytes": 430,
+      "sha256": "206c5ecf68f53ca04f86c2e79fe817ecf221905bc21161ac25574efa1411f430"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000221.txt",
+      "bytes": 430,
+      "sha256": "59d296f31522b7dc48d5dbca5ff522f2c0718986d5b295011749259060842b40"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000222.txt",
+      "bytes": 424,
+      "sha256": "7d63915a631fe2ebcadff4837aad21ffc15f938887fcc24a8d4798580562ed7d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000223.txt",
+      "bytes": 428,
+      "sha256": "71b240909dfcbac5e97084b95f66d3d6f91cb85922212ea1c2c593a13ba2d790"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000224.txt",
+      "bytes": 432,
+      "sha256": "35f354103fda6b766cd96fec808ea8437ef2d7ae21e9ad556ea2bcb25b3a3a95"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000225.txt",
+      "bytes": 428,
+      "sha256": "156f9c36e2b0bb3d431cba8bee55c60ad3cd6e155fc6950680e7672067a0be39"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000226.txt",
+      "bytes": 428,
+      "sha256": "f9625ffff545641afe5e60644fc5f1476aaba04ab7c9e45dbfacc9d9b424fd99"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000227.txt",
+      "bytes": 438,
+      "sha256": "fa96776297569b89466fc08e494ea23cc1a1dc052cd63cd7550f6660dc50a4d6"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000228.txt",
+      "bytes": 438,
+      "sha256": "f3456d2aa2fbcf0f76bc395b835e89b4d47e1c762d55ddaffba603fa700ad917"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000229.txt",
+      "bytes": 434,
+      "sha256": "0b6aae945b6917e1b6ea042342af62980a8b1e380ce2a7bd5a43e55130fa5615"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000230.txt",
+      "bytes": 432,
+      "sha256": "ae6ca0f0b48783418ae6c5d0f35d6d41ac2cb13fb211a7051de0fed056687d7d"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000231.txt",
+      "bytes": 434,
+      "sha256": "853291faf9b89d1edaca0c6383b93c9f8eb55b05394aa48a0522745932df83e8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000232.txt",
+      "bytes": 433,
+      "sha256": "c9859c478fdfa4aeefcec6d3ab6b842af66a049a7e1cde1475c71a981a060542"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000233.txt",
+      "bytes": 436,
+      "sha256": "2f3d024d750a1753441dd0baa612d79e0aa7ca3fa746ff7abae0a8538fcab3f8"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000234.txt",
+      "bytes": 433,
+      "sha256": "179634663032efb8689c641edbcb680d730e87cbda69aac9c525a6d0837d4134"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000235.txt",
+      "bytes": 431,
+      "sha256": "290e749249b5f9529fc38513b9f278df6b3b8899f3d2994592204ecc34a24204"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000236.txt",
+      "bytes": 431,
+      "sha256": "024d66860974035c3810bca80f980e2017d30b564348cc482804f92889994c31"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000237.txt",
+      "bytes": 433,
+      "sha256": "c4aaf85e0c308d30e0ef67b6a86e4635b26c036b365320f0a370d90c5e70c080"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000238.txt",
+      "bytes": 431,
+      "sha256": "11791bfbdbaeb21bdf0db4b91443eba9606580b10eeb0f83e660ea6eba267724"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/oxts/0000000239.txt",
+      "bytes": 526,
+      "sha256": "bc19fa0dfc7f17d4553b81cf6e4c6d9533d645e99fe954bbe27e73c46990465a"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/calibration/calib_cam_to_cam.txt",
+      "bytes": 3001,
+      "sha256": "edc1eae281cb95e41798a98dcc545521449527145477ff852dbf3a4ec48c643c"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/calibration/calib_imu_to_velo.txt",
+      "bytes": 200,
+      "sha256": "07ca9ed33a2d968fc6358617d2c70e048b6f8e0f6ee5b73ae963afc1b19456ce"
+    },
+    {
+      "path": "data/E4f/evaluation_only/2011_09_26_drive_0015_sync/calibration/calib_velo_to_cam.txt",
+      "bytes": 271,
+      "sha256": "9dc0c3e92dfceceb9500caa2c9488261a52640e43c3f7c3045ca1ed7927e7266"
+    }
+  ],
+  "preflight": {
+    "rgb_decode_failures": 0,
+    "image_sizes": [
+      1242,
+      375
+    ],
+    "calibration_projection_first_scan_pass": true
+  }
+}

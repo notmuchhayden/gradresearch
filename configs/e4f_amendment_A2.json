@@ -1,0 +1,18 @@
+{
+  "experiment": "E4f KITTI outdoor geometry consistency diagnostic",
+  "amendment": "A2",
+  "registered_at": "2026-10-22",
+  "registered_before_A2_model_prediction": true,
+  "reason": "The initial 10 Hz RGB-only attempt reached the configured shared-keyframe capacity of 32 at input frame 33 and stopped. The 8 GiB GPU cannot safely allocate a 240-keyframe buffer at the 512-pixel model resolution.",
+  "change": "Keep the same preselected 24.75-second window and all 240 RGB/LiDAR/OXTS records, but send every second RGB frame (120 model inputs at about 5 Hz) to B1. Increase only the hard keyframe storage capacity from 32 to 128; the sampled input count is 120, so capacity will not truncate it.",
+  "unchanged": [
+    "selected drive and selected temporal interval",
+    "E4 B1 weights, RGB-only inference, tracker and mapping code",
+    "native filter, no new pruning, seed 0, refinement 0",
+    "LiDAR/OXTS/tracklets remain evaluation-only",
+    "all 240 synchronized LiDAR/OXTS records remain available for evaluation"
+  ],
+  "interpretation_limit": "This is a resource-constrained 5 Hz diagnostic and is not a matched-rate comparison with the original 10 Hz attempt or the UAV run. Report 10 Hz failure and 5 Hz result separately.",
+  "failed_attempt_manifest": "results/E4f_kitti_geometry_diagnostic/2011_09_26_drive_0015_sync/baseline/run_manifest.json",
+  "new_output_version": "results/E4f_kitti_geometry_diagnostic/2011_09_26_drive_0015_sync/baseline_A2/"
+}

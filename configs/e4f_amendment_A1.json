@@ -1,0 +1,23 @@
+{
+  "experiment": "E4f KITTI outdoor geometry consistency diagnostic",
+  "amendment": "A1",
+  "registered_at": "2026-10-22",
+  "registered_before_model_prediction": true,
+  "reason": "Driving sequences contain moving vehicles and other dynamic objects. Their RGB/LiDAR disagreement could be confused with static geometry error.",
+  "change": "Use official KITTI tracklet 3D boxes only to mask dynamic-object LiDAR samples and corresponding projected image pixels in evaluation.",
+  "unchanged": [
+    "B1 RGB-only mapping input",
+    "model weights and mapping configuration",
+    "tracking and keyframe selection",
+    "Gaussian generation and native filtering",
+    "pre-registered sequence candidate order and 240-frame selection rule"
+  ],
+  "prohibited_uses": [
+    "tracklet labels are not passed to the model, tracker, retrieval, mapping, Gaussian filtering, or rendering",
+    "tracklet labels do not choose frames or tune evaluation thresholds",
+    "unlabeled objects are not assumed static"
+  ],
+  "coverage_rule": "Report labeled-dynamic exclusion before/after coverage; if static-surface sample count is insufficient, mark that metric INCONCLUSIVE without relaxing the mask after model output.",
+  "source": "https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_drive_0015/2011_09_26_drive_0015_tracklets.zip",
+  "source_archive_sha256": "14b07f3b594a7f1d10fe0c141995677bc74bacec2f1a62f2df1ee3e5789f9633"
+}

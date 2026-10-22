@@ -2,8 +2,8 @@
 
 ## 연구 설계·구현·실험 계획서 v3.0 — GeoGS-SLAM 2026 두 편 검토 반영
 
-- **개정일:** 2026-10-22 — E4 동일 count·바이트·RGB·TSDF 및 새 office1 평가 반영
-- **상태:** E0/E0b/E1/E2/E2b/E3/E3b/E3c/E4 결과는 개별 보고서에 기록했다. **E4는 새 office1의 동일 예산에서 median-depth 대비 plane의 TSDF Chamfer 개선이 0.162%로 사전 기준 2%에 미달하고 원래 B6 depth보다 낮아 REVISE다. RGB·coverage 비열등성 및 자연 정책의 정상 보존은 통과했다. E5/E6 효능 검증의 자동 진행은 보류하고 강한 대조군·관측 범위를 개발 단계에서 분석한다.** 기존 E3b REVISE와 E3c의 조건부 E4 진입 판정은 소급 변경하지 않는다.
+- **개정일:** 2026-10-22 — E4f까지의 종합 결과 및 사용자 결정에 따른 현재 주제 종료 반영
+- **상태:** **현재의 surface-guided Gaussian 편입/보류/pruning 연구는 E4f까지의 결과를 정리하고 종료한다.** [실험 종합 및 종료 보고서](experiments/surface_guided_gaussian_mapping_experiment_summary.md)에 E0~E4f의 내용·수치·한계·주제 전환 근거를 기록했다. 새 연구 주제는 미정이며 E4d와 E5 이후 미실행 단계는 진행하지 않는다. E4 REVISE, E4c/E4e INCONCLUSIVE, E4f의 탐색적 MIXED 등 당시 판정은 보존한다. 아래 설계와 후속 작업은 이전 계획의 이력이며 현재 실행 지시가 아니다.
 - **상위 문서:** `surface_guided_gaussian_mapping_research_plan_v2.md` (2026-10-13)
 - **제출 계획서 제목(유지 가능):** 연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구
 - **작업용 제목(권장):** **연속 영상 기반 Feed-forward 3DGS에서 증거 신뢰도를 고려한 Gaussian 편입 및 보류 정책의 실험적 평가**
@@ -321,6 +321,7 @@ admit(candidate G, evidence available by now):
 | **E4c: Surface-consistency pruning — 개발 성립 단계 INCONCLUSIVE** | 명시적 표면 지지·반복 충돌·paired depth | 5장면의 분리 관측 표면 분류와 보정 표본 | 두 개발 장면의 공통 audit S가 각각 0개여서 미보정·새 장면 효능 평가 보류 (§8.7) |
 | **E4d: Surface membership — 계획 초안·미실행** | center 소속·적극적 비소속·별도 audit 입력·강한 depth/kNN 대조군 | 평가/보정 성립 후 두 새 장면의 natural pruning 효용·지도 보존 | A0/A1/A2 및 새 장면 주 기준 통과 시 E5 진입 검토 (§8.8) |
 | **E4e: UAV dataset pilot — 개발 B1 실행·INCONCLUSIVE** | 실제 드론 B1, raw pointmap→pre-active→active 수, 추적·pose gate | pose 228/240 (95.0%)이나 연속 중단 2.4s로 제안 ≤2s gate 미통과. 두 평가 장면 미실행 (§8.9) | 고립 이상점 발생량은 미측정. primary eval/후속 자동 진입 없음; 추적 gate 원인 분석 또는 별도 사전 amendment 필요 |
+| **E4f: KITTI 야외 기하 정합성 진단 — B1 A2b 완료·MIXED** | RGB-only B1, sparse LiDAR depth와 OXTS trajectory는 평가 전용 | Raw pointmap에 거리 의존 depth mismatch가 남고, OXTS pose oracle에서 LiDAR→map coverage가 개선됨 (§8.10) | local geometry와 pose 배치가 함께 기여할 가능성. 한 drive 진단으로 비중/일반화/보정법 효능을 확정하지 않으며 E5/E6 진입 없음 |
 | **E5: Shared-bias synthetic stress** | E0/E2/P2, optional model-disjoint | 공통 depth offset, scale bias, pose error, occlusion, textureless | failure envelope 정량화 |
 | **E6: Causal online replay** | B8/P2/P3, DEFER vs BYPASS | real-time availability, queue age/size, time-to-admit, temporary holes | offline oracle 이득이 online에서도 유지되는지 |
 | **E7: Refinement sensitivity** | baseline/proposed + **동일** optimizer steps | map repair로 필터 이득이 소멸하는가, online budget | 추가 구현 가치 결정 |
@@ -330,7 +331,7 @@ admit(candidate G, evidence available by now):
 
 **원래 우선순위:** E0 → E0b → E1 → E2 → **E2b → Go/Revise/No-Go** → E3 → E3b → 동일 관측 자격 보완(E3c) → 조건 충족 후 E4 → E5/E6 → E7/E8/E9. 첫 8주를 목표로 강한 baseline 대비 가설의 효용 여부를 판단하되, 앞 단계 기준 미달 시 이후 효능 검증을 앞당기지 않고 일정을 재조정한다.
 
-**현재 우선순위(2026-10-22 변경): E4e → 문제 존재·측정 가능성 판정 → 필요한 후속만 재계획.** 드론 광역 영상에 실제 제거 대상이 충분한지 다른 후속 실험보다 먼저 확인한다. E4d는 계획 상태로 대기하고 E5/E6 효능 검증 보류는 유지한다. E4e는 E9의 데이터·문제 존재 진단을 앞당긴 것이며 pruning 효용이나 E9 전체를 대체하지 않는다.
+**종료 결정(2026-10-22): E4f 진단까지 기록하고 현재 주제를 종료한다.** 사용자의 연구 주제 전환 결정에 따라 E4d 및 E5 이후 단계는 미실행으로 남긴다. E4f의 mixed 결과는 단일 개발 진단이며 pruning 효용·기하 correction의 성공을 확정하지 않는다. [종합 보고서](experiments/surface_guided_gaussian_mapping_experiment_summary.md)를 이후 결과 인용의 진입점으로 사용한다.
 
 ## 8.1. E2b: 반복 유효 관측 확보 및 임계값 전이 검증
 
@@ -481,6 +482,14 @@ E4d-A는 A0 소속 측정, A1 audit/공통 표본, A2 보정·개발·회귀 gat
 
 ---
 
+## 8.10. E4f: KITTI 야외 기하 정합성 진단
+
+**상태: B1 A2b 및 오프라인 진단 완료·MIXED (2026-10-22).** [E4f 계획](experiments/E4f_kitti_geometry_diagnostic.md)대로 KITTI Raw 단일 drive의 전방 RGB만 B1 입력에 사용하고 Velodyne/OXTS/tracklet은 평가 전용으로 유지했다. `drive_0005_sync`(154 frames), `drive_0013_sync`(144 frames)는 240-frame 조건에 미달해 다음 후보 `drive_0015_sync`(297 frames)를 선택했다. 첫 240 frame의 OXTS 수평 이동은 약 273.7m, RGB–LiDAR 시차 최대 10.66ms, RGB–OXTS 최대 12.55ms였다. 첫 10Hz 실행은 32-slot capacity를 넘어 frame 33에서 중단됐다. A2 재실행도 launcher 인자 오류로 같은 지점에서 실패했으나, A2b에서 capacity128을 실제 적용해 같은 24.75초 구간의 RGB stride2, 120장(약5Hz)을 완료했다. Pose coverage 120/120, estimated-vs-OXTS Sim(3) translation RMSE 5.54m였다. Raw pointmap depth는 tracklet static LiDAR 대비 거리별 오차를 보였고, 단일 전역 trajectory scale 후에도 잔차가 남았다. 동일 raw Gaussian을 OXTS pose로 배치한 진단에서 LiDAR→map NN median은 1.05m에서 0.45m로 감소했지만 map→LiDAR p95는 6.50m에서 7.89m로 증가했다. local geometry와 pose 배치가 혼합 원인일 가능성에 해당한다. **단일 drive의 개발 진단이며 인과 비중·일반화·기하 보정 효능을 확정하지 않는다.** 결과는 [E4f 결과 보고서](experiments/E4f_kitti_geometry_diagnostic_results.md)에 기록했다.
+
+이 실험은 하나의 비드론 장면에서 원인을 좁히는 개발 진단이다. LiDAR depth는 희소하고 도로는 이상적인 단일 평면이 아니므로 미관측 영역을 실패/정답으로 해석하지 않는다. A2b는 데이터 대응·coverage·정렬·tracking gate를 통과했지만, local depth mismatch와 oracle placement 개선이 함께 관측되어 MIXED로 남긴다. 결과를 본 뒤 연구 방향을 자동 변경하지 않으며, E4/E4c/E4e 판정과 E5/E6 보류는 유지한다.
+
+---
+
 # 9. 평가 데이터·분할·출력 정의
 
 ## 9.1. 정량 평가 데이터
@@ -490,6 +499,7 @@ E4d-A는 A0 소속 측정, A1 audit/공통 표본, A2 보정·개발·회귀 gat
 - **TUM RGB-D(보조):** RGB-only 입력으로 제한하며 depth는 validation/evaluation reference로만. trajectory-only 아닌 GT depth의 coverage/mask 점검.
 - **DTU(선택, offline geometry probe):** A의 2분 예산 실험 맥락에서 geometry-only 참고 가능. **순차 비디오 SLAM과 입력/목적이 달라 main online table에 섞지 않음.**
 - **드론 RGB(E4e 개발 gate 실행):** interval=1 입력 및 HKairport01 B1 기준선을 실행했으나 연속 추적 중단 2.4초로 개발 gate가 INCONCLUSIVE였다. 실측 LiDAR 이상점 평가와 AMtown01·AMvalley01 baseline은 미실행이다. [결과 보고서](experiments/E4e_uav_dataset_pilot_results.md)를 따른다. 이 결과로 이상점 부재나 드론 전체 일반화를 주장하지 않는다.
+- **일반 도로 RGB(E4f 개발 진단):** KITTI Raw `drive_0015_sync`에서 120 RGB(약5Hz)를 B1에 입력하고 Velodyne/OXTS/tracklet은 평가 전용으로 사용했다. Raw pointmap에 range-dependent depth mismatch가 있었고 OXTS-pose oracle에서 map coverage가 개선돼 MIXED로 판정했다. 단일 장면 결과로 일반화·보정 효능을 주장하지 않는다. [E4f 결과 보고서](experiments/E4f_kitti_geometry_diagnostic_results.md)를 따른다.
 
 ## 9.2. 엄격한 데이터 누설 관리
 
