@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "scenes": [
+    "office1",
+    "office0",
+    "room0",
+    "room1",
+    "room2"
+  ],
+  "source_inputs_rehashed": 1155,
+  "analysis_artifacts_rehashed": 460,
+  "fixed_examples": 200,
+  "factual_scores_masks_states_first_reject_exact": true,
+  "all_four_cohorts_partition": true,
+  "source_results_preserved": true,
+  "efficacy_decision": "E4 REVISE unchanged",
+  "parquet_rows_verified": {
+    "office1": {
+      "candidate": 5169035,
+      "view": 16066358,
+      "patch": 2061926
+    },
+    "office0": {
+      "candidate": 9335719,
+      "view": 46555529,
+      "patch": 2967698
+    },
+    "room0": {
+      "candidate": 4038502,
+      "view": 10089445,
+      "patch": 1615069
+    },
+    "room1": {
+      "candidate": 7731079,
+      "view": 33544400,
+      "patch": 1653690
+    },
+    "room2": {
+      "candidate": 4011212,
+      "view": 10009937,
+      "patch": 2203672
+    }
+  },
+  "raw_source_patch_dedup_verified": true,
+  "strict_support_traces_verified": true,
+  "figures_hashed": 201,
+  "unit_tests": 13
+}

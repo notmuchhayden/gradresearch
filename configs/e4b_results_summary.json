@@ -1,0 +1,4880 @@
+{
+  "status": "COMPLETE",
+  "primary_scene": "office1",
+  "scenes": {
+    "office1": {
+      "scene": "office1",
+      "status": "COMPLETE",
+      "active": 1147602,
+      "bad": 287446,
+      "normal": 440127,
+      "unknown": 420029,
+      "cohorts": {
+        "unknown__both_miss": {
+          "candidates": 419762,
+          "anchor_funnel": {
+            "no_causal_evidence": 129316,
+            "no_finite_native_depth": 136714,
+            "no_finite_shared_plane": 1564,
+            "fewer_than_two_shared_views": 27887,
+            "plane_zero_veto": 81635,
+            "finite_but_not_above_threshold": 42646,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 236048,
+            "reference_wrong": 171967,
+            "coherent_wrong": 129615,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 39760
+          },
+          "view_records": {
+            "depth_eligible": 1109641,
+            "shared_eligible": 1078607,
+            "GT_auditable": 1016349,
+            "reference_wrong": 543818,
+            "coherent_wrong": 339740,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 318531,
+            "GT_anchor_front_changed": 60839
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 702930,
+            "GT_auditable": 664777,
+            "reference_wrong": 357017,
+            "coherent_wrong": 210968
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__b6_only": {
+          "candidates": 55,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 16,
+            "fewer_than_two_shared_views": 39,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 39,
+            "reference_wrong": 19,
+            "coherent_wrong": 10,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 137,
+            "shared_eligible": 112,
+            "GT_auditable": 91,
+            "reference_wrong": 38,
+            "coherent_wrong": 11,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 42,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 106,
+            "GT_auditable": 85,
+            "reference_wrong": 35,
+            "coherent_wrong": 11
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 55,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__both_reject": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__plane_only": {
+          "candidates": 212,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 212
+          },
+          "candidate_ever": {
+            "GT_auditable": 212,
+            "reference_wrong": 212,
+            "coherent_wrong": 196,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 2431,
+            "shared_eligible": 2427,
+            "GT_auditable": 2390,
+            "reference_wrong": 1548,
+            "coherent_wrong": 556,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 569,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 1878,
+            "GT_auditable": 1849,
+            "reference_wrong": 1162,
+            "coherent_wrong": 395
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 212
+          }
+        },
+        "normal__both_miss": {
+          "candidates": 440063,
+          "anchor_funnel": {
+            "no_causal_evidence": 31654,
+            "no_finite_native_depth": 250237,
+            "no_finite_shared_plane": 2713,
+            "fewer_than_two_shared_views": 46736,
+            "plane_zero_veto": 89713,
+            "finite_but_not_above_threshold": 19010,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 265598,
+            "reference_wrong": 186917,
+            "coherent_wrong": 126242,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 37492
+          },
+          "view_records": {
+            "depth_eligible": 1074161,
+            "shared_eligible": 1051387,
+            "GT_auditable": 1014520,
+            "reference_wrong": 509219,
+            "coherent_wrong": 331144,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 318916,
+            "GT_anchor_front_changed": 46670
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 685341,
+            "GT_auditable": 660753,
+            "reference_wrong": 352643,
+            "coherent_wrong": 228560
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__b6_only": {
+          "candidates": 64,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 17,
+            "fewer_than_two_shared_views": 47,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 49,
+            "reference_wrong": 38,
+            "coherent_wrong": 24,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 157,
+            "shared_eligible": 127,
+            "GT_auditable": 100,
+            "reference_wrong": 60,
+            "coherent_wrong": 29,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 67,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 124,
+            "GT_auditable": 97,
+            "reference_wrong": 57,
+            "coherent_wrong": 29
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 64,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__both_reject": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__plane_only": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "bad__both_miss": {
+          "candidates": 275886,
+          "anchor_funnel": {
+            "no_causal_evidence": 93029,
+            "no_finite_native_depth": 111651,
+            "no_finite_shared_plane": 1994,
+            "fewer_than_two_shared_views": 17973,
+            "plane_zero_veto": 31821,
+            "finite_but_not_above_threshold": 19418,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 120480,
+            "reference_wrong": 91386,
+            "coherent_wrong": 99812,
+            "shared_wrong_support": 31132,
+            "shared_wrong_coherent": 30518,
+            "pose_front_changed": 6855
+          },
+          "view_records": {
+            "depth_eligible": 537779,
+            "shared_eligible": 502382,
+            "GT_auditable": 446272,
+            "reference_wrong": 311893,
+            "coherent_wrong": 268801,
+            "shared_wrong_support": 79048,
+            "correspondence_ambiguous": 148839,
+            "GT_anchor_front_changed": 7331
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 325337,
+            "GT_auditable": 289930,
+            "reference_wrong": 209448,
+            "coherent_wrong": 170618
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 17,
+            "D_shared": 12,
+            "P2_plane": 0
+          }
+        },
+        "bad__b6_only": {
+          "candidates": 9874,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 1858,
+            "fewer_than_two_shared_views": 8009,
+            "plane_zero_veto": 5,
+            "finite_but_not_above_threshold": 2,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 8998,
+            "reference_wrong": 8486,
+            "coherent_wrong": 4777,
+            "shared_wrong_support": 280,
+            "shared_wrong_coherent": 259,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 29348,
+            "shared_eligible": 22398,
+            "GT_auditable": 20841,
+            "reference_wrong": 18603,
+            "coherent_wrong": 8604,
+            "shared_wrong_support": 351,
+            "correspondence_ambiguous": 1215,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 17911,
+            "GT_auditable": 16751,
+            "reference_wrong": 14977,
+            "coherent_wrong": 6991
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 9874,
+            "D_maskmedian": 2,
+            "D_shared": 2,
+            "P2_plane": 0
+          }
+        },
+        "bad__both_reject": {
+          "candidates": 602,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 86,
+            "fewer_than_two_shared_views": 470,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 46
+          },
+          "candidate_ever": {
+            "GT_auditable": 600,
+            "reference_wrong": 600,
+            "coherent_wrong": 600,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 3962,
+            "shared_eligible": 3619,
+            "GT_auditable": 3481,
+            "reference_wrong": 3260,
+            "coherent_wrong": 1960,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 94,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 2407,
+            "GT_auditable": 2296,
+            "reference_wrong": 2141,
+            "coherent_wrong": 1388
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 578,
+            "D_maskmedian": 45,
+            "D_shared": 41,
+            "P2_plane": 46
+          }
+        },
+        "bad__plane_only": {
+          "candidates": 1084,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 1084
+          },
+          "candidate_ever": {
+            "GT_auditable": 1084,
+            "reference_wrong": 1084,
+            "coherent_wrong": 1080,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 10565,
+            "shared_eligible": 10281,
+            "GT_auditable": 10039,
+            "reference_wrong": 5942,
+            "coherent_wrong": 3251,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 1641,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 7438,
+            "GT_auditable": 7281,
+            "reference_wrong": 4440,
+            "coherent_wrong": 2231
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 185,
+            "D_shared": 156,
+            "P2_plane": 1084
+          }
+        }
+      },
+      "unique_snapshot_patches": {
+        "referenced": 2061926,
+        "shared_referenced": 1552812,
+        "GT_auditable": 1464269,
+        "reference_wrong": 847527,
+        "coherent_wrong": 564009,
+        "all_points_wrong": 539773
+      },
+      "GT_reference_status_counts": {
+        "invalid_GT": 8,
+        "GT_edge": 54620,
+        "too_few_common": 275,
+        "nonplanar_or_border": 33640,
+        "reliable": 1464269
+      },
+      "reference_error_sensitivity": {
+        "2_5": 1273186,
+        "2_10": 1107015,
+        "2_20": 999898,
+        "5_5": 1139885,
+        "5_10": 847527,
+        "5_20": 674671,
+        "10_5": 970387,
+        "10_10": 567093,
+        "10_20": 329015
+      },
+      "oracle": {
+        "factual_common": {
+          "bad_newly_rejected": 0,
+          "bad_no_longer_rejected": 0,
+          "bad_rejected": 1686,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 0,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 212,
+          "global_bad_recall": 0.005865449510516758,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 0,
+          "primary_cohort_recovery": 0.0,
+          "reference_error_and_same_candidate_transition": 0,
+          "shared_wrong_support_and_transition": 0,
+          "GT_auditable_candidates": 633108,
+          "GT_candidate_coverage": 0.5516790664359247,
+          "GT_pair_coverage": 0.9411317915353343,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 1837,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 6,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 55,
+              "global_bad_recall": 0.008682992772838351,
+              "normal_retention": 0.9999893252489885,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 1686,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 212,
+              "global_bad_recall": 0.010668320277401638,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            }
+          }
+        },
+        "GT_plane_fixed_veto": {
+          "bad_newly_rejected": 3508,
+          "bad_no_longer_rejected": 0,
+          "bad_rejected": 5194,
+          "normal_newly_rejected": 404,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 404,
+          "unknown_newly_rejected": 10678,
+          "unknown_no_longer_rejected": 9,
+          "unknown_rejected": 10881,
+          "global_bad_recall": 0.01806948087640809,
+          "normal_retention": 0.9990820831260068,
+          "primary_cohort_recovered": 263,
+          "primary_cohort_recovery": 0.026635608669232327,
+          "reference_error_and_same_candidate_transition": 3428,
+          "shared_wrong_support_and_transition": 143,
+          "GT_auditable_candidates": 633108,
+          "GT_candidate_coverage": 0.5516790664359247,
+          "GT_pair_coverage": 0.9411317915353343,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 3321,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 5158,
+              "normal_newly_rejected": 5345,
+              "normal_no_longer_rejected": 6,
+              "normal_rejected": 5345,
+              "unknown_newly_rejected": 5924,
+              "unknown_no_longer_rejected": 3,
+              "unknown_rejected": 5976,
+              "global_bad_recall": 0.024380444595699626,
+              "normal_retention": 0.990490575973982,
+              "primary_cohort_recovered": 263,
+              "primary_cohort_recovery": 0.026592517694641053
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 2895,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 4581,
+              "normal_newly_rejected": 352,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 352,
+              "unknown_newly_rejected": 11343,
+              "unknown_no_longer_rejected": 9,
+              "unknown_rejected": 11546,
+              "global_bad_recall": 0.02898669940140979,
+              "normal_retention": 0.9990278149865635,
+              "primary_cohort_recovered": 263,
+              "primary_cohort_recovery": 0.026697797177951475
+            }
+          }
+        },
+        "GT_plane_recomputed_veto": {
+          "bad_newly_rejected": 5209,
+          "bad_no_longer_rejected": 0,
+          "bad_rejected": 6895,
+          "normal_newly_rejected": 409,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 409,
+          "unknown_newly_rejected": 10713,
+          "unknown_no_longer_rejected": 9,
+          "unknown_rejected": 10916,
+          "global_bad_recall": 0.023987114101431225,
+          "normal_retention": 0.9990707227686554,
+          "primary_cohort_recovered": 265,
+          "primary_cohort_recovery": 0.026838160826412803,
+          "reference_error_and_same_candidate_transition": 5129,
+          "shared_wrong_support_and_transition": 1612,
+          "GT_auditable_candidates": 633108,
+          "GT_candidate_coverage": 0.5516790664359247,
+          "GT_pair_coverage": 0.9411317915353343,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 4829,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 6666,
+              "normal_newly_rejected": 5345,
+              "normal_no_longer_rejected": 6,
+              "normal_rejected": 5345,
+              "unknown_newly_rejected": 6157,
+              "unknown_no_longer_rejected": 3,
+              "unknown_rejected": 6209,
+              "global_bad_recall": 0.03150834503197629,
+              "normal_retention": 0.990490575973982,
+              "primary_cohort_recovered": 265,
+              "primary_cohort_recovery": 0.02679474216380182
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 4402,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 6088,
+              "normal_newly_rejected": 352,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 352,
+              "unknown_newly_rejected": 11577,
+              "unknown_no_longer_rejected": 9,
+              "unknown_rejected": 11780,
+              "global_bad_recall": 0.03852238069325099,
+              "normal_retention": 0.9990278149865635,
+              "primary_cohort_recovered": 265,
+              "primary_cohort_recovery": 0.026900822251548065
+            }
+          }
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "pose_revision": 1,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 141,
+          "pose_revision": 143,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 206,
+          "pose_revision": 210,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 259,
+          "pose_revision": 265,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 326,
+          "pose_revision": 334,
+          "factual_rejected": 259,
+          "fixed_veto_rejected": 3807,
+          "recomputed_veto_rejected": 3977
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 340,
+          "pose_revision": 350,
+          "factual_rejected": 1497,
+          "fixed_veto_rejected": 9089,
+          "recomputed_veto_rejected": 9328
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 368,
+          "pose_revision": 380,
+          "factual_rejected": 1584,
+          "fixed_veto_rejected": 10030,
+          "recomputed_veto_rejected": 11650
+        },
+        {
+          "snapshot": 7,
+          "input_frame": 443,
+          "pose_revision": 457,
+          "factual_rejected": 1898,
+          "fixed_veto_rejected": 16479,
+          "recomputed_veto_rejected": 18220
+        }
+      ],
+      "rows": {
+        "candidate": 5169035,
+        "view": 16066358,
+        "patch": 2061926
+      },
+      "examples": 40,
+      "cpu_seconds": 198.46972086999995,
+      "factual_exact": true,
+      "source_results_preserved": true,
+      "scope": "retrospective diagnostic; no efficacy GO or Chamfer inference"
+    },
+    "office0": {
+      "scene": "office0",
+      "status": "COMPLETE",
+      "active": 1547680,
+      "bad": 371964,
+      "normal": 635127,
+      "unknown": 540589,
+      "cohorts": {
+        "unknown__both_miss": {
+          "candidates": 534251,
+          "anchor_funnel": {
+            "no_causal_evidence": 62810,
+            "no_finite_native_depth": 278820,
+            "no_finite_shared_plane": 4528,
+            "fewer_than_two_shared_views": 82165,
+            "plane_zero_veto": 54877,
+            "finite_but_not_above_threshold": 51051,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 266440,
+            "reference_wrong": 206561,
+            "coherent_wrong": 157073,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 61295
+          },
+          "view_records": {
+            "depth_eligible": 1318367,
+            "shared_eligible": 1263935,
+            "GT_auditable": 1171226,
+            "reference_wrong": 608687,
+            "coherent_wrong": 356963,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 179169,
+            "GT_anchor_front_changed": 122536
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 806541,
+            "GT_auditable": 751856,
+            "reference_wrong": 388587,
+            "coherent_wrong": 214549
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 1548,
+            "D_shared": 6,
+            "P2_plane": 0
+          }
+        },
+        "unknown__b6_only": {
+          "candidates": 6203,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 430,
+            "fewer_than_two_shared_views": 1543,
+            "plane_zero_veto": 11,
+            "finite_but_not_above_threshold": 4219,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 5637,
+            "reference_wrong": 5451,
+            "coherent_wrong": 4482,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 820
+          },
+          "view_records": {
+            "depth_eligible": 40314,
+            "shared_eligible": 38126,
+            "GT_auditable": 36333,
+            "reference_wrong": 21396,
+            "coherent_wrong": 6944,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 6059,
+            "GT_anchor_front_changed": 822
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 25914,
+            "GT_auditable": 25079,
+            "reference_wrong": 15391,
+            "coherent_wrong": 6033
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 6203,
+            "D_maskmedian": 4195,
+            "D_shared": 7,
+            "P2_plane": 0
+          }
+        },
+        "unknown__both_reject": {
+          "candidates": 108,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 11,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 1,
+            "above_threshold_reject": 96
+          },
+          "candidate_ever": {
+            "GT_auditable": 108,
+            "reference_wrong": 108,
+            "coherent_wrong": 99,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 5
+          },
+          "view_records": {
+            "depth_eligible": 731,
+            "shared_eligible": 728,
+            "GT_auditable": 670,
+            "reference_wrong": 481,
+            "coherent_wrong": 128,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 211,
+            "GT_anchor_front_changed": 5
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 643,
+            "GT_auditable": 597,
+            "reference_wrong": 425,
+            "coherent_wrong": 112
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 108,
+            "D_maskmedian": 97,
+            "D_shared": 22,
+            "P2_plane": 96
+          }
+        },
+        "unknown__plane_only": {
+          "candidates": 27,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 27
+          },
+          "candidate_ever": {
+            "GT_auditable": 27,
+            "reference_wrong": 27,
+            "coherent_wrong": 27,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 1
+          },
+          "view_records": {
+            "depth_eligible": 166,
+            "shared_eligible": 149,
+            "GT_auditable": 124,
+            "reference_wrong": 89,
+            "coherent_wrong": 33,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 66,
+            "GT_anchor_front_changed": 1
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 145,
+            "GT_auditable": 121,
+            "reference_wrong": 87,
+            "coherent_wrong": 31
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 12,
+            "D_shared": 12,
+            "P2_plane": 27
+          }
+        },
+        "normal__both_miss": {
+          "candidates": 634290,
+          "anchor_funnel": {
+            "no_causal_evidence": 144111,
+            "no_finite_native_depth": 313819,
+            "no_finite_shared_plane": 3912,
+            "fewer_than_two_shared_views": 76659,
+            "plane_zero_veto": 67750,
+            "finite_but_not_above_threshold": 28039,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 284943,
+            "reference_wrong": 219082,
+            "coherent_wrong": 182282,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 25687
+          },
+          "view_records": {
+            "depth_eligible": 1214021,
+            "shared_eligible": 1181145,
+            "GT_auditable": 1133537,
+            "reference_wrong": 662351,
+            "coherent_wrong": 409024,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 153302,
+            "GT_anchor_front_changed": 56199
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 854354,
+            "GT_auditable": 823956,
+            "reference_wrong": 472802,
+            "coherent_wrong": 292596
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 1,
+            "D_shared": 1,
+            "P2_plane": 0
+          }
+        },
+        "normal__b6_only": {
+          "candidates": 822,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 280,
+            "fewer_than_two_shared_views": 437,
+            "plane_zero_veto": 76,
+            "finite_but_not_above_threshold": 29,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 504,
+            "reference_wrong": 437,
+            "coherent_wrong": 438,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 53
+          },
+          "view_records": {
+            "depth_eligible": 5244,
+            "shared_eligible": 3353,
+            "GT_auditable": 3008,
+            "reference_wrong": 2699,
+            "coherent_wrong": 2689,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 2576,
+            "GT_anchor_front_changed": 58
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 3211,
+            "GT_auditable": 2977,
+            "reference_wrong": 2669,
+            "coherent_wrong": 2664
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 822,
+            "D_maskmedian": 4,
+            "D_shared": 3,
+            "P2_plane": 0
+          }
+        },
+        "normal__both_reject": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__plane_only": {
+          "candidates": 15,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 15
+          },
+          "candidate_ever": {
+            "GT_auditable": 15,
+            "reference_wrong": 15,
+            "coherent_wrong": 14,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 1
+          },
+          "view_records": {
+            "depth_eligible": 105,
+            "shared_eligible": 105,
+            "GT_auditable": 89,
+            "reference_wrong": 52,
+            "coherent_wrong": 38,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 61,
+            "GT_anchor_front_changed": 1
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 98,
+            "GT_auditable": 82,
+            "reference_wrong": 49,
+            "coherent_wrong": 35
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 6,
+            "D_shared": 7,
+            "P2_plane": 15
+          }
+        },
+        "bad__both_miss": {
+          "candidates": 356518,
+          "anchor_funnel": {
+            "no_causal_evidence": 8777,
+            "no_finite_native_depth": 152013,
+            "no_finite_shared_plane": 3987,
+            "fewer_than_two_shared_views": 76199,
+            "plane_zero_veto": 34654,
+            "finite_but_not_above_threshold": 80888,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 233579,
+            "reference_wrong": 178168,
+            "coherent_wrong": 159085,
+            "shared_wrong_support": 51850,
+            "shared_wrong_coherent": 51449,
+            "pose_front_changed": 54390
+          },
+          "view_records": {
+            "depth_eligible": 944030,
+            "shared_eligible": 901668,
+            "GT_auditable": 814773,
+            "reference_wrong": 461602,
+            "coherent_wrong": 360400,
+            "shared_wrong_support": 93159,
+            "correspondence_ambiguous": 143503,
+            "GT_anchor_front_changed": 121340
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 504449,
+            "GT_auditable": 461169,
+            "reference_wrong": 276980,
+            "coherent_wrong": 213686
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 2004,
+            "D_shared": 20,
+            "P2_plane": 0
+          }
+        },
+        "bad__b6_only": {
+          "candidates": 9790,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 1180,
+            "fewer_than_two_shared_views": 6387,
+            "plane_zero_veto": 1,
+            "finite_but_not_above_threshold": 2222,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 8487,
+            "reference_wrong": 7520,
+            "coherent_wrong": 6087,
+            "shared_wrong_support": 248,
+            "shared_wrong_coherent": 248,
+            "pose_front_changed": 160
+          },
+          "view_records": {
+            "depth_eligible": 46821,
+            "shared_eligible": 40503,
+            "GT_auditable": 37030,
+            "reference_wrong": 29192,
+            "coherent_wrong": 19988,
+            "shared_wrong_support": 293,
+            "correspondence_ambiguous": 5242,
+            "GT_anchor_front_changed": 160
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 32321,
+            "GT_auditable": 30062,
+            "reference_wrong": 24289,
+            "coherent_wrong": 16618
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 9790,
+            "D_maskmedian": 2058,
+            "D_shared": 206,
+            "P2_plane": 0
+          }
+        },
+        "bad__both_reject": {
+          "candidates": 3409,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 3,
+            "fewer_than_two_shared_views": 324,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 20,
+            "above_threshold_reject": 3062
+          },
+          "candidate_ever": {
+            "GT_auditable": 3408,
+            "reference_wrong": 3346,
+            "coherent_wrong": 3209,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 35775,
+            "shared_eligible": 34195,
+            "GT_auditable": 33264,
+            "reference_wrong": 21464,
+            "coherent_wrong": 17779,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 1999,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 24727,
+            "GT_auditable": 23975,
+            "reference_wrong": 16735,
+            "coherent_wrong": 12980
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 2287,
+            "D_maskmedian": 2377,
+            "D_shared": 1951,
+            "P2_plane": 3062
+          }
+        },
+        "bad__plane_only": {
+          "candidates": 2247,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 2247
+          },
+          "candidate_ever": {
+            "GT_auditable": 2247,
+            "reference_wrong": 2212,
+            "coherent_wrong": 2125,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 36
+          },
+          "view_records": {
+            "depth_eligible": 24099,
+            "shared_eligible": 23861,
+            "GT_auditable": 22909,
+            "reference_wrong": 14356,
+            "coherent_wrong": 12133,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 1212,
+            "GT_anchor_front_changed": 36
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 17340,
+            "GT_auditable": 16734,
+            "reference_wrong": 11470,
+            "coherent_wrong": 9004
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 1117,
+            "D_shared": 1028,
+            "P2_plane": 2247
+          }
+        }
+      },
+      "unique_snapshot_patches": {
+        "referenced": 2967698,
+        "shared_referenced": 2028957,
+        "GT_auditable": 1912042,
+        "reference_wrong": 1084451,
+        "coherent_wrong": 697408,
+        "all_points_wrong": 652508
+      },
+      "GT_reference_status_counts": {
+        "invalid_GT": 763,
+        "GT_edge": 65287,
+        "too_few_common": 322,
+        "nonplanar_or_border": 50543,
+        "reliable": 1912042
+      },
+      "reference_error_sensitivity": {
+        "2_5": 1546302,
+        "2_10": 1237039,
+        "2_20": 997285,
+        "5_5": 1458896,
+        "5_10": 1084451,
+        "5_20": 796640,
+        "10_5": 1347567,
+        "10_10": 853851,
+        "10_20": 469220
+      },
+      "oracle": {
+        "factual_common": {
+          "bad_newly_rejected": 0,
+          "bad_no_longer_rejected": 0,
+          "bad_rejected": 5656,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 15,
+          "unknown_newly_rejected": 0,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 135,
+          "global_bad_recall": 0.015205772601649622,
+          "normal_retention": 0.9999763826762207,
+          "primary_cohort_recovered": 0,
+          "primary_cohort_recovery": 0.0,
+          "reference_error_and_same_candidate_transition": 0,
+          "shared_wrong_support_and_transition": 0,
+          "GT_auditable_candidates": 805395,
+          "GT_candidate_coverage": 0.5203885816189393,
+          "GT_pair_coverage": 0.932677574884568,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 5623,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 1,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 182,
+              "global_bad_recall": 0.02285660862071769,
+              "normal_retention": 0.9999987069545159,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 5582,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 224,
+              "global_bad_recall": 0.028337470746206527,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            }
+          }
+        },
+        "GT_plane_fixed_veto": {
+          "bad_newly_rejected": 4018,
+          "bad_no_longer_rejected": 951,
+          "bad_rejected": 8723,
+          "normal_newly_rejected": 84,
+          "normal_no_longer_rejected": 3,
+          "normal_rejected": 96,
+          "unknown_newly_rejected": 186,
+          "unknown_no_longer_rejected": 85,
+          "unknown_rejected": 236,
+          "global_bad_recall": 0.0234511942015894,
+          "normal_retention": 0.9998488491278122,
+          "primary_cohort_recovered": 394,
+          "primary_cohort_recovery": 0.04024514811031665,
+          "reference_error_and_same_candidate_transition": 4016,
+          "shared_wrong_support_and_transition": 814,
+          "GT_auditable_candidates": 805395,
+          "GT_candidate_coverage": 0.5203885816189393,
+          "GT_pair_coverage": 0.932677574884568,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 3870,
+              "bad_no_longer_rejected": 965,
+              "bad_rejected": 8528,
+              "normal_newly_rejected": 75,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 76,
+              "unknown_newly_rejected": 343,
+              "unknown_no_longer_rejected": 74,
+              "unknown_rejected": 451,
+              "global_bad_recall": 0.03466497569224265,
+              "normal_retention": 0.9999017285432032,
+              "primary_cohort_recovered": 390,
+              "primary_cohort_recovery": 0.042391304347826085
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 3770,
+              "bad_no_longer_rejected": 944,
+              "bad_rejected": 8408,
+              "normal_newly_rejected": 75,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 75,
+              "unknown_newly_rejected": 443,
+              "unknown_no_longer_rejected": 95,
+              "unknown_rejected": 572,
+              "global_bad_recall": 0.04268388642674749,
+              "normal_retention": 0.9998590652077097,
+              "primary_cohort_recovered": 385,
+              "primary_cohort_recovery": 0.04795117698343505
+            }
+          }
+        },
+        "GT_plane_recomputed_veto": {
+          "bad_newly_rejected": 4140,
+          "bad_no_longer_rejected": 951,
+          "bad_rejected": 8845,
+          "normal_newly_rejected": 95,
+          "normal_no_longer_rejected": 13,
+          "normal_rejected": 97,
+          "unknown_newly_rejected": 245,
+          "unknown_no_longer_rejected": 96,
+          "unknown_rejected": 284,
+          "global_bad_recall": 0.02377918293168156,
+          "normal_retention": 0.9998472746395602,
+          "primary_cohort_recovered": 402,
+          "primary_cohort_recovery": 0.041062308478038816,
+          "reference_error_and_same_candidate_transition": 4138,
+          "shared_wrong_support_and_transition": 912,
+          "GT_auditable_candidates": 805395,
+          "GT_candidate_coverage": 0.5203885816189393,
+          "GT_pair_coverage": 0.932677574884568,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 4018,
+              "bad_no_longer_rejected": 965,
+              "bad_rejected": 8676,
+              "normal_newly_rejected": 75,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 76,
+              "unknown_newly_rejected": 387,
+              "unknown_no_longer_rejected": 95,
+              "unknown_rejected": 474,
+              "global_bad_recall": 0.03526657236232379,
+              "normal_retention": 0.9999017285432032,
+              "primary_cohort_recovered": 406,
+              "primary_cohort_recovery": 0.044130434782608696
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 3892,
+              "bad_no_longer_rejected": 944,
+              "bad_rejected": 8530,
+              "normal_newly_rejected": 75,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 75,
+              "unknown_newly_rejected": 513,
+              "unknown_no_longer_rejected": 116,
+              "unknown_rejected": 621,
+              "global_bad_recall": 0.043303229212673176,
+              "normal_retention": 0.9998590652077097,
+              "primary_cohort_recovered": 393,
+              "primary_cohort_recovery": 0.04894756507659734
+            }
+          }
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "pose_revision": 1,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 41,
+          "pose_revision": 43,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 74,
+          "pose_revision": 78,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 111,
+          "pose_revision": 117,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 149,
+          "pose_revision": 157,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 184,
+          "pose_revision": 194,
+          "factual_rejected": 1241,
+          "fixed_veto_rejected": 3240,
+          "recomputed_veto_rejected": 3240
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 233,
+          "pose_revision": 245,
+          "factual_rejected": 1829,
+          "fixed_veto_rejected": 3431,
+          "recomputed_veto_rejected": 3431
+        },
+        {
+          "snapshot": 7,
+          "input_frame": 329,
+          "pose_revision": 343,
+          "factual_rejected": 1833,
+          "fixed_veto_rejected": 3743,
+          "recomputed_veto_rejected": 3818
+        },
+        {
+          "snapshot": 8,
+          "input_frame": 366,
+          "pose_revision": 382,
+          "factual_rejected": 1928,
+          "fixed_veto_rejected": 3909,
+          "recomputed_veto_rejected": 3984
+        },
+        {
+          "snapshot": 9,
+          "input_frame": 408,
+          "pose_revision": 426,
+          "factual_rejected": 2935,
+          "fixed_veto_rejected": 6450,
+          "recomputed_veto_rejected": 6595
+        },
+        {
+          "snapshot": 10,
+          "input_frame": 447,
+          "pose_revision": 467,
+          "factual_rejected": 5806,
+          "fixed_veto_rejected": 9055,
+          "recomputed_veto_rejected": 9226
+        }
+      ],
+      "rows": {
+        "candidate": 9335719,
+        "view": 46555529,
+        "patch": 2967698
+      },
+      "examples": 40,
+      "cpu_seconds": 719.2254671010014,
+      "factual_exact": true,
+      "source_results_preserved": true,
+      "scope": "retrospective diagnostic; no efficacy GO or Chamfer inference"
+    },
+    "room0": {
+      "scene": "room0",
+      "status": "COMPLETE",
+      "active": 1008252,
+      "bad": 31132,
+      "normal": 692280,
+      "unknown": 284840,
+      "cohorts": {
+        "unknown__both_miss": {
+          "candidates": 284142,
+          "anchor_funnel": {
+            "no_causal_evidence": 56448,
+            "no_finite_native_depth": 181468,
+            "no_finite_shared_plane": 2624,
+            "fewer_than_two_shared_views": 25009,
+            "plane_zero_veto": 17092,
+            "finite_but_not_above_threshold": 1501,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 65776,
+            "reference_wrong": 31226,
+            "coherent_wrong": 16843,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 1085
+          },
+          "view_records": {
+            "depth_eligible": 390579,
+            "shared_eligible": 361400,
+            "GT_auditable": 276233,
+            "reference_wrong": 95508,
+            "coherent_wrong": 42150,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 108126,
+            "GT_anchor_front_changed": 2006
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 270182,
+            "GT_auditable": 211995,
+            "reference_wrong": 72736,
+            "coherent_wrong": 26127
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 1,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__b6_only": {
+          "candidates": 698,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 179,
+            "fewer_than_two_shared_views": 519,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 504,
+            "reference_wrong": 478,
+            "coherent_wrong": 416,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 15
+          },
+          "view_records": {
+            "depth_eligible": 3668,
+            "shared_eligible": 2473,
+            "GT_auditable": 1649,
+            "reference_wrong": 1329,
+            "coherent_wrong": 871,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 788,
+            "GT_anchor_front_changed": 26
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 1787,
+            "GT_auditable": 1277,
+            "reference_wrong": 1005,
+            "coherent_wrong": 625
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 698,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__both_reject": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__plane_only": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__both_miss": {
+          "candidates": 691726,
+          "anchor_funnel": {
+            "no_causal_evidence": 163152,
+            "no_finite_native_depth": 276326,
+            "no_finite_shared_plane": 2595,
+            "fewer_than_two_shared_views": 110833,
+            "plane_zero_veto": 135113,
+            "finite_but_not_above_threshold": 3707,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 346752,
+            "reference_wrong": 154694,
+            "coherent_wrong": 58360,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 93
+          },
+          "view_records": {
+            "depth_eligible": 1929290,
+            "shared_eligible": 1894558,
+            "GT_auditable": 1804286,
+            "reference_wrong": 469079,
+            "coherent_wrong": 108178,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 214140,
+            "GT_anchor_front_changed": 207
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 1136441,
+            "GT_auditable": 1090107,
+            "reference_wrong": 301789,
+            "coherent_wrong": 69298
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__b6_only": {
+          "candidates": 548,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 46,
+            "fewer_than_two_shared_views": 502,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 510,
+            "reference_wrong": 510,
+            "coherent_wrong": 508,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 2519,
+            "shared_eligible": 2252,
+            "GT_auditable": 1806,
+            "reference_wrong": 1712,
+            "coherent_wrong": 1567,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 528,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 1459,
+            "GT_auditable": 1217,
+            "reference_wrong": 1153,
+            "coherent_wrong": 1045
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 548,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__both_reject": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__plane_only": {
+          "candidates": 6,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 6
+          },
+          "candidate_ever": {
+            "GT_auditable": 6,
+            "reference_wrong": 6,
+            "coherent_wrong": 6,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 36,
+            "shared_eligible": 36,
+            "GT_auditable": 32,
+            "reference_wrong": 32,
+            "coherent_wrong": 32,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 36,
+            "GT_auditable": 32,
+            "reference_wrong": 32,
+            "coherent_wrong": 32
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 6
+          }
+        },
+        "bad__both_miss": {
+          "candidates": 28616,
+          "anchor_funnel": {
+            "no_causal_evidence": 6109,
+            "no_finite_native_depth": 15374,
+            "no_finite_shared_plane": 1182,
+            "fewer_than_two_shared_views": 3672,
+            "plane_zero_veto": 1646,
+            "finite_but_not_above_threshold": 633,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 7137,
+            "reference_wrong": 5248,
+            "coherent_wrong": 3395,
+            "shared_wrong_support": 1006,
+            "shared_wrong_coherent": 907,
+            "pose_front_changed": 212
+          },
+          "view_records": {
+            "depth_eligible": 58955,
+            "shared_eligible": 44590,
+            "GT_auditable": 22225,
+            "reference_wrong": 16060,
+            "coherent_wrong": 10551,
+            "shared_wrong_support": 2677,
+            "correspondence_ambiguous": 22021,
+            "GT_anchor_front_changed": 367
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 28108,
+            "GT_auditable": 14698,
+            "reference_wrong": 10210,
+            "coherent_wrong": 6280
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 75,
+            "D_shared": 18,
+            "P2_plane": 0
+          }
+        },
+        "bad__b6_only": {
+          "candidates": 1693,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 482,
+            "fewer_than_two_shared_views": 1188,
+            "plane_zero_veto": 20,
+            "finite_but_not_above_threshold": 3,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 1427,
+            "reference_wrong": 1183,
+            "coherent_wrong": 556,
+            "shared_wrong_support": 10,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 28
+          },
+          "view_records": {
+            "depth_eligible": 8331,
+            "shared_eligible": 5769,
+            "GT_auditable": 4436,
+            "reference_wrong": 3246,
+            "coherent_wrong": 1338,
+            "shared_wrong_support": 12,
+            "correspondence_ambiguous": 1338,
+            "GT_anchor_front_changed": 43
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 4165,
+            "GT_auditable": 3341,
+            "reference_wrong": 2399,
+            "coherent_wrong": 1092
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 1693,
+            "D_maskmedian": 3,
+            "D_shared": 3,
+            "P2_plane": 0
+          }
+        },
+        "bad__both_reject": {
+          "candidates": 742,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 39,
+            "fewer_than_two_shared_views": 663,
+            "plane_zero_veto": 3,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 37
+          },
+          "candidate_ever": {
+            "GT_auditable": 742,
+            "reference_wrong": 625,
+            "coherent_wrong": 145,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 6721,
+            "shared_eligible": 6287,
+            "GT_auditable": 6205,
+            "reference_wrong": 2588,
+            "coherent_wrong": 451,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 39,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 5488,
+            "GT_auditable": 5426,
+            "reference_wrong": 2176,
+            "coherent_wrong": 390
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 742,
+            "D_maskmedian": 37,
+            "D_shared": 37,
+            "P2_plane": 37
+          }
+        },
+        "bad__plane_only": {
+          "candidates": 81,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 81
+          },
+          "candidate_ever": {
+            "GT_auditable": 81,
+            "reference_wrong": 49,
+            "coherent_wrong": 1,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 697,
+            "shared_eligible": 675,
+            "GT_auditable": 668,
+            "reference_wrong": 215,
+            "coherent_wrong": 1,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 3,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 644,
+            "GT_auditable": 637,
+            "reference_wrong": 196,
+            "coherent_wrong": 1
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 32,
+            "D_shared": 31,
+            "P2_plane": 81
+          }
+        }
+      },
+      "unique_snapshot_patches": {
+        "referenced": 1615069,
+        "shared_referenced": 1382758,
+        "GT_auditable": 1276863,
+        "reference_wrong": 370412,
+        "coherent_wrong": 93546,
+        "all_points_wrong": 83121
+      },
+      "GT_reference_status_counts": {
+        "invalid_GT": 34,
+        "GT_edge": 79235,
+        "too_few_common": 277,
+        "nonplanar_or_border": 26349,
+        "reliable": 1276863
+      },
+      "reference_error_sensitivity": {
+        "2_5": 651606,
+        "2_10": 384484,
+        "2_20": 213675,
+        "5_5": 645433,
+        "5_10": 370412,
+        "5_20": 194273,
+        "10_5": 627985,
+        "10_10": 334228,
+        "10_20": 144496
+      },
+      "oracle": {
+        "factual_common": {
+          "bad_newly_rejected": 0,
+          "bad_no_longer_rejected": 0,
+          "bad_rejected": 823,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 6,
+          "unknown_newly_rejected": 0,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 0,
+          "global_bad_recall": 0.02643582166259797,
+          "normal_retention": 0.9999913329866528,
+          "primary_cohort_recovered": 0,
+          "primary_cohort_recovery": 0.0,
+          "reference_error_and_same_candidate_transition": 0,
+          "shared_wrong_support_and_transition": 0,
+          "GT_auditable_candidates": 422935,
+          "GT_candidate_coverage": 0.4194735046397131,
+          "GT_pair_coverage": 0.9135045124329174,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 823,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 5,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 1,
+              "global_bad_recall": 0.0319698558831527,
+              "normal_retention": 0.9999926976917404,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 823,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 5,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 1,
+              "global_bad_recall": 0.038839075035394056,
+              "normal_retention": 0.999991783356696,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            }
+          }
+        },
+        "GT_plane_fixed_veto": {
+          "bad_newly_rejected": 137,
+          "bad_no_longer_rejected": 6,
+          "bad_rejected": 954,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 6,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 2,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 2,
+          "global_bad_recall": 0.03064371065141976,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 52,
+          "primary_cohort_recovery": 0.03071470761961016,
+          "reference_error_and_same_candidate_transition": 131,
+          "shared_wrong_support_and_transition": 10,
+          "GT_auditable_candidates": 422935,
+          "GT_candidate_coverage": 0.4194735046397131,
+          "GT_pair_coverage": 0.9135045124329174,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 136,
+              "bad_no_longer_rejected": 6,
+              "bad_rejected": 953,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 5,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 3,
+              "unknown_no_longer_rejected": 1,
+              "unknown_rejected": 3,
+              "global_bad_recall": 0.03701977236530319,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 52,
+              "primary_cohort_recovery": 0.03192142418661756
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 134,
+              "bad_no_longer_rejected": 6,
+              "bad_rejected": 951,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 5,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 5,
+              "unknown_no_longer_rejected": 1,
+              "unknown_rejected": 5,
+              "global_bad_recall": 0.04487966021708353,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 52,
+              "primary_cohort_recovery": 0.03268384663733501
+            }
+          }
+        },
+        "GT_plane_recomputed_veto": {
+          "bad_newly_rejected": 242,
+          "bad_no_longer_rejected": 6,
+          "bad_rejected": 1059,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 6,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 2,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 2,
+          "global_bad_recall": 0.0340164461004754,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 52,
+          "primary_cohort_recovery": 0.03071470761961016,
+          "reference_error_and_same_candidate_transition": 236,
+          "shared_wrong_support_and_transition": 112,
+          "GT_auditable_candidates": 422935,
+          "GT_candidate_coverage": 0.4194735046397131,
+          "GT_pair_coverage": 0.9135045124329174,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 238,
+              "bad_no_longer_rejected": 6,
+              "bad_rejected": 1055,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 5,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 6,
+              "unknown_no_longer_rejected": 1,
+              "unknown_rejected": 6,
+              "global_bad_recall": 0.04098201452822126,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 52,
+              "primary_cohort_recovery": 0.03192142418661756
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 236,
+              "bad_no_longer_rejected": 6,
+              "bad_rejected": 1053,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 5,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 8,
+              "unknown_no_longer_rejected": 1,
+              "unknown_rejected": 8,
+              "global_bad_recall": 0.04969325153374233,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 52,
+              "primary_cohort_recovery": 0.03268384663733501
+            }
+          }
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "pose_revision": 1,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 104,
+          "pose_revision": 106,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 193,
+          "pose_revision": 197,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 267,
+          "pose_revision": 273,
+          "factual_rejected": 228,
+          "fixed_veto_rejected": 249,
+          "recomputed_veto_rejected": 330
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 312,
+          "pose_revision": 320,
+          "factual_rejected": 761,
+          "fixed_veto_rejected": 861,
+          "recomputed_veto_rejected": 963
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 376,
+          "pose_revision": 386,
+          "factual_rejected": 816,
+          "fixed_veto_rejected": 922,
+          "recomputed_veto_rejected": 1026
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 442,
+          "pose_revision": 454,
+          "factual_rejected": 829,
+          "fixed_veto_rejected": 956,
+          "recomputed_veto_rejected": 1061
+        }
+      ],
+      "rows": {
+        "candidate": 4038502,
+        "view": 10089445,
+        "patch": 1615069
+      },
+      "examples": 40,
+      "cpu_seconds": 111.46255090100021,
+      "factual_exact": true,
+      "source_results_preserved": true,
+      "scope": "retrospective diagnostic; no efficacy GO or Chamfer inference"
+    },
+    "room1": {
+      "scene": "room1",
+      "status": "COMPLETE",
+      "active": 1399108,
+      "bad": 332418,
+      "normal": 524019,
+      "unknown": 542671,
+      "cohorts": {
+        "unknown__both_miss": {
+          "candidates": 541354,
+          "anchor_funnel": {
+            "no_causal_evidence": 175908,
+            "no_finite_native_depth": 253906,
+            "no_finite_shared_plane": 1069,
+            "fewer_than_two_shared_views": 75246,
+            "plane_zero_veto": 24963,
+            "finite_but_not_above_threshold": 10262,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 159537,
+            "reference_wrong": 82813,
+            "coherent_wrong": 80338,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 1894
+          },
+          "view_records": {
+            "depth_eligible": 628574,
+            "shared_eligible": 618698,
+            "GT_auditable": 571967,
+            "reference_wrong": 249804,
+            "coherent_wrong": 231064,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 48437,
+            "GT_anchor_front_changed": 2003
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 421616,
+            "GT_auditable": 390509,
+            "reference_wrong": 177518,
+            "coherent_wrong": 156885
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__b6_only": {
+          "candidates": 1317,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 15,
+            "fewer_than_two_shared_views": 1302,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 1212,
+            "reference_wrong": 1206,
+            "coherent_wrong": 878,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 6511,
+            "shared_eligible": 6478,
+            "GT_auditable": 5666,
+            "reference_wrong": 5435,
+            "coherent_wrong": 3999,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 5956,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 5718,
+            "GT_auditable": 5153,
+            "reference_wrong": 4935,
+            "coherent_wrong": 3486
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 1317,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__both_reject": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__plane_only": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__both_miss": {
+          "candidates": 506492,
+          "anchor_funnel": {
+            "no_causal_evidence": 95143,
+            "no_finite_native_depth": 256211,
+            "no_finite_shared_plane": 576,
+            "fewer_than_two_shared_views": 109887,
+            "plane_zero_veto": 13268,
+            "finite_but_not_above_threshold": 31407,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 210937,
+            "reference_wrong": 82921,
+            "coherent_wrong": 66158,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 10916
+          },
+          "view_records": {
+            "depth_eligible": 865042,
+            "shared_eligible": 854572,
+            "GT_auditable": 821436,
+            "reference_wrong": 265624,
+            "coherent_wrong": 202293,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 72242,
+            "GT_anchor_front_changed": 13959
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 584132,
+            "GT_auditable": 560467,
+            "reference_wrong": 211283,
+            "coherent_wrong": 146807
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__b6_only": {
+          "candidates": 17527,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 150,
+            "fewer_than_two_shared_views": 17377,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 17452,
+            "reference_wrong": 17370,
+            "coherent_wrong": 17023,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 101583,
+            "shared_eligible": 100691,
+            "GT_auditable": 99520,
+            "reference_wrong": 89853,
+            "coherent_wrong": 81033,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 100197,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 98924,
+            "GT_auditable": 97811,
+            "reference_wrong": 88433,
+            "coherent_wrong": 79729
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 17527,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__both_reject": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__plane_only": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "bad__both_miss": {
+          "candidates": 312017,
+          "anchor_funnel": {
+            "no_causal_evidence": 17961,
+            "no_finite_native_depth": 234184,
+            "no_finite_shared_plane": 891,
+            "fewer_than_two_shared_views": 42867,
+            "plane_zero_veto": 6371,
+            "finite_but_not_above_threshold": 9743,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 107082,
+            "reference_wrong": 74515,
+            "coherent_wrong": 61794,
+            "shared_wrong_support": 16422,
+            "shared_wrong_coherent": 15773,
+            "pose_front_changed": 4622
+          },
+          "view_records": {
+            "depth_eligible": 365500,
+            "shared_eligible": 353964,
+            "GT_auditable": 301585,
+            "reference_wrong": 213039,
+            "coherent_wrong": 160358,
+            "shared_wrong_support": 30676,
+            "correspondence_ambiguous": 39095,
+            "GT_anchor_front_changed": 5104
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 166397,
+            "GT_auditable": 148789,
+            "reference_wrong": 97104,
+            "coherent_wrong": 75355
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 604,
+            "D_shared": 216,
+            "P2_plane": 0
+          }
+        },
+        "bad__b6_only": {
+          "candidates": 15297,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 892,
+            "fewer_than_two_shared_views": 12716,
+            "plane_zero_veto": 27,
+            "finite_but_not_above_threshold": 1662,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 13939,
+            "reference_wrong": 10205,
+            "coherent_wrong": 7618,
+            "shared_wrong_support": 347,
+            "shared_wrong_coherent": 347,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 72980,
+            "shared_eligible": 65825,
+            "GT_auditable": 57814,
+            "reference_wrong": 36188,
+            "coherent_wrong": 25375,
+            "shared_wrong_support": 351,
+            "correspondence_ambiguous": 21005,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 37611,
+            "GT_auditable": 33900,
+            "reference_wrong": 22925,
+            "coherent_wrong": 18301
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 15297,
+            "D_maskmedian": 1549,
+            "D_shared": 1441,
+            "P2_plane": 0
+          }
+        },
+        "bad__both_reject": {
+          "candidates": 4174,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 1382,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 267,
+            "above_threshold_reject": 2525
+          },
+          "candidate_ever": {
+            "GT_auditable": 4166,
+            "reference_wrong": 4104,
+            "coherent_wrong": 3996,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 33732,
+            "shared_eligible": 33418,
+            "GT_auditable": 28517,
+            "reference_wrong": 26112,
+            "coherent_wrong": 18612,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 4050,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 14651,
+            "GT_auditable": 13006,
+            "reference_wrong": 12413,
+            "coherent_wrong": 10522
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 3479,
+            "D_maskmedian": 2780,
+            "D_shared": 2550,
+            "P2_plane": 2525
+          }
+        },
+        "bad__plane_only": {
+          "candidates": 930,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 930
+          },
+          "candidate_ever": {
+            "GT_auditable": 930,
+            "reference_wrong": 930,
+            "coherent_wrong": 930,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 7691,
+            "shared_eligible": 7690,
+            "GT_auditable": 7230,
+            "reference_wrong": 6864,
+            "coherent_wrong": 5352,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 48,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 4613,
+            "GT_auditable": 4390,
+            "reference_wrong": 4268,
+            "coherent_wrong": 3765
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 746,
+            "D_shared": 410,
+            "P2_plane": 930
+          }
+        }
+      },
+      "unique_snapshot_patches": {
+        "referenced": 1653690,
+        "shared_referenced": 1277128,
+        "GT_auditable": 1202000,
+        "reference_wrong": 599718,
+        "coherent_wrong": 478658,
+        "all_points_wrong": 456532
+      },
+      "GT_reference_status_counts": {
+        "invalid_GT": 0,
+        "GT_edge": 31309,
+        "too_few_common": 149,
+        "nonplanar_or_border": 43670,
+        "reliable": 1202000
+      },
+      "reference_error_sensitivity": {
+        "2_5": 864982,
+        "2_10": 689706,
+        "2_20": 592184,
+        "5_5": 809120,
+        "5_10": 599718,
+        "5_20": 482146,
+        "10_5": 704487,
+        "10_10": 417133,
+        "10_20": 253768
+      },
+      "oracle": {
+        "factual_common": {
+          "bad_newly_rejected": 0,
+          "bad_no_longer_rejected": 0,
+          "bad_rejected": 5104,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 0,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 0,
+          "global_bad_recall": 0.015354162530308227,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 0,
+          "primary_cohort_recovery": 0.0,
+          "reference_error_and_same_candidate_transition": 0,
+          "shared_wrong_support_and_transition": 0,
+          "GT_auditable_candidates": 515255,
+          "GT_candidate_coverage": 0.3682739288175037,
+          "GT_pair_coverage": 0.9276939220196969,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 5104,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 0,
+              "global_bad_recall": 0.0203859918200409,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 5104,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 0,
+              "global_bad_recall": 0.02507664491785237,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            }
+          }
+        },
+        "GT_plane_fixed_veto": {
+          "bad_newly_rejected": 4952,
+          "bad_no_longer_rejected": 46,
+          "bad_rejected": 10010,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 0,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 0,
+          "global_bad_recall": 0.030112689445216563,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 915,
+          "primary_cohort_recovery": 0.05981565012747598,
+          "reference_error_and_same_candidate_transition": 4891,
+          "shared_wrong_support_and_transition": 820,
+          "GT_auditable_candidates": 515255,
+          "GT_candidate_coverage": 0.3682739288175037,
+          "GT_pair_coverage": 0.9276939220196969,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 4949,
+              "bad_no_longer_rejected": 46,
+              "bad_rejected": 10007,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 3,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 3,
+              "global_bad_recall": 0.039969165388548056,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 915,
+              "primary_cohort_recovery": 0.06405768692243069
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 4949,
+              "bad_no_longer_rejected": 46,
+              "bad_rejected": 10007,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 3,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 3,
+              "global_bad_recall": 0.04916574954799151,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 915,
+              "primary_cohort_recovery": 0.06506435326743938
+            }
+          }
+        },
+        "GT_plane_recomputed_veto": {
+          "bad_newly_rejected": 6043,
+          "bad_no_longer_rejected": 46,
+          "bad_rejected": 11101,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 0,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 0,
+          "global_bad_recall": 0.033394701851283626,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 915,
+          "primary_cohort_recovery": 0.05981565012747598,
+          "reference_error_and_same_candidate_transition": 5982,
+          "shared_wrong_support_and_transition": 1907,
+          "GT_auditable_candidates": 515255,
+          "GT_candidate_coverage": 0.3682739288175037,
+          "GT_pair_coverage": 0.9276939220196969,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 6039,
+              "bad_no_longer_rejected": 46,
+              "bad_rejected": 11097,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 4,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 4,
+              "global_bad_recall": 0.04432275690184049,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 915,
+              "primary_cohort_recovery": 0.06405768692243069
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 6039,
+              "bad_no_longer_rejected": 46,
+              "bad_rejected": 11097,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 4,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 4,
+              "global_bad_recall": 0.05452106752613788,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 915,
+              "primary_cohort_recovery": 0.06506435326743938
+            }
+          }
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "pose_revision": 1,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 23,
+          "pose_revision": 25,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 83,
+          "pose_revision": 87,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 107,
+          "pose_revision": 113,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 122,
+          "pose_revision": 130,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 131,
+          "pose_revision": 141,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 141,
+          "pose_revision": 153,
+          "factual_rejected": 271,
+          "fixed_veto_rejected": 653,
+          "recomputed_veto_rejected": 653
+        },
+        {
+          "snapshot": 7,
+          "input_frame": 213,
+          "pose_revision": 227,
+          "factual_rejected": 3221,
+          "fixed_veto_rejected": 5657,
+          "recomputed_veto_rejected": 6395
+        },
+        {
+          "snapshot": 8,
+          "input_frame": 233,
+          "pose_revision": 249,
+          "factual_rejected": 3246,
+          "fixed_veto_rejected": 5896,
+          "recomputed_veto_rejected": 6783
+        },
+        {
+          "snapshot": 9,
+          "input_frame": 466,
+          "pose_revision": 484,
+          "factual_rejected": 5104,
+          "fixed_veto_rejected": 10010,
+          "recomputed_veto_rejected": 11101
+        }
+      ],
+      "rows": {
+        "candidate": 7731079,
+        "view": 33544400,
+        "patch": 1653690
+      },
+      "examples": 40,
+      "cpu_seconds": 582.9844390460003,
+      "factual_exact": true,
+      "source_results_preserved": true,
+      "scope": "retrospective diagnostic; no efficacy GO or Chamfer inference"
+    },
+    "room2": {
+      "scene": "room2",
+      "status": "COMPLETE",
+      "active": 999190,
+      "bad": 28628,
+      "normal": 838108,
+      "unknown": 132454,
+      "cohorts": {
+        "unknown__both_miss": {
+          "candidates": 131501,
+          "anchor_funnel": {
+            "no_causal_evidence": 12564,
+            "no_finite_native_depth": 48789,
+            "no_finite_shared_plane": 3409,
+            "fewer_than_two_shared_views": 16451,
+            "plane_zero_veto": 32838,
+            "finite_but_not_above_threshold": 17450,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 51834,
+            "reference_wrong": 31636,
+            "coherent_wrong": 9542,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 7329
+          },
+          "view_records": {
+            "depth_eligible": 458682,
+            "shared_eligible": 394430,
+            "GT_auditable": 227621,
+            "reference_wrong": 86236,
+            "coherent_wrong": 25478,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 161970,
+            "GT_anchor_front_changed": 10512
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 245901,
+            "GT_auditable": 163655,
+            "reference_wrong": 68534,
+            "coherent_wrong": 21518
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 1,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__b6_only": {
+          "candidates": 879,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 119,
+            "fewer_than_two_shared_views": 756,
+            "plane_zero_veto": 3,
+            "finite_but_not_above_threshold": 1,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 767,
+            "reference_wrong": 626,
+            "coherent_wrong": 79,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 5
+          },
+          "view_records": {
+            "depth_eligible": 1777,
+            "shared_eligible": 1566,
+            "GT_auditable": 1507,
+            "reference_wrong": 984,
+            "coherent_wrong": 79,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 99,
+            "GT_anchor_front_changed": 6
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 958,
+            "GT_auditable": 909,
+            "reference_wrong": 525,
+            "coherent_wrong": 69
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 879,
+            "D_maskmedian": 1,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "unknown__both_reject": {
+          "candidates": 73,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 71,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 1,
+            "above_threshold_reject": 1
+          },
+          "candidate_ever": {
+            "GT_auditable": 73,
+            "reference_wrong": 28,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 2
+          },
+          "view_records": {
+            "depth_eligible": 235,
+            "shared_eligible": 235,
+            "GT_auditable": 231,
+            "reference_wrong": 58,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 4,
+            "GT_anchor_front_changed": 4
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 217,
+            "GT_auditable": 213,
+            "reference_wrong": 56,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 73,
+            "D_maskmedian": 2,
+            "D_shared": 1,
+            "P2_plane": 1
+          }
+        },
+        "unknown__plane_only": {
+          "candidates": 1,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 1
+          },
+          "candidate_ever": {
+            "GT_auditable": 1,
+            "reference_wrong": 1,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 11,
+            "shared_eligible": 11,
+            "GT_auditable": 11,
+            "reference_wrong": 2,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 11,
+            "GT_auditable": 11,
+            "reference_wrong": 2,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 1
+          }
+        },
+        "normal__both_miss": {
+          "candidates": 838108,
+          "anchor_funnel": {
+            "no_causal_evidence": 60290,
+            "no_finite_native_depth": 211874,
+            "no_finite_shared_plane": 3501,
+            "fewer_than_two_shared_views": 104339,
+            "plane_zero_veto": 417953,
+            "finite_but_not_above_threshold": 40151,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 634737,
+            "reference_wrong": 268821,
+            "coherent_wrong": 112927,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 558
+          },
+          "view_records": {
+            "depth_eligible": 3653181,
+            "shared_eligible": 3565097,
+            "GT_auditable": 3312632,
+            "reference_wrong": 896788,
+            "coherent_wrong": 328241,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 182013,
+            "GT_anchor_front_changed": 755
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 1715931,
+            "GT_auditable": 1601916,
+            "reference_wrong": 465650,
+            "coherent_wrong": 173931
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__b6_only": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__both_reject": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "normal__plane_only": {
+          "candidates": 0,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 0,
+            "shared_eligible": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 0,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 0,
+            "GT_auditable": 0,
+            "reference_wrong": 0,
+            "coherent_wrong": 0
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 0,
+            "D_shared": 0,
+            "P2_plane": 0
+          }
+        },
+        "bad__both_miss": {
+          "candidates": 20255,
+          "anchor_funnel": {
+            "no_causal_evidence": 3441,
+            "no_finite_native_depth": 12795,
+            "no_finite_shared_plane": 494,
+            "fewer_than_two_shared_views": 1313,
+            "plane_zero_veto": 1028,
+            "finite_but_not_above_threshold": 1184,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 3420,
+            "reference_wrong": 2684,
+            "coherent_wrong": 451,
+            "shared_wrong_support": 292,
+            "shared_wrong_coherent": 146,
+            "pose_front_changed": 114
+          },
+          "view_records": {
+            "depth_eligible": 32579,
+            "shared_eligible": 20408,
+            "GT_auditable": 9461,
+            "reference_wrong": 6730,
+            "coherent_wrong": 683,
+            "shared_wrong_support": 468,
+            "correspondence_ambiguous": 10702,
+            "GT_anchor_front_changed": 161
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 15198,
+            "GT_auditable": 7254,
+            "reference_wrong": 5004,
+            "coherent_wrong": 512
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 76,
+            "D_shared": 62,
+            "P2_plane": 0
+          }
+        },
+        "bad__b6_only": {
+          "candidates": 2882,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 343,
+            "fewer_than_two_shared_views": 2512,
+            "plane_zero_veto": 1,
+            "finite_but_not_above_threshold": 26,
+            "above_threshold_reject": 0
+          },
+          "candidate_ever": {
+            "GT_auditable": 2436,
+            "reference_wrong": 1468,
+            "coherent_wrong": 429,
+            "shared_wrong_support": 1,
+            "shared_wrong_coherent": 1,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 6297,
+            "shared_eligible": 5026,
+            "GT_auditable": 4684,
+            "reference_wrong": 1954,
+            "coherent_wrong": 445,
+            "shared_wrong_support": 1,
+            "correspondence_ambiguous": 553,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 3369,
+            "GT_auditable": 3142,
+            "reference_wrong": 1094,
+            "coherent_wrong": 149
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 2882,
+            "D_maskmedian": 26,
+            "D_shared": 26,
+            "P2_plane": 0
+          }
+        },
+        "bad__both_reject": {
+          "candidates": 2269,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 148,
+            "fewer_than_two_shared_views": 1767,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 354
+          },
+          "candidate_ever": {
+            "GT_auditable": 2230,
+            "reference_wrong": 1324,
+            "coherent_wrong": 266,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 13892,
+            "shared_eligible": 13187,
+            "GT_auditable": 11917,
+            "reference_wrong": 3305,
+            "coherent_wrong": 299,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 1004,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 10773,
+            "GT_auditable": 9844,
+            "reference_wrong": 2642,
+            "coherent_wrong": 209
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 2256,
+            "D_maskmedian": 354,
+            "D_shared": 331,
+            "P2_plane": 354
+          }
+        },
+        "bad__plane_only": {
+          "candidates": 3222,
+          "anchor_funnel": {
+            "no_causal_evidence": 0,
+            "no_finite_native_depth": 0,
+            "no_finite_shared_plane": 0,
+            "fewer_than_two_shared_views": 0,
+            "plane_zero_veto": 0,
+            "finite_but_not_above_threshold": 0,
+            "above_threshold_reject": 3222
+          },
+          "candidate_ever": {
+            "GT_auditable": 2975,
+            "reference_wrong": 1778,
+            "coherent_wrong": 76,
+            "shared_wrong_support": 0,
+            "shared_wrong_coherent": 0,
+            "pose_front_changed": 0
+          },
+          "view_records": {
+            "depth_eligible": 16922,
+            "shared_eligible": 16287,
+            "GT_auditable": 13439,
+            "reference_wrong": 4929,
+            "coherent_wrong": 91,
+            "shared_wrong_support": 0,
+            "correspondence_ambiguous": 2695,
+            "GT_anchor_front_changed": 0
+          },
+          "unique_snapshot_patches": {
+            "shared_referenced": 11824,
+            "GT_auditable": 10266,
+            "reference_wrong": 3592,
+            "coherent_wrong": 73
+          },
+          "anchor_method_above_threshold": {
+            "B6_depth": 0,
+            "D_maskmedian": 3034,
+            "D_shared": 2668,
+            "P2_plane": 3222
+          }
+        }
+      },
+      "unique_snapshot_patches": {
+        "referenced": 2203672,
+        "shared_referenced": 1876273,
+        "GT_auditable": 1699640,
+        "reference_wrong": 508861,
+        "coherent_wrong": 184549,
+        "all_points_wrong": 153103
+      },
+      "GT_reference_status_counts": {
+        "invalid_GT": 173,
+        "GT_edge": 122694,
+        "too_few_common": 795,
+        "nonplanar_or_border": 52971,
+        "reliable": 1699640
+      },
+      "reference_error_sensitivity": {
+        "2_5": 882665,
+        "2_10": 533089,
+        "2_20": 327357,
+        "5_5": 868545,
+        "5_10": 508861,
+        "5_20": 297458,
+        "10_5": 805646,
+        "10_10": 396729,
+        "10_20": 159066
+      },
+      "oracle": {
+        "factual_common": {
+          "bad_newly_rejected": 0,
+          "bad_no_longer_rejected": 0,
+          "bad_rejected": 5491,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 0,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 74,
+          "global_bad_recall": 0.19180522565320665,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 0,
+          "primary_cohort_recovery": 0.0,
+          "reference_error_and_same_candidate_transition": 0,
+          "shared_wrong_support_and_transition": 0,
+          "GT_auditable_candidates": 698473,
+          "GT_candidate_coverage": 0.6990392217696334,
+          "GT_pair_coverage": 0.8917536695327752,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 5520,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 5,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 40,
+              "global_bad_recall": 0.1896711679208329,
+              "normal_retention": 0.9999940795051414,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 0,
+              "bad_no_longer_rejected": 0,
+              "bad_rejected": 5459,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 106,
+              "global_bad_recall": 0.23111769686706182,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 0,
+              "primary_cohort_recovery": 0.0
+            }
+          }
+        },
+        "GT_plane_fixed_veto": {
+          "bad_newly_rejected": 219,
+          "bad_no_longer_rejected": 48,
+          "bad_rejected": 5662,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 1,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 75,
+          "global_bad_recall": 0.19777839877043454,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 113,
+          "primary_cohort_recovery": 0.0392088827203331,
+          "reference_error_and_same_candidate_transition": 169,
+          "shared_wrong_support_and_transition": 0,
+          "GT_auditable_candidates": 698473,
+          "GT_candidate_coverage": 0.6990392217696334,
+          "GT_pair_coverage": 0.8917536695327752,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 220,
+              "bad_no_longer_rejected": 48,
+              "bad_rejected": 5692,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 5,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 40,
+              "global_bad_recall": 0.1955812115589458,
+              "normal_retention": 0.9999940795051414,
+              "primary_cohort_recovered": 114,
+              "primary_cohort_recovery": 0.03813984610237538
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 219,
+              "bad_no_longer_rejected": 48,
+              "bad_rejected": 5630,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 1,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 107,
+              "global_bad_recall": 0.23835732430143947,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 113,
+              "primary_cohort_recovery": 0.04014209591474245
+            }
+          }
+        },
+        "GT_plane_recomputed_veto": {
+          "bad_newly_rejected": 225,
+          "bad_no_longer_rejected": 48,
+          "bad_rejected": 5668,
+          "normal_newly_rejected": 0,
+          "normal_no_longer_rejected": 0,
+          "normal_rejected": 0,
+          "unknown_newly_rejected": 1,
+          "unknown_no_longer_rejected": 0,
+          "unknown_rejected": 75,
+          "global_bad_recall": 0.19798798379209165,
+          "normal_retention": 1.0,
+          "primary_cohort_recovered": 114,
+          "primary_cohort_recovery": 0.0395558639833449,
+          "reference_error_and_same_candidate_transition": 175,
+          "shared_wrong_support_and_transition": 6,
+          "GT_auditable_candidates": 698473,
+          "GT_candidate_coverage": 0.6990392217696334,
+          "GT_pair_coverage": 0.8917536695327752,
+          "label_sensitivity": {
+            "gt_anchor": {
+              "bad_newly_rejected": 226,
+              "bad_no_longer_rejected": 48,
+              "bad_rejected": 5698,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 5,
+              "unknown_newly_rejected": 0,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 40,
+              "global_bad_recall": 0.19578737587190323,
+              "normal_retention": 0.9999940795051414,
+              "primary_cohort_recovered": 115,
+              "primary_cohort_recovery": 0.038474406155904986
+            },
+            "cross_pose_consensus": {
+              "bad_newly_rejected": 225,
+              "bad_no_longer_rejected": 48,
+              "bad_rejected": 5636,
+              "normal_newly_rejected": 0,
+              "normal_no_longer_rejected": 0,
+              "normal_rejected": 0,
+              "unknown_newly_rejected": 1,
+              "unknown_no_longer_rejected": 0,
+              "unknown_rejected": 107,
+              "global_bad_recall": 0.23861134631668077,
+              "normal_retention": 1.0,
+              "primary_cohort_recovered": 114,
+              "primary_cohort_recovery": 0.04049733570159858
+            }
+          }
+        }
+      },
+      "snapshots": [
+        {
+          "snapshot": 0,
+          "input_frame": 0,
+          "pose_revision": 1,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 1,
+          "input_frame": 98,
+          "pose_revision": 100,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 2,
+          "input_frame": 178,
+          "pose_revision": 182,
+          "factual_rejected": 0,
+          "fixed_veto_rejected": 0,
+          "recomputed_veto_rejected": 0
+        },
+        {
+          "snapshot": 3,
+          "input_frame": 220,
+          "pose_revision": 226,
+          "factual_rejected": 85,
+          "fixed_veto_rejected": 84,
+          "recomputed_veto_rejected": 84
+        },
+        {
+          "snapshot": 4,
+          "input_frame": 343,
+          "pose_revision": 351,
+          "factual_rejected": 634,
+          "fixed_veto_rejected": 606,
+          "recomputed_veto_rejected": 606
+        },
+        {
+          "snapshot": 5,
+          "input_frame": 429,
+          "pose_revision": 439,
+          "factual_rejected": 3981,
+          "fixed_veto_rejected": 4001,
+          "recomputed_veto_rejected": 4004
+        },
+        {
+          "snapshot": 6,
+          "input_frame": 462,
+          "pose_revision": 474,
+          "factual_rejected": 5565,
+          "fixed_veto_rejected": 5737,
+          "recomputed_veto_rejected": 5743
+        }
+      ],
+      "rows": {
+        "candidate": 4011212,
+        "view": 10009937,
+        "patch": 2203672
+      },
+      "examples": 40,
+      "cpu_seconds": 115.95509566200053,
+      "factual_exact": true,
+      "source_results_preserved": true,
+      "scope": "retrospective diagnostic; no efficacy GO or Chamfer inference"
+    }
+  },
+  "efficacy_decision": "E4 REVISE unchanged",
+  "source_patch_counts": {
+    "office1": {
+      "scene": "office1",
+      "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+      "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+      "counts": {
+        "shared_referenced": 587213,
+        "GT_auditable": 556325,
+        "reference_wrong": 328310,
+        "coherent_wrong": 244918,
+        "all_points_wrong": 235707
+      },
+      "group_counts": {
+        "shared_referenced": [
+          295381,
+          59,
+          0,
+          1038,
+          298152,
+          82,
+          0,
+          0,
+          135360,
+          11712,
+          1315,
+          3580
+        ],
+        "GT_auditable": [
+          279193,
+          38,
+          0,
+          1021,
+          287600,
+          56,
+          0,
+          0,
+          120750,
+          11121,
+          1252,
+          3500
+        ],
+        "reference_wrong": [
+          157150,
+          18,
+          0,
+          564,
+          147964,
+          42,
+          0,
+          0,
+          87486,
+          9847,
+          1193,
+          2405
+        ],
+        "coherent_wrong": [
+          108384,
+          10,
+          0,
+          240,
+          91633,
+          28,
+          0,
+          0,
+          81047,
+          4611,
+          902,
+          1283
+        ],
+        "all_points_wrong": [
+          103229,
+          10,
+          0,
+          221,
+          87978,
+          28,
+          0,
+          0,
+          78144,
+          4270,
+          869,
+          1226
+        ]
+      },
+      "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+      "source": {
+        "path": "results/E4b_reference_plane_audit/office1/patch_audit.parquet",
+        "bytes": 96543866,
+        "sha256": "5329c73225e0b6ece8869dbd60af666f11e4a8817841c02ade4cf96de7c24e82"
+      }
+    },
+    "office0": {
+      "scene": "office0",
+      "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+      "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+      "counts": {
+        "shared_referenced": 746217,
+        "GT_auditable": 693721,
+        "reference_wrong": 437997,
+        "coherent_wrong": 345000,
+        "all_points_wrong": 327092
+      },
+      "group_counts": {
+        "shared_referenced": [
+          324423,
+          9864,
+          410,
+          122,
+          323691,
+          1062,
+          0,
+          74,
+          259155,
+          13474,
+          9915,
+          6772
+        ],
+        "GT_auditable": [
+          298746,
+          9356,
+          375,
+          105,
+          306907,
+          848,
+          0,
+          59,
+          235742,
+          11947,
+          9355,
+          6401
+        ],
+        "reference_wrong": [
+          179760,
+          6899,
+          266,
+          74,
+          190482,
+          663,
+          0,
+          36,
+          145885,
+          9768,
+          6950,
+          4734
+        ],
+        "coherent_wrong": [
+          130797,
+          4691,
+          102,
+          31,
+          143171,
+          672,
+          0,
+          30,
+          117134,
+          7347,
+          6083,
+          4025
+        ],
+        "all_points_wrong": [
+          122039,
+          4594,
+          101,
+          25,
+          135051,
+          649,
+          0,
+          21,
+          111079,
+          6970,
+          5875,
+          3820
+        ]
+      },
+      "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+      "source": {
+        "path": "results/E4b_reference_plane_audit/office0/patch_audit.parquet",
+        "bytes": 141053427,
+        "sha256": "d0d88762c96817118a103610cf010f9789bdcefc5ea7834fe35170f3bc15b452"
+      }
+    },
+    "room0": {
+      "scene": "room0",
+      "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+      "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+      "counts": {
+        "shared_referenced": 419355,
+        "GT_auditable": 385500,
+        "reference_wrong": 134616,
+        "coherent_wrong": 50700,
+        "all_points_wrong": 44580
+      },
+      "group_counts": {
+        "shared_referenced": [
+          101969,
+          940,
+          0,
+          0,
+          348814,
+          643,
+          0,
+          27,
+          12642,
+          2092,
+          2696,
+          362
+        ],
+        "GT_auditable": [
+          80872,
+          692,
+          0,
+          0,
+          332229,
+          515,
+          0,
+          23,
+          7342,
+          1744,
+          2660,
+          356
+        ],
+        "reference_wrong": [
+          28552,
+          566,
+          0,
+          0,
+          114767,
+          475,
+          0,
+          23,
+          4853,
+          1183,
+          1037,
+          115
+        ],
+        "coherent_wrong": [
+          11446,
+          328,
+          0,
+          0,
+          42581,
+          420,
+          0,
+          23,
+          2691,
+          494,
+          211,
+          1
+        ],
+        "all_points_wrong": [
+          10550,
+          289,
+          0,
+          0,
+          37562,
+          416,
+          0,
+          23,
+          2288,
+          413,
+          139,
+          0
+        ]
+      },
+      "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+      "source": {
+        "path": "results/E4b_reference_plane_audit/room0/patch_audit.parquet",
+        "bytes": 75703718,
+        "sha256": "73bd96ab1ef70e4491f286d8c0b7bb076fb7075311577f69739f692e9bb63ae4"
+      }
+    },
+    "room1": {
+      "scene": "room1",
+      "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+      "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+      "counts": {
+        "shared_referenced": 455230,
+        "GT_auditable": 425470,
+        "reference_wrong": 224403,
+        "coherent_wrong": 191187,
+        "all_points_wrong": 182437
+      },
+      "group_counts": {
+        "shared_referenced": [
+          159797,
+          2560,
+          0,
+          0,
+          215692,
+          31883,
+          0,
+          0,
+          77265,
+          10083,
+          4823,
+          1585
+        ],
+        "GT_auditable": [
+          148149,
+          2322,
+          0,
+          0,
+          205734,
+          31494,
+          0,
+          0,
+          67845,
+          8794,
+          3885,
+          1495
+        ],
+        "reference_wrong": [
+          74362,
+          2234,
+          0,
+          0,
+          86857,
+          29360,
+          0,
+          0,
+          39366,
+          6355,
+          3732,
+          1458
+        ],
+        "coherent_wrong": [
+          73102,
+          1195,
+          0,
+          0,
+          64837,
+          26453,
+          0,
+          0,
+          32197,
+          5019,
+          3236,
+          1322
+        ],
+        "all_points_wrong": [
+          68653,
+          1189,
+          0,
+          0,
+          61258,
+          26371,
+          0,
+          0,
+          30492,
+          4859,
+          3190,
+          1305
+        ]
+      },
+      "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+      "source": {
+        "path": "results/E4b_reference_plane_audit/room1/patch_audit.parquet",
+        "bytes": 77264953,
+        "sha256": "46cf2b9dea048c34b3e0eb6f3ae01de704131ee6d7af70560dfc9bf52e4020b6"
+      }
+    },
+    "room2": {
+      "scene": "room2",
+      "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+      "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+      "counts": {
+        "shared_referenced": 683191,
+        "GT_auditable": 624346,
+        "reference_wrong": 183815,
+        "coherent_wrong": 76173,
+        "all_points_wrong": 65330
+      },
+      "group_counts": {
+        "shared_referenced": [
+          114727,
+          770,
+          204,
+          9,
+          637923,
+          0,
+          0,
+          0,
+          9416,
+          2503,
+          6527,
+          6138
+        ],
+        "GT_auditable": [
+          81478,
+          738,
+          201,
+          9,
+          595956,
+          0,
+          0,
+          0,
+          4851,
+          2330,
+          6008,
+          5243
+        ],
+        "reference_wrong": [
+          35046,
+          413,
+          52,
+          2,
+          171264,
+          0,
+          0,
+          0,
+          3130,
+          841,
+          1442,
+          1634
+        ],
+        "coherent_wrong": [
+          10970,
+          69,
+          0,
+          0,
+          72534,
+          0,
+          0,
+          0,
+          342,
+          137,
+          185,
+          62
+        ],
+        "all_points_wrong": [
+          9112,
+          42,
+          0,
+          0,
+          62528,
+          0,
+          0,
+          0,
+          268,
+          85,
+          161,
+          47
+        ]
+      },
+      "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+      "source": {
+        "path": "results/E4b_reference_plane_audit/room2/patch_audit.parquet",
+        "bytes": 102196042,
+        "sha256": "b88521fbe6222f6a42172642ce069b74e57cd0b9ad983ce82b270dee78d0eb17"
+      }
+    }
+  },
+  "strict_support_examples": {
+    "office1": {
+      "selection": "Lowest five strict-support candidate IDs; first qualifying snapshot then evidence KF. These are criterion traces, not replacements for the fixed random plots.",
+      "rows": [
+        {
+          "candidate_id": 22584,
+          "snapshot": 5,
+          "input_frame": 340,
+          "pose_revision": 350,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 11721,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.08618452399969101,
+          "plane_angle_degrees": 3.154123306274414,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.030042806008234127,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 23116,
+          "snapshot": 5,
+          "input_frame": 340,
+          "pose_revision": 350,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 12250,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.09040158987045288,
+          "plane_angle_degrees": 2.126492977142334,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.029430347510841073,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 23608,
+          "snapshot": 5,
+          "input_frame": 340,
+          "pose_revision": 350,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 12744,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.08573555201292038,
+          "plane_angle_degrees": 2.8943371772766113,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.03053419521092834,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 23609,
+          "snapshot": 4,
+          "input_frame": 326,
+          "pose_revision": 334,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 12745,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.08277810364961624,
+          "plane_angle_degrees": 3.4705727100372314,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.03079933983278848,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 23623,
+          "snapshot": 5,
+          "input_frame": 340,
+          "pose_revision": 350,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 12757,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.08944927901029587,
+          "plane_angle_degrees": 4.906132221221924,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.03067061448921142,
+          "shared_wrong_support": true
+        }
+      ]
+    },
+    "office0": {
+      "selection": "Lowest five strict-support candidate IDs; first qualifying snapshot then evidence KF. These are criterion traces, not replacements for the fixed random plots.",
+      "rows": [
+        {
+          "candidate_id": 61609,
+          "snapshot": 10,
+          "input_frame": 447,
+          "pose_revision": 467,
+          "candidate_kf": 0,
+          "evidence_kf": 9,
+          "evidence_pixel": 27363,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.007181982747574377,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.07556325942277908,
+          "plane_angle_degrees": 88.85273742675781,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.03098970096467419,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 61610,
+          "snapshot": 10,
+          "input_frame": 447,
+          "pose_revision": 467,
+          "candidate_kf": 0,
+          "evidence_kf": 9,
+          "evidence_pixel": 27364,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.007855650107207459,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.07625959813594818,
+          "plane_angle_degrees": 89.13507080078125,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.03179975043639654,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 61611,
+          "snapshot": 10,
+          "input_frame": 447,
+          "pose_revision": 467,
+          "candidate_kf": 0,
+          "evidence_kf": 9,
+          "evidence_pixel": 27364,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.008903893715645246,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.07625959813594818,
+          "plane_angle_degrees": 89.13507080078125,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.0332452739076397,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 61612,
+          "snapshot": 10,
+          "input_frame": 447,
+          "pose_revision": 467,
+          "candidate_kf": 0,
+          "evidence_kf": 9,
+          "evidence_pixel": 27365,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.01130866477933547,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.07623381167650223,
+          "plane_angle_degrees": 89.32157897949219,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.03495143124252039,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 62118,
+          "snapshot": 10,
+          "input_frame": 447,
+          "pose_revision": 467,
+          "candidate_kf": 0,
+          "evidence_kf": 9,
+          "evidence_pixel": 27361,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.009384067659213966,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.07186923921108246,
+          "plane_angle_degrees": 88.28266906738281,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.03172499135380247,
+          "shared_wrong_support": true
+        }
+      ]
+    },
+    "room0": {
+      "selection": "Lowest five strict-support candidate IDs; first qualifying snapshot then evidence KF. These are criterion traces, not replacements for the fixed random plots.",
+      "rows": [
+        {
+          "candidate_id": 52162,
+          "snapshot": 2,
+          "input_frame": 193,
+          "pose_revision": 197,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 76709,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.002293602258392692,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.11410100013017654,
+          "plane_angle_degrees": 65.64967346191406,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.030094403184225696,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 52676,
+          "snapshot": 2,
+          "input_frame": 193,
+          "pose_revision": 197,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 77223,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0026290107541989964,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.10344501584768295,
+          "plane_angle_degrees": 66.27367401123047,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.028968973610838635,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 53188,
+          "snapshot": 2,
+          "input_frame": 193,
+          "pose_revision": 197,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 77736,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.004965436116845442,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.10026394575834274,
+          "plane_angle_degrees": 64.4457778930664,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.03068468576928393,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 55096,
+          "snapshot": 5,
+          "input_frame": 376,
+          "pose_revision": 386,
+          "candidate_kf": 0,
+          "evidence_kf": 3,
+          "evidence_pixel": 93688,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.2977350652217865,
+          "plane_angle_degrees": 85.65296936035156,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.0376299899549593,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 56259,
+          "snapshot": 2,
+          "input_frame": 193,
+          "pose_revision": 197,
+          "candidate_kf": 0,
+          "evidence_kf": 2,
+          "evidence_pixel": 81321,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.11666025966405869,
+          "plane_angle_degrees": 53.23093032836914,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.02678035610530943,
+          "shared_wrong_support": true
+        }
+      ]
+    },
+    "room1": {
+      "selection": "Lowest five strict-support candidate IDs; first qualifying snapshot then evidence KF. These are criterion traces, not replacements for the fixed random plots.",
+      "rows": [
+        {
+          "candidate_id": 545326,
+          "snapshot": 5,
+          "input_frame": 131,
+          "pose_revision": 141,
+          "candidate_kf": 3,
+          "evidence_kf": 5,
+          "evidence_pixel": 78597,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.03795873746275902,
+          "plane_angle_degrees": 23.08990478515625,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.00967761432508668,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 545327,
+          "snapshot": 5,
+          "input_frame": 131,
+          "pose_revision": 141,
+          "candidate_kf": 3,
+          "evidence_kf": 5,
+          "evidence_pixel": 79110,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.038556478917598724,
+          "plane_angle_degrees": 19.503313064575195,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.012164187152963071,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 545328,
+          "snapshot": 5,
+          "input_frame": 131,
+          "pose_revision": 141,
+          "candidate_kf": 3,
+          "evidence_kf": 5,
+          "evidence_pixel": 79623,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.045988768339157104,
+          "plane_angle_degrees": 14.149811744689941,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.02158200749982219,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 545329,
+          "snapshot": 5,
+          "input_frame": 131,
+          "pose_revision": 141,
+          "candidate_kf": 3,
+          "evidence_kf": 5,
+          "evidence_pixel": 80136,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.05764108523726463,
+          "plane_angle_degrees": 8.582785606384277,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.0344892090539546,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 545330,
+          "snapshot": 5,
+          "input_frame": 131,
+          "pose_revision": 141,
+          "candidate_kf": 3,
+          "evidence_kf": 5,
+          "evidence_pixel": 80137,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.06618551164865494,
+          "plane_angle_degrees": 8.379883766174316,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.04255511484175849,
+          "shared_wrong_support": true
+        }
+      ]
+    },
+    "room2": {
+      "selection": "Lowest five strict-support candidate IDs; first qualifying snapshot then evidence KF. These are criterion traces, not replacements for the fixed random plots.",
+      "rows": [
+        {
+          "candidate_id": 36630,
+          "snapshot": 6,
+          "input_frame": 462,
+          "pose_revision": 474,
+          "candidate_kf": 0,
+          "evidence_kf": 5,
+          "evidence_pixel": 29213,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.018619749743372768,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.03562992811203003,
+          "plane_angle_degrees": 86.40617370605469,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.0273603455402943,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 40262,
+          "snapshot": 4,
+          "input_frame": 343,
+          "pose_revision": 351,
+          "candidate_kf": 0,
+          "evidence_kf": 4,
+          "evidence_pixel": 39707,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.11475176364183426,
+          "plane_angle_degrees": 82.86505126953125,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.024614077451293927,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 40774,
+          "snapshot": 3,
+          "input_frame": 220,
+          "pose_revision": 226,
+          "candidate_kf": 0,
+          "evidence_kf": 3,
+          "evidence_pixel": 25468,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.13520319759845734,
+          "plane_angle_degrees": 74.22798156738281,
+          "coherent_wrong": false,
+          "oracle_plane_score": 0.02905433556724337,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 45377,
+          "snapshot": 5,
+          "input_frame": 429,
+          "pose_revision": 439,
+          "candidate_kf": 0,
+          "evidence_kf": 3,
+          "evidence_pixel": 30071,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.10735692828893661,
+          "plane_angle_degrees": 83.79325103759766,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.018606607126266023,
+          "shared_wrong_support": true
+        },
+        {
+          "candidate_id": 45888,
+          "snapshot": 3,
+          "input_frame": 220,
+          "pose_revision": 226,
+          "candidate_kf": 0,
+          "evidence_kf": 3,
+          "evidence_pixel": 30071,
+          "label": 3,
+          "cohort": 0,
+          "plane_score": 0.0,
+          "depth_score": 0.0,
+          "GT_front": true,
+          "GT_correspondence": true,
+          "plane_offset_m": 0.09751912951469421,
+          "plane_angle_degrees": 83.79325103759766,
+          "coherent_wrong": true,
+          "oracle_plane_score": 0.013061618421409587,
+          "shared_wrong_support": true
+        }
+      ]
+    }
+  }
+}

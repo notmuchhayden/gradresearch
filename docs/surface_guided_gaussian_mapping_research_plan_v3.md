@@ -427,7 +427,7 @@ RGB는 사전 고정한 홀수 11개 temporal held-out view의 전체 영상 PSN
 
 ## 8.6. E4b: 기준 평면의 GT 정확도·B6/plane 판정 경로 진단
 
-**상태: 설계 등록 완료·미실행(2026-10-22).** [E4b 프로토콜](experiments/E4b_reference_plane_audit.md)과 [설정](../configs/e4b_reference_plane_audit.json)에 분석 범위와 조건을 고정했다. 이미 확인한 E4의 사후 원인 진단이며, office1을 새 독립 test로 다시 부르지 않는다. E4 REVISE와 E5/E6 효능 검증 보류는 유지한다.
+**상태: 실행 완료(2026-10-22).** [E4b 결과 보고서](experiments/E4b_reference_plane_audit_results.md)에 5장면 전수 감사·두 oracle·민감도·무결성 결과를 기록했다. [등록 당시 프로토콜](experiments/E4b_reference_plane_audit.md)과 [설정](../configs/e4b_reference_plane_audit.json)은 보존했다. 이미 확인한 E4의 사후 원인 진단이며, office1을 새 독립 test로 다시 부르지 않는다. E4 REVISE와 E5/E6 효능 검증 보류는 유지한다.
 
 질문은 **잘못된 point cloud가 reliable한 국소 평면을 이루어 불량 후보를 지지했는지**, **B6만 제거한 사례의 차이가 기준 오류 또는 관측 자격·집계·veto·임계값 중 어디서 생겼는지**다. office1을 주 분석, office0·room0·room1·room2를 보조 분석으로 삼고 모든 original-active 후보의 자연 결정만 사용한다. bad를 B6-only / both-miss / both-reject / plane-only 네 집합으로 전수 분할하고 normal·unknown은 별도 대조한다. 예산용 무작위 fallback 제거는 알고리즘 판별력에 귀속하지 않는다.
 
@@ -435,7 +435,11 @@ RGB는 사전 고정한 홀수 11개 temporal held-out view의 전체 영상 PSN
 
 보조 GT-plane oracle은 원래 대응·finite mask·후보·추정 pose·정규화·임계값을 고정하고 평면만 바꾼다. 원래 veto를 고정한 arm과 plane-zero veto만 재계산한 arm을 분리한다. 기준 오류와 같은 후보의 판정 전환이 함께 있는지 확인하고 bad 회복뿐 아니라 정상 오제거·GT 검사 coverage를 보고한다. GT 기반 진단을 실제 알고리즘 성능으로 보고하지 않으며 RGB/TSDF 재평가 없이 Chamfer 개선을 주장하지 않는다.
 
-완료 기준은 사실 재현, 정해진 집합·분모·검사 불가율·원인 tag, 두 oracle 대비, pose 민감도와 seed 0 고정 예시의 보고다. 효능 GO 임계값이나 단일 지배 원인 판정은 두지 않는다. 현재는 분석 구현과 실행 전이며, 개선안을 도출하면 별도 개발·봉인과 아직 살펴보지 않은 평가 데이터가 필요하다.
+**office1 결과:** 잘못된 기준 평면이 미제거 bad를 지지한 후보는 **31,412개**, 그중 주변 공통 점의 ≥80%가 같은 방향으로 틀린 점군도 관측한 후보는 **30,777개**였다. 두 방식 모두 놓친 후보의 엄격한 잘못된 지지는 31,132개, B6-only에서는 280개다. B6-only bad 9,874개 중 **9,867개(99.93%)는 B6 최초 제거 시점에 P2 유효 관측이 두 개 미만**이었다. 잘못된 평면의 존재와 두 방식의 시점별 자격 차이를 구별한다.
+
+GT-plane/veto 재계산은 새 bad **5,209개**, 새 normal **409개**, 새 unknown **10,713개**를 제거했다. 전체 bad recall은 0.5865%→2.3987%, B6-only 회복은 265개(2.68%)였다. 기준 오류와 같은 후보의 판정 전환이 함께 확인된 bad는 5,129개다. 정답 평면도 원래의 관측 부재·mask·대응·pose·임계값 제약을 해결하지는 못한다. 이 수치는 GT oracle의 진단이며 실제 RGB-only 개선 알고리즘이나 Chamfer 개선 결과가 아니다.
+
+완료 기준인 사실 재현, 정해진 집합·분모·검사 불가율·원인 tag, 두 oracle 대비, pose/라벨 민감도와 seed 0 고정 예시를 보고했다. 13개 합성 테스트, 5장면 원본 정책 정확 재현·입력 1,155개 재해시·감사 결과와 Parquet 행 수 검증을 통과했다. 후보×시점×관측 116,265,669행, 원본 patch와 snapshot별 patch의 분리 집계, 고정 그림 200개를 보존했다. 효능 GO 임계값이나 단일 지배 원인 판정은 두지 않으며, 개선안을 도출하면 별도 개발·봉인과 아직 살펴보지 않은 평가 데이터가 필요하다.
 
 ---
 

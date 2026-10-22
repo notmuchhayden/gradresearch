@@ -1,0 +1,97 @@
+{
+  "sealed_at_utc": "2026-10-22T03:43:40.257407+00:00",
+  "base_git_commit": "d3cbb15151053789aa2f92b6f5794cbb464f9cb6",
+  "code": [
+    {
+      "path": "scripts/run_e4b.py",
+      "bytes": 31280,
+      "sha256": "3ec0506750c606e8e78b38e5748bb7bde339c07042a2c886d55fba8363856462"
+    },
+    {
+      "path": "scripts/report_e4b.py",
+      "bytes": 16785,
+      "sha256": "d561f491fb8c8b7db42afb85ebdf6b9609beeb9edc503512bb3ba89adbd42f55"
+    },
+    {
+      "path": "src/e4b_audit.py",
+      "bytes": 11524,
+      "sha256": "9bde18367d14bab64f2a8574c54c92b77bb2d78c6d0d7b1effb420609e528160"
+    },
+    {
+      "path": "tests/test_e4b.py",
+      "bytes": 5327,
+      "sha256": "8c8eaed15654e99ba1c5fea7955325b874b7ebdc6e797ad800b747e9c898704a"
+    },
+    {
+      "path": "src/e3c_matched.py",
+      "bytes": 3780,
+      "sha256": "b4c3eee9a96a9b86e700fa60bf65a34b9cf5f221245673e38774d8beedbc098b"
+    },
+    {
+      "path": "src/e2_signals.py",
+      "bytes": 12591,
+      "sha256": "009645ab2c44aa43e8e0f963499ac44b0ad5903f1ab670959b7767632f99d4aa"
+    },
+    {
+      "path": "src/e2b_transfer.py",
+      "bytes": 2780,
+      "sha256": "fc60c6b8b3cf4684a228db69005f41d00eee12677df678a897d07064bec0dd8e"
+    },
+    {
+      "path": "src/e3b_provisional.py",
+      "bytes": 6287,
+      "sha256": "4e0f3f592ddc9e2fb709857f9cced67adeed3bc2318cab36aa63e3cc1f27a5d3"
+    },
+    {
+      "path": "src/e1_taxonomy.py",
+      "bytes": 9880,
+      "sha256": "09b8c89028b05ad4e0702c570865e302f31276e94c7f4b638b66e3931bbd146d"
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "bytes": 26184,
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f"
+    },
+    {
+      "path": "scripts/prepare_e2b_run.py",
+      "bytes": 2905,
+      "sha256": "09ba962ec6e22697e398324092f60a67cc95c4cbf82ef4e3feb703d468d5280b"
+    },
+    {
+      "path": "scripts/run_e3.py",
+      "bytes": 24154,
+      "sha256": "ab33d6a05f8457724f6b79c8584688b405119af635781e78c631708142526af9"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_core/utils/geometry.py",
+      "bytes": 5885,
+      "sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496"
+    }
+  ],
+  "configuration": {
+    "path": "configs/e4b_reference_plane_audit.json",
+    "bytes": 10788,
+    "sha256": "646b0f5f575257c754430e3e5847ac950761ccb3693d3465525a512878590e80"
+  },
+  "registration": {
+    "path": "configs/e4b_protocol_registration.json",
+    "bytes": 19161,
+    "sha256": "ddfd7c8ad5fc616c214cfc37db2dadc7d019d4b0dc058b6824c2437a1dfd91d0"
+  },
+  "input_manifest": {
+    "path": "results/E4b_reference_plane_audit/input_manifest.json",
+    "bytes": 233129,
+    "sha256": "5dac35dab8c96d216e926ee9c1a26961867a52f43ffb417df2a6f9417ab4aabb"
+  },
+  "environment": {
+    "path": "results/E4b_reference_plane_audit/environment.json",
+    "bytes": 358,
+    "sha256": "f40205087c89289ae879077213d392f3fe085fde3dce77c86c4a688c1041a5c7"
+  },
+  "analysis_executed_before_seal": false,
+  "tests": {
+    "path": "results/E4b_reference_plane_audit/logs/tests.log",
+    "bytes": 1599,
+    "sha256": "ef4ddcd7aec3580c549b4dc2a8101355cc522d3e52a00e5ad2f4e012cef23c8f"
+  }
+}

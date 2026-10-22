@@ -1,0 +1,11 @@
+{
+  "registered_at_utc": "2026-10-22T03:58:49.875544+00:00",
+  "purpose": "Traceability for the already-defined strict shared_wrong_support criterion, in addition to unchanged fixed random figure IDs.",
+  "exposure": "Audit running; snapshot totals inspected, no candidate-specific GT-quality cases inspected.",
+  "selection": "Lowest five qualifying candidate IDs, earliest qualifying snapshot, lowest evidence KF; no replacement of fixed plot examples.",
+  "code": {
+    "path": "scripts/trace_e4b_support.py",
+    "bytes": 2195,
+    "sha256": "47f97f2459dda60595fb3c92e861b57974d5c88d2335ee921fba56ac72cf7c19"
+  }
+}

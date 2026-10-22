@@ -1,0 +1,452 @@
+{
+  "office1": {
+    "scene": "office1",
+    "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+    "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+    "counts": {
+      "shared_referenced": 587213,
+      "GT_auditable": 556325,
+      "reference_wrong": 328310,
+      "coherent_wrong": 244918,
+      "all_points_wrong": 235707
+    },
+    "group_counts": {
+      "shared_referenced": [
+        295381,
+        59,
+        0,
+        1038,
+        298152,
+        82,
+        0,
+        0,
+        135360,
+        11712,
+        1315,
+        3580
+      ],
+      "GT_auditable": [
+        279193,
+        38,
+        0,
+        1021,
+        287600,
+        56,
+        0,
+        0,
+        120750,
+        11121,
+        1252,
+        3500
+      ],
+      "reference_wrong": [
+        157150,
+        18,
+        0,
+        564,
+        147964,
+        42,
+        0,
+        0,
+        87486,
+        9847,
+        1193,
+        2405
+      ],
+      "coherent_wrong": [
+        108384,
+        10,
+        0,
+        240,
+        91633,
+        28,
+        0,
+        0,
+        81047,
+        4611,
+        902,
+        1283
+      ],
+      "all_points_wrong": [
+        103229,
+        10,
+        0,
+        221,
+        87978,
+        28,
+        0,
+        0,
+        78144,
+        4270,
+        869,
+        1226
+      ]
+    },
+    "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+    "source": {
+      "path": "results/E4b_reference_plane_audit/office1/patch_audit.parquet",
+      "bytes": 96543866,
+      "sha256": "5329c73225e0b6ece8869dbd60af666f11e4a8817841c02ade4cf96de7c24e82"
+    }
+  },
+  "office0": {
+    "scene": "office0",
+    "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+    "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+    "counts": {
+      "shared_referenced": 746217,
+      "GT_auditable": 693721,
+      "reference_wrong": 437997,
+      "coherent_wrong": 345000,
+      "all_points_wrong": 327092
+    },
+    "group_counts": {
+      "shared_referenced": [
+        324423,
+        9864,
+        410,
+        122,
+        323691,
+        1062,
+        0,
+        74,
+        259155,
+        13474,
+        9915,
+        6772
+      ],
+      "GT_auditable": [
+        298746,
+        9356,
+        375,
+        105,
+        306907,
+        848,
+        0,
+        59,
+        235742,
+        11947,
+        9355,
+        6401
+      ],
+      "reference_wrong": [
+        179760,
+        6899,
+        266,
+        74,
+        190482,
+        663,
+        0,
+        36,
+        145885,
+        9768,
+        6950,
+        4734
+      ],
+      "coherent_wrong": [
+        130797,
+        4691,
+        102,
+        31,
+        143171,
+        672,
+        0,
+        30,
+        117134,
+        7347,
+        6083,
+        4025
+      ],
+      "all_points_wrong": [
+        122039,
+        4594,
+        101,
+        25,
+        135051,
+        649,
+        0,
+        21,
+        111079,
+        6970,
+        5875,
+        3820
+      ]
+    },
+    "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+    "source": {
+      "path": "results/E4b_reference_plane_audit/office0/patch_audit.parquet",
+      "bytes": 141053427,
+      "sha256": "d0d88762c96817118a103610cf010f9789bdcefc5ea7834fe35170f3bc15b452"
+    }
+  },
+  "room0": {
+    "scene": "room0",
+    "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+    "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+    "counts": {
+      "shared_referenced": 419355,
+      "GT_auditable": 385500,
+      "reference_wrong": 134616,
+      "coherent_wrong": 50700,
+      "all_points_wrong": 44580
+    },
+    "group_counts": {
+      "shared_referenced": [
+        101969,
+        940,
+        0,
+        0,
+        348814,
+        643,
+        0,
+        27,
+        12642,
+        2092,
+        2696,
+        362
+      ],
+      "GT_auditable": [
+        80872,
+        692,
+        0,
+        0,
+        332229,
+        515,
+        0,
+        23,
+        7342,
+        1744,
+        2660,
+        356
+      ],
+      "reference_wrong": [
+        28552,
+        566,
+        0,
+        0,
+        114767,
+        475,
+        0,
+        23,
+        4853,
+        1183,
+        1037,
+        115
+      ],
+      "coherent_wrong": [
+        11446,
+        328,
+        0,
+        0,
+        42581,
+        420,
+        0,
+        23,
+        2691,
+        494,
+        211,
+        1
+      ],
+      "all_points_wrong": [
+        10550,
+        289,
+        0,
+        0,
+        37562,
+        416,
+        0,
+        23,
+        2288,
+        413,
+        139,
+        0
+      ]
+    },
+    "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+    "source": {
+      "path": "results/E4b_reference_plane_audit/room0/patch_audit.parquet",
+      "bytes": 75703718,
+      "sha256": "73bd96ab1ef70e4491f286d8c0b7bb076fb7075311577f69739f692e9bb63ae4"
+    }
+  },
+  "room1": {
+    "scene": "room1",
+    "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+    "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+    "counts": {
+      "shared_referenced": 455230,
+      "GT_auditable": 425470,
+      "reference_wrong": 224403,
+      "coherent_wrong": 191187,
+      "all_points_wrong": 182437
+    },
+    "group_counts": {
+      "shared_referenced": [
+        159797,
+        2560,
+        0,
+        0,
+        215692,
+        31883,
+        0,
+        0,
+        77265,
+        10083,
+        4823,
+        1585
+      ],
+      "GT_auditable": [
+        148149,
+        2322,
+        0,
+        0,
+        205734,
+        31494,
+        0,
+        0,
+        67845,
+        8794,
+        3885,
+        1495
+      ],
+      "reference_wrong": [
+        74362,
+        2234,
+        0,
+        0,
+        86857,
+        29360,
+        0,
+        0,
+        39366,
+        6355,
+        3732,
+        1458
+      ],
+      "coherent_wrong": [
+        73102,
+        1195,
+        0,
+        0,
+        64837,
+        26453,
+        0,
+        0,
+        32197,
+        5019,
+        3236,
+        1322
+      ],
+      "all_points_wrong": [
+        68653,
+        1189,
+        0,
+        0,
+        61258,
+        26371,
+        0,
+        0,
+        30492,
+        4859,
+        3190,
+        1305
+      ]
+    },
+    "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+    "source": {
+      "path": "results/E4b_reference_plane_audit/room1/patch_audit.parquet",
+      "bytes": 77264953,
+      "sha256": "46cf2b9dea048c34b3e0eb6f3ae01de704131ee6d7af70560dfc9bf52e4020b6"
+    }
+  },
+  "room2": {
+    "scene": "room2",
+    "unit": "distinct raw (evidence event, self branch 0, pixel) across all decision snapshots",
+    "aggregation": "A source patch qualifies if the condition holds in at least one snapshot; each condition and cohort association is accumulated at the same snapshot.",
+    "counts": {
+      "shared_referenced": 683191,
+      "GT_auditable": 624346,
+      "reference_wrong": 183815,
+      "coherent_wrong": 76173,
+      "all_points_wrong": 65330
+    },
+    "group_counts": {
+      "shared_referenced": [
+        114727,
+        770,
+        204,
+        9,
+        637923,
+        0,
+        0,
+        0,
+        9416,
+        2503,
+        6527,
+        6138
+      ],
+      "GT_auditable": [
+        81478,
+        738,
+        201,
+        9,
+        595956,
+        0,
+        0,
+        0,
+        4851,
+        2330,
+        6008,
+        5243
+      ],
+      "reference_wrong": [
+        35046,
+        413,
+        52,
+        2,
+        171264,
+        0,
+        0,
+        0,
+        3130,
+        841,
+        1442,
+        1634
+      ],
+      "coherent_wrong": [
+        10970,
+        69,
+        0,
+        0,
+        72534,
+        0,
+        0,
+        0,
+        342,
+        137,
+        185,
+        62
+      ],
+      "all_points_wrong": [
+        9112,
+        42,
+        0,
+        0,
+        62528,
+        0,
+        0,
+        0,
+        268,
+        85,
+        161,
+        47
+      ]
+    },
+    "group_order": "unknown, normal, bad; within each: both_miss, b6_only, both_reject, plane_only",
+    "source": {
+      "path": "results/E4b_reference_plane_audit/room2/patch_audit.parquet",
+      "bytes": 102196042,
+      "sha256": "b88521fbe6222f6a42172642ce069b74e57cd0b9ad983ce82b270dee78d0eb17"
+    }
+  }
+}

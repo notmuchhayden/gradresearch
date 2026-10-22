@@ -1,0 +1,139 @@
+{
+  "report": {
+    "path": "docs/experiments/E4b_reference_plane_audit_results.md",
+    "bytes": 17636,
+    "sha256": "bef9b93cce56ed20cdc3eb36e8310323b95b17f7b1babfbd3b75c421886ccba1"
+  },
+  "figure_manifest": {
+    "path": "results/E4b_reference_plane_audit/figures_manifest.json",
+    "bytes": 39355,
+    "sha256": "e8067f3f0e82d62f8606f43a36027fda2d5d457c5c2e8c1067f63881a1239e2c"
+  },
+  "supplemental_artifacts": [
+    {
+      "path": "results/E4b_reference_plane_audit/office1/source_patch_summary.json",
+      "bytes": 1615,
+      "sha256": "1fb0ee2aa991bd3794dfc91cedd95362dfe666c60705221574eaf633204653ac"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/office1/strict_support_examples.json",
+      "bytes": 2950,
+      "sha256": "7d541328e6577c91c1ebbdba00cf6225373007d68b7bfd1cae000e3414e353d7"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/office0/source_patch_summary.json",
+      "bytes": 1649,
+      "sha256": "8573d5d8a9e445300b2a03e1ab254d6692dfdbd6617f488f14fcffd0e36e3226"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/office0/strict_support_examples.json",
+      "bytes": 3039,
+      "sha256": "fbef497ea8fbff0cf59d6a8eff11d31d7e5eac2cf9a0c2850ae8306459ba82ff"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room0/source_patch_summary.json",
+      "bytes": 1589,
+      "sha256": "1fc1b49afb7c94d9f42b614482fc1061377929801239425e47d941272873c14e"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room0/strict_support_examples.json",
+      "bytes": 3001,
+      "sha256": "3abafced3e85c9c883e8b1aa4bbf0bdd317393f8bd8a141f8e9507c54c1a4c26"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room1/source_patch_summary.json",
+      "bytes": 1619,
+      "sha256": "17a0741acc731e833f52f033ea9f7519559ac230d38643bdf4a60bdd306b0f04"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room1/strict_support_examples.json",
+      "bytes": 2955,
+      "sha256": "0001611fada635984658f7c5302edfe84e5daf158fcd15f6129befb4d08c69d0"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room2/source_patch_summary.json",
+      "bytes": 1577,
+      "sha256": "bcf625394e1437dc4ee1e05b392f7156d0b9b622671ff7ea3795a638352f60ab"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room2/strict_support_examples.json",
+      "bytes": 2968,
+      "sha256": "9c91ec5c6e42742170a735e27e70ead25cce5e02ef996fd4952088307425597c"
+    }
+  ],
+  "reporting_code": [
+    {
+      "path": "scripts/report_e4b.py",
+      "bytes": 16785,
+      "sha256": "d561f491fb8c8b7db42afb85ebdf6b9609beeb9edc503512bb3ba89adbd42f55"
+    },
+    {
+      "path": "scripts/finalize_e4b.py",
+      "bytes": 8928,
+      "sha256": "366d7f6e0f343d69445f301271bce0140c073c563fcac63ff33b174e21141fe0"
+    },
+    {
+      "path": "scripts/summarize_e4b_patches.py",
+      "bytes": 2943,
+      "sha256": "1a86ea09c30f1133e1469f865c1a48b648136c2a5f06a83f8940878c9d77385a"
+    },
+    {
+      "path": "scripts/trace_e4b_support.py",
+      "bytes": 2195,
+      "sha256": "47f97f2459dda60595fb3c92e861b57974d5c88d2335ee921fba56ac72cf7c19"
+    }
+  ],
+  "reporting_registrations": [
+    {
+      "path": "configs/e4b_execution_notes.json",
+      "bytes": 832,
+      "sha256": "15a8c58258666ee2e8357f8bc20b11233b0cc6b9deb8f8de7d7e68a4bb7b629e"
+    },
+    {
+      "path": "configs/e4b_trace_registration.json",
+      "bytes": 619,
+      "sha256": "7f462e53d6d1c3eecd8872ed76a0b09fb2ad0bed442a847f809c4acdd77bb60d"
+    },
+    {
+      "path": "configs/e4b_postprocessing_registration.json",
+      "bytes": 513,
+      "sha256": "9e61fdf11ad2d2de85dacc35a8da5d74e731b2e319aa42141b3b04d53cbcae3f"
+    }
+  ],
+  "scene_summaries": [
+    {
+      "path": "results/E4b_reference_plane_audit/office1/summary.json",
+      "bytes": 23053,
+      "sha256": "f613d685a0ccf8993c7b782ea0e7c96366580c5c8c7959455285f77ce211d3d9"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/office0/summary.json",
+      "bytes": 23786,
+      "sha256": "a9333ef46f562158cb6e6f0feb14ccd93dc61da080c943d686d609408ca24103"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room0/summary.json",
+      "bytes": 22602,
+      "sha256": "bfd04645ddb83a46fb82240042f87fe8429634bb7fd1571c598ab2497709bbf2"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room1/summary.json",
+      "bytes": 23285,
+      "sha256": "c8dd1d68d9b6b98299e8b5760028879609abffc8e45c21f0b4b9d5d4b21b1e57"
+    },
+    {
+      "path": "results/E4b_reference_plane_audit/room2/summary.json",
+      "bytes": 22628,
+      "sha256": "09d67b9a7976edb3fd7201fe1cf594e0bf1c4bcf80c83999e8fffa918ab9a12e"
+    }
+  ],
+  "validation": {
+    "path": "results/E4b_reference_plane_audit/validation.json",
+    "bytes": 1037,
+    "sha256": "c726428fe777dafde8eb1ffe91d910a1b9d6ee187a0f92ee4d5e4cd817c99f9e"
+  },
+  "editorial_corrections": [
+    "Clarification timing described as before GT audit aggregation, after initial implementation. No measurements or criteria changed.",
+    "Human-readable Korean gate table labels and an explanation of the one-view versus two-view requirement; counts and method criteria unchanged."
+  ]
+}

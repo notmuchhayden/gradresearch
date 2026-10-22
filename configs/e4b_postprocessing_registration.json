@@ -1,0 +1,10 @@
+{
+  "registered_at_utc": "2026-10-22T04:05:37.682727+00:00",
+  "scope": "Reporting and integrity checks only; no changes to cohorts, reference criteria, score arithmetic, thresholds, oracle arms or sample IDs.",
+  "exposure": "Office1/room0/room2 aggregate audit results inspected; office0 and room1 audit still running. No new statistical success rule.",
+  "code": {
+    "path": "scripts/finalize_e4b.py",
+    "bytes": 8928,
+    "sha256": "366d7f6e0f343d69445f301271bce0140c073c563fcac63ff33b174e21141fe0"
+  }
+}

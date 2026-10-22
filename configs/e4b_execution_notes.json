@@ -1,0 +1,13 @@
+{
+  "recorded_at_utc": "2026-10-22T03:50:47.408277+00:00",
+  "analysis_exposure": "Factual reproduction running; no candidate-level GT audit, oracle or E4b reference-quality results computed yet.",
+  "purpose": "Clarify the preregistered unique-patch denominator: publish BOTH distinct snapshot/evidence/pixel counts and raw-source event/pixel counts across snapshots.",
+  "method": "Read the frozen patch_audit table, union raw source-patch IDs per condition with same-snapshot cohort bits. No scores, gates, cohorts, thresholds, sampling or oracle arms change.",
+  "supplemental_code": {
+    "path": "scripts/summarize_e4b_patches.py",
+    "bytes": 2943,
+    "sha256": "1a86ea09c30f1133e1469f865c1a48b648136c2a5f06a83f8940878c9d77385a"
+  },
+  "original_registration_preserved": true,
+  "original_execution_seal_preserved": true
+}

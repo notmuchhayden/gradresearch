@@ -2,11 +2,11 @@
 
 연속 RGB 영상의 3D Gaussian Map에서 다른 Keyframe의 기하 관측을 이용해 이상 Gaussian의 편입을 억제하는 석사학위 논문 연구 저장소입니다.
 
-현재는 **E4의 동일 Gaussian 수·파라미터 바이트 비교와 새 office1 평가까지 완료한 단계**입니다. 15개 방법, 자연 정책·점수 ranker·공통 fallback을 분리해 5장면에서 실행했습니다. 새 office1의 75% 유지 조건은 모두 **860,701개·42.683 MiB**이며, TSDF Chamfer는 plane 0.108354 m, median-depth 0.108530 m, 원래 B6 depth 0.105947 m였습니다.
+현재는 **E4b의 기준 평면 GT 정확도·판정 경로 진단까지 완료한 단계**입니다. 앞선 E4에서는 15개 방법, 자연 정책·점수 ranker·공통 fallback을 분리해 5장면에서 실행했습니다. 새 office1의 75% 유지 조건은 모두 **860,701개·42.683 MiB**이며, TSDF Chamfer는 plane 0.108354 m, median-depth 0.108530 m, 원래 B6 depth 0.105947 m였습니다.
 
 **E4 판정은 REVISE**입니다. plane의 median-depth 대비 개선은 0.162%로 사전 기준 2%에 미달했고 B6보다 기하 품질도 낮았습니다. RGB·coverage 비열등성은 통과했습니다. 자연 plane 정책은 bad 1,686개·normal 0개를 제거했지만 전체 bad recall은 0.587%로 낮았습니다. **E5/E6 효능 검증으로의 자동 진행은 보류**하고, 강한 depth 대조군과 제한된 관측 범위를 개발 단계에서 분석해야 합니다.
 
-다음 단계는 **[E4b 기준 평면·판정 경로 진단](docs/experiments/E4b_reference_plane_audit.md)**으로 설정했습니다. B6만 제거한 불량과 두 방식 모두 놓친 불량에서 기준 point cloud/평면의 GT 오차, 관측 자격·집계·veto를 조사하고 GT-plane oracle로 판정 변화를 확인합니다. **설계 등록 완료·미실행**이며, 이미 확인한 E4 데이터의 사후 진단입니다.
+**[E4b 결과](docs/experiments/E4b_reference_plane_audit_results.md):** office1에서 잘못된 기준 평면이 미제거 불량을 지지한 후보 **31,412개**를 확인했습니다. 그중 **31,132개는 B6도 놓친 후보**입니다. B6만 제거한 bad 9,874개 중 **9,867개(99.93%)**는 B6 최초 제거 시점에 plane의 유효 관측 두 개를 확보하지 못했습니다. GT-plane/veto 재계산은 bad 5,209개를 추가 제거했지만 normal 409개·unknown 10,713개도 추가 제거했습니다. 기준 오류와 관측 조건의 제약을 함께 확인한 **사후 진단**이며 효능 GO는 아닙니다. [등록 당시 설계](docs/experiments/E4b_reference_plane_audit.md)와 설정은 보존했습니다.
 
 - [E0: 기준선 재현·export·GT 평가](docs/experiments/E0_baseline_reproduction.md)
 - [E0b: 관측 출처·융합 ancestry·판단 시점 감사](docs/experiments/E0b_ancestry_causality_audit.md) — 180입력/5-KF 실행 완료. 반복 교차관측 가용성은 추가 확인이 필요합니다.
@@ -17,7 +17,7 @@
 - [E3b: 임시 편입 후 재검사·부분집합 보호 보완](docs/experiments/E3b_provisional_admission.md) — office0에서 보정·봉인, room0 회귀 및 새 room1에서 11개 정책 실행. room0 bad 823개·normal 6개, room1 bad 5,104개·normal 0개 제거. 유한 normal 보존 99.89% / 100%, 깊이 coverage 유지. room1 공통 후보에서 B6와 정밀도 100% 동률이고 제거량은 B6가 더 많아 **추가 우위 미확인·REVISE**로 기록했습니다.
 - [E3c: 동일 인과적 관측 조건의 depth/plane 비교](docs/experiments/E3c_matched_evidence.md) — 7개 정책, office0 개발 / room0·room1 회귀 / 새 room2 평가. room2 주 비교에서 plane bad recall +7.53%p, 두 방법 normal 오거부 0개. 대칭 support veto에서도 +7.50%p. **E4 비교 실험에 조건부 진입 가능**, 장면별 혼합 결과와 median-depth 근접 성능을 함께 기록했습니다. 63개 테스트·4장면 무결성 검사 PASS입니다.
 - [E4: 동일 수·바이트에서 RGB·TSDF·실제 compact 메모리 비교](docs/experiments/E4_matched_budget.md) — office0 개발 / room0·room1·room2 회귀 / 새 office1 평가. 525개 조합 중 461개 도달, 64개 도달 불가를 명시했습니다. 99%·90%·75% 유지 예산, B1~B8·median-depth·P1/P2/P3 및 무작위 3 seeds 포함. **REVISE: 기하 추가 개선 기준 미달**. 75개 테스트·CUDA/TSDF 합성 검사·5장면 무결성 검사 PASS입니다.
-- [E4b: 기준 평면의 GT 정확도·B6/plane 판정 경로 감사](docs/experiments/E4b_reference_plane_audit.md) — **설계 등록 완료·미실행**. office1 주 분석 / 기존 네 장면 보조 분석, natural 결정의 네 집합 전수 감사와 고정 gate·veto 분리 GT-plane oracle을 계획했습니다. 새 성능 검증이나 E4 판정 변경은 아닙니다.
+- [E4b: 기준 평면의 GT 정확도·B6/plane 판정 경로 감사 결과](docs/experiments/E4b_reference_plane_audit_results.md) — **실행 완료**. office1 주 분석 / 기존 네 장면 보조 분석. 5장면 원본 점수·최초 제거 정확 재현, 후보×시점×관측 116,265,669행 감사, 두 GT-plane oracle·pose/라벨 민감도·원본 patch 중복 제거·200개 고정 사례 포함. 13개 테스트·입력 1,155개와 결과 무결성 검사 PASS. E4 REVISE 유지입니다.
 
 ## 연구 계획
 
@@ -124,5 +124,5 @@ results/<experiment_id>/
 - [x] E3c: 동일 인과적 관측 조건 비교 및 새 room2 평가 (주 비교 PASS; 전반적 우위 미확인)
 - [x] E4 matched-budget 비교 및 새 office1 평가 (REVISE; E5/E6 효능 검증 진행 보류)
 - [x] E4b 기준 평면·판정 경로 진단 설계 등록
-- [ ] E4b 전수 감사·GT-plane oracle 실행 및 원인별 결과 보고
+- [x] E4b 전수 감사·GT-plane oracle 실행 및 원인별 결과 보고 (기준 오류·관측 제한 확인; E4 REVISE 유지)
 
