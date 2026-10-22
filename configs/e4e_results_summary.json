@@ -1,0 +1,48 @@
+{
+  "experiment": "E4e UAVScenes drone-domain diagnostic",
+  "decision": "INCONCLUSIVE_DEVELOPMENT_TRACKING_GATE",
+  "decision_date": "2026-10-22",
+  "reason": "HKairport01 B1 pose coverage was 228/240=95.0%, but the longest consecutive tracking interruption was 2.4s versus the preregistered <=2.0s gate. Primary evaluation scenes were not run.",
+  "dataset_manifest": "configs/e4e_dataset_manifest.json",
+  "input_split": "configs/e4e_input_split.json",
+  "window_amendment": "configs/e4e_window_amendment_A1.json",
+  "representativeness": "results/E4e_uav_dataset_pilot/representativeness.json",
+  "development": {
+    "scene": "HKairport01",
+    "run_manifest": "results/E4e_uav_dataset_pilot/development/HKairport01/baseline/run_manifest.json",
+    "mapping_rgb": 240,
+    "heldout_rgb": 60,
+    "raw_pair_exports": 240,
+    "all_pair_pointmap_rows_repeated": 51118080,
+    "final_keyframes": 21,
+    "registered_kf_self_raw_points": 4472832,
+    "preactive_gaussian_candidates": 4472832,
+    "native_active_gaussians": 3242219,
+    "native_filter_excluded": 1230613,
+    "pose_count": 228,
+    "pose_rate": 0.95,
+    "longest_tracking_break_seconds": 2.4,
+    "sim3_scale": 39.87265865151781,
+    "sim3_position_rmse_m": 2.3501742444354616,
+    "sim3_position_median_m": 2.134318951699121,
+    "sim3_position_p95_m": 3.6026390277938543,
+    "sim3_rotation_median_deg": 4.956561376612253,
+    "sim3_rotation_p95_deg": 5.695618692396748,
+    "sim3_rotation_max_deg": 6.401967811129607
+  },
+  "primary_evaluation": {
+    "scenes": ["AMtown01", "AMvalley01"],
+    "baseline_predictions_run": false,
+    "heldout_rgb_opened": false,
+    "outlier_labels_created": false
+  },
+  "metrics": {
+    "q_local": null,
+    "q_ext": null,
+    "r_T": null,
+    "T_repeat": null,
+    "lidar_depth_coverage": null,
+    "render_depth_coverage": null
+  },
+  "interpretation": "This development run does not support a conclusion that UAV outliers are scarce or prevalent. No E5/E6 or E4d progression is authorized by this result."
+}

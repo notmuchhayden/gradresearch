@@ -1,0 +1,18 @@
+{
+  "amendment": "A1",
+  "selected_by": "scripts/select_e4e_window.py",
+  "registered_rule": "On HKairport01 only, scan start offsets 0,20,40,... seconds relative to first RGB timestamp. Choose the earliest 60-second window for which at least 80% of its 240 mapping frames have cruise speed >=1.0 m/s and RTK horizontal max pairwise displacement is >=30m. Tie and timestamp rules remain unchanged.",
+  "selection": {
+    "start_offset_seconds": 60.0,
+    "end_offset_seconds": 120.0,
+    "mapping_count": 240,
+    "cruise_threshold_mps": 1.0,
+    "mapping_cruise_fraction": 0.9333333333333333,
+    "horizontal_max_pairwise_displacement_m": 124.53338133538938,
+    "rtk_nearest_time_error_p95_seconds": 0.006769657135009766,
+    "rgb0_timestamp": 1671606440.199954
+  },
+  "sequence_transfer": "Apply this same relative window to AMtown01 and AMvalley01; metadata gates only, no window reselection.",
+  "selected_at": "2026-10-22T07:04:33.633309+00:00",
+  "prediction_or_error_image_used": false
+}

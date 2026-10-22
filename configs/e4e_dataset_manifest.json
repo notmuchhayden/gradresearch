@@ -1,0 +1,65 @@
+{
+  "registered_at": "2026-10-22",
+  "dataset": "UAVScenes interval=1 CAM_LIDAR",
+  "source": "Official UAVScenes Google Drive folder linked by https://github.com/sijieaaa/UAVScenes",
+  "sequences": [
+    {
+      "name": "HKairport01",
+      "role": "development",
+      "google_drive_file_id": "1XNUFDYVoIRWNS2_-hV3jIlgk1ciyfxUM",
+      "archive": "data/E4e/archives/interval1_HKairport01.zip",
+      "expected_size_bytes": 9898021677
+    },
+    {
+      "name": "AMtown01",
+      "role": "primary_evaluation",
+      "google_drive_file_id": "1RBU4Aj4F3beFAh8o1Gmjr7dDbTSbLdXf",
+      "archive": "data/E4e/archives/interval1_AMtown01.zip",
+      "expected_size_bytes": 15217419198
+    },
+    {
+      "name": "AMvalley01",
+      "role": "primary_evaluation",
+      "google_drive_file_id": "1RTIVChLYu9GvSBuT_Pzxe703Gm1t_jO5",
+      "archive": "data/E4e/archives/interval1_AMvalley01.zip",
+      "expected_size_bytes": 12274794304
+    }
+  ],
+  "relative_rgb_window_seconds": [
+    60,
+    120
+  ],
+  "sampling": "5Hz grid, closest RGB within 0.05s, ties choose earlier timestamp, duplicate RGB prohibited, k mod 5 = 4 held out",
+  "state": "downloaded; byte counts and SHA-256 recorded; 5Hz timestamp split registered",
+  "heldout_predictions_or_images_inspected": false,
+  "archive_source": "official Google Drive folder linked by https://github.com/sijieaaa/UAVScenes",
+  "input_window_seconds": [
+    60,
+    120
+  ],
+  "downloaded_archives": [
+    {
+      "sequence": "AMtown01",
+      "file": "data/E4e/archives/interval1_AMtown01.zip",
+      "size_bytes": 15217419198,
+      "sha256": "5670cda374096f22804a8a907783a68d609a1247a52e04c97ad57f165a97006e",
+      "download_state": "downloaded"
+    },
+    {
+      "sequence": "AMvalley01",
+      "file": "data/E4e/archives/interval1_AMvalley01.zip",
+      "size_bytes": 12274794304,
+      "sha256": "d2812b5d901de3983d3d8e81e610cd55c48e571823672faee198086d21cd3c81",
+      "download_state": "downloaded"
+    },
+    {
+      "sequence": "HKairport01",
+      "file": "data/E4e/archives/interval1_HKairport01.zip",
+      "size_bytes": 9898021677,
+      "sha256": "ee059b678a4686b7578e4fa390927e6eac82a8e3d0e8836855b09bd4bd312336",
+      "download_state": "downloaded"
+    }
+  ],
+  "download_elapsed_seconds": 699.25,
+  "amendment": "configs/e4e_window_amendment_A1.json"
+}

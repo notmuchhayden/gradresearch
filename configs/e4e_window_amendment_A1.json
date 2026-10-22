@@ -1,0 +1,10 @@
+{
+  "amendment": "A1",
+  "registered_at": "2026-10-22",
+  "reason": "The registered HKairport01 [30s,90s) window had only 43.1% of mapping frames at or above 1.0 m/s horizontal speed in raw RTK positions, below the preregistered 80% cruise representation gate. No model prediction, exported map, or error image had been generated or inspected.",
+  "cruise_definition": "Use raw RTK easting/northing. Map each 5Hz mapping grid frame to its nearest RTK sample; frame cruise speed is the forward horizontal displacement to the next mapping-grid RTK sample divided by timestamp delta. Cruise means speed >=1.0 m/s.",
+  "window_selection": "On HKairport01 only, scan start offsets 0,20,40,... seconds relative to first RGB timestamp. Choose the earliest 60-second window for which at least 80% of its 240 mapping frames have cruise speed >=1.0 m/s and RTK horizontal max pairwise displacement is >=30m. Tie and timestamp rules remain unchanged.",
+  "transfer": "Apply the single selected relative window unchanged to AMtown01 and AMvalley01. Check each sequence's timestamp, movement, and cruise gates from metadata before opening any predictions. Any failed evaluation gate invalidates that scene; do not select a replacement based on model results.",
+  "not_changed": ["5Hz grid", "60-second duration", "closest RGB within 0.05s", "no duplicate RGB", "earlier timestamp wins ties", "k mod 5 = 4 held out", "all model and pruning settings"],
+  "heldout_or_prediction_results_inspected": false
+}

@@ -319,6 +319,8 @@ admit(candidate G, evidence available by now):
 | **E4: Matched budget — 실행 완료·REVISE** | B1~B8/P1~P3 및 matched/median depth, random 3 seeds | active/resident/52-byte DC buffer, PSNR/SSIM/LPIPS, GT-depth TSDF sampled accuracy/completion | 새 office1·75% 유지 주 비교에서 기하 추가 개선 기준 미달 (§8.5); E5/E6 효능 검증 진행 보류 |
 | **E4b: Reference-plane audit — 진단 완료** | 사실 재현·GT 기준 감사·GT-plane oracle | 기준 평면 오류와 관측/정책 제한 구분 | 사후 진단이며 효능 GO 판정 없음 (§8.6) |
 | **E4c: Surface-consistency pruning — 개발 성립 단계 INCONCLUSIVE** | 명시적 표면 지지·반복 충돌·paired depth | 5장면의 분리 관측 표면 분류와 보정 표본 | 두 개발 장면의 공통 audit S가 각각 0개여서 미보정·새 장면 효능 평가 보류 (§8.7) |
+| **E4d: Surface membership — 계획 초안·미실행** | center 소속·적극적 비소속·별도 audit 입력·강한 depth/kNN 대조군 | 평가/보정 성립 후 두 새 장면의 natural pruning 효용·지도 보존 | A0/A1/A2 및 새 장면 주 기준 통과 시 E5 진입 검토 (§8.8) |
+| **E4e: UAV dataset pilot — 개발 B1 실행·INCONCLUSIVE** | 실제 드론 B1, raw pointmap→pre-active→active 수, 추적·pose gate | pose 228/240 (95.0%)이나 연속 중단 2.4s로 제안 ≤2s gate 미통과. 두 평가 장면 미실행 (§8.9) | 고립 이상점 발생량은 미측정. primary eval/후속 자동 진입 없음; 추적 gate 원인 분석 또는 별도 사전 amendment 필요 |
 | **E5: Shared-bias synthetic stress** | E0/E2/P2, optional model-disjoint | 공통 depth offset, scale bias, pose error, occlusion, textureless | failure envelope 정량화 |
 | **E6: Causal online replay** | B8/P2/P3, DEFER vs BYPASS | real-time availability, queue age/size, time-to-admit, temporary holes | offline oracle 이득이 online에서도 유지되는지 |
 | **E7: Refinement sensitivity** | baseline/proposed + **동일** optimizer steps | map repair로 필터 이득이 소멸하는가, online budget | 추가 구현 가치 결정 |
@@ -326,7 +328,9 @@ admit(candidate G, evidence available by now):
 | **E9: Drone pilot/domain shift** | B1/B8/P2 | geometry failure taxonomy, held-out view, scale & rolling shutter | 결과는 정성 또는 독립 GT 가능 시 정량 |
 | **E10 (선택): correction/dedup** | matched controls | soft projection, keep-best, compact VRAM | E4 성공 후 선택 |
 
-**우선순위:** E0 → E0b → E1 → E2 → **E2b → Go/Revise/No-Go** → E3 → E3b → 동일 관측 자격 보완(E3c) → 조건 충족 후 E4 → E5/E6 → E7/E8/E9. 첫 8주를 목표로 강한 baseline 대비 가설의 효용 여부를 판단하되, 앞 단계 기준 미달 시 이후 효능 검증을 앞당기지 않고 일정을 재조정한다.
+**원래 우선순위:** E0 → E0b → E1 → E2 → **E2b → Go/Revise/No-Go** → E3 → E3b → 동일 관측 자격 보완(E3c) → 조건 충족 후 E4 → E5/E6 → E7/E8/E9. 첫 8주를 목표로 강한 baseline 대비 가설의 효용 여부를 판단하되, 앞 단계 기준 미달 시 이후 효능 검증을 앞당기지 않고 일정을 재조정한다.
+
+**현재 우선순위(2026-10-22 변경): E4e → 문제 존재·측정 가능성 판정 → 필요한 후속만 재계획.** 드론 광역 영상에 실제 제거 대상이 충분한지 다른 후속 실험보다 먼저 확인한다. E4d는 계획 상태로 대기하고 E5/E6 효능 검증 보류는 유지한다. E4e는 E9의 데이터·문제 존재 진단을 앞당긴 것이며 pruning 효용이나 E9 전체를 대체하지 않는다.
 
 ## 8.1. E2b: 반복 유효 관측 확보 및 임계값 전이 검증
 
@@ -457,6 +461,26 @@ office1의 audit O 중 13,908개는 후보 중심을 제외한 자기 출처 국
 
 ---
 
+## 8.8. E4d: 정점의 표면 소속 판정과 pruning 효용 검증
+
+**상태: 계획 초안·미구현·미실행(2026-10-22).** [E4d 계획](experiments/E4d_surface_membership_validation.md)은 E4c의 평가 대상 정의와 공통 관측 부족을 보완한다. Gaussian extent와 정점 중심의 표면 소속을 분리하고, 후보 제외 image/3D neighbourhood 평가기 합의로 보호 표면 P·확인된 이탈 T·불확실 U를 구분한다. 충돌만으로 T를 만들거나 fit 실패를 비소속으로 처리하지 않는다.
+
+policy에는 기존의 모든 source-disjoint KF 관측을 유지한다. 평가용 홀수 입력의 별도 replay와 pose/scale export를 먼저 검증하고, 최종 RGB test 11개 frame은 audit의 모든 입력에서도 제외한다. audit 정렬은 추정 camera trajectory만 사용하며 원래 policy map·GT에 대한 surface fitting을 하지 않는다. 이 경로와 평가 표본은 아직 확보된 결과가 아니다.
+
+E4d-A는 A0 소속 측정, A1 audit/공통 표본, A2 보정·개발·회귀 gate를 순서대로 확인한다. 이를 통과하면 정의·코드·임계값을 봉인하고 E4d-B의 미노출 두 장면 효용 평가를 연다. 두 새 장면 모두에서 실제 T 제거·P 보존·강한 대조군 대비 이득·지도 품질 한도를 충족해야 `GO_FOR_E5_REVIEW`로 기록한다. E5는 공동 편향 표면의 보존과 분리된 이탈점의 제거 한계를 검사하도록 별도 등록한다. 기존 E4/E4c 판정과 E5/E6의 현재 보류 상태는 소급 변경하지 않는다.
+
+---
+
+## 8.9. E4e: 드론 데이터 적용 및 표면 이상점 사전 조사
+
+**상태: 개발 B1 실행 완료·INCONCLUSIVE(2026-10-22).** [E4e 계획](experiments/E4e_uav_dataset_pilot.md)과 [실행 결과](experiments/E4e_uav_dataset_pilot_results.md)에 따라 UAVScenes interval=1 HKairport01·AMtown01·AMvalley01을 확보했다. 최초 HKairport01 [30s,90s) 구간은 RTK cruise 비율 gate(43.1%)에 실패해 예측 전 등록한 A1 결정 규칙으로 가장 이른 적격 [60s,120s) 구간을 세 장면에 적용했다.
+
+새 pruning 없이 E4 B1 가중치·refinement 0으로 HKairport01을 실행했다. 240개 raw pair export(51,118,080 all-pair rows), 최종 21 KF의 raw self-branch/pre-active 각 4,472,832점, native active 3,242,219개를 기록했다. pose 228/240(95.0%)은 최소 비율을 만족했지만 연속 중단 2.4초가 제안 ≤2초 gate를 넘어 개발 측정 자격은 INCONCLUSIVE다. 단일 Sim(3) 위치 잔차는 RMSE 2.35m, p95 3.60m였다. 내부 표면×실측 LiDAR 라벨과 coverage는 계산하지 않았다.
+
+개발 tracking gate 미통과 후 평가 결과에 맞춘 구간 재선정을 하지 않았고 AMtown01·AMvalley01 예측도 열지 않았다. 따라서 이상점이 드문지 충분한지, 또는 MASt3R 계열이 이를 억제하는지 결론 내리지 않는다. E4 REVISE, E4c INCONCLUSIVE, E5/E6 보류는 그대로 유지한다. 재개하려면 추적 중단 원인을 독립 진단하고, 구간·설정 변경 시 새 amendment/version을 예측 전에 등록해야 한다. E4e만으로 E5에 진입하지 않는다.
+
+---
+
 # 9. 평가 데이터·분할·출력 정의
 
 ## 9.1. 정량 평가 데이터
@@ -465,7 +489,7 @@ office1의 audit O 중 13,908개는 후보 중심을 제외한 자기 출처 국
 - **ScanNet++(우선 두 번째):** GT mesh/pose 및 실제 실내 RGB. GeoGS-A에서 4개 시퀀스 geometry를 평가하므로 별도 domain 확인. 각 capture 조건 및 제공되는 데이터 사용 범위를 확인.
 - **TUM RGB-D(보조):** RGB-only 입력으로 제한하며 depth는 validation/evaluation reference로만. trajectory-only 아닌 GT depth의 coverage/mask 점검.
 - **DTU(선택, offline geometry probe):** A의 2분 예산 실험 맥락에서 geometry-only 참고 가능. **순차 비디오 SLAM과 입력/목적이 달라 main online table에 섞지 않음.**
-- **드론 RGB:** 1~2개 짧은 scene을 1~4주차에 확보. GT mesh/depth가 없다면 정확도 수치 대신 held-out RGB, off-axis holes, 실패 유형, tracking diagnostics만 제시.
+- **드론 RGB(E4e 개발 gate 실행):** interval=1 입력 및 HKairport01 B1 기준선을 실행했으나 연속 추적 중단 2.4초로 개발 gate가 INCONCLUSIVE였다. 실측 LiDAR 이상점 평가와 AMtown01·AMvalley01 baseline은 미실행이다. [결과 보고서](experiments/E4e_uav_dataset_pilot_results.md)를 따른다. 이 결과로 이상점 부재나 드론 전체 일반화를 주장하지 않는다.
 
 ## 9.2. 엄격한 데이터 누설 관리
 
