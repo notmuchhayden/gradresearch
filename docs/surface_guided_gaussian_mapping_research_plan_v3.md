@@ -2,8 +2,8 @@
 
 ## 연구 설계·구현·실험 계획서 v3.0 — GeoGS-SLAM 2026 두 편 검토 반영
 
-- **개정일:** 2026-10-22 — E3c 동일 관측 조건 비교 및 새 room2 평가 반영
-- **상태:** E0/E0b/E1/E2/E2b/E3/E3b/E3c 결과는 개별 보고서에 기록했다. **E3c는 새 room2의 동일 집계 depth/plane 주 비교를 통과해 E4 비교 실험의 진행 조건을 충족했다. room0·room1은 depth에 유리하고 median-depth 대조군과는 근접해 전반적 plane 우위는 미확인이다. E4는 별도 사전 등록과 강한 대조군을 유지해 진행하며 아직 실행하지 않았다.** E3b의 REVISE 판정은 소급 변경하지 않는다.
+- **개정일:** 2026-10-22 — E4 동일 count·바이트·RGB·TSDF 및 새 office1 평가 반영
+- **상태:** E0/E0b/E1/E2/E2b/E3/E3b/E3c/E4 결과는 개별 보고서에 기록했다. **E4는 새 office1의 동일 예산에서 median-depth 대비 plane의 TSDF Chamfer 개선이 0.162%로 사전 기준 2%에 미달하고 원래 B6 depth보다 낮아 REVISE다. RGB·coverage 비열등성 및 자연 정책의 정상 보존은 통과했다. E5/E6 효능 검증의 자동 진행은 보류하고 강한 대조군·관측 범위를 개발 단계에서 분석한다.** 기존 E3b REVISE와 E3c의 조건부 E4 진입 판정은 소급 변경하지 않는다.
 - **상위 문서:** `surface_guided_gaussian_mapping_research_plan_v2.md` (2026-10-13)
 - **제출 계획서 제목(유지 가능):** 연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구
 - **작업용 제목(권장):** **연속 영상 기반 Feed-forward 3DGS에서 증거 신뢰도를 고려한 Gaussian 편입 및 보류 정책의 실험적 평가**
@@ -316,7 +316,7 @@ admit(candidate G, evidence available by now):
 | **E3: Admission decision — 실행 완료·REVISE** | B6/B7/B8/P1/P2/P3 | GT error, inlier retention, DEFER delay, policy support/unknown | hard DEFER의 coverage 손실 및 부분집합 오거부로 개선 주장 보류 (§8.2) |
 | **E3b: Provisional admission — 실행 완료·REVISE** | legacy vs 부분집합 보정 B6/B7/B8/P, 시간 지속성 | 정상 active/finite/common 보존, bad recall, 실제 맵 coverage, 새 room1 전이 | 보존·coverage 보완 통과, 공통 후보 B6 대비 추가 우위 미확인 (§8.3); E4 보류 |
 | **E3c: Matched causal evidence — 실행 완료·주 비교 PASS** | 같은 관측별 gate·support veto·집계·위험 보정의 depth/plane, median ablation | office0 개발, room0·room1 회귀, 새 room2 recall·정상 보존·실제 coverage | room2 공통 bad recall +7.53%p, normal 오거부 0개. E4 비교 실험 진입 조건 충족; median-depth 근접·장면별 혼합 결과 (§8.4) |
-| **E4: Matched budget** | B1~B8/P1~P3 | active/resident/sh/MB, PSNR/SSIM/LPIPS, TSDF accuracy/completion | 적어도 사전 정의된 효과 기준에서 비열등/개선 |
+| **E4: Matched budget — 실행 완료·REVISE** | B1~B8/P1~P3 및 matched/median depth, random 3 seeds | active/resident/52-byte DC buffer, PSNR/SSIM/LPIPS, GT-depth TSDF sampled accuracy/completion | 새 office1·75% 유지 주 비교에서 기하 추가 개선 기준 미달 (§8.5); E5/E6 효능 검증 진행 보류 |
 | **E5: Shared-bias synthetic stress** | E0/E2/P2, optional model-disjoint | 공통 depth offset, scale bias, pose error, occlusion, textureless | failure envelope 정량화 |
 | **E6: Causal online replay** | B8/P2/P3, DEFER vs BYPASS | real-time availability, queue age/size, time-to-admit, temporary holes | offline oracle 이득이 online에서도 유지되는지 |
 | **E7: Refinement sensitivity** | baseline/proposed + **동일** optimizer steps | map repair로 필터 이득이 소멸하는가, online budget | 추가 구현 가치 결정 |
@@ -387,7 +387,7 @@ room1 원본 active 후보는 **1,399,108개**다. P_safe의 유한 점수 후�
 
 ## 8.4. E3c: 동일 인과적 관측 조건의 depth/plane 비교
 
-**상태: 실행 완료(2026-10-22), 주 비교 PASS / E4 비교 실험에 조건부 진입 가능.** [E3c 보고서](experiments/E3c_matched_evidence.md)에 7개 정책·4장면의 결과와 봉인·재현 명령을 기록했다. office0만 개발에 사용했고 room0·room1은 기존에 살펴본 회귀 장면이다. 새 room2는 원본 1,000프레임/짝수 500입력에서 같은 RTX 5060·backbone·weights·seed·원본 filter로 **7-KF, 원본 active 999,190개**를 생성했다. 모든 admission 결정 후 room2 GT 라벨을 만들었다.
+**E3c 당시 판정: 실행 완료(2026-10-22), 주 비교 PASS / E4 비교 실험에 조건부 진입 가능.** 후속 E4 결과는 §8.5에 기록했다. [E3c 보고서](experiments/E3c_matched_evidence.md)에 7개 정책·4장면의 결과와 봉인·재현 명령을 기록했다. office0만 개발에 사용했고 room0·room1은 기존에 살펴본 회귀 장면이다. 새 room2는 원본 1,000프레임/짝수 500입력에서 같은 RTX 5060·backbone·weights·seed·원본 filter로 **7-KF, 원본 active 999,190개**를 생성했다. 모든 admission 결정 후 room2 GT 라벨을 만들었다.
 
 실제 KF 도착 시점마다 관측별 finite depth ∩ finite plane을 먼저 적용했다. 두 점수에 동일한 2개 이상 관측·두 번째 큰 값 집계·plane support veto·예측 radius 정규화·정상 보존 99% 개발 보정을 적용했다. 대칭 union veto도 함께 비교했다. 공통 gate는 PCA 신뢰성 판정을 사용하므로 PCA를 쓰지 않는 순수 depth baseline이라는 주장은 하지 않는다. 미관측은 즉시 렌더 가능한 provisional로 유지했다.
 
@@ -400,7 +400,28 @@ room1 원본 active 후보는 **1,399,108개**다. P_safe의 유한 점수 후�
 
 primary 공통 후보 70,621개 중 GT bad는 6,903개, normal은 44,904개다. 정밀도는 unknown을 제외하며 주 비교 두 방법 모두 100%다. P_shared의 전체 bad recall은 19.1805%로 공통 후보 recall과 구별한다. 사전 등록한 새 기준은 정상·coverage·깊이 오차·최소 제거 조건을 두 방법 모두 만족하면서 공통 bad recall ≥2%p 개선, 정밀도 손실 ≤0.1%p다. room2에서 **+7.5330%p**, union veto에서 **+7.5036%p**로 통과했다. E3b의 달성 불가능했던 정밀도 +2%p 기준을 소급 변경한 결과가 아니다.
 
-**효과는 장면과 집계에 의존한다.** room0·room1은 동일 조건의 depth가 더 많은 bad를 제거했다. room2에서도 median-depth는 plane과 **bad 13개 / 공통 recall 0.1883%p 차이**이므로 plane의 전반적 우위·추가 복잡성의 실용 가치를 입증한 것은 아니다. 다음 E4는 D_maskmedian·D_shared·P_shared를 모두 유지한 별도 matched-budget 비교로 진행할 수 있다. E4는 이번 실행에 포함하지 않았다. 63개 테스트와 모든 장면의 점수·실제 admission·봉인·입력·모델·지도 무결성 검사는 PASS다.
+**효과는 장면과 집계에 의존한다.** room0·room1은 동일 조건의 depth가 더 많은 bad를 제거했다. room2에서도 median-depth는 plane과 **bad 13개 / 공통 recall 0.1883%p 차이**이므로 plane의 전반적 우위·추가 복잡성의 실용 가치를 입증한 것은 아니다. E3c 당시에는 D_maskmedian·D_shared·P_shared를 모두 유지한 별도 E4 비교의 진입을 허용했다. 63개 테스트와 모든 장면의 점수·실제 admission·봉인·입력·모델·지도 무결성 검사는 PASS다.
+
+## 8.5. E4: 동일 count·파라미터 바이트에서 실제 RGB·기하·메모리 평가
+
+**상태: 실행 완료(2026-10-22), REVISE / E5·E6 효능 검증 진행 보류.** [E4 보고서](experiments/E4_matched_budget.md)에 15개 방법·5장면의 모든 arm과 사전 등록·봉인·코드·모델·입력·compact map·TSDF 무결성을 기록했다. office0 개발 / 기존 room0·room1·room2 회귀 / **새 office1**을 구분했다. office1은 같은 RTX 5060·backbone·weights·seed·설정으로 원본 1,000프레임/짝수 500입력에서 **8-KF·active 1,147,602개**를 생성했다. 모든 선택 후 GT 라벨을 만들었다.
+
+원본 B1, confidence, 무작위 3 seeds, voxel duplicate, self residual, B6 depth, B7 RGB, 정책별 causal DoG, E3c matched/median depth 및 P1 creation/P2 review/P3 RGB AND를 비교했다. 각 방법의 **natural / score ranker / policy+공통 fallback**을 분리하고 99%·90%·75% 유지 예산을 사전 고정했다. natural 생존이 부족하면 복구하지 않고, finite score가 부족하면 ranker 도달 불가로 기록했다. 525개 조합 중 461개 도달·64개 도달 불가이며 후자는 성공 판정에서 숨기지 않았다.
+
+주 비교는 새 office1·75% 유지·공통 fallback이다. 모든 방법이 **active=resident 860,701개**, float32 means/covariance/DC RGB/opacity의 **52 bytes/Gaussian, 42.683 MiB parameter buffer**로 같았다. 실제 CUDA compact 버퍼를 사용하고 allocator 증가·renderer peak·동기화 latency를 별도로 측정했다. 고정 pose·원본 degree-0 색상·refinement 0 step이다. 전체 저장 디렉터리·온라인 tracker VRAM·cost-matched 성능과 구별한다.
+
+| 새 office1 75% 정책 | PSNR ↑ | LPIPS ↓ | depth coverage | TSDF sampled Chamfer ↓ |
+|---|---:|---:|---:|---:|
+| median-depth | 18.6209 dB | 0.251221 | 95.8951% | 0.108530 m |
+| 동일 집계 depth | 18.6184 dB | 0.251057 | 95.8951% | 0.108449 m |
+| plane P2 | 18.6193 dB | 0.251615 | 95.8951% | 0.108354 m |
+| 원래 B6 depth | 18.7513 dB | 0.248052 | 95.8960% | 0.105947 m |
+
+봉인 기준은 자연 P2 정상 보존 ≥99%, 각 강한 대조군·random 3 seeds 대비 TSDF Chamfer ≥2% 상대 개선과 RGB·coverage·completion 비열등성이다. 자연 정상 보존과 비열등성 항목은 통과했으나 median-depth 대비 개선은 **0.1619%**, B6 대비는 **2.2723% 악화**여서 기하 추가 개선 기준을 충족하지 못했다. 기존 장면도 plane의 일관된 우위를 보이지 않았다.
+
+자연 P2는 **bad 1,686 / normal 0 / unknown 212개**를 제거했지만 전체 bad recall은 **0.5865%**다. 75% 지도에서 자연 제거는 1,898개, 공통 fallback의 추가 제거는 **285,003개**이므로 파라미터 25% 감소 전체를 plane admission의 효과로 귀속하지 않는다. 정상 보존·coverage 확보와 지도 전체 오류의 충분한 개선은 별개의 요구다.
+
+RGB는 사전 고정한 홀수 11개 temporal held-out view의 전체 영상 PSNR/SSIM/LPIPS다. 기하는 같은 짝수 20개 view에서 predicted/GT depth를 동일 TSDF(4 cm voxel, 12 cm truncation)로 융합한 **관측 영역 reference**에 대해 계산했다. mesh별 area-uniform 100,000개 seed 0 표면 샘플 거리이며 전체 장면 GT mesh·off-axis NVS·통계적 유의성의 입증은 아니다. 75개 테스트·CUDA parity/TSDF 합성 검사와 5장면 4,731개 고유 artifact 무결성 검사는 PASS다. 후속은 새 개발 가설과 평가 분할을 먼저 정하고 관측 범위·강한 depth 대조군을 분석하는 것이며, test 조건을 옮겨 이번 실행을 성공으로 소급하지 않는다.
 
 ---
 

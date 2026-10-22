@@ -1,0 +1,6 @@
+{
+  "torch": "2.13.0+cu132",
+  "cuda": "13.2",
+  "device": "NVIDIA GeForce RTX 5060",
+  "nvidia_smi": "name, memory.total [MiB], driver_version\nNVIDIA GeForce RTX 5060, 8151 MiB, 595.99.02\n"
+}

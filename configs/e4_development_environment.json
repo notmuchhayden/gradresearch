@@ -1,0 +1,11 @@
+{
+  "python": "3.11.17 (main, Oct 13 2026, 16:45:47) [GCC 15.3.0]",
+  "torch": "2.13.0+cu132",
+  "numpy": "2.4.6",
+  "open3d": "0.19.0",
+  "thread_env": {
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "2"
+  }
+}

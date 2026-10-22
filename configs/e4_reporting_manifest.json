@@ -1,0 +1,36 @@
+{
+  "code": [
+    {
+      "path": "scripts/report_e4.py",
+      "bytes": 26389,
+      "sha256": "2af3fb0b7d769a76f684a9c65bddedfeb5a35992087b34e724e038ad4a4a184b"
+    },
+    {
+      "path": "scripts/check_e4.py",
+      "bytes": 8688,
+      "sha256": "9ba5c1cfb0540a5fd016f3865202be44b31e2f04202a92b4f22a05c4d1d307fd"
+    }
+  ],
+  "report": {
+    "path": "docs/experiments/E4_matched_budget.md",
+    "bytes": 19499,
+    "sha256": "cb67608f2363c7fb96d502d5139b7a446470fb08a5bc00901b247777e11a292e"
+  },
+  "figures": [
+    {
+      "path": "docs/figures/E4/budget_tradeoff.png",
+      "bytes": 222062,
+      "sha256": "baa9ccc8819a80b4580a2dc3a28a7e18c5b5f1a9bfdd3143197ad36f0791a74f"
+    },
+    {
+      "path": "docs/figures/E4/fresh_primary.png",
+      "bytes": 206040,
+      "sha256": "46e757bf595414bbb05c87f6062711f3f459d00d94f1356bbed4179916ea034a"
+    },
+    {
+      "path": "docs/figures/E4/scene_tradeoff.png",
+      "bytes": 86275,
+      "sha256": "02600268698b7d56c3c17588dee7fd185cce557d7997017f75777a00f7a407b4"
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "tests": 75,
+  "cuda_compact_parity_tsdf_smoke": true,
+  "scenes": [
+    {
+      "scene": "office0",
+      "active": 1547680,
+      "arms": 105,
+      "reachable": 93,
+      "unreachable": 12,
+      "identical_count_and_parameter_bytes": true,
+      "original_filter_preserved": true,
+      "natural_policy_legacy_equivalence": true,
+      "metrics": {
+        "path": "results/E4_matched_budget/evaluation/office0/metrics.json",
+        "bytes": 1122870,
+        "sha256": "c6ce6cc908e0ae3c68755bac853c60b53ec1035bee9ba9ed0932a79cd4825f8f"
+      }
+    },
+    {
+      "scene": "room0",
+      "active": 1008252,
+      "arms": 105,
+      "reachable": 88,
+      "unreachable": 17,
+      "identical_count_and_parameter_bytes": true,
+      "original_filter_preserved": true,
+      "natural_policy_legacy_equivalence": true,
+      "metrics": {
+        "path": "results/E4_matched_budget/evaluation/room0/metrics.json",
+        "bytes": 1062942,
+        "sha256": "dd4302fffeb5d948968d2e7ff623ee31175174774b52093f4ae97d87b0b3026f"
+      }
+    },
+    {
+      "scene": "room1",
+      "active": 1399108,
+      "arms": 105,
+      "reachable": 90,
+      "unreachable": 15,
+      "identical_count_and_parameter_bytes": true,
+      "original_filter_preserved": true,
+      "natural_policy_legacy_equivalence": true,
+      "metrics": {
+        "path": "results/E4_matched_budget/evaluation/room1/metrics.json",
+        "bytes": 1087588,
+        "sha256": "b270943d6df9e8eee4bd0ed107f2fe0a77445326870158f71cde9a77329674a5"
+      }
+    },
+    {
+      "scene": "room2",
+      "active": 999190,
+      "arms": 105,
+      "reachable": 93,
+      "unreachable": 12,
+      "identical_count_and_parameter_bytes": true,
+      "original_filter_preserved": true,
+      "natural_policy_legacy_equivalence": true,
+      "metrics": {
+        "path": "results/E4_matched_budget/evaluation/room2/metrics.json",
+        "bytes": 1120874,
+        "sha256": "11065e12de406c2e32ce66c294fa1fb83afc46b19cc9278a6c25707ffa6df0fc"
+      }
+    },
+    {
+      "scene": "office1",
+      "active": 1147602,
+      "arms": 105,
+      "reachable": 97,
+      "unreachable": 8,
+      "identical_count_and_parameter_bytes": true,
+      "original_filter_preserved": true,
+      "natural_policy_legacy_equivalence": false,
+      "metrics": {
+        "path": "results/E4_matched_budget/evaluation/office1/metrics.json",
+        "bytes": 1169797,
+        "sha256": "5d58a8d6b6d38cb71afa7ee651a3075e08570c87893f66bd066a0f283ee10597"
+      }
+    }
+  ],
+  "unique_artifacts_hashed": 4731,
+  "fresh_evaluation_after_decisions": true,
+  "fresh_backbone_weights_unchanged": true,
+  "fresh_rgb_disjoint": true,
+  "pre_evaluation_amendment_preserved": true,
+  "new_development_thresholds_recomputed": true,
+  "seal": {
+    "path": "results/E4_matched_budget/seal.json",
+    "bytes": 23781,
+    "sha256": "2386e4ceb19df1d3f40f82799d15363717d0125c27053100d86b9518c0232564"
+  },
+  "verification_code": {
+    "path": "scripts/check_e4.py",
+    "bytes": 8688,
+    "sha256": "9ba5c1cfb0540a5fd016f3865202be44b31e2f04202a92b4f22a05c4d1d307fd"
+  }
+}

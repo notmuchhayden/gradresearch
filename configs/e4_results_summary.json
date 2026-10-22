@@ -1,0 +1,2316 @@
+{
+  "status": "REVISE",
+  "research_wide_go": false,
+  "go_for_e5_e6": false,
+  "fresh_scene": "office1",
+  "primary_arm": "policy_fallback",
+  "primary_keep_fraction": 0.75,
+  "natural_normal_retention": 1.0,
+  "natural_normal_pass": true,
+  "comparisons": {
+    "office0": {
+      "D_maskmedian": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": false
+        },
+        "failed": [
+          "chamfer_improvement",
+          "completion"
+        ],
+        "relative_chamfer_gain": -0.0141042069596416
+      },
+      "D_shared": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.004878823627097791
+      },
+      "B2_confidence": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.008946922362155892
+      },
+      "B4_voxel": {
+        "passed": true,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": true,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [],
+        "relative_chamfer_gain": 0.02249921618392259
+      },
+      "B6_depth": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.012908233767750613
+      },
+      "B7_rgb": {
+        "passed": true,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": true,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [],
+        "relative_chamfer_gain": 0.022885005898202027
+      },
+      "B8_dog": {
+        "passed": true,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": true,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [],
+        "relative_chamfer_gain": 0.021444892198377224
+      },
+      "B3_random_s0": {
+        "passed": true,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": true,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [],
+        "relative_chamfer_gain": 0.02249921618392259
+      },
+      "B3_random_s1": {
+        "passed": true,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": true,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [],
+        "relative_chamfer_gain": 0.02001485688492246
+      },
+      "B3_random_s2": {
+        "passed": true,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": true,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [],
+        "relative_chamfer_gain": 0.021227107504202498
+      }
+    },
+    "room0": {
+      "D_maskmedian": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0007330117705850467
+      },
+      "D_shared": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.0005977522648875959
+      },
+      "B2_confidence": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.0026916623733327766
+      },
+      "B4_voxel": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.010727852934747074
+      },
+      "B6_depth": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.0065922265820908795
+      },
+      "B7_rgb": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.011139627743741689
+      },
+      "B8_dog": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.004991694042572366
+      },
+      "B3_random_s0": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.010727852934747074
+      },
+      "B3_random_s1": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.010103295175798905
+      },
+      "B3_random_s2": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.008415038144621212
+      }
+    },
+    "room1": {
+      "D_maskmedian": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.00022754493431754622
+      },
+      "D_shared": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.002212461342315287
+      },
+      "B2_confidence": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.013605202951686376
+      },
+      "B4_voxel": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0023253473548025894
+      },
+      "B6_depth": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.007240374451767272
+      },
+      "B7_rgb": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0006877775696848388
+      },
+      "B8_dog": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.002729927026521632
+      },
+      "B3_random_s0": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0023253473548025894
+      },
+      "B3_random_s1": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.001672449270795909
+      },
+      "B3_random_s2": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 5.558845288250772e-05
+      }
+    },
+    "room2": {
+      "D_maskmedian": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.004991413582242652
+      },
+      "D_shared": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.001117350231703994
+      },
+      "B2_confidence": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0063487934419812
+      },
+      "B4_voxel": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.019229581068638556
+      },
+      "B6_depth": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.005372183261254731
+      },
+      "B7_rgb": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0182975267345796
+      },
+      "B8_dog": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.019300277451902895
+      },
+      "B3_random_s0": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.019229581068638556
+      },
+      "B3_random_s1": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.01893393379150255
+      },
+      "B3_random_s2": {
+        "passed": true,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": true,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [],
+        "relative_chamfer_gain": 0.021482954306439185
+      }
+    },
+    "office1": {
+      "D_maskmedian": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0016190306140094338
+      },
+      "D_shared": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0008688354051633865
+      },
+      "B2_confidence": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.0014639521159994064
+      },
+      "B4_voxel": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0020860255758517457
+      },
+      "B6_depth": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": -0.022722872086412275
+      },
+      "B7_rgb": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0005656031748616915
+      },
+      "B8_dog": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0013211260526001642
+      },
+      "B3_random_s0": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0020860255758517457
+      },
+      "B3_random_s1": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.0005227601832438486
+      },
+      "B3_random_s2": {
+        "passed": false,
+        "checks": {
+          "same_count": true,
+          "same_parameter_bytes": true,
+          "tsdf_valid": true,
+          "chamfer_improvement": false,
+          "psnr": true,
+          "ssim": true,
+          "lpips": true,
+          "coverage": true,
+          "completion": true
+        },
+        "failed": [
+          "chamfer_improvement"
+        ],
+        "relative_chamfer_gain": 0.00021963227243347705
+      }
+    }
+  },
+  "scenes": [
+    "office0",
+    "room0",
+    "room1",
+    "room2",
+    "office1"
+  ],
+  "pending": [],
+  "scope": "Fixed-pool, fixed-pose, no refinement. Shared-fallback results are not pure admission. TSDF reference is the observed GT-depth-derived surface; no full-scene mesh or off-axis NVS claim.",
+  "seal": {
+    "path": "results/E4_matched_budget/seal.json",
+    "bytes": 23781,
+    "sha256": "2386e4ceb19df1d3f40f82799d15363717d0125c27053100d86b9518c0232564"
+  },
+  "validation": {
+    "path": "results/E4_matched_budget/validation.json",
+    "bytes": 3102,
+    "sha256": "d579556cd76c3e076e8e6566cdf0337b1e0a5a3e1248a6a98a04928777a48c83"
+  },
+  "scene_metrics": {
+    "office0": {
+      "path": "results/E4_matched_budget/evaluation/office0/metrics.json",
+      "bytes": 1122870,
+      "sha256": "c6ce6cc908e0ae3c68755bac853c60b53ec1035bee9ba9ed0932a79cd4825f8f"
+    },
+    "room0": {
+      "path": "results/E4_matched_budget/evaluation/room0/metrics.json",
+      "bytes": 1062942,
+      "sha256": "dd4302fffeb5d948968d2e7ff623ee31175174774b52093f4ae97d87b0b3026f"
+    },
+    "room1": {
+      "path": "results/E4_matched_budget/evaluation/room1/metrics.json",
+      "bytes": 1087588,
+      "sha256": "b270943d6df9e8eee4bd0ed107f2fe0a77445326870158f71cde9a77329674a5"
+    },
+    "room2": {
+      "path": "results/E4_matched_budget/evaluation/room2/metrics.json",
+      "bytes": 1120874,
+      "sha256": "11065e12de406c2e32ce66c294fa1fb83afc46b19cc9278a6c25707ffa6df0fc"
+    },
+    "office1": {
+      "path": "results/E4_matched_budget/evaluation/office1/metrics.json",
+      "bytes": 1169797,
+      "sha256": "5d58a8d6b6d38cb71afa7ee651a3075e08570c87893f66bd066a0f283ee10597"
+    }
+  },
+  "fresh_primary": {
+    "P2_plane": {
+      "id": "P2_plane__policy_fallback__0.75",
+      "method": "P2_plane",
+      "arm": "policy_fallback",
+      "fraction": 0.75,
+      "seed": 0,
+      "reachable": true,
+      "target": 860701,
+      "selected": 860701,
+      "natural_rejections": 1898,
+      "fallback_rejections": 285003,
+      "score_only": false,
+      "unknown_removed": 254980,
+      "count": 860701,
+      "seal": {
+        "path": "results/E4_matched_budget/seal.json",
+        "bytes": 23781,
+        "sha256": "2386e4ceb19df1d3f40f82799d15363717d0125c27053100d86b9518c0232564"
+      },
+      "membership": {
+        "path": "results/E4_matched_budget/selection/office1/P2_plane__policy_fallback__0.75.npz",
+        "bytes": 123758,
+        "sha256": "bdcc29351651996591d57ec2d50f1e8918dd7df6c3f37a7e96902bcf21a8e56b"
+      },
+      "membership_sha256": "1cd4f5ff124cfcea9f80a5fa9b383974ab38c7c2d696c4d54bb13ec3142c29c0",
+      "all_label_modes": {
+        "creation": {
+          "candidates": 1147602,
+          "normal": 440127,
+          "bad": 287446,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 72653,
+          "normal_rejected": 109399,
+          "unknown_rejected": 104849,
+          "precision": 0.39907828532507195,
+          "bad_recall": 0.25275356066878646,
+          "normal_active_retention": 0.7514376532228197,
+          "finite_normal_retention": 0.7499304654181346,
+          "finite_normal": 43144,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "final_estimated": {
+          "candidates": 1147602,
+          "normal": 313564,
+          "bad": 483166,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 121303,
+          "normal_rejected": 77935,
+          "unknown_rejected": 87663,
+          "precision": 0.6088346600548088,
+          "bad_recall": 0.2510586423713589,
+          "normal_active_retention": 0.7514542485744538,
+          "finite_normal_retention": 0.7487483311081442,
+          "finite_normal": 11984,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "gt_anchor": {
+          "candidates": 1147602,
+          "normal": 562074,
+          "bad": 211563,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 53738,
+          "normal_rejected": 140033,
+          "unknown_rejected": 93130,
+          "precision": 0.2773273606473621,
+          "bad_recall": 0.2540047172709784,
+          "normal_active_retention": 0.7508637652693417,
+          "finite_normal_retention": 0.7513095879808157,
+          "finite_normal": 72351,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "cross_pose_consensus": {
+          "candidates": 1147602,
+          "normal": 362071,
+          "bad": 158038,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 40452,
+          "normal_rejected": 90059,
+          "unknown_rejected": 156390,
+          "precision": 0.3099508853659845,
+          "bad_recall": 0.2559637555524621,
+          "normal_active_retention": 0.7512670166900967,
+          "finite_normal_retention": 0.7509049945573754,
+          "finite_normal": 39503,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        }
+      },
+      "natural_classification": {
+        "candidates": 1147602,
+        "normal": 440127,
+        "bad": 287446,
+        "active": 860701,
+        "rejected": 286901,
+        "bad_rejected": 72653,
+        "normal_rejected": 109399,
+        "unknown_rejected": 104849,
+        "precision": 0.39907828532507195,
+        "bad_recall": 0.25275356066878646,
+        "normal_active_retention": 0.7514376532228197,
+        "finite_normal_retention": 0.7499304654181346,
+        "finite_normal": 43144,
+        "finite_candidates": 122792,
+        "provisional": 0,
+        "deferred": 0
+      },
+      "surface": {
+        "valid": true,
+        "accuracy_m": 0.1014311561142881,
+        "completion_m": 0.11527775214501147,
+        "chamfer_m": 0.10835445412964978,
+        "precision_5cm": 0.16407,
+        "completion_ratio_5cm": 0.14222,
+        "f1_5cm": 0.1523656364882954
+      },
+      "tsdf": {
+        "path": "results/E4_matched_budget/evaluation/office1/maps/1cd4f5ff124cfcea9f80a5fa9b383974ab38c7c2d696c4d54bb13ec3142c29c0_tsdf.ply",
+        "bytes": 905082,
+        "sha256": "f1a07ae1d1fe49cd19773a933a27618f27967aa013af48a990871617e9cd0898"
+      },
+      "timing": {
+        "render_median_ms": 1.6242750002675166,
+        "render_p95_ms": 1.6461007999168942,
+        "samples_ms": [
+          1.6185119998226583,
+          1.6242750002675166,
+          1.6177190000234987,
+          1.647133999995276,
+          1.6419679996033665
+        ],
+        "all_view_render_wall_s": 0.07934556599957432,
+        "lpips_wall_s": 0.015779487999679986,
+        "tsdf_cpu_wall_s": 0.059600674000193976
+      },
+      "memory": {
+        "actual_n_resident": 860701,
+        "parameter_tensor_bytes": 44756452,
+        "allocated_map_increment_bytes": 45933568,
+        "render_peak_allocated_bytes": 236961792,
+        "render_peak_reserved_bytes": 247463936,
+        "baseline_allocated_bytes": 43440128,
+        "metric_pipeline_peak_allocated_bytes": 258500096,
+        "physical_compaction": true
+      },
+      "frames": [
+        {
+          "frame": 1,
+          "coverage": 0.9377704233184586,
+          "correct_coverage": 0.030904553284414122,
+          "depth_l1_m": 0.13445883989334106,
+          "front_fraction": 0.9052246802392611,
+          "boundary_correct_coverage": 0.10885481420085648,
+          "interior_correct_coverage": 0.026880148343615164,
+          "bad_composited_weight": 0.7589978575706482,
+          "psnr_db": 16.140576039563676,
+          "ssim": 0.6665776371955872,
+          "lpips_alex": 0.33619827032089233
+        },
+        {
+          "frame": 101,
+          "coverage": 0.9571937201180021,
+          "correct_coverage": 0.11297005866196466,
+          "depth_l1_m": 0.1311747282743454,
+          "front_fraction": 0.8387643687904784,
+          "boundary_correct_coverage": 0.22888667662186826,
+          "interior_correct_coverage": 0.10265064512078936,
+          "bad_composited_weight": 0.673111617565155,
+          "psnr_db": 15.62759247869235,
+          "ssim": 0.5951708555221558,
+          "lpips_alex": 0.3134905993938446
+        },
+        {
+          "frame": 201,
+          "coverage": 0.9929198258439921,
+          "correct_coverage": 0.10620261234011963,
+          "depth_l1_m": 0.12694773077964783,
+          "front_fraction": 0.8838892129070761,
+          "boundary_correct_coverage": 0.18858560794044665,
+          "interior_correct_coverage": 0.099639020889927,
+          "bad_composited_weight": 0.6845707893371582,
+          "psnr_db": 19.10507064116628,
+          "ssim": 0.612679660320282,
+          "lpips_alex": 0.25724032521247864
+        },
+        {
+          "frame": 301,
+          "coverage": 0.9427079447967176,
+          "correct_coverage": 0.1779525957071649,
+          "depth_l1_m": 0.11385433375835419,
+          "front_fraction": 0.7624495608829812,
+          "boundary_correct_coverage": 0.1816935207404868,
+          "interior_correct_coverage": 0.17771657630637905,
+          "bad_composited_weight": 0.5560764074325562,
+          "psnr_db": 20.05503918379263,
+          "ssim": 0.6524874567985535,
+          "lpips_alex": 0.2508838474750519
+        },
+        {
+          "frame": 401,
+          "coverage": 0.9956393771701388,
+          "correct_coverage": 0.10169135199652778,
+          "depth_l1_m": 0.11928145587444305,
+          "front_fraction": 0.8879326714409722,
+          "boundary_correct_coverage": 0.18710484720758694,
+          "interior_correct_coverage": 0.09188641587032781,
+          "bad_composited_weight": 0.6597828269004822,
+          "psnr_db": 20.0470910991551,
+          "ssim": 0.6633474230766296,
+          "lpips_alex": 0.19949325919151306
+        },
+        {
+          "frame": 501,
+          "coverage": 0.9983723958333334,
+          "correct_coverage": 0.2579752604166667,
+          "depth_l1_m": 0.08915488421916962,
+          "front_fraction": 0.73779296875,
+          "boundary_correct_coverage": 0.20974626511738204,
+          "interior_correct_coverage": 0.26090115233560157,
+          "bad_composited_weight": 0.47613176703453064,
+          "psnr_db": 18.49067482345202,
+          "ssim": 0.693145215511322,
+          "lpips_alex": 0.22807011008262634
+        },
+        {
+          "frame": 601,
+          "coverage": 1.0,
+          "correct_coverage": 0.0993747117706101,
+          "depth_l1_m": 0.10612550377845764,
+          "front_fraction": 0.8986042915660689,
+          "boundary_correct_coverage": 0.17193234402425403,
+          "interior_correct_coverage": 0.09263404438251382,
+          "bad_composited_weight": 0.5519947409629822,
+          "psnr_db": 18.42242644891244,
+          "ssim": 0.665234386920929,
+          "lpips_alex": 0.21730491518974304
+        },
+        {
+          "frame": 701,
+          "coverage": 0.9999118381076388,
+          "correct_coverage": 0.0918240017361111,
+          "depth_l1_m": 0.11816038936376572,
+          "front_fraction": 0.9023030598958334,
+          "boundary_correct_coverage": 0.10140426681069403,
+          "interior_correct_coverage": 0.09131738664762584,
+          "bad_composited_weight": 0.7611863017082214,
+          "psnr_db": 23.93398582723698,
+          "ssim": 0.7094240188598633,
+          "lpips_alex": 0.17402851581573486
+        },
+        {
+          "frame": 801,
+          "coverage": 0.914794921875,
+          "correct_coverage": 0.07127549913194445,
+          "depth_l1_m": 0.13979949057102203,
+          "front_fraction": 0.8388943142361112,
+          "boundary_correct_coverage": 0.10545207005383997,
+          "interior_correct_coverage": 0.06706931613060466,
+          "bad_composited_weight": 0.7017301321029663,
+          "psnr_db": 16.633875564853064,
+          "ssim": 0.5363606810569763,
+          "lpips_alex": 0.31234970688819885
+        },
+        {
+          "frame": 901,
+          "coverage": 0.9842723147978596,
+          "correct_coverage": 0.08934735871194395,
+          "depth_l1_m": 0.11520588397979736,
+          "front_fraction": 0.8799297374649874,
+          "boundary_correct_coverage": 0.09272810427624056,
+          "interior_correct_coverage": 0.08913418071967757,
+          "bad_composited_weight": 0.6930602788925171,
+          "psnr_db": 21.021673139244783,
+          "ssim": 0.657132089138031,
+          "lpips_alex": 0.18713518977165222
+        },
+        {
+          "frame": 999,
+          "coverage": 0.8248794482085088,
+          "correct_coverage": 0.09431863652702327,
+          "depth_l1_m": 0.11500533670186996,
+          "front_fraction": 0.713307154435153,
+          "boundary_correct_coverage": 0.07972011929341592,
+          "interior_correct_coverage": 0.09523603572432585,
+          "bad_composited_weight": 0.5178384780883789,
+          "psnr_db": 15.334723964054193,
+          "ssim": 0.5183879733085632,
+          "lpips_alex": 0.29157528281211853
+        }
+      ],
+      "render": {
+        "coverage": 0.9589511100063319,
+        "correct_coverage": 0.11216696729859006,
+        "depth_l1_m": 0.11901532519947398,
+        "front_fraction": 0.8408265473280839,
+        "boundary_correct_coverage": 0.15055533057155193,
+        "interior_correct_coverage": 0.10864226567921706,
+        "bad_composited_weight": 0.6394982906905088,
+        "psnr_db": 18.619339019102142,
+        "ssim": 0.6336315816098993,
+        "lpips_alex": 0.2516154565594413
+      },
+      "map": {
+        "path": "results/E4_matched_budget/evaluation/office1/maps/1cd4f5ff124cfcea9f80a5fa9b383974ab38c7c2d696c4d54bb13ec3142c29c0.f32",
+        "bytes": 44756452,
+        "sha256": "91b661ee4b59efa1279ab05c748deb6ce24b64b6b8a4654fc41e8348e358fe36"
+      },
+      "wall_seconds": 0.8270607649997146
+    },
+    "D_maskmedian": {
+      "id": "D_maskmedian__policy_fallback__0.75",
+      "method": "D_maskmedian",
+      "arm": "policy_fallback",
+      "fraction": 0.75,
+      "seed": 0,
+      "reachable": true,
+      "target": 860701,
+      "selected": 860701,
+      "natural_rejections": 1181,
+      "fallback_rejections": 285720,
+      "score_only": false,
+      "unknown_removed": 255443,
+      "count": 860701,
+      "seal": {
+        "path": "results/E4_matched_budget/seal.json",
+        "bytes": 23781,
+        "sha256": "2386e4ceb19df1d3f40f82799d15363717d0125c27053100d86b9518c0232564"
+      },
+      "membership": {
+        "path": "results/E4_matched_budget/selection/office1/D_maskmedian__policy_fallback__0.75.npz",
+        "bytes": 123809,
+        "sha256": "d10a1b01e67c84dea86453d789059cceed5a90366531cc13901390ceb37acd0c"
+      },
+      "membership_sha256": "d336d4c334dced25be7474e7f7790960303adc8afb44689d94964315b253d61c",
+      "all_label_modes": {
+        "creation": {
+          "candidates": 1147602,
+          "normal": 440127,
+          "bad": 287446,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 72435,
+          "normal_rejected": 109589,
+          "unknown_rejected": 104877,
+          "precision": 0.3979420296224674,
+          "bad_recall": 0.2519951573512938,
+          "normal_active_retention": 0.7510059596434665,
+          "finite_normal_retention": 0.7496059707027628,
+          "finite_normal": 43144,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "final_estimated": {
+          "candidates": 1147602,
+          "normal": 313564,
+          "bad": 483166,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 121021,
+          "normal_rejected": 78069,
+          "unknown_rejected": 87811,
+          "precision": 0.6078708121954894,
+          "bad_recall": 0.2504749920317241,
+          "normal_active_retention": 0.7510269035986274,
+          "finite_normal_retention": 0.7486648865153538,
+          "finite_normal": 11984,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "gt_anchor": {
+          "candidates": 1147602,
+          "normal": 562074,
+          "bad": 211563,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 53351,
+          "normal_rejected": 140278,
+          "unknown_rejected": 93272,
+          "precision": 0.2755320742244189,
+          "bad_recall": 0.2521754749176368,
+          "normal_active_retention": 0.7504278796030416,
+          "finite_normal_retention": 0.7509916932730716,
+          "finite_normal": 72351,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "cross_pose_consensus": {
+          "candidates": 1147602,
+          "normal": 362071,
+          "bad": 158038,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 40163,
+          "normal_rejected": 90209,
+          "unknown_rejected": 156529,
+          "precision": 0.30806461510140215,
+          "bad_recall": 0.2541350814361103,
+          "normal_active_retention": 0.7508527333036891,
+          "finite_normal_retention": 0.7505759056274207,
+          "finite_normal": 39503,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        }
+      },
+      "natural_classification": {
+        "candidates": 1147602,
+        "normal": 440127,
+        "bad": 287446,
+        "active": 860701,
+        "rejected": 286901,
+        "bad_rejected": 72435,
+        "normal_rejected": 109589,
+        "unknown_rejected": 104877,
+        "precision": 0.3979420296224674,
+        "bad_recall": 0.2519951573512938,
+        "normal_active_retention": 0.7510059596434665,
+        "finite_normal_retention": 0.7496059707027628,
+        "finite_normal": 43144,
+        "finite_candidates": 122792,
+        "provisional": 0,
+        "deferred": 0
+      },
+      "surface": {
+        "valid": true,
+        "accuracy_m": 0.10128807522380816,
+        "completion_m": 0.11577226036389505,
+        "chamfer_m": 0.1085301677938516,
+        "precision_5cm": 0.16449,
+        "completion_ratio_5cm": 0.14248,
+        "f1_5cm": 0.1526959325015474
+      },
+      "tsdf": {
+        "path": "results/E4_matched_budget/evaluation/office1/maps/d336d4c334dced25be7474e7f7790960303adc8afb44689d94964315b253d61c_tsdf.ply",
+        "bytes": 904796,
+        "sha256": "e1cb41831f32ab92ab4760e1c80692f9cc881420c5b577b2a3c8a969f46ccc82"
+      },
+      "timing": {
+        "render_median_ms": 1.6103250000014668,
+        "render_p95_ms": 1.6165556000487413,
+        "samples_ms": [
+          1.6113860001496505,
+          1.617848000023514,
+          1.6016810000110127,
+          1.597143000253709,
+          1.6103250000014668
+        ],
+        "all_view_render_wall_s": 0.07864389799942728,
+        "lpips_wall_s": 0.01566400499905285,
+        "tsdf_cpu_wall_s": 0.058812813999793434
+      },
+      "memory": {
+        "actual_n_resident": 860701,
+        "parameter_tensor_bytes": 44756452,
+        "allocated_map_increment_bytes": 45933568,
+        "render_peak_allocated_bytes": 236977664,
+        "render_peak_reserved_bytes": 247463936,
+        "baseline_allocated_bytes": 43440128,
+        "metric_pipeline_peak_allocated_bytes": 258513920,
+        "physical_compaction": true
+      },
+      "frames": [
+        {
+          "frame": 1,
+          "coverage": 0.9377704233184586,
+          "correct_coverage": 0.030904553284414122,
+          "depth_l1_m": 0.13445305824279785,
+          "front_fraction": 0.9052246802392611,
+          "boundary_correct_coverage": 0.10885481420085648,
+          "interior_correct_coverage": 0.026880148343615164,
+          "bad_composited_weight": 0.7589446306228638,
+          "psnr_db": 16.140598659015964,
+          "ssim": 0.6665145754814148,
+          "lpips_alex": 0.3364750146865845
+        },
+        {
+          "frame": 101,
+          "coverage": 0.9571937201180021,
+          "correct_coverage": 0.11252246448068902,
+          "depth_l1_m": 0.13124875724315643,
+          "front_fraction": 0.839211962971754,
+          "boundary_correct_coverage": 0.22440683590509375,
+          "interior_correct_coverage": 0.1025620194828694,
+          "bad_composited_weight": 0.67417973279953,
+          "psnr_db": 15.628688328566989,
+          "ssim": 0.5961124897003174,
+          "lpips_alex": 0.31301388144493103
+        },
+        {
+          "frame": 201,
+          "coverage": 0.9929198258439921,
+          "correct_coverage": 0.10542270809879692,
+          "depth_l1_m": 0.12705077230930328,
+          "front_fraction": 0.8846691171483988,
+          "boundary_correct_coverage": 0.18435805532579727,
+          "interior_correct_coverage": 0.09913379657765443,
+          "bad_composited_weight": 0.6860635280609131,
+          "psnr_db": 19.108843001023924,
+          "ssim": 0.6129720211029053,
+          "lpips_alex": 0.2560887336730957
+        },
+        {
+          "frame": 301,
+          "coverage": 0.9427079447967176,
+          "correct_coverage": 0.1779051235970296,
+          "depth_l1_m": 0.1138056144118309,
+          "front_fraction": 0.7624970329931166,
+          "boundary_correct_coverage": 0.18043652154039538,
+          "interior_correct_coverage": 0.17774541469604338,
+          "bad_composited_weight": 0.5576291084289551,
+          "psnr_db": 20.07067448544923,
+          "ssim": 0.6548216342926025,
+          "lpips_alex": 0.2503913938999176
+        },
+        {
+          "frame": 401,
+          "coverage": 0.9956393771701388,
+          "correct_coverage": 0.1015353732638889,
+          "depth_l1_m": 0.11922777444124222,
+          "front_fraction": 0.8880886501736112,
+          "boundary_correct_coverage": 0.18710484720758694,
+          "interior_correct_coverage": 0.0917125317527519,
+          "bad_composited_weight": 0.660837709903717,
+          "psnr_db": 20.043174181011235,
+          "ssim": 0.6633755564689636,
+          "lpips_alex": 0.19926832616329193
+        },
+        {
+          "frame": 501,
+          "coverage": 0.9983723958333334,
+          "correct_coverage": 0.2574869791666667,
+          "depth_l1_m": 0.08907435089349747,
+          "front_fraction": 0.73828125,
+          "boundary_correct_coverage": 0.20974626511738204,
+          "interior_correct_coverage": 0.26038324869445123,
+          "bad_composited_weight": 0.4778392016887665,
+          "psnr_db": 18.506800034067737,
+          "ssim": 0.6935861110687256,
+          "lpips_alex": 0.228007972240448
+        },
+        {
+          "frame": 601,
+          "coverage": 1.0,
+          "correct_coverage": 0.09873043431082658,
+          "depth_l1_m": 0.10607290267944336,
+          "front_fraction": 0.8992485690258525,
+          "boundary_correct_coverage": 0.17185256103398755,
+          "interior_correct_coverage": 0.0919373248936391,
+          "bad_composited_weight": 0.5542703866958618,
+          "psnr_db": 18.414950198582606,
+          "ssim": 0.6650621294975281,
+          "lpips_alex": 0.21707655489444733
+        },
+        {
+          "frame": 701,
+          "coverage": 0.9999118381076388,
+          "correct_coverage": 0.0918307834201389,
+          "depth_l1_m": 0.1181449145078659,
+          "front_fraction": 0.9022962782118056,
+          "boundary_correct_coverage": 0.10140426681069403,
+          "interior_correct_coverage": 0.09132452695465905,
+          "bad_composited_weight": 0.7611555457115173,
+          "psnr_db": 23.930279993492732,
+          "ssim": 0.7093403935432434,
+          "lpips_alex": 0.17451810836791992
+        },
+        {
+          "frame": 801,
+          "coverage": 0.914794921875,
+          "correct_coverage": 0.07033284505208333,
+          "depth_l1_m": 0.1400730162858963,
+          "front_fraction": 0.8398369683159722,
+          "boundary_correct_coverage": 0.10545207005383997,
+          "interior_correct_coverage": 0.06601064761571095,
+          "bad_composited_weight": 0.7049931287765503,
+          "psnr_db": 16.629013704435962,
+          "ssim": 0.5344014763832092,
+          "lpips_alex": 0.3099012076854706
+        },
+        {
+          "frame": 901,
+          "coverage": 0.9842723147978596,
+          "correct_coverage": 0.0893744871038407,
+          "depth_l1_m": 0.1152033805847168,
+          "front_fraction": 0.8799026090730907,
+          "boundary_correct_coverage": 0.09272810427624056,
+          "interior_correct_coverage": 0.08916301973309493,
+          "bad_composited_weight": 0.6930593252182007,
+          "psnr_db": 21.021676721445978,
+          "ssim": 0.6571144461631775,
+          "lpips_alex": 0.18712297081947327
+        },
+        {
+          "frame": 999,
+          "coverage": 0.8248794482085088,
+          "correct_coverage": 0.09431863652702327,
+          "depth_l1_m": 0.11500246077775955,
+          "front_fraction": 0.713307154435153,
+          "boundary_correct_coverage": 0.07972011929341592,
+          "interior_correct_coverage": 0.09523603572432585,
+          "bad_composited_weight": 0.517799437046051,
+          "psnr_db": 15.334730595350086,
+          "ssim": 0.5183866024017334,
+          "lpips_alex": 0.2915627360343933
+        }
+      ],
+      "render": {
+        "coverage": 0.9589511100063319,
+        "correct_coverage": 0.11185130802776344,
+        "depth_l1_m": 0.11903245476159183,
+        "front_fraction": 0.8411422065989105,
+        "boundary_correct_coverage": 0.1496422237059354,
+        "interior_correct_coverage": 0.10837170131534686,
+        "bad_composited_weight": 0.6406156122684479,
+        "psnr_db": 18.620857263858404,
+        "ssim": 0.6337897669185292,
+        "lpips_alex": 0.25122062726454303
+      },
+      "map": {
+        "path": "results/E4_matched_budget/evaluation/office1/maps/d336d4c334dced25be7474e7f7790960303adc8afb44689d94964315b253d61c.f32",
+        "bytes": 44756452,
+        "sha256": "c46765bb13da877a5652da19ea136c6ca787cec0f2521f56d6f93030b703b781"
+      },
+      "wall_seconds": 0.8218048860003364
+    },
+    "D_shared": {
+      "id": "D_shared__policy_fallback__0.75",
+      "method": "D_shared",
+      "arm": "policy_fallback",
+      "fraction": 0.75,
+      "seed": 0,
+      "reachable": true,
+      "target": 860701,
+      "selected": 860701,
+      "natural_rejections": 1056,
+      "fallback_rejections": 285845,
+      "score_only": false,
+      "unknown_removed": 255523,
+      "count": 860701,
+      "seal": {
+        "path": "results/E4_matched_budget/seal.json",
+        "bytes": 23781,
+        "sha256": "2386e4ceb19df1d3f40f82799d15363717d0125c27053100d86b9518c0232564"
+      },
+      "membership": {
+        "path": "results/E4_matched_budget/selection/office1/D_shared__policy_fallback__0.75.npz",
+        "bytes": 123825,
+        "sha256": "6ba44d15f2c74c1397924fd52acdf763145f9953b81657afe9d91ba19d00846d"
+      },
+      "membership_sha256": "dd5fa2e850c37734d9e8a539d92d9476a591a92405725f1ef6e6512db332ad41",
+      "all_label_modes": {
+        "creation": {
+          "candidates": 1147602,
+          "normal": 440127,
+          "bad": 287446,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 72367,
+          "normal_rejected": 109623,
+          "unknown_rejected": 104911,
+          "precision": 0.39764272762239683,
+          "bad_recall": 0.2517585911788649,
+          "normal_active_retention": 0.750928709213477,
+          "finite_normal_retention": 0.7495364361208975,
+          "finite_normal": 43144,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "final_estimated": {
+          "candidates": 1147602,
+          "normal": 313564,
+          "bad": 483166,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 120969,
+          "normal_rejected": 78092,
+          "unknown_rejected": 87840,
+          "precision": 0.6076981427803537,
+          "bad_recall": 0.25036736856484104,
+          "normal_active_retention": 0.7509535533415825,
+          "finite_normal_retention": 0.7485814419225634,
+          "finite_normal": 11984,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "gt_anchor": {
+          "candidates": 1147602,
+          "normal": 562074,
+          "bad": 211563,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 53273,
+          "normal_rejected": 140330,
+          "unknown_rejected": 93298,
+          "precision": 0.2751661906065505,
+          "bad_recall": 0.2518067904123122,
+          "normal_active_retention": 0.7503353650942759,
+          "finite_normal_retention": 0.7508396566737157,
+          "finite_normal": 72351,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "cross_pose_consensus": {
+          "candidates": 1147602,
+          "normal": 362071,
+          "bad": 158038,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 40081,
+          "normal_rejected": 90237,
+          "unknown_rejected": 156583,
+          "precision": 0.3075630381067849,
+          "bad_recall": 0.2536162188840659,
+          "normal_active_retention": 0.750775400404893,
+          "finite_normal_retention": 0.7504999620282004,
+          "finite_normal": 39503,
+          "finite_candidates": 122792,
+          "provisional": 0,
+          "deferred": 0
+        }
+      },
+      "natural_classification": {
+        "candidates": 1147602,
+        "normal": 440127,
+        "bad": 287446,
+        "active": 860701,
+        "rejected": 286901,
+        "bad_rejected": 72367,
+        "normal_rejected": 109623,
+        "unknown_rejected": 104911,
+        "precision": 0.39764272762239683,
+        "bad_recall": 0.2517585911788649,
+        "normal_active_retention": 0.750928709213477,
+        "finite_normal_retention": 0.7495364361208975,
+        "finite_normal": 43144,
+        "finite_candidates": 122792,
+        "provisional": 0,
+        "deferred": 0
+      },
+      "surface": {
+        "valid": true,
+        "accuracy_m": 0.10135904522112629,
+        "completion_m": 0.11553831114066672,
+        "chamfer_m": 0.10844867818089651,
+        "precision_5cm": 0.16473,
+        "completion_ratio_5cm": 0.14238,
+        "f1_5cm": 0.15274173683696393
+      },
+      "tsdf": {
+        "path": "results/E4_matched_budget/evaluation/office1/maps/dd5fa2e850c37734d9e8a539d92d9476a591a92405725f1ef6e6512db332ad41_tsdf.ply",
+        "bytes": 904425,
+        "sha256": "19d5f4a7342dc78d9de848370a16b9ee62bdcabeef4eb3502da6f9098dadcaea"
+      },
+      "timing": {
+        "render_median_ms": 1.6097109996735526,
+        "render_p95_ms": 1.6342166001777514,
+        "samples_ms": [
+          1.606718000402907,
+          1.6349330003322393,
+          1.6097109996735526,
+          1.6043430000536318,
+          1.6313509995597997
+        ],
+        "all_view_render_wall_s": 0.07953953899868793,
+        "lpips_wall_s": 0.01593492299934951,
+        "tsdf_cpu_wall_s": 0.060027954000361206
+      },
+      "memory": {
+        "actual_n_resident": 860701,
+        "parameter_tensor_bytes": 44756452,
+        "allocated_map_increment_bytes": 45933568,
+        "render_peak_allocated_bytes": 236986880,
+        "render_peak_reserved_bytes": 247463936,
+        "baseline_allocated_bytes": 43440128,
+        "metric_pipeline_peak_allocated_bytes": 258519552,
+        "physical_compaction": true
+      },
+      "frames": [
+        {
+          "frame": 1,
+          "coverage": 0.9377704233184586,
+          "correct_coverage": 0.030904553284414122,
+          "depth_l1_m": 0.13445216417312622,
+          "front_fraction": 0.9052246802392611,
+          "boundary_correct_coverage": 0.10885481420085648,
+          "interior_correct_coverage": 0.026880148343615164,
+          "bad_composited_weight": 0.7589377164840698,
+          "psnr_db": 16.1405966631772,
+          "ssim": 0.6665112972259521,
+          "lpips_alex": 0.3364745080471039
+        },
+        {
+          "frame": 101,
+          "coverage": 0.9571937201180021,
+          "correct_coverage": 0.11254959140076634,
+          "depth_l1_m": 0.13124768435955048,
+          "front_fraction": 0.8391848360516768,
+          "boundary_correct_coverage": 0.22440683590509375,
+          "interior_correct_coverage": 0.10259156136217605,
+          "bad_composited_weight": 0.67417311668396,
+          "psnr_db": 15.628675024172354,
+          "ssim": 0.5961135029792786,
+          "lpips_alex": 0.3129722476005554
+        },
+        {
+          "frame": 201,
+          "coverage": 0.9929198258439921,
+          "correct_coverage": 0.10542948987480842,
+          "depth_l1_m": 0.12704996764659882,
+          "front_fraction": 0.8846623353723874,
+          "boundary_correct_coverage": 0.18435805532579727,
+          "interior_correct_coverage": 0.09914111866913665,
+          "bad_composited_weight": 0.6860512495040894,
+          "psnr_db": 19.10882685877596,
+          "ssim": 0.6129669547080994,
+          "lpips_alex": 0.2560778558254242
+        },
+        {
+          "frame": 301,
+          "coverage": 0.9427079447967176,
+          "correct_coverage": 0.17789834186701028,
+          "depth_l1_m": 0.11395318061113358,
+          "front_fraction": 0.7625038147231359,
+          "boundary_correct_coverage": 0.18043652154039538,
+          "interior_correct_coverage": 0.17773820509862728,
+          "bad_composited_weight": 0.5577958226203918,
+          "psnr_db": 20.065077621200412,
+          "ssim": 0.6541928648948669,
+          "lpips_alex": 0.25011515617370605
+        },
+        {
+          "frame": 401,
+          "coverage": 0.9956393771701388,
+          "correct_coverage": 0.1015353732638889,
+          "depth_l1_m": 0.11932900547981262,
+          "front_fraction": 0.8880886501736112,
+          "boundary_correct_coverage": 0.18710484720758694,
+          "interior_correct_coverage": 0.0917125317527519,
+          "bad_composited_weight": 0.6609541773796082,
+          "psnr_db": 20.040710343930183,
+          "ssim": 0.6630086302757263,
+          "lpips_alex": 0.19892938435077667
+        },
+        {
+          "frame": 501,
+          "coverage": 0.9983723958333334,
+          "correct_coverage": 0.2574869791666667,
+          "depth_l1_m": 0.08921661227941513,
+          "front_fraction": 0.73828125,
+          "boundary_correct_coverage": 0.20974626511738204,
+          "interior_correct_coverage": 0.26038324869445123,
+          "bad_composited_weight": 0.4779646098613739,
+          "psnr_db": 18.489254419010848,
+          "ssim": 0.693142831325531,
+          "lpips_alex": 0.22758284211158752
+        },
+        {
+          "frame": 601,
+          "coverage": 1.0,
+          "correct_coverage": 0.09873043431082658,
+          "depth_l1_m": 0.10625490546226501,
+          "front_fraction": 0.8992485690258525,
+          "boundary_correct_coverage": 0.17185256103398755,
+          "interior_correct_coverage": 0.0919373248936391,
+          "bad_composited_weight": 0.5545201897621155,
+          "psnr_db": 18.4131069319007,
+          "ssim": 0.6644525527954102,
+          "lpips_alex": 0.2166249305009842
+        },
+        {
+          "frame": 701,
+          "coverage": 0.9999118381076388,
+          "correct_coverage": 0.0918850368923611,
+          "depth_l1_m": 0.11814435571432114,
+          "front_fraction": 0.9022420247395834,
+          "boundary_correct_coverage": 0.10140426681069403,
+          "interior_correct_coverage": 0.09138164941092466,
+          "bad_composited_weight": 0.7611371874809265,
+          "psnr_db": 23.93048695669446,
+          "ssim": 0.7093630433082581,
+          "lpips_alex": 0.17417676746845245
+        },
+        {
+          "frame": 801,
+          "coverage": 0.914794921875,
+          "correct_coverage": 0.07033284505208333,
+          "depth_l1_m": 0.14007297158241272,
+          "front_fraction": 0.8398369683159722,
+          "boundary_correct_coverage": 0.10545207005383997,
+          "interior_correct_coverage": 0.06601064761571095,
+          "bad_composited_weight": 0.7049927115440369,
+          "psnr_db": 16.62887188567321,
+          "ssim": 0.5343963503837585,
+          "lpips_alex": 0.30992642045021057
+        },
+        {
+          "frame": 901,
+          "coverage": 0.9842723147978596,
+          "correct_coverage": 0.08938126920181488,
+          "depth_l1_m": 0.11520199477672577,
+          "front_fraction": 0.8798958269751165,
+          "boundary_correct_coverage": 0.09284244225931855,
+          "interior_correct_coverage": 0.08916301973309493,
+          "bad_composited_weight": 0.6930291056632996,
+          "psnr_db": 21.021693609005695,
+          "ssim": 0.6571149826049805,
+          "lpips_alex": 0.18717065453529358
+        },
+        {
+          "frame": 999,
+          "coverage": 0.8248794482085088,
+          "correct_coverage": 0.09431863652702327,
+          "depth_l1_m": 0.11500131338834763,
+          "front_fraction": 0.713307154435153,
+          "boundary_correct_coverage": 0.07972011929341592,
+          "interior_correct_coverage": 0.09523603572432585,
+          "bad_composited_weight": 0.5177797079086304,
+          "psnr_db": 15.334717609071799,
+          "ssim": 0.5183839201927185,
+          "lpips_alex": 0.29157671332359314
+        }
+      ],
+      "render": {
+        "coverage": 0.9589511100063319,
+        "correct_coverage": 0.11185932280378762,
+        "depth_l1_m": 0.11908401413397356,
+        "front_fraction": 0.8411341918228864,
+        "boundary_correct_coverage": 0.14965261806803343,
+        "interior_correct_coverage": 0.10837959011804127,
+        "bad_composited_weight": 0.6406668722629547,
+        "psnr_db": 18.618365265692077,
+        "ssim": 0.63360426642678,
+        "lpips_alex": 0.25105704367160797
+      },
+      "map": {
+        "path": "results/E4_matched_budget/evaluation/office1/maps/dd5fa2e850c37734d9e8a539d92d9476a591a92405725f1ef6e6512db332ad41.f32",
+        "bytes": 44756452,
+        "sha256": "38e2d071660c507e35feb796c1a2534dc65a1fc3508672058e81a9e71446e918"
+      },
+      "wall_seconds": 0.8319631129998015
+    },
+    "B3_random_s0": {
+      "id": "B3_random_s0__policy_fallback__0.75",
+      "method": "B3_random_s0",
+      "arm": "policy_fallback",
+      "fraction": 0.75,
+      "seed": 0,
+      "reachable": true,
+      "target": 860701,
+      "selected": 860701,
+      "natural_rejections": 57381,
+      "fallback_rejections": 0,
+      "score_only": false,
+      "unknown_removed": 286901,
+      "count": 860701,
+      "seal": {
+        "path": "results/E4_matched_budget/seal.json",
+        "bytes": 23781,
+        "sha256": "2386e4ceb19df1d3f40f82799d15363717d0125c27053100d86b9518c0232564"
+      },
+      "membership": {
+        "path": "results/E4_matched_budget/selection/office1/B3_random_s0__policy_fallback__0.75.npz",
+        "bytes": 123858,
+        "sha256": "853b8a6ed0bf8378268b4f778c766b44ecdbe16ea0cd6524078a0ae55e74bc4e"
+      },
+      "membership_sha256": "84fc1c31b51840b7eb0ba105aafb447dea89d7fb17a457dbd1946a3f508463da",
+      "all_label_modes": {
+        "creation": {
+          "candidates": 1147602,
+          "normal": 440127,
+          "bad": 287446,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 71789,
+          "normal_rejected": 109919,
+          "unknown_rejected": 105193,
+          "precision": 0.39507891782420146,
+          "bad_recall": 0.24974777871321918,
+          "normal_active_retention": 0.7502561760582741,
+          "finite_normal_retention": null,
+          "finite_normal": 0,
+          "finite_candidates": 0,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "final_estimated": {
+          "candidates": 1147602,
+          "normal": 313564,
+          "bad": 483166,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 120520,
+          "normal_rejected": 78304,
+          "unknown_rejected": 88077,
+          "precision": 0.6061642457650988,
+          "bad_recall": 0.24943808132194734,
+          "normal_active_retention": 0.750277455320126,
+          "finite_normal_retention": null,
+          "finite_normal": 0,
+          "finite_candidates": 0,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "gt_anchor": {
+          "candidates": 1147602,
+          "normal": 562074,
+          "bad": 211563,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 52632,
+          "normal_rejected": 140731,
+          "unknown_rejected": 93538,
+          "precision": 0.2721927152557625,
+          "bad_recall": 0.24877696005445188,
+          "normal_active_retention": 0.7496219359016785,
+          "finite_normal_retention": null,
+          "finite_normal": 0,
+          "finite_candidates": 0,
+          "provisional": 0,
+          "deferred": 0
+        },
+        "cross_pose_consensus": {
+          "candidates": 1147602,
+          "normal": 362071,
+          "bad": 158038,
+          "active": 860701,
+          "rejected": 286901,
+          "bad_rejected": 39406,
+          "normal_rejected": 90487,
+          "unknown_rejected": 157008,
+          "precision": 0.3033727760541369,
+          "bad_recall": 0.24934509421784634,
+          "normal_active_retention": 0.7500849280942136,
+          "finite_normal_retention": null,
+          "finite_normal": 0,
+          "finite_candidates": 0,
+          "provisional": 0,
+          "deferred": 0
+        }
+      },
+      "natural_classification": {
+        "candidates": 1147602,
+        "normal": 440127,
+        "bad": 287446,
+        "active": 860701,
+        "rejected": 286901,
+        "bad_rejected": 71789,
+        "normal_rejected": 109919,
+        "unknown_rejected": 105193,
+        "precision": 0.39507891782420146,
+        "bad_recall": 0.24974777871321918,
+        "normal_active_retention": 0.7502561760582741,
+        "finite_normal_retention": null,
+        "finite_normal": 0,
+        "finite_candidates": 0,
+        "provisional": 0,
+        "deferred": 0
+      },
+      "render": {
+        "coverage": 0.958948643889238,
+        "correct_coverage": 0.11185870632469061,
+        "depth_l1_m": 0.11933170326731422,
+        "front_fraction": 0.8411304925719819,
+        "boundary_correct_coverage": 0.14963289264676474,
+        "interior_correct_coverage": 0.10838075081091243,
+        "bad_composited_weight": 0.6410306177356027,
+        "psnr_db": 18.542860868991117,
+        "ssim": 0.6326615105975758,
+        "lpips_alex": 0.250979254191572
+      },
+      "frames": [
+        {
+          "frame": 1,
+          "coverage": 0.9377704233184586,
+          "correct_coverage": 0.030904553284414122,
+          "depth_l1_m": 0.13444653153419495,
+          "front_fraction": 0.9052246802392611,
+          "boundary_correct_coverage": 0.10885481420085648,
+          "interior_correct_coverage": 0.026880148343615164,
+          "bad_composited_weight": 0.7588990926742554,
+          "psnr_db": 16.14072506400631,
+          "ssim": 0.6664723753929138,
+          "lpips_alex": 0.33625298738479614
+        },
+        {
+          "frame": 101,
+          "coverage": 0.9571937201180021,
+          "correct_coverage": 0.11255637313078566,
+          "depth_l1_m": 0.13124576210975647,
+          "front_fraction": 0.8391780543216575,
+          "boundary_correct_coverage": 0.22440683590509375,
+          "interior_correct_coverage": 0.10259894683200271,
+          "bad_composited_weight": 0.6741394400596619,
+          "psnr_db": 15.628449446973976,
+          "ssim": 0.5960628390312195,
+          "lpips_alex": 0.31294533610343933
+        },
+        {
+          "frame": 201,
+          "coverage": 0.9929198258439921,
+          "correct_coverage": 0.10542270809879692,
+          "depth_l1_m": 0.12704907357692719,
+          "front_fraction": 0.8846623353723874,
+          "boundary_correct_coverage": 0.1842661520080875,
+          "interior_correct_coverage": 0.09914111866913665,
+          "bad_composited_weight": 0.6859874725341797,
+          "psnr_db": 19.108226014513086,
+          "ssim": 0.6128813624382019,
+          "lpips_alex": 0.2562100291252136
+        },
+        {
+          "frame": 301,
+          "coverage": 0.9426875996066597,
+          "correct_coverage": 0.17789834186701028,
+          "depth_l1_m": 0.11449354141950607,
+          "front_fraction": 0.7624834695330779,
+          "boundary_correct_coverage": 0.18055079419494915,
+          "interior_correct_coverage": 0.17773099550121121,
+          "bad_composited_weight": 0.5588220357894897,
+          "psnr_db": 19.82346166439028,
+          "ssim": 0.6507718563079834,
+          "lpips_alex": 0.24920882284641266
+        },
+        {
+          "frame": 401,
+          "coverage": 0.9956393771701388,
+          "correct_coverage": 0.10150146484375,
+          "depth_l1_m": 0.11999507993459702,
+          "front_fraction": 0.88812255859375,
+          "boundary_correct_coverage": 0.18710484720758694,
+          "interior_correct_coverage": 0.0916747308576267,
+          "bad_composited_weight": 0.6618186235427856,
+          "psnr_db": 19.90641739735867,
+          "ssim": 0.6612997055053711,
+          "lpips_alex": 0.20015880465507507
+        },
+        {
+          "frame": 501,
+          "coverage": 0.9983723958333334,
+          "correct_coverage": 0.2574869791666667,
+          "depth_l1_m": 0.08968605846166611,
+          "front_fraction": 0.73828125,
+          "boundary_correct_coverage": 0.20974626511738204,
+          "interior_correct_coverage": 0.26038324869445123,
+          "bad_composited_weight": 0.47859981656074524,
+          "psnr_db": 18.19713201276788,
+          "ssim": 0.691148579120636,
+          "lpips_alex": 0.22746588289737701
+        },
+        {
+          "frame": 601,
+          "coverage": 1.0,
+          "correct_coverage": 0.09871687057483113,
+          "depth_l1_m": 0.10705208033323288,
+          "front_fraction": 0.8992553508938502,
+          "boundary_correct_coverage": 0.17161321206318814,
+          "interior_correct_coverage": 0.09194473680309521,
+          "bad_composited_weight": 0.5563135743141174,
+          "psnr_db": 18.250354145527062,
+          "ssim": 0.6615599989891052,
+          "lpips_alex": 0.21602706611156464
+        },
+        {
+          "frame": 701,
+          "coverage": 0.9999118381076388,
+          "correct_coverage": 0.09191216362847222,
+          "depth_l1_m": 0.1183348149061203,
+          "front_fraction": 0.9022148980034722,
+          "boundary_correct_coverage": 0.10140426681069403,
+          "interior_correct_coverage": 0.09141021063905748,
+          "bad_composited_weight": 0.7610797882080078,
+          "psnr_db": 23.93148341759453,
+          "ssim": 0.7091639637947083,
+          "lpips_alex": 0.17412622272968292
+        },
+        {
+          "frame": 801,
+          "coverage": 0.914794921875,
+          "correct_coverage": 0.07033284505208333,
+          "depth_l1_m": 0.1401517689228058,
+          "front_fraction": 0.8398369683159722,
+          "boundary_correct_coverage": 0.10545207005383997,
+          "interior_correct_coverage": 0.06601064761571095,
+          "bad_composited_weight": 0.7049638032913208,
+          "psnr_db": 16.628431941971378,
+          "ssim": 0.5344178080558777,
+          "lpips_alex": 0.30970457196235657
+        },
+        {
+          "frame": 901,
+          "coverage": 0.9842723147978596,
+          "correct_coverage": 0.08939483339776326,
+          "depth_l1_m": 0.11519627273082733,
+          "front_fraction": 0.8798822627791681,
+          "boundary_correct_coverage": 0.09284244225931855,
+          "interior_correct_coverage": 0.0891774392398036,
+          "bad_composited_weight": 0.6929547190666199,
+          "psnr_db": 21.02203188577598,
+          "ssim": 0.6571151614189148,
+          "lpips_alex": 0.18711267411708832
+        },
+        {
+          "frame": 999,
+          "coverage": 0.8248726661105347,
+          "correct_coverage": 0.09431863652702327,
+          "depth_l1_m": 0.1149977520108223,
+          "front_fraction": 0.7132935902392046,
+          "boundary_correct_coverage": 0.07972011929341592,
+          "interior_correct_coverage": 0.09523603572432585,
+          "bad_composited_weight": 0.5177584290504456,
+          "psnr_db": 15.33475656802315,
+          "ssim": 0.5183829665184021,
+          "lpips_alex": 0.2915593981742859
+        }
+      ],
+      "tsdf": {
+        "path": "results/E4_matched_budget/evaluation/office1/maps/84fc1c31b51840b7eb0ba105aafb447dea89d7fb17a457dbd1946a3f508463da_tsdf.ply",
+        "bytes": 903838,
+        "sha256": "4027d645b95abde9331952f921b638fc1f80ca9719afbb505284f53e3e5c51ce"
+      },
+      "surface": {
+        "valid": true,
+        "accuracy_m": 0.10131794939222268,
+        "completion_m": 0.11584396417287458,
+        "chamfer_m": 0.10858095678254863,
+        "precision_5cm": 0.16493,
+        "completion_ratio_5cm": 0.14243,
+        "f1_5cm": 0.15285645432066633
+      },
+      "memory": {
+        "actual_n_resident": 860701,
+        "parameter_tensor_bytes": 44756452,
+        "allocated_map_increment_bytes": 45933568,
+        "render_peak_allocated_bytes": 237033984,
+        "render_peak_reserved_bytes": 247463936,
+        "baseline_allocated_bytes": 43440128,
+        "metric_pipeline_peak_allocated_bytes": 258564608,
+        "physical_compaction": true
+      },
+      "timing": {
+        "render_median_ms": 1.6279619999295392,
+        "render_p95_ms": 1.6596013998423587,
+        "samples_ms": [
+          1.6582870002821437,
+          1.6599299997324124,
+          1.618410999981279,
+          1.612299000044004,
+          1.6279619999295392
+        ],
+        "all_view_render_wall_s": 0.07916962700073782,
+        "lpips_wall_s": 0.015826433999791334,
+        "tsdf_cpu_wall_s": 0.05944848000171987
+      },
+      "map": {
+        "path": "results/E4_matched_budget/evaluation/office1/maps/84fc1c31b51840b7eb0ba105aafb447dea89d7fb17a457dbd1946a3f508463da.f32",
+        "bytes": 44756452,
+        "sha256": "49c70f239d0a9a96b2410d5b5825089ad263b81eee741a96ce30bebd360fb3fd"
+      },
+      "reused_identical_membership": "B1__rank_only__0.75",
+      "wall_seconds": 0.06397292600013316
+    }
+  },
+  "findings": {
+    "plane_vs_median_chamfer_relative_gain": 0.0016190306140094338,
+    "plane_vs_native_depth_chamfer_relative_gain": -0.022722872086412275,
+    "plane_natural_bad_recall": 0.005865449510516758,
+    "plane_natural_finite_fraction": 0.10699876786551435,
+    "natural_removed": 1898,
+    "shared_fallback_removed": 285003,
+    "parameter_buffer_reduction_fraction": 0.2500004356911194
+  },
+  "timing_and_view_diagnostics": {
+    "office0": {
+      "feature_bundle_wall_s": 327.114530284,
+      "natural_replay_and_quota_selection_cpu_wall_s": 28.61615491600014,
+      "heldout_to_previous_even_translation_m": {
+        "min": 0.0034107624815454974,
+        "median": 0.009019286042196194,
+        "max": 0.02174647582923705
+      },
+      "heldout_to_previous_even_rotation_degrees": {
+        "min": 0.29242031490290504,
+        "median": 0.6430492908568259,
+        "max": 1.2081610282200703
+      }
+    },
+    "room0": {
+      "feature_bundle_wall_s": 43.80887110499998,
+      "natural_replay_and_quota_selection_cpu_wall_s": 15.367305652000141,
+      "heldout_to_previous_even_translation_m": {
+        "min": 0.010705380733853548,
+        "median": 0.012217232339289993,
+        "max": 0.015675608140742255
+      },
+      "heldout_to_previous_even_rotation_degrees": {
+        "min": 0.04048378392029686,
+        "median": 0.32624908259783864,
+        "max": 0.6996929996629727
+      }
+    },
+    "room1": {
+      "feature_bundle_wall_s": 264.49445225499994,
+      "natural_replay_and_quota_selection_cpu_wall_s": 24.5708640859998,
+      "heldout_to_previous_even_translation_m": {
+        "min": 0.006016612172658558,
+        "median": 0.006866434261393352,
+        "max": 0.00977894709128195
+      },
+      "heldout_to_previous_even_rotation_degrees": {
+        "min": 0.018325765554865703,
+        "median": 0.27775412836813423,
+        "max": 1.9293837799387792
+      }
+    },
+    "room2": {
+      "feature_bundle_wall_s": 122.10865242100044,
+      "natural_replay_and_quota_selection_cpu_wall_s": 16.29783033800004,
+      "heldout_to_previous_even_translation_m": {
+        "min": 0.007107691940516903,
+        "median": 0.012876667959308044,
+        "max": 0.015904852340315016
+      },
+      "heldout_to_previous_even_rotation_degrees": {
+        "min": 0.24412682149155915,
+        "median": 0.4968931643907898,
+        "max": 1.112948019699151
+      }
+    },
+    "office1": {
+      "feature_bundle_wall_s": 175.2475334769997,
+      "natural_replay_and_quota_selection_cpu_wall_s": 18.16102247500021,
+      "heldout_to_previous_even_translation_m": {
+        "min": 0.0033459718150291784,
+        "median": 0.005792710663819361,
+        "max": 0.01009857008919567
+      },
+      "heldout_to_previous_even_rotation_degrees": {
+        "min": 0.10392229050071099,
+        "median": 0.3214739106827934,
+        "max": 1.0973266700145887
+      }
+    }
+  },
+  "next_step": "Keep E5/E6 efficacy progression on hold. Compare the best depth/photometric controls and inspect geometry-versus-RGB tradeoffs in development; register a new hypothesis and unseen scene before retuning. Do not infer that matching count or masking alone saves online system VRAM."
+}

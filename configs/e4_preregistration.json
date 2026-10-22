@@ -1,0 +1,795 @@
+{
+  "sealed_at_utc": "2026-10-22T02:01:49.614491+00:00",
+  "specification": {
+    "experiment": "E4 fixed-pool matched-count and serialized-byte comparison",
+    "output": "results/E4_matched_budget",
+    "source": "results/E4_matched_budget",
+    "fresh_source": "results/E4_matched_budget",
+    "development_scene": "office0",
+    "regression_scenes": [
+      "room0",
+      "room1",
+      "room2"
+    ],
+    "fresh_scene": "office1",
+    "fresh_dataset": "data/E4/Replica",
+    "fresh_original_frames": 1000,
+    "input_subsample": 2,
+    "feature_base_config": "configs/e2_discriminability.json",
+    "label_base_config": "configs/e1_taxonomy.json",
+    "prior": "results/E3c_matched_evidence",
+    "previous_sources": {
+      "office0": "results/E2b_repeated_observations_threshold_transfer",
+      "room0": "results/E2b_repeated_observations_threshold_transfer",
+      "room1": "results/E3b_provisional_admission/fresh",
+      "room2": "results/E3c_matched_evidence"
+    },
+    "datasets": {
+      "office0": "data/E2b/Replica",
+      "room0": "data/E2b/Replica",
+      "room1": "data/E3b/Replica",
+      "room2": "data/E3c/Replica",
+      "office1": "data/E4/Replica"
+    },
+    "methods": [
+      "B1",
+      "B2_confidence",
+      "B3_random_s0",
+      "B3_random_s1",
+      "B3_random_s2",
+      "B4_voxel",
+      "B5_self",
+      "B6_depth",
+      "B7_rgb",
+      "B8_dog",
+      "D_shared",
+      "D_maskmedian",
+      "P1_creation",
+      "P2_plane",
+      "P3_rgb_and"
+    ],
+    "arms": {
+      "natural": "Unchanged sealed risk thresholds; no quota thinning. B3 natural diagnostic keeps 95% by seed; B4 binary voxel duplicate and B5 self residual calibrated on office0; report ties and no discrimination.",
+      "rank_only": "Retrospective fixed-pool resource diagnostic: remove highest cumulative causal score, stable seeded ties; unknown scores never ranked as evidence. Insufficient finite candidates means unreachable. B8 scores come from its NATURAL policy-specific causal replay, not a hypothetical quota-conditioned online policy.",
+      "policy_fallback": "Primary: preserve all natural rejections, then apply the SAME fixed random candidate priority (seed 0) to survivors until exact K. If natural survivors<K, mark unreachable; never resurrect rejected candidates. B1 and B3 are direct count controls. Fallback rejects are logged separately; not pure admission or causal quota replay."
+    },
+    "keep_fractions": [
+      0.99,
+      0.9,
+      0.75
+    ],
+    "primary_keep_fraction": 0.75,
+    "random_seeds": [
+      0,
+      1,
+      2
+    ],
+    "voxel": "side=0.01 * median development predicted candidate radius, fixed before test; at each actual snapshot recompute cells using current estimated poses; birth duplicates include older map and earlier same-birth representatives; score=1 duplicate else0, with stable candidate order",
+    "calibration": "Reuse E3c D_shared/D_maskmedian/P2 thresholds and E3b B2/B6/B7/B8 thresholds without retuning. B4/B5/P1_creation/P3 AND get office0-only cumulative-max subgroup 99% calibration, common cohort fixed to P2 ever-finite. P3 is min(plane/t_plane, RGB/t_rgb), unknown if either unavailable. All parameters fixed before office1 GT or held-out RGB inspection.",
+    "rgb_frames": [
+      1,
+      101,
+      201,
+      301,
+      401,
+      501,
+      601,
+      701,
+      801,
+      901,
+      999
+    ],
+    "fusion_frames": [
+      0,
+      50,
+      100,
+      150,
+      200,
+      250,
+      300,
+      350,
+      400,
+      450,
+      500,
+      550,
+      600,
+      650,
+      700,
+      750,
+      800,
+      850,
+      900,
+      950
+    ],
+    "rgb": "Original degree-0 appearance, same source-normalized RGB+SH residual, GT-aligned fixed estimated poses. Reference RGB uses exact resize/crop and gain anchored to FIRST INPUT frame only, no prediction fitting. Full-image PSNR/SSIM/LPIPS AlexNet; black background. Odd frames are unseen by tracker, not independent off-axis views; off-axis reference unavailable and not fabricated.",
+    "geometry": {
+      "reference": "GT-even-depth TSDF surface on exactly the same fusion views; observed-region reference, not full-scene GT mesh",
+      "voxel_m": 0.04,
+      "trunc_m": 0.12,
+      "depth_max_m": 10.0,
+      "coverage_weight_min": 0.001,
+      "surface_samples": 100000,
+      "distance_threshold_m": 0.05,
+      "sample_seed": 0,
+      "distance": "Deterministic triangle-area uniform samples; nearest sampled-surface accuracy/completion distances, symmetric mean Chamfer=(accuracy+completion)/2, precision/completion ratio/F1 at 5cm; fixed masks and fusion poses for all"
+    },
+    "serialization": "Uncompressed float32 means[3], covariance upper triangle[6], DC RGB[3], opacity[1], exactly 52 bytes per resident Gaussian; metadata and membership index bytes separate. Physical compact CUDA buffers, not active masks. SH degree0 identical. Count and parameter bytes exactly matched in each quota arm; packed serialized maps retained.",
+    "cost": "Measure actual compact map CUDA allocated bytes and peak renderer allocated/reserved memory, synchronized render median/p95 with 2 warmups and 5 repetitions on frame501. CPU score extraction/calibration/replay and GPU render/LPIPS/CPU TSDF costs separately. No cost-matched or online SLAM speed claim; tracker baseline unchanged, refiner steps=0.",
+    "progress": {
+      "normal_retention_natural_min": 0.99,
+      "chamfer_relative_improvement_min": 0.02,
+      "psnr_loss_max_db": 0.2,
+      "ssim_loss_max": 0.005,
+      "lpips_increase_max": 0.01,
+      "coverage_loss_max": 0.005,
+      "completion_ratio_loss_max": 0.01
+    },
+    "decision": "Fresh office1 primary 75%-keep policy_fallback: P2 must preserve >=99% labeled normals in NATURAL policy and improve TSDF sampled Chamfer >=2% relative to EACH D_maskmedian,D_shared,B2_confidence,B4_voxel,B6_depth,B7_rgb,B8_dog and all three random controls, with RGB, coverage and completion noninferiority limits. Missing/unreachable required comparison prevents GO, never silently drops a baseline. Regression scene results descriptive, cannot authorize GO. Failure is REVISE; no threshold/budget/scene selection after test. This is fixed-pool resource evaluation; E5/E6 and global research GO separate.",
+    "seed": 0
+  },
+  "runtime_inputs": [
+    {
+      "path": "results/E4_matched_budget/deps/open3d/cpu/pybind.cpython-311-x86_64-linux-gnu.so",
+      "bytes": 225453016,
+      "sha256": "85edd3cd33396d3ecf0e963b5ec8f4ff83eea1e8e1ae40672fd050f11534c168"
+    },
+    {
+      "path": "results/E0_baseline_reproduction/setup/torch-cache/hub/checkpoints/alexnet-owt-7be5be79.pth",
+      "bytes": 244408911,
+      "sha256": "7be5be791159472b1fbf3c69796f7cb30dca7ad8466c2df70058c37116cdee02"
+    },
+    {
+      "path": ".venv/lib/python3.11/site-packages/lpips/weights/v0.1/alex.pth",
+      "bytes": 6009,
+      "sha256": "df73285e35b22355a2df87cdb6b70b343713b667eddbda73e1977e0c860835c0"
+    }
+  ],
+  "thresholds": {
+    "B1": null,
+    "B3_random_s0": null,
+    "B3_random_s1": null,
+    "B3_random_s2": null,
+    "B2_confidence": -1.7114174365997314,
+    "B6_depth": 0.13260461390018463,
+    "B7_rgb": 1.8435887098312378,
+    "B8_dog": 0.09438735991716385,
+    "D_shared": 0.10027958452701569,
+    "D_maskmedian": 0.10340332984924316,
+    "P2_plane": 0.056065499782562256,
+    "B4_voxel": 1.0,
+    "B5_self": 0.0,
+    "P1_creation": 0.017751097679138184,
+    "P3_rgb_and": 0.7449400424957275
+  },
+  "calibration": {
+    "B4_voxel": {
+      "threshold": 1.0,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 635127,
+          "used": true,
+          "mandatory": true,
+          "quantile": 1.0
+        },
+        {
+          "group": "common_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_0",
+          "normal": 43754,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_1",
+          "normal": 115125,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_2",
+          "normal": 84976,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_3",
+          "normal": 88982,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_4",
+          "normal": 36136,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_5",
+          "normal": 24230,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_6",
+          "normal": 76307,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_7",
+          "normal": 59402,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_8",
+          "normal": 6431,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_9",
+          "normal": 4014,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        },
+        {
+          "group": "anchor_10",
+          "normal": 95770,
+          "used": true,
+          "mandatory": false,
+          "quantile": 1.0
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    },
+    "B5_self": {
+      "threshold": 0.0,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 635127,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.0
+        },
+        {
+          "group": "common_finite",
+          "normal": 33302,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_0",
+          "normal": 43754,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_1",
+          "normal": 115125,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_2",
+          "normal": 84976,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_3",
+          "normal": 88982,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_4",
+          "normal": 36136,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_5",
+          "normal": 24230,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_6",
+          "normal": 76307,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_7",
+          "normal": 59402,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_8",
+          "normal": 6431,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_9",
+          "normal": 4014,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        },
+        {
+          "group": "anchor_10",
+          "normal": 95770,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.0
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    },
+    "P1_creation": {
+      "threshold": 0.017751097679138184,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 2923,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.015834392979741096
+        },
+        {
+          "group": "common_finite",
+          "normal": 2923,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.015834392979741096
+        },
+        {
+          "group": "anchor_0",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_1",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_2",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_3",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_4",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_5",
+          "normal": 9,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_6",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_7",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_8",
+          "normal": 1754,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.00707886042073369
+        },
+        {
+          "group": "anchor_9",
+          "normal": 796,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.017751097679138184
+        },
+        {
+          "group": "anchor_10",
+          "normal": 364,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.009828432463109493
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    },
+    "P3_rgb_and": {
+      "threshold": 0.7449400424957275,
+      "calibrated": true,
+      "groups": [
+        {
+          "group": "own_finite",
+          "normal": 9683,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.4729253053665161
+        },
+        {
+          "group": "common_finite",
+          "normal": 9683,
+          "used": true,
+          "mandatory": true,
+          "quantile": 0.4729253053665161
+        },
+        {
+          "group": "anchor_0",
+          "normal": 893,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.3457629978656769
+        },
+        {
+          "group": "anchor_1",
+          "normal": 1444,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.3575439155101776
+        },
+        {
+          "group": "anchor_2",
+          "normal": 2671,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.44497987627983093
+        },
+        {
+          "group": "anchor_3",
+          "normal": 213,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.22776620090007782
+        },
+        {
+          "group": "anchor_4",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_5",
+          "normal": 785,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.7449400424957275
+        },
+        {
+          "group": "anchor_6",
+          "normal": 2707,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.3820440173149109
+        },
+        {
+          "group": "anchor_7",
+          "normal": 0,
+          "used": false,
+          "mandatory": false,
+          "quantile": null
+        },
+        {
+          "group": "anchor_8",
+          "normal": 492,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.10009626299142838
+        },
+        {
+          "group": "anchor_9",
+          "normal": 362,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.3181034028530121
+        },
+        {
+          "group": "anchor_10",
+          "normal": 116,
+          "used": true,
+          "mandatory": false,
+          "quantile": 0.14474305510520935
+        }
+      ],
+      "missing_required_groups": [],
+      "normal_retention_target": 0.99
+    }
+  },
+  "voxel_side_predicted_units": 0.01779799461364746,
+  "code": [
+    {
+      "path": "configs/e4_matched_budget.json",
+      "bytes": 5563,
+      "sha256": "291b8abd0ad0143480d9f60549231a701e752db25f1bb076b6469c78265d7a2a"
+    },
+    {
+      "path": "scripts/run_e4.py",
+      "bytes": 12880,
+      "sha256": "50c38a58baaa8a4c165a4cff46c57ea39f7c3abe08cdcf5da6b3050bec922065"
+    },
+    {
+      "path": "scripts/score_e4.py",
+      "bytes": 12684,
+      "sha256": "87882fbebd7147cb409167083d622fd855072e7b4f5c01ed159d53aaf61ca2c4"
+    },
+    {
+      "path": "scripts/e4_fresh.py",
+      "bytes": 9008,
+      "sha256": "13ce6bc8a3ce567d4ca2365137c0f7eb9dbe2f9d69584d3223644ae3a41cbea5"
+    },
+    {
+      "path": "scripts/evaluate_e4.py",
+      "bytes": 15681,
+      "sha256": "5e1876e0c6290529c97da24af8fe8e5e6b36767f0993862e7242b1e4c5d4b0f8"
+    },
+    {
+      "path": "scripts/run_e4.sh",
+      "bytes": 1458,
+      "sha256": "182f13c648527ac47e1bb132463f841e8ca591a31e1cf08fac7f2f8af1f1bd7e"
+    },
+    {
+      "path": "src/e4_budget.py",
+      "bytes": 4467,
+      "sha256": "c85c333a86917ce2dd9961e8f789c36b5804a52fcf67634425dd70d8774d2ef6"
+    },
+    {
+      "path": "tests/test_e4.py",
+      "bytes": 3342,
+      "sha256": "3352c242490768b13cf7d1fec3e1d1a3b919d2e38c01a2afceb607a652c946c9"
+    },
+    {
+      "path": "src/e3c_matched.py",
+      "bytes": 3780,
+      "sha256": "b4c3eee9a96a9b86e700fa60bf65a34b9cf5f221245673e38774d8beedbc098b"
+    },
+    {
+      "path": "src/e3b_provisional.py",
+      "bytes": 6287,
+      "sha256": "4e0f3f592ddc9e2fb709857f9cced67adeed3bc2318cab36aa63e3cc1f27a5d3"
+    },
+    {
+      "path": "src/e2_signals.py",
+      "bytes": 12591,
+      "sha256": "009645ab2c44aa43e8e0f963499ac44b0ad5903f1ab670959b7767632f99d4aa"
+    },
+    {
+      "path": "src/e2b_transfer.py",
+      "bytes": 2780,
+      "sha256": "fc60c6b8b3cf4684a228db69005f41d00eee12677df678a897d07064bec0dd8e"
+    },
+    {
+      "path": "scripts/run_e3.py",
+      "bytes": 24154,
+      "sha256": "ab33d6a05f8457724f6b79c8584688b405119af635781e78c631708142526af9"
+    },
+    {
+      "path": "scripts/render_e1.py",
+      "bytes": 11276,
+      "sha256": "e8a70a041be64cc29cb20997793aea78499c9f296dd73a0adc0f80bd2af309a4"
+    },
+    {
+      "path": "src/e3_cpu_renderer.py",
+      "bytes": 3153,
+      "sha256": "a81f72fd59ddaa9a7675c6ca4366e61aeca1f7838d22ddd4b0ead4804cd8698e"
+    },
+    {
+      "path": "src/e3_splat_cpu.cpp",
+      "bytes": 2324,
+      "sha256": "a85208b579177e9bbc6d2e1ea7fc96119f354b28d72ccfe8e705d1f29245ceb3"
+    },
+    {
+      "path": "src/e1_taxonomy.py",
+      "bytes": 9880,
+      "sha256": "09b8c89028b05ad4e0702c570865e302f31276e94c7f4b638b66e3931bbd146d"
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "bytes": 26184,
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f"
+    },
+    {
+      "path": "src/e0_export.py",
+      "bytes": 2022,
+      "sha256": "e603a840e44707cd305c8bbed7c9d1d45707c7fee20ad42e3ce4c288b50329a5"
+    },
+    {
+      "path": "src/e0b_export.py",
+      "bytes": 5677,
+      "sha256": "61483425938478f9b674e7a2895a7089035ed6680b367d23379b3d3911e640b2"
+    },
+    {
+      "path": "scripts/prepare_e2b_run.py",
+      "bytes": 2905,
+      "sha256": "09ba962ec6e22697e398324092f60a67cc95c4cbf82ef4e3feb703d468d5280b"
+    },
+    {
+      "path": "scripts/score_e2b.py",
+      "bytes": 12331,
+      "sha256": "0e7d22c7d975484cca1c033dc55701d3f3af3ef4af9cc0cc7e79311e777012e8"
+    },
+    {
+      "path": "scripts/score_e2.py",
+      "bytes": 11509,
+      "sha256": "9585dd7ee8874a3b02f5e4fbed44e36b8edeb183224b57f536f83f922d35ea01"
+    },
+    {
+      "path": "configs/e2_discriminability.json",
+      "bytes": 4543,
+      "sha256": "86007883fb06ef02840a327366f6f7440237faab457e0c1a02b4a024a6527a6c"
+    },
+    {
+      "path": "configs/e1_taxonomy.json",
+      "bytes": 2951,
+      "sha256": "24a52648a495a07cce4381eef1a4f5e0591784acf2a61b68a4e233e47aa9c9df"
+    },
+    {
+      "path": "configs/e0b_replica_office0.yaml",
+      "bytes": 136,
+      "sha256": "8baf1e5e256e3c8cf7be25e0eb4b36d32d5f7258a58ad190c357b91ee957fbe7"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_slam/image.py",
+      "bytes": 3135,
+      "sha256": "0db5e711d7740624c22faa4bc5545a722455175f9798366a8b40965c4af1cab4"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_core/utils/geometry.py",
+      "bytes": 5885,
+      "sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496"
+    }
+  ],
+  "definitions": {
+    "B1": {
+      "kind": "original"
+    },
+    "B3_random_s0": {
+      "kind": "original"
+    },
+    "B3_random_s1": {
+      "kind": "original"
+    },
+    "B3_random_s2": {
+      "kind": "original"
+    },
+    "B2_confidence": {
+      "kind": "creation"
+    },
+    "B4_voxel": {
+      "kind": "creation"
+    },
+    "B5_self": {
+      "kind": "creation"
+    },
+    "B6_depth": {
+      "kind": "review"
+    },
+    "B7_rgb": {
+      "kind": "review"
+    },
+    "B8_dog": {
+      "kind": "dog"
+    },
+    "D_shared": {
+      "kind": "review"
+    },
+    "D_maskmedian": {
+      "kind": "review"
+    },
+    "P1_creation": {
+      "kind": "creation"
+    },
+    "P2_plane": {
+      "kind": "review"
+    },
+    "P3_rgb_and": {
+      "kind": "review"
+    }
+  },
+  "fresh_evaluation_read": false,
+  "inputs": [
+    {
+      "path": "results/E3c_matched_evidence/evaluation/office0/labels.npz",
+      "bytes": 262061,
+      "sha256": "27fb835220df36038ad1371c68cf48b9709196d544a34a95d2b74ccdd36cc8df"
+    },
+    {
+      "path": "results/E3c_matched_evidence/scores/office0/score_manifest.json",
+      "bytes": 10419,
+      "sha256": "fa1eeb75cc4a2ec391399cf18c15fce237ba201e9f95b7168dc7ad20dc69e19c"
+    },
+    {
+      "path": "results/E2b_repeated_observations_threshold_transfer/scores/office0/score_manifest.json",
+      "bytes": 10885,
+      "sha256": "7fa14e08827b5aa53660aacc7da78d7d2f40ff5665658c201224f5b18803743c"
+    },
+    {
+      "path": "configs/e3b_preregistration.json",
+      "bytes": 32579,
+      "sha256": "bef4db305319cbc63537d4c9bbef5de86417170e32a9a5e42aaa66f596bfbeaa"
+    },
+    {
+      "path": "configs/e3c_preregistration.json",
+      "bytes": 24186,
+      "sha256": "ee8993b23457b070e8bae7e44bae01e6446cad08026aa85d9f7cf6de8655b662"
+    },
+    {
+      "path": "results/E4_matched_budget/protocol_registration.json",
+      "bytes": 6426,
+      "sha256": "0e54981c7d77301f31eb544e827d4e89be33f7cbefd1c513ab5c34bd8cbf5e03"
+    },
+    {
+      "path": "results/E4_matched_budget/development_extra_scores.npz",
+      "bytes": 808960,
+      "sha256": "9d77a2a491d970dc76f53e2542df6af489a7b45e32aa9e8471d2cd882628bf35"
+    }
+  ],
+  "pre_evaluation_code_amendment": {
+    "previous_seal_sha256": "c9995d64fddafe16539de32000ada82b84bc93779ce422f55d12cbbbea2ee00e",
+    "reason": "Correct per-method finite-score classification metadata when reusing identical-membership render cache; thresholds, masks, budgets and criteria unchanged; before all E4 held-out evaluation and office1 baseline/features",
+    "evaluation_outputs_present": false
+  }
+}
