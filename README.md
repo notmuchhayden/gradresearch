@@ -6,6 +6,8 @@
 
 **E4 판정은 REVISE**입니다. plane의 median-depth 대비 개선은 0.162%로 사전 기준 2%에 미달했고 B6보다 기하 품질도 낮았습니다. RGB·coverage 비열등성은 통과했습니다. 자연 plane 정책은 bad 1,686개·normal 0개를 제거했지만 전체 bad recall은 0.587%로 낮았습니다. **E5/E6 효능 검증으로의 자동 진행은 보류**하고, 강한 depth 대조군과 제한된 관측 범위를 개발 단계에서 분석해야 합니다.
 
+다음 단계는 **[E4b 기준 평면·판정 경로 진단](docs/experiments/E4b_reference_plane_audit.md)**으로 설정했습니다. B6만 제거한 불량과 두 방식 모두 놓친 불량에서 기준 point cloud/평면의 GT 오차, 관측 자격·집계·veto를 조사하고 GT-plane oracle로 판정 변화를 확인합니다. **설계 등록 완료·미실행**이며, 이미 확인한 E4 데이터의 사후 진단입니다.
+
 - [E0: 기준선 재현·export·GT 평가](docs/experiments/E0_baseline_reproduction.md)
 - [E0b: 관측 출처·융합 ancestry·판단 시점 감사](docs/experiments/E0b_ancestry_causality_audit.md) — 180입력/5-KF 실행 완료. 반복 교차관측 가용성은 추가 확인이 필요합니다.
 - [E1: GT 오류 taxonomy·pose 민감도·held-out 깊이 평가](docs/experiments/E1_error_taxonomy.md) — 원본 active 후보의 반복 front 오류 proxy 12.81%, GT-anchor 진단 10.35%.
@@ -15,6 +17,7 @@
 - [E3b: 임시 편입 후 재검사·부분집합 보호 보완](docs/experiments/E3b_provisional_admission.md) — office0에서 보정·봉인, room0 회귀 및 새 room1에서 11개 정책 실행. room0 bad 823개·normal 6개, room1 bad 5,104개·normal 0개 제거. 유한 normal 보존 99.89% / 100%, 깊이 coverage 유지. room1 공통 후보에서 B6와 정밀도 100% 동률이고 제거량은 B6가 더 많아 **추가 우위 미확인·REVISE**로 기록했습니다.
 - [E3c: 동일 인과적 관측 조건의 depth/plane 비교](docs/experiments/E3c_matched_evidence.md) — 7개 정책, office0 개발 / room0·room1 회귀 / 새 room2 평가. room2 주 비교에서 plane bad recall +7.53%p, 두 방법 normal 오거부 0개. 대칭 support veto에서도 +7.50%p. **E4 비교 실험에 조건부 진입 가능**, 장면별 혼합 결과와 median-depth 근접 성능을 함께 기록했습니다. 63개 테스트·4장면 무결성 검사 PASS입니다.
 - [E4: 동일 수·바이트에서 RGB·TSDF·실제 compact 메모리 비교](docs/experiments/E4_matched_budget.md) — office0 개발 / room0·room1·room2 회귀 / 새 office1 평가. 525개 조합 중 461개 도달, 64개 도달 불가를 명시했습니다. 99%·90%·75% 유지 예산, B1~B8·median-depth·P1/P2/P3 및 무작위 3 seeds 포함. **REVISE: 기하 추가 개선 기준 미달**. 75개 테스트·CUDA/TSDF 합성 검사·5장면 무결성 검사 PASS입니다.
+- [E4b: 기준 평면의 GT 정확도·B6/plane 판정 경로 감사](docs/experiments/E4b_reference_plane_audit.md) — **설계 등록 완료·미실행**. office1 주 분석 / 기존 네 장면 보조 분석, natural 결정의 네 집합 전수 감사와 고정 gate·veto 분리 GT-plane oracle을 계획했습니다. 새 성능 검증이나 E4 판정 변경은 아닙니다.
 
 ## 연구 계획
 
@@ -120,4 +123,6 @@ results/<experiment_id>/
 - [x] E3 실패 분석에 따른 임시 편입·부분집합 보정 및 새 room1 평가 (E3b)
 - [x] E3c: 동일 인과적 관측 조건 비교 및 새 room2 평가 (주 비교 PASS; 전반적 우위 미확인)
 - [x] E4 matched-budget 비교 및 새 office1 평가 (REVISE; E5/E6 효능 검증 진행 보류)
+- [x] E4b 기준 평면·판정 경로 진단 설계 등록
+- [ ] E4b 전수 감사·GT-plane oracle 실행 및 원인별 결과 보고
 

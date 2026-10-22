@@ -1,0 +1,385 @@
+{
+  "registered_at_utc": "2026-10-22T03:28:32.998077+00:00",
+  "experiment_id": "E4b",
+  "status": "planned_not_executed",
+  "registration_scope": "Diagnostic analysis protocol after E4 results were inspected; not fresh-test efficacy preregistration or a claim that analysis code is implemented.",
+  "existing_information": "E4/E3c aggregate reports, source code and artifact locations inspected; no E4b candidate-level audit, reference-quality measurements or oracle replay computed.",
+  "base_git_commit": "caed0c60d8d672bed8fa0d5f055c4039fd376e1b",
+  "specification": {
+    "experiment": "E4b reference-plane quality and decision-path audit",
+    "status": "planned_not_executed",
+    "analysis_type": "retrospective diagnostic after E4 aggregate results were inspected",
+    "output": "results/E4b_reference_plane_audit",
+    "report": "docs/experiments/E4b_reference_plane_audit.md",
+    "source_config": "configs/e4_matched_budget.json",
+    "source_seal": "results/E4_matched_budget/seal.json",
+    "source_validation": "configs/e4_validation.json",
+    "primary_scene": "office1",
+    "secondary_scenes": [
+      "office0",
+      "room0",
+      "room1",
+      "room2"
+    ],
+    "scene_policy": "All scenes have been inspected in earlier experiments; none is a fresh efficacy test. Resolve baseline, scores, datasets and labels through the E4/E3c source configurations, including inherited sources.",
+    "methods": [
+      "B6_depth",
+      "D_maskmedian",
+      "D_shared",
+      "P2_plane"
+    ],
+    "membership_arm": "natural",
+    "candidate_scope": "Every original-active Gaussian; exclude rank_only and policy_fallback removal from method attribution",
+    "labels": {
+      "primary": "creation",
+      "bad": [
+        3
+      ],
+      "normal": [
+        1,
+        2
+      ],
+      "unknown": [
+        0
+      ],
+      "sensitivity": [
+        "gt_anchor",
+        "cross_pose_consensus"
+      ],
+      "policy": "Reuse frozen E4 labels and their actual scene-specific manifests; do not relabel to increase agreement. Unknown is separate and never normal or bad."
+    },
+    "cohorts": {
+      "primary": "active & bad & B6_natural_reject & ~P2_natural_reject",
+      "secondary": {
+        "both_miss_bad": "active & bad & ~B6_natural_reject & ~P2_natural_reject",
+        "both_reject_bad": "active & bad & B6_natural_reject & P2_natural_reject",
+        "plane_only_bad": "active & bad & ~B6_natural_reject & P2_natural_reject"
+      },
+      "controls": "All active labeled normals, reporting the same four B6/P2 decision partitions; active unknowns reported separately",
+      "denominators": [
+        "all_active_bad",
+        "each_decision_cohort",
+        "GT_auditable_candidates",
+        "GT_auditable_unique_patches",
+        "eligible_candidate_snapshot_view_records"
+      ]
+    },
+    "replay": {
+      "thresholds": "Frozen E4 seal, strict score > threshold; no retuning",
+      "snapshots": "Every actual decision event from candidate birth onward with its own poses, Sim(3) scales and revision; no future raw observations",
+      "source_rule": "Preserve candidate/evidence source-image disjointness; do not claim mutually independent evidence or predictors",
+      "comparison_time": "For B6-only bad, primary anchor is B6 first_reject with stored reject_revision; compare all methods at that same snapshot, then report the complete subsequent history",
+      "other_cohort_time": "First rejection by either method; if neither rejects, use first shared-2plus snapshot, else birth; always retain complete history",
+      "integrity_requirement": "Recomputed snapshot scores, finite masks, natural membership and first rejection must reproduce frozen artifacts before interpreting causes; preserve original float32/NaN arithmetic",
+      "absorbing_reject": true,
+      "native_b6": "Median of finite native depth observations, possibly one view; no plane-PCA mask or plane-zero veto",
+      "matched_controls": "D_maskmedian and D_shared use P2 shared per-view masks, >=2 views and plane-zero veto; D_shared uses second largest, D_maskmedian median"
+    },
+    "reference_quality": {
+      "patch_radius_pixels": 2,
+      "minimum_common_points": 9,
+      "gt_valid_range_m": [
+        0.1,
+        10.0
+      ],
+      "depth_tolerance_abs_m": 0.05,
+      "depth_tolerance_relative": 0.02,
+      "gt_masks": "Exact E1/E4 resize, crop, camera and GT depth-edge exclusion; missing, boundary or nonplanar GT patches remain unassessable for plane quality",
+      "gt_plane_fit": "Unproject the matched evidence pixel's 5x5 GT patch with calibrated K; equal-weight PCA on the common predicted-valid and GT-valid nonedge pixels; orient normal toward camera",
+      "gt_plane_reliability": "Use frozen E2 eigenvalue ratios: smallest/middle <=0.1, middle/largest >=0.05, and positive middle eigenvalue; no learned confidence on GT",
+      "predicted_plane": "The exact original predicted patch plane; never refit it using the GT-valid subset in the factual replay",
+      "scale": "Inherited label-manifest global alignment scale times evidence pose scale at the actual snapshot; no patchwise or depth-fitted alignment",
+      "own_view_check": "Compare scaled raw pointmap z with GT at its source pixel; separately report predicted-ray versus calibrated-ray angle and calibrated projection depth errors. Do not equate source-pixel z agreement with full 3D correctness.",
+      "plane_offset_m": "abs(n_GT dot (scaled_predicted_mean - GT_mean))",
+      "plane_angle_degrees": "acos(abs(n_predicted dot n_GT))",
+      "plane_displaced_rule": "plane_offset_m > max(0.05, 0.02 * GT_center_z)",
+      "plane_tilted_degrees": 10.0,
+      "coherent_wrong_fraction_min": 0.8,
+      "coherent_wrong_rule": "Among >=9 common pixels, >=80% have same-sign source-pixel z error beyond each pixel's tolerance; predicted patch must pass its original reliability gate. Report front and behind separately, exact all-pixels-wrong flag and continuous errors as well.",
+      "sensitivity_abs_m": [
+        0.02,
+        0.05,
+        0.1
+      ],
+      "sensitivity_angle_degrees": [
+        5.0,
+        10.0,
+        20.0
+      ],
+      "shared_wrong_support": "Missed GT-bad candidate, original finite plane score exactly zero, reliable GT reference plane is displaced or tilted, and candidate is independently GT-front in the same evidence view under the frozen 3-sigma/tolerance rule. Require calibrated projection inside the tested patch; otherwise mark correspondence ambiguous. Coherent_wrong is a separate stricter tag, not inferred from plane error alone.",
+      "pose_sensitivity": "Separate own-view reference error from errors after decision-time estimated relative placement; compare GT-anchor relative placement without refitting scale. Pose sensitivity is diagnostic only."
+    },
+    "attribution": {
+      "per_view_fields": [
+        "causal_sources",
+        "ray_match",
+        "confidence",
+        "edge",
+        "parallax",
+        "occlusion",
+        "patch_reliable",
+        "depth_residual",
+        "plane_signed_residual",
+        "sigma_ray",
+        "sigma_plane",
+        "relative_depth_score",
+        "relative_plane_score",
+        "GT_reference_status"
+      ],
+      "candidate_snapshot_fields": [
+        "native_depth_count",
+        "shared_count",
+        "plane_zero_veto",
+        "native_median",
+        "shared_median",
+        "shared_second_largest",
+        "plane_second_largest",
+        "threshold_margin",
+        "state",
+        "first_reject",
+        "pose_revision"
+      ],
+      "exclusive_snapshot_funnel": [
+        "no_causal_evidence",
+        "no_finite_native_depth",
+        "no_finite_shared_plane",
+        "fewer_than_two_shared_views",
+        "plane_zero_veto",
+        "finite_but_not_above_threshold",
+        "above_threshold_reject"
+      ],
+      "overlap_policy": "Keep all gate flags and reference-error tags in addition to the ordered funnel; co-occurrence does not establish a unique cause",
+      "factor_control": "Use native B6 -> D_maskmedian -> D_shared -> P2 as descriptive contrasts of eligibility/veto, aggregation and residual, respectively. Different frozen thresholds and interactions prevent claiming a pure causal decomposition."
+    },
+    "oracle": {
+      "role": "Required secondary diagnostic, not a deployable algorithm or efficacy result",
+      "arms": [
+        "factual_common",
+        "GT_plane_fixed_veto",
+        "GT_plane_recomputed_veto"
+      ],
+      "eligible_pairs": "Original finite shared pairs whose GT plane is reliable; unsupported GT pairs retain factual values in every arm and are counted separately. Never create evidence where factual eligibility was missing.",
+      "replacement": "Replace only plane mean and normal with the corresponding GT plane expressed in predicted evidence-camera units. Keep candidate means/covariance, estimated poses, raw ray match IDs, finite masks, radius/spacing normalization, aggregation and thresholds fixed; recompute normal-projected sigma from the unchanged covariance.",
+      "fixed_veto": "Keep factual support-veto booleans to isolate score changes on the factual gate; factual_common and this arm have identical finite eligibility",
+      "recomputed_veto": "Recompute plane-zero veto from replaced scores on the SAME original shared pairs; this tests reference influence through support while leaving all other gates fixed",
+      "temporal_policy": "Replay each arm from birth independently with absorbing REJECT; never revive factual rejects or overwrite factual decisions",
+      "metrics": [
+        "GT_pair_coverage",
+        "GT_candidate_coverage",
+        "bad_newly_rejected",
+        "bad_no_longer_rejected",
+        "normal_newly_rejected",
+        "normal_no_longer_rejected",
+        "unknown_rejection_changes",
+        "global_bad_recall",
+        "normal_retention",
+        "primary_cohort_recovery"
+      ],
+      "limitation": "Oracle plane quality depends on GT planarity and fixed correspondence. Missing GT, poor original masks, and pose errors can conceal reference effects; zero recovery does not refute shared bias. No claim about rendered Chamfer improvement without separate map evaluation."
+    },
+    "visualization": {
+      "seed": 0,
+      "bad_examples_per_cohort": 8,
+      "normal_examples": 8,
+      "sampling": "Uniform without replacement over sorted stable candidate IDs within each cohort; use all if fewer. Publish selected IDs before inspecting per-case plots; do not replace inconvenient or unauditable examples.",
+      "panels": [
+        "source_RGB",
+        "evidence_RGB_and_patch",
+        "predicted_and_GT_depth",
+        "candidate_predicted_plane_GT_cross_section",
+        "decision_timeline"
+      ]
+    },
+    "outputs": [
+      "input_manifest.json",
+      "reproduction_check.json",
+      "cohorts.npz",
+      "candidate_audit.parquet",
+      "view_audit.parquet",
+      "patch_audit.parquet",
+      "oracle_summary.json",
+      "summary.json",
+      "example_ids.json",
+      "figures"
+    ],
+    "completion": "Complete only after exact factual replay, all predefined cohort/gate/reference denominators including unknowns, both oracle contrasts, pose sensitivity and fixed examples are reported. Incomplete stages or replay mismatch are explicit, not a positive result.",
+    "conclusions": {
+      "shared_wrong_support_observed": "Report candidate and unique-patch counts satisfying the strict tag with traceable examples; occurrence alone does not establish prevalence or predictor causality",
+      "reference_quality_contributes": "Require same-candidate GT-reference error plus a factual-to-oracle nonreject-to-reject transition; separately report all normal harms and lost bad rejections",
+      "not_established_or_unassessable": "No qualifying observations or inadequate GT/pose/correspondence coverage; do not infer all reference planes are correct",
+      "efficacy": "No GO threshold and no dominant-cause claim. Preserve E4 REVISE and E5/E6 hold; any algorithm change needs a separately frozen evaluation on uninspected data."
+    },
+    "execution_scope": "Protocol only at registration; analysis implementation, per-case computation, oracle replay and figures are pending. Reuse saved E4 baselines; no SLAM/model training, threshold tuning or E4 artifact mutation.",
+    "seed": 0
+  },
+  "spec_sha256": "646b0f5f575257c754430e3e5847ac950761ccb3693d3465525a512878590e80",
+  "protocol": {
+    "path": "docs/experiments/E4b_reference_plane_audit.md",
+    "bytes": 15389,
+    "sha256": "022915d952d010e75fd2f18213998f2e669cf2d371329a7560d4bec7e773762b"
+  },
+  "source_manifest_anchors": [
+    {
+      "path": "configs/e4_matched_budget.json",
+      "bytes": 5563,
+      "sha256": "291b8abd0ad0143480d9f60549231a701e752db25f1bb076b6469c78265d7a2a"
+    },
+    {
+      "path": "results/E4_matched_budget/seal.json",
+      "bytes": 23781,
+      "sha256": "2386e4ceb19df1d3f40f82799d15363717d0125c27053100d86b9518c0232564"
+    },
+    {
+      "path": "configs/e4_validation.json",
+      "bytes": 3102,
+      "sha256": "d579556cd76c3e076e8e6566cdf0337b1e0a5a3e1248a6a98a04928777a48c83"
+    },
+    {
+      "path": "configs/e4_preregistration.json",
+      "bytes": 23781,
+      "sha256": "2386e4ceb19df1d3f40f82799d15363717d0125c27053100d86b9518c0232564"
+    },
+    {
+      "path": "configs/e4_results_summary.json",
+      "bytes": 76821,
+      "sha256": "c1d8a0c996197b7d1a89999cb1902360214395ae97b68d9959a002ce0e99ad81"
+    },
+    {
+      "path": "configs/e3c_matched_evidence.json",
+      "bytes": 3697,
+      "sha256": "9778cd0790e41a927bd1ec6de4d7886a54c2b0d13952a65098cdef974b8473bd"
+    },
+    {
+      "path": "configs/e2_discriminability.json",
+      "bytes": 4543,
+      "sha256": "86007883fb06ef02840a327366f6f7440237faab457e0c1a02b4a024a6527a6c"
+    },
+    {
+      "path": "configs/e1_taxonomy.json",
+      "bytes": 2951,
+      "sha256": "24a52648a495a07cce4381eef1a4f5e0591784acf2a61b68a4e233e47aa9c9df"
+    },
+    {
+      "path": "docs/experiments/E4_matched_budget.md",
+      "bytes": 19499,
+      "sha256": "cb67608f2363c7fb96d502d5139b7a446470fb08a5bc00901b247777e11a292e"
+    },
+    {
+      "path": "results/E4_matched_budget/scores/office1/score_manifest.json",
+      "bytes": 8350,
+      "sha256": "5514cf67f72b66bda41b3808b7a36ff8211dfea70b4c3e4fb928347a92503e2e"
+    },
+    {
+      "path": "results/E4_matched_budget/evaluation/office1/label_manifest.json",
+      "bytes": 15737,
+      "sha256": "bcef68082c1f842325ebdef9bbfede0b0c5f7ae3b38a4393573dc5147ff192ec"
+    },
+    {
+      "path": "results/E4_matched_budget/replay/office1/manifest.json",
+      "bytes": 24676,
+      "sha256": "b98000abc3331841c98be9f3198de44d080cb601cc425bd3603e50c78b8284af"
+    },
+    {
+      "path": "results/E3c_matched_evidence/scores/office0/score_manifest.json",
+      "bytes": 10419,
+      "sha256": "fa1eeb75cc4a2ec391399cf18c15fce237ba201e9f95b7168dc7ad20dc69e19c"
+    },
+    {
+      "path": "results/E3c_matched_evidence/evaluation/office0/label_manifest.json",
+      "bytes": 16816,
+      "sha256": "7e414d66aa129d216eca2fd395391bcb2d780fa5ea8a53987095ad11041c495b"
+    },
+    {
+      "path": "results/E4_matched_budget/replay/office0/manifest.json",
+      "bytes": 23871,
+      "sha256": "3220d7af660dda466cdd6d126e1be8b4cc8c9d7f7396ebe13d7df076ca6f29d3"
+    },
+    {
+      "path": "results/E3c_matched_evidence/scores/room0/score_manifest.json",
+      "bytes": 7709,
+      "sha256": "5b6d5b5db38c2a9b9df30ec275f8c0b8f65c1233078e84681fa294caa8177a0f"
+    },
+    {
+      "path": "results/E3c_matched_evidence/evaluation/room0/label_manifest.json",
+      "bytes": 15906,
+      "sha256": "6f195cc1786625e8f910a41225852d55893a39dd2619833928aae0f08cf03f63"
+    },
+    {
+      "path": "results/E4_matched_budget/replay/room0/manifest.json",
+      "bytes": 22602,
+      "sha256": "10054fc60c6e7e65149c83115741f8f29c83499dd702d96a0b9ee9781d527019"
+    },
+    {
+      "path": "results/E3c_matched_evidence/scores/room1/score_manifest.json",
+      "bytes": 9679,
+      "sha256": "3184d240ac466f55db58d57119c815976209eb6dc6cf0e18def69c341da1ee1d"
+    },
+    {
+      "path": "results/E3c_matched_evidence/evaluation/room1/label_manifest.json",
+      "bytes": 16281,
+      "sha256": "0f33082bb0baad32040c2bbb58ee36c75e6b1b3c368fb620188111bab7d576ec"
+    },
+    {
+      "path": "results/E4_matched_budget/replay/room1/manifest.json",
+      "bytes": 23005,
+      "sha256": "589235af86790a620888d400da7bfd0b66e38057551129a125a19961aba7f8f3"
+    },
+    {
+      "path": "results/E4_matched_budget/scores/room2/score_manifest.json",
+      "bytes": 7639,
+      "sha256": "2d1f013d404a108e8dee03b2c6c59858f2d95ce2d8be71d57676ae0e155f31bb"
+    },
+    {
+      "path": "results/E3c_matched_evidence/evaluation/room2/label_manifest.json",
+      "bytes": 15487,
+      "sha256": "712c8fbc0895f23201eebae0fe5c2fb30f95271889dd5016629d45acf01dd5d3"
+    },
+    {
+      "path": "results/E4_matched_budget/replay/room2/manifest.json",
+      "bytes": 23617,
+      "sha256": "4b70abd53aabc5ace8eca8ee50fe8698e1db497aeb6a2fe659e23d5f20261f86"
+    }
+  ],
+  "scene_sources": {
+    "office1": {
+      "baseline": "results/E4_matched_budget/baselines/office1",
+      "scores": "results/E4_matched_budget/scores/office1",
+      "labels": "results/E4_matched_budget/evaluation/office1",
+      "replay": "results/E4_matched_budget/replay/office1",
+      "dataset": "data/E4/Replica/office1"
+    },
+    "office0": {
+      "baseline": "results/E4_matched_budget/baselines/office0",
+      "scores": "results/E3c_matched_evidence/scores/office0",
+      "labels": "results/E3c_matched_evidence/evaluation/office0",
+      "replay": "results/E4_matched_budget/replay/office0",
+      "dataset": "data/E2b/Replica/office0"
+    },
+    "room0": {
+      "baseline": "results/E4_matched_budget/baselines/room0",
+      "scores": "results/E3c_matched_evidence/scores/room0",
+      "labels": "results/E3c_matched_evidence/evaluation/room0",
+      "replay": "results/E4_matched_budget/replay/room0",
+      "dataset": "data/E2b/Replica/room0"
+    },
+    "room1": {
+      "baseline": "results/E4_matched_budget/baselines/room1",
+      "scores": "results/E3c_matched_evidence/scores/room1",
+      "labels": "results/E3c_matched_evidence/evaluation/room1",
+      "replay": "results/E4_matched_budget/replay/room1",
+      "dataset": "data/E3b/Replica/room1"
+    },
+    "room2": {
+      "baseline": "results/E4_matched_budget/baselines/room2",
+      "scores": "results/E4_matched_budget/scores/room2",
+      "labels": "results/E3c_matched_evidence/evaluation/room2",
+      "replay": "results/E4_matched_budget/replay/room2",
+      "dataset": "data/E3c/Replica/room2"
+    }
+  },
+  "input_hash_scope": "Anchor manifests/configs/reports only at planning time. Execution must validate their referenced artifacts and write a complete input manifest before analysis; this is not a full raw-data integrity verification.",
+  "implementation_status": "pending",
+  "execution_started": false,
+  "source_results_modified": false,
+  "amendment_policy": "Preserve this registration; document any protocol change and analysis exposure before running the amended analysis."
+}

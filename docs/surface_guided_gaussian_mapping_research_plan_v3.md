@@ -425,6 +425,20 @@ RGB는 사전 고정한 홀수 11개 temporal held-out view의 전체 영상 PSN
 
 ---
 
+## 8.6. E4b: 기준 평면의 GT 정확도·B6/plane 판정 경로 진단
+
+**상태: 설계 등록 완료·미실행(2026-10-22).** [E4b 프로토콜](experiments/E4b_reference_plane_audit.md)과 [설정](../configs/e4b_reference_plane_audit.json)에 분석 범위와 조건을 고정했다. 이미 확인한 E4의 사후 원인 진단이며, office1을 새 독립 test로 다시 부르지 않는다. E4 REVISE와 E5/E6 효능 검증 보류는 유지한다.
+
+질문은 **잘못된 point cloud가 reliable한 국소 평면을 이루어 불량 후보를 지지했는지**, **B6만 제거한 사례의 차이가 기준 오류 또는 관측 자격·집계·veto·임계값 중 어디서 생겼는지**다. office1을 주 분석, office0·room0·room1·room2를 보조 분석으로 삼고 모든 original-active 후보의 자연 결정만 사용한다. bad를 B6-only / both-miss / both-reject / plane-only 네 집합으로 전수 분할하고 normal·unknown은 별도 대조한다. 예산용 무작위 fallback 제거는 알고리즘 판별력에 귀속하지 않는다.
+
+실제 decision snapshot·pose revision·원본 관측으로 E4 점수와 최초 제거를 먼저 재현한다. 그 뒤 기준 5×5 patch의 GT 깊이·평면 위치/법선 오차와 원래 reliability, 같은 방향의 점군 오류, 후보별 gate·반복 수·support veto를 조사한다. GT 누락·경계·비평면 patch는 검사 불가로 남기고 후보·고유 patch·관측 기록의 분모를 구분한다. 자기 관측의 오류와 상대 pose에 의한 오류도 구분한다.
+
+보조 GT-plane oracle은 원래 대응·finite mask·후보·추정 pose·정규화·임계값을 고정하고 평면만 바꾼다. 원래 veto를 고정한 arm과 plane-zero veto만 재계산한 arm을 분리한다. 기준 오류와 같은 후보의 판정 전환이 함께 있는지 확인하고 bad 회복뿐 아니라 정상 오제거·GT 검사 coverage를 보고한다. GT 기반 진단을 실제 알고리즘 성능으로 보고하지 않으며 RGB/TSDF 재평가 없이 Chamfer 개선을 주장하지 않는다.
+
+완료 기준은 사실 재현, 정해진 집합·분모·검사 불가율·원인 tag, 두 oracle 대비, pose 민감도와 seed 0 고정 예시의 보고다. 효능 GO 임계값이나 단일 지배 원인 판정은 두지 않는다. 현재는 분석 구현과 실행 전이며, 개선안을 도출하면 별도 개발·봉인과 아직 살펴보지 않은 평가 데이터가 필요하다.
+
+---
+
 # 9. 평가 데이터·분할·출력 정의
 
 ## 9.1. 정량 평가 데이터
