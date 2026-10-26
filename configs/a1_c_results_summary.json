@@ -1,0 +1,523 @@
+{
+  "experiment": "A1-C",
+  "execution": "COMPLETE",
+  "research": "A1_G_M_AND_V1_REQUIRED",
+  "table": [
+    {
+      "case": "office2_strict",
+      "arm": "C00",
+      "candidates": 1200827,
+      "registered_views": 400,
+      "scorable_views": 400,
+      "common_MAE_m": 0.12024142237380148,
+      "common_AbsRel": 0.05885703023057431,
+      "coverage": 0.9254133190957851,
+      "correct_depth_coverage": 0.3661876285852406,
+      "PSNR_dB": 13.868742475984357,
+      "SSIM": 0.5016225519031287,
+      "observed_TSDF_Chamfer_m": 0.1401489034883066,
+      "reference_status": "Dense Replica GT; office2 development only"
+    },
+    {
+      "case": "office2_strict",
+      "arm": "C10",
+      "candidates": 1200827,
+      "registered_views": 400,
+      "scorable_views": 400,
+      "common_MAE_m": 0.07265506234019994,
+      "common_AbsRel": 0.0421757579408586,
+      "coverage": 0.9200449946841118,
+      "correct_depth_coverage": 0.6228164489559315,
+      "PSNR_dB": 13.970951569420905,
+      "SSIM": 0.5124857525527478,
+      "observed_TSDF_Chamfer_m": 0.08932081889029653,
+      "reference_status": "Dense Replica GT; office2 development only"
+    },
+    {
+      "case": "office2_strict",
+      "arm": "C01",
+      "candidates": 1200827,
+      "registered_views": 400,
+      "scorable_views": 400,
+      "common_MAE_m": 0.14037770273163916,
+      "common_AbsRel": 0.06919615392573178,
+      "coverage": 0.9346341555676415,
+      "correct_depth_coverage": 0.13142546496707752,
+      "PSNR_dB": 16.170397671358568,
+      "SSIM": 0.6388761341571808,
+      "observed_TSDF_Chamfer_m": 0.15369103330757897,
+      "reference_status": "Dense Replica GT; office2 development only"
+    },
+    {
+      "case": "office2_strict",
+      "arm": "C11",
+      "candidates": 1200827,
+      "registered_views": 400,
+      "scorable_views": 400,
+      "common_MAE_m": 0.018412289967527612,
+      "common_AbsRel": 0.009740689520258456,
+      "coverage": 0.9281969382122006,
+      "correct_depth_coverage": 0.8901045199896975,
+      "PSNR_dB": 17.262410420566592,
+      "SSIM": 0.718636959567666,
+      "observed_TSDF_Chamfer_m": 0.06250868783608722,
+      "reference_status": "Dense Replica GT; office2 development only"
+    },
+    {
+      "case": "HKairport01_common",
+      "arm": "C00",
+      "candidates": 6368,
+      "registered_views": 40,
+      "scorable_views": 40,
+      "common_MAE_m": 19.648902344703675,
+      "common_AbsRel": 0.22133183032274245,
+      "coverage": 0.16896549328268062,
+      "correct_depth_coverage": 0.0032605918963945803,
+      "PSNR_dB": 8.767489821876536,
+      "SSIM": 0.014649695460684597,
+      "observed_TSDF_Chamfer_m": null,
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; conditional sequence-named calibration, all-camera source support inherited"
+    },
+    {
+      "case": "HKairport01_common",
+      "arm": "C10",
+      "candidates": 6368,
+      "registered_views": 40,
+      "scorable_views": 40,
+      "common_MAE_m": 7.647197353839874,
+      "common_AbsRel": 0.08582686018198729,
+      "coverage": 0.16538862085126121,
+      "correct_depth_coverage": 0.0162590077754244,
+      "PSNR_dB": 8.770411714466594,
+      "SSIM": 0.01329328299034387,
+      "observed_TSDF_Chamfer_m": null,
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; conditional sequence-named calibration, all-camera source support inherited"
+    },
+    {
+      "case": "HKairport01_common",
+      "arm": "C01",
+      "candidates": 6368,
+      "registered_views": 40,
+      "scorable_views": 40,
+      "common_MAE_m": 16.960989570617677,
+      "common_AbsRel": 0.19232393763959407,
+      "coverage": 0.25178315610032403,
+      "correct_depth_coverage": 0.00308022169065316,
+      "PSNR_dB": 8.964957009020553,
+      "SSIM": 0.013837351300753652,
+      "observed_TSDF_Chamfer_m": null,
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; conditional sequence-named calibration, all-camera source support inherited"
+    },
+    {
+      "case": "HKairport01_common",
+      "arm": "C11",
+      "candidates": 6368,
+      "registered_views": 40,
+      "scorable_views": 40,
+      "common_MAE_m": 1.3216216765344142,
+      "common_AbsRel": 0.014867539529222994,
+      "coverage": 0.2332711169353446,
+      "correct_depth_coverage": 0.19163689903651657,
+      "PSNR_dB": 8.983244325776132,
+      "SSIM": 0.01610166532918811,
+      "observed_TSDF_Chamfer_m": null,
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; conditional sequence-named calibration, all-camera source support inherited"
+    },
+    {
+      "case": "HKairport01_wide",
+      "arm": "C00",
+      "candidates": 242162,
+      "registered_views": 40,
+      "scorable_views": 40,
+      "common_MAE_m": 20.41080403327942,
+      "common_AbsRel": 0.23657219149172307,
+      "coverage": 0.7856003841437398,
+      "correct_depth_coverage": 0.009478190039555051,
+      "PSNR_dB": 10.191436640106103,
+      "SSIM": 0.07258016783744096,
+      "observed_TSDF_Chamfer_m": null,
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; inherited A0b A2 wide candidate registry, not an independent new scene"
+    },
+    {
+      "case": "HKairport01_wide",
+      "arm": "C10",
+      "candidates": 242162,
+      "registered_views": 40,
+      "scorable_views": 40,
+      "common_MAE_m": 10.518980288505555,
+      "common_AbsRel": 0.12170980358496308,
+      "coverage": 0.7302888002048071,
+      "correct_depth_coverage": 0.06976544855223386,
+      "PSNR_dB": 10.240106584927911,
+      "SSIM": 0.06429758490994572,
+      "observed_TSDF_Chamfer_m": null,
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; inherited A0b A2 wide candidate registry, not an independent new scene"
+    },
+    {
+      "case": "HKairport01_wide",
+      "arm": "C01",
+      "candidates": 242162,
+      "registered_views": 40,
+      "scorable_views": 40,
+      "common_MAE_m": 17.76310658454895,
+      "common_AbsRel": 0.20845434963703155,
+      "coverage": 0.9034437880867751,
+      "correct_depth_coverage": 0.007427370344392076,
+      "PSNR_dB": 11.877366634761762,
+      "SSIM": 0.09421123135834933,
+      "observed_TSDF_Chamfer_m": null,
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; inherited A0b A2 wide candidate registry, not an independent new scene"
+    },
+    {
+      "case": "HKairport01_wide",
+      "arm": "C11",
+      "candidates": 242162,
+      "registered_views": 40,
+      "scorable_views": 40,
+      "common_MAE_m": 2.326587735116482,
+      "common_AbsRel": 0.028200661367736756,
+      "coverage": 0.860871690021655,
+      "correct_depth_coverage": 0.5845243528958072,
+      "PSNR_dB": 12.405215582417188,
+      "SSIM": 0.18196002822369337,
+      "observed_TSDF_Chamfer_m": null,
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; inherited A0b A2 wide candidate registry, not an independent new scene"
+    }
+  ],
+  "effects": [
+    {
+      "case": "office2_strict",
+      "comparison": "C_common4",
+      "delta_local": 0.04758636003360153,
+      "delta_placement": -0.020136280357837683,
+      "interaction": -0.07437905273051001,
+      "joint_improvement": 0.10182913240627386,
+      "local_gain_relative_to_baseline": 0.39575679573772055,
+      "placement_gain_relative_to_baseline": -0.1674654204874495,
+      "local_effect_given_reference_pose": 0.12196541276411155,
+      "pose_effect_given_reference_local": 0.05424277237267233
+    },
+    {
+      "case": "office2_strict",
+      "comparison": "A_on_AC_common8",
+      "delta_local": -0.031617833292111736,
+      "delta_placement": -0.19835132998414334,
+      "interaction": -0.3324602249008603,
+      "joint_improvement": 0.10249106162460522,
+      "local_gain_relative_to_baseline": -0.2627306153773584,
+      "placement_gain_relative_to_baseline": -1.6482143639062394,
+      "local_effect_given_reference_pose": 0.30084239160874854,
+      "pose_effect_given_reference_local": 0.13410889491671696
+    },
+    {
+      "case": "office2_strict",
+      "comparison": "C_on_AC_common8",
+      "delta_local": 0.047584254993125796,
+      "delta_placement": -0.020118358945474035,
+      "interaction": -0.07445127861690709,
+      "joint_improvement": 0.10191717466455885,
+      "local_gain_relative_to_baseline": 0.395404722427205,
+      "placement_gain_relative_to_baseline": -0.16717492237033513,
+      "local_effect_given_reference_pose": 0.12203553361003289,
+      "pose_effect_given_reference_local": 0.054332919671433055
+    },
+    {
+      "case": "HKairport01_common",
+      "comparison": "C_common4",
+      "delta_local": 12.0017049908638,
+      "delta_placement": 2.687912774085998,
+      "interaction": -3.6376629032194607,
+      "joint_improvement": 18.327280668169262,
+      "local_gain_relative_to_baseline": 0.6108079108092691,
+      "placement_gain_relative_to_baseline": 0.13679709568155698,
+      "local_effect_given_reference_pose": 15.639367894083263,
+      "pose_effect_given_reference_local": 6.32557567730546
+    },
+    {
+      "case": "HKairport01_common",
+      "comparison": "A_on_AC_common8",
+      "delta_local": -12.24277937412262,
+      "delta_placement": -23.373344206809996,
+      "interaction": -54.65295156612992,
+      "joint_improvement": 19.036827985197306,
+      "local_gain_relative_to_baseline": -0.5970053112760297,
+      "placement_gain_relative_to_baseline": -1.1397747363840252,
+      "local_effect_given_reference_pose": 42.4101721920073,
+      "pose_effect_given_reference_local": 31.279607359319925
+    },
+    {
+      "case": "HKairport01_common",
+      "comparison": "C_on_AC_common8",
+      "delta_local": 11.828519785404204,
+      "delta_placement": 2.750186371803281,
+      "interaction": -4.590783834457401,
+      "joint_improvement": 19.169489991664886,
+      "local_gain_relative_to_baseline": 0.5768044102261698,
+      "placement_gain_relative_to_baseline": 0.13410973283043237,
+      "local_effect_given_reference_pose": 16.419303619861605,
+      "pose_effect_given_reference_local": 7.340970206260681
+    },
+    {
+      "case": "HKairport01_wide",
+      "comparison": "C_common4",
+      "delta_local": 9.891823744773864,
+      "delta_placement": 2.6476974487304688,
+      "interaction": -5.544695104658604,
+      "joint_improvement": 18.084216298162936,
+      "local_gain_relative_to_baseline": 0.484636652659319,
+      "placement_gain_relative_to_baseline": 0.1297203894767423,
+      "local_effect_given_reference_pose": 15.436518849432469,
+      "pose_effect_given_reference_local": 8.192392553389073
+    },
+    {
+      "case": "HKairport01_wide",
+      "comparison": "A_on_AC_common8",
+      "delta_local": -20.138666009902956,
+      "delta_placement": -9.774355840682986,
+      "interaction": -48.910160347819335,
+      "joint_improvement": 18.99713849723339,
+      "local_gain_relative_to_baseline": -0.9242992400384575,
+      "placement_gain_relative_to_baseline": -0.4486111280144458,
+      "local_effect_given_reference_pose": 28.771494337916376,
+      "pose_effect_given_reference_local": 39.13580450713634
+    },
+    {
+      "case": "HKairport01_wide",
+      "comparison": "C_on_AC_common8",
+      "delta_local": 10.496779179573057,
+      "delta_placement": 3.2727280139923067,
+      "interaction": -5.6659700185060515,
+      "joint_improvement": 19.43547721207142,
+      "local_gain_relative_to_baseline": 0.4817680085542882,
+      "placement_gain_relative_to_baseline": 0.15020756661330797,
+      "local_effect_given_reference_pose": 16.162749198079112,
+      "pose_effect_given_reference_local": 8.93869803249836
+    }
+  ],
+  "gates": [
+    {
+      "case": "office2_strict",
+      "passed": true,
+      "qualifying_views": 400,
+      "registered_views": 400,
+      "fraction": 1.0,
+      "minimum_view_fraction": 0.8,
+      "min_pixels": 1000,
+      "min_reference_fraction": 0.5,
+      "mean_fraction_of_reference": 0.9219531599550838,
+      "reference_resolved": true,
+      "gauge_sensitivity_run": false,
+      "office3_V1_run": false,
+      "scientific_GO": false,
+      "next": "A1-G/M then V1; preserve conditional UAV labels"
+    },
+    {
+      "case": "HKairport01_common",
+      "passed": false,
+      "qualifying_views": 0,
+      "registered_views": 40,
+      "fraction": 0.0,
+      "minimum_view_fraction": 0.8,
+      "min_pixels": 1000,
+      "min_reference_fraction": 0.2,
+      "mean_fraction_of_reference": 0.04209156068542428,
+      "reference_resolved": false,
+      "gauge_sensitivity_run": false,
+      "office3_V1_run": false,
+      "scientific_GO": false,
+      "next": "A1-G/M then V1; preserve conditional UAV labels"
+    },
+    {
+      "case": "HKairport01_wide",
+      "passed": true,
+      "qualifying_views": 40,
+      "registered_views": 40,
+      "fraction": 1.0,
+      "minimum_view_fraction": 0.8,
+      "min_pixels": 1000,
+      "min_reference_fraction": 0.2,
+      "mean_fraction_of_reference": 0.6925568073064985,
+      "reference_resolved": false,
+      "gauge_sensitivity_run": false,
+      "office3_V1_run": false,
+      "scientific_GO": false,
+      "next": "A1-G/M then V1; preserve conditional UAV labels"
+    }
+  ],
+  "tests": {
+    "new_canonical_tests": 6,
+    "prior_tests": 32,
+    "total": 38
+  },
+  "limitations": [
+    "Two previously used development scenes; no independent scene replication",
+    "C local intervention includes absorbed estimated KF scale; not raw model depth attribution",
+    "Canonical covariance differs from original A arms; C11 centers equal old A11, covariance may differ",
+    "HKairport physical calibration and Terra pose relationship remain unresolved",
+    "A1-G/M and office3 V1 are not completed by this C execution"
+  ],
+  "scopes": {
+    "office2_strict": {
+      "primary_errors": {
+        "C00": 0.12024142237380148,
+        "C10": 0.07265506234019994,
+        "C01": 0.14037770273163916,
+        "C11": 0.018412289967527612
+      },
+      "common_pixel_counts": {
+        "n": 400,
+        "mean": 116382.9325,
+        "median": 119263.0,
+        "p95": 133176.3,
+        "max": 134472.0,
+        "min": 71376.0
+      },
+      "mean_common_fraction": 0.9219531599550838,
+      "support_gate": {
+        "passed": true,
+        "qualifying_views": 400,
+        "registered_views": 400,
+        "fraction": 1.0,
+        "minimum_view_fraction": 0.8,
+        "min_pixels": 1000,
+        "min_reference_fraction": 0.5
+      },
+      "ray_control_errors": {
+        "C00": 0.12011497399769723,
+        "C10": 0.07250584083609284,
+        "C01": 0.14026115832850336,
+        "C11": 0.01840075072250329,
+        "CZ10": 0.07345770616084338,
+        "CZ11": 0.025329211850184948
+      },
+      "paired_A_effects": {
+        "delta_local": -0.031617833292111736,
+        "delta_placement": -0.19835132998414334,
+        "interaction": -0.3324602249008603,
+        "joint_improvement": 0.10249106162460522,
+        "local_gain_relative_to_baseline": -0.2627306153773584,
+        "placement_gain_relative_to_baseline": -1.6482143639062394,
+        "local_effect_given_reference_pose": 0.30084239160874854,
+        "pose_effect_given_reference_local": 0.13410889491671696
+      },
+      "paired_C_effects": {
+        "delta_local": 0.047584254993125796,
+        "delta_placement": -0.020118358945474035,
+        "interaction": -0.07445127861690709,
+        "joint_improvement": 0.10191717466455885,
+        "local_gain_relative_to_baseline": 0.395404722427205,
+        "placement_gain_relative_to_baseline": -0.16717492237033513,
+        "local_effect_given_reference_pose": 0.12203553361003289,
+        "pose_effect_given_reference_local": 0.054332919671433055
+      }
+    },
+    "HKairport01_common": {
+      "primary_errors": {
+        "C00": 19.648902344703675,
+        "C10": 7.647197353839874,
+        "C01": 16.960989570617677,
+        "C11": 1.3216216765344142
+      },
+      "common_pixel_counts": {
+        "n": 40,
+        "mean": 587.175,
+        "median": 633.0,
+        "p95": 1043.55,
+        "max": 1055.0,
+        "min": 114.0
+      },
+      "mean_common_fraction": 0.04209156068542428,
+      "support_gate": {
+        "passed": false,
+        "qualifying_views": 0,
+        "registered_views": 40,
+        "fraction": 0.0,
+        "minimum_view_fraction": 0.8,
+        "min_pixels": 1000,
+        "min_reference_fraction": 0.2
+      },
+      "ray_control_errors": {
+        "C00": 19.60050196647644,
+        "C10": 7.8461878299713135,
+        "C01": 17.27833318710327,
+        "C11": 1.2539220936596394,
+        "CZ10": 7.835441315174103,
+        "CZ11": 1.9166315466165542
+      },
+      "paired_A_effects": {
+        "delta_local": -12.24277937412262,
+        "delta_placement": -23.373344206809996,
+        "interaction": -54.65295156612992,
+        "joint_improvement": 19.036827985197306,
+        "local_gain_relative_to_baseline": -0.5970053112760297,
+        "placement_gain_relative_to_baseline": -1.1397747363840252,
+        "local_effect_given_reference_pose": 42.4101721920073,
+        "pose_effect_given_reference_local": 31.279607359319925
+      },
+      "paired_C_effects": {
+        "delta_local": 11.828519785404204,
+        "delta_placement": 2.750186371803281,
+        "interaction": -4.590783834457401,
+        "joint_improvement": 19.169489991664886,
+        "local_gain_relative_to_baseline": 0.5768044102261698,
+        "placement_gain_relative_to_baseline": 0.13410973283043237,
+        "local_effect_given_reference_pose": 16.419303619861605,
+        "pose_effect_given_reference_local": 7.340970206260681
+      }
+    },
+    "HKairport01_wide": {
+      "primary_errors": {
+        "C00": 20.41080403327942,
+        "C10": 10.518980288505555,
+        "C01": 17.76310658454895,
+        "C11": 2.326587735116482
+      },
+      "common_pixel_counts": {
+        "n": 40,
+        "mean": 9568.25,
+        "median": 10699.0,
+        "p95": 12387.949999999999,
+        "max": 12920.0,
+        "min": 4010.0
+      },
+      "mean_common_fraction": 0.6925568073064985,
+      "support_gate": {
+        "passed": true,
+        "qualifying_views": 40,
+        "registered_views": 40,
+        "fraction": 1.0,
+        "minimum_view_fraction": 0.8,
+        "min_pixels": 1000,
+        "min_reference_fraction": 0.2
+      },
+      "ray_control_errors": {
+        "C00": 20.459817743301393,
+        "C10": 10.550613892078399,
+        "C01": 17.809982228279114,
+        "C11": 2.327043552696705,
+        "CZ10": 10.500614798069,
+        "CZ11": 3.7308317542076113
+      },
+      "paired_A_effects": {
+        "delta_local": -20.138666009902956,
+        "delta_placement": -9.774355840682986,
+        "interaction": -48.910160347819335,
+        "joint_improvement": 18.99713849723339,
+        "local_gain_relative_to_baseline": -0.9242992400384575,
+        "placement_gain_relative_to_baseline": -0.4486111280144458,
+        "local_effect_given_reference_pose": 28.771494337916376,
+        "pose_effect_given_reference_local": 39.13580450713634
+      },
+      "paired_C_effects": {
+        "delta_local": 10.496779179573057,
+        "delta_placement": 3.2727280139923067,
+        "interaction": -5.6659700185060515,
+        "joint_improvement": 19.43547721207142,
+        "local_gain_relative_to_baseline": 0.4817680085542882,
+        "placement_gain_relative_to_baseline": 0.15020756661330797,
+        "local_effect_given_reference_pose": 16.162749198079112,
+        "pose_effect_given_reference_local": 8.93869803249836
+      }
+    }
+  }
+}

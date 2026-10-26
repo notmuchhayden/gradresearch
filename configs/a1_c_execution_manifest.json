@@ -1,0 +1,208 @@
+{
+  "experiment": "A1-C",
+  "execution": "COMPLETE",
+  "research": "A1_G_M_AND_V1_REQUIRED",
+  "spec": {
+    "path": "configs/a1_c_canonical_factorial.json",
+    "bytes": 5932,
+    "sha256": "91ceb418169e7bc00bfc9eeb72a4cc4a4e608c2e7d40b9c75043b20451b155b5"
+  },
+  "registration": {
+    "path": "results/A1_C_canonical_factorial/2026-10-26/registration.json",
+    "bytes": 209097,
+    "sha256": "9874b99f979bb94126e2740f2fbfccab59e5d5aa00a157d035445bde7af7ecd1"
+  },
+  "analysis_code": [
+    {
+      "path": "scripts/finalize_a1_c.py",
+      "bytes": 11122,
+      "sha256": "7e61d0323a50e38c7f9bdf33d3822f5e98ddf5167bc851e7ca34e8c2a0e40ce4"
+    },
+    {
+      "path": "scripts/report_a1_c.py",
+      "bytes": 25932,
+      "sha256": "dafb77cba6cd3a74475bb8f63bfd8fe6bef8eae4d210ea491ad6d867706195a1"
+    }
+  ],
+  "summary": {
+    "path": "configs/a1_c_results_summary.json",
+    "bytes": 19259,
+    "sha256": "fb54b90ce3c08cc5586d8d50a5524f76e93b78c876f63570a41cb4f505892f01"
+  },
+  "artifacts": [
+    {
+      "path": "docs/experiments/A1_C_canonical_factorial_results.md",
+      "bytes": 16044,
+      "sha256": "33d61b3d83cf6e04c87a3a7814fdc680d3391ea9c608824b5680701b381f5a3d"
+    },
+    {
+      "path": "docs/figures/A1C/A1_C_four_arm_metrics.png",
+      "bytes": 184140,
+      "sha256": "2cbf73a355ab009c5342bf189a29202983c4ccbced612a76daf2d6e1f0b07c68"
+    },
+    {
+      "path": "docs/figures/A1C/A_vs_C_same_pixels.png",
+      "bytes": 121394,
+      "sha256": "ee29b770b8a607dbc9c8699f2d6f58337fa6909f1f81853df5ce407cd5370ec7"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_common_frame0104.png",
+      "bytes": 1386178,
+      "sha256": "a7c42be1d6fb12aefee80735ff64d7fffe33d27d0e883e8e98f28688f17cf9d4"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_common_frame0154.png",
+      "bytes": 1582453,
+      "sha256": "5b33c914676bc19a5118fee795ee20b6abfc0b092ab41c0a5d72d8a4b4e0b056"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_common_frame0204.png",
+      "bytes": 1540687,
+      "sha256": "8bedde8a66f9cdf0e66defbcd02b81dd10702559ca4dfcbf03fb736a3ca7010d"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_common_frame0254.png",
+      "bytes": 1194430,
+      "sha256": "d715ce8ac117e689003131fd201d49888687457258444a8684fc9df9d97cb58e"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_common_frame0299.png",
+      "bytes": 1138695,
+      "sha256": "499f6b805a4ae152e7ec21347507522d4356d6696e5197807673a5452a50e84a"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_wide_frame0104.png",
+      "bytes": 2271552,
+      "sha256": "8cb6e46107a78a36ba21ccb2059e06f8f4edb62145f17210789af7d88a0aec38"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_wide_frame0154.png",
+      "bytes": 2703622,
+      "sha256": "57dd9c6fed336b3fa92cf3c8cbeb16a035ef3946f209278ad8740c9884b53687"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_wide_frame0204.png",
+      "bytes": 2939926,
+      "sha256": "b89d9c1b98a0960bb6d173dc44b5e092e8a2a1b860993beca7aced5daa063f55"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_wide_frame0254.png",
+      "bytes": 2558365,
+      "sha256": "2deeadee9c6ce2900703183a6a684c8f037c1ac98f6f64cd0bde5a5e7bc86b52"
+    },
+    {
+      "path": "docs/figures/A1C/HKairport01_wide_frame0299.png",
+      "bytes": 2105531,
+      "sha256": "32fbdd796997923ef1649e5be7693b92a3c197212bd180a9ec612dc9c3568cfd"
+    },
+    {
+      "path": "docs/figures/A1C/frame_metrics_and_support.png",
+      "bytes": 358211,
+      "sha256": "bebf23ea0a38e775a00b4995ae220062af6756d07d85d2e720ce265bb67e6720"
+    },
+    {
+      "path": "docs/figures/A1C/office2_covariance_control.png",
+      "bytes": 54300,
+      "sha256": "d867e490fa7cb207d1afa11d177d47684857562063d5b12023834eaa99622955"
+    },
+    {
+      "path": "docs/figures/A1C/office2_strict_frame0201.png",
+      "bytes": 1033793,
+      "sha256": "31283a25e1ae87ca8faf6f3a03ad0a374305ad6dc2304aed90af2daf8f558403"
+    },
+    {
+      "path": "docs/figures/A1C/office2_strict_frame0401.png",
+      "bytes": 1378319,
+      "sha256": "ccf4fad79e6b75cf1d5ae9c5c7f5c0b8e9c9ca4c59a03544fe701b5d12a6ab04"
+    },
+    {
+      "path": "docs/figures/A1C/office2_strict_frame0601.png",
+      "bytes": 1377838,
+      "sha256": "ae47b4d10974c5dae5d424571f4d87d868b1db27546a51e442134cfa8f8751f9"
+    },
+    {
+      "path": "docs/figures/A1C/office2_strict_frame0801.png",
+      "bytes": 1418895,
+      "sha256": "eee28fb5df53385357b56446972decdbac1e4c645b94a2c8ab828772db02853d"
+    },
+    {
+      "path": "docs/figures/A1C/office2_strict_frame0999.png",
+      "bytes": 1449032,
+      "sha256": "9297bb2e51492b4722f257a03a752f740b54c039ddd235776864f63f1835364e"
+    },
+    {
+      "path": "results/A1_C_canonical_factorial/2026-10-26/HKairport01_common_center_proxy_viewer.html",
+      "bytes": 6365840,
+      "sha256": "cf4197beed4a8f74fe176c1a358901f2fb71b3e86359226532903b0ff26f097e"
+    },
+    {
+      "path": "results/A1_C_canonical_factorial/2026-10-26/HKairport01_wide_center_proxy_viewer.html",
+      "bytes": 6892915,
+      "sha256": "78d8ca345d39c22a615b6fb9623f099da7ae8ca7f60de8d1c3427e40a1076a7b"
+    },
+    {
+      "path": "results/A1_C_canonical_factorial/2026-10-26/office2_strict_center_proxy_viewer.html",
+      "bytes": 6370001,
+      "sha256": "4c1c7ab663d4e3b3696c72702133af39680429173bf22033f2c3c00c52a6e322"
+    },
+    {
+      "path": "results/A1_C_canonical_factorial/2026-10-26/analysis/results.json",
+      "bytes": 2600031,
+      "sha256": "15c16d48d7deefcae727ccc9dea04183951f5056e142bcd5006276aff810036e"
+    },
+    {
+      "path": "results/A1_C_canonical_factorial/2026-10-26/analysis/decision.json",
+      "bytes": 1630,
+      "sha256": "c4fb76e0af45465d60a9e6aaf627c20d5395ad1410c17a0fc04fe12e183280c0"
+    },
+    {
+      "path": "results/A1_C_canonical_factorial/2026-10-26/analysis/A1_C_four_arms.csv",
+      "bytes": 3110,
+      "sha256": "e24ff4d606eaa1288b434364934cd9551a809c3f31245a95458be1dcd7c707be"
+    },
+    {
+      "path": "results/A1_C_canonical_factorial/2026-10-26/analysis/A1_effects.csv",
+      "bytes": 1896,
+      "sha256": "e04d598deb6d6f44b67998a9dea364bcd6b241eb9b9b75d8ff489e752ec52c5b"
+    },
+    {
+      "path": "results/A1_C_canonical_factorial/2026-10-26/analysis/A1_source_residuals.csv",
+      "bytes": 7319,
+      "sha256": "1a426be4b4daee9a7b6f8a4b9dd010f132302785ad2949be2f6bd2ebf3dbd5de"
+    }
+  ],
+  "final_checks": {
+    "path": "results/A1_C_canonical_factorial/2026-10-26/final_checks.json",
+    "bytes": 1060,
+    "sha256": "92f6e2e1ebde64627dbe093dc7f7abb05c0518093d61cd61027e47d69fd37920"
+  },
+  "output_artifact_index": {
+    "path": "results/A1_C_canonical_factorial/2026-10-26/output_artifact_index.json",
+    "bytes": 273067,
+    "sha256": "8a8162227b522a987d758ed3cde3c648c1fffe7bf84fdaad7ce9b453c0c96fb5"
+  },
+  "current_docs": [
+    {
+      "path": "README.md",
+      "bytes": 16564,
+      "sha256": "e96d73db2043d5adb85546fe62f70707dab8d79cff7ed49432fd96ee8858db37"
+    },
+    {
+      "path": "docs/pointmap_pose_error_decomposition_research_plan_v1.md",
+      "bytes": 95167,
+      "sha256": "316aa8ac22bf3ab45d71ce8cd78e7e00d764d1d9fb6ba04d549029b052799343"
+    }
+  ],
+  "viewer_reference_inputs": [
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/reference_surface_samples.npy",
+      "bytes": 2400128,
+      "sha256": "a4395a4a4c4c6c45d40e7af0d3ae55d66a5440ff63e198c4fee599f6436b38bc"
+    },
+    {
+      "path": "results/A0b_pointmap_pose_factorial/HKairport01/evaluation/heldout_lidar_center_reference.npz",
+      "bytes": 1717470,
+      "sha256": "e26f7babe7792ffa5064edf3c44b324800a2460d03c5a8329d1d69604254bd9e"
+    }
+  ]
+}

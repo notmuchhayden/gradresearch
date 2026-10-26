@@ -1,0 +1,71 @@
+{
+  "experiment": "A1-C effective local geometry x rigid pose factorial",
+  "date": "2026-10-26",
+  "output": "results/A1_C_canonical_factorial/2026-10-26",
+  "A1_U": "results/A1_U_scale_reparameterization/2026-10-26",
+  "A1_U_spec": "configs/a1_unit_reparameterization.json",
+  "prior_office": "results/A0_pointmap_pose_factorial/office2",
+  "prior_HK": "results/A0b_pointmap_pose_factorial/HKairport01",
+  "native_filter_contract": "configs/n1_coordinate_contract.json",
+  "arms": {
+    "C00": "effective y=a*C*raw, estimated rigid Q; original A00 world geometry",
+    "C10": "reference metric local, estimated rigid Q",
+    "C01": "effective y fixed, reference metric SE3; rotation/translation intervention only",
+    "C11": "reference metric local, reference metric SE3"
+  },
+  "auxiliary": {"CZ10": "reference Z along predicted y/y_z ray, estimated Q", "CZ11": "reference Z along predicted y/y_z ray, reference Q"},
+  "attributes": "Within every scope and every arm preserve identical IDs/order, baseline RGB/SH/opacity and canonical local covariance Sigma_y. World covariance follows rigid rotation. Native filter and model are not rerun.",
+  "covariance_control": "Office2 only: four C arms on the original fixed 20 fusion views, holding world covariance at C00. Diagnostic control; separate from rigid covariance transport. No appearance/covariance refit.",
+  "alignment": "Reuse original prefix position-only gauge and final pose revision from A1-U. No new GT fit, no per-KF scale fit. C00 identical to existing A00 for each scope.",
+  "evaluation": {
+    "renderer": "Existing E4 compact CUDA, expected camera-Z, float32, TF32 off",
+    "weight_min": 0.001,
+    "primary": "Equal-view mean MAE on fixed-reference-valid all-four-C-arm common covered target pixels; retain zero-support views as unscorable and publish denominators",
+    "group_masks": "C common4; C+CZ common6; prior A common4 replay; A+C common8 for representation comparison; transported+fixed-world C common8 on office2 20 views. Do not compare effects across unequal target masks as if identical.",
+    "coverage": "All reference-valid denominator, with correct coverage threshold max(abs tolerance,2% reference Z). Publish per-arm own-covered errors, depth bins, per-view and tracking-gap strata.",
+    "office_surface": "Reuse original 20-view GT-depth TSDF sampled reference and same 4cm voxel/12cm truncation/10m maximum/100k seed0 area samples for six transported C/CZ maps. Gaussian centers remain separate proxies.",
+    "HK_surface": "Sparse LiDAR and Terra reference only; no dense mesh completion or TSDF claim",
+    "RGB": "Unchanged degree-zero appearance, no refiner; same exposure-normalized target convention as prior A0/A0b. PSNR/SSIM secondary.",
+    "prior_replay": "Recompute original four-arm outcomes and original common masks from hash-verified full prior depth/coverage caches on all registered views. Independently CUDA re-render prior maps at five fixed saved views and compare depth/coverage to caches. This is not a new full-frame original model inference.",
+    "minimum_improvement_relative": 0.1,
+    "max_correct_coverage_loss_absolute": 0.01,
+    "dense_support": {"min_pixels": 1000, "min_reference_fraction": 0.5, "min_view_fraction": 0.8},
+    "sparse_support": {"min_pixels": 1000, "min_reference_fraction": 0.2, "min_view_fraction": 0.8},
+    "significance": "Development diagnostics only; no independent-frame/point significance or scene-level CI from these two previously used scenes"
+  },
+  "implementation_checks": {
+    "float64_rtol": 1e-9,
+    "float64_atol": 1e-10,
+    "packed_point_atol_m": 0.00002,
+    "packed_covariance_atol_m2": 0.00001,
+    "prior_replay_depth_max_difference_m": 0.002,
+    "prior_replay_coverage_disagreements": 0,
+    "prior_cache_metric_atol_m": 0.000002
+  },
+  "cases": {
+    "office2_strict": {
+      "scene": "office2", "scope": "strict", "expected_candidates": 1200827,
+      "frame_ids": "all odd 201..999 (400)", "saved_views": [201, 401, 601, 801, 999],
+      "covariance_views": [201, 241, 281, 321, 361, 401, 441, 481, 521, 561, 601, 641, 681, 721, 761, 801, 841, 881, 921, 961],
+      "absolute_tolerance_m": 0.05, "depth_bins_m": [0.1, 1, 2, 4, 10],
+      "prior_ids": {"A00": "strict_A00_C1", "A10": "strict_A10_C1", "A01": "strict_A01_C1", "A11": "strict_A11_C1"},
+      "reference_status": "Dense Replica GT; office2 development only"
+    },
+    "HKairport01_common": {
+      "scene": "HKairport01", "scope": "camera_common", "expected_candidates": 6368,
+      "frame_ids": "all heldout grid 104..299, step5 (40)", "saved_views": [104, 154, 204, 254, 299],
+      "absolute_tolerance_m": 0.5, "depth_bins_m": [2, 25, 50, 75, 100, 150, 200],
+      "prior_ids": {"A00": "strict_A00_HKairport_released_C1_position", "A10": "strict_A10_HKairport_released_C1_position", "A01": "strict_A01_HKairport_released_C1_position", "A11": "strict_A11_HKairport_released_C1_position"},
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; conditional sequence-named calibration, all-camera source support inherited"
+    },
+    "HKairport01_wide": {
+      "scene": "HKairport01", "scope": "sequence_camera_support", "expected_candidates": 242162,
+      "frame_ids": "all heldout grid 104..299, step5 (40)", "saved_views": [104, 154, 204, 254, 299],
+      "absolute_tolerance_m": 0.5, "depth_bins_m": [2, 25, 50, 75, 100, 150, 200],
+      "prior_ids": {"A00": "A00", "A10": "A10", "A01": "A01", "A11": "A11"},
+      "reference_status": "REFERENCE_UNRESOLVED unchanged; inherited A0b A2 wide candidate registry, not an independent new scene"
+    }
+  },
+  "decision": "Complete C diagnosis, then prioritize A1-G/M and office3 V1 with registered rules. No Depth-only GO, no automatic A1-F/RT/Q0/V1/A2/optimizer implementation. Calibration unresolved and support failure independently restrict claims.",
+  "access": "Existing office2/HKairport01 only; office3/office4 remain unrun"
+}

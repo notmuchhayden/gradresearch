@@ -8,7 +8,9 @@
 
 N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음을 확인했습니다. A10은 **local geometry oracle**로 해석하며, 순수 Depth 보정 효과와 구분합니다.
 
-**[A1-U PASS](docs/experiments/A1_U_scale_reparameterization_results.md):** office2/HKairport01의 32KF·native-active 4,788,198개에서 KF scale을 local point·covariance로 흡수했습니다. 여섯 가지 재표현 모두 기존 A00 map과 byte-identical했고, 60개 positive 렌더링 비교의 RGB/depth/weight 차이는 0이었습니다. 잘못된 변환도 검출했으며 관련 32개 검사를 통과했습니다. 이는 보정 성능 개선이 아니라 **원본 지도 보존 검증**입니다. 다음은 **A1-C 유효 local geometry × rigid pose 비교**이고 Q0-HK 및 office3/office4 예측은 미실행입니다.
+**[A1-U PASS](docs/experiments/A1_U_scale_reparameterization_results.md):** office2/HKairport01의 32KF·native-active 4,788,198개에서 KF scale을 local point·covariance로 흡수했습니다. 여섯 가지 재표현 모두 기존 A00 map과 byte-identical했고, 60개 positive 렌더링 비교의 RGB/depth/weight 차이는 0이었습니다. 잘못된 변환도 검출했으며 관련 32개 검사를 통과했습니다. 이는 보정 성능 개선이 아니라 **원본 지도 보존 검증**입니다.
+
+**[A1-C 실행 완료](docs/experiments/A1_C_canonical_factorial_results.md):** 유효 local geometry × rigid pose 네 조건을 office2 400뷰와 HKairport01 두 후보 범위 각 40뷰에서 평가했습니다. Local만 참조로 교체하면 공통 깊이 MAE가 office2 **0.120241→0.072655m**, HKairport wide **20.410804→10.518980m**로 감소했습니다. Office2의 rigid pose 단독 교체는 여전히 악화됐고 interaction이 남았습니다. HK common은 support 부족, wide는 reference 미해결로 조건부입니다. 다음은 **A1-G/M 및 office3 V1**이며 Depth-only 보정 GO는 보류합니다. Q0-HK와 office3/office4 예측은 미실행입니다.
 
 - [현재 연구·실험 계획서](docs/pointmap_pose_error_decomposition_research_plan_v1.md)
 - [N0 결과와 재실행 방법](docs/experiments/N0_asset_audit_results.md)
@@ -24,6 +26,8 @@ N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음�
 - [A0b 요약 명세](configs/a0b_results_summary.json)
 - [A1-U 지도 보존 검증 결과](docs/experiments/A1_U_scale_reparameterization_results.md)
 - [A1-U 요약 명세](configs/a1_u_results_summary.json)
+- [A1-C 결과·A/C 비교·그림](docs/experiments/A1_C_canonical_factorial_results.md)
+- [A1-C 요약 명세](configs/a1_c_results_summary.json)
 
 ## 이전 연구 기록 (종료)
 
