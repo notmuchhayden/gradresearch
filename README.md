@@ -1,8 +1,18 @@
-# 교차시점 기하 정합성 기반 Gaussian Mapping 연구
+# Pointmap·Pose 오류 분해 기반 Gaussian Mapping 연구
 
-연속 RGB 영상의 3D Gaussian Map에서 다른 Keyframe의 기하 관측을 이용해 이상 Gaussian의 편입을 억제하는 석사학위 논문 연구 저장소입니다.
+현재 연구는 **MASt3R-SLAM 기반 3D Gaussian Splatting에서 Pointmap과 카메라 Pose/Scale 오류를 분리하는 실험**입니다. 이전 표면 기반 Gaussian 편입·pruning 연구는 [E0~E4f 종합 보고서](docs/experiments/surface_guided_gaussian_mapping_experiment_summary.md)에 따라 종료했습니다.
 
-현재는 **E4b의 기준 평면 GT 정확도·판정 경로 진단까지 완료한 단계**입니다. 앞선 E4에서는 15개 방법, 자연 정책·점수 ranker·공통 fallback을 분리해 5장면에서 실행했습니다. 새 office1의 75% 유지 조건은 모두 **860,701개·42.683 MiB**이며, TSDF Chamfer는 plane 0.108354 m, median-depth 0.108530 m, 원래 B6 depth 0.105947 m였습니다.
+**2026-10-26: [N0 자산 점검·기준선 재현 PASS](docs/experiments/N0_asset_audit_results.md).** 가중치 4개·입력/GT 242개 파일의 hash를 확인하고, 저장 맵 재평가와 새 `office0` 실행에서 기존 E0 집계 지표를 재현했습니다. 새 실행은 60/60 pose, 2 KF, active Gaussian 286,208개입니다. 다음 단계는 **N1 좌표계·단위 계약 검증**, 이후 동일 후보 기반 A0 2×2 Oracle 실험입니다. Depth 보정의 효능과 주된 오류 원인은 아직 확정하지 않았습니다.
+
+- [현재 연구·실험 계획서](docs/pointmap_pose_error_decomposition_research_plan_v1.md)
+- [N0 결과와 재실행 방법](docs/experiments/N0_asset_audit_results.md)
+- [N0 요약 명세](configs/n0_asset_audit.json)
+
+## 이전 연구 기록 (종료)
+
+아래는 다른 Keyframe의 기하 관측을 이용해 이상 Gaussian의 편입을 억제하려 했던 이전 연구의 기록입니다. 과거 단계의 진행 지시·계획은 현재 작업 지시가 아닙니다.
+
+**E4b 시점 기록:** 앞선 E4에서는 15개 방법, 자연 정책·점수 ranker·공통 fallback을 분리해 5장면에서 실행했습니다. 새 office1의 75% 유지 조건은 모두 **860,701개·42.683 MiB**이며, TSDF Chamfer는 plane 0.108354 m, median-depth 0.108530 m, 원래 B6 depth 0.105947 m였습니다. 이후 E4c~E4f와 종료 결정은 위 종합 보고서를 따릅니다.
 
 **E4 판정은 REVISE**입니다. plane의 median-depth 대비 개선은 0.162%로 사전 기준 2%에 미달했고 B6보다 기하 품질도 낮았습니다. RGB·coverage 비열등성은 통과했습니다. 자연 plane 정책은 bad 1,686개·normal 0개를 제거했지만 전체 bad recall은 0.587%로 낮았습니다. **E5/E6 효능 검증으로의 자동 진행은 보류**하고, 강한 depth 대조군과 제한된 관측 범위를 개발 단계에서 분석해야 합니다.
 
@@ -19,11 +29,11 @@
 - [E4: 동일 수·바이트에서 RGB·TSDF·실제 compact 메모리 비교](docs/experiments/E4_matched_budget.md) — office0 개발 / room0·room1·room2 회귀 / 새 office1 평가. 525개 조합 중 461개 도달, 64개 도달 불가를 명시했습니다. 99%·90%·75% 유지 예산, B1~B8·median-depth·P1/P2/P3 및 무작위 3 seeds 포함. **REVISE: 기하 추가 개선 기준 미달**. 75개 테스트·CUDA/TSDF 합성 검사·5장면 무결성 검사 PASS입니다.
 - [E4b: 기준 평면의 GT 정확도·B6/plane 판정 경로 감사 결과](docs/experiments/E4b_reference_plane_audit_results.md) — **실행 완료**. office1 주 분석 / 기존 네 장면 보조 분석. 5장면 원본 점수·최초 제거 정확 재현, 후보×시점×관측 116,265,669행 감사, 두 GT-plane oracle·pose/라벨 민감도·원본 patch 중복 제거·200개 고정 사례 포함. 13개 테스트·입력 1,155개와 결과 무결성 검사 PASS. E4 REVISE 유지입니다.
 
-## 연구 계획
+## 이전 연구 계획 (이력)
 
 - [연구·실험 계획서 v3](docs/surface_guided_gaussian_mapping_research_plan_v3.md)
 - [이전 계획서 v2](docs/surface_guided_gaussian_mapping_research_plan_v2.md)
-- 현재 논문 제목: **연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구**
+- 당시 논문 제목: **연속 영상 기반 3D Gaussian Splatting에서 이상 Gaussian 감소를 위한 기하 정합성 기반 최적화 연구**
 - 작업용 연구 명칭: *Cross-View Surface-Supported Gaussian Admission*
 
 핵심 질문은 후보 Gaussian을 생성한 관측과 가능한 한 분리된 교차시점 기하 증거가, 정상 표면의 표현을 유지하면서 잘못된 Gaussian의 Map 편입을 줄일 수 있는지입니다.

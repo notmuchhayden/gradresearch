@@ -1,0 +1,204 @@
+{
+  "experiment": "N0 asset freeze and office0 baseline reproduction",
+  "date": "2026-10-26",
+  "timezone": "Asia/Seoul",
+  "status": "PASS",
+  "next_stage": "N1",
+  "report": "docs/experiments/N0_asset_audit_results.md",
+  "plan": "docs/pointmap_pose_error_decomposition_research_plan_v1.md",
+  "command": ".venv/bin/python scripts/run_n0_audit.py --gpu",
+  "script_sha256": "401d24269ce0e9a32a16c8832da8d9d58fa72a20e02516f0d3d697e8ada7e6f8",
+  "research_head_at_execution": "abe9297de4749d3f2d6b126b3398c7d8e2a6a317",
+  "upstream_head": "74ffc37454dfa7560c9531b1534825c54c36a89e",
+  "source_snapshot_note": "Source manifest includes pre-run files, including untracked audit script and plan. N0 report, this summary and README progress edits were written after the run.",
+  "inventory": {
+    "weights_verified": 4,
+    "data_files_verified": 242,
+    "baseline_files_frozen": 69,
+    "source_files_frozen": 4616,
+    "e0_code_hash_differences": [
+      "scripts/download_e0_replica.py",
+      "src/e0_export.py"
+    ],
+    "package_version_changes": [],
+    "e4_metric_files_verified": 5
+  },
+  "cpu_checks": {
+    "keyframes": 2,
+    "raw_candidates": 294912,
+    "tracked_poses": 60,
+    "raw_events": 60
+  },
+  "reproduction": {
+    "saved": {
+      "active_gaussians": 286208,
+      "summaries": {
+        "validation": {
+          "n_frames": 20,
+          "psnr_db": 18.349837407369115,
+          "ssim": 0.5693530380725861,
+          "lpips_alex": 0.33671028465032576,
+          "gt_depth_coverage": 0.9709954815273047,
+          "gt_rendered_depth_l1_m": 0.10829438976943492,
+          "gt_rendered_depth_absrel": 0.05646124202758074
+        },
+        "held_out_test": {
+          "n_frames": 40,
+          "psnr_db": 15.467387953840333,
+          "ssim": 0.41439501084387304,
+          "lpips_alex": 0.4322366215288639,
+          "gt_depth_coverage": 0.7996980107995455,
+          "gt_rendered_depth_l1_m": 0.1106852063909173,
+          "gt_rendered_depth_absrel": 0.050782755855470894
+        }
+      },
+      "differences_from_e0": {
+        "validation": {
+          "n_frames": 0,
+          "psnr_db": 0.0,
+          "ssim": 0.0,
+          "lpips_alex": 0.0,
+          "gt_depth_coverage": 0.0,
+          "gt_rendered_depth_l1_m": 0.0,
+          "gt_rendered_depth_absrel": 0.0
+        },
+        "held_out_test": {
+          "n_frames": 0,
+          "psnr_db": 0.0,
+          "ssim": 0.0,
+          "lpips_alex": 0.0,
+          "gt_depth_coverage": 0.0,
+          "gt_rendered_depth_l1_m": 0.0,
+          "gt_rendered_depth_absrel": 0.0
+        }
+      }
+    },
+    "fresh": {
+      "active_gaussians": 286208,
+      "summaries": {
+        "validation": {
+          "n_frames": 20,
+          "psnr_db": 18.349837407369115,
+          "ssim": 0.5693530380725861,
+          "lpips_alex": 0.33671028465032576,
+          "gt_depth_coverage": 0.9709954815273047,
+          "gt_rendered_depth_l1_m": 0.10829438976943492,
+          "gt_rendered_depth_absrel": 0.05646124202758074
+        },
+        "held_out_test": {
+          "n_frames": 40,
+          "psnr_db": 15.467387953840333,
+          "ssim": 0.41439501084387304,
+          "lpips_alex": 0.4322366215288639,
+          "gt_depth_coverage": 0.7996980107995455,
+          "gt_rendered_depth_l1_m": 0.1106852063909173,
+          "gt_rendered_depth_absrel": 0.050782755855470894
+        }
+      },
+      "differences_from_e0": {
+        "validation": {
+          "n_frames": 0,
+          "psnr_db": 0.0,
+          "ssim": 0.0,
+          "lpips_alex": 0.0,
+          "gt_depth_coverage": 0.0,
+          "gt_rendered_depth_l1_m": 0.0,
+          "gt_rendered_depth_absrel": 0.0
+        },
+        "held_out_test": {
+          "n_frames": 0,
+          "psnr_db": 0.0,
+          "ssim": 0.0,
+          "lpips_alex": 0.0,
+          "gt_depth_coverage": 0.0,
+          "gt_rendered_depth_l1_m": 0.0,
+          "gt_rendered_depth_absrel": 0.0
+        }
+      }
+    }
+  },
+  "preservation": {
+    "e0_files_rehashed": 69,
+    "unchanged": true
+  },
+  "scope_limits": [
+    "Fresh mapping and GPU evaluation rerun only for the short office0 E0 split.",
+    "E0b-E4f historical results indexed; full original experiments, raw datasets and UAV archives not exhaustively rerun or rehashed.",
+    "E0 stored KF dump has unversioned pose revisions and unknown fused ancestry; fresh audit journal requires N1 linkage.",
+    "Full-trajectory Sim(3) is an E0 regression convention, not the A0 prefix calibration contract.",
+    "No new evaluation scene, A0 intervention validation, correction efficacy or peak VRAM claim."
+  ],
+  "next_actions": [
+    "Define raw self-branch candidate/pixel/anchor coordinate contract using existing office0 assets.",
+    "Validate fixed local unit conversion, global gauge, camera resize/crop and KF Sim(3) scale composition.",
+    "Register common candidates, GT validity and attribute hashes, then test A10/A01 independence.",
+    "Register a new indoor scene and development/validation/final-test roles before evaluating A0."
+  ],
+  "frozen_artifact_index": [
+    {
+      "path": "results/N0_asset_audit/2026-10-26/audit.json",
+      "bytes": 4136,
+      "sha256": "7de109542606c6b7820f02948c8d035b03941116259789519956d11c534855d9"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/environment.json",
+      "bytes": 5766,
+      "sha256": "d637eed3a65e0a572b5b7d802652efcdc1cf4373ba797499bae8be60fff99310"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/source_manifest.json",
+      "bytes": 991107,
+      "sha256": "8aa1a0714507cd665fec6e3bdc1eb88a02c976434b7264ffa4c8b8ffd5de4acd"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/asset_hashes.json",
+      "bytes": 78256,
+      "sha256": "eb84ac3ab6aecd38b74c2b20d6f6a3e9fdf14c07ee4297c6b7f5b6115d0ebf7f"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/baseline_manifest.json",
+      "bytes": 14937,
+      "sha256": "1b6f76cbfa57015529f5b43879042563934c458fa569453654e0bccc8c529b9d"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/cpu_checks.json",
+      "bytes": 2262,
+      "sha256": "3e695de4cda0bc235f7b42ad349f4f7e06e891774244c125d20fd1c1b0da170a"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/reproduction.json",
+      "bytes": 4989,
+      "sha256": "ce7df11c3dc05d6b8f62c1ae2a41232a9949053983103d5f21f2f9d5c4716041"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/gpu_commands.json",
+      "bytes": 3823,
+      "sha256": "c810e8e7bbca6b6596d58ce7094bea1bdbe38c2fd5c3ee166ac297178c0d09dc"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/historical_assets.json",
+      "bytes": 10570,
+      "sha256": "1bb5d1bfa483da084c354ca3858ab52d0cbfe16646ae9a67b62142d6c4c65add"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/preservation.json",
+      "bytes": 67,
+      "sha256": "917d747bb03e5817f9d22da7a50f159e2cb133c6251f04599cc359fd4a9ceb96"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/frozen/research.diff",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/frozen/upstream.diff",
+      "bytes": 16491,
+      "sha256": "a30f4dfffa8c2d222788cf5c943566a394c3c16c705b486c9c06306de2531d5d"
+    },
+    {
+      "path": "results/N0_asset_audit/2026-10-26/fresh_baseline/run_manifest.json",
+      "bytes": 2582,
+      "sha256": "30264f04360db046d9235827d299cd69da6b1ae0a2a11360f1b14fcebd80419a"
+    }
+  ]
+}
