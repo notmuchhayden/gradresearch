@@ -8,6 +8,8 @@
 
 N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음을 확인했습니다. A10은 **local geometry oracle**로 해석하며, 순수 Depth 보정 효과와 구분합니다.
 
+**[A1-U PASS](docs/experiments/A1_U_scale_reparameterization_results.md):** office2/HKairport01의 32KF·native-active 4,788,198개에서 KF scale을 local point·covariance로 흡수했습니다. 여섯 가지 재표현 모두 기존 A00 map과 byte-identical했고, 60개 positive 렌더링 비교의 RGB/depth/weight 차이는 0이었습니다. 잘못된 변환도 검출했으며 관련 32개 검사를 통과했습니다. 이는 보정 성능 개선이 아니라 **원본 지도 보존 검증**입니다. 다음은 **A1-C 유효 local geometry × rigid pose 비교**이고 Q0-HK 및 office3/office4 예측은 미실행입니다.
+
 - [현재 연구·실험 계획서](docs/pointmap_pose_error_decomposition_research_plan_v1.md)
 - [N0 결과와 재실행 방법](docs/experiments/N0_asset_audit_results.md)
 - [N0 요약 명세](configs/n0_asset_audit.json)
@@ -20,6 +22,8 @@ N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음�
 - [A0 요약 명세](configs/a0_results_summary.json)
 - [A0b HKairport01 결과·해석·그림](docs/experiments/A0b_HKairport01_factorial_results.md)
 - [A0b 요약 명세](configs/a0b_results_summary.json)
+- [A1-U 지도 보존 검증 결과](docs/experiments/A1_U_scale_reparameterization_results.md)
+- [A1-U 요약 명세](configs/a1_u_results_summary.json)
 
 ## 이전 연구 기록 (종료)
 

@@ -1,0 +1,98 @@
+{
+  "experiment": "A1-U",
+  "status": "PASS",
+  "registration": {
+    "path": "results/A1_U_scale_reparameterization/2026-10-26/registration.json",
+    "bytes": 22401,
+    "sha256": "b196e906043515236402f1066b4a5e8e8ed4079d5b0eb9d275524acf6d1f7ab9"
+  },
+  "spec": {
+    "path": "configs/a1_unit_reparameterization.json",
+    "bytes": 5708,
+    "sha256": "dc8afbeb929c7e17c04fa327f2c3c66f9b167dc519914ae891db061f00ad29b5"
+  },
+  "report_code": {
+    "path": "scripts/report_a1_unit_invariance.py",
+    "bytes": 21319,
+    "sha256": "4f6b896a6fee6e2a64dfb949d026cd0df02c97194a5326247276d72b034cc78f"
+  },
+  "summary": {
+    "path": "configs/a1_u_results_summary.json",
+    "bytes": 3302,
+    "sha256": "093bbd56b37cb6c9b470e7d360540bf01db6c619ee0cae144c495eee1bcb57d2"
+  },
+  "artifacts": [
+    {
+      "path": "results/A1_U_scale_reparameterization/2026-10-26/construction/office2/manifest.json",
+      "bytes": 77023,
+      "sha256": "e41be280dc333bd924068494ded83b5a566faf88b34e365367d42527fe3a6c66"
+    },
+    {
+      "path": "docs/figures/A1U/office2_invariance.png",
+      "bytes": 854069,
+      "sha256": "4f03b0f357f95bf1b45cbb1668ef26ff0df4227c468dc5b21d3407ad93db553e"
+    },
+    {
+      "path": "results/A1_U_scale_reparameterization/2026-10-26/construction/HKairport01/manifest.json",
+      "bytes": 142916,
+      "sha256": "9dc25825ede336476d3ab788fc3e3cc8c64689d798e5dfc01c35cd95964a53a3"
+    },
+    {
+      "path": "docs/figures/A1U/HKairport01_invariance.png",
+      "bytes": 1242818,
+      "sha256": "1dc2945fe7322731e6171a9868697b2bc9f9a57633d0016243f2ba4569356681"
+    },
+    {
+      "path": "docs/figures/A1U/scale_allocation.png",
+      "bytes": 215566,
+      "sha256": "fe1660b3bf3c88b632be2428ad3ffeef893b31ff06ed94500c95d2f0570cd072"
+    },
+    {
+      "path": "docs/experiments/A1_U_scale_reparameterization_results.md",
+      "bytes": 10903,
+      "sha256": "f1efb927cf9f915772b0f842ab1086604bce3f8e44adfb6d26ad5f6cc66484e0"
+    },
+    {
+      "path": "results/A1_U_scale_reparameterization/2026-10-26/A1_U_contract.json",
+      "bytes": 3302,
+      "sha256": "093bbd56b37cb6c9b470e7d360540bf01db6c619ee0cae144c495eee1bcb57d2"
+    },
+    {
+      "path": "results/A1_U_scale_reparameterization/2026-10-26/analysis/A1_U_per_KF_units.csv",
+      "bytes": 4108,
+      "sha256": "2e59daaf65bc6217135114a19a9f1781394140d0e37e2692d5e3e3bf3945ea1a"
+    },
+    {
+      "path": "results/A1_U_scale_reparameterization/2026-10-26/analysis/A1_U_render_invariance.csv",
+      "bytes": 5140,
+      "sha256": "234851357547fa137cb5a598715d8ff71b82baaa55fcf9a818c4a375362dcdbd"
+    },
+    {
+      "path": "results/A1_U_scale_reparameterization/2026-10-26/render/completion.json",
+      "bytes": 39223,
+      "sha256": "f7d2df8b47f1b33d9cb754025254450bc29fcd6051b58a8d4f7e4915e24becd6"
+    }
+  ],
+  "final_checks": {
+    "path": "results/A1_U_scale_reparameterization/2026-10-26/final_checks.json",
+    "bytes": 559,
+    "sha256": "def73ccd8413924af7537fbb5b84019285c0ded42ab9234055861adaf3e76ebc"
+  },
+  "cache_manifest": {
+    "path": "results/A1_U_scale_reparameterization/2026-10-26/output_cache_manifest.json",
+    "bytes": 24681,
+    "sha256": "cdb2d1f3ff0e0f75dffca55d1e4d0bc8a97a6093be8f55bb3a0512b4518658aa"
+  },
+  "current_docs": [
+    {
+      "path": "README.md",
+      "bytes": 15861,
+      "sha256": "83293ff5f4eadfcdb9c6b98143c4bbef544a74701642625de4f7fac80e05ff55"
+    },
+    {
+      "path": "docs/pointmap_pose_error_decomposition_research_plan_v1.md",
+      "bytes": 93408,
+      "sha256": "3bb53c431cae24d4a5e291303245cffec4ba47f4bc01c6de42343d812bc965e2"
+    }
+  ]
+}

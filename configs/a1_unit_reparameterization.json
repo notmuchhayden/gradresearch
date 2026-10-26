@@ -1,0 +1,92 @@
+{
+  "experiment": "A1-U native-map-preserving scale absorption",
+  "date": "2026-10-26",
+  "output": "results/A1_U_scale_reparameterization/2026-10-26",
+  "scope": "Offline algebraic and rendered invariance only. No A1-C, new inference, correction efficacy, gauge fitting or Q0-HK calibration claim.",
+  "native_filter_contract": "configs/n1_coordinate_contract.json",
+  "representation": {
+    "metric": "x=C*raw; Sigma_x=C^2*Sigma_raw; metric placement=(a,R,t)=gauge@raw_pose with linear block divided by C",
+    "canonical": "y=a*x; Sigma_y=a^2*Sigma_x; rigid Q=(1,R,t)",
+    "reallocation": "x'=q*x; Sigma_x'=q^2*Sigma_x; placement linear'=placement linear/q; then absorb remaining scale",
+    "standard_deviation": "std_y=a*std_x; quaternion and camera origin t unchanged",
+    "attributes": "Preserve candidate IDs/order, frozen native-active mask, RGB/SH/opacity, raw local rotations and source provenance. Canonical std/covariance intentionally change."
+  },
+  "variants": {
+    "canonical_C1": {"C_multiplier": 1.0, "KF_reallocation": false},
+    "canonical_C0.8": {"C_multiplier": 0.8, "KF_reallocation": false},
+    "canonical_C1.25": {"C_multiplier": 1.25, "KF_reallocation": false},
+    "canonical_C1_q": {"C_multiplier": 1.0, "KF_reallocation": true},
+    "canonical_C0.8_q": {"C_multiplier": 0.8, "KF_reallocation": true},
+    "canonical_C1.25_q": {"C_multiplier": 1.25, "KF_reallocation": true}
+  },
+  "KF_reallocation": {"seed": 0, "distribution": "exp(uniform(log(0.5),log(2.0)))", "GT_fitting": false},
+  "negative_controls": {
+    "mean_only_absorption": "Absorb a into means but keep metric local covariance; detect world covariance error for nonunit a",
+    "naive_scale_removal": "Set placement scale to one but keep metric local means; preserve correct canonical covariance to isolate wrong means"
+  },
+  "thresholds": {
+    "float64": {"rtol": 1e-9, "point_atol_m": 1e-10, "covariance_atol_m2": 1e-12, "pose_atol": 1e-10},
+    "packed_float32": {"rtol": 1e-6, "point_atol_m": 0.00002, "covariance_atol_m2": 0.00001},
+    "render": {
+      "RGB_max_abs": 0.0001,
+      "RGB_mean_abs": 0.000001,
+      "weight_max_abs": 0.0001,
+      "weight_mean_abs": 0.000001,
+      "depth_max_abs_m": 0.002,
+      "depth_mean_abs_m": 0.00002,
+      "covered_mask_disagreements": 0,
+      "weight_min": 0.001,
+      "note": "Depth error on the intersection of both covered masks over the whole image; any coverage-mask disagreement independently fails. RGB compared unclamped float outputs; saved display RGB clipped only for PNG."
+    },
+    "original_GPU_export_replay": {"means_atol": 0.00001, "means_rtol": 0.00001, "covariance_atol": 0.00001, "covariance_rtol": 0.0001, "RGB_atol": 0.00001, "opacity_atol": 0.000001}
+  },
+  "renderer": "Existing E4 compact CUDA, float32, TF32 disabled; render identical views for all variants and repeat baseline once for determinism. Positive maps and intentional negative controls stored separately.",
+  "scenes": {
+    "office2": {
+      "baseline": "results/A0_pointmap_pose_factorial/office2/baseline",
+      "dump": "map/office2_kfgauss.pt",
+      "native_ply": "map/office2_gaussians.ply",
+      "oracle_root": "results/A0_pointmap_pose_factorial/office2/oracles",
+      "alignment": "results/A0_pointmap_pose_factorial/office2/oracles/alignment.json",
+      "alignment_gauge_key": "matrix",
+      "alignment_C_key": "local_C",
+      "full_variant": "full_map_sensitivity_A00_C1",
+      "strict_variant": "strict_A00_C1",
+      "expected_keyframes": 11,
+      "expected_active": 1545979,
+      "expected_strict": 1200827,
+      "registry_template": "kf{index:04d}_registry.npz",
+      "view_ids": [201, 401, 601, 801, 999],
+      "saved_view": 601,
+      "negative_render_views": [201, 601],
+      "camera": "data/N2/Replica/cam_params.json",
+      "evaluation_poses": "data/N2/Replica/office2/traj.txt",
+      "reference_status": "Dense Replica GT; saved global prefix gauge reused, no new GT fit"
+    },
+    "HKairport01": {
+      "baseline": "results/E4e_uav_dataset_pilot/development/HKairport01/baseline",
+      "dump": "map/HKairport01_kfgauss.pt",
+      "native_ply": "map/HKairport01_gaussians.ply",
+      "oracle_root": "results/A0b_pointmap_pose_factorial/HKairport01/oracles",
+      "alignment": "results/A0b_pointmap_pose_factorial/HKairport01/preflight/alignment.json",
+      "alignment_gauge_key": "gauge",
+      "alignment_C_key": "C",
+      "full_variant": "full_map_A00_HKairport_released_C1_position",
+      "strict_variant": "strict_A00_HKairport_released_C1_position",
+      "expected_keyframes": 21,
+      "expected_active": 3242219,
+      "expected_strict": 6368,
+      "registry_template": "kf{index:03d}_registry.npz",
+      "view_ids": [104, 154, 204, 254, 299],
+      "saved_view": 204,
+      "negative_render_views": [104, 204],
+      "camera": "data/E4e/calibration_results.py",
+      "evaluation_poses": "data/E4e/evaluation_only/HKairport01/sampleinfos_interpolated.json",
+      "split": "configs/e4e_input_split.json",
+      "prior_manifest": "results/A0b_pointmap_pose_factorial/HKairport01/preflight/manifest.json",
+      "reference_status": "REFERENCE_UNRESOLVED unchanged: rendering invariance does not validate LiDAR calibration or Terra physical-camera equivalence"
+    }
+  },
+  "access": "Existing office2 and HKairport01 only; office3 and office4 predictions untouched. No new dataset acquisition or outbound messages.",
+  "decision": "PASS only if every native-active candidate passes algebraic/packed/attribute and provenance checks, all registered positive render cases pass, and intentional nonunit-scale errors are rejected. PASS authorizes preparation of A1-C, not automatic execution or a correction GO."
+}
