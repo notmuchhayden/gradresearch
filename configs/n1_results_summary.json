@@ -1,0 +1,549 @@
+{
+  "experiment": "N1 coordinate, unit, provenance and intervention contract",
+  "date": "2026-10-26",
+  "timezone": "Asia/Seoul",
+  "status": "PASS",
+  "report": "docs/experiments/N1_coordinate_contract.md",
+  "specification": "configs/n1_coordinate_contract.json",
+  "command": ".venv/bin/python scripts/run_n1_contract.py --gpu --output results/N1_coordinate_contract/2026-10-26-verified",
+  "unit_tests": {
+    "command": ".venv/bin/python -m unittest discover -s tests -p test_pointmap_contract.py -v",
+    "passed": 12
+  },
+  "baseline": "results/N0_asset_audit/2026-10-26/fresh_baseline",
+  "output": "results/N1_coordinate_contract/2026-10-26-verified",
+  "counts": {
+    "raw_candidates": 294912,
+    "native_active": 286208,
+    "common_candidates": 258718,
+    "sample_candidates": 1429,
+    "keyframes": 2
+  },
+  "alignment": {
+    "prefix_original_frames": [
+      0,
+      40
+    ],
+    "prefix_mapping_poses": 20,
+    "global_scale": 1.199338529008951,
+    "local_C": 1.199338529008951,
+    "rule": "C = prefix alignment scale * first KF scale; fixed for every arm/KF"
+  },
+  "journal": {
+    "status": "PASS",
+    "journal_events": 246,
+    "raw_events": 60,
+    "snapshots": 5,
+    "final_keyframes": 2,
+    "candidate_exact_matches": 2,
+    "tracked_frames": 60,
+    "unknown_fused_ancestry": 0,
+    "fused_replay_max_abs_error": 1.6689300537109375e-06,
+    "pose_revision": 62,
+    "backend_pose_update_batches": 1,
+    "backend_pose_batches_actually_changed": 1,
+    "lineage_replay": "PASS",
+    "numerical_pointmap_replay": "PASS",
+    "no_future_leakage": "PASS",
+    "pose_revision_at_decision": "PASS",
+    "pose_value_replay": "PASS",
+    "gt_depth_or_trajectory_used": false
+  },
+  "candidate_checks": [
+    {
+      "kf_idx": 0,
+      "original_frame": 0,
+      "calibration_anchor": true,
+      "event_id": "37009_1792988572306570538",
+      "pose_revision": 62,
+      "fused_ancestry": "traced",
+      "raw_attributes_match_KF_dump": true,
+      "raw_count": 147456,
+      "native_active": 142432,
+      "valid_gt": 147231,
+      "common_count": 128026,
+      "sample_count": 733,
+      "common_mask_hash": "2f3bdce824a2421bac38d26f679aa7f8ba55cf7ce910eccf6bf7651156f4f523",
+      "sample_ids_hash": "94deb1c8dd543c48e6e00fc479f3cccc8fb16071dd5ec589876e5f180b6b4332",
+      "raw_pose_scale": 1.0,
+      "metric_pose_scale": 1.0,
+      "predicted_ray_reprojection_error_px": {
+        "n": 128026,
+        "median": 2.4997520916255365,
+        "p95": 4.673352909597416,
+        "max": 9.361656089395835
+      },
+      "A00_unit_reexpression_max_abs_error_m": 8.881784197001252e-16
+    },
+    {
+      "kf_idx": 1,
+      "original_frame": 82,
+      "calibration_anchor": false,
+      "event_id": "37009_1792988580147858960",
+      "pose_revision": 62,
+      "fused_ancestry": "traced",
+      "raw_attributes_match_KF_dump": true,
+      "raw_count": 147456,
+      "native_active": 143776,
+      "valid_gt": 147204,
+      "common_count": 130692,
+      "sample_count": 696,
+      "common_mask_hash": "af0c14eedee05cbbb58cb21dda347877b7593b79518378d401bada1f1b9a1f29",
+      "sample_ids_hash": "dbcac32e941f7e8dc6941bc96d5437a34ddf02c5c6e9eddb46dfe6f372d1645c",
+      "raw_pose_scale": 1.0899963378906252,
+      "metric_pose_scale": 1.0899963378906252,
+      "predicted_ray_reprojection_error_px": {
+        "n": 130692,
+        "median": 1.0452846580552588,
+        "p95": 1.9203653456467658,
+        "max": 12.942616233627456
+      },
+      "A00_unit_reexpression_max_abs_error_m": 8.881784197001252e-16
+    }
+  ],
+  "gpu": {
+    "status": "PASS",
+    "device": "NVIDIA GeForce RTX 5060",
+    "active_ply_count": 286208,
+    "PLY_candidate_order_verified": true,
+    "PLY_native_bake_TF32_enabled": true,
+    "mean_PLY_max_abs_error": 0.0,
+    "contract_float64_vs_gpu_float32": [
+      {
+        "kf_idx": 0,
+        "candidate_mask_matches_upstream": true,
+        "mean_max_abs_error_without_TF32": 0.0
+      },
+      {
+        "kf_idx": 1,
+        "candidate_mask_matches_upstream": true,
+        "mean_max_abs_error_without_TF32": 5.261141740042774e-07
+      }
+    ],
+    "limit": "GPU verification allocations are not full mapping resource measurements"
+  },
+  "resources": {
+    "status": "PASS",
+    "scope": "Uncompressed contract-array payload including ID strings, masks and duplicated local/world geometry; not Gaussian resident VRAM or file compression size.",
+    "keyframes": [
+      {
+        "kf_idx": 0,
+        "all_arm_dtype_shape_bytes_equal": true,
+        "payload_bytes_per_arm": 285265,
+        "arrays": {
+          "candidate_ids": {
+            "dtype": "<U37",
+            "shape": [
+              733
+            ],
+            "bytes": 108484
+          },
+          "common_mask": {
+            "dtype": "|b1",
+            "shape": [
+              733
+            ],
+            "bytes": 733
+          },
+          "local_points_m": {
+            "dtype": "<f8",
+            "shape": [
+              733,
+              3
+            ],
+            "bytes": 17592
+          },
+          "placement": {
+            "dtype": "<f8",
+            "shape": [
+              4,
+              4
+            ],
+            "bytes": 128
+          },
+          "local_covariance_m2": {
+            "dtype": "<f8",
+            "shape": [
+              733,
+              3,
+              3
+            ],
+            "bytes": 52776
+          },
+          "world_points_m": {
+            "dtype": "<f8",
+            "shape": [
+              733,
+              3
+            ],
+            "bytes": 17592
+          },
+          "world_covariance_m2": {
+            "dtype": "<f8",
+            "shape": [
+              733,
+              3,
+              3
+            ],
+            "bytes": 52776
+          },
+          "attribute_scales": {
+            "dtype": "<f4",
+            "shape": [
+              733,
+              3
+            ],
+            "bytes": 8796
+          },
+          "attribute_rotations": {
+            "dtype": "<f4",
+            "shape": [
+              733,
+              4
+            ],
+            "bytes": 11728
+          },
+          "attribute_sh": {
+            "dtype": "<f4",
+            "shape": [
+              733,
+              3,
+              1
+            ],
+            "bytes": 8796
+          },
+          "attribute_opacities": {
+            "dtype": "<f4",
+            "shape": [
+              733
+            ],
+            "bytes": 2932
+          },
+          "attribute_conf": {
+            "dtype": "<f4",
+            "shape": [
+              733
+            ],
+            "bytes": 2932
+          }
+        }
+      },
+      {
+        "kf_idx": 1,
+        "all_arm_dtype_shape_bytes_equal": true,
+        "payload_bytes_per_arm": 270872,
+        "arrays": {
+          "candidate_ids": {
+            "dtype": "<U37",
+            "shape": [
+              696
+            ],
+            "bytes": 103008
+          },
+          "common_mask": {
+            "dtype": "|b1",
+            "shape": [
+              696
+            ],
+            "bytes": 696
+          },
+          "local_points_m": {
+            "dtype": "<f8",
+            "shape": [
+              696,
+              3
+            ],
+            "bytes": 16704
+          },
+          "placement": {
+            "dtype": "<f8",
+            "shape": [
+              4,
+              4
+            ],
+            "bytes": 128
+          },
+          "local_covariance_m2": {
+            "dtype": "<f8",
+            "shape": [
+              696,
+              3,
+              3
+            ],
+            "bytes": 50112
+          },
+          "world_points_m": {
+            "dtype": "<f8",
+            "shape": [
+              696,
+              3
+            ],
+            "bytes": 16704
+          },
+          "world_covariance_m2": {
+            "dtype": "<f8",
+            "shape": [
+              696,
+              3,
+              3
+            ],
+            "bytes": 50112
+          },
+          "attribute_scales": {
+            "dtype": "<f4",
+            "shape": [
+              696,
+              3
+            ],
+            "bytes": 8352
+          },
+          "attribute_rotations": {
+            "dtype": "<f4",
+            "shape": [
+              696,
+              4
+            ],
+            "bytes": 11136
+          },
+          "attribute_sh": {
+            "dtype": "<f4",
+            "shape": [
+              696,
+              3,
+              1
+            ],
+            "bytes": 8352
+          },
+          "attribute_opacities": {
+            "dtype": "<f4",
+            "shape": [
+              696
+            ],
+            "bytes": 2784
+          },
+          "attribute_conf": {
+            "dtype": "<f4",
+            "shape": [
+              696
+            ],
+            "bytes": 2784
+          }
+        }
+      }
+    ]
+  },
+  "input_files_preserved": 333,
+  "source_files": [
+    {
+      "path": "configs/n1_coordinate_contract.json",
+      "bytes": 2399,
+      "sha256": "8780fa4716eefd56eb5fe14953c8937343668e9bf46f35dd4e09d03b27ec7648"
+    },
+    {
+      "path": "scripts/run_n1_contract.py",
+      "bytes": 23600,
+      "sha256": "3c1d3892a1796af17b9158814448e7ba8a8c8fa9f5b7a7ee1807521a8231a025"
+    },
+    {
+      "path": "src/pointmap_contract.py",
+      "bytes": 9417,
+      "sha256": "8ab440c01ed5e5d1c50381da0b5eea1776a5ece1e869146254b74a328ecf5728"
+    },
+    {
+      "path": "configs/e0b_audit.json",
+      "bytes": 1681,
+      "sha256": "2119da203adc139df84913d42593b8de77d3fec2232f3b95daec56a40586e299"
+    },
+    {
+      "path": "tests/test_pointmap_contract.py",
+      "bytes": 8590,
+      "sha256": "b34a932433c207b1256a3fee2eb864dfe18d99373feca50a73af69cd0857e76e"
+    },
+    {
+      "path": "src/e0b_audit.py",
+      "bytes": 26184,
+      "sha256": "a704bb3476838c36538e3dbeccea777aa0a7d3a119f13f87e9be8e4338075f3f"
+    },
+    {
+      "path": "src/e1_taxonomy.py",
+      "bytes": 9880,
+      "sha256": "09b8c89028b05ad4e0702c570865e302f31276e94c7f4b638b66e3931bbd146d"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_slam/splatt3r_utils.py",
+      "bytes": 41285,
+      "sha256": "554282717f7d2f1c21f942e0bee410105bb7412391f47ec0dc3434db3485d309"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_slam/gaussian_ply_codec.py",
+      "bytes": 8739,
+      "sha256": "db757a82663fdae09c50eea967000e7d80110d3c146c152b0ac998c0ee396b1f"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/splatt3r_core/utils/geometry.py",
+      "bytes": 5885,
+      "sha256": "bbd2ccb931309adcf255369bce5e2c320ca485ca6e2015ed0eebacfe67fdd496"
+    },
+    {
+      "path": "thirdparty/Splatt3R-SLAM/scripts/eval_map_geometry.py",
+      "bytes": 9160,
+      "sha256": "0ef85e30e4e6b025b50f72a40cac3d2898413787923fd8eb8ead4fd4f2256618"
+    }
+  ],
+  "frozen_artifact_index": [
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/active_ply_candidate_ids.json",
+      "bytes": 12090549,
+      "sha256": "006d666d5041729066d1247f42e2de064e74d02a47ec597cc62c73b834abdc25"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/alignment_manifest.json",
+      "bytes": 1199,
+      "sha256": "e695bc38bc0b2690f66dd539456160650a2a622b446b3c816d7f2308127e7762"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/arm_invariants.json",
+      "bytes": 8009,
+      "sha256": "5f21bc7cd0d163d1abec440be84cb38cb1e454477ea3540e1821349c63de540c"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/branch_contract.json",
+      "bytes": 770,
+      "sha256": "700e13174037b6cae3cb1ebad0ef273c1e81b6c234abd37d161c71fe8f14c96c"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/camera_manifest.json",
+      "bytes": 822,
+      "sha256": "fda6d646ba1f841065e5685d479999dc99562dde2a98b4638e598ad8a4b68936"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/candidate_manifest.json",
+      "bytes": 1707,
+      "sha256": "032e29b312a22ba9fb210425f0276c8d180d93e0020025aa0613ac65c88f4210"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/candidate_registry.csv.gz",
+      "bytes": 1546326,
+      "sha256": "d1dcf39c6523aff36a26171938e8959dc3ca8a135dacefb4e7eae3718ddc6c7e"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/execution.json",
+      "bytes": 341,
+      "sha256": "8fae578b7ae8c297569d17942e0e373288884333bc33e1efb8e226ced44fbe0b"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/gauge_sensitivity.json",
+      "bytes": 1948,
+      "sha256": "6bfda62260d223bee894eac7aed83500f0ef3a85947d3d07e6f48d704a571c58"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/gpu_parity.json",
+      "bytes": 600,
+      "sha256": "12f0545b41695fd2a63de87ceca8845ae4acd52218b2a23ae57a1256857cff20"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/input_manifest.json",
+      "bytes": 60993,
+      "sha256": "9cac087d712dd372936840e09094ff27d00c75e9c54780c4c1ea47763be89f0b"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/journal_checks.json",
+      "bytes": 566,
+      "sha256": "e23141f951430afcfe2bc92cf3c84d003e35f6f43d055aff30e17c7e98b058c4"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0000_A00_contract.npz",
+      "bytes": 155210,
+      "sha256": "40d0110b485d0404aab5e07f9da8d73fa4d637338f61b4043905c155d8fca9b1"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0000_A01_contract.npz",
+      "bytes": 154996,
+      "sha256": "2b2bab85f9061384511fec52976fa0adc8609d2cead28d1de783a06a3f66c45e"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0000_A10_contract.npz",
+      "bytes": 152455,
+      "sha256": "aa4a7f28cba6809d2ebd64a8e76cf8bdb92f3462d776d285a83c7280ab83385d"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0000_A11_contract.npz",
+      "bytes": 152248,
+      "sha256": "5eddfce7332a3a310c084c8c48fcb6f655373e59cb4d547659c2ac54b0fe4f71"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0000_registry.npz",
+      "bytes": 6097785,
+      "sha256": "823a38ac09aed42dd0828402124a9ebabb91143ffcb2bc6323bc4e18a41d16a7"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0001_A00_contract.npz",
+      "bytes": 147706,
+      "sha256": "3b0bb001813f40ef14018dc299f2c76ff92c86360effb9547a667312747d4c6b"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0001_A01_contract.npz",
+      "bytes": 147639,
+      "sha256": "16c0acc0a289b5c754b2b36c350916d7d20ebfe4360c72d4f0f4881bedd268d4"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0001_A10_contract.npz",
+      "bytes": 145172,
+      "sha256": "ef3fa87de27f8596677fa9348670eccdf08ee9df22d61d4109896c349243eeb5"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0001_A11_contract.npz",
+      "bytes": 145091,
+      "sha256": "b7485745bec2fa100551f640409139bba1b21e58be79e1f05b944bd2878fd4e8"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/kf0001_registry.npz",
+      "bytes": 6188768,
+      "sha256": "fccd2a06af789d00e0db35fa95c76c9d1f82140c9a60b2bd16196af8c0c49aee"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/preservation.json",
+      "bytes": 75,
+      "sha256": "eeb06f97a92203db9b4799ab4f5a9523aaaf56700f459eabc4b2a07a9351bae5"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/resource_contract.json",
+      "bytes": 4194,
+      "sha256": "e805db80c271661e426974165a4019bab8b0a2f4aa31d0cabb9ed1642d515ac3"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/result.json",
+      "bytes": 4283,
+      "sha256": "08c43e91821d25439138ab8752144b2b6d58cf77c25cb84f0e947ac9efe2f1ea"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/sample_manifest.json",
+      "bytes": 85358,
+      "sha256": "ecc62d939b8d1d6fcfc525fb8328af9a27bb30ce752483f5da011b0f2403fde2"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/source_manifest.json",
+      "bytes": 2031,
+      "sha256": "d2f717df44a02291b4550e46d7b47e25ff56b4f95b7bb86abb33292a771393c3"
+    },
+    {
+      "path": "results/N1_coordinate_contract/2026-10-26-verified/unit_tests.log",
+      "bytes": 2089,
+      "sha256": "04f244354b98630b4b2e306abf98cabdacac191c66601d07ba527331ff9b495b"
+    }
+  ],
+  "interpretation_limits": [
+    "Local oracle replaces both Z-depth and GT-calibrated ray direction.",
+    "C/gauge defines a conditional factorization, not unique causal attribution.",
+    "Final-revision backend poses make this an offline diagnostic.",
+    "Source GT validity/edge masks do not certify target-view visibility.",
+    "No new scene or correction efficacy has been evaluated."
+  ],
+  "next_stage": "A0, after registering and checking a previously unused GT indoor scene",
+  "not_completed": [
+    "New-scene acquisition/split registration",
+    "A0 rendered geometry/effect/interaction evaluation",
+    "RGB-only correction feasibility/efficacy"
+  ],
+  "resource_note": "Per-arm dtype/shape/bytes compared from the saved NPZ archives after the contract run."
+}

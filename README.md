@@ -2,11 +2,15 @@
 
 현재 연구는 **MASt3R-SLAM 기반 3D Gaussian Splatting에서 Pointmap과 카메라 Pose/Scale 오류를 분리하는 실험**입니다. 이전 표면 기반 Gaussian 편입·pruning 연구는 [E0~E4f 종합 보고서](docs/experiments/surface_guided_gaussian_mapping_experiment_summary.md)에 따라 종료했습니다.
 
-**2026-10-26: [N0 자산 점검·기준선 재현 PASS](docs/experiments/N0_asset_audit_results.md).** 가중치 4개·입력/GT 242개 파일의 hash를 확인하고, 저장 맵 재평가와 새 `office0` 실행에서 기존 E0 집계 지표를 재현했습니다. 새 실행은 60/60 pose, 2 KF, active Gaussian 286,208개입니다. 다음 단계는 **N1 좌표계·단위 계약 검증**, 이후 동일 후보 기반 A0 2×2 Oracle 실험입니다. Depth 보정의 효능과 주된 오류 원인은 아직 확정하지 않았습니다.
+**2026-10-26: [N0 자산 점검·기준선 재현](docs/experiments/N0_asset_audit_results.md) 및 [N1 좌표계·단위·개입 계약 검증](docs/experiments/N1_coordinate_contract.md) PASS.** N0는 기존 `office0` 기준선 지표를 재현했고, N1은 raw 후보 294,912개·native active 286,208개의 출처와 PLY 순서를 연결했습니다. 공통 GT 후보 258,718개 중 고정 표본 1,429개에서 4군 불변 조건 및 합성시험 12개를 통과했습니다. 다음 단계는 **미사용 GT 실내 장면 확보·A0 평가 등록과 실행**입니다. Depth 보정의 효능과 주된 오류 원인은 아직 확정하지 않았습니다.
+
+N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음을 확인했습니다. A10은 **local geometry oracle**로 해석하며, 순수 Depth 보정 효과와 구분합니다.
 
 - [현재 연구·실험 계획서](docs/pointmap_pose_error_decomposition_research_plan_v1.md)
 - [N0 결과와 재실행 방법](docs/experiments/N0_asset_audit_results.md)
 - [N0 요약 명세](configs/n0_asset_audit.json)
+- [N1 좌표·단위 계약과 결과](docs/experiments/N1_coordinate_contract.md)
+- [N1 요약 명세](configs/n1_results_summary.json)
 
 ## 이전 연구 기록 (종료)
 

@@ -1,0 +1,52 @@
+{
+  "experiment": "N1 coordinate, unit, provenance and intervention contract",
+  "date": "2026-10-26",
+  "timezone": "Asia/Seoul",
+  "baseline": "results/N0_asset_audit/2026-10-26/fresh_baseline",
+  "n0_summary": "configs/n0_asset_audit.json",
+  "dataset": "data/Replica/office0",
+  "camera": "data/Replica/cam_params.json",
+  "output": "results/N1_coordinate_contract/2026-10-26",
+  "scope": "Development-only contract validation. No A0 efficacy comparison, no new scene.",
+  "alignment": {
+    "prefix_original_frame_stop_exclusive": 40,
+    "prefix_reason": "Existing E0 validation/calibration interval [0,40), chosen independently of oracle effects.",
+    "pose_revision": "final audit snapshot; offline diagnostic",
+    "local_unit_rule": "C = prefix_global_alignment_scale * first_KF_Sim3_scale; one fixed C for all KFs",
+    "sensitivity_C_multipliers": [0.8, 1.0, 1.25]
+  },
+  "native_filter": {
+    "spatial_stride": 1,
+    "depth_min": 0.05,
+    "depth_max_percentile": 0.98,
+    "max_scale": 1.0,
+    "min_confidence": 1.5,
+    "min_opacity": 0.3,
+    "inflate_scales_for_stride": false
+  },
+  "common_mask": {
+    "depth_valid_range_m": [0.1, 10.0],
+    "depth_edge_abs_m": 0.05,
+    "depth_edge_relative": 0.02,
+    "depth_edge_dilation_pixels": 2,
+    "definition": "baseline native active AND finite GT within range AND not depth edge; frozen before intervention",
+    "static_scene": "Replica synthetic static scene; no separate semantic/sky/dynamic mask",
+    "visibility_limit": "Source-view valid GT and depth-edge exclusion only; no target-view all-arm visibility filtering"
+  },
+  "subset": {
+    "seed": 0,
+    "grid_hw": [8, 8],
+    "predicted_depth_bin_edges_m": [1.0, 2.0, 4.0],
+    "per_stratum": 8,
+    "selection": "fixed source spatial cells and predicted-depth bins within common validity; no GT outlier labels"
+  },
+  "camera_convention": "Existing E0/E1 resize/crop K convention (cx*sx-left, cy*sy-top), no additional half-pixel offset",
+  "primary_branch": "raw outputs[0] self-branch in first-source/anchor camera",
+  "cross_branch": "outputs[1] excluded from primary; GT relative-pose conversion is a secondary oracle",
+  "tolerances": {
+    "float64_roundtrip_atol": 1e-9,
+    "upstream_float32_mean_atol": 1e-5,
+    "upstream_covariance_atol": 1e-5,
+    "raw_camera_ray_matching": "diagnostic only; do not require predictions to lie on GT-calibrated rays"
+  }
+}

@@ -11,7 +11,7 @@
 - **영문 제목(가안):** *Decomposing Pointmap and Camera Pose Errors in MASt3R-SLAM-Based 3D Gaussian Splatting Reconstruction*
 - **연구 운영 원칙:** A0의 원인 분해 결과가 확보되기 전에는 `Depth 보정이 핵심 해결책`이라고 미리 확정하지 않는다.
 
-> **진행 상태 (2026-10-26):** [N0 자산 점검·기준선 재현 완료](experiments/N0_asset_audit_results.md), **PASS**. 기존 가중치·입력 hash 확인, 저장 맵 재평가 및 새 `office0` RGB-only 실행이 기존 집계 지표를 재현했다. 다음 단계는 **N1 좌표계·단위 계약 검증**이며, A0 구현·원인 분해 결과는 아직 없다. 아래 일정·체크리스트는 계획이며 개별 완료 여부는 실험 보고서를 따른다.
+> **진행 상태 (2026-10-26):** [N0 자산 점검·기준선 재현](experiments/N0_asset_audit_results.md) 및 [N1 좌표계·단위·개입 계약 검증](experiments/N1_coordinate_contract.md) **PASS**. 개발 `office0`에서 공통 후보 258,718개·고정 표본 1,429개를 등록하고 4군 불변 조건을 확인했다. 다음은 **미사용 GT 장면 확보·A0 평가 등록과 실행**이다. A0 기하 효과·원인 우세는 아직 평가하지 않았다. 아래 일정·체크리스트는 계획이며 개별 완료 여부는 실험 보고서를 따른다.
 
 > **문서의 증거 구분**
 > - **[기존 실험]**: 2026-10-22 종료 보고서에 기록된 관측 및 수치.
@@ -108,6 +108,8 @@
 
 기본 표기(코드의 실제 규약과 일치하는지 테스트 후 확정):
 
+> **N1 확인:** 개발 self-branch의 좌표계·xyzw·단위·픽셀 및 native active/PLY 연결은 [N1 계약서](experiments/N1_coordinate_contract.md)에서 검증했다. Raw Pointmap의 ray는 GT pinhole ray와 정확히 일치하지 않으므로, 아래 GT backprojection은 깊이와 ray를 함께 바꾸는 **local geometry** 개입으로 해석한다.
+
 - $I_a, I_b$: Splatt3R/MASt3R 입력 이미지 pair
 - $X_{v\leftarrow a}(u)$: 이미지 v의 픽셀 u에 대응하되 기준 이미지 a 좌표계로 표현한 3D pointmap
 - $K_v$: 카메라 v의 intrinsics, $r_v(u) = K_v^{-1}[u_x,u_y,1]^T$: 비정규화 카메라 ray
@@ -186,6 +188,8 @@ $$
 
 1. **Primary strict A0:** raw *self-branch* 또는 **anchor-local native depth**로 대체 가능한 후보만 사용하여 local geometry와 global pose의 독립적인 개입을 보장한다.
 2. **Secondary pair A0:** 다른 source view 후보까지 포함한다. `predicted relative pair transform`/`GT relative pair transform`을 분리한 보조 요인 또는 oracle로 명시하고, primary strict A0와 같은 인과 효과라고 주장하지 않는다.
+
+**N1에서 확인한 해석 조건:** GT depth를 GT ray로 backproject하는 A10은 순수 Z-depth 교체가 아니다. Local oracle 효과를 Depth 보정으로 이어서 해석하려면, predicted ray를 유지하는 depth-only 보조 실험 또는 ray 오차의 별도 분석이 필요하다.
 
 ## 4.4 단안 Scale 정렬의 주의점
 
