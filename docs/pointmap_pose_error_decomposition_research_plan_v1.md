@@ -20,6 +20,8 @@
 
 > **A1-C (2026-10-26) 실행 완료:** [유효 local × rigid pose 4군·CZ·covariance 대조 결과](experiments/A1_C_canonical_factorial_results.md). Office2의 C00/C10/C01/C11 공통 MAE는 **0.120241/0.072655/0.140378/0.018412m**, HKairport wide는 **20.410804/10.518980/17.763107/2.326588m**였다. 같은 A+C 8군 픽셀에서도 local 개입 이득으로 방향이 바뀌어 원 contrast의 scale 배분 의존성을 지지한다. 그러나 office2 rigid pose 단독 악화·잔여 interaction이 남고, HK common은 support gate 실패다. **다음은 A1-G/M → V1**, Q0-HK와 office3/office4는 미실행이며 보정 GO는 보류한다.
 
+> **A1-G/M (2026-10-26) 각각 실행 완료:** [G 결과](experiments/A1_G_gauge_sensitivity_results.md), [M 결과](experiments/A1_M_support_sensitivity_results.md), [경로 판정](experiments/A1_GM_route_decision.md). HK wide의 같은 8군 픽셀에서 rigid pose 효과가 position **+2.585740m** / orientation **−4.966763m**로 반전했다. Local 개입 개선 방향은 유지됐지만 크기·pose 해석은 gauge/support에 조건부였다. Source-only thinning과 target-only 측정 희소화도 서로 달랐다. **다음은 고정된 office3 V1 진단 재현**, [설정](../configs/v1_office3_diagnostic_protocol.json)은 저장했지만 예측·평가는 미실행이다. 알고리즘 GO·Q0-HK 통과·office4 해제는 하지 않았다.
+
 > **이번 개정의 실행 순서:** **A1-U(원본 지도 불변 재표현) → A1-C(유효 local geometry × rigid pose 재비교) → A1-G/M(정렬·support 대조) → V1(office3 고정 재현) → A2(잔여 형상·RGB 관측 가능성)**. **Q0-HK(참조 보정 QA)**는 A1-U와 함께 시작하되 UAV 정량 결론의 선행 조건으로 둔다. D/P 알고리즘 개발 및 office4 평가는 보류한다. 이 문서 개정은 후속 실험 실행 완료를 뜻하지 않으며, 실제 실행 전 별도 설정·manifest를 고정한다.
 
 > **문서의 증거 구분**
@@ -84,7 +86,7 @@
 
 ## 0.5 다음 실행의 최소 범위와 명명 규칙
 
-**A1-U와 A1-C는 완료했고 다음 실험은 A1-G/M**이다. 기존 prefix의 위치/방향 기반 gauge와 source-only/target-only sparse support를 대조해 C의 해석 범위를 확인한 뒤 office3 V1으로 재현한다. Q0-HK가 해결되지 않더라도 실내 진단은 계속할 수 있고, HKairport01 결과는 조건부로만 유지한다. C에서 local 참조 개입이 개선됐다는 이유만으로 A2/D나 joint optimizer로 건너뛰지 않는다.
+**A1-U/C/G/M은 완료했고 다음은 office3 V1 진단 재현**이다. G/M에서 확인한 gauge/support 의존성까지 고정 절차로 재현하며, 가장 좋은 정렬·source density를 사후 선택하지 않는다. V1 설정은 저장했으나 새 office3 모델 추론·평가는 아직 하지 않았다. Q0-HK 미해결 때문에 실내 진단을 막지는 않으며, local 참조 개입 개선을 근거로 A2/D나 joint optimizer로 건너뛰지 않는다.
 
 이 문서의 **A1/A2는 연구 실험 시리즈**다. A0b 실행 당시의 `a0b_amendment_A1.json`/`a0b_amendment_A2.json`은 A0b 내부 변경 이력이며, 후속 A1/A2 완료를 뜻하지 않는다. 기존 A0/A0b 파일·판정·source support·post-hoc 표시는 바꾸지 않는다.
 
@@ -303,7 +305,7 @@ $$
 
 # 5. 필수 후속 A1 — 지도를 보존하며 Local Geometry·KF Scale·Rigid Pose 재분리
 
-**현재 상태: A1-U PASS, A1-C 실행 완료. A1-G/M·F/RT·Q0-HK·V1은 미실행.** A0/A0b의 연구 판정 REVISE에 직접 대응한다. 새 모델 학습과 backend 재작성 없이 저장된 raw self-branch·최종 pose·native active map을 재사용한다. 아래의 정렬·개입은 우선 **offline diagnostic**이며 온라인 추론 성능으로 보고하지 않는다.
+**현재 상태: A1-U PASS, A1-C/G/M 실행 완료. F/RT·Q0-HK·V1은 미실행.** A0/A0b의 연구 판정 REVISE에 직접 대응한다. 새 모델 학습과 backend 재작성 없이 저장된 raw self-branch·최종 pose·native active map을 재사용한다. 아래의 정렬·개입은 우선 **offline diagnostic**이며 온라인 추론 성능으로 보고하지 않는다.
 
 ## 5.1 Q0-HK — UAV 참조 자료 gate
 
@@ -385,6 +387,8 @@ F/RT는 먼저 office2의 사전 고정 20개 fusion viewpoint에서 검사하�
 
 ## 5.5 A1-G/M — Gauge와 후보 support를 결론의 일부로 평가
 
+**실행 완료:** [G 설정/결과](../configs/a1_g_gauge_sensitivity.json), [G 보고서](experiments/A1_G_gauge_sensitivity_results.md), [M 설정](../configs/a1_m_support_sensitivity.json), [M 보고서](experiments/A1_M_support_sensitivity_results.md). 각각 별도 등록·출력·판정했다. 새 40map·10,240 depth-view, cached C 참조와 target-only 평가를 포함했고 총 44검사를 통과했다. **G와 모든 M density의 Cartesian product는 수행하지 않았다.** 아래는 수행한 비교의 계약이다.
+
 **A1-G (필수):** 기존 prefix와 pose revision은 유지한다. Position-only Sim(3) 및 prefix orientation mean으로 회전을 정한 Sim(3)를 사전 지정한 두 alignment로 비교하고 prefix trajectory singular values·정렬 회전 차이를 보고한다. GT test pose를 포함해 가장 좋은 정렬을 고르거나 prefix를 오류가 작은 구간으로 옮기지 않는다. C의 단위 변경 불변성과 **서로 다른 alignment의 불확실성**을 구별한다.
 
 **A1-M (필수):** strict common source, 넓은 단일 보정 support, 전체 native map의 mixed replacement를 분리한다. Scope마다 변경 local 후보 수/전체 native 수, 거리·source KF·예측 confidence strata와 미관측 영역을 보고한다. 실내 GT를 고정 seed로 픽셀/행 스캔 형태로 얇게 만든 **dense→sparse support 대조**도 같은 원본 지도에서 시행한다. Source 후보만 줄이는 경우와 target 측정만 줄이는 경우를 나눠, 지도 support 변화와 평가 표본 변화가 섞이지 않게 한다. 밀도·pattern은 mask만 보고 등록하고 오류가 큰 픽셀을 골라 제거하지 않는다. 이는 실제 LiDAR의 sensor/occlusion 모델을 복제하는 실험이 아니다.
@@ -408,6 +412,8 @@ F/RT는 먼저 office2의 사전 고정 20개 fusion viewpoint에서 검사하�
 - `V1_office3_replication.md`, `A1_route_decision.md`: **표현 효과 / 잔여 기하 효과 / 자료 부족**을 구분하고 A2·D·P·분석 경로 중 다음 한 단계만 지정.
 
 **중단/보류:** A1-U 실패는 구현 문제다. Reference·support·gauge·representation에 따라 local/pose 우세가 뒤집히면 오류 기여율과 알고리즘 GO를 보류하고 원인을 먼저 좁힌다. UAV reference 미해결 때문에 실내 검증까지 중단하지는 않는다.
+
+**G/M 이후 적용:** 실제로 HK wide의 rigid 효과가 gauge에 따라 반전했고, office2 source 10% uniform의 pose 방향도 소폭 반전했다(해당 양의 개선은 10% 최소 효과 미달). 따라서 단일 지배 오류·보정 경로를 정하지 않았다. 다음 V1은 **진단 및 조건 의존성의 재현**이며 방법 개발 GO가 아니다. Position primary와 orientation sensitivity를 모두 고정하고, source-only/target-only를 구분한다.
 
 ---
 
@@ -694,9 +700,9 @@ Scalar 충분성의 E는 같은 spatial fitting fold로 만든 S0/Sk/Sf 지도�
 | **Q0-HK** | UAV 필수 | calibration·JPG·Terra/reference 계약 | 공개값/가정별 QA, reference-only 재투영 | 출처, 검증/미해결 목록, UAV claim 범위 |
 | **A1-U** | 완료 PASS | 원본 지도의 scale 흡수·가역성 | native vs effective local + rigid placement | 두 장면 4,788,198후보, 32검사, map/render 불변성 확인 |
 | **A1-C** | 실행 완료 | 유효 local × rigid pose의 재비교 | C00/C10/C01/C11, CZ10/CZ11, office2 covariance | Local 단독 개선·잔여 coupling, 38검사 통과 |
-| **A1-G/M** | 다음 필수 | gauge·support dependence | 두 prefix gauge, strict/wide/full-mixed, dense→sparse | 평가 분모·실패 포함 strata·효과 방향 |
+| **A1-G/M** | 각각 실행 완료 | gauge·support dependence | 두 prefix gauge, strict/wide/full-mixed, source-only/target-only | Gauge-dependent pose 효과·scope 한계, 44검사 통과 |
 | **A1-F/RT** | 질문 잔존 시 | scale 별도 요인 및 R/t 분리 | 8조건 L×P×S 또는 rigid R/t | interaction·질문별 진단 표 |
-| **V1** | 필수 | office3 고정 재현 | 봉인된 U/C/G/M 절차 | V1 보고서·수정 이력·다음 경로 판정 |
+| **V1** | 다음 필수, 설정 고정·미실행 | office3 진단 재현 | 봉인된 U/C/G/M 절차, 양 gauge와 분리된 source/target 대조 | V1 보고서·수정 이력·다음 경로 판정 |
 | **R-Q** | 잔차/표현 의심 시 | reference-only/renderer/covariance 최소 통제 | 참조 투영, splat, fixed-world covariance | residual 원인의 근거 및 미분리 변수 |
 | **A2-S/O** | A1/V1 후 | scalar vs deformation, RGB observability | spatial cross-fit scalar/field, shared-bias control | GT 진단 상한과 RGB-only 가능성 분리 |
 | **D0–D5** | GO-D 후 | RGB-only 선택적 Depth 보정 | raw, scale, geom, photo, selective | GT geometry/RGB/coverage, ablation |
@@ -738,9 +744,9 @@ Scalar 충분성의 E는 같은 spatial fitting fold로 만든 S0/Sk/Sf 지도�
 
 과거 연구 코드에서 `raw candidate export`, `GT evaluation`, `TSDF/Chamfer`, `frozen map renderer`, `run manifest`와 기타 데이터를 재사용하고, 후보 pruning/admission 코드를 중심 경로에서 제외한다.
 
-**현재 존재하는 자산:** `src/pointmap_contract.py`, `src/a0_metrics.py`, `src/a0b_geometry.py` 및 A0/A0b runner·renderer. A1-U의 `src/scale_reparameterization.py`/`scripts/run_a1_unit_invariance.py`에 이어 A1-C의 `src/canonical_oracles.py`, `scripts/build_a1_canonical_oracles.py`, `scripts/evaluate_a1.py`, 분석·보고서 코드를 구현했다. 관련 검사 총 38개를 통과했고 기존 snapshot은 보존한다.
+**현재 존재하는 자산:** `src/pointmap_contract.py`, `src/a0_metrics.py`, `src/a0b_geometry.py` 및 A0/A0b runner·renderer. A1-U/C에 이어 G/M의 `src/gauge_support.py`, `scripts/build_a1_gm.py`, `scripts/evaluate_a1_gm.py`, 분석·보고서 코드를 구현했다. 관련 검사 총 44개를 통과했고 기존 snapshot은 보존한다.
 
-**추가 구현 예정:** A1-G/M runner, `scripts/prepare_v1_office3.py` 등 후속 실행 코드. 이들은 아직 구현·실행 완료를 뜻하지 않는다. Config에는 `reference_status`, `representation`, `gauge`, `scope`, `candidate_hash`, `covariance_policy`, `source_fit_split`, `target_eval_split`, `support_gate`를 필수로 둔다.
+**추가 구현 예정:** `scripts/prepare_v1_office3.py` 등 V1의 새 scene runner/adapters. G/M 이후 V1 recipe는 `configs/v1_office3_diagnostic_protocol.json`에 고정했지만 이 파일이 새 scene 구현·실행 완료를 뜻하지 않는다. Config에는 `reference_status`, `representation`, `gauge`, `scope`, `candidate_hash`, `covariance_policy`, `source_fit_split`, `target_eval_split`, `support_gate`를 필수로 둔다.
 
 ```text
 research/
@@ -824,8 +830,8 @@ research/
 | **완료 이력** | N0/N1/N2, office2 A0, HKairport01 A0b | 완료 기록을 재실행 일정으로 잡지 않음 |
 | **묶음 1: U 완료, Q0-HK 미실행** | **A1-U PASS**: 두 기존 map의 좌표·covariance·render 보존. Q0-HK 자료 QA는 별도 진행 예정 | C 등록 준비 가능. UAV reference 미해결은 유지 |
 | **묶음 2: C/CZ 완료** | office2 및 HKairport 두 scope의 **A1-C+CZ**, office2 20뷰 covariance QA | local 단독 개선·잔여 interaction. 두 gauge 대조와 full-map/sparsification은 미실행 |
-| **다음 묶음 3 (약 2–4작업일)** | **A1-G/M**, 필요 시 F/RT·R-Q 확대 | UAV scope·gauge 의존성, 설명 가설 축소 |
-| **묶음 4 (약 2–3작업일)** | 개발 규칙 봉인 후 **V1 office3** 재현 | 결과를 보고 A2/RT/분석 중 다음 한 단계 결정 |
+| **묶음 3: G/M 각각 완료** | **A1-G/M** 및 source/target 분리 대조. F/RT·R-Q 확대는 미실행 | Pose 효과의 gauge/support 의존성 확인, 알고리즘 GO 보류 |
+| **다음 묶음 4 (약 2–3작업일)** | 고정된 절차로 **V1 office3** 진단 재현 | 결과를 보고 A2/RT/분석 중 다음 한 단계 결정 |
 | **묶음 5 (약 3–5작업일, 조건부)** | **A2-S/O**, scalar/field spatial cross-fit 및 RGB loss profile | D/P 진행 자격 또는 관측 한계 보고서 |
 | **그 이후 1–2주, GO일 때만** | 한 경로의 가장 단순한 RGB-only 대조군부터 구현 | D4/P3 확대 전 강한 baseline 대비 증분 |
 | **규칙 고정 후** | F0 office4; 필요·자원·reference 충족 시 F1 외부 장면 | 실패 포함 최종 평가, 결과에 맞춘 논문 범위 |
@@ -923,10 +929,11 @@ research/
 - [x] A00/C00 baseline 불변성, C01 rigid-only, C10 effective-local 정의 확인. (모든 scope C00 SHA 동일)
 - [x] HKairport common/wide 각 40뷰 C/CZ 비교 및 공백 전/중/후 층화. (common support 실패, wide 참조는 조건부)
 - [x] office2의 20뷰 fixed-world covariance 대조. (해당 대조에서 효과 방향·순위 유지)
-- [ ] HKairport full-mixed 및 두 gauge를 A1-G/M에서 추가 대조. Common/wide C는 완료했으며 Q0 미해결 시 conditional 유지.
-- [ ] Dense→sparse source-only/target-only 대조와 빈 교집합·추적 공백 층화 포함.
+- [x] HKairport full-common/full-wide는 position gauge에서 mixed 대조, 기존 strict/common/wide는 두 gauge로 G 대조. Q0 미해결 conditional 유지. (모든 요인 전 조합은 아님)
+- [x] Dense→sparse source-only/target-only 1%/10% uniform/row-scan 대조와 support 부족·추적 공백 층화 포함.
 - [ ] 질문이 남을 때만 F/RT/R-Q의 최소 subset을 추가 등록.
 - [ ] Office2에서 규칙을 봉인한 뒤 office3 V1 실행. 현재 office3/office4 예측은 미실행.
+- [x] G/M 결과 이후 V1 진단 재현 recipe 고정. (V1 실행 완료 또는 방법 GO로 간주하지 않음)
 - [ ] A2 진입 / P 검토 / 추가 진단 / 분석 범위 축소를 판정. D4·joint optimizer·office4를 자동 실행하지 않음.
 
 ## 19.4 후속 조건부 작업
@@ -944,7 +951,8 @@ research/
 - [A0 office2 결과](experiments/A0_office2_factorial_results.md), [설정](../configs/a0_office2_factorial.json), [요약](../configs/a0_results_summary.json): dense GT factorial, C/ray/covariance·full-map 한계.
 - [A0b HKairport01 결과](experiments/A0b_HKairport01_factorial_results.md), [설정](../configs/a0b_hkairport01_factorial.json), [요약](../configs/a0b_results_summary.json): sparse LiDAR/reference pose, 보정·gauge·support 및 사후 보조 비교의 한계.
 - [A1-U 결과](experiments/A1_U_scale_reparameterization_results.md), [설정](../configs/a1_unit_reparameterization.json), [요약](../configs/a1_u_results_summary.json): 지도 보존 scale 흡수·KF 단위 재배분 및 렌더링 불변성 PASS.
-- [A1-C 결과](experiments/A1_C_canonical_factorial_results.md), [설정](../configs/a1_c_canonical_factorial.json), [요약](../configs/a1_c_results_summary.json): effective-local × rigid pose, ray/covariance·동일 픽셀 A/C 비교 완료. A1-G/M·V1은 다음 단계.
+- [A1-C 결과](experiments/A1_C_canonical_factorial_results.md), [설정](../configs/a1_c_canonical_factorial.json), [요약](../configs/a1_c_results_summary.json): effective-local × rigid pose, ray/covariance·동일 픽셀 A/C 비교 완료. 후속 G/M도 완료했고 V1은 미실행.
+- [A1-G 결과](experiments/A1_G_gauge_sensitivity_results.md), [A1-M 결과](experiments/A1_M_support_sensitivity_results.md), [경로 판정](experiments/A1_GM_route_decision.md): prefix gauge·source/target support·전체 지도 조건의 한계 검증. [V1 recipe](../configs/v1_office3_diagnostic_protocol.json)는 고정·미실행.
 - [N1 좌표 계약](experiments/N1_coordinate_contract.md), [N2 데이터 등록](../configs/n2_dataset_registration.json): 후속 구현의 검증 자산과 office2/3/4 역할.
 - `surface_guided_gaussian_mapping_experiment_summary.md`, 2026-10-22, §4–§7: E0~E4f 전체 결과·해석·미실행 작업·재사용 가능한 코드/GT 평가 자산.
 - `surface_guided_gaussian_mapping_research_plan_v3.md`, 2026-10-14: 동일 후보 풀, source lineage, GT validity, scene-level statistics, 재현성·강한 대조군 원칙. **단, 이전 pruning 가설과 장기 admission 일정은 신규 실행 대상이 아님.**

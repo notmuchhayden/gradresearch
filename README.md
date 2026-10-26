@@ -12,6 +12,8 @@ N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음�
 
 **[A1-C 실행 완료](docs/experiments/A1_C_canonical_factorial_results.md):** 유효 local geometry × rigid pose 네 조건을 office2 400뷰와 HKairport01 두 후보 범위 각 40뷰에서 평가했습니다. Local만 참조로 교체하면 공통 깊이 MAE가 office2 **0.120241→0.072655m**, HKairport wide **20.410804→10.518980m**로 감소했습니다. Office2의 rigid pose 단독 교체는 여전히 악화됐고 interaction이 남았습니다. HK common은 support 부족, wide는 reference 미해결로 조건부입니다. 다음은 **A1-G/M 및 office3 V1**이며 Depth-only 보정 GO는 보류합니다. Q0-HK와 office3/office4 예측은 미실행입니다.
 
+**[A1-G](docs/experiments/A1_G_gauge_sensitivity_results.md) / [A1-M](docs/experiments/A1_M_support_sensitivity_results.md) 각각 실행 완료:** 같은 픽셀의 HK wide pose 효과가 position gauge에서는 **+2.586m**, orientation gauge에서는 **−4.967m**로 반전했습니다. Local 참조 교체는 두 정렬 모두 개선됐습니다. Source 후보 희소화는 pose 효과 방향을 바꿀 수 있었고, target 평가 픽셀만 희소화한 대조는 이번 실내 장면에서 대체로 유지됐습니다. Full mixed 결과를 subset 개선율로 해석하지 않았습니다. **44검사·신규 40map/10,240 depth-view** 평가를 통과했으며, [office3 V1 진단 재현 절차](configs/v1_office3_diagnostic_protocol.json)를 고정했습니다. **V1과 실제 보정 알고리즘은 미실행**, HK reference 미해결 상태도 유지합니다.
+
 - [현재 연구·실험 계획서](docs/pointmap_pose_error_decomposition_research_plan_v1.md)
 - [N0 결과와 재실행 방법](docs/experiments/N0_asset_audit_results.md)
 - [N0 요약 명세](configs/n0_asset_audit.json)
@@ -28,6 +30,9 @@ N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음�
 - [A1-U 요약 명세](configs/a1_u_results_summary.json)
 - [A1-C 결과·A/C 비교·그림](docs/experiments/A1_C_canonical_factorial_results.md)
 - [A1-C 요약 명세](configs/a1_c_results_summary.json)
+- [A1-G 정렬 민감도 결과](docs/experiments/A1_G_gauge_sensitivity_results.md)
+- [A1-M source/target·전체지도 대조 결과](docs/experiments/A1_M_support_sensitivity_results.md)
+- [G/M 이후 경로 판정](docs/experiments/A1_GM_route_decision.md)
 
 ## 이전 연구 기록 (종료)
 

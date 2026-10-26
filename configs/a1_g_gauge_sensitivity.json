@@ -1,0 +1,31 @@
+{
+  "experiment": "A1-G prefix gauge sensitivity",
+  "date": "2026-10-26",
+  "output": "results/A1_G_gauge_sensitivity/2026-10-26",
+  "A1_C": "results/A1_C_canonical_factorial/2026-10-26",
+  "A1_U": "results/A1_U_scale_reparameterization/2026-10-26",
+  "U_spec": "configs/a1_unit_reparameterization.json",
+  "C_spec": "configs/a1_c_canonical_factorial.json",
+  "arms": ["C00", "C10", "C01", "C11"],
+  "cases": ["office2_strict", "HKairport01_common", "HKairport01_wide"],
+  "gauges": {
+    "position": "Original saved final-revision prefix-only position Sim3; replay fit for parity; primary retained",
+    "orientation": "Same matched prefix frames: SO3 mean of reference_R @ estimated_R.T, then one least-squares scalar and translation on those prefix positions; not chosen by heldout error"
+  },
+  "prefix": {"office2_original_frame_stop": 200, "HKairport01_grid_stop": 100, "post_prefix_fit": false},
+  "representation": "Relative gauge D=G_orientation @ inverse(G_position): effective local y changes by D scale; Sigma_y by scale squared; estimated rigid rotation changes by D rotation, origin by full D. Reference local centers and reference metric pose unchanged.",
+  "invariants": "Same source candidate IDs, native mask, RGB/opacity, camera and final pose revision across gauges; transformed baseline matches D applied to original world map. Canonical covariance is scaled consistently with global gauge.",
+  "evaluation": {
+    "views": "All original 400 office2 / 40 HK heldout views; no troublesome view removed",
+    "primary": "Own-gauge four-arm common masks plus paired 8-arm common mask across both gauges. Report common coverage and scorable view counts; sparse/invalid intersections cannot establish robustness.",
+    "reuse": "Hash-verified original A1-C position maps/caches reused; orientation maps newly rendered. No new model inference.",
+    "RGB": "Five originally registered saved views only; primary geometry metrics on all views; no new TSDF/completeness claim",
+    "weight_min": 0.001,
+    "correct_depth_relative": 0.02,
+    "dense_support": {"min_pixels": 1000, "min_reference_fraction": 0.5, "min_view_fraction": 0.8},
+    "sparse_support": {"min_pixels": 1000, "min_reference_fraction": 0.2, "min_view_fraction": 0.8}
+  },
+  "implementation_checks": {"float64_rtol": 1e-9, "float64_atol": 1e-10, "packed_atol": 0.00002, "replay_depth_atol_m": 0.002},
+  "interpretation": "Gauge uncertainty is distinct from local-unit reallocation (A1-U). Neither best heldout gauge selection nor pure physical error attribution is allowed. HK reference remains unresolved.",
+  "access": "office2 and HKairport01 only; office3/office4 prediction remains unrun"
+}

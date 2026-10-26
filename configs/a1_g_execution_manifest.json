@@ -1,0 +1,119 @@
+{
+  "experiment": "A1-G",
+  "execution": "COMPLETE",
+  "decision": {
+    "execution": "COMPLETE",
+    "scientific_GO": false,
+    "material_gauge_or_support_flips": true,
+    "any_direction_flip_with_adequate_support": true,
+    "next": "Freeze diagnostic replication protocol; office3 V1 pending, no method GO",
+    "HK_reference": "REFERENCE_UNRESOLVED",
+    "office3_office4_predictions_run": false
+  },
+  "registration": {
+    "path": "results/A1_G_gauge_sensitivity/2026-10-26/registration.json",
+    "bytes": 225027,
+    "sha256": "1914e1abc8cee3f75891a69d6fac7b47d7f5a1fd6a00d7bfafde7ecca9e8224e"
+  },
+  "summary": {
+    "path": "configs/a1_g_results_summary.json",
+    "bytes": 30035,
+    "sha256": "a2261f167e64267d648333b9ad41cb0fff6d02aa53d7ffb34a6a2aa5b93e6cc6"
+  },
+  "analysis_code": [
+    {
+      "path": "scripts/analyze_a1_gm.py",
+      "bytes": 11698,
+      "sha256": "df4716508c10d5897f31acf92654c00f7f16bffc1840b1f0bd341f553c906372"
+    },
+    {
+      "path": "scripts/report_a1_gm.py",
+      "bytes": 28892,
+      "sha256": "a254a1d3246e137847822a4bb66e576c418bd110addad606bd1d95e3a61debfb"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/experiments/A1_G_gauge_sensitivity_results.md",
+      "bytes": 7085,
+      "sha256": "758538ad267a833c7d982ddbd4f6b8e6b0f6cd91d2fc9c40599b8eb5508eabd8"
+    },
+    {
+      "path": "docs/figures/A1G/HKairport_gauge_view204.png",
+      "bytes": 1683194,
+      "sha256": "6027fc9ccb376059c3443904c356bc9099fb1bf9ebdfac07355394e0dfcb0478"
+    },
+    {
+      "path": "docs/figures/A1G/paired_gauge_metrics.png",
+      "bytes": 129178,
+      "sha256": "8f2a66c5898280c5885de4885d7422ceafa8064f98c667ddaebaf4e0697d24dd"
+    },
+    {
+      "path": "docs/figures/A1G/prefix_observability.png",
+      "bytes": 80911,
+      "sha256": "96c666471a8a0ad845b7c738cd6ab9b23659989eae404cef672113777287586f"
+    },
+    {
+      "path": "results/A1_G_gauge_sensitivity/2026-10-26/analysis/results.json",
+      "bytes": 1330973,
+      "sha256": "c4b86f62749d1f4363dd8e3f3fd4e0232cc0cacd7b3e82054107baa726a98906"
+    },
+    {
+      "path": "results/A1_G_gauge_sensitivity/2026-10-26/analysis/decision.json",
+      "bytes": 323,
+      "sha256": "cf4370782e4b1ba187dde63a5137a89064bbdce374583ee8ddfc9cf89e977681"
+    },
+    {
+      "path": "results/A1_G_gauge_sensitivity/2026-10-26/analysis/A1_gauge_support_matrix.csv",
+      "bytes": 1181,
+      "sha256": "cf95e3ac2853436aa40d59b80d73a8d114ffbdd0bc54cdc47148266e0c9448fc"
+    },
+    {
+      "path": "docs/experiments/A1_GM_route_decision.md",
+      "bytes": 1604,
+      "sha256": "7e7364ecb026b49c029a1ecd875865fd797c8dcee73659313bb7e16a27a06c4b"
+    },
+    {
+      "path": "configs/v1_office3_diagnostic_protocol.json",
+      "bytes": 2379,
+      "sha256": "3c624724bdae3219efea7ad6b3514d20ecdfdf8f7573b34167588ad81f7c39bb"
+    }
+  ],
+  "final_checks": {
+    "path": "results/A1_G_gauge_sensitivity/2026-10-26/final_checks.json",
+    "bytes": 637,
+    "sha256": "977da9ab55705a871c5624e459a49fb9a671bcae83b8fc52dd3ca46cfe6196da"
+  },
+  "output_artifact_index": {
+    "path": "results/A1_G_gauge_sensitivity/2026-10-26/output_artifact_index.json",
+    "bytes": 41611,
+    "sha256": "d13862ad59bffcf4328495813e0e6c49f58a8f684b6882b5c2d6eb81948fe298"
+  },
+  "current_documentation": [
+    {
+      "path": "README.md",
+      "bytes": 17697,
+      "sha256": "b8a884af057a9f64544d31c4026f00fd709b4250d4166c1460aa9d8ec9e74e39"
+    },
+    {
+      "path": "docs/pointmap_pose_error_decomposition_research_plan_v1.md",
+      "bytes": 97646,
+      "sha256": "9b9febf22e28db0c5723779cc3301b14a173139b35f7f6592899b87ac01263a3"
+    },
+    {
+      "path": "docs/experiments/A1_GM_route_decision.md",
+      "bytes": 1604,
+      "sha256": "7e7364ecb026b49c029a1ecd875865fd797c8dcee73659313bb7e16a27a06c4b"
+    },
+    {
+      "path": "docs/experiments/A1_G_gauge_sensitivity_results.md",
+      "bytes": 7085,
+      "sha256": "758538ad267a833c7d982ddbd4f6b8e6b0f6cd91d2fc9c40599b8eb5508eabd8"
+    },
+    {
+      "path": "docs/experiments/A1_M_support_sensitivity_results.md",
+      "bytes": 11510,
+      "sha256": "7b274b94a1301cd3df6924b196ac568119193a343feed696ad89306de5200d91"
+    }
+  ]
+}

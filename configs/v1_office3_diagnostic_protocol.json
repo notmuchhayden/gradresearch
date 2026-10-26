@@ -1,0 +1,42 @@
+{
+  "experiment": "V1 office3 diagnostic replication",
+  "status": "FROZEN_RECIPE_NOT_EXECUTED",
+  "date": "2026-10-26",
+  "role": "Validation replication only; not final test or algorithm efficacy",
+  "scene": "office3",
+  "dataset": "data/N2/Replica/office3",
+  "N2_registration": "configs/n2_dataset_registration.json",
+  "mapping": "500 even original frame IDs in [0,1000)",
+  "calibration": "even IDs <200; same prefix for both gauges",
+  "evaluation": "400 odd IDs 201..999",
+  "baseline": "Existing RGB-only baseline configuration, seed0/refiner0, frozen weights/native filter. Fresh office3 inference required later, not performed here.",
+  "qualification": {
+    "tracking_fraction_min": 0.95,
+    "matched_prefix_poses_min": 80,
+    "native_lineage_and_unit_invariance": "must pass; do not select a better window after failure"
+  },
+  "canonical": "A1-U invariance then C00/C10/C01/C11 and CZ10/CZ11 on primary position gauge",
+  "gauges": "Position prefix primary retained; same-prefix orientation gauge four C arms mandatory sensitivity; never choose the better heldout gauge",
+  "support": "Strict post-prefix common source and full native mixed separately; preserve unknown local predictions. Office2-style source-only and target-only uniform_hash/scan_rows at 1% and10%, seed0, same mask definition.",
+  "covariance": "Same canonical local covariance, rigid transport; original fixed 20 fusion views for fixed-C00-world covariance sensitivity",
+  "evaluation_rules": "Reuse A1-C/G/M thresholds, same small comparison-group masks, paired common8, reference/full-reference fractions; missing support cannot pass robustness",
+  "source_specs": [
+    {
+      "path": "configs/a1_c_canonical_factorial.json",
+      "bytes": 5932,
+      "sha256": "91ceb418169e7bc00bfc9eeb72a4cc4a4e608c2e7d40b9c75043b20451b155b5"
+    },
+    {
+      "path": "configs/a1_g_gauge_sensitivity.json",
+      "bytes": 2680,
+      "sha256": "25307f2b36ab7c87ddfd536f570a093c4c60d49eb5df0cf6ab7a9f4341608a67"
+    },
+    {
+      "path": "configs/a1_m_support_sensitivity.json",
+      "bytes": 4351,
+      "sha256": "4ae5ae93d553ee8ad22e866d5ed1dcf0dcb1feaaa60e9ad851f942389b7f7dd9"
+    }
+  ],
+  "interpretation": "Replicate direction AND magnitude limitations, not simply positive joint oracle gain. No learned correction, no Q0-HK certification, office4 withheld.",
+  "predictions_run": false
+}

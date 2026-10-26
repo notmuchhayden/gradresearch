@@ -1,0 +1,44 @@
+{
+  "experiment": "A1-M source support, target sampling and full-map sensitivity",
+  "date": "2026-10-26",
+  "output": "results/A1_M_support_sensitivity/2026-10-26",
+  "A1_C": "results/A1_C_canonical_factorial/2026-10-26",
+  "A1_U": "results/A1_U_scale_reparameterization/2026-10-26",
+  "U_spec": "configs/a1_unit_reparameterization.json",
+  "C_spec": "configs/a1_c_canonical_factorial.json",
+  "arms": ["C00", "C10", "C01", "C11"],
+  "gauge": "Original prefix position gauge only. Do not multiply all gauge x density x pattern combinations.",
+  "inherited_scopes": ["office2_strict", "HKairport01_common", "HKairport01_wide"],
+  "full_mixed": {
+    "office2_full": "All 1545979 native-active candidates including prefix. Replace local only where original source GT interior exists. Others retain effective predicted local. Change rigid placement of all candidates.",
+    "HKairport01_full_common": "All 3242219 native-active candidates including prefix. Replace local on all-camera-intersection source LiDAR only (previously 7609 candidates). Others predicted.",
+    "HKairport01_full_wide": "Same full native map; replace local on sequence-camera valid source LiDAR only (previously 261958 candidates). Others predicted. C00/C01 must equal full_common byte-for-byte."
+  },
+  "sparsification": {
+    "scene": "office2",
+    "base": "office2_strict",
+    "densities": [0.01, 0.1],
+    "patterns": ["uniform_hash", "scan_rows"],
+    "seed": 0,
+    "uniform_hash": "SplitMix64(pixel linear index XOR SplitMix64(frame ID XOR seed)); top 53 bits / 2^53 < density. No depth, confidence or error argument; densities nested.",
+    "scan_rows": "period=round(1/density); phase=SplitMix64(frame ID XOR seed) mod period; retain v mod period == phase. Same phase hash gives nested 1%/10% row sets. Report actual density after GT/native validity; no quota refill.",
+    "source_only": "Select same stored candidate rows from all four original C maps by registered source pixel mask. Preserve exact surviving centers, covariance, RGB/opacity and original scale. Evaluate dense target GT; no footprint/opacity inflation, no hole filling.",
+    "target_only": "Reuse unchanged dense C maps and cached renders. Restrict reference-valid target pixels by the independently frame-indexed pattern; no new rendering or Gaussian changes. Report sampled-GT fraction AND fraction of all dense GT. This simulates missing measurements, not sensor noise or true LiDAR acquisition.",
+    "GT_outcome_selection": false
+  },
+  "evaluation": {
+    "views": "All original 400 office2 / 40 HK views. Keep tracking-gap strata.",
+    "primary": "Each scope common4; paired common8 for dense-vs-each-source-thinning, strict/wide/full-mixed scope pairs. No 16-arm universal intersection.",
+    "target_only_denominator": "Coverage/correct coverage conditional on sampled GT plus separate full-GT measurement fraction. Dense GT is unchanged and retained as the full-map reference; no claimed reconstruction improvement from hiding targets.",
+    "source_only_denominator": "Original dense reference-valid target pixels unchanged; use dense support gate",
+    "target_only_gate": "Apply sparse gate on sampled reference; disclose min1000 count failures. Full-GT measured fraction reported separately. Not a method GO.",
+    "RGB": "Only original five saved views for new maps; no new dense surface or TSDF claims in this sensitivity",
+    "weight_min": 0.001,
+    "correct_depth_relative": 0.02,
+    "dense_support": {"min_pixels": 1000, "min_reference_fraction": 0.5, "min_view_fraction": 0.8},
+    "sparse_support": {"min_pixels": 1000, "min_reference_fraction": 0.2, "min_view_fraction": 0.8}
+  },
+  "scope_pairs": [["office2_strict", "office2_full"], ["HKairport01_common", "HKairport01_wide"], ["HKairport01_common", "HKairport01_full_common"], ["HKairport01_wide", "HKairport01_full_wide"], ["HKairport01_full_common", "HKairport01_full_wide"]],
+  "interpretation": "Full mixed arms are not complete GT maps. Sparse source behavior includes visibility/occlusion/covariance-density effects. Target-only changes are measurement sensitivity, not an algorithm. No physical-error contribution percentages or independent-frame significance.",
+  "access": "Existing office2/HKairport01 only. No new inference, training, calibration repair, office3/office4 prediction or external contact."
+}

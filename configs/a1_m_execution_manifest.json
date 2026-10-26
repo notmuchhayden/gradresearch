@@ -1,0 +1,139 @@
+{
+  "experiment": "A1-M",
+  "execution": "COMPLETE",
+  "decision": {
+    "execution": "COMPLETE",
+    "scientific_GO": false,
+    "material_gauge_or_support_flips": false,
+    "any_direction_flip_with_adequate_support": true,
+    "next": "Freeze diagnostic replication protocol; office3 V1 pending, no method GO",
+    "HK_reference": "REFERENCE_UNRESOLVED",
+    "office3_office4_predictions_run": false
+  },
+  "registration": {
+    "path": "results/A1_M_support_sensitivity/2026-10-26/registration.json",
+    "bytes": 227151,
+    "sha256": "cbe89d2484dca4bdfc0c1dd7acd6dd8d8119143066a19c582352e350000481be"
+  },
+  "summary": {
+    "path": "configs/a1_m_results_summary.json",
+    "bytes": 74994,
+    "sha256": "91a2f84bbb0cef06575fba87d39e19ba1ba52a0c0ead7c07e1bc24cec2bad6ad"
+  },
+  "analysis_code": [
+    {
+      "path": "scripts/analyze_a1_gm.py",
+      "bytes": 11698,
+      "sha256": "df4716508c10d5897f31acf92654c00f7f16bffc1840b1f0bd341f553c906372"
+    },
+    {
+      "path": "scripts/report_a1_gm.py",
+      "bytes": 28892,
+      "sha256": "a254a1d3246e137847822a4bb66e576c418bd110addad606bd1d95e3a61debfb"
+    },
+    {
+      "path": "scripts/analyze_a1_m_source_strata.py",
+      "bytes": 5681,
+      "sha256": "09d25016307a4248afbe63a54b730861cde234c996e75b3127cf6461fa14395f"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/experiments/A1_M_support_sensitivity_results.md",
+      "bytes": 11510,
+      "sha256": "7b274b94a1301cd3df6924b196ac568119193a343feed696ad89306de5200d91"
+    },
+    {
+      "path": "docs/figures/A1M/HKairport_scope_view204.png",
+      "bytes": 1511629,
+      "sha256": "858261bc82469c46ce80cf27cceb8622c97dcdb24f8048125151957504012b0d"
+    },
+    {
+      "path": "docs/figures/A1M/scope_metrics.png",
+      "bytes": 120621,
+      "sha256": "b086aca03447801314ed1654da4a292f54baf92e9a091960688b68106afe9058"
+    },
+    {
+      "path": "docs/figures/A1M/source_vs_target_sampling.png",
+      "bytes": 276778,
+      "sha256": "d94a030ef2367f146c662540961968fe100d9ae5d8885fa8a441ecde14c3dfa8"
+    },
+    {
+      "path": "docs/figures/A1M/support_coverage.png",
+      "bytes": 121897,
+      "sha256": "87269bdafd01a6cd84bcead8ad880f43379da58ff92ae3243b76653cc70a35ed"
+    },
+    {
+      "path": "results/A1_M_support_sensitivity/2026-10-26/analysis/results.json",
+      "bytes": 6218548,
+      "sha256": "c3237bc733f6ea1ddbf08aedc062f2b1ba6e4ebc26d2f7afae6cba71c13e9904"
+    },
+    {
+      "path": "results/A1_M_support_sensitivity/2026-10-26/analysis/decision.json",
+      "bytes": 324,
+      "sha256": "e8ee328ef840b2c8d4a3046e133da6a22a733953e48d84571c1d10e00d5ac752"
+    },
+    {
+      "path": "results/A1_M_support_sensitivity/2026-10-26/analysis/A1_gauge_support_matrix.csv",
+      "bytes": 2632,
+      "sha256": "2b290cfeeecbeb2d96e8514514150af1af25890e9b0cd3d6a9a67d87ef6e05e4"
+    },
+    {
+      "path": "docs/experiments/A1_GM_route_decision.md",
+      "bytes": 1604,
+      "sha256": "7e7364ecb026b49c029a1ecd875865fd797c8dcee73659313bb7e16a27a06c4b"
+    },
+    {
+      "path": "configs/v1_office3_diagnostic_protocol.json",
+      "bytes": 2379,
+      "sha256": "3c624724bdae3219efea7ad6b3514d20ecdfdf8f7573b34167588ad81f7c39bb"
+    },
+    {
+      "path": "results/A1_M_support_sensitivity/2026-10-26/analysis/source_strata.json",
+      "bytes": 98236,
+      "sha256": "ae55ee6b8303a7b4970d08820ebd42779c5bccab613667c4a87ca16a163cdee6"
+    },
+    {
+      "path": "results/A1_M_support_sensitivity/2026-10-26/analysis/source_strata.csv",
+      "bytes": 25606,
+      "sha256": "bd296f524b2028aac8c9f8c6737c01f5f7470d3a7d43223e4fae101a28b477ac"
+    }
+  ],
+  "final_checks": {
+    "path": "results/A1_M_support_sensitivity/2026-10-26/final_checks.json",
+    "bytes": 638,
+    "sha256": "91b74402c62ab86769958e50e5bdfce19a835f2d57aba927320f9a68574a141d"
+  },
+  "output_artifact_index": {
+    "path": "results/A1_M_support_sensitivity/2026-10-26/output_artifact_index.json",
+    "bytes": 489035,
+    "sha256": "36bb42a758b9ffbd6ca00258e990808f7473871d940cb37de25bf2f7d53d5134"
+  },
+  "current_documentation": [
+    {
+      "path": "README.md",
+      "bytes": 17697,
+      "sha256": "b8a884af057a9f64544d31c4026f00fd709b4250d4166c1460aa9d8ec9e74e39"
+    },
+    {
+      "path": "docs/pointmap_pose_error_decomposition_research_plan_v1.md",
+      "bytes": 97646,
+      "sha256": "9b9febf22e28db0c5723779cc3301b14a173139b35f7f6592899b87ac01263a3"
+    },
+    {
+      "path": "docs/experiments/A1_GM_route_decision.md",
+      "bytes": 1604,
+      "sha256": "7e7364ecb026b49c029a1ecd875865fd797c8dcee73659313bb7e16a27a06c4b"
+    },
+    {
+      "path": "docs/experiments/A1_G_gauge_sensitivity_results.md",
+      "bytes": 7085,
+      "sha256": "758538ad267a833c7d982ddbd4f6b8e6b0f6cd91d2fc9c40599b8eb5508eabd8"
+    },
+    {
+      "path": "docs/experiments/A1_M_support_sensitivity_results.md",
+      "bytes": 11510,
+      "sha256": "7b274b94a1301cd3df6924b196ac568119193a343feed696ad89306de5200d91"
+    }
+  ]
+}
