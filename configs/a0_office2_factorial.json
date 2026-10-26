@@ -1,0 +1,83 @@
+{
+  "experiment": "A0 Pointmap x Pose factorial oracle, office2 diagnostic",
+  "date": "2026-10-26",
+  "scene": "office2",
+  "output": "results/A0_pointmap_pose_factorial/office2",
+  "dataset": "data/N2/Replica/office2",
+  "n2_registration": "configs/n2_dataset_registration.json",
+  "n2_manifest": "configs/n2_dataset_manifest.json",
+  "n1_contract": "configs/n1_coordinate_contract.json",
+  "baseline": {
+    "original_frames": 1000,
+    "input_subsample": 2,
+    "expected_rgb_inputs": 500,
+    "seed": 0,
+    "keyframe_buffer": 32,
+    "configuration": "configs/e0b_replica_office0.yaml",
+    "refinement": 0,
+    "gt_used_by_mapper": false,
+    "min_tracking_fraction": 0.95,
+    "min_matched_calibration_poses": 80,
+    "min_post_prefix_keyframes": 3
+  },
+  "calibration": {
+    "prefix_original_frame_stop_exclusive": 200,
+    "gauge": "one final-revision trajectory Sim(3) using prefix poses only",
+    "local_unit_conversion": "C = prefix global scale * first KF raw scale",
+    "C_sensitivity_multipliers": [0.8, 1.0, 1.25],
+    "scope": "offline final-revision diagnostic; no claim of online prefix-only pose estimation"
+  },
+  "arms": {
+    "A00": "predicted local geometry, estimated placement",
+    "A10": "GT-depth backprojection on GT rays, estimated placement",
+    "A01": "predicted local geometry, GT metric SE3 placement",
+    "A11": "GT-depth backprojection on GT rays, GT metric SE3 placement"
+  },
+  "auxiliary_arms": {
+    "Z10": "GT Z-depth along predicted ray, estimated placement; ray-preserving diagnostic",
+    "Z11": "GT Z-depth along predicted ray, GT placement; ray-preserving diagnostic"
+  },
+  "scopes": {
+    "strict": "post-prefix self-branch KFs only; same baseline-native-active AND valid GT interior source pixels for all arms",
+    "full_map_sensitivity": "all baseline-native-active candidates and prefix KFs; replace local geometry only on valid GT interior pixels; preserve other predicted local points; placement changes for all candidates"
+  },
+  "common_mask_and_native_filter": "Use the frozen N1 rules; compute native mask once before GT interventions; no arm-dependent filtering or covariance reinitialization",
+  "evaluation": {
+    "heldout_original_frame_ids": "all 400 odd IDs in [200,1000)",
+    "surface_fusion_original_frame_ids": [201,241,281,321,361,401,441,481,521,561,601,641,681,721,761,801,841,881,921,961],
+    "depth_definition": "alpha-weighted expected Z-depth, numerator / compositing weight",
+    "coverage_weight_min": 0.001,
+    "correct_depth_abs_tolerance_m": 0.05,
+    "correct_depth_relative_tolerance": 0.02,
+    "primary_error": "mean per-frame rendered-depth MAE on all-four-arm common covered valid GT interior pixels; report the common denominator",
+    "secondary_error": "per-arm covered-valid MAE and AbsRel, all-GT coverage and correct-depth coverage; pixel counts and per-region/distance errors",
+    "depth_bins_m": [0.1,1.0,2.0,4.0,10.0],
+    "rgb": "heldout PSNR and SSIM with original exposure normalization; no appearance optimization; LPIPS optional and not a geometry decision metric",
+    "surface": {
+      "definition": "same-view GT-depth TSDF observed-region reference; rendered-depth TSDF separate from Gaussian-center proxy",
+      "voxel_m": 0.04,
+      "trunc_m": 0.12,
+      "max_depth_m": 10.0,
+      "surface_samples": 100000,
+      "sample_seed": 0,
+      "distance_threshold_m": 0.05,
+      "nn_error_truncation": "none; also report distance percentiles; distances in metres"
+    },
+    "provided_mesh": "record supplied triangulated GT mesh provenance; use point/center nearest-vertex checks only as separate proxies, not full-scene completeness",
+    "saved_frames": [201,401,601,801,999],
+    "precision": "float64 coordinate contract; float32 compact CUDA renderer; TF32 disabled for all arm evaluation"
+  },
+  "sensitivity": {
+    "C_changes": "strict four-arm depth/coverage on the same 20 fixed fusion views at C*0.8 and C*1.25; same IDs, masks, attributes and gauge",
+    "default_C": "strict and full-map four-arm evaluation on all 400 views, plus strict Z10/Z11 controls",
+    "bootstrap": "no scene-level CI or significance from a single scene; frames are correlated, not independent trials"
+  },
+  "diagnostic_decision_rule": {
+    "minimum_relative_MAE_reduction": 0.1,
+    "dominance_ratio": 2.0,
+    "large_interaction_fraction_of_abs_contrasts": 0.25,
+    "max_correct_coverage_loss_absolute": 0.01,
+    "rule": "Prefer A2 depth feasibility only when local contrast dominates, ray-preserving control supports it, geometry/coverage do not contradict, and C sensitivity preserves direction. Prefer A1 placement analysis for placement dominance. Otherwise REVISE, including strong interaction, gauge-dependent conclusions or large A11 residual. This is a development diagnostic, not an efficacy GO or universal causal contribution."
+  },
+  "access_scope": "office2 only; office3 remains validation, office4 remains withheld; no training, pruning/admission policy or refiner changes"
+}

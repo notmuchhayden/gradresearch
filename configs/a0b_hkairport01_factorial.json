@@ -1,0 +1,63 @@
+{
+  "experiment": "A0b HKairport01 sparse LiDAR x reference-pose factorial diagnostic",
+  "date": "2026-10-26",
+  "scene": "HKairport01",
+  "output": "results/A0b_pointmap_pose_factorial/HKairport01",
+  "baseline": "results/E4e_uav_dataset_pilot/development/HKairport01/baseline",
+  "split": "configs/e4e_input_split.json",
+  "archive": "data/E4e/archives/interval1_HKairport01.zip",
+  "reference": "data/E4e/evaluation_only/HKairport01",
+  "calibration_file": "data/E4e/calibration_results.py",
+  "native_filter_contract": "configs/n1_coordinate_contract.json",
+  "baseline_policy": "Reuse immutable RGB-only E4e final native map; no new inference, training, pruning or native-filter rerun per arm. Existing loader calibration was unused with use_calib=false.",
+  "registration_context": "Existing E4e and office2 A0 results known; no HKairport01 four-arm outcomes inspected when registering A0b. Development diagnostic, not a fresh efficacy test.",
+  "time_window_seconds": [60, 120],
+  "calibration_prefix_grid_stop_exclusive": 100,
+  "evaluation_grid_ids": "all 40 heldout grid IDs >=100; k mod 5=4",
+  "diagnostic_view_ids": [104, 154, 204, 254, 299],
+  "alignment": "One Sim3 fitted to final-revision mapping positions at grid<100; no heldout or post-prefix pose in fit. C=global scale*first native KF raw scale. No per-KF fitting.",
+  "camera_models": {
+    "HKairport_released": "PRIMARY conditional model: HKairport_calibration exactly as published, including nonorthogonal extrinsic R; assume released RGB is distorted raw camera data",
+    "HKairport_polar": "sensitivity: nearest proper rotation to HKairport extrinsic by SVD, explicitly not an author-confirmed correction",
+    "legacy_HK_GNSS": "sensitivity: previous E4e HK_GNSS_calibration, not the sequence-named calibration",
+    "HKairport_zero_distortion": "sensitivity: sequence-named extrinsic/intrinsic with zero distortion; released image preprocessing is not author-confirmed"
+  },
+  "camera_contract": "Baseline source pixels are original distorted RGB after exact upstream resize/crop. Source LiDAR is transformed by published lidar-to-camera R,t and projected with cv2 distortion before nearest-pixel Z buffer. Oracle local point uses undistorted source pixel ray and LiDAR camera-Z. Evaluation uses rectified pinhole camera with same physical K; heldout RGB is remapped for this evaluation only. Terra P3x3 is never substituted into LiDAR projection. Terra T4x4 is tested as c2w versus inverse using prefix epipolar geometry and RTK trajectory; unresolved physical camera/SfM relation remains a limitation.",
+  "lidar_valid_depth_m": [2.0, 200.0],
+  "raster": "nearest processed pixel, closest positive camera-Z, no hole interpolation or depth completion; invalid if same-cell depth spread >max(0.5m,2% Z); observed-neighbor depth edges excluded with 1-pixel dilation",
+  "mask_scope": "Finite positive depth and range/edge tests only. Semantic labels unavailable locally; no claim of static-only evaluation, dynamic/sky removal or full-scene completeness.",
+  "scopes": {
+    "strict": "post-prefix final native self-branch KFs, same baseline-active AND valid LiDAR source pixels for every arm",
+    "full_map": "all original native-active candidates including prefix; replace only LiDAR-valid centers, preserve others; change placement of all candidates; mixed reference map, not full oracle"
+  },
+  "arms": {"A00": "predicted local / estimated placement", "A10": "LiDAR local / estimated placement", "A01": "predicted local / Terra reference metric SE3", "A11": "LiDAR local / Terra reference metric SE3"},
+  "controls": {
+    "Z10_Z11": "LiDAR Z along predicted ray, at primary C, strict scope",
+    "C_multipliers": [0.8, 1.0, 1.25],
+    "C_scope": "strict four arms, primary camera; fixed diagnostic views for non-unit multipliers",
+    "camera_scope": "strict four arms on fixed diagnostic views; camera-family intersections reported separately",
+    "same_view_local": "source native centers vs LiDAR, separate from heldout rendered geometry",
+    "cross_view_reference": "fixed prefix mapping pairs, LiDAR-to-LiDAR depth agreement using Terra poses; not model-dependent"
+  },
+  "evaluation": {
+    "depth": "alpha-weighted expected camera-Z from existing compact CUDA renderer; TF32 disabled",
+    "coverage_weight_min": 0.001,
+    "correct_depth_absolute_m": 0.5,
+    "correct_depth_relative": 0.02,
+    "depth_bins_m": [2, 25, 50, 75, 100, 150, 200],
+    "primary": "equal-view mean MAE on the all-four-arm common rendered and LiDAR-valid target pixels; report per-view counts, coverage and missing results explicitly",
+    "secondary": "MAE, median, p95, AbsRel, all-reference coverage/correct coverage, depth-bin and tracking-gap strata; whole-image PSNR/SSIM only contextual",
+    "surface": "No dense GT mesh or TSDF completeness claim. Save source-center proxies and sparse heldout reference cloud in same Terra world frame; nearest-neighbor distances are proxy diagnostics only.",
+    "uncertainty": "One previously used scene; no scene-generalization CI or independent-frame significance. Reference-pose intervention includes KF scale allocation, not rotation/translation alone. Covariance may change with placement as in A0."
+  },
+  "gates": {
+    "min_prefix_poses": 60,
+    "min_post_prefix_kfs": 3,
+    "min_common_candidates": 1000,
+    "min_target_valid_pixels_per_view": 100,
+    "extrinsic_orthogonality_max": 0.001,
+    "prefix_epipolar_median_px_max": 3.0,
+    "strict_interpretation": "Published sequence-specific R already fails orthogonality; image preprocessing and physical-vs-SfM camera equivalence unconfirmed. Conditional four-arm numbers may be executed and visualized, but no strict causal attribution or Depth-only GO without resolving calibration. Preserve previous E4e tracking-gate FAIL."
+  },
+  "allowed_access": "HKairport01 only; office3/office4 and other UAV scenes untouched"
+}

@@ -2,7 +2,9 @@
 
 현재 연구는 **MASt3R-SLAM 기반 3D Gaussian Splatting에서 Pointmap과 카메라 Pose/Scale 오류를 분리하는 실험**입니다. 이전 표면 기반 Gaussian 편입·pruning 연구는 [E0~E4f 종합 보고서](docs/experiments/surface_guided_gaussian_mapping_experiment_summary.md)에 따라 종료했습니다.
 
-**2026-10-26: [N0 자산·재현 점검](docs/experiments/N0_asset_audit_results.md), [N1 좌표·단위 계약](docs/experiments/N1_coordinate_contract.md), [N2 신규 데이터 확보·등록](docs/experiments/N2_dataset_preparation.md) PASS.** N2에서 Replica `office2`(진단·개발), `office3`(검증), `office4`(최종 평가용 보류)의 RGB·GT depth·pose·카메라·mesh를 확보하고 원본 6,007개 파일을 검증했습니다. 장면마다 입력 RGB 500개·calibration pose 100개·held-out 평가 뷰 400개를 고정했습니다. 다음은 **office2의 A0 기준선 실행·4군 기하 평가**입니다. 새 장면의 추론·오류 원인 우세·보정 효능은 아직 평가하지 않았습니다.
+**2026-10-26: N0/N1/N2 PASS, [office2 A0 실행 완료·연구 판정 REVISE](docs/experiments/A0_office2_factorial_results.md).** RGB 500입력·11 KF에서 고정 공통 후보 1,200,827개를 held-out 400뷰로 평가했습니다. 공통-pixel depth MAE는 A00/A10/A01/A11 각각 **0.120683 / 0.152251 / 0.318686 / 0.017892m**였습니다. 단독 Oracle은 악화되고 joint Oracle은 개선돼 강한 interaction을 관측했습니다. 다음은 **A1 local-unit/KF-scale/SE(3) 분리와 office3 검증 재현**입니다. Depth-only 보정 효능은 아직 입증되지 않았고 office4 예측·Oracle 평가는 보류합니다.
+
+**[A0b HKairport01 실행 완료](docs/experiments/A0b_HKairport01_factorial_results.md):** 기존 RGB-only 240입력·21 KF를 재사용해 희소 LiDAR와 Terra 참조 pose로 heldout 40뷰를 평가했습니다. 보정 공통 6,368개 후보의 A00/A10/A01/A11 공통 깊이 MAE는 **21.046 / 35.400 / 45.628 / 1.601m**였고, 더 넓은 242,162개 후보 보조 비교도 단독 치환 악화·joint 개선을 보였습니다. 공식 보정 행렬·영상 전처리, prefix gauge 및 sparse support의 제약 때문에 **조건부 진단 완료 / REVISE_CALIBRATION_AND_A1**이며 엄격한 GT 인과 기여율이나 Depth-only GO가 아닙니다. 전체 지도 비교·그림·offline 3D viewer를 보고서에 포함했습니다.
 
 N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음을 확인했습니다. A10은 **local geometry oracle**로 해석하며, 순수 Depth 보정 효과와 구분합니다.
 
@@ -14,6 +16,10 @@ N1에서 GT backprojection이 Z-depth와 ray 방향을 함께 바꿀 수 있음�
 - [N2 데이터 준비 결과](docs/experiments/N2_dataset_preparation.md)
 - [N2 데이터·분할 사전 등록](configs/n2_dataset_registration.json)
 - [N2 전체 파일 manifest](configs/n2_dataset_manifest.json)
+- [A0 office2 결과·해석·그림](docs/experiments/A0_office2_factorial_results.md)
+- [A0 요약 명세](configs/a0_results_summary.json)
+- [A0b HKairport01 결과·해석·그림](docs/experiments/A0b_HKairport01_factorial_results.md)
+- [A0b 요약 명세](configs/a0b_results_summary.json)
 
 ## 이전 연구 기록 (종료)
 

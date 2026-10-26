@@ -1,20 +1,25 @@
-# MASt3R-SLAM 기반 3D Gaussian Splatting의 기하 오차 원인 분해 및 조건부 깊이 보정 연구
+# MASt3R-SLAM 기반 3D Gaussian Splatting의 Scale 일관성·기하 오차 분해 및 조건부 보정 연구
 
-## 연구 설계·구현·실험 계획서 v1.0 — Surface-guided Gaussian Mapping 종료 이후 신규 연구
+## 연구 설계·구현·실험 계획서 v1.1 — A0/A0b 결과에 따른 후속 실험 재설계
 
 - **작성일:** 2026-10-22 (Asia/Seoul)
-- **연구 단계:** 새 주제의 타당성·원인 분해를 우선 검증하는 **사전 실험 계획**. 새로운 Depth 보정 알고리즘의 효과나 논문 독창성은 아직 입증되지 않음
+- **개정일:** 2026-10-26 (Asia/Seoul). A0/A0b의 완료 기록은 보존하고 후속 실험 순서·개입 정의·판정 기준을 개정
+- **연구 단계:** A0/A0b 이후 **단위·scale 배분, 참조 자료, 후보 support를 통제하는 진단 단계**. 새 보정 알고리즘의 성능과 독창성은 아직 입증되지 않음
 - **직전 연구:** `surface_guided_gaussian_mapping_research_plan_v3.md` → `surface_guided_gaussian_mapping_experiment_summary.md` (E0~E4f, 2026-10-15~22 완료·연구 종료)
 - **시스템:** MASt3R/MASt3R-SLAM + Splatt3R-SLAM, 단안 RGB 입력, 학습된 모델의 가중치는 기본적으로 고정
 - **현재 논문 제목(가안):** **MASt3R-SLAM 기반 3D Gaussian Splatting에서 Pointmap 및 카메라 자세 오차가 3차원 재구성에 미치는 영향 분석**
 - **조건부 후속 제목:** **MASt3R-SLAM 기반 3D Gaussian Splatting의 기하 오차 분석 및 선택적 깊이 보정**
 - **영문 제목(가안):** *Decomposing Pointmap and Camera Pose Errors in MASt3R-SLAM-Based 3D Gaussian Splatting Reconstruction*
-- **연구 운영 원칙:** A0의 원인 분해 결과가 확보되기 전에는 `Depth 보정이 핵심 해결책`이라고 미리 확정하지 않는다.
+- **연구 운영 원칙:** Joint Oracle 개선을 RGB-only 보정 성능으로 해석하지 않는다. A1의 표현·요인 분리와 독립 검증 이후에만 보정 경로 하나를 선택한다.
 
-> **진행 상태 (2026-10-26):** [N0 자산·재현 점검](experiments/N0_asset_audit_results.md), [N1 좌표·단위·개입 계약](experiments/N1_coordinate_contract.md), [N2 신규 GT 데이터 확보·분할 등록](experiments/N2_dataset_preparation.md) **PASS**. N2에서 `office2`는 진단·개발, `office3`는 검증, `office4`는 최종 평가용 보류로 고정했다. 다음은 **office2의 A0 기준선 실행·4군 기하 평가**다. N1 개발 후보의 계약 검증과 N2 데이터 QA까지 완료했으며, 신규 장면의 A0 기하 효과·원인 우세는 아직 평가하지 않았다. 아래 일정·체크리스트는 계획이며 개별 완료 여부는 실험 보고서를 따른다.
+> **진행 상태 (2026-10-26):** N0/N1/N2 **PASS**, [office2 A0 실행 완료·연구 판정 REVISE](experiments/A0_office2_factorial_results.md). 공통-pixel MAE는 A00/A10/A01/A11 각각 0.120683/0.152251/0.318686/0.017892m였다. 단독 치환은 악화되고 joint Oracle은 개선돼 강한 interaction을 확인했다. 다음은 **A1 local-unit/KF-scale/SE(3) 분리와 office3 검증 재현**이며, Depth-only 보정의 GO는 아니다. office4의 예측·Oracle 평가는 계속 보류한다. 아래 일정·체크리스트는 계획이며 개별 완료 여부는 실험 보고서를 따른다.
+
+> **UAV 확장 A0b (2026-10-26):** [HKairport01 희소 LiDAR × Terra 참조 pose 진단 완료](experiments/A0b_HKairport01_factorial_results.md). 기존 240입력·21 KF에서 heldout 40뷰를 평가했다. 보정 공통 후보 6,368개의 A00/A10/A01/A11 공통 깊이 MAE는 21.046/35.400/45.628/1.601m였고, 보조 242,162개 후보에서도 단독 치환 악화·joint 개선을 관측했다. 공식 extrinsic의 직교성 오류, JPG distortion 처리와 Terra/물리 카메라 대응 미확인, prefix gauge와 sparse support 제약을 함께 보고했다. **COMPLETE_CONDITIONAL / REVISE_CALIBRATION_AND_A1**이며, 완전 GT Oracle·독립 새 장면 검증으로 취급하지 않는다. 기존 E4e tracking gate FAIL도 유지한다.
+
+> **이번 개정의 실행 순서:** **A1-U(원본 지도 불변 재표현) → A1-C(유효 local geometry × rigid pose 재비교) → A1-G/M(정렬·support 대조) → V1(office3 고정 재현) → A2(잔여 형상·RGB 관측 가능성)**. **Q0-HK(참조 보정 QA)**는 A1-U와 함께 시작하되 UAV 정량 결론의 선행 조건으로 둔다. D/P 알고리즘 개발 및 office4 평가는 보류한다. 이 문서 개정은 후속 실험 실행 완료를 뜻하지 않으며, 실제 실행 전 별도 설정·manifest를 고정한다.
 
 > **문서의 증거 구분**
-> - **[기존 실험]**: 2026-10-22 종료 보고서에 기록된 관측 및 수치.
+> - **[기존 실험]**: E0~E4f 및 2026-10-26 A0/A0b 보고서에 기록된 관측 및 수치.
 > - **[논문 근거]**: 첨부 MASt3R-SLAM, Splatt3R, 두 GeoGS-SLAM 등의 방법 설명.
 > - **[가설/제안]**: 본 문서에서 새로 설계한 통제실험·평가 방법·보정 방식. 실제 효과는 아직 미검증.
 > - 이번 계획은 기존 Pruning 프로젝트를 재개하는 지시가 **아니다**. 이전 프로젝트의 저장된 코드·데이터·평가 기반만 재활용한다.
@@ -36,6 +41,7 @@
 | 틀린 Pointmap도 일관된 국소 평면을 형성함 | E4b: 잘못된 평면이 미제거 bad 31,412개를 지지; 30,777개에서 주변 점의 대다수도 같은 방향 오류 | 같은 모델에서 나온 국소 평면에 projection하는 방법은 공유 편향을 교정하지 못할 수 있음 |
 | 기존 plane admission의 추가 성능 이득 미입증 | E4 office1 75% 예산: plane TSDF Chamfer 0.108354m, B6 0.105947m | 후보 제거/보류/중복 판정 연구는 종료. 강한 Depth 대조군보다 나은지 반드시 확인 |
 | UAV 실험에서 국소 표면 단차·왜곡을 관찰 | E4e HKairport01: 240입력, 21KF, tracking gate 미통과 | 시각적 현상만으로 원인을 확정할 수 없음. 우선 GT 보유 장면에서 분해 |
+| 실제 UAV에서 local/placement 단독 치환 악화·joint 치환 개선 | A0b HKairport01: sparse 공통 후보 6,368개 및 보조 242,162개, heldout 40뷰 | local-unit/KF-scale과 rigid pose 분리 필요. 보정·gauge·support에 조건부이며 Depth-only 원인으로 귀속하지 않음 |
 | KITTI에서 Depth 오류와 전역 배치 문제가 함께 의심됨 | E4f: 전역 Scale 후에도 거리별 Depth 잔차, OXTS 배치에서 일부 NN 거리 개선 | Pose 및 Scale을 **같이 바꾼 Oracle**로는 어느 요소가 원인인지 인과 분해 불가 |
 | 기존 NVS 실험은 full appearance optimization의 대표 성능이 아님 | E0/E4: refinement=0, degree-0 appearance 설정 | 저 PSNR을 곧바로 Depth 오류로 단정하지 않고 refiner-on/off 별도 통제 |
 
@@ -47,6 +53,37 @@
 - 신규 연구에서는 **같은 Gaussian ID와 속성을 유지한 채** Pointmap 또는 월드 배치의 변화가 지도 품질에 미치는 영향을 우선 검증한다.
 - 마스크 기반 하늘/동적 객체 제거, 새로운 Gaussian의 재학습, mesh completion, 대규모 SLAM backend 재작성은 기본 필수 범위에서 제외한다.
 
+## 0.4 A0/A0b가 바꾼 후속 실험의 전제
+
+| 완료된 비교 | A00 / A10 / A01 / A11 공통 깊이 MAE (m) | 확인한 사항 / 남은 문제 |
+|---|---|---|
+| office2 A0 strict, 1,200,827후보·400뷰 | 0.120683 / 0.152251 / 0.318686 / 0.017892 | 단독 교체 악화·joint 개선. GT pose arm에 KF scale 제거까지 포함됨 |
+| HKairport01 A0b 보정 공통, 6,368후보·40뷰 | 21.046052 / 35.399786 / 45.627794 / 1.601097 | 공통 target은 LiDAR-valid의 평균 4.104%, native 후보의 0.1964%만 검사 |
+| HKairport01 A0b 추가 보조, 242,162후보·40뷰 | 21.790515 / 41.919585 / 31.838613 / 2.782529 | 더 넓은 support에서도 같은 방향. 결과 일부 확인 후 등록한 보조 비교이며 독립 재현이 아님 |
+| HKairport01 A0b full-map mixed, 3,242,219후보 | 21.842800 / 23.441040 / 13.286802 / 13.234331 | 이 범위에서는 placement 교체가 개선됨. Local 교체는 7,609개(0.2347%)뿐이므로 완전 Oracle과 비교 불가 |
+
+**현재 설명해야 할 현상은 “Depth 단독 오류가 크다”가 아니라 “왜 단독 개입은 악화되고 joint 개입만 개선되는가”다.** 다음 가설을 경쟁시킨다.
+
+1. **표현·단위 배분:** raw local scale과 KF Sim(3) scale이 맞물려 있다. Raw local만 metric GT로 바꾸거나 KF scale만 제거하면 원래 정합을 깨뜨릴 수 있다.
+2. **실제 기하·자세 결합 오류:** 단위를 일관되게 바꾼 뒤에도 local 형상과 rigid pose 사이에 결합된 잔차가 남을 수 있다.
+3. **평가·표현 효과:** 거의 직선인 prefix의 gauge 불확실성, sparse 후보 선택, world covariance 변화, 가림·expected-depth renderer가 factorial contrast에 영향을 줄 수 있다.
+
+이들은 **미검증 설명 후보**다. 강한 interaction만으로 실제 오차 상쇄, 특정 KF scale 오류 또는 joint optimizer의 필요성을 확정하지 않는다. 다음 순서로 가설을 제거한다.
+
+| 변경 전 방향 | 이번 개정 |
+|---|---|
+| A0에서 local-vs-pose 우세를 골라 A1 또는 A2로 분기 | A1-U/C를 필수로 수행한 뒤 분기. 원 A01을 pure pose Oracle로 부르지 않음 |
+| Local 공통 단위 C를 고정하는 것으로 분리 완료 | Native placement scale을 local 점·covariance에 함께 흡수하는 **지도 불변 재표현** 추가 |
+| A11 잔차가 크면 representation 연구로 이동 | 먼저 reference-only 재투영, support·gauge를 확인하고 R-Q 최소 통제로 원인을 좁힘 |
+| 모든 민감도 arm의 거대한 픽셀 교집합 | 동일 후보의 작은 비교군별 공통 분모와 관측률을 보고. 교집합 붕괴 시 결론 보류 |
+| 개발 장면의 Oracle 개선으로 보정 구현 착수 | office3의 사전 고정 재현과 RGB-only 관측 가능성을 확인한 뒤 한 경로만 선택 |
+
+## 0.5 다음 실행의 최소 범위와 명명 규칙
+
+**즉시 착수할 다음 실험 ID는 A1-U**다. 저장된 office2/HKairport01 map을 재사용하고 새 추론 없이 mean·covariance·render 불변성을 검증한다. 이어 office2 A1-C의 네 조건과 ray 보존 대조를 실행한다. Q0-HK가 해결되지 않더라도 실내 진단은 계속할 수 있고, HKairport01 결과는 조건부로만 유지한다.
+
+이 문서의 **A1/A2는 연구 실험 시리즈**다. A0b 실행 당시의 `a0b_amendment_A1.json`/`a0b_amendment_A2.json`은 A0b 내부 변경 이력이며, 후속 A1/A2 완료를 뜻하지 않는다. 기존 A0/A0b 파일·판정·source support·post-hoc 표시는 바꾸지 않는다.
+
 ---
 
 # 1. 연구 목표, 연구 질문, 가설
@@ -54,13 +91,13 @@
 ## 1.1 필수 목표(MVP)
 
 1. **오류 전달 경로 계측:** raw pair pointmap → local frame → keyframe/global Sim(3) → Gaussian center → rendered depth/3D surface의 변환 및 provenance 확정.
-2. **오류의 분리 실험 A0:** 고정된 후보 ID·픽셀·Gaussian 속성을 대상으로 Pointmap과 Pose를 각각 GT로 치환한 2×2 factorial Oracle 실험.
-3. **Scale 분리:** 전역 단안 gauge 정렬과 Keyframe별 drift를 분리하고, 회전/이동/scale의 효과가 혼합되지 않도록 통제.
+2. **A0/A0b 후속 진단:** 기존 factorial 결과를 보존하고, A1-U/C에서 동일 원본 지도의 단위 재표현과 rigid pose/유효 local geometry의 교체를 구분.
+3. **Scale 분리:** GT에서 얻은 보정과 native 표현의 재분배를 구분. A1-F의 scale 개입은 별도 요인으로 다루고 gauge에 조건부인 효과라고 표시.
 4. **기하 중심 평가:** GT depth와 3D surface, coverage, 거리별/표면별 오류. 렌더링 지표는 별도로 보고.
-5. **Go/No-Go:** A0 결과에 따라 Depth 보정, Pose/Scale 보정, Gaussian 표현 연구 또는 '원인 분해 분석 논문'으로 범위를 결정.
+5. **Go/No-Go:** 참조·support gate, A1-C 및 V1, A2 결과에 따라 Depth 보정, Pose/Scale 보정 또는 분석 연구 중 하나를 선택.
 6. **재현성:** 동일 후보 풀·동일 공통 마스크·같은 test scenes·run manifest를 보존.
 
-## 1.2 A0가 통과했을 때만 추가하는 목표
+## 1.2 진단·독립 재현·관측 가능성 gate 이후에만 추가하는 목표
 
 - **Depth 중심 결과:** RGB-only 정보를 활용하는 *저차원/국소 선택적 Depth 보정*의 성능을 기존 단순 scale·photometric reprojection 방식과 비교.
 - **Pose 중심 결과:** full SLAM 개편 대신, pose/scale 재배치 진단과 제한된 외부-학습 없는 정렬 보정을 작은 실험으로 검증.
@@ -70,18 +107,20 @@
 
 | ID | 연구 질문 | 검증 실험 |
 |---|---|---|
-| **RQ1** | 동일한 Gaussian 후보에서 실제 표면 오류에 더 크게 기여하는 것은 **Pointmap local geometry**인가, **Pose/Scale placement**인가? | A0 factorial Oracle, A1 pose/scale 분해 |
-| **RQ2** | Pointmap 오차가 전역 scale 차이인지, 공간적으로 변하는 local depth deformation인지 구분 가능한가? | A2 단일-scale 최적 잔차 vs region residual |
-| **RQ3** | 깊이 보정이 효과적인 조건에서는 GT 없이 **RGB-only 제한적 Depth 보정**으로 독립 GT 기하 품질을 높일 수 있는가? | D0~D5, 신규 scene 실험 |
-| **RQ4** | Depth 보정이 rendering quality/coverage와 정상 구조를 훼손하지 않는가? | held-out RGB, TSDF/surface, per-region failure |
-| **RQ5** | GPU 8GB 환경에서 재현 가능하고 제한된 추가 계산비로 수행할 수 있는가? | VRAM/latency, ablation |
+| **RQ1** | A0/A0b의 단독 악화·joint 개선 중 얼마가 local-unit/KF-scale 배분에 의존하는가? | A1-U/C, 필요 시 A1-F |
+| **RQ2** | 단위를 재표현한 뒤에도 유효 local geometry와 **rigid 회전·이동**의 결합 효과가 남는가? | A1-C/RT, A1-G/M, V1 |
+| **RQ3** | 남은 local 오차는 단일/KF scale인가, 공간적 형상 변형인가? RGB 관측으로 구별 가능한가? | A2 spatial cross-fit 및 RGB 관측 가능성 |
+| **RQ4** | 선택한 RGB-only 보정이 강한 scale/photo/backend 대조군보다 새 장면의 기하·correct coverage를 개선하는가? | 조건부 D/P, F0 |
+| **RQ5** | Reference·support·covariance·renderer 및 8GB 자원이 해석을 얼마나 제한하는가? | Q0-HK, A1-G/M, R-Q, 비용 기록 |
 
-## 1.4 검증 가설 — 결과 전 주장 금지
+## 1.4 관측과 후속 가설의 구분
 
-- **H1:** A0에서 GT Pointmap 또는 GT Pose를 한 가지만 치환해도 지도 GT 오류의 일정 부분이 감소한다. 어느 쪽이 큰지는 미정.
-- **H2:** GT를 적용한 2×2 실험에서 두 오류 성분 간 상호작용이 존재할 수 있다. 오차를 단순 합으로 해석하지 않는다.
-- **H3(조건부):** 깊이 오차가 주요 원인이라면 공간적으로 제한된 보정이 Keyframe 단일 scale만 사용하는 방법보다 지표 개선을 얻을 수 있다.
-- **H4(조건부):** 보정할 증거가 부족한 평면/하늘/occlusion/저시차 영역에서는 보정 강도를 낮추는 선택 정책이 보정 전면 적용보다 구조 손상을 줄일 수 있다.
+- **기존 H1의 경과:** “단독 GT 치환도 개선한다”는 예측은 현재 strict A0/A0b에서는 지지되지 않았다. 이를 성공 가설처럼 유지하지 않는다. 다른 표현·후보 집합에서의 효과까지 부정한 것은 아니다.
+- **기존 H2의 경과:** 두 개발 장면의 지정된 지표에서 interaction을 관측했다. 그 물리적 원인과 새 장면 재현성은 미확정이다.
+- **H-U:** placement scale을 local geometry에 흡수하는 가역 재표현 후, 단독 치환 악화가 줄어들 수 있다. 줄어들면 기존 contrast에 단위 배분이 관여했다는 증거이며 raw model이 정확하다는 증명은 아니다.
+- **H-C:** 재표현 후에도 남는 coupling은 gauge/support/world covariance 통제와 office3 재현을 통과할 수 있다. 그렇지 않으면 coupling 일반화 주장을 보류한다.
+- **H-S:** 유효 local depth 잔차의 상당 부분이 KF별 scalar로 설명될 수 있다. 그렇다면 공간적 depth field보다 단순한 scale 일관성 진단·보정을 우선한다.
+- **H-D(조건부):** scalar 이후에도 남고 RGB로 관측 가능한 공간적 잔차에 한해서 선택적 Depth 보정이 단순 대조군을 넘을 수 있다. 아직 알고리즘 성능 가설이며 검증되지 않았다.
 
 ---
 
@@ -159,7 +198,9 @@ $$
 
 ---
 
-# 4. 가장 중요한 실험 A0 — Pointmap × Pose 2×2 Oracle 오류 분해
+# 4. 완료된 출발 실험 A0/A0b — 원 계약과 해석 한계 보존
+
+이 절은 완료 실험의 원 설계·수식이다. 실내의 dense GT 조건과 달리 A0b는 희소 LiDAR·Terra reference 및 미확인 static/보정 조건 때문에 **conditional diagnostic**으로 실행했다. 미충족 조건을 충족한 것처럼 소급 기록하지 않는다. 후속 비교군의 새 정의는 §5를 따른다.
 
 ## 4.1 목표
 
@@ -197,7 +238,7 @@ $$
 - Scale은 **GT trajectory의 정해진 calibration prefix** 또는 별도 validation 구간에서 한 번만 고정하고, test 구간은 같은 정렬값을 사용한다. 평가 중 각 keyframe에 별도의 최적 scale을 허용하지 않는다.
 - 기하 오류 진단 시 두 보고를 병행한다: (i) metric-aligned depth error, (ii) *alignment-insensitive* 상대 깊이/형상(예: depth ratio/locally centered residual).
 - A01에서 GT pose를 넣는다는 것이 frame-wise independently aligned depth를 의미하지 않는다.
-- 이전 E4f처럼 estimated arm의 keyframe Sim(3) scale과 oracle arm의 `GT SE(3) + trajectory scale`을 동시에 바꾸는 설계를 반복하지 않는다. 엄격 비교가 불가능하면 **미분리 변수**를 명시하고 해당 결과를 primary causal claim에서 제외한다.
+- 완료된 A0/A0b의 A01은 estimated KF Sim(3)를 GT/reference SE(3)로 바꾸므로 **회전·이동과 KF scale 배분을 함께 바꾼다**. 원 결과를 pure SE(3) 오류로 재명명하지 않는다. 이 한계를 A1-C의 지도 불변 scale 흡수와 A1-F의 별도 scale 요인으로 조사한다.
 
 ### 공통 단위의 명시적 정의(구현 필수)
 
@@ -256,62 +297,160 @@ $$
 
 ---
 
-# 5. 보조 실험 A1 — Pose, Scale, Local Geometry의 재분리
+# 5. 필수 후속 A1 — 지도를 보존하며 Local Geometry·KF Scale·Rigid Pose 재분리
 
-**시작 조건:** A0에서 placement의 효과가 유의미하거나 A0 엄격 독립성에 추가 검증이 필요할 때.
+**현재 상태: 계획, 미실행.** A0/A0b의 연구 판정 REVISE에 직접 대응하는 다음 단계다. 새 모델 학습과 backend 재작성 없이 저장된 raw self-branch·최종 pose·native active map을 재사용한다. 아래의 정렬·개입은 우선 **offline diagnostic**이며 온라인 추론 성능으로 보고하지 않는다.
 
-## 5.1 분해 수준
+## 5.1 Q0-HK — UAV 참조 자료 gate
 
-| Arm | 변경 요인 | 목적 |
+Q0-HK는 A1-U와 함께 시작할 수 있는 **참조 QA**이며, office2/office3 진단을 막는 전역 gate가 아니다.
+
+| 점검 | 고정할 증거 / 비교 | 통과하지 못했을 때 |
 |---|---|---|
-| A1-0 | native per-KF Sim(3) | 기준 |
-| A1-R | rotation만 reference로 치환; translation/scale은 고정 규약으로 재배치 | orientation 오류 기여 |
-| A1-t | translation만 reference로 치환; rotation/scale은 유지 | translation 오류 기여 |
-| A1-s | scale만 reference/consensus로 치환; rotation/translation 고정 | scale drift 기여 |
-| A1-SE3 | 회전+이동 reference, scale은 동일 한 값 | pure SE(3) placement reference |
-| A1-Sim3 | 전체 pose+scale reference | 종합 placement upper diagnostic |
+| HKairport extrinsic R | 공개 원본, 출처·버전, $\lVert RR^T-I\rVert_{\max}\leq0.001$, det/축·방향 | 공개값의 직교성 실패를 기록. SVD projection을 저자 확인 GT로 승격하지 않음 |
+| JPG와 lens 모델 | raw/undistorted 여부, K/distortion/crop, Terra P3x3와 물리 K의 역할 | 두 가정을 별도 조건으로 유지. A11 MAE가 작은 쪽을 정답 보정으로 선택하지 않음 |
+| LiDAR/reference pose 일관성 | 고정 prefix의 image epipolar·시간 차이·reference-only cross-view 잔차와 표본 수 | epipolar 통과만으로 metric pose나 extrinsic 정확도를 보증하지 않음 |
+| Reference residual floor | heldout을 튜닝에 쓰지 않고 prefix에서 거리별 재투영·관측/가림 잔차 추정 | 이를 sensor noise 정밀도로 부르지 않음. 근거가 없으면 UAV absolute GO 불가 |
 
-이 실험은 naive한 $t$/$s$ 숫자 대체만으로 올바르게 정의되지 않을 수 있다. 회전 중심, anchor, scale gauge, 단위가 일치하도록 transformation composition을 먼저 정의하고, **동일 월드 기준으로 차이가 한 변수에서만 발생하도록 synthetic tests를 통과한 arm만 시행**한다.
+**산출물:** `Q0_HK_reference_contract.md/json`, calibration provenance, raw/rectified pixel 왕복·overlay, reference-only residual과 unknown 목록. 기존 source를 읽어 확인하는 작업부터 진행한다. 외부 저자 문의가 필요하면 문의안을 준비할 수 있으나, 이 계획 자체가 메시지 발송 지시는 아니다.
 
-## 5.2 Local Depth 오류 유형
+Q0-HK에서 해소하지 못한 항목은 **REFERENCE_UNRESOLVED**로 유지한다. HKairport01에서는 조건부 민감도·실패 진단까지 수행하고, 확정적인 물리 원인 귀속과 UAV 알고리즘 효능 주장은 보류한다. 결과가 좋아도 QA gate를 소급 완화하지 않는다.
 
-- **Global multiplicative scale:** 모든 픽셀에 거의 일정 비율로 틀린 깊이.
-- **Frame-specific scale:** Keyframe마다 서로 다른 비율로 틀린 깊이.
-- **Spatial deformation:** 프레임 내 영역별 깊이 ratio가 다름.
-- **Depth discontinuity:** 물체 경계·occlusion에서 앞뒤 표면이 혼합됨.
-- **Low-texture/reflection:** GT 관측이 충분하더라도 photometric signal이 약해 geometry가 흔들림.
-- **Dynamic/sky/invalid:** 정적 3D 표면이 불명확한 픽셀. depth 오류로 일괄 해석하지 않음.
+## 5.2 A1-U — 원본 world map을 보존하는 scale 흡수
 
-**진단 통계:** `relative depth error`, log-depth ratio의 median/IQR, 거리별 MAE/p95, rigid patch 내부 분산, keyframe별 scale time series, RGB parallax/reprojection support.
+§4.4의 metric local point를 $x_{ki}=C\hat X^{\mathrm{raw}}_{ki}$, metric placement를 $(a_k,R_k,t_k)$, local covariance를 $\Sigma^x_{ki}$라 둔다. $a_k$는 **추정 placement의 남아 있는 scale**이며 GT 오류로 단정하지 않는다.
+
+$$
+\mu_{ki}=R_k(a_k x_{ki})+t_k,\qquad
+\Sigma^w_{ki}=R_k(a_k^2\Sigma^x_{ki})R_k^T.
+$$
+
+다음처럼 native scale을 local geometry와 covariance에 **함께 흡수**한다.
+
+$$
+y_{ki}=a_k x_{ki},\qquad
+\Sigma^y_{ki}=a_k^2\Sigma^x_{ki},\qquad
+Q_k=(1,R_k,t_k).
+$$
+
+그 결과 $Q_k(y_{ki})=\mu_{ki}$이고 world covariance도 동일하다. 모든 KF에 $a_k=1$을 강제로 넣어 원본 지도를 바꾸는 **보정**과 구별한다. $y$는 native KF scale을 포함한 **유효 local geometry**이며 raw pointmap만의 오차가 아니다.
+
+**필수 불변성:** candidate ID·active mask·color/SH·opacity, world center·world covariance, 같은 viewpoint의 expected depth/weight/RGB가 수치 허용 범위 안에서 보존되어야 한다. Raw Gaussian scale을 재표현할 때는 표준편차에 $a_k$, covariance에 $a_k^2$를 곱한다. 원래 covariance를 그대로 둔 채 mean만 scale 흡수하는 구현은 실패다.
+
+**단위 변화 대조:** 임의의 양수 $q_k$에 대해 $x\mapsto q_kx$, $a_k\mapsto a_k/q_k$, $\Sigma^x\mapsto q_k^2\Sigma^x$를 적용해도 $y$, $\Sigma^y$, world map은 같아야 한다. 전역 C multiplier `0.8/1/1.25`와 seed 0의 KF별 가역 배율을 포함한다. 테스트용 배율은 GT에 fitting하지 않는다.
+
+**통과 기준:** 먼저 float64 algebra 왕복을 `rtol=1e-9`로 확인한다. 같은 float32 renderer에서 compact mean/covariance 및 depth·RGB 오차 한도를 구현 smoke 이전에 등록하고, UAV 좌표 크기에 맞춘 절대·상대 오차를 함께 기록한다. 기존 native TF32 export 재생 parity와 float64 기준 비교는 별도다. 눈에 보이는 차이가 있으면 후속 arm을 평가하지 않고 구현을 수정한다.
+
+**출력:** `A1_U_contract.json`, per-KF `a_k/C/local_unit` 표, invariance log, 동일 viewpoint 이미지 차이. Office2와 HKairport01 두 기존 map에서 검증하며 새 네트워크 추론은 하지 않는다.
+
+## 5.3 A1-C — 유효 Local Geometry × Rigid Pose 2×2
+
+A1-U 통과 후의 **주 비교군**이다. $Y_k^{\mathrm{ref}}$는 같은 source camera에서 metric depth와 ray로 만든 참조 local point, $Q_k^{\mathrm{ref}}$는 metric SE(3) 참조다.
+
+| Arm | Local 중심 | Rigid placement | 질문 |
+|---|---|---|---|
+| **C00** | $y=a_kx$ | 추정 $(R_k,t_k)$ | 원본 map과 같다는 것을 A1-U로 확인 |
+| **C10** | $Y^{\mathrm{ref}}$ | 추정 $(R_k,t_k)$ | KF scale을 이미 포함한 유효 local 기하를 교체하면? |
+| **C01** | $y=a_kx$ | 참조 $(R_k^{\mathrm{ref}},t_k^{\mathrm{ref}})$ | Local scale을 보존하고 **회전·이동만** 교체하면? |
+| **C11** | $Y^{\mathrm{ref}}$ | 참조 $(R_k^{\mathrm{ref}},t_k^{\mathrm{ref}})$ | 같은 representation/support에서의 joint 참조 |
+
+모든 C-arm의 local covariance는 **동일한 $\Sigma^y$**로 고정하고 world covariance는 각 rigid rotation으로 옮긴다. C00은 원본을 보존하지만, C-arm의 참조 covariance는 기존 A0의 $\Sigma^x$와 다르므로 **C11이 기존 A11과 같을 필요는 없다.** A0 대비 변화는 중심의 factor 정의와 covariance 계약의 변화로 나누어 보고한다.
+
+함께 수행할 최소 대조:
+
+- **CZ10/CZ11:** predicted ray $y/y_z$를 보존해 LiDAR/GT Z만 교체. C10/C11의 ray 교체 효과와 구분한다. 평가 시 네 C-arm과 CZ 두 arm의 공통 분모를 별도로 저장한다.
+- **원 A0 replay:** 기존 A00/A10/A01/A11 수치·mask를 원 계약으로 재현한다. C00/A00 world-map 불변성과 source별 local-unit 변화도 함께 확인한다.
+- **같은 GT 표본의 point/projection 잔차:** 렌더링 전 local Z·3D·ray 잔차와 렌더링 후 깊이 지표를 분리해 renderer 비선형성을 조사한다.
+- **Covariance 최소 대조:** office2의 기존 고정 20뷰에서 C-arm의 world covariance를 C00 값으로 고정한 네 조건을 별도로 평가한다. Rigid rotation의 covariance transport와 비교해 효과 방향이 바뀌면 R-Q를 확대하고, local/pose 우세를 바로 판정하지 않는다.
+
+**우선 실행:** office2 기존 strict 1,200,827후보와 400뷰. HKairport01은 기존 보정 공통 6,368개와 넓은 support 242,162개를 **서로 다른 scope로 유지**하고 같은 40뷰를 평가한다. 더 좋은 결과를 보이는 scope를 선택하지 않는다. UAV의 조건부 표시는 Q0-HK 판정에 따른다.
+
+**해석:** C01은 rigid pose 개입으로 정의할 수 있지만 C10은 scale을 포함한 유효 local geometry 개입이다. 유일한 ‘raw depth 오류 기여율’은 아니다. C 표현의 단독 악화가 줄고 원 A0의 악화가 남으면 scale 배분의 영향을 지지한다. C 표현에서도 interaction이 크면 A1-G/M 및 아래 추가 대조를 거쳐 coupling 가설을 검토한다.
+
+## 5.4 A1-F/RT — 필요한 경우에만 요인 수 확대
+
+**A1-F:** 원 metric-local 표현에서 local(L: 추정/참조), rigid pose(P: 추정/참조), scale(S: $a_k$/1)의 **2×2×2, 총 8조건**을 구성한다. $t_k$는 같은 camera origin의 world translation으로 유지하고 local 좌표에만 scale을 적용한다. `S=1`은 이 계약의 intervention level이며 데이터가 제공하는 ‘GT KF scale’이 아니다. L×S·P×S·L×P 및 세 요인의 interaction을 계산하고, 표현 재배분의 영향과 지표 비선형성을 구분한다. C-arm과 F-arm의 local covariance 계약을 혼합하지 않는다.
+
+**A1-RT:** C01 효과가 유의하거나 C의 coupling이 남을 때만, 같은 유효 local geometry에서 `(Rref,test)`와 `(Rest,tref)`를 추가해 R/t를 분리한다. Scale을 다시 바꾸지 않는다. 원점을 기준으로 world 좌표를 직접 회전해 translation까지 바꾸는 구현을 금지한다.
+
+F/RT는 먼저 office2의 사전 고정 20개 fusion viewpoint에서 검사하고, 명확한 진단 질문이 남을 때 400뷰로 확장한다. 단순히 모든 조합을 생성하는 것을 연구 목표로 삼지 않는다.
+
+## 5.5 A1-G/M — Gauge와 후보 support를 결론의 일부로 평가
+
+**A1-G (필수):** 기존 prefix와 pose revision은 유지한다. Position-only Sim(3) 및 prefix orientation mean으로 회전을 정한 Sim(3)를 사전 지정한 두 alignment로 비교하고 prefix trajectory singular values·정렬 회전 차이를 보고한다. GT test pose를 포함해 가장 좋은 정렬을 고르거나 prefix를 오류가 작은 구간으로 옮기지 않는다. C의 단위 변경 불변성과 **서로 다른 alignment의 불확실성**을 구별한다.
+
+**A1-M (필수):** strict common source, 넓은 단일 보정 support, 전체 native map의 mixed replacement를 분리한다. Scope마다 변경 local 후보 수/전체 native 수, 거리·source KF·예측 confidence strata와 미관측 영역을 보고한다. 실내 GT를 고정 seed로 픽셀/행 스캔 형태로 얇게 만든 **dense→sparse support 대조**도 같은 원본 지도에서 시행한다. Source 후보만 줄이는 경우와 target 측정만 줄이는 경우를 나눠, 지도 support 변화와 평가 표본 변화가 섞이지 않게 한다. 밀도·pattern은 mask만 보고 등록하고 오류가 큰 픽셀을 골라 제거하지 않는다. 이는 실제 LiDAR의 sensor/occlusion 모델을 복제하는 실험이 아니다.
+
+보정 대조의 경우 16조건 전체 픽셀 교집합을 주 지표로 쓰지 않는다. 각 camera 안의 네 조건을 같은 참조로 평가하고, 공통 후보의 source ray·물리 LiDAR point ID 대응을 확인할 수 있는 경우에만 camera 간 paired 비교를 부가한다. 서로 다른 ray의 같은 pixel index가 동일 측정을 뜻한다고 가정하지 않는다. Camera 가정은 A11 성능으로 선택하지 않는다.
+
+추적 실패 3뷰와 이후 구간도 기존 분할대로 남기고 공백 전/중/후 층화를 병행한다. 실패 프레임 제거로 결과를 개선하지 않는다. Support gate는 §11.5를 따른다.
+
+## 5.6 V1 및 R-Q — 독립 재현과 최소 representation 통제
+
+**V1 (필수):** office2에서 A1-U/C·주 gauge·mask·metric·판정 규칙을 봉인한 뒤 **office3**에서 한 번 동일 절차로 재현한다. N2의 500입력·prefix 100 pose·heldout 400뷰를 유지한다. Office3는 validation이며, 결과를 보고 변경하면 해당 변경과 재실행을 기록하고 독립 최종 test로 부르지 않는다. HKairport01의 개발 결과는 V1을 대체하지 않는다.
+
+**R-Q (필요 시 확대):** §5.3의 covariance 소규모 검사는 필수다. C11 잔차가 크거나 그 검사에서 순위가 바뀔 때 (i) reference-only source→same/다른 view 투영의 Z-buffer residual, (ii) 동일 reference 후보·동일 viewpoint의 Gaussian expected-depth residual, (iii) C-arm의 **world covariance를 C00 값으로 고정한 보조 비교**를 확장한다. (iii)은 의도적인 표현 통제이며 정식 rigid transport arm과 혼합하지 않는다. Center nearest-neighbor를 surface 정답으로 쓰거나 LiDAR hole을 임의 보간하지 않는다. Appearance 최적화 연구로 바로 확장하지 않는다.
+
+## 5.7 A1 완료 산출물과 경로 결정
+
+- `A1_coordinate_reparameterization.json`: native/metric/canonical 변환, candidate·covariance hash 및 baseline 불변성.
+- `A1_C_four_arms.csv`, `A1_effects.csv`, ray-only 대조, source local/placement/covariance별 residual.
+- `A1_gauge_support_matrix.csv`: gauge × scope별 실제 평가 뷰/픽셀 수·coverage·방향 안정성.
+- 필요 시 `A1_F_eight_arms.csv`, `A1_RT.csv`, `R_Q_reference_renderer.csv`.
+- `V1_office3_replication.md`, `A1_route_decision.md`: **표현 효과 / 잔여 기하 효과 / 자료 부족**을 구분하고 A2·D·P·분석 경로 중 다음 한 단계만 지정.
+
+**중단/보류:** A1-U 실패는 구현 문제다. Reference·support·gauge·representation에 따라 local/pose 우세가 뒤집히면 오류 기여율과 알고리즘 GO를 보류하고 원인을 먼저 좁힌다. UAV reference 미해결 때문에 실내 검증까지 중단하지는 않는다.
 
 ---
 
-# 6. 보조 실험 A2 — Depth 수정 가능성의 상한과 공유 편향
+# 6. 조건부 A2 — 잔여 형상 오차와 RGB-only 수정 가능성
 
 ## 6.1 질문
 
-`Depth가 틀렸음`은 `GT 없이 깊이를 고칠 수 있음`과 다르다. Pointmap이 여러 프레임에서 같은 방향으로 틀리는 경우, cross-view geometry self-consistency만으로 실제 표면을 복원할 근거가 없을 수 있다.
+**시작 조건:** A1-C/G/M과 V1 이후 유효 local geometry에 재현 가능한 개선 여지가 남아 있을 때. `Depth가 틀렸음`과 `GT 없이 깊이를 고칠 수 있음`을 구별한다. A1에서 우세가 정해지지 않으면 관측 부족 분석으로 제한하고 D 구현 자격을 부여하지 않는다.
 
-## 6.2 비교
+## 6.2 A2-S — Scalar bias와 공간적 deformation 분리
 
-1. 단일 global scale/Keyframe scale만으로 raw depth를 정렬한 Oracle 및 RGB-only version.
-2. 이미지를 기준으로 좁은 도메인의 local depth residual을 분석(plane/wall/roof/road vs thin vegetation).
-3. source-disjoint cross-view geometry 비교. 공통 MASt3R model bias가 있으면 '독립 GT'가 아님을 표시.
-4. raw RGB reprojection을 확인하되, 공통의 잘못된 평면에서도 저시차/무텍스처에서는 오차가 작을 수 있음을 실험.
-5. GT를 사용하는 **Oracle local deformation**으로 개선 가능한 상한을 측정하되, RGB-only 알고리즘의 성능으로 보고 금지.
-6. synthetic controls: (i) depth uniform scale, (ii) piecewise depth scale, (iii) depth bias, (iv) common-mode bias across views, (v) pose rotation/scale perturbations, (vi) occlusion/dynamic masks.
+기준 depth는 A1의 유효 local $y_z$다. 원 raw depth의 C-scaled 통계도 병기하지만 같은 의미로 합치지 않는다.
 
-**Go 조건:** 실측 오류가 단일 scale로 설명되지 않는 동시에, RGB-only 관측에서 부분적으로라도 보정에 필요한 구분 가능한 정보가 관측되어야 D 시리즈를 진행한다.
+| 조건 | Fit 자료 / 자유도 | 확인할 것 |
+|---|---|---|
+| S0 | 보정 없음 | A1-C00의 local 잔차 |
+| Sg | 정해진 prefix source GT로 맞춘 **한 global scalar** | test GT 없이 고정한 global scale로 설명되는 부분 |
+| Sk-oracle | 각 mapping KF의 지정 source GT fitting tile에서 맞춘 **KF별 scalar** | spatially held-out tile·target view에서 남는 형상 오차 |
+| Sf-oracle | 같은 fitting tile의 저해상도 `4×4` log-depth field | KF scalar 대비 추가 개선 가능성; GT 기반 진단 상한 |
+
+KF oracle scalar의 예는 다음과 같으며 fit pixel 집합은 fitting split에만 속한다.
+
+$$
+\beta_k=\exp\!\left[\operatorname{median}_{u\in\Omega_{k,\mathrm{fit}}}
+\log\frac{D_k^{\mathrm{ref}}(u)}{y_{k,z}(u)}\right].
+$$
+
+**교차 검증 규칙:** source image를 `8×8` tile로 나눠 checkerboard 두 fold를 사전 고정하고, fitting/evaluation tile을 교환한다. 인접 경계 guard band와 최소 관측 수를 실행 설정에 고정한다. Sparse GT가 부족한 KF는 unsupported로 보고하고 상한을 0으로 채우지 않는다. Sf의 regularization은 office2에서 고정하며 office3/office4 GT 성능으로 선택하지 않는다. Target heldout depth는 fit에 사용하지 않는다.
+
+Sk/Sf는 source GT를 쓰므로 **Oracle/diagnostic**다. 같은 점에 fit하고 같은 점의 오차를 줄인 수치를 알고리즘 개선으로 보고하지 않는다. Ray 보존, 동일 후보·covariance·rigid pose 조건에서 scalar와 field를 비교하고, 두 oracle이 실제 rendered target geometry/coverage에도 도움이 되는지 별도 측정한다.
+
+## 6.3 A2-O — RGB 관측 가능성과 공유 편향
+
+정해진 source-disjoint 시점·visibility·baseline/parallax·texture 조건에서 RGB reprojection objective를 조사한다. Source-disjoint는 이미지 공유를 배제한다는 뜻이며, 동일 network의 예측을 독립적인 GT로 취급하지 않는다.
+
+- 주어진 GT/reference는 objective에 넣지 않고 **오차 감소 방향을 사후 평가**하는 데만 사용한다. Development 데이터와 synthetic control에서만 basin/gradient 방향을 조사한다.
+- 동일 scale 오류, piecewise scale, additive depth bias, 모든 시점의 shared bias, rigid pose 오류, 가림/동적 영역을 각각 주입한 control에서 photo objective가 잘못된 정답을 지지하는지 검사한다.
+- 먼저 단일 scalar와 고정된 작은 field의 loss profile을 확인한다. 충분한 parallax의 영역에서조차 실제 깊이 개선 방향을 구별하지 못하면 더 큰 optimizer를 만들지 않는다.
+- Depth-only와 pose가 흔들릴 때의 objective를 따로 보고한다. Pose 오차를 depth field로 흡수하는 현상을 성공으로 취급하지 않는다.
+
+**A2 판정:** Sk가 공간 field의 개선 여지 대부분을 설명하면 P의 단순 scale 일관성 경로를 우선한다. Scalar 이후 재현 가능한 공간 잔차가 남고 RGB-only objective가 이를 구분하며 V1/§12 기준을 통과할 때만 D를 연다. Oracle만 좋아지고 RGB는 구분하지 못하면 **관측 한계·공유 편향 분석**을 결과로 남긴다.
 
 ---
 
 # 7. 조건부 연구 경로 D — RGB-only 선택적 깊이 보정
 
-> **D 경로는 A0/A2 통과 시에만 실행한다.** 아래 공식은 알고리즘 가설이며 선행연구에서 그대로 사용한 기술일 수도 있다. 추가 검색·대조 실험 없이 originality를 주장하지 않는다.
+> **현재 D는 보류다.** A1/V1에서의 단위·pose/support 통제와 A2-S/O를 통과해야 한다. A11의 큰 개선만으로 시작하지 않는다. 아래 공식은 알고리즘 가설이며 선행연구에서 그대로 사용한 기술일 수도 있다. 추가 검색·대조 실험 없이 originality를 주장하지 않는다.
 
 ## 7.1 연구 목표
 
-- MASt3R/SLAM network weights와 Pose를 기본적으로 고정한 상태에서, 출력 Pointmap의 depth 성분만 선택적으로 수정.
+- MASt3R/SLAM network weights와 rigid pose를 고정하고, A1에서 정의한 **유효 local geometry**의 depth만 수정한다. 결과를 native local/placement로 역변환할 때 원 지도를 중복 scale하지 않는다.
 - 별도 입력 depth sensor 없이 RGB 원본 및 기존 추정 geometry만 이용.
 - 적은 수의 조정 변수와 강한 regularization으로 기존 Pointmap의 신뢰 가능한 형상을 유지.
 - 보정 후 3D Map을 **동일 후보 수·동일 appearance 조건으로 재투영**하여 독립 GT 기준 geometry error 개선 확인.
@@ -369,27 +508,29 @@ $$
 4. 중심만 바꾼 Arm과, 위치 변경에 맞춰 scale/covariance만 **정해진 규칙으로** 재초기화한 Arm을 별도로 두어 표현의 영향을 분리한다.
 5. renderer, color/SH, active candidate count, mask, pose, test viewpoint를 동일하게 유지.
 6. 선택 확장으로 모든 비교군에 동일한 횟수의 Gaussian refiner를 적용하며, optimizer-on/off arm을 비교한다.
-7. Depth 보정을 계산하는 동안 pose를 같이 학습시키지 않는다. joint optimization은 범위 변경 승인 후 별도 실험으로 제한한다.
+7. D 비교에서는 rigid pose를 고정한다. Native KF scale과 유효 local depth를 동시에 자유롭게 풀어 같은 변화를 두 변수에 중복 표현하지 않는다. A1/V1에서 joint coupling이 남고 단순 대조군이 실패했을 때만, 별도 등록한 소규모 scalar+SE(3) 교대 대조를 검토한다. 현재는 joint optimizer 구현 단계가 아니다.
 
 ---
 
 # 8. 조건부 경로 P — Pose/Scale 배치 오류가 지배적일 때
 
-A0에서 Pose/Scale Oracle의 이득이 Depth Oracle보다 주요한 경우 아래 경로를 검토한다.
+A1-C의 **rigid-only pose 효과** 또는 A2-S의 **단순 scale 일관성 효과**가 V1에서 재현되면 검토한다. 원 A01의 개선/악화만으로 GO-P를 내리지 않는다.
 
 - **P0:** 현재 MASt3R-SLAM pose (baseline).
 - **P1:** 이미 시스템에 존재하는 Sim(3) global/loop alignment 단계 재점검 및 parameter/coordinate bug 확인.
 - **P2:** 관측 시점 간 상대 변환·overlap·RPE/ATE를 기반으로 국소 pose/scale discrepancy를 정량화.
-- **P3(선택):** 제한된 scale drift correction 또는 submap alignment를 구현하여 baseline/기존 SLAM optimizer와 비교.
+- **P3(조건부):** RGB/기존 matching만 이용한 KF scalar 일관성 또는 제한된 SE(3) 조정 중 **하나**를 구현해 기존 backend와 비교. 입력·matching·iteration budget을 맞추고 GT/RTK/LiDAR를 objective에 넣지 않음.
 - **O-P:** GT pose oracle; 실제 알고리즘 성능으로 보고 금지.
 
 **경계:** 카메라 Pose와 점군을 동시에 global ICP로 GT reference에 맞추는 것은 평가 정렬일 뿐 RGB-only SLAM 개선이 아니다. 모든 Keyframe을 각자 GT에 정렬해 error를 숨기는 조치를 금지한다. 신뢰할 수 있는 기존 optimizer가 같은 정확도를 달성한다면 새 알고리즘의 기여는 주장하지 않는다.
+
+**최소 비교군:** 원본 → GT 없이 prefix/상대 관측으로 정한 단일 scalar → 같은 관측의 KF scalar → 기존 backend 동일 예산. 복잡한 P3는 이 순서의 가장 단순한 유효 대조군을 넘어야 한다. 매 KF의 GT로 fit한 Sk-oracle은 별도 상한 표에만 둔다.
 
 ---
 
 # 9. Gaussian Representation/Rendering 통제 R
 
-A0의 두 Oracle을 함께 적용한 뒤에도 큰 오류가 남거나 실제 RGB 렌더링 품질의 변화가 기하 오류 변화와 무관할 경우에만 수행한다.
+우선 §5.6의 **R-Q 최소 진단**만 허용한다. Reference QA와 sparse support를 확인하지 않고 A0b A11의 1.60/2.78m 잔차를 Gaussian 표현 오차로 귀속하지 않는다. 그 이후에도 representation 원인 가설이 남을 때 아래 R0–R3로 확장한다.
 
 | 실험 | 고정/변경 | 해석 |
 |---|---|---|
@@ -407,7 +548,8 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 ## 10.1 이미 사용한 자산(개발/회귀 전용)
 
 - Replica `office0`, `room0`, `room1`, `room2`, `office1`: E0~E4에서 이미 관찰. pipeline regression, unit-test, 시각화, tuning용.
-- UAVScenes `HKairport01`: E4e 개발 파일럿. 추적 실패/rolling shutter/sky 등의 오류 분류 참고.
+- Replica `office2`: N2 당시 미사용이었지만 A0 이후 **현재 개발 장면**이다. 새 장면 test로 다시 계산하지 않음.
+- UAVScenes `HKairport01`: E4e/A0b 개발 진단. Q0-HK 미해결이면 conditional reference만 허용. 전체 UAV 효능 검증용 독립 scene이 아님.
 - KITTI Raw `2011_09_26_drive_0015_sync`: E4f 개발 진단/GT range 평가 코드 재활용.
 - UAVScenes `AMtown01`, `AMvalley01`: 데이터 확보·preflight만 실행. 기본 mapping baseline 평가 완료라고 적지 않음.
 
@@ -424,13 +566,18 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 
 **N2 데이터 등록:** [N2 사전 등록](../configs/n2_dataset_registration.json)에 따라 기존 연구에서 미사용인 Replica `office2`는 진단·개발, `office3`는 검증, `office4`는 최종 평가용으로 구분한다. 각 장면은 원본 `[0,1000)`에서 짝수 RGB 500개를 입력으로 사용하고, calibration은 `[0,200)`의 짝수 pose 100개, 주 평가 뷰는 `[200,1000)`의 홀수 400개로 고정한다. `office4`는 무결성·형식 QA 이후 최종 방법·평가 규칙이 고정될 때까지 예측·Oracle 비교·튜닝에 사용하지 않는다.
 
+**개정 후 최소 실험 범위:** 개발 `office2 + HKairport01` → V1 `office3` → 최종 F0 `office4`를 유지한다. 외부 도메인 검증은 Q0와 방법의 준비가 끝난 뒤 별도 장면을 등록한다. `AMtown01/AMvalley01`의 확보 사실은 baseline 실행·참조 신뢰성·독립 효능 검증을 대신하지 않는다. Replica만 통과하면 결론을 실내 범위로 제한한다.
+
+**HKairport 분할 보존:** 기존 `[60,120)`초·mapping 240장·prefix grid `<100`의 80 pose·heldout grid `104…299` 40뷰를 유지한다. Tracking failure 이전/중/이후를 모두 포함한다. 더 좋은 비행 구간으로 바꿀 경우 기존 결과의 대체가 아닌 신규 개발 run으로 별도 등록하고 변경 근거를 기록한다.
+
 ## 10.3 GT 사용 레벨
 
 1. `GT-depth/mesh/pose`를 **A0/A1 Oracle과 평가**에 사용하는 것은 허용; 이 Arm에는 Oracle 표기.
 2. D/P에서 제출할 RGB-only 방법의 optimization/threshold 학습에 **최종 test GT 사용 금지**.
 3. KITTI OXTS orientation/translation, GPS, LiDAR 기준 좌표와 이미지 타임싱크를 검증.
 4. Unknown GT 부위는 **오류 0·빈 공간·정답 outlier**로 간주하지 않는다.
-5. Dynamic tracklet과 sky 영역은 main static geometry mask에서 분리하고 보조 실험으로 표시.
+5. Dynamic/sky 라벨이 실제로 있을 때만 static mask를 주장한다. HKairport01의 현재 A0b 평가에는 semantic mask가 없으므로 static-only라고 부르지 않는다.
+6. **서로 다른 GT 사용을 구분:** prefix의 전역 gauge, Oracle arm의 source GT, A2 source fitting tile, heldout target의 평가 GT를 별도 로그로 남긴다. Final test GT와 online 미래 frame은 실제 보정의 입력에서 제외한다.
 
 ---
 
@@ -440,8 +587,8 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 
 - **Z-depth MAE / median / p95 (m):** GT와 추정의 metric 정렬 후 $\lvert D_{\mathrm{est}}-D_{\mathrm{GT}}\rvert$.
 - **Abs Relative Error:** $\operatorname{mean}\left(\frac{\lvert D_{\mathrm{est}}-D_{\mathrm{GT}}\rvert}{D_{\mathrm{GT}}}\right)$ (GT $> \varepsilon$, 유효 픽셀만).
-- **Log-depth ratio median/IQR:** global scale bias와 residual deformation 분리.
-- **거리별:** `0–10, 10–20, 20–40, 40–80m`는 KITTI E4f의 과거 구간과 일치시키되 평가 가능 구간만 보고; 실내는 실내 거리 bin 별도.
+- **Log-depth ratio median/IQR:** C-scaled raw local와 native scale을 흡수한 effective local를 각각 표시. A2의 scalar fit 잔차는 spatial fitting/evaluation split을 구분.
+- **거리별:** 실내는 기존 `[0.1,1,2,4,10]m`, HKairport는 `[2,25,50,75,100,150,200]m`를 유지. KITTI의 과거 bin을 다른 장면에 그대로 적용하지 않음.
 - **평면/경계/비평면별:** wall/road/roof, depth edge, vegetation, shiny region/occlusion 여부.
 - **Overlap/parallax:** 두 시점에서 실제 관측 가능한 영역의 비율과 관측 각도.
 
@@ -455,7 +602,7 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 
 ## 11.3 Pose/Scale 지표
 
-- ATE/RPE, orientation error, loop closure 이전/이후의 pose revision.
+- ATE/RPE, orientation error, loop closure 이전/이후의 pose revision. Prefix alignment의 잔차와 post-prefix 잔차, 위치/방향으로 정의한 두 gauge의 차이를 구분.
 - 단일 global alignment 이후 keyframe scale trajectory 및 relative scale drift.
 - camera/world 좌표를 혼합하지 않도록 GT pose convention을 항상 기록.
 
@@ -474,33 +621,55 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 - 최초 개발 단계에서 최소 개선폭과 허용 손실폭을 validation에서 정하되, 결과를 보고 임의로 조정하지 않음.
 - 어떤 효과가 개선돼도 서로 다른 scene/GT coverage 간 수치를 한 평균으로 합산하지 않는다.
 
+**후속 실험의 잠정 개발 gate**는 아래로 고정한다. 이미 본 A0/A0b 결과의 성공 여부를 소급 변경하는 기준이 아니다. 실제 A1 설정에 수치와 근거를 기록하고, 변경 시 새 amendment와 이유를 남긴다.
+
+| 항목 | 다음 실험에 적용할 기준 | 미달 시 처리 |
+|---|---|---|
+| Dense 공통 support | 등록 뷰의 ≥80%에서 `≥1,000 common pixels` 및 GT-valid의 `≥50%`를 동시에 확보 | 수치는 보고하되 효능/우세 경로의 근거로 사용하지 않음 |
+| Sparse 공통 support | 등록 뷰의 ≥80%에서 `≥1,000 common pixels` 및 LiDAR-valid의 `≥20%`를 동시에 확보 | 조건부 sparse 진단으로 제한. Hole 보간/유리한 뷰 제거로 통과시키지 않음 |
+| 집계 | 모든 등록 뷰·각 뷰의 분모/미정 값을 공개. 공통 픽셀 없는 뷰를 0 error로 넣지 않음 | Unscorable 뷰 수와 coverage를 함께 표시, support gate는 전체 등록 뷰 기준 |
+| Correct-depth 허용 오차 | 실내 `max(0.05m,2% depth)`, HKairport `max(0.5m,2% depth)` | 참조 불확실성을 이 임계값으로 해결했다고 주장하지 않음 |
+| 경로 후보의 최소 효과 | 적정 support에서 baseline 대비 공통 MAE ≥10% 감소, correct coverage 감소 ≤1%p | 경로 GO 보류. 효과가 없다는 보편적 결론으로 확대하지 않음 |
+| 민감도·재현 | 주/방향 기반 gauge 및 covariance 진단에서 효과 방향이 모순되지 않고 office3 V1에서 재현 | gauge/support/representation-dependent로 표시, 지배 원인·방법 GO 보류 |
+| A2 scalar 충분성 | Sk가 Sf 대비 Oracle MAE 개선량의 ≥90%를 두 spatial fold에서 설명하고 coverage 악화 없음 | 충족하면 공간 field 개발보다 단순 scalar 경로 우선; 미충족만으로 D GO는 아님 |
+
+Scalar 충분성의 E는 같은 spatial fitting fold로 만든 S0/Sk/Sf 지도의 **동일 후보·같은 target 공통 픽셀의 heldout rendered-depth MAE**다. Spatial evaluation tile의 source 잔차도 병기한다. 분모 `E(S0)−E(Sf)`가 양수이고 최소 효과 기준을 충족할 때만 비율을 계산한다. `E(S0)−E(Sk)`와의 비가 1을 넘으면 Sk가 더 좋은 것으로 그대로 보고한다. 분모가 작거나 Sf가 개선하지 못하면 “scalar가 대부분 설명”이라고 계산하지 않는다.
+
+네 조건 C의 우세 판단은 같은 mask에서 `C00→C10`과 `C00→C01` 및 반대 요인 조건의 효과를 함께 본다. MAE interaction 하나를 물리적 source의 비율로 분할하지 않는다. 작은 sensitivity group의 빈 교집합은 **근거 부족**이며 안정성 통과가 아니다.
+
 ---
 
 # 12. 핵심 Go / Revise / No-Go 기준
 
-## 12.1 최초 Go/No-Go는 A0 완료 직후
+## 12.1 현재 판정과 후속 gate
 
 | 관찰 결과 | 판정 | 다음 행동 |
 |---|---|---|
-| `A10` 개선이 뚜렷하고 `A01` 이득이 상대적으로 작음 | **GO-D** | A2 → RGB-only depth correction D1/D3/D4 비교 |
-| `A01` 개선이 뚜렷하고 `A10` 이득이 상대적으로 작음 | **GO-P/REVISE** | A1 Pose/Scale 분리 후 기존 optimizer와 겹침 여부 확인 |
-| 두 Oracle 각각 개선하고 interaction 작음 | **REVISE** | 더 큰 오류 원인 하나를 택해 범위를 좁힘 |
-| 두 Oracle 모두 개선하지만 interaction 큼 | **REVISE** | joint effect 진단을 논문 기여로 검토. 동시에 두 모델을 새로 학습하지 않음 |
-| `A11`에서도 여전히 geometry 오류가 큼 | **GO-R 또는 REVISE** | representation/renderer/GT mask 오류의 우선순위 분석 |
-| 네 Arm 차이가 매우 작거나 지표가 불안정 | **NO-GO for correction** | 평가 파이프라인 재검증. 충분하면 실패 요인 중심 분석 논문으로 축소 |
-| GT 대응/좌표계/정렬을 신뢰할 수 없음 | **BLOCKED** | A0 효과를 주장하지 않고 좌표계/GT debug 우선 |
+| **완료 A0/A0b:** 단독 악화·joint 개선 | **현재 REVISE 유지** | 다음 필수 실험은 A1-U/C. A11의 큰 개선만으로 D/P에 진행하지 않음 |
+| A1-U에서 world map/render 불변성 실패 | **IMPLEMENTATION_FIX** | 단위·covariance·precision 버그부터 수정. 성능 결과로 해석하지 않음 |
+| Q0-HK reference 미해결 | **UAV CONDITIONAL ONLY** | office2/office3 진단 계속, UAV의 절대 원인·효능 주장은 보류 |
+| C 표현에서 단독 악화·interaction이 크게 줄어듦 | **표현 배분 가설 지지** | V1에서 재현하고 A2-S로 남은 scalar/형상 잔차 확인 |
+| C10 효과가 §11.5 기준을 만족하고 C01 대비 ≥2배, ray 대조·V1도 지지 | **A2 진입** | Local 잔차와 RGB 관측 가능성 검증. D 구현은 아직 보류 |
+| C01 효과가 §11.5 기준을 만족하고 C10 대비 ≥2배, gauge·V1도 지지 | **GO-P 검토** | RT 분해와 기존 backend 대조. Q0 미해결인 UAV 효능 GO는 불가 |
+| C에서도 단독 악화·joint 개선 또는 큰 interaction 지속 | **COUPLING_DIAGNOSTIC** | A1-F/RT·G/M·R-Q로 설명 후보를 좁힘. 새로운 joint 학습으로 바로 확장하지 않음 |
+| Scope/gauge/covariance에 따라 우세 방향이 바뀌거나 support 부족 | **INCONCLUSIVE** | 범위·정렬·표현 의존성을 연구 결과로 기록. 우세 원인/기여율은 미정 |
+| C11에서도 잔차가 크나 reference/support가 충분 | **R-Q 우선** | Reference-only와 Gaussian expected-depth를 분리한 뒤 R 확장 여부 결정 |
+| 차이가 작고 재현 가능한 보정 여지가 없음 | **NO-GO for correction** | 분석 연구의 새 지식·기여 충분성을 별도 평가하고 범위 축소/종료 검토 |
 
-**중요:** Oracle 이득은 실제 RGB-only 보정 가능성을 **보증하지 않는다**. GO-D는 D 시리즈 실험의 *진행 자격*일 뿐 논문 가설이 입증됐다는 뜻이 아니다.
+**효과 우세 규칙:** 두 단독 효과가 모두 양수이고 최소 효과를 만족할 때만 ≥2배를 우세 판단에 쓴다. 한쪽만 최소 효과를 만족하는 양수이면 비율을 만들지 않고, V1·민감도와 반대 요인 조건의 효과를 확인한 뒤 해당 A2/RT의 진단 자격만 검토한다. 두 효과가 비슷하면 한 경로를 임의로 정하지 않고 A2/RT에서 설명력을 조사한다. 이 비율과 최소 효과는 개발 의사결정 규칙이지 통계적 유의성 기준이 아니다.
+
+**중요:** Oracle 이득은 실제 RGB-only 보정 가능성을 보증하지 않는다. **GO-D는 A1/V1 → A2-S/O → 문헌 검토를 통과한 뒤에만** 발행한다. 규칙을 통과한 실내 결과를 reference 미해결 UAV까지 확대하지 않는다.
 
 ## 12.2 D 경로 Go/No-Go
 
 | 조건 | 판정 |
 |---|---|
+| Scalar 이후 공간 잔차가 남고 RGB objective가 올바른 방향을 구별하며 V1에서도 재현 | **D1/D3 최소 구현 자격**. D4부터 구현하지 않음 |
 | D4가 D1/D2/D3 강한 대조군보다 신규 test에서 geometry를 개선하고 correct coverage를 보존 | 후보 기여를 검토하고 ablation·재현 실험 진행 |
 | D4가 GT에서 개선하더라도 RGB/coverage를 크게 훼손 | 불충분; penalty/선택 정책을 재설계하되 결과를 숨기지 않음 |
 | D4 vs D3 차이가 없거나 나쁨 | 새로운 선택적 보정의 기여 주장 보류; 가장 단순한 효과 있는 대조군 채택 또는 범위 축소 |
 | GT-depth Oracle은 크게 개선하지만 RGB-only가 실패 | **관측 부족/공유 bias의 한계 분석**으로 연구 방향 재설정 |
-| D1 단일 scale만으로 대부분의 개선을 달성 | 복잡한 D4 구현 중단; scale/pose calibration 분석으로 피벗 고려 |
+| A2의 scalar 충분성 또는 D1의 단순 보정이 대부분의 개선을 달성 | D4 확대 중단; 가장 단순한 scale 일관성 대조를 우선하고 추가 기여가 없는지 검토 |
 
 ---
 
@@ -513,23 +682,31 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 | **N0** | O | 환경/GT/재현성 점검 | 기존 B1, 저장된 E0~E4f | frozen manifest, file/pose checks |
 | **N1** | O | 좌표계·자원 계약 점검 | raw vs active, self vs pair, Sim(3) | test log, common candidate IDs |
 | **N2** | O | 미사용 GT 실내 장면 확보·QA·분할 등록 | RGB/depth/pose/camera/mesh, calibration/evaluation 분리 | file hashes, scene roles, frame split, dataset QA |
-| **A0** | O | Pointmap × Pose factorial Oracle | A00/A10/A01/A11 | 4-arm table, error effect, interaction |
-| **A1** | 조건부 | rotation/translation/scale 요인 분리 | P0/R/t/s/SE3/Sim3 | pose-scale error table |
-| **A2** | 조건부 | local vs shared-bias 및 correction feasibility | fixed scale, depth variants, cross-view | residual hist, observability limits |
+| **A0/A0b** | 완료 | office2 GT 및 HKairport 조건부 reference factorial | 기존 A00/A10/A01/A11 | 완료 결과 보존; REVISE에서 출발 |
+| **Q0-HK** | UAV 필수 | calibration·JPG·Terra/reference 계약 | 공개값/가정별 QA, reference-only 재투영 | 출처, 검증/미해결 목록, UAV claim 범위 |
+| **A1-U** | 다음 필수 | 원본 지도의 scale 흡수·가역성 | native vs effective local + rigid placement | mean/cov/render 불변성, 코드 계약 |
+| **A1-C** | 필수 | 유효 local × rigid pose의 재비교 | C00/C10/C01/C11, CZ10/CZ11 | 동일 후보 4군·ray 대조, source/target residual |
+| **A1-G/M** | 필수 | gauge·support dependence | 두 prefix gauge, strict/wide/full-mixed, dense→sparse | 평가 분모·실패 포함 strata·효과 방향 |
+| **A1-F/RT** | 질문 잔존 시 | scale 별도 요인 및 R/t 분리 | 8조건 L×P×S 또는 rigid R/t | interaction·질문별 진단 표 |
+| **V1** | 필수 | office3 고정 재현 | 봉인된 U/C/G/M 절차 | V1 보고서·수정 이력·다음 경로 판정 |
+| **R-Q** | 잔차/표현 의심 시 | reference-only/renderer/covariance 최소 통제 | 참조 투영, splat, fixed-world covariance | residual 원인의 근거 및 미분리 변수 |
+| **A2-S/O** | A1/V1 후 | scalar vs deformation, RGB observability | spatial cross-fit scalar/field, shared-bias control | GT 진단 상한과 RGB-only 가능성 분리 |
 | **D0–D5** | GO-D 후 | RGB-only 선택적 Depth 보정 | raw, scale, geom, photo, selective | GT geometry/RGB/coverage, ablation |
 | **P0–P3** | GO-P 후 | 제한적 Pose/Scale 개선 | original, existing backend, limited fix | metric pose/geometry comparison |
 | **R0–R3** | 조건부 | Gaussian representation 통제 | fixed center, scale/cov, appearance | render-vs-geometry sensitivity |
-| **F0** | O | 최종 신규 scene 검증 | A0 + 선택된 한 경로 | sealed results, negative cases |
-| **F1** | 선택 | UAV/long sequence | original vs selected | domain limitation/runtimes |
+| **F0** | 결론 검증 시 필수 | office4 최종 평가 | 고정 A1-C + 선택된 한 경로 또는 분석 가설 | sealed results, 실패 포함; 개발에 역사용 금지 |
+| **F1** | 선택 | 신뢰 가능한 신규 UAV/실외 scene | original vs 단순 대조군 vs 선택 방법 | 외부 도메인 범위·runtime·reference 한계 |
 
-## 13.2 A0 표(빈칸은 실험 후 입력)
+## 13.2 후속 C 표(원 A0/A0b 표와 구분)
 
-| Scene | Arm | Common candidates | MAE depth ↓ | Correct coverage ↑ | Surface accuracy ↓ | Surface completion ↑ | Sample Chamfer ↓ | PSNR ↑ |
-|---|---|---:|---:|---:|---:|---:|---:|---:|
-| TBD | A00 estimated/estimated | | | | | | | |
-| TBD | A10 GT-local/estimated | | | | | | | |
-| TBD | A01 estimated/GT-pose | | | | | | | |
-| TBD | A11 GT-local/GT-pose | | | | | | | |
+| Scene / reference | Gauge / scope | Arm | Common candidates | Common pixels/view, scorable views | MAE depth ↓ | Correct coverage ↑ | Dense surface metric / sparse N/A |
+|---|---|---|---:|---|---:|---:|---|
+| TBD | TBD | C00 effective-local / estimated rigid | | | | | |
+| TBD | 동일 | C10 reference-local / estimated rigid | | | | | |
+| TBD | 동일 | C01 effective-local / reference rigid | | | | | |
+| TBD | 동일 | C11 reference-local / reference rigid | | | | | |
+
+`C00 world map == native A00` 검사와 covariance 정책을 표 제목에 연결한다. Mixed full-map은 local 교체 비율을 추가하고 완전 Oracle이라는 표현을 쓰지 않는다. Sparse reference에 dense completion 수치를 채우지 않는다.
 
 ## 13.3 Effect 분해 표
 
@@ -549,9 +726,13 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 
 ---
 
-# 14. 구현 구조 초안
+# 14. 현재 코드 재사용과 후속 구현 구조
 
 과거 연구 코드에서 `raw candidate export`, `GT evaluation`, `TSDF/Chamfer`, `frozen map renderer`, `run manifest`와 기타 데이터를 재사용하고, 후보 pruning/admission 코드를 중심 경로에서 제외한다.
+
+**현재 존재하는 자산:** `src/pointmap_contract.py`, `src/a0_metrics.py`, `src/a0b_geometry.py`, `scripts/build_a0_oracles.py`, `scripts/evaluate_a0_oracles.py`, `scripts/build_a0b_oracles.py`, `scripts/evaluate_a0b_oracles.py`, `scripts/run_a0b_support_control.py`와 기존 22개 관련 검사. A0/A0b 실행 snapshot을 덮어쓰지 않고 후속 스크립트에서 재사용한다.
+
+**추가 구현 예정:** `src/scale_reparameterization.py`, `scripts/run_a1_unit_invariance.py`, `scripts/build_a1_canonical_oracles.py`, `scripts/evaluate_a1.py`, `scripts/prepare_v1_office3.py`. 이 이름은 제안이며 아직 해당 CLI가 존재하거나 실행됐다는 뜻은 아니다. Config에는 `reference_status`, `representation`, `gauge`, `scope`, `candidate_hash`, `covariance_policy`, `source_fit_split`, `target_eval_split`, `support_gate`를 필수로 둔다.
 
 ```text
 research/
@@ -566,7 +747,7 @@ research/
 │   ├── pose_scale_error.py             # trajectory/scale deviation
 │   ├── shared_bias.py                  # common depth/pose perturbation
 │   └── oracle_factorial.py             # A00/A10/A01/A11
-├── correction/                          # A0 이후 조건부
+├── correction/                          # A1/V1/A2 이후 조건부
 │   ├── depth_global_scale.py
 │   ├── depth_lowrank_field.py
 │   ├── photometric_reprojection.py
@@ -610,7 +791,7 @@ research/
 3. **Sim(3) roundtrip:** scale≠1, arbitrary R/t; mean/covariance 왕복 및 rendering projection 검사.
 4. **Branch reference:** 1번/2번 이미지 pixel의 GT depth가 올바른 anchor 좌표계로 옮겨지는지 확인.
 5. **A0 no-leakage:** A10에서 pose 변수 hash가 A00과 동일한지, A01에서 raw local candidate hash가 A00과 동일한지 검증.
-6. **Common-candidate invariant:** 네 Oracle arm에서 후보 개수/ID/opacity/SH/covariance hash 같음. mean/world placement만 차이.
+6. **Common-candidate invariant:** 같은 실험 표현 내 네 arm에서 후보 개수/ID/opacity/SH/**local** covariance hash 같음. A0→C 재표현에서는 local covariance가 달라지되 baseline world covariance가 보존되는지 별도 확인.
 7. **Unit gauge:** 단안 estimated world scale 하나를 일관되게 사용하고 frame-wise GT scale fitting이 발생하지 않는지 검사.
 8. **Synthetic depth scale:** local depth만 일정 배율 오류일 때 A10만 해당 오류를 줄이는지 확인.
 9. **Synthetic pose translation/rotation/scale:** 주어진 오차 하나만 투입한 경우 A01로 제거되는지 확인.
@@ -619,26 +800,33 @@ research/
 12. **Representation isolation:** geometry-fixed refiner-on/off가 A0 중심 오차로 잘못 해석되지 않는지 확인.
 13. **No future/test leakage:** RGB-only correction은 결정 시점까지의 프레임만 사용, final-test GT query 없음을 로그 검증.
 14. **Determinism/manifest:** 실행 순서, seed, scene hash, model commit의 반복 결과 일치/허용 편차 확인.
+15. **Scale absorption:** $y=a_kx$, $\Sigma^y=a_k^2\Sigma^x$의 world center/covariance 및 RGB/depth/weight 불변성. Mean만 바꿔 covariance가 틀린 경우를 반드시 실패시키는 negative control 포함.
+16. **Reallocation invariance:** KF별 양수 $q_k$와 전역 C 재배분 후 canonical C00 geometry·attributes 및 renderer 결과 동일성.
+17. **Rigid-only intervention:** C01의 local point·local covariance가 C00과 같고 R/t만 바뀌는지 검사. F의 S factor가 translation을 변경하지 않는지 검사.
+18. **Support accounting:** 빈 공통 mask를 0 error로 채우지 않으며, scorable 비율을 전체 등록 뷰로 계산. Camera 간 다른 ray·source-only/target-only subsampling 혼동 방지.
+19. **Spatial cross-fit:** A2 fitting/evaluation tile과 guard band의 불교집합, target GT fitting 부재, Sk/Sf Oracle 표시 및 final-test GT 차단.
+20. **Reference-vs-renderer:** 동일 reference point의 z-buffer와 Gaussian expected-depth가 서로 다른 관측 모델임을 유지. Sparse unknown 영역을 보간 GT/빈 표면으로 바꾸지 않음.
 
 ---
 
-# 16. 16주 일정(조건부 분기 포함)
+# 16. A0b 이후 실행 일정 — 순차 gate 기준으로 재편
 
 | 시기 | 주된 작업 | 완료 산출물 / Gate |
 |---|---|---|
-| **1–2주** | N0: 환경·코드 freeze, 기존 E0~E4f 재현, GT camera/depth time sync, 새 평가 scene shortlist | 원본 기준선, environment manifest, data split |
-| **3–4주** | N1: branch/pose/convention, Sim(3) gauge, candidate hash, 공통 valid mask와 unit test | `N1_coordinate_contract.md`, 2×2 Oracle 시험 준비 |
-| **5–6주** | **A0 strict self-branch**: GT local / GT pose factorial, 첫 신규 실내 scene | A0 4-arm table, interaction, 초기 Go/No-Go |
-| **7주** | A0 다른 새 scene 반복 및 KITTI diagnostic 재구축(자원 허용 범위) | 장면별 분산·원인 요약, 최종 경로 선택 |
-| **8주** | A1 또는 A2: 오류 유형/관측 가능성 조사, 강한 대조군 구현 정의 | correction feasibility note, 논문 제목/기여 방향 잠정 확정 |
-| **9–10주** | **GO-D**: D1/D2/D3 구현 후 D4 최소판; **GO-P**: P1/P2 제약/Scale 분석; **R**: 표시/렌더 오류 진단 | 기존 방식 대비 1차 비교, stop 조건 |
-| **11–12주** | 한 경로만 심화: 선택 정책/저차원 depth field 또는 제한 Pose/Scale alignment | ablation, held-out geometry/RGB, 비용 |
-| **13주** | 봉인된 새 scene에서 재현, mask/gauge/threshold freeze | F0 결과표, success/failure cases |
-| **14주** | KITTI/UAV 외부 domain 또는 long-sequence 제한 적용, 런타임 | F1 가능 범위, domain-specific limitations |
-| **15주** | 통계·그림·오차 사례, 논문 방법/실험 초고 | final result matrix, reproducibility checklist |
-| **16주** | 논문 집필·검토·수정 | 제출 원고(실험 결과에 맞춰 제목·기여 수정) |
+| **완료 이력** | N0/N1/N2, office2 A0, HKairport01 A0b | 완료 기록을 재실행 일정으로 잡지 않음 |
+| **다음 실행 묶음 1 (약 1–2작업일)** | Q0-HK 자료 QA 시작, **A1-U** 구현·두 기존 map 불변성 검사 | U PASS 후에만 C 생성. UAV reference 미해결은 별도 표시 |
+| **묶음 2 (약 2–4작업일)** | office2 **A1-C+CZ**, 두 기존 gauge·covariance 최소 QA | scale 흡수 전/후 contrast, support denominator |
+| **묶음 3 (약 2–4작업일)** | HKairport 조건부 C, **A1-G/M**, 필요 시 F/RT·R-Q 소규모 검사 | UAV strict/wide/full-mixed 구분, 설명 가설 축소 |
+| **묶음 4 (약 2–3작업일)** | 개발 규칙 봉인 후 **V1 office3** 재현 | 결과를 보고 A2/RT/분석 중 다음 한 단계 결정 |
+| **묶음 5 (약 3–5작업일, 조건부)** | **A2-S/O**, scalar/field spatial cross-fit 및 RGB loss profile | D/P 진행 자격 또는 관측 한계 보고서 |
+| **그 이후 1–2주, GO일 때만** | 한 경로의 가장 단순한 RGB-only 대조군부터 구현 | D4/P3 확대 전 강한 baseline 대비 증분 |
+| **규칙 고정 후** | F0 office4; 필요·자원·reference 충족 시 F1 외부 장면 | 실패 포함 최종 평가, 결과에 맞춘 논문 범위 |
 
-**일정 중단 조건:** A0에서 통제 실패/GT 불일치가 지속되면 깊이 보정 개발에 착수하지 않는다. A0가 성공해도 RGB-only D/P가 강한 baseline을 넘지 못하면 복잡한 구현을 계속 확대하지 않는다.
+기간은 인력·실행량의 예상치이며 완료 약속이나 자동 진행 일정이 아니다. 각 묶음의 산출물이 다음 단계의 조건이다. 보정 출처 확인은 외부 상태에 좌우될 수 있으므로 실내 진단과 분리한다.
+
+**범위 통제:** 기본은 C 네 조건과 CZ 두 조건, 모든 뷰를 한 arm씩 disk-backed map으로 평가한다. F의 8조건·world-covariance 대조·추가 camera 가정은 질문이 남을 때만 고정 subset에서 시작한다. 모든 요인을 한꺼번에 Cartesian product로 실행하지 않는다. 알고리즘 경로를 선택하기 전 새 checkpoint·학습·대규모 장면 다운로드는 필수 범위가 아니다.
+
+**일정 중단 조건:** U 불변성 실패는 구현 수정, reference 부족은 해당 도메인 조건부화, V1 미재현은 결론 축소로 처리한다. RGB-only가 강한 단순 대조군을 넘지 못하면 구현을 계속 확대하지 않는다.
 
 ---
 
@@ -648,8 +836,12 @@ research/
 |---|---|---|
 | 두 이미지의 pointmap과 pose가 수학적으로 분리되지 않음 | A10 교체 자체에 relative pose oracle이 섞임 | **self-branch strict primary**와 pair secondary를 분리 |
 | 단안 scale ambiguity | meter 오차나 Oracle effect가 잘못 계산될 수 있음 | 단일 global gauge, 별도 scale drift 보고 |
+| Local-unit와 KF scale 배분 | A01이 회전·이동 이외의 scale까지 변경 | A1-U의 지도 불변 재표현, C의 rigid-only 개입, F의 별도 S factor |
+| 거의 직선인 prefix | 위치 정합의 전역 회전이 불안정해 pose 잔차가 커짐 | 위치/방향 gauge 사전 비교, singular values·불확실성 보고, test fitting 금지 |
 | GT calibration/시간동기 오류 | 원인이 없는 geometry error 생성 | 투영 unit test, sensor mask, reprojection sanity |
+| HKairport 공개 calibration의 비직교 R·전처리 미확인 | 큰 Oracle 효과가 있어도 physical reference가 확정되지 않음 | Q0-HK, 조건부 표기, 실내 검증과 도메인 gate 분리 |
 | GT depth와 estimated coverage 차이 | Oracle만 더 많은 표면을 포함하게 됨 | 공통 valid candidate ID, full map sensitivity 분리 |
+| 많은 arm의 target 교집합 붕괴 | 3/5뷰·수십 픽셀의 contrast가 강건한 것처럼 보임 | 비교군별 공통 분모, support gate, 빈 뷰 공개·재현 부족 판정 |
 | Shared model bias | 서로 다른 프레임에서도 같은 잘못된 평면을 지지 | RGB parallax/GT diagnostic, 보정 가능성 별도 게이트 |
 | Pose·Scale·Depth 상호작용 | 한 요소의 오차가 다른 요소를 바꾸면 효과 착시 | factorial interaction, A1 sensitivity |
 | Gaussian center 이동 후 covariance 불일치 | 렌더링/coverage 감소의 원인 혼동 | center-only vs covariance reinit 명확히 구분 |
@@ -665,9 +857,9 @@ research/
 
 ## 18.1 결과가 허용하는 잠정 기여 후보
 
-1. **오류 원인 분해 프로토콜:** MASt3R-SLAM Pointmap, keyframe Pose/Scale, Gaussian 표현의 오류를 동일 후보 기반으로 비교하는 factorial Oracle 평가 체계.
-2. **정량적 실패 조건:** source-shared depth bias, frame-level scale drift, low parallax 및 GT coverage 등의 조건에서 어느 오류가 지배적인지 정량화.
-3. **조건부 보정 기법:** A0가 지지한 우세 오류 유형에서 제한된 RGB-only 보정이 강한 단순 대조군보다 실질적으로 낫다는 증거가 있을 때만 주장.
+1. **Scale 일관성을 명시한 진단 프로토콜:** 동일 native map을 보존하는 재표현과 raw/effective local·rigid pose·covariance의 개입 계약. 재표현의 대수 자체는 새 알고리즘으로 주장하지 않음.
+2. **재현 가능한 실패 조건:** native local/KF scale 배분, gauge, source support, reference 신뢰성에 따라 Oracle 해석이 달라지는지 office3/F0에서 검증. 새로운 실증적 설명을 제공해야 분석 기여 후보가 됨.
+3. **조건부 보정 기법:** A1/V1/A2가 지지한 단일 경로에서 RGB-only 보정이 강한 단순 대조군보다 실질적으로 낫다는 증거가 있을 때만 주장.
 4. **재현 가능한 체계:** 8GB GPU 환경에서 사용 가능한 평가 도구, 데이터 계약, 단위시험과 negative results.
 
 ## 18.2 과장해서는 안 되는 주장
@@ -675,6 +867,9 @@ research/
 - '모든 Gaussian 이상점은 MASt3R Depth 오차 때문이다.'
 - 'GT local geometry oracle 향상 = RGB-only Depth refinement 성능 향상.'
 - 'Pose oracle 효과의 전부가 camera translation 오차다.'
+- '단독 치환 악화와 joint 개선만으로 실제 오차 상쇄 또는 joint optimizer의 필요성이 입증됐다.'
+- 'A1-U의 scale 흡수 자체가 지도를 개선하는 새 보정 알고리즘이다.'
+- 'HKairport 보정 공통 후보의 92% 개선 또는 보조 후보의 87% 개선이 전체 native 지도의 개선율이다.'
 - 'Gaussian center == GT surface' 또는 'center distance가 rendered geometry 정확도를 증명한다.'
 - '단일 Replica/KITTI 개발 구간에서의 개선이 모든 드론 시퀀스로 일반화된다.'
 - 'PSNR이 낮으므로 Pointmap이 잘못되었다'(appearance refinement 0의 설정을 무시한 주장).
@@ -689,17 +884,46 @@ research/
 
 ---
 
-# 19. 지금 당장 할 일: 첫 A0 실험 체크리스트
+# 19. 실행 체크리스트 — 완료 이력과 다음 실험 구분
+
+## 19.1 완료된 출발점
 
 - [x] 기존 실험의 원본 체크포인트/환경/코드 버전과 추적 가능한 run manifest 보존. (N0)
 - [x] **새로운 GT 실내 scene**의 카메라 내부·외부 파라미터, RGB, Depth, 표면 모델 확인. (N2: 첫 A0는 office2, office3 검증, office4 최종 평가 보류)
-- [ ] Splatt3R-SLAM에서 `raw self-branch pixel uv ↔ candidate_id ↔ Gaussian local mean ↔ anchor frame` 매핑 출력.
-- [ ] 추정 Sim(3) pose를 읽어 metric aligned world로 내보내는 테스트 작성.
-- [ ] `GT depth z`로 pixel unprojection → GT world projection 왕복 오차 확인.
-- [ ] 네 A0 Arm 공통 후보 집합과 pose/pointmap 변수 해시 불변 조건 확인.
-- [ ] Center-only 4-arm map을 작은 장면에서 생성하고 시각화.
-- [ ] GT depth/surface metrics를 계산해 $\Delta_L$, $\Delta_P$, interaction 산출.
-- [ ] A0 Go/No-Go 회의록에 '현재 확인된 오차'와 '다음 가설'을 구분해 기록.
+- [x] Splatt3R-SLAM에서 `raw self-branch pixel uv ↔ candidate_id ↔ Gaussian local mean ↔ anchor frame` 매핑 출력. (office2 A0)
+- [x] 추정 Sim(3) pose를 읽어 metric aligned world로 내보내는 테스트 작성. (N1 및 A0)
+- [x] `GT depth z`로 pixel unprojection → GT world projection 왕복 오차 확인. (저장된 A11 map 포함)
+- [x] 네 A0 Arm 공통 후보 집합과 pose/pointmap 변수 해시 불변 조건 확인.
+- [x] Center-only 4-arm map을 작은 장면에서 생성하고 시각화. (local covariance 고정, placement에 따른 world covariance 변환은 유지)
+- [x] GT depth/surface metrics를 계산해 $\Delta_L$, $\Delta_P$, interaction 산출. (office2)
+- [x] A0 Go/No-Go 회의록에 '현재 확인된 오차'와 '다음 가설'을 구분해 기록. (A0 결과서: REVISE, 단일 장면의 조건부 진단)
+- [x] A0b HKairport01의 38개 지도·680 depth-view 평가와 보정/gauge/support 한계를 기록. (조건부 완료, 알고리즘 GO 아님)
+- [x] A0b 보조 support 비교의 결과 확인 후 등록 이력과 기존 tracking gate FAIL 보존.
+
+## 19.2 다음 실행 묶음: A1-U 및 Q0-HK
+
+- [ ] `configs/a1_unit_reparameterization.json`에 두 기존 map·native mask·pose revision·정밀도·불변성 한도 고정. **파일명은 생성 예정**.
+- [ ] KF별 metric placement $a_k,R_k,t_k$와 native local/covariance의 단위 확인.
+- [ ] $y=a_kx$, $\Sigma^y=a_k^2\Sigma^x$ 변환 및 역변환, C/seeded KF 배율 재배분 불변성 검사.
+- [ ] 원본과 재표현 map의 world mean/covariance·attribute hash, 같은 viewpoint의 RGB/depth/weight 차이 저장.
+- [ ] Q0-HK 보정 출처·JPG distortion·Terra/물리 카메라 대응의 확인/미확인 목록 작성. 저자에게 메시지를 자동 발송하지 않음.
+- [ ] U PASS 또는 실패 원인을 `A1_U_contract.json`에 기록하고, PASS일 때만 C 설정 생성.
+
+## 19.3 그다음 묶음: A1-C → G/M → V1
+
+- [ ] office2 C 네 조건+CZ 두 조건, 기존 후보·400뷰·covariance 정책·support gate 등록.
+- [ ] A00/C00 baseline 불변성, C01 rigid-only, C10 effective-local 정의 확인.
+- [ ] HKairport strict/wide/full-mixed 및 두 gauge를 별도 scope로 등록. Q0 미해결 시 conditional 유지.
+- [ ] Dense→sparse source-only/target-only 대조와 빈 교집합·추적 공백 층화 포함.
+- [ ] 질문이 남을 때만 F/RT/R-Q의 최소 subset을 추가 등록.
+- [ ] Office2에서 규칙을 봉인한 뒤 office3 V1 실행. 현재 office3/office4 예측은 미실행.
+- [ ] A2 진입 / P 검토 / 추가 진단 / 분석 범위 축소를 판정. D4·joint optimizer·office4를 자동 실행하지 않음.
+
+## 19.4 후속 조건부 작업
+
+- [ ] A2-S spatial cross-fit scalar/field 및 A2-O RGB loss profile 등록·검증.
+- [ ] GO일 때만 문헌 중복 점검 후 단순 RGB-only 대조군 구현, 새 방법의 순증분 확인.
+- [ ] 방법 또는 분석 가설·metric·mask·판정을 고정한 뒤 F0 office4 한 번 평가.
 
 ---
 
@@ -707,6 +931,9 @@ research/
 
 ## 20.1 실험 근거(이번 계획의 직접 출발점)
 
+- [A0 office2 결과](experiments/A0_office2_factorial_results.md), [설정](../configs/a0_office2_factorial.json), [요약](../configs/a0_results_summary.json): dense GT factorial, C/ray/covariance·full-map 한계.
+- [A0b HKairport01 결과](experiments/A0b_HKairport01_factorial_results.md), [설정](../configs/a0b_hkairport01_factorial.json), [요약](../configs/a0b_results_summary.json): sparse LiDAR/reference pose, 보정·gauge·support 및 사후 보조 비교의 한계.
+- [N1 좌표 계약](experiments/N1_coordinate_contract.md), [N2 데이터 등록](../configs/n2_dataset_registration.json): 후속 구현의 검증 자산과 office2/3/4 역할.
 - `surface_guided_gaussian_mapping_experiment_summary.md`, 2026-10-22, §4–§7: E0~E4f 전체 결과·해석·미실행 작업·재사용 가능한 코드/GT 평가 자산.
 - `surface_guided_gaussian_mapping_research_plan_v3.md`, 2026-10-14: 동일 후보 풀, source lineage, GT validity, scene-level statistics, 재현성·강한 대조군 원칙. **단, 이전 pruning 가설과 장기 admission 일정은 신규 실행 대상이 아님.**
 - 개별 실험 보고서(E0/E1/E2/E3/E4/E4b/E4e/E4f) 및 실행 manifest: 새 실험의 코드·수치 검증에는 이 원자료를 우선 참조.
@@ -721,4 +948,4 @@ research/
 - Zhou et al., *GeoGS-SLAM: Geometry-Only Gaussian Splatting for Dense Monocular SLAM* (2026).
 - Gao et al., *GeoGS-SLAM: Online Monocular Reconstruction Using Gaussian Splatting with Geometric Priors* (2026).
 
-**최종 원칙:** A0 원인 분해가 보여 준 **실제 지배 오류**에 따라 연구 주제를 결정한다. `Depth를 수정하면 좋아질 것이다`는 현재 확정 사실이 아니며, `불필요한 Gaussian을 제거한다`는 이전 종료 주제의 가설을 새 계획으로 재도입하지 않는다.
+**최종 원칙:** 큰 joint Oracle 이득은 **수정 여지에 대한 조건부 증거**다. 단위·scale 배분, reference, gauge, support를 먼저 통제하고 독립 재현과 RGB 관측 가능성에 따라 연구 범위를 선택한다. `Depth를 수정하면 해결된다` 또는 `joint 최적화가 필요하다`는 현재 확정 사실이 아니다. 이전 종료 주제의 Gaussian 제거 가설도 재도입하지 않는다.

@@ -1,0 +1,8 @@
+{
+  "experiment": "A0b",
+  "amendment": "A2 supplemental coverage control",
+  "registration_context": "After A1 source registry counts and the first strict A00 covered-only metric were inspected; do not describe as an outcome-blind primary test. Existing A1 groups remain unchanged.",
+  "reason": "A1 all-camera source intersection leaves 6368 strict candidates (0.1964% of native map), whereas the sequence-named calibration alone supplies 261958 native-active reference-valid source candidates including prefix. Multi-calibration intersection can substantially restrict support.",
+  "supplement": "Four arms using post-prefix native-active AND HKairport_released source LiDAR valid mask, fixed candidate IDs/attributes across all arms, same position-only prefix gauge, C, all 40 heldout target views and original error/coverage thresholds. This is a support sensitivity only; do not replace or select the primary comparison based on its result.",
+  "prohibited_interpretation": "Not a dense full-map oracle, not a new independently preregistered success test, no strict causal attribution or Depth-only GO. Calibration and reference-pose provenance limits are unchanged."
+}

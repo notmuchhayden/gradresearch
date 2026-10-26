@@ -1,0 +1,198 @@
+{
+  "experiment": "A0b",
+  "scene": "HKairport01",
+  "execution": "COMPLETE_CONDITIONAL",
+  "research": "REVISE_CALIBRATION_AND_A1",
+  "strict_GT_causal_attribution": false,
+  "depth_only_GO": false,
+  "reason": "Published sequence extrinsic is nonorthogonal; RGB preprocessing and physical-vs-Terra camera equivalence unconfirmed. Local/placement contrasts conditional on gauge and sparse source support.",
+  "prior_E4e_tracking_gate": "FAIL unchanged",
+  "strict_valid_views": 40,
+  "target_views": 40,
+  "strict_candidates": 6368,
+  "native_active": 3242219,
+  "strict_fraction_of_native": 0.0019640869416902434,
+  "full_map_replaced_candidates": 7609,
+  "full_map_local_replacement_fraction": 0.0023468494879587097,
+  "table": [
+    {
+      "scope": "strict",
+      "arm": "A00",
+      "candidate_count": 6368,
+      "common_MAE_m": 21.0460515499115,
+      "common_AbsRel": 0.23512275703251362,
+      "mean_frame_median_m": 21.11676197052002,
+      "mean_frame_p95_m": 30.248115396499635,
+      "coverage": 0.16896549328268062,
+      "correct_depth_coverage": 0.0032605918963945803,
+      "PSNR_dB": 8.767489821876536,
+      "SSIM": 0.014649695460684597
+    },
+    {
+      "scope": "strict",
+      "arm": "A10",
+      "candidate_count": 6368,
+      "common_MAE_m": 35.39978556632995,
+      "common_AbsRel": 0.3985090494155884,
+      "mean_frame_median_m": 34.55661687850952,
+      "mean_frame_p95_m": 52.22210569381714,
+      "coverage": 0.16551894051846644,
+      "correct_depth_coverage": 0.0,
+      "PSNR_dB": 8.830258092385113,
+      "SSIM": 0.01462861681357026
+    },
+    {
+      "scope": "strict",
+      "arm": "A01",
+      "candidate_count": 6368,
+      "common_MAE_m": 45.62779369354248,
+      "common_AbsRel": 0.5145086936652661,
+      "mean_frame_median_m": 52.476019096374515,
+      "mean_frame_p95_m": 65.11921844482421,
+      "coverage": 0.3145654824985838,
+      "correct_depth_coverage": 0.006612598584520175,
+      "PSNR_dB": 9.02452813915297,
+      "SSIM": 0.013467395002953709
+    },
+    {
+      "scope": "strict",
+      "arm": "A11",
+      "candidate_count": 6368,
+      "common_MAE_m": 1.6010968208312988,
+      "common_AbsRel": 0.018034669023472817,
+      "mean_frame_median_m": 1.298313522338867,
+      "mean_frame_p95_m": 4.144721642136574,
+      "coverage": 0.329905220452847,
+      "correct_depth_coverage": 0.2630352630209867,
+      "PSNR_dB": 9.25526325762948,
+      "SSIM": 0.024923487892374398
+    },
+    {
+      "scope": "full_map",
+      "arm": "A00",
+      "candidate_count": 3242219,
+      "common_MAE_m": 21.842799568176268,
+      "common_AbsRel": 0.25509310625493525,
+      "mean_frame_median_m": 20.798938369750978,
+      "mean_frame_p95_m": 41.005042505264285,
+      "coverage": 0.906125073897573,
+      "correct_depth_coverage": 0.020300885766441696,
+      "PSNR_dB": 10.965711727883852,
+      "SSIM": 0.09792901631444692
+    },
+    {
+      "scope": "full_map",
+      "arm": "A10",
+      "candidate_count": 3242219,
+      "common_MAE_m": 23.44104046821594,
+      "common_AbsRel": 0.27325602918863295,
+      "mean_frame_median_m": 21.962489223480226,
+      "mean_frame_p95_m": 46.45731382369995,
+      "coverage": 0.906125073897573,
+      "correct_depth_coverage": 0.02029935992187646,
+      "PSNR_dB": 10.863104902199392,
+      "SSIM": 0.09139990881085396
+    },
+    {
+      "scope": "full_map",
+      "arm": "A01",
+      "candidate_count": 3242219,
+      "common_MAE_m": 13.286802339553834,
+      "common_AbsRel": 0.15809152461588383,
+      "mean_frame_median_m": 10.993583965301514,
+      "mean_frame_p95_m": 32.94999012947083,
+      "coverage": 0.9992069721097554,
+      "correct_depth_coverage": 0.09700594041009979,
+      "PSNR_dB": 13.491903183538241,
+      "SSIM": 0.13418585266917943
+    },
+    {
+      "scope": "full_map",
+      "arm": "A11",
+      "candidate_count": 3242219,
+      "common_MAE_m": 13.234331142902374,
+      "common_AbsRel": 0.15742887407541276,
+      "mean_frame_median_m": 10.9478928565979,
+      "mean_frame_p95_m": 32.89627993106842,
+      "coverage": 0.9992069721097554,
+      "correct_depth_coverage": 0.09962526799451786,
+      "PSNR_dB": 13.521895659830795,
+      "SSIM": 0.13511661440134048
+    }
+  ],
+  "effects": [
+    {
+      "scope": "strict",
+      "delta_local": -14.353734016418453,
+      "delta_placement": -24.58174214363098,
+      "interaction": -58.38043088912964,
+      "joint_improvement": 19.4449547290802,
+      "local_gain_relative_to_baseline": -0.6820155306746273,
+      "placement_gain_relative_to_baseline": -1.1679978111492533
+    },
+    {
+      "scope": "full_map",
+      "delta_local": -1.5982409000396736,
+      "delta_placement": 8.555997228622434,
+      "interaction": -1.6507120966911337,
+      "joint_improvement": 8.608468425273895,
+      "local_gain_relative_to_baseline": -0.07317014904848647,
+      "placement_gain_relative_to_baseline": 0.3917079036465656
+    }
+  ],
+  "report": "docs/experiments/A0b_HKairport01_factorial_results.md",
+  "output": "results/A0b_pointmap_pose_factorial/HKairport01",
+  "support_control": {
+    "count": 242162,
+    "table": [
+      {
+        "arm": "A00",
+        "candidates": 242162,
+        "common_MAE_m": 21.79051513671875,
+        "mae_m": 20.086834931373595,
+        "absrel": 0.23204448372125625,
+        "coverage": 0.7856003841437398,
+        "correct_coverage": 0.009478190039555051
+      },
+      {
+        "arm": "A10",
+        "candidates": 242162,
+        "common_MAE_m": 41.919585132598876,
+        "mae_m": 42.348397159576415,
+        "absrel": 0.4885607849806547,
+        "coverage": 0.6468174974624344,
+        "correct_coverage": 0.0007058586284576301
+      },
+      {
+        "arm": "A01",
+        "candidates": 242162,
+        "common_MAE_m": 31.83861289024353,
+        "mae_m": 34.68297061920166,
+        "absrel": 0.4434773698449135,
+        "coverage": 0.9744671160626961,
+        "correct_coverage": 0.02464797644734577
+      },
+      {
+        "arm": "A11",
+        "candidates": 242162,
+        "common_MAE_m": 2.7825289517641068,
+        "mae_m": 2.5118794232606887,
+        "absrel": 0.030915977293625475,
+        "coverage": 0.8810989459165335,
+        "correct_coverage": 0.522894591617834
+      }
+    ],
+    "effects": {
+      "delta_local": -20.129069995880126,
+      "delta_placement": -10.048097753524782,
+      "interaction": -49.18515393435955,
+      "joint_improvement": 19.007986184954643,
+      "local_gain_relative_to_baseline": -0.9237537465078577,
+      "placement_gain_relative_to_baseline": -0.46112254301840433
+    },
+    "common_fraction_of_reference": 0.6247202759942889,
+    "posthoc_secondary": true
+  },
+  "executed_map_variants": 38,
+  "depth_view_evaluations": 680
+}

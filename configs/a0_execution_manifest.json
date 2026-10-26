@@ -1,0 +1,561 @@
+{
+  "experiment": "A0 office2",
+  "frozen_at": "2026-10-26T14:46:15.998857+09:00",
+  "source_files": [
+    {
+      "path": "scripts/run_a0_baseline.py",
+      "bytes": 6406,
+      "sha256": "b131e641dcb31bcd78d8a43536b6352bf864527377bd24b5ff5d35dbaa25b3a3"
+    },
+    {
+      "path": "scripts/build_a0_oracles.py",
+      "bytes": 12967,
+      "sha256": "b29b505de64821bb6a899f81cba6173559788e88fbd20a6a4e4166641108e613"
+    },
+    {
+      "path": "scripts/evaluate_a0_oracles.py",
+      "bytes": 10581,
+      "sha256": "d17c51d944f9e26da02ab43d8a3e3a4de9b16a517d494bdbf72aa6c00d4f9f19"
+    },
+    {
+      "path": "scripts/finalize_a0.py",
+      "bytes": 13007,
+      "sha256": "b003b1800b36fc825f78cb6f7002eca4f2fd8234bada4dfd87ad07e5224cca00"
+    },
+    {
+      "path": "scripts/check_a0_packed.py",
+      "bytes": 3515,
+      "sha256": "32538f4c1e172aaae776ef872c874ea0bcbadb2136e9420352bdd99151999812"
+    },
+    {
+      "path": "scripts/plot_a0_results.py",
+      "bytes": 6091,
+      "sha256": "e7001ea6cc45e83a975992705c42c7b6e3a939bb641c6159de6cc2132efd79a6"
+    },
+    {
+      "path": "src/a0_metrics.py",
+      "bytes": 2324,
+      "sha256": "392a388a5fe11d6d72de970fd13961d4b4031491b208de893e64f8d8c576704d"
+    },
+    {
+      "path": "tests/test_a0_metrics.py",
+      "bytes": 2396,
+      "sha256": "b344ee69eed9f0bd8c81ec9ae19f656bc275882c912be5197f4d45b9d1f62846"
+    },
+    {
+      "path": "src/pointmap_contract.py",
+      "bytes": 9417,
+      "sha256": "8ab440c01ed5e5d1c50381da0b5eea1776a5ece1e869146254b74a328ecf5728"
+    },
+    {
+      "path": "tests/test_pointmap_contract.py",
+      "bytes": 8590,
+      "sha256": "b34a932433c207b1256a3fee2eb864dfe18d99373feca50a73af69cd0857e76e"
+    },
+    {
+      "path": "configs/a0_office2_factorial.json",
+      "bytes": 5003,
+      "sha256": "554e144b3989a65b0d546ef917292de6532da23bef8ce6bbc3287ba521084f47"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "docs/experiments/A0_office2_factorial_results.md",
+      "bytes": 16859,
+      "sha256": "f9d6536fbc5b55aace3e3fbd14506c1baeca7e75fe948d499c42ad667101b92d"
+    },
+    {
+      "path": "docs/figures/A0/office2_four_arm_metrics.png",
+      "bytes": 99256,
+      "sha256": "af9460adfd3d9afa6491604362cbd057b57b3b6338d381da416883289000e1ab"
+    },
+    {
+      "path": "docs/figures/A0/office2_frame601_comparison.png",
+      "bytes": 1844218,
+      "sha256": "f4e4b615cb75ecded2889470303533104beca35533888e790696dc1a25a92951"
+    },
+    {
+      "path": "docs/figures/A0/office2_frame_metrics.png",
+      "bytes": 240799,
+      "sha256": "0a1fbe55f198efaa24fd0db6c5b32936cc13c26c62377b71e0771bde30b1d2c3"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/A0_center_proxy_viewer.html",
+      "bytes": 6727125,
+      "sha256": "6b82daed166eaed95163cd3debbfd4109422009b400c5339b11b63998446ba98"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/A0_effects.csv",
+      "bytes": 1002,
+      "sha256": "3635e1771a20fc47bb307fb6a2ef7d6bd808ee42f883a4c9fb789eb4b41e3922"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/A0_four_arms.csv",
+      "bytes": 2148,
+      "sha256": "4b055e6a118fa5697a9301a3560d70d6351813b17f2f9f86c379ec6912712e77"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/C_sensitivity_common12.csv",
+      "bytes": 16207,
+      "sha256": "58b0b1f9bbfb27b3263501822a745d371015a60b28edeb16c24e27eed3cb02e9"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/C_sensitivity_common12.json",
+      "bytes": 30015,
+      "sha256": "7740fa26addc861bd3e19c6438f7dc642b68421e6de37d168c4c96e3852810f7"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/C_sensitivity_effects.json",
+      "bytes": 1454,
+      "sha256": "5a1567f1c7ad3bfc30c2a56de67ca7b3d63c0ba5b1e1ccb0ca146eb8b8d88910"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/Gaussian_center_mesh_vertex_proxy.json",
+      "bytes": 3076,
+      "sha256": "b4e13651f680207c84a0a53e6a7e57993885a825673e75ab556d9a549e6ac6b2"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/baseline_artifact_manifest.json",
+      "bytes": 125125,
+      "sha256": "cade1cc7273dfdfe5b1ca0504ef4023f991c5bf48a04679782a6f1770f970ce1"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/decision.json",
+      "bytes": 494,
+      "sha256": "628dac0b354142765ed5e5ca4f0f9711b3018e57fecbb27def080d4867f82d9d"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/full_map_sensitivity_common4.csv",
+      "bytes": 127291,
+      "sha256": "71223b6b4632d2c2639466afc995b3ed461a10b0f3312874868e4ccb31e01fc2"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/full_map_sensitivity_common4.json",
+      "bytes": 253263,
+      "sha256": "5ab5ae303b59c4343b265e12a29d63fd334e199d97246b27994c6a7bc5a0b358"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/packed_map_independence_checks.json",
+      "bytes": 4399,
+      "sha256": "b2bd9d8345fc7c20c5c352db905970614ca312c5b986c1bcf17798a0df84db83"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/pose_scale_metrics.json",
+      "bytes": 1714,
+      "sha256": "6065300d0df7a34dbe37c3d03c6f3bffee01754926f3a346ef6a81f1cf9385d3"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/preservation.json",
+      "bytes": 104,
+      "sha256": "fbb16623d3fe4d3387e625749501609f81e71b20f18b98b8145fa7b50e610b44"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/ray_preserving_controls.json",
+      "bytes": 423,
+      "sha256": "f6258472e12866fd3a998beb63b9eea4b97dc63ab19a7a53f53a6a29b7954b13"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/results.json",
+      "bytes": 26850,
+      "sha256": "d079dec50df357f27720414c23afed3972ed7520822ff80e6c60c7ef4078295a"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/source_manifest.json",
+      "bytes": 293,
+      "sha256": "2ffc2eb98f95d1712a1de0d0d42b6d5a9b1c198f6d51a62d3525a5a70baf6ab9"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/strict_aux_common6.csv",
+      "bytes": 158752,
+      "sha256": "d66612d4b7b3476becd23d70704105f495ee9f31e2a639406d6d68c9291d6c1d"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/strict_aux_common6.json",
+      "bytes": 283588,
+      "sha256": "1d4b55cd22961d0b55af0616b83b1703d430806adcad826c1efabd570c23ec4d"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/strict_common4.csv",
+      "bytes": 105624,
+      "sha256": "29b102dae9f5c83b098637557e02a8357d33acd30389e189215654bdfc9900c1"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/strict_common4.json",
+      "bytes": 208944,
+      "sha256": "f36e5206cf4189c4ed2872233d6ca59541099db7bb2caa5d639c0d0b4e698734"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/tests_coordinates.log",
+      "bytes": 2089,
+      "sha256": "305427a6bd3e2be8edb9285aa5f7e8d288de9ff290f9722b8b6b0808ffdd6e1c"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/analysis/tests_metrics.log",
+      "bytes": 926,
+      "sha256": "2d559edc9c5d2aed7df9ff754232871895d8bdcbda0d6b55c88ae66afb520d5e"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/baseline/device_memory.csv",
+      "bytes": 21867,
+      "sha256": "d26958edb57ea04a3b53fe92266cb7c177b4375f68aadeebe673a657d18e72b4"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/baseline/logs/baseline.log",
+      "bytes": 4066,
+      "sha256": "acba9d1b25af6b704c49b2af45cae2b290c871ab313d1e1bb24a107df1de87f6"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/baseline/qualification.json",
+      "bytes": 208,
+      "sha256": "42b1fbf968fcc2c5540dce2c610a19d242dcecbe5c61d32a5a53129d47ec56c2"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/baseline/run_manifest.json",
+      "bytes": 117317,
+      "sha256": "962579a1f01d3e50610199b7645904f170df207d0161361ba48a3f8107c6f00b"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/completion.json",
+      "bytes": 4101,
+      "sha256": "dd1f08e4bf5d3edee6ed9f3924c03be5f1ae7943e5f31e38b36c4dade6b1c0f6"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/environment.json",
+      "bytes": 298,
+      "sha256": "ceec7de0dd5dc04cfa5ff42f5fa39634b1a860d8aa31357dd22aaa1a83bd296a"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A00_C1/metrics.json",
+      "bytes": 510263,
+      "sha256": "8d8382254b6ea985675970da9b44a0dbf63e9305a3924f0e550c3c0b6efdcc2a"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A01_C1/metrics.json",
+      "bytes": 503240,
+      "sha256": "81bf3ed23af3378bbb5442200d0284f647a391db540fcfebf03b9c74a43f3434"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A10_C1/metrics.json",
+      "bytes": 509804,
+      "sha256": "bdd4676250ab1bfbd702aeef9f10269d3a4a88241874b66a8eb8ee0aac2a4a45"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A11_C1/metrics.json",
+      "bytes": 509332,
+      "sha256": "aec885cacba3a609472cba24f7574abb85f98d179a275fde4206314d46dbf9da"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/input_manifest.json",
+      "bytes": 139536,
+      "sha256": "dfa0a78ec931b96d09c771719d6d6c72e8b28739a7b034fea6c3741cb94b25f6"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/smoke.json",
+      "bytes": 131,
+      "sha256": "4ce2e9f7d86d743adaa0126ff938646cd89bd1650f76cd9e861612d3984c3095"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/source_manifest.json",
+      "bytes": 1040,
+      "sha256": "fa390a8116207863aae852de59afddb345ee2799fa3747f3e43539766937a842"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C0.8/metrics.json",
+      "bytes": 32715,
+      "sha256": "2ad558eecdcdde41c4ffb7cbc37c118041e035bb75cee673d763b2a64d3296da"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C1/metrics.json",
+      "bytes": 512757,
+      "sha256": "43d3543a0e60f384d6b101c1d0b6ee0377be2668edea8d18c76e26de741f142a"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C1.25/metrics.json",
+      "bytes": 32719,
+      "sha256": "8a7f04a71a3dd50e9060ac7667309da11b9a1cbc081d972660313fd0f2447409"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C0.8/metrics.json",
+      "bytes": 31920,
+      "sha256": "5d30e154eb930d30255de450f3283c4f94977c43d2facc4be397af4489282a43"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C1/metrics.json",
+      "bytes": 512479,
+      "sha256": "5af1cec52b5f43eb9bfd026cc8e407b08d032c6be19bb37740583d5b2fdd02d2"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C1.25/metrics.json",
+      "bytes": 32636,
+      "sha256": "b2d4e84c99da723e77d45b7ad2e1b96f67bddd3a2213b9e9a9655bcedd57b31a"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C0.8/metrics.json",
+      "bytes": 32558,
+      "sha256": "2b51c3cfaf8ee6f142358a28123b7329582f1a45e1fb981a7ea234e5179e8735"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C1/metrics.json",
+      "bytes": 512503,
+      "sha256": "1b8464845e66e8fd120e91a036e3b5d9413ca343549215a937b47f8789bc1fad"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C1.25/metrics.json",
+      "bytes": 32400,
+      "sha256": "60b6dec574295ab40e1e96cbd2b6a013ecd50173eb9c7f8af004c2208d482a72"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C0.8/metrics.json",
+      "bytes": 32684,
+      "sha256": "5b08900c54f6e52dcbc713a85422a64f2235d72189562db3a9fcc10e76cdc414"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C1/metrics.json",
+      "bytes": 512531,
+      "sha256": "9e80129cad8ca280a09ccb633d450471a28bd709f78596a66760690a56571433"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C1.25/metrics.json",
+      "bytes": 32689,
+      "sha256": "5c44c5d6136897f4642ce052ee815e301001a4526cec01d84cdcc6fd67ba59df"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_Z10_C1/metrics.json",
+      "bytes": 512536,
+      "sha256": "3ee94cbfe3ee5e981b327aa2a0bda537849696373a3778f37a21d7cc9262a8d4"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_Z11_C1/metrics.json",
+      "bytes": 512573,
+      "sha256": "9e8c56437d8ea125b4e6786a6a23d38da2a0576aa81436138e8ab2fd552b56fa"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/oracles/alignment.json",
+      "bytes": 1457,
+      "sha256": "0daaa0e6d3f2b3f6ac0946954e1af947158f644368c392dd8e5f30815683df2b"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/oracles/candidate_manifest.json",
+      "bytes": 7889,
+      "sha256": "e57e151901f47c023c4d2979b55c4cc24484296cc0edd7ff3d5d65c762fe9c58"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/oracles/candidate_registry.csv.gz",
+      "bytes": 7986557,
+      "sha256": "3a0fa2d606696ce6975dc73814200674ba7975ad2b9adfe4db912ab885a6de03"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/oracles/journal_checks.json",
+      "bytes": 573,
+      "sha256": "5799f64335909660aadadad554972f8be065169679502b15ee03070c21dd6014"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/oracles/manifest.json",
+      "bytes": 156402,
+      "sha256": "662b36f11195e094a51c4748c8d22fc73b7e10d0a17417a9820c12ee8e22a307"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/oracles/source_manifest.json",
+      "bytes": 1404,
+      "sha256": "bb869cd7e91caa3ae5dc2578ad6790f7263e3a8f5a64bf3fe7030e61b58ec1bf"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/registration.json",
+      "bytes": 5793,
+      "sha256": "a760bee85e736575cee9141c28eaf9639b1ba89c788affed5fdb36e9f9428cd0"
+    }
+  ],
+  "render_cache_files": [
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A00_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "17259b62e61c1adb272311761f10f0b5c3a70318de6c9b97a8a764b81ddac656"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A00_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "bb1e4f7d29caa7dcc177b6abb479c603c5557b4961005859af4ae0104e974af6"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A01_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "357f120a908f596f3387164ddd26d25b57c983a06f5f3df02be2a38e4dbef7a8"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A01_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "a97d8b5a57ceed5d5acc3c06312bd242cf0edd6f3c541159cd5e14680424dcee"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A10_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "16c29a3ddb81a0b6229da5596556c8748ef297b580e0ec2048a2557a31bc477a"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A10_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "c1fd1ac1dac7a6987bfb08edebcfcc033d8be2e3cc0db599fde2150d924380c4"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A11_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "670d48803add0502555e32b3bb26c4446c7ab85bd45c3b3d41cb957e33dccf41"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/full_map_sensitivity_A11_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "cc896e1926aa21280d95176be90f3809e8439d8ed5b5bf46bd7dff97ba5f5588"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C0.8/covered.npy",
+      "bytes": 2949248,
+      "sha256": "0e12de5552a457bb87956d9ad6186d4fb99a5a4d38591a885dbf03aefe032cf1"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C0.8/depth.npy",
+      "bytes": 11796608,
+      "sha256": "ebd15f77746354513f6615a599fa07f0ed91bb405eb5030c074e78b6f3cdb6ca"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "086d92a1e276dde883c264f05402eaca64319c8b8b9772689aaa4c48513f1faa"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "2fa3b308a0b1f181bbccbf74754096b7c0e63dd4d815e33ba8515582be506d88"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C1.25/covered.npy",
+      "bytes": 2949248,
+      "sha256": "0e12de5552a457bb87956d9ad6186d4fb99a5a4d38591a885dbf03aefe032cf1"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A00_C1.25/depth.npy",
+      "bytes": 11796608,
+      "sha256": "ebd15f77746354513f6615a599fa07f0ed91bb405eb5030c074e78b6f3cdb6ca"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C0.8/covered.npy",
+      "bytes": 2949248,
+      "sha256": "b15119324f69d540dc3fca1ff3a004adccff002c7774c263cb0679cdd2b7420d"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C0.8/depth.npy",
+      "bytes": 11796608,
+      "sha256": "5337ac0e90a01f543807eb2a6cc9cc6b588fe7146bc582da0692ec75546e7dbe"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "72d900e021ab97c724a1254db7064e0da3b6bf4327f060122c9afa6d07393cf0"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "483a59079011eba7a786acaad6cff54a474caac289079e9f2c93435183dcb974"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C1.25/covered.npy",
+      "bytes": 2949248,
+      "sha256": "86f44a16e8c76c3d750df72e7545a5b32d739b140a78671e0169c98e111e8fa8"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A01_C1.25/depth.npy",
+      "bytes": 11796608,
+      "sha256": "138d6a7e2c0d0652f3438a9578fde8e8a3688ee73295665cba85bcf2747d559d"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C0.8/covered.npy",
+      "bytes": 2949248,
+      "sha256": "f37986011999ad4280440da239cc29ff1d6c032af766b49fe450feb16a21595d"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C0.8/depth.npy",
+      "bytes": 11796608,
+      "sha256": "934265278345b7e1d84fa7ded50837678251ee67a80665996885f43dbe7c086b"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "0d55812a30e8a19a27ae137689484ca2a1bdf2d4127e0ea6cb5432b156779fa7"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "d28a063a23271fd866af2bdaaa4fc03b888ea82aca9b8dc7e965afd1b7c33782"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C1.25/covered.npy",
+      "bytes": 2949248,
+      "sha256": "5ea49eba82c02947b713b13a7a7148f3b33b90bb622510b38fea304c2e2bb1dc"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A10_C1.25/depth.npy",
+      "bytes": 11796608,
+      "sha256": "a22823661ea2b989154c9d382a233826df3d352c42339b1f17e76b05fc39c511"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C0.8/covered.npy",
+      "bytes": 2949248,
+      "sha256": "6f941d9311dc709a94c1d928a9538f8df35dddf09a39708696867e8dd6c5d9ad"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C0.8/depth.npy",
+      "bytes": 11796608,
+      "sha256": "2467b860b1a7f7e60b8ebd0b5d8a5aa536c3b8eb27733f4b08de5703764f82aa"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "304c2a271f89c9072e8e43806210ae10a40134a1d68552bf16749ff0a37d369b"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "f87f17feb8e007328c6c3a542f2a7c80d1cdacdb5750cd1b2268d6e6af2ae99c"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C1.25/covered.npy",
+      "bytes": 2949248,
+      "sha256": "74585e236530aff8288696ed78024919097b7f85a639fbe0a26d51b46e5f08d2"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_A11_C1.25/depth.npy",
+      "bytes": 11796608,
+      "sha256": "99bd3537523d9ec849137d29bddcf1b5f974d0068195025f6ee8a89906f68a6d"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_Z10_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "40cd6663cc0f9a09f919e0646500093985cab2ce199d37d457831fcc741afc4e"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_Z10_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "f33db8d184561602408642dc7708d156c238b96f16c59b00176cf924d2fe75bf"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_Z11_C1/covered.npy",
+      "bytes": 58982528,
+      "sha256": "b44768e462241bcb44185d9d3e78a5fab25471775054d0211aae4b5013c2e247"
+    },
+    {
+      "path": "results/A0_pointmap_pose_factorial/office2/evaluation/strict_Z11_C1/depth.npy",
+      "bytes": 235929728,
+      "sha256": "2b4022569a8569c45e114806741d754284358f5e6c51327226756d0a5d27f233"
+    }
+  ],
+  "baseline_artifact_index": {
+    "path": "results/A0_pointmap_pose_factorial/office2/analysis/baseline_artifact_manifest.json",
+    "bytes": 125125,
+    "sha256": "cade1cc7273dfdfe5b1ca0504ef4023f991c5bf48a04679782a6f1770f970ce1"
+  },
+  "oracle_map_manifest": {
+    "path": "results/A0_pointmap_pose_factorial/office2/oracles/manifest.json",
+    "bytes": 156402,
+    "sha256": "662b36f11195e094a51c4748c8d22fc73b7e10d0a17417a9820c12ee8e22a307"
+  },
+  "map_bytes_note": "Per-map file hashes/counts/attribute block hashes are embedded in the oracle manifest; all 18 maps were rehashed after evaluation."
+}

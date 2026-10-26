@@ -1,0 +1,12 @@
+{
+  "experiment": "A0b",
+  "amendment": "A1",
+  "registered_phase": "After reference-only preparation; before constructing or evaluating any factorial maps or local model-depth residuals",
+  "reason": "Prefix position trajectory singular-value ratios are [1,0.082965,0.017367]; position-only gauge rotation can be weakly constrained. Camera alternatives also project different source pixels.",
+  "changes": [
+    "Add a prefix-only orientation-anchored global Sim3 sensitivity: SO3 mean of GT_R * estimated_R^T for prefix mapping poses, then fit one scalar scale and translation using those same prefix positions. Evaluate strict four arms on the same five fixed views; no per-frame fitting.",
+    "Use the intersection of all four preregistered camera models' valid LiDAR source masks for every strict variant, including the primary. This makes camera sensitivity use exactly the same source candidate IDs and frozen attributes. Full-map replaces only this same intersection; other local centers remain predicted.",
+    "Compare camera sensitivity on target valid-mask intersection and all-arm covered intersection across all camera families, and also report each family's own four-arm mask. Pixel rays differ between camera families, so this remains a convention sensitivity, not repeated measurements of identical rays."
+  ],
+  "unchanged": "Original time split, heldout views, main prefix position-only gauge, local C rule, model outputs, thresholds and conditional-only interpretation"
+}
