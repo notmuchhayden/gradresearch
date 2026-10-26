@@ -11,7 +11,7 @@
 - **영문 제목(가안):** *Decomposing Pointmap and Camera Pose Errors in MASt3R-SLAM-Based 3D Gaussian Splatting Reconstruction*
 - **연구 운영 원칙:** A0의 원인 분해 결과가 확보되기 전에는 `Depth 보정이 핵심 해결책`이라고 미리 확정하지 않는다.
 
-> **진행 상태 (2026-10-26):** [N0 자산 점검·기준선 재현](experiments/N0_asset_audit_results.md) 및 [N1 좌표계·단위·개입 계약 검증](experiments/N1_coordinate_contract.md) **PASS**. 개발 `office0`에서 공통 후보 258,718개·고정 표본 1,429개를 등록하고 4군 불변 조건을 확인했다. 다음은 **미사용 GT 장면 확보·A0 평가 등록과 실행**이다. A0 기하 효과·원인 우세는 아직 평가하지 않았다. 아래 일정·체크리스트는 계획이며 개별 완료 여부는 실험 보고서를 따른다.
+> **진행 상태 (2026-10-26):** [N0 자산·재현 점검](experiments/N0_asset_audit_results.md), [N1 좌표·단위·개입 계약](experiments/N1_coordinate_contract.md), [N2 신규 GT 데이터 확보·분할 등록](experiments/N2_dataset_preparation.md) **PASS**. N2에서 `office2`는 진단·개발, `office3`는 검증, `office4`는 최종 평가용 보류로 고정했다. 다음은 **office2의 A0 기준선 실행·4군 기하 평가**다. N1 개발 후보의 계약 검증과 N2 데이터 QA까지 완료했으며, 신규 장면의 A0 기하 효과·원인 우세는 아직 평가하지 않았다. 아래 일정·체크리스트는 계획이며 개별 완료 여부는 실험 보고서를 따른다.
 
 > **문서의 증거 구분**
 > - **[기존 실험]**: 2026-10-22 종료 보고서에 기록된 관측 및 수치.
@@ -422,6 +422,8 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 
 **분할 규칙:** 장면/drive 단위 Development / Validation / Final Test 분리. 서로 겹치는 공간을 촬영한 인접 프레임은 독립 장면이 아님. 기존에 많이 분석한 scene은 논문 main test에서 제외. 최소 실험 세트의 숫자는 실제 사용 가능한 ground truth와 GPU 리소스를 확인한 후 manifest에 사전 기록.
 
+**N2 데이터 등록:** [N2 사전 등록](../configs/n2_dataset_registration.json)에 따라 기존 연구에서 미사용인 Replica `office2`는 진단·개발, `office3`는 검증, `office4`는 최종 평가용으로 구분한다. 각 장면은 원본 `[0,1000)`에서 짝수 RGB 500개를 입력으로 사용하고, calibration은 `[0,200)`의 짝수 pose 100개, 주 평가 뷰는 `[200,1000)`의 홀수 400개로 고정한다. `office4`는 무결성·형식 QA 이후 최종 방법·평가 규칙이 고정될 때까지 예측·Oracle 비교·튜닝에 사용하지 않는다.
+
 ## 10.3 GT 사용 레벨
 
 1. `GT-depth/mesh/pose`를 **A0/A1 Oracle과 평가**에 사용하는 것은 허용; 이 Arm에는 Oracle 표기.
@@ -510,6 +512,7 @@ R 경로는 핵심 연구와 무관한 고품질 NVS 개발로 확장하지 않�
 |---|---|---|---|---|
 | **N0** | O | 환경/GT/재현성 점검 | 기존 B1, 저장된 E0~E4f | frozen manifest, file/pose checks |
 | **N1** | O | 좌표계·자원 계약 점검 | raw vs active, self vs pair, Sim(3) | test log, common candidate IDs |
+| **N2** | O | 미사용 GT 실내 장면 확보·QA·분할 등록 | RGB/depth/pose/camera/mesh, calibration/evaluation 분리 | file hashes, scene roles, frame split, dataset QA |
 | **A0** | O | Pointmap × Pose factorial Oracle | A00/A10/A01/A11 | 4-arm table, error effect, interaction |
 | **A1** | 조건부 | rotation/translation/scale 요인 분리 | P0/R/t/s/SE3/Sim3 | pose-scale error table |
 | **A2** | 조건부 | local vs shared-bias 및 correction feasibility | fixed scale, depth variants, cross-view | residual hist, observability limits |
@@ -688,8 +691,8 @@ research/
 
 # 19. 지금 당장 할 일: 첫 A0 실험 체크리스트
 
-- [ ] 기존 실험의 원본 체크포인트/환경/코드 버전과 추적 가능한 run manifest 보존.
-- [ ] **새로운 GT 실내 scene 1개**를 선정하고 해당 scene의 카메라 내부·외부 파라미터, RGB, Depth, 표면 모델 확인.
+- [x] 기존 실험의 원본 체크포인트/환경/코드 버전과 추적 가능한 run manifest 보존. (N0)
+- [x] **새로운 GT 실내 scene**의 카메라 내부·외부 파라미터, RGB, Depth, 표면 모델 확인. (N2: 첫 A0는 office2, office3 검증, office4 최종 평가 보류)
 - [ ] Splatt3R-SLAM에서 `raw self-branch pixel uv ↔ candidate_id ↔ Gaussian local mean ↔ anchor frame` 매핑 출력.
 - [ ] 추정 Sim(3) pose를 읽어 metric aligned world로 내보내는 테스트 작성.
 - [ ] `GT depth z`로 pixel unprojection → GT world projection 왕복 오차 확인.

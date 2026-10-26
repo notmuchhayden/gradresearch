@@ -1,0 +1,552 @@
+{
+  "stage": "N2",
+  "status": "PASS",
+  "finished_at": "2026-10-26T14:05:43.492822+09:00",
+  "report": "docs/experiments/N2_dataset_preparation.md",
+  "registration": "configs/n2_dataset_registration.json",
+  "dataset_manifest": {
+    "path": "configs/n2_dataset_manifest.json",
+    "bytes": 1281626,
+    "sha256": "374d455bbcb14b7f987914590617ae22b7b3e5bb663c0d9f8dbcb6bd4ddb6a2a"
+  },
+  "counts": {
+    "scenes": 3,
+    "rgb": 3000,
+    "depth": 3000,
+    "raw_traj_files": 3,
+    "paired_gt_poses": 3000,
+    "raw_meshes": 3,
+    "camera_files": 1,
+    "unique_archive_files": 6007,
+    "derived_files": 6
+  },
+  "archive_payload_bytes": 2413840408,
+  "scenes": [
+    {
+      "scene": "office2",
+      "role": "diagnostic_development",
+      "status": "PASS",
+      "rgb_files": 1000,
+      "depth_files": 1000,
+      "pose": {
+        "pose_rows": 2000,
+        "rotation_orthogonality_max_abs_error": 4.440892098500626e-16,
+        "rotation_determinant_max_abs_error": 4.440892098500626e-16
+      },
+      "derived_gt_pose_rows": 1000,
+      "mapping_rgb_frames": 500,
+      "calibration_mapping_poses": 100,
+      "primary_heldout_views": 400,
+      "candidate_eligible_input_frames": 400,
+      "min_gt_valid_depth_fraction": 0.8916838235294118,
+      "self_projection_max_abs_error_px": 2.2737367544323206e-13,
+      "prefix_gt_position_span_m": 1.4281119949266714,
+      "prefix_gt_singular_values": [
+        4.842247981832641,
+        1.8025427788324822,
+        0.574001579244258
+      ],
+      "mesh": {
+        "status": "PASS",
+        "vertices": 858623,
+        "source_polygon_faces": 857845,
+        "face_arity_counts": {
+          "4": 857845
+        },
+        "derived_triangles": 1715690,
+        "finite_vertices_and_valid_indices": true,
+        "derived_mesh": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/office2_mesh_triangles.npz",
+        "depth_to_mesh_vertices": {
+          "points": 303,
+          "median_m": 0.005279750310453302,
+          "p95_m": 0.007857357351366494,
+          "coordinate_fit": "none"
+        }
+      },
+      "cross_view_gt_qa": [
+        {
+          "status": "PASS",
+          "source_samples": 1799,
+          "target_common_samples": 1694,
+          "median_abs_z_residual_m": 0.002539788520218078,
+          "p95_abs_z_residual_m": 0.010236491666544363,
+          "consistent_fraction": 1.0,
+          "note": "GT data alignment QA; forward warp retains remaining occlusion outliers; no predicted map involved",
+          "source_original_frame": 0,
+          "target_original_frame": 2
+        },
+        {
+          "status": "PASS",
+          "source_samples": 1749,
+          "target_common_samples": 1699,
+          "median_abs_z_residual_m": 0.002362823452977114,
+          "p95_abs_z_residual_m": 0.011481451971147603,
+          "consistent_fraction": 1.0,
+          "note": "GT data alignment QA; forward warp retains remaining occlusion outliers; no predicted map involved",
+          "source_original_frame": 200,
+          "target_original_frame": 202
+        },
+        {
+          "status": "PASS",
+          "source_samples": 2071,
+          "target_common_samples": 1985,
+          "median_abs_z_residual_m": 0.0010062632704754826,
+          "p95_abs_z_residual_m": 0.0038912929916122604,
+          "consistent_fraction": 1.0,
+          "note": "GT data alignment QA; forward warp retains remaining occlusion outliers; no predicted map involved",
+          "source_original_frame": 800,
+          "target_original_frame": 802
+        }
+      ],
+      "model_predictions_run": false,
+      "images_displayed": false
+    },
+    {
+      "scene": "office3",
+      "role": "validation",
+      "status": "PASS",
+      "rgb_files": 1000,
+      "depth_files": 1000,
+      "pose": {
+        "pose_rows": 2000,
+        "rotation_orthogonality_max_abs_error": 4.440892098500626e-16,
+        "rotation_determinant_max_abs_error": 4.440892098500626e-16
+      },
+      "derived_gt_pose_rows": 1000,
+      "mapping_rgb_frames": 500,
+      "calibration_mapping_poses": 100,
+      "primary_heldout_views": 400,
+      "candidate_eligible_input_frames": 400,
+      "min_gt_valid_depth_fraction": 0.9427254901960784,
+      "self_projection_max_abs_error_px": 2.2737367544323206e-13,
+      "prefix_gt_position_span_m": 0.9139953034932662,
+      "prefix_gt_singular_values": [
+        2.4847351202247263,
+        1.9279332137122562,
+        1.075493526193452
+      ],
+      "mesh": {
+        "status": "PASS",
+        "vertices": 1187140,
+        "source_polygon_faces": 1185992,
+        "face_arity_counts": {
+          "4": 1185992
+        },
+        "derived_triangles": 2371984,
+        "finite_vertices_and_valid_indices": true,
+        "derived_mesh": "results/N2_dataset_preparation/2026-10-26/qa_office3/office3_mesh_triangles.npz",
+        "depth_to_mesh_vertices": {
+          "points": 304,
+          "median_m": 0.005369775491411455,
+          "p95_m": 0.007932611219680072,
+          "coordinate_fit": "none"
+        }
+      },
+      "cross_view_gt_qa": [
+        {
+          "status": "PASS",
+          "source_samples": 1906,
+          "target_common_samples": 1836,
+          "median_abs_z_residual_m": 0.0019161919410987105,
+          "p95_abs_z_residual_m": 0.010348840431972817,
+          "consistent_fraction": 1.0,
+          "note": "GT data alignment QA; forward warp retains remaining occlusion outliers; no predicted map involved",
+          "source_original_frame": 0,
+          "target_original_frame": 2
+        },
+        {
+          "status": "PASS",
+          "source_samples": 1822,
+          "target_common_samples": 1773,
+          "median_abs_z_residual_m": 0.0019741372340023045,
+          "p95_abs_z_residual_m": 0.011185049642799035,
+          "consistent_fraction": 1.0,
+          "note": "GT data alignment QA; forward warp retains remaining occlusion outliers; no predicted map involved",
+          "source_original_frame": 200,
+          "target_original_frame": 202
+        },
+        {
+          "status": "PASS",
+          "source_samples": 1997,
+          "target_common_samples": 1991,
+          "median_abs_z_residual_m": 0.001663923876874307,
+          "p95_abs_z_residual_m": 0.006154686136947696,
+          "consistent_fraction": 1.0,
+          "note": "GT data alignment QA; forward warp retains remaining occlusion outliers; no predicted map involved",
+          "source_original_frame": 800,
+          "target_original_frame": 802
+        }
+      ],
+      "model_predictions_run": false,
+      "images_displayed": false
+    },
+    {
+      "scene": "office4",
+      "role": "sealed_final_test",
+      "status": "PASS",
+      "rgb_files": 1000,
+      "depth_files": 1000,
+      "pose": {
+        "pose_rows": 2000,
+        "rotation_orthogonality_max_abs_error": 4.440892098500626e-16,
+        "rotation_determinant_max_abs_error": 4.440892098500626e-16
+      },
+      "derived_gt_pose_rows": 1000,
+      "mapping_rgb_frames": 500,
+      "calibration_mapping_poses": 100,
+      "primary_heldout_views": 400,
+      "candidate_eligible_input_frames": 400,
+      "min_gt_valid_depth_fraction": 0.9999191176470589,
+      "self_projection_max_abs_error_px": 1.7363888105137448e-13,
+      "prefix_gt_position_span_m": 1.1021859144922963,
+      "prefix_gt_singular_values": [
+        4.980542033239629,
+        1.3560531491156513,
+        0.5619695688089812
+      ],
+      "mesh": {
+        "status": "PASS",
+        "vertices": 993008,
+        "source_polygon_faces": 992909,
+        "face_arity_counts": {
+          "4": 992909
+        },
+        "derived_triangles": 1985818,
+        "finite_vertices_and_valid_indices": true,
+        "derived_mesh": "results/N2_dataset_preparation/2026-10-26/qa_office4/office4_mesh_triangles.npz",
+        "depth_to_mesh_vertices": "NOT_COMPUTED: final test integrity-only policy"
+      },
+      "cross_view_gt_qa": "NOT_COMPUTED: final test integrity-only policy",
+      "model_predictions_run": false,
+      "images_displayed": false
+    }
+  ],
+  "tests": {
+    "passed": 8,
+    "command": ".venv/bin/python -m unittest discover -s tests -p test_dataset_contract.py -v"
+  },
+  "exact_rgb_hash_overlap_between_roles": {
+    "office2/office3": 0,
+    "office2/office4": 0,
+    "office3/office4": 0
+  },
+  "prior_n1_source_files_unchanged": 11,
+  "source_files": [
+    {
+      "path": "configs/n2_dataset_registration.json",
+      "bytes": 4972,
+      "sha256": "dbf086a6107ca6b80a03d45ae0cf287a787c58679f9b1d6a6498628ddab28483"
+    },
+    {
+      "path": "configs/n2_mesh_qa_amendment_A1.json",
+      "bytes": 1136,
+      "sha256": "7bd7b3b7af834cc6d6453bd56aacf0665814ed6dee05d048c58331d580e5b7e1"
+    },
+    {
+      "path": "configs/n2_mesh_qa_amendment_A2.json",
+      "bytes": 1273,
+      "sha256": "ca1d7d342a18cc068341576193523cbe71a280611023046d7470b6e672627e4e"
+    },
+    {
+      "path": "scripts/validate_n2_datasets.py",
+      "bytes": 16040,
+      "sha256": "60f9483066bd8fd7d8626fb77b436941f30a62cc72a42aea41fc0357cd948d46"
+    },
+    {
+      "path": "src/dataset_contract.py",
+      "bytes": 4778,
+      "sha256": "4de07627e1371e9f4cb57abecfc515c8fd111f1b8c596fd120ff415c42069806"
+    },
+    {
+      "path": "tests/test_dataset_contract.py",
+      "bytes": 4192,
+      "sha256": "008f65243cf96afe7f7f3205e89f6f8a045e5a035c135f529178033bfa5d5887"
+    },
+    {
+      "path": "src/pointmap_contract.py",
+      "bytes": 9417,
+      "sha256": "8ab440c01ed5e5d1c50381da0b5eea1776a5ece1e869146254b74a328ecf5728"
+    },
+    {
+      "path": "src/e1_taxonomy.py",
+      "bytes": 9880,
+      "sha256": "09b8c89028b05ad4e0702c570865e302f31276e94c7f4b638b66e3931bbd146d"
+    },
+    {
+      "path": "scripts/download_e0_replica.py",
+      "bytes": 7685,
+      "sha256": "7634084644fa0c057702ae1aeecb7f63efc91580f4049c8af73168d0e93de884"
+    },
+    {
+      "path": "scripts/download_e3b_replica.py",
+      "bytes": 4060,
+      "sha256": "755d3eb39ea06119e301425acca1d2248a0d752ed6d9156068efaa52ba87928e"
+    },
+    {
+      "path": "scripts/acquire_n2_meshes.py",
+      "bytes": 2429,
+      "sha256": "d34fe8f2a3c03a8b1035a77529f0ca490fd78f778aa2df3a9fa61ab8c09ffe08"
+    },
+    {
+      "path": "scripts/finalize_n2.py",
+      "bytes": 7456,
+      "sha256": "2aecb795855dd9ca708a952ad7a4b3ad3d9e7984179da5537452ef5db3a1ccd6"
+    }
+  ],
+  "frozen_artifact_index": [
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/acquisition_commands.json",
+      "bytes": 1995,
+      "sha256": "20ec670cbbf2584b6392ecbd566c054237607c6185e02c38e474557f78e6ab38"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/amendment_A1_registration.json",
+      "bytes": 187,
+      "sha256": "390b6054874b5cd0887f574ad90071b4114fa4df209bbb03e51f13f46504c90a"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/amendment_A2_registration.json",
+      "bytes": 187,
+      "sha256": "86d011aad2033078b9c5610ba25f76dec0b9bfeab0ba3e6f62e2c330f76ba38a"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/finalize_n2_source.py",
+      "bytes": 7456,
+      "sha256": "2aecb795855dd9ca708a952ad7a4b3ad3d9e7984179da5537452ef5db3a1ccd6"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/mesh_download_manifest.json",
+      "bytes": 847,
+      "sha256": "bee873efc2e940694be238dda7e5d6025774090595dca46dd444caf88940f5a4"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/n2_mesh_qa_amendment_A1.json",
+      "bytes": 1136,
+      "sha256": "7bd7b3b7af834cc6d6453bd56aacf0665814ed6dee05d048c58331d580e5b7e1"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/n2_mesh_qa_amendment_A2.json",
+      "bytes": 1273,
+      "sha256": "ca1d7d342a18cc068341576193523cbe71a280611023046d7470b6e672627e4e"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/office2_download_manifest.json",
+      "bytes": 426231,
+      "sha256": "5a1cf40800172ad059f58f04466ee6d56643a463206d320111a28a6a73adb3f2"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/office3_download_manifest.json",
+      "bytes": 426253,
+      "sha256": "3f206f5dc797055cc253960bfa2d4df4949d4919f6a564fd9417802137642e5a"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/office4_download_manifest.json",
+      "bytes": 426214,
+      "sha256": "94a7f3003b9e4bfbf7a42ba1c2e7efefdefa81786ea5d4856a0960e8071b4905"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/preregistration.json",
+      "bytes": 583,
+      "sha256": "33f7e3859c61e2b1bf2fba61b40128f4f8a060376e12878f732a71e50f0373c4"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/prior_n1_source_preservation.json",
+      "bytes": 1925,
+      "sha256": "955a007abec0852ec227522aa1fd8686b08a8fc4b7ac8c061275f1984866c071"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2/failure.json",
+      "bytes": 1219,
+      "sha256": "ec9bd5489cb2205702ccad86eb45fc24efaffdd7386ceba8dd88b42ff25cbd47"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/derived_files.json",
+      "bytes": 380,
+      "sha256": "8d1ba7de6e8f01983db4de98208418137cebd627994fc2aa3fffcfb37658767e"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/execution.json",
+      "bytes": 341,
+      "sha256": "af725a661b25d50c9d99265c6b69fc883bf9bb22dab504f3eed5b8402bad50d3"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/office2_cross_view_qa.json",
+      "bytes": 1231,
+      "sha256": "6139249f51ed3d57573cae76283d963e789fd3dc8ca4ff9d1ec3dc39ddaa849f"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/office2_frame_split.csv",
+      "bytes": 69044,
+      "sha256": "2aee1e6ab3e393e1439cbd865127ae8f23052fb7df5dec479a804d4b6c21804b"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/office2_mesh_qa.json",
+      "bytes": 462,
+      "sha256": "2f0e125f01dedfda12c78ec491409cafaecd40eea46e5514466cc8f0424fbe50"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/office2_mesh_triangles.npz",
+      "bytes": 16971871,
+      "sha256": "89137932e3cd6efc262f02dc12e9d04b4551652d01414f27bb624603acfaa1cf"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/office2_qa.json",
+      "bytes": 2630,
+      "sha256": "b32e76e072aa22145c9c09aab3e34d4b7e257de281ee1a002ea018bfa8061a99"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/preservation.json",
+      "bytes": 78,
+      "sha256": "e9cd06fdf9fb56cea002059e4b04ba07f023b98352e302b9e546dc83b2f0b03b"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/result.json",
+      "bytes": 3984,
+      "sha256": "eb5d0cb98d7b5456fb5458a0e0b8a33e83b12bda18447f04470077acadcd13e6"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/source_manifest.json",
+      "bytes": 1702,
+      "sha256": "89179205820b231179b04f4b56114f08ab3d7969c4f2d4ef2606d09c3b110118"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office2_v2/verified_files.json",
+      "bytes": 554957,
+      "sha256": "4c416d4e5bb05855b0eeaa1d5665027577bef3e46dc3f2fedee95ad48718a683"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/derived_files.json",
+      "bytes": 377,
+      "sha256": "d298b45a98479191203a3ba088427f3e05d432f528a595f6ab51e81c2fd54cfa"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/execution.json",
+      "bytes": 338,
+      "sha256": "5ff7b452dcc812847da734cf49725c338f833bca27da2f9df2e7a800eee77a28"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/office3_cross_view_qa.json",
+      "bytes": 1231,
+      "sha256": "24bc8eb30143e51da2a68c36cf124707d64cbd7a02e24ef1b664afe7962860d8"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/office3_frame_split.csv",
+      "bytes": 57044,
+      "sha256": "be17cf2142a0cd13ced4aca1ab38b25a4f5ccbe2094e4211f8a11b188d884ed0"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/office3_mesh_qa.json",
+      "bytes": 462,
+      "sha256": "0bd31a7547f1ac25b0ab990f1028711a6046a1dcd62a9bb09d514748bb916ce1"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/office3_mesh_triangles.npz",
+      "bytes": 23609475,
+      "sha256": "29871318000ec6a4075db9f8467a7807b4de00761c1f8ddd0b58b1ca6b86206a"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/office3_qa.json",
+      "bytes": 2619,
+      "sha256": "f16df63fe3c291b790793a906cdda00f438bb957b1d8ccf3e795a553ee9dee71"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/preservation.json",
+      "bytes": 78,
+      "sha256": "e9cd06fdf9fb56cea002059e4b04ba07f023b98352e302b9e546dc83b2f0b03b"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/result.json",
+      "bytes": 3973,
+      "sha256": "37f0e1c87b57dc4d8990eb6e5c5466944c04475553e2a7c57e2b9307202dda97"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/source_manifest.json",
+      "bytes": 1702,
+      "sha256": "89179205820b231179b04f4b56114f08ab3d7969c4f2d4ef2606d09c3b110118"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office3/verified_files.json",
+      "bytes": 554904,
+      "sha256": "8ecc6ce371bf9eb1a8fbb28c047938d25fc5cb79e6f9cf264f5e06d64bc0563e"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/derived_files.json",
+      "bytes": 377,
+      "sha256": "977e00cc8f2b187bf630073d088f9af19f67e7237b48b1fac40ec37083989490"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/execution.json",
+      "bytes": 338,
+      "sha256": "3e3eaeaffe64317187ceda79726f4b2472b551e7d3ad965cb31de609363cf077"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/office4_frame_split.csv",
+      "bytes": 64044,
+      "sha256": "29b3490045a80a81c3ad18642f7b0c69c0aa93fa9c6489d68c2d89d0e62678dd"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/office4_mesh_triangles.npz",
+      "bytes": 19624683,
+      "sha256": "e1400eef3e339a027509b305d540b8e212e2e9effaa66f087d5a93d26607ad08"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/office4_qa.json",
+      "bytes": 1285,
+      "sha256": "b13fd0aaf6c2984bc8e26ed25cefab91ab41da754586ddeab11e06a1cf29e8ea"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/preservation.json",
+      "bytes": 78,
+      "sha256": "e9cd06fdf9fb56cea002059e4b04ba07f023b98352e302b9e546dc83b2f0b03b"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/result.json",
+      "bytes": 2483,
+      "sha256": "bc66ffa9e366181ab2ea26586e0e82152869c7540e4b832bcad0086c58fa4dfa"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/source_manifest.json",
+      "bytes": 1702,
+      "sha256": "89179205820b231179b04f4b56114f08ab3d7969c4f2d4ef2606d09c3b110118"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/qa_office4/verified_files.json",
+      "bytes": 551526,
+      "sha256": "1b204ffd40a01fbf7fff064204ee9879b9a1b8472a1bc9e356104ba29bc8f240"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/registration.json",
+      "bytes": 4972,
+      "sha256": "dbf086a6107ca6b80a03d45ae0cf287a787c58679f9b1d6a6498628ddab28483"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/registration_hashes.json",
+      "bytes": 429,
+      "sha256": "dcc9767102535cf372c42d15468b04ab5be2524df871df6503681098a3e51817"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/unit_tests.log",
+      "bytes": 1078,
+      "sha256": "fb75dc0de9631c23e8e5725d9026616992edcb39599b9fe784ace49126dd5ba7"
+    },
+    {
+      "path": "results/N2_dataset_preparation/2026-10-26/unit_tests_v2.log",
+      "bytes": 1404,
+      "sha256": "cfa795864a56fd19cd549b87606fe3dcc7d6ea2d65a6374a00aa50c6cb45eea3"
+    }
+  ],
+  "final_test_integrity_only": true,
+  "model_predictions_run": false,
+  "amendments": {
+    "A1": "Register supplied mesh QA before geometric analysis",
+    "A2": "Correct triangular-face parser assumption for supplied quad faces; preserve initial failure and fixed thresholds"
+  },
+  "next": "Register and execute A0 on office2 diagnostic scene; office4 remains reserved for frozen final evaluation",
+  "limits": [
+    "Unused refers to repository experiment history, not model pretraining exposure.",
+    "All scenes share the rendered Replica indoor domain.",
+    "No tracking, actual KF count, new-scene GPU capacity or A0 effects have been measured.",
+    "Final-test withholding is a recorded workflow policy, not filesystem access isolation.",
+    "Scene completeness must be restricted to observed/evaluable support when using the supplied full-scene mesh."
+  ]
+}

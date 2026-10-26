@@ -1,0 +1,16 @@
+{
+  "experiment": "N2 supplied mesh QA amendment A1",
+  "date": "2026-10-26",
+  "reason": "Official ZIP catalogue contains office2/office3/office4 meshes. Register mesh QA before decoding mesh geometry or computing GT alignment statistics.",
+  "base_registration": "configs/n2_dataset_registration.json",
+  "changes": {
+    "acquire_supplied_meshes": true,
+    "all_scene_structural_checks": "finite vertices; nonempty triangular faces; valid vertex indices; size, ZIP CRC and SHA-256",
+    "diagnostic_validation_coordinate_check": "fixed GT-depth points at original frames 0,200,800, grid stride 32 at 512x288; compare with all supplied mesh vertices in the same GT world frame",
+    "nearest_vertex_median_max_m": 0.05,
+    "nearest_vertex_p95_max_m": 0.15,
+    "minimum_points": 200,
+    "final_test": "structural mesh QA only; no depth-to-mesh distance computation or visual inspection"
+  },
+  "interpretation": "Nearest-vertex distance checks dataset coordinate compatibility only. It is not an exact point-to-triangle reconstruction metric or full-scene completeness measurement. No ICP or GT coordinate fitting is permitted."
+}

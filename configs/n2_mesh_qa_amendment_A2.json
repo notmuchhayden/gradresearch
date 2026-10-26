@@ -1,0 +1,13 @@
+{
+  "experiment": "N2 supplied mesh parser amendment A2",
+  "date": "2026-10-26",
+  "reason": "The first office2 structural PLY read failed because the archive uses polygon faces (quads), whereas A1 assumed triangles. No cross-view or mesh-distance QA result was produced by that failed run.",
+  "preserved_failure": "results/N2_dataset_preparation/2026-10-26/qa_office2/failure.json",
+  "changes": {
+    "structural_faces": "Accept polygon faces with at least three valid vertex indices; record arity counts.",
+    "derived_triangle_reference": "Keep source mesh unchanged. Fan-triangulate each face [v0,v1,...,vn] in its stored order as [v0,vi,vi+1], preserving winding. Store vertices and triangle indices in a separate NPZ.",
+    "final_test": "Same deterministic format conversion and structural validation only; no geometric residual or model evaluation."
+  },
+  "unchanged": ["Scene roles", "Frame and calibration/evaluation intervals", "GT-only cross-view QA pairs and thresholds", "Nearest-vertex mesh-coordinate QA thresholds", "Final-test integrity-only access policy"],
+  "interpretation": "A parser/schema correction. Fan triangulation is a fixed conversion of the supplied polygon reference, not learned mesh completion or a reconstruction-quality result."
+}

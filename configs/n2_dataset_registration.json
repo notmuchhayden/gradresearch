@@ -1,0 +1,72 @@
+{
+  "experiment": "N2 unused indoor GT acquisition and split registration",
+  "registered_date": "2026-10-26",
+  "timezone": "Asia/Seoul",
+  "source_url": "https://cvg-data.inf.ethz.ch/nice-slam/data/Replica.zip",
+  "source_documentation": "https://github.com/cvg/nice-slam/blob/master/scripts/download_replica.sh",
+  "expected_archive_bytes": 12442855671,
+  "expected_archive_etag": "\"2e5a6e8f7-5dbe690e59caa\"",
+  "dataset_root": "data/N2/Replica",
+  "output": "results/N2_dataset_preparation/2026-10-26",
+  "previously_used_scenes": ["office0", "office1", "room0", "room1", "room2"],
+  "unused_evidence": [
+    "docs/experiments/E4c_surface_consistency_pruning_results.md: office2/office3 RGB, GT and baseline were not opened",
+    "N0/N1 local asset inventory contains only office0, office1, room0, room1, room2",
+    "office4 has no prior local scene data, baseline or download manifest"
+  ],
+  "scenes": [
+    {"scene": "office2", "role": "diagnostic_development", "first_A0_scene": true, "cross_view_gt_qa": true},
+    {"scene": "office3", "role": "validation", "first_A0_scene": false, "cross_view_gt_qa": true},
+    {"scene": "office4", "role": "sealed_final_test", "first_A0_scene": false, "cross_view_gt_qa": false}
+  ],
+  "selection_rule": "Use the three remaining rendered Replica scene IDs in numeric order; register roles before downloading or decoding them; no quality-based scene replacement.",
+  "frame_interval": [0, 1000],
+  "interval_stop_exclusive": true,
+  "model_input": "even original frame IDs in [0,1000), RGB only (500 frames)",
+  "calibration": {
+    "original_frame_interval": [0, 200],
+    "alignment_pose_ids": "even original frame IDs in [0,200), 100 matched poses",
+    "prefix_reason": "Fixed first 20 percent of the 1000-frame run; longer than the short N1 pilot; independent of predictions/oracle effects.",
+    "global_gauge": "one Sim(3) fit on calibration positions, fixed for every arm and later frame",
+    "local_units": "C = fitted global scale * first KF raw scale; one fixed C for all KFs",
+    "min_gt_prefix_position_span_m": 0.05,
+    "min_gt_prefix_second_singular_value_m": 0.0001
+  },
+  "evaluation": {
+    "original_frame_interval": [200, 1000],
+    "heldout_rgb_depth_pose_ids": "odd original frame IDs in [200,1000), 400 frames",
+    "source_candidate_scope": "self-branch KFs anchored on even original frame IDs >=200; prefix KFs are context only for primary local-effect analysis",
+    "full_map_sensitivity": "may include prefix KFs; report separately from post-prefix strict-candidate analysis",
+    "unused_prefix_odd_rgb": "odd original IDs <200 are excluded from primary evaluation and model input"
+  },
+  "camera_contract": {
+    "expected_rgb_hw": [680, 1200],
+    "depth_dtype": "uint16",
+    "depth_definition": "camera Z-depth; metric = raw / camera.scale",
+    "pose_definition": "traj.txt row-major camera-to-world 4x4 matrices, metric translation",
+    "timestamp_definition": "original frame ordinal; no sensor rate or seconds are assumed",
+    "resize_crop_intrinsics": "N1/E0 convention: 512x290 then top=1,left=0 crop to 512x288; K scales without extra half-pixel offset",
+    "distortion": "synthetic pinhole; no remap"
+  },
+  "qa": {
+    "decode_all_rgb_and_depth": true,
+    "display_images": false,
+    "model_inference": false,
+    "gt_valid_range_m": [0.1, 10.0],
+    "min_per_frame_valid_depth_fraction": 0.5,
+    "pose_rotation_atol": 0.00001,
+    "self_projection_atol_px": 0.00000001,
+    "cross_view_pairs": [[0, 2], [200, 202], [800, 802]],
+    "cross_view_sample_grid_stride": 8,
+    "cross_view_min_common_samples": 200,
+    "cross_view_median_abs_depth_residual_max_m": 0.03,
+    "cross_view_consistency_abs_tolerance_m": 0.05,
+    "cross_view_consistency_relative_tolerance": 0.02,
+    "cross_view_min_consistent_fraction": 0.9,
+    "edge_mask": {"depth_valid_range_m": [0.1, 10.0], "depth_edge_abs_m": 0.05, "depth_edge_relative": 0.02, "depth_edge_dilation_pixels": 2}
+  },
+  "surface_reference": "Inspect archive catalogue for a supplied mesh. If absent, use observed GT-depth samples/TSDF as an observation-limited reference; do not claim full-scene mesh completeness.",
+  "final_test_policy": "office4 receives only predetermined integrity/format/pose/depth validity and algebraic self-projection QA. No visual inspection, cross-view residual analysis, model inference, oracle metrics or parameter tuning. Release only after the final algorithm/evaluation protocol is frozen; if consumed earlier it must be relabelled and cannot remain the sealed final test.",
+  "failure_policy": "Report failed data/QA gates; do not change scene roles, frame intervals or thresholds in response to prediction quality. Any technical amendment must be explicit and preserve prior records.",
+  "scope": "N2 data readiness only. No tracking/KF count, GPU feasibility on these scenes, A0 effect or method efficacy has been measured. All three scenes share the Replica synthetic indoor domain."
+}
