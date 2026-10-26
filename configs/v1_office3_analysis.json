@@ -1,0 +1,85 @@
+{
+  "experiment": "V1 office3 diagnostic analysis",
+  "output": "results/V1_office3_diagnostic/2026-10-26",
+  "recipe": "configs/v1_office3_diagnostic_protocol.json",
+  "baseline_spec": "configs/v1_office3_execution.json",
+  "saved_views": [
+    201,
+    401,
+    601,
+    801,
+    999
+  ],
+  "covariance_views": [
+    201,
+    241,
+    281,
+    321,
+    361,
+    401,
+    441,
+    481,
+    521,
+    561,
+    601,
+    641,
+    681,
+    721,
+    761,
+    801,
+    841,
+    881,
+    921,
+    961
+  ],
+  "primary": "position_strict",
+  "gauges": [
+    "position",
+    "orientation"
+  ],
+  "arms": [
+    "C00",
+    "C10",
+    "C01",
+    "C11"
+  ],
+  "CZ": [
+    "CZ10",
+    "CZ11"
+  ],
+  "original_A_replay": "fresh office3 A00/A10/A01/A11 on the same strict candidates and all 400 views; compare on paired A+C pixels",
+  "source_thinning": {
+    "densities": [
+      0.01,
+      0.1
+    ],
+    "patterns": [
+      "uniform_hash",
+      "scan_rows"
+    ],
+    "seed": 0
+  },
+  "support_dense": {
+    "min_pixels": 1000,
+    "min_reference_fraction": 0.5,
+    "min_view_fraction": 0.8
+  },
+  "support_sparse": {
+    "min_pixels": 1000,
+    "min_reference_fraction": 0.2,
+    "min_view_fraction": 0.8
+  },
+  "correct_depth": {
+    "absolute_m": 0.05,
+    "relative": 0.02
+  },
+  "weight_min": 0.001,
+  "unit_spec": "configs/a1_unit_reparameterization.json",
+  "C_spec": "configs/a1_c_canonical_factorial.json",
+  "groups": "common4 per scope; C+CZ common6; paired common8 for A/C, gauges, strict/full, strict/each-source, transported/fixed covariance. No universal intersection.",
+  "surface": "six primary strict C/CZ arms, 20 fixed GT-depth TSDF views; 4cm voxel,12cm trunc,10m max,100000 seed0 area samples; no full scene completeness.",
+  "RGB": "primary C/CZ on all 400 views; sensitivity maps on five saved views, refiner0 degree0 exposure convention unchanged",
+  "source_residuals": "per KF local Z/3D/ray; depth/confidence strata; no outcome-based selection",
+  "decision": "Research plan 11.5/12.1; no algorithm GO, one next diagnostic stage only; office4 withheld, Q0-HK unresolved",
+  "freeze_timing": "Implementation prepared while RGB-only baseline runs, before constructing or viewing office3 oracle/render outcomes. Existing office2/HK results known."
+}

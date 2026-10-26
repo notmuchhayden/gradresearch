@@ -1,0 +1,447 @@
+{
+  "id": "V1 implementation A1",
+  "registered_at": "2026-10-26T17:27:54.668347+09:00",
+  "protocol_changed": false,
+  "reason": "Sensitivity RGB is registered for five views only; summary used a helper requiring all optional keys. Initial evaluation stopped with KeyError psnr_db after the first original A00 render. Populate missing optional RGB metrics with None and preserve completed results on resume.",
+  "outcome_access": "Primary C/CZ render caches and per-arm summaries exist; no factorial common-mask analysis, gauge or thinning outcome computed yet. No threshold, source IDs, arm definitions, split, renderer or geometry change.",
+  "changes": [
+    {
+      "before": {
+        "path": "scripts/v1_common.py",
+        "bytes": 3038,
+        "sha256": "5fd26e8c8b85aafc39527bcc5d1a23703b3bd3828c3288b7903d4c04c082a8fc"
+      },
+      "after": {
+        "path": "scripts/v1_common.py",
+        "bytes": 3571,
+        "sha256": "7342a695daa6bf772dbca0f73fa6993c3dce332025f5224ca704d5e93c4bdec8"
+      }
+    },
+    {
+      "before": {
+        "path": "scripts/evaluate_v1.py",
+        "bytes": 8554,
+        "sha256": "9f376c0fa46a4f63a5fdc6c134d3396ef899fef9f70727f186f387695b0349dd"
+      },
+      "after": {
+        "path": "scripts/evaluate_v1.py",
+        "bytes": 10268,
+        "sha256": "03ac861451326f671ba904209c4c0b7616ef6cf1ca2ba41ea1832681f7382dcc"
+      }
+    }
+  ],
+  "preserved_outputs": [
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/environment.json",
+      "bytes": 195,
+      "sha256": "896afb5171a476312a2433b5887578afc5ac55e599e06d38d7c79520ab7689c9"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/covered.npy",
+      "bytes": 58982528,
+      "sha256": "8a2ba8ef5ee8e63e9fcc5c926e0b3e3283f0e8059ce25031bb9831f402b8068f"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/depth.npy",
+      "bytes": 235929728,
+      "sha256": "f80e4740baa7a5a3dbb495296c3772c057672eb05cf2aabe4edf0c924fe9ea66"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/depth_tsdf.ply",
+      "bytes": 3041797,
+      "sha256": "10015c027b9ebcee65b83166fa41b331e173149cb182fb943a777177925e7593"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/frame0201.npz",
+      "bytes": 2744257,
+      "sha256": "45487802bca08eecd61aa364545183afc494c2c007e547a06bb65ba4120ef2fe"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/frame0401.npz",
+      "bytes": 3088855,
+      "sha256": "61aabc3ea9649e05ce2bde1bdace42b316d6c3612b6109c97ff7c6fef9d75134"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/frame0601.npz",
+      "bytes": 3139304,
+      "sha256": "ef9457da8d7081de5e65cad6631f09ce5f51a6917e977672d298f91f46361db6"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/frame0801.npz",
+      "bytes": 2997507,
+      "sha256": "b90a3a0e9ce3f75210a6316260c5066b5c059764447d9769c40b16f57a5df43b"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/frame0999.npz",
+      "bytes": 2732839,
+      "sha256": "9cbbf3eb7eec69ee75a3e76e4b00de865c946e893d689d72e412ac95961ec5e3"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/metrics.json",
+      "bytes": 432237,
+      "sha256": "a142877b15cec8dd7b3002f9d67344030bc2e555438dd3c9ab8d09ba3ce1f64e"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C00/surface_samples.npy",
+      "bytes": 2400128,
+      "sha256": "dea5ef0b99e22f83f439e3ab28a4a3881a3cf61ba695a4386830c4237c72ba64"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/covered.npy",
+      "bytes": 58982528,
+      "sha256": "f26c5b59e1fcead6ad4edf921fe135d1ba35c18ad97aa01b174210acb1101785"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/depth.npy",
+      "bytes": 235929728,
+      "sha256": "c15355d55d923934736667851323aef0438b04ec1b9638fe21aaa6b6b115985b"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/depth_tsdf.ply",
+      "bytes": 2969862,
+      "sha256": "c4005849be5eab364564522eee9aafa7c70c602451068824b58b954fdd6d3cf8"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/frame0201.npz",
+      "bytes": 2759010,
+      "sha256": "2f03b8a698922a21841b4c09fba51197a18a66ece40230ac4f1853d4ce7a4145"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/frame0401.npz",
+      "bytes": 3086603,
+      "sha256": "c93f88be1ac4d1fa6e6fd6f1ca9ca0abf99d80c3bab52f1dbc7241349f92a20f"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/frame0601.npz",
+      "bytes": 3136012,
+      "sha256": "baeb9a729dea48db587ad7455826acd3d43ac5a9c06cabb2ebec55fdf589d35f"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/frame0801.npz",
+      "bytes": 2994121,
+      "sha256": "3aa814dbbb7d4980319325b95c206461ff3f0b97438e187e97b0c69de96299cc"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/frame0999.npz",
+      "bytes": 2760530,
+      "sha256": "6b5d07927d437dec139794b1773e1380482de146f598b6a701f4c83319d0fadc"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/metrics.json",
+      "bytes": 432191,
+      "sha256": "73544ff07bd4cfbe1f0d5706ec5008da7dbb41a3e8704857719bf1d8c7604423"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C01/surface_samples.npy",
+      "bytes": 2400128,
+      "sha256": "e1c7850361663d8ed07e7fb1a042653ff145529fddf8b387133e8b63775f6677"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/covered.npy",
+      "bytes": 58982528,
+      "sha256": "6b4cf46c94bf7fdeef11ed85c4384159f844365a4ba691fb286613020249b872"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/depth.npy",
+      "bytes": 235929728,
+      "sha256": "a2f1212d7fe9dd8be0b191543852a5a86918924e10355f561b287f60ad953a43"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/depth_tsdf.ply",
+      "bytes": 2590888,
+      "sha256": "8ff34f653618cb13798891bc7a112bb68ab173a58d463d9f77da06d36c9c1925"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/frame0201.npz",
+      "bytes": 2731887,
+      "sha256": "6f75d60bfc8d89215a7eb3bbdcc8707a38b82bec7279412cca556e5b8d92c0b0"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/frame0401.npz",
+      "bytes": 3092436,
+      "sha256": "06aaa002ced68d3c18ccc6f2a366ca5c790bc2f47372fac9049e068e340b1c5f"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/frame0601.npz",
+      "bytes": 3119530,
+      "sha256": "0cc6bafa376b8d720e6d062c6deaf5eee640e136ced85180b102f4e287fcb763"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/frame0801.npz",
+      "bytes": 2979100,
+      "sha256": "ade5b72585bf42f339ecb698b08044cdb279b269b62d867b140134c19d216482"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/frame0999.npz",
+      "bytes": 2676395,
+      "sha256": "41295a9abb6812f4c30d8f83e36399a504b355d96ffe9ee449f4277b20d0879e"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/metrics.json",
+      "bytes": 433224,
+      "sha256": "f3b5b99a4dd093c53634209ab3de60f19eb94568ae38e684bb3fdcbe377fad3e"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C10/surface_samples.npy",
+      "bytes": 2400128,
+      "sha256": "9f893e0ce9aaf049be423a82a4ec3a9e09461f06feebed60d20b7442679019bf"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/covered.npy",
+      "bytes": 58982528,
+      "sha256": "e0d8b3152a1e7e88ca5e2c0b2da4fa54ccebe4b4869fa9646f701ed0280565a0"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/depth.npy",
+      "bytes": 235929728,
+      "sha256": "51f6d4ea797e50f81e7865946f9484fd3dcb11b5259f7d0801c0ebfe7dc51f6b"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/depth_tsdf.ply",
+      "bytes": 2561942,
+      "sha256": "cb5073657b96f443d444d9cc5eb8baa5f31a691960aee80e224a4e8a5a3c406e"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/frame0201.npz",
+      "bytes": 2740658,
+      "sha256": "a1ec4ef5c77fbad6b45453f88175575b9ab336d39f33a97f1545b2a005edf033"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/frame0401.npz",
+      "bytes": 3084095,
+      "sha256": "c5fb31ebfd43c20d23381e8955a44eb32ea90823b86b954de82b59a1474e5946"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/frame0601.npz",
+      "bytes": 3104229,
+      "sha256": "f3182e67560a24d821bdf024550b6b2574b3f7c59c1f2ad1ceba73dc2f0a438f"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/frame0801.npz",
+      "bytes": 2968962,
+      "sha256": "e954727ab554ab72ff3376a2cc1bfa1047869f6666fbd87366220a9b635303a1"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/frame0999.npz",
+      "bytes": 2685905,
+      "sha256": "0ecdd62c33befeb713c2d9871f2ee93a982681c4bec50b8bc7859920da262214"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/metrics.json",
+      "bytes": 432940,
+      "sha256": "6f0aeb84e8aae2c0e63a3ebf11f881efdaeb4bb6329b0b1965ad7dbc628a9edc"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/C11/surface_samples.npy",
+      "bytes": 2400128,
+      "sha256": "c4146a5017961c90cf9c2bfc2dfe6c18282bb7aca569f82b2f16f5edf2e8c459"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/covered.npy",
+      "bytes": 58982528,
+      "sha256": "fe4eaca83a0f791a329c52d90eb34701a9ac7f6a0eb253de3be582d636b6049e"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/depth.npy",
+      "bytes": 235929728,
+      "sha256": "498a37d2ed2895946939886ceae495251094faa0057377658ffb5d71e41e75ef"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/depth_tsdf.ply",
+      "bytes": 2579341,
+      "sha256": "b41f7ee000d2ff749cd07fdcdbb0688711cfc8df989086d13c175a7b4624134c"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/frame0201.npz",
+      "bytes": 2731151,
+      "sha256": "be7277cc25c29c6ed3fef1f28d9b78baa6f18fb3f615c376bb85b9d82a305a55"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/frame0401.npz",
+      "bytes": 3090454,
+      "sha256": "2829a4ba0ae79f58988cbd9217effdf697567f568e8881bec1e11481fdf0b732"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/frame0601.npz",
+      "bytes": 3122640,
+      "sha256": "50213b44b1e7879b8babbb4b5fb6f5b21a02ee0014fb52fa126a4b89f4d9948a"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/frame0801.npz",
+      "bytes": 2981470,
+      "sha256": "3e2e2ccbb0d5fa76cf64ef7b105193500c4cc1dd49b539e59c867ba1bb9fa096"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/frame0999.npz",
+      "bytes": 2679510,
+      "sha256": "4c6f7eccdc9eadc4033cb85ce8498ac0601ef2b35e5dfe33911de445127a7e24"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/metrics.json",
+      "bytes": 433123,
+      "sha256": "c17d61007a816a965c65d9c9c4ccb6a72ad4515a2e19e35a6a6585422e5b27eb"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ10/surface_samples.npy",
+      "bytes": 2400128,
+      "sha256": "af9c2548bdfd03fe3f39efe3c130a1090f151a38f4a65cbc9e74ec2b331485e7"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/covered.npy",
+      "bytes": 58982528,
+      "sha256": "c8f279740f0d356580609a186cd2f6769804f0e9814e52644eedc932e26cd28a"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/depth.npy",
+      "bytes": 235929728,
+      "sha256": "e37094fe0770e257587191b881ccfbbe4ecc5b43719432b09ac4d8756807a8e7"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/depth_tsdf.ply",
+      "bytes": 2583695,
+      "sha256": "a32f0c5b437ee0bc527b0ef070c868fce27aff1b8072b17ccc914f4def9e0c53"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/frame0201.npz",
+      "bytes": 2740668,
+      "sha256": "2924d7885448af5e5dd83ed834382a8fca4b3779c1a35ce03c4fe5c7c7b91213"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/frame0401.npz",
+      "bytes": 3083811,
+      "sha256": "4639e365882020a3280e4ca0280f0efe8817c67e81e4a0894ad3845fa18ce732"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/frame0601.npz",
+      "bytes": 3110348,
+      "sha256": "b67f02b890a2d7e0e6f8d0f11822e2cdf5a1f938cab796ee7be963c3bdf0a196"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/frame0801.npz",
+      "bytes": 2975671,
+      "sha256": "3f12b2b9b460998d45e4865c07daa7b7d4b533ddb40acc7038bffc55a057831a"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/frame0999.npz",
+      "bytes": 2693001,
+      "sha256": "e4b2f3a7339476b63892eebc67972a44fc5a296a5818878f9b73fdec4e0087de"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/metrics.json",
+      "bytes": 433020,
+      "sha256": "75d6dceab3a5ccf7dbd2811e0cf8d9aebf31882cc95121301e1ee646e1ee0f82"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/position_strict/CZ11/surface_samples.npy",
+      "bytes": 2400128,
+      "sha256": "4deb6a9c13f82c7be49f25127515225ee3df15dadc62a17d47a7f5058b35245c"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/reference/depth_tsdf.ply",
+      "bytes": 2883732,
+      "sha256": "65ae849e119ffa2f831411fb76a1d1f67388be5e9312e5ea499cec44bc4f3933"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/reference/surface_samples.npy",
+      "bytes": 2400128,
+      "sha256": "a689cfcc64ed405c2a05f0309505a0894e41ae692a5b7c426934a511483805d7"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/evaluation/smoke.json",
+      "bytes": 61,
+      "sha256": "b0e398f5093d405bb0e17d95ad4838997dd7c78e1e41c16c5075e8172a227ba6"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/failed_attempt1/evaluation.log",
+      "bytes": 3060,
+      "sha256": "8104d877fb95f1b5aee182216ff5cf0aece56ac4482e07d7d606828ec8991a6c"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/failed_attempt1/original_strict/A00/covered.npy",
+      "bytes": 58982528,
+      "sha256": "8a2ba8ef5ee8e63e9fcc5c926e0b3e3283f0e8059ce25031bb9831f402b8068f"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/failed_attempt1/original_strict/A00/depth.npy",
+      "bytes": 235929728,
+      "sha256": "f80e4740baa7a5a3dbb495296c3772c057672eb05cf2aabe4edf0c924fe9ea66"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/failed_attempt1/original_strict/A00/frame0201.npz",
+      "bytes": 2744257,
+      "sha256": "45487802bca08eecd61aa364545183afc494c2c007e547a06bb65ba4120ef2fe"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/failed_attempt1/original_strict/A00/frame0401.npz",
+      "bytes": 3088855,
+      "sha256": "61aabc3ea9649e05ce2bde1bdace42b316d6c3612b6109c97ff7c6fef9d75134"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/failed_attempt1/original_strict/A00/frame0601.npz",
+      "bytes": 3139304,
+      "sha256": "ef9457da8d7081de5e65cad6631f09ce5f51a6917e977672d298f91f46361db6"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/failed_attempt1/original_strict/A00/frame0801.npz",
+      "bytes": 2997507,
+      "sha256": "b90a3a0e9ce3f75210a6316260c5066b5c059764447d9769c40b16f57a5df43b"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/failed_attempt1/original_strict/A00/frame0999.npz",
+      "bytes": 2732839,
+      "sha256": "9cbbf3eb7eec69ee75a3e76e4b00de865c946e893d689d72e412ac95961ec5e3"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/completion.json",
+      "bytes": 19183,
+      "sha256": "80a79b10047c6b7a45e933fc3c56d7976b53212a9ba2cb0b60c9f85123a02336"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/mean_only_absorption_0201.npz",
+      "bytes": 2219888,
+      "sha256": "c1a6d2ce043c3283cb73bf9442365ca755e87101cbd4d4e542188eb5892b36f5"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/mean_only_absorption_0601.npz",
+      "bytes": 2400056,
+      "sha256": "ddf5cc722328fc6c4b706d22802036b395d2a1f50f0890da0884649a88717963"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/naive_scale_removal_0201.npz",
+      "bytes": 2213350,
+      "sha256": "616043c92ac067c95c26bbfd49a1f8f5ee95240affa89652c8e9381776eb8b86"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/naive_scale_removal_0601.npz",
+      "bytes": 2390774,
+      "sha256": "24de001b19ebc2209452dd19ba220f2fb7e2ec6cff7133718bd55917c034b004"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/original_0201.npz",
+      "bytes": 2219356,
+      "sha256": "a8dbc6dbc96292f6f0b489a692643c20b20717d4aebdba9708a6e4d6340e8caa"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/original_0401.npz",
+      "bytes": 2385831,
+      "sha256": "a89b972ef01f6bbc76ba02a33c786137c35f439e40d5c04ca9659bb8b77eed0e"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/original_0601.npz",
+      "bytes": 2397631,
+      "sha256": "4aac828c49a4059858f2e2babd4bc6bbed78a5d09bf18b67790c500b5896a15d"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/original_0801.npz",
+      "bytes": 2372281,
+      "sha256": "1673104eb09fc895049e791e77b4c312753637506871666d143bb666e090e0ed"
+    },
+    {
+      "path": "results/V1_office3_diagnostic/2026-10-26/unit_render/original_0999.npz",
+      "bytes": 2302162,
+      "sha256": "cc48612b6a7ca30b1918496c4ba7b003a20b0ce4fff41bdc603d9f1f165882e6"
+    }
+  ],
+  "partial_output": "Failed original_strict/A00 moved byte-for-byte to failed_attempt1; rerender exact same map/views and require depth/coverage SHA256 equality.",
+  "completed_primary": "Six primary C/CZ maps remain frozen and reused; no fresh baseline inference."
+}
