@@ -1,0 +1,116 @@
+{
+  "experiment": "A2-O-M",
+  "execution_status": "COMPLETE_EARLY_STOP",
+  "controls_status": "PASS",
+  "m0_status": "PASS_LEGACY_REPRODUCTION",
+  "fit_support_status": "STOP_INSUFFICIENT_SUPPORT",
+  "audit_status": "NOT_RUN_DUE_TO_GATE",
+  "source_status": "NOT_RUN_DUE_TO_GATE",
+  "target_status": "NOT_RUN_DUE_TO_GATE",
+  "validation_status": "NOT_RUN_DUE_TO_GATE",
+  "final_decision": "STOP_INSUFFICIENT_SUPPORT",
+  "rgb_coefficient_geometry_effect_estimated": false,
+  "reference_arrays_accessed": false,
+  "office3_new_evaluation": false,
+  "office4_accessed": false,
+  "hk_accessed": false,
+  "at": "2026-10-27T06:19:22.407564+00:00",
+  "support_ablation": {
+    "L4": {
+      "rgb_fit": {
+        "records": 160,
+        "max_eligible": 171,
+        "max_retained": 0,
+        "supported_pairs": 0
+      },
+      "rgb_audit": {
+        "records": 128,
+        "max_eligible": 86,
+        "max_retained": 0,
+        "supported_pairs": 0
+      }
+    },
+    "L2": {
+      "rgb_fit": {
+        "records": 160,
+        "max_eligible": 704,
+        "max_retained": 0,
+        "supported_pairs": 0
+      },
+      "rgb_audit": {
+        "records": 128,
+        "max_eligible": 343,
+        "max_retained": 0,
+        "supported_pairs": 0
+      }
+    },
+    "R4": {
+      "rgb_fit": {
+        "records": 160,
+        "max_eligible": 173,
+        "max_retained": 110,
+        "supported_pairs": 0
+      },
+      "rgb_audit": {
+        "records": 128,
+        "max_eligible": 96,
+        "max_retained": 64,
+        "supported_pairs": 0
+      }
+    },
+    "R1": {
+      "rgb_fit": {
+        "records": 160,
+        "max_eligible": 706,
+        "max_retained": 410,
+        "supported_pairs": 6
+      },
+      "rgb_audit": {
+        "records": 128,
+        "max_eligible": 372,
+        "max_retained": 234,
+        "supported_pairs": 0
+      }
+    }
+  },
+  "controls": {
+    "records": 77,
+    "mandatory_controls": 36,
+    "mandatory_passed": 36,
+    "nuisance_diagnostic_records": 41,
+    "nuisance_labels": {
+      "DIRECTION_SUPPORTED": 24,
+      "PHOTO_GEOMETRY_MISMATCH": 13,
+      "NO_RESOLVED_PHOTO_GAIN": 3,
+      "INSUFFICIENT_SUPPORT": 1
+    },
+    "positive_bias_recovery_max_grid_error": 0.0
+  },
+  "tests": {
+    "focused_passed": 11,
+    "repository_unittest_passed": 190
+  },
+  "independent_verification": {
+    "status": "PASS",
+    "checked_mask_records": 1152,
+    "checked_pair_artifacts": 288,
+    "independent_of_measurement_functions": true,
+    "checks": [
+      "mask_bitsets",
+      "support_counts",
+      "context_denominators",
+      "coefficient_argmin_when_present",
+      "seal_hashes"
+    ],
+    "at": "2026-10-27T06:19:22.307419+00:00"
+  },
+  "audit_support_status": "FAIL_FROM_M0_SUPPORT_ONLY",
+  "report": "docs/experiments/A2_O_M_results.md",
+  "artifacts_root": "results/A2_O_M_rgb_mask_diagnostic/2026-10-27",
+  "environment": {
+    "python": "3.11.17",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "cv2": "5.0.0"
+  }
+}

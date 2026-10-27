@@ -32,3 +32,13 @@ Office3에서는 Sk가 target MAE를 악화시켰고 Sf도 S0 대비 10% target 
 따라서 **단순 scalar가 충분하다는 결론은 보류**하고, 이 고정 field에서 office2의 잔여 공간 이득이 관측됐다 하더라도 그것을 두 scene에 일반화하지 않는다. 다음 후보는 **별도 등록할 A2-O RGB 관측 가능성 진단**이다. A2-S는 전부 GT-oracle fit이므로 RGB-only 보정 가설을 시험하지 않았다. D/P 알고리즘, joint optimizer, office4는 실행하지 않으며 HKairport reference는 미해결로 남긴다.
 
 [A2-S 상세 결과](A2_S_scalar_spatial_results.md) · [protocol](../../configs/a2_s_scalar_spatial_protocol.json) · [수치 요약](../../configs/a2_s_results_summary.json) · [execution manifest](../../results/A2_S_scalar_spatial/2026-10-27/execution_manifest.json)
+
+---
+
+## A2-O-M 이후 경로 종료
+
+**2026-10-27 (Asia/Seoul). 마지막 mask/support 진단을 실행하고 `STOP_INSUFFICIENT_SUPPORT`로 종료했다.** 기존 A2-O의 fit 160개 레코드에서 eligible 최대 171개·common retained 0개를 재현했다. 사전 고정한 R1(stride2, RGB mask의 symmetric depth agreement 제거)은 fit 6/160개 pair의 지원을 회복했지만 audit는 0/128개였고, 양 gauge·양 fold 모두 KF 지원율은 0/10이었다. 합성 필수 대조 36개와 전체 기대 판정 검사 77개, 저장소 unittest 190개 및 cache 기반 mask/support 검증 1,152건을 통과했다.
+
+RGB 계수는 선택되지 않았고 source GT·target geometry·office3 새 평가는 gate 실패로 실행하지 않았다. **현재 데이터·표현·scalar 후보·고정 RGB objective에 대한 보정 개발 경로를 종료한다.** 이는 RGB 관측 불가능성이나 모든 field/pose 보정의 실패 증명이 아니다. Field·D/P·joint optimizer·office4로 확대하지 않는다. A2-S의 GT-oracle 결과와 office3 source/target 불일치는 그대로 유지한다.
+
+[A2-O-M 결과](A2_O_M_results.md) · [고정 계획](A2_O_M_execution_plan.md) · [수치 요약](../../configs/a2_o_m_results_summary.json)

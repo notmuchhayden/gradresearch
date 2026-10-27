@@ -28,6 +28,8 @@
 
 > **이번 개정의 실행 순서:** **A1-U(원본 지도 불변 재표현) → A1-C(유효 local geometry × rigid pose 재비교) → A1-G/M(정렬·support 대조) → V1(office3 고정 재현) → A2(잔여 형상·RGB 관측 가능성)**. **Q0-HK(참조 보정 QA)**는 A1-U와 함께 시작하되 UAV 정량 결론의 선행 조건으로 둔다. D/P 알고리즘 개발 및 office4 평가는 보류한다. 이 문서 개정은 후속 실험 실행 완료를 뜻하지 않으며, 실제 실행 전 별도 설정·manifest를 고정한다.
 
+> **A2-O-M (2026-10-27) 마지막 진단 종료:** [결과](experiments/A2_O_M_results.md), [실행 계획](experiments/A2_O_M_execution_plan.md), [요약](../configs/a2_o_m_results_summary.json). A2-O의 eligible 최대 171개·공통 retained 0개를 재현했고, 고정 R1에서 fit pair 6/160개만 지원됐다. Audit는 0/128개이며 양 gauge·양 fold 모두 지원 KF는 0/10이었다. 합성 필수 대조 36/36, 전체 기대 판정 검사 77/77 및 cache mask/support 재계산을 통과했으나 실제 RGB 계수는 선택되지 않았다. **`STOP_INSUFFICIENT_SUPPORT`로 현재 데이터·표현·scalar RGB 보정 개발 경로를 종료한다.** Source GT·target·office3 새 평가는 gate 실패로 미실행이다. 모든 RGB 기반 보정의 불가능성이나 field/pose 보정 실패를 뜻하지 않으며, D/P·joint optimizer·office4로 확대하지 않는다. 앞선 ‘다음/미실행’ 문장은 당시의 이력이다.
+
 > **문서의 증거 구분**
 > - **[기존 실험]**: E0~E4f 및 2026-10-26 A0/A0b 보고서에 기록된 관측 및 수치.
 > - **[논문 근거]**: 첨부 MASt3R-SLAM, Splatt3R, 두 GeoGS-SLAM 등의 방법 설명.
