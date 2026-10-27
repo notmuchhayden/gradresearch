@@ -3,8 +3,8 @@
 ## 연구 설계·구현·실험 계획서 v1.1 — A0/A0b 결과에 따른 후속 실험 재설계
 
 - **작성일:** 2026-10-22 (Asia/Seoul)
-- **개정일:** 2026-10-26 (Asia/Seoul). A0/A0b의 완료 기록은 보존하고 후속 실험 순서·개입 정의·판정 기준을 개정
-- **연구 단계:** A1-U/C/G/M 및 office3 V1 완료, **다음은 A2-S scalar/형상 잔차 진단**. 새 보정 알고리즘의 성능과 독창성은 아직 입증되지 않음
+- **개정일:** 2026-10-27 (Asia/Seoul). A2-S 결과와 다음 진단 후보를 추기
+- **연구 단계:** A1-U/C/G/M, office3 V1, **A2-S 진단 완료**. A2-O RGB 관측 가능성은 미실행이며 새 보정 알고리즘의 성능과 독창성은 입증되지 않음
 - **직전 연구:** `surface_guided_gaussian_mapping_research_plan_v3.md` → `surface_guided_gaussian_mapping_experiment_summary.md` (E0~E4f, 2026-10-15~22 완료·연구 종료)
 - **시스템:** MASt3R/MASt3R-SLAM + Splatt3R-SLAM, 단안 RGB 입력, 학습된 모델의 가중치는 기본적으로 고정
 - **현재 논문 제목(가안):** **MASt3R-SLAM 기반 3D Gaussian Splatting에서 Pointmap 및 카메라 자세 오차가 3차원 재구성에 미치는 영향 분석**
@@ -23,6 +23,8 @@
 > **A1-G/M (2026-10-26) 각각 실행 완료:** [G 결과](experiments/A1_G_gauge_sensitivity_results.md), [M 결과](experiments/A1_M_support_sensitivity_results.md), [경로 판정](experiments/A1_GM_route_decision.md). HK wide의 같은 8군 픽셀에서 rigid pose 효과가 position **+2.585740m** / orientation **−4.966763m**로 반전했다. Local 개입 개선 방향은 유지됐지만 크기·pose 해석은 gauge/support에 조건부였다. Source-only thinning과 target-only 측정 희소화도 서로 달랐다. **다음은 고정된 office3 V1 진단 재현**, [설정](../configs/v1_office3_diagnostic_protocol.json)은 저장했지만 예측·평가는 미실행이다. 알고리즘 GO·Q0-HK 통과·office4 해제는 하지 않았다.
 
 > **V1 (2026-10-26) 실행 완료:** [office3 재현 보고서](experiments/V1_office3_replication.md), [요약](../configs/v1_office3_results_summary.json), [최신 경로 판정](experiments/A1_route_decision.md). 새 RGB-only 500입력·8KF·400 heldout뷰에서 strict 855,796후보의 C00/C10/C01/C11 공통 MAE는 **0.065526/0.043293/0.062524/0.036682m**, local 단독 **33.93% 개선**이었다. Native/unit invariance와 primary 400/400 support를 통과했다. Local 개선은 양 gauge·ray·covariance 대조에서 유지됐으나 rigid 효과는 strict/full에 따라 반전했고 source/target 1%는 support 실패했다. 원 A 표현의 단독 악화는 재현됐지만 C strict의 큰 interaction·pose 악화는 일반화되지 않았다. **다음은 A2-S 진단 하나**, 방법 GO·Q0-HK 해결·office4 해제는 하지 않는다. 선택적 RGB 집계 오류와 동일 출력 보존 재개는 [구현 수정 A1](../configs/v1_implementation_amendment_A1.json)에 공개했다. 위 A0/A1의 ‘다음/미실행’ 문장은 각 완료 시점의 이력이다.
+
+> **A2-S (2026-10-27) 진단 완료:** [결과 보고서](experiments/A2_S_scalar_spatial_results.md), [protocol](../configs/a2_s_scalar_spatial_protocol.json), [실행 manifest](../results/A2_S_scalar_spatial/2026-10-27/execution_manifest.json). Office2에서 고정 16-node field가 target MAE를 개선했으나 scalar 충분성은 네 gauge/fold 중 한 조건만 통과했다. Office3에서는 field target gain이 성립하지 않았고, source 잔차 감소와 target 결과가 불일치했다. 두 scene 모두 source/target support와 검증 기준은 통과했다. 결과는 conditional/inconclusive이며 **RGB-only 보정, D/P, joint optimizer GO가 아니다**. 다음 후보는 별도 protocol의 A2-O RGB 관측 가능성 진단이며 아직 미실행이다.
 
 > **이번 개정의 실행 순서:** **A1-U(원본 지도 불변 재표현) → A1-C(유효 local geometry × rigid pose 재비교) → A1-G/M(정렬·support 대조) → V1(office3 고정 재현) → A2(잔여 형상·RGB 관측 가능성)**. **Q0-HK(참조 보정 QA)**는 A1-U와 함께 시작하되 UAV 정량 결론의 선행 조건으로 둔다. D/P 알고리즘 개발 및 office4 평가는 보류한다. 이 문서 개정은 후속 실험 실행 완료를 뜻하지 않으며, 실제 실행 전 별도 설정·manifest를 고정한다.
 
@@ -707,6 +709,8 @@ Scalar 충분성의 E는 같은 spatial fitting fold로 만든 S0/Sk/Sf 지도�
 | **A1-G/M** | 각각 실행 완료 | gauge·support dependence | 두 prefix gauge, strict/wide/full-mixed, source-only/target-only | Gauge-dependent pose 효과·scope 한계, 44검사 통과 |
 | **A1-F/RT** | 질문 잔존 시 | scale 별도 요인 및 R/t 분리 | 8조건 L×P×S 또는 rigid R/t | interaction·질문별 진단 표 |
 | **V1** | 실행 완료 | office3 진단 재현 | 봉인된 U/C/G/M, 양 gauge·source/target·full mixed·covariance | Local 개선 재현, pose scope 의존·1% support 실패, 다음 A2-S 진단 |
+| **A2-S** | 진단 실행 완료, 결과 조건부 | scalar bias vs 고정 16-node field | office2 개발 seal 후 office3 validation, 2 gauges × 2 spatial folds, all 400 target views | Office2에서 field target 이득은 있었으나 scalar 충분성은 1/4 context만 통과; office3 target field 이득 미성립. Scene-wide 결론 불가 |
+| **A2-O** | 후보, 미실행 | RGB 관측 가능성 | 별도 frozen RGB observability와 강한 scalar/simple controls 필요 | A2-S의 GT-oracle 이득을 RGB-only 보정 가능성으로 외삽하지 않음 |
 | **R-Q** | 잔차/표현 의심 시 | reference-only/renderer/covariance 최소 통제 | 참조 투영, splat, fixed-world covariance | residual 원인의 근거 및 미분리 변수 |
 | **A2-S/O** | A1/V1 후 | scalar vs deformation, RGB observability | spatial cross-fit scalar/field, shared-bias control | GT 진단 상한과 RGB-only 가능성 분리 |
 | **D0–D5** | GO-D 후 | RGB-only 선택적 Depth 보정 | raw, scale, geom, photo, selective | GT geometry/RGB/coverage, ablation |
@@ -931,6 +935,7 @@ research/
 
 - [x] office2 C 네 조건+CZ 두 조건, 기존 후보·400뷰·covariance 정책·support gate 등록·평가.
 - [x] A00/C00 baseline 불변성, C01 rigid-only, C10 effective-local 정의 확인. (모든 scope C00 SHA 동일)
+- [x] A2-S office2 400-view 개발, development seal 후 office3 400-view validation, 두 gauge×두 fold fit/target 평가 및 S0 5-view replay parity 검증. A2-S scene-wide scalar 충분성은 미성립, RGB-only/알고리즘 GO 미발행.
 - [x] HKairport common/wide 각 40뷰 C/CZ 비교 및 공백 전/중/후 층화. (common support 실패, wide 참조는 조건부)
 - [x] office2의 20뷰 fixed-world covariance 대조. (해당 대조에서 효과 방향·순위 유지)
 - [x] HKairport full-common/full-wide는 position gauge에서 mixed 대조, 기존 strict/common/wide는 두 gauge로 G 대조. Q0 미해결 conditional 유지. (모든 요인 전 조합은 아님)
@@ -942,7 +947,8 @@ research/
 
 ## 19.4 후속 조건부 작업
 
-- [ ] A2-S spatial cross-fit scalar/field 및 A2-O RGB loss profile 등록·검증.
+- [x] A2-S spatial cross-fit scalar/field 진단 실행·보고: [A2-S 결과](experiments/A2_S_scalar_spatial_results.md), [protocol](../configs/a2_s_scalar_spatial_protocol.json), [수치 요약](../configs/a2_s_results_summary.json). Office2 scalar 충분성은 두 fold·두 gauge 기준으로 성립하지 않았고 office3 field target gain은 미성립.
+- [ ] A2-O RGB loss profile/관측 가능성 별도 등록·검증. A2-S는 RGB-only 추론을 검증하지 않음.
 - [ ] GO일 때만 문헌 중복 점검 후 단순 RGB-only 대조군 구현, 새 방법의 순증분 확인.
 - [ ] 방법 또는 분석 가설·metric·mask·판정을 고정한 뒤 F0 office4 한 번 평가.
 
@@ -958,6 +964,7 @@ research/
 - [A1-C 결과](experiments/A1_C_canonical_factorial_results.md), [설정](../configs/a1_c_canonical_factorial.json), [요약](../configs/a1_c_results_summary.json): effective-local × rigid pose, ray/covariance·동일 픽셀 A/C 비교 완료. 후속 G/M 및 V1도 완료.
 - [A1-G 결과](experiments/A1_G_gauge_sensitivity_results.md), [A1-M 결과](experiments/A1_M_support_sensitivity_results.md), [G/M 당시 판정](experiments/A1_GM_route_decision.md): prefix gauge·source/target support·전체 지도 조건의 한계 검증. [V1 recipe](../configs/v1_office3_diagnostic_protocol.json)는 원래 고정·미실행 상태 기록을 보존.
 - [V1 office3 보고서](experiments/V1_office3_replication.md), [요약](../configs/v1_office3_results_summary.json), [최신 경로 판정](experiments/A1_route_decision.md): 새 validation 재현 완료, local 참조 개선 및 pose scope 의존 확인. 다음은 A2-S 진단이며 실제 보정 알고리즘 GO는 보류.
+- [A2-S 결과](experiments/A2_S_scalar_spatial_results.md), [protocol](../configs/a2_s_scalar_spatial_protocol.json), [요약](../configs/a2_s_results_summary.json), [실행 manifest](../results/A2_S_scalar_spatial/2026-10-27/execution_manifest.json): office2 개발 seal 후 office3 validation을 실행했다. Source support와 target support는 통과했지만 scalar 충분성은 office2 한 context만 통과했고 office3 target field 이득은 성립하지 않았다. A2-O는 후보일 뿐이며 correction GO는 보류한다.
 - [N1 좌표 계약](experiments/N1_coordinate_contract.md), [N2 데이터 등록](../configs/n2_dataset_registration.json): 후속 구현의 검증 자산과 office2/3/4 역할.
 - `surface_guided_gaussian_mapping_experiment_summary.md`, 2026-10-22, §4–§7: E0~E4f 전체 결과·해석·미실행 작업·재사용 가능한 코드/GT 평가 자산.
 - `surface_guided_gaussian_mapping_research_plan_v3.md`, 2026-10-14: 동일 후보 풀, source lineage, GT validity, scene-level statistics, 재현성·강한 대조군 원칙. **단, 이전 pruning 가설과 장기 admission 일정은 신규 실행 대상이 아님.**

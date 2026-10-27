@@ -18,3 +18,17 @@
 V1은 A2-S의 **진단 자격**을 지지하며 D4·pose-only 방법·joint optimizer 개발의 GO를 발행하지 않는다. A2-O RGB 관측 가능성, 필요한 문헌 중복 검토와 강한 대조군을 거치기 전 실제 보정 경로를 확정하지 않는다. 이번 요청에서는 A2 실험을 시작하지 않았다. Office4 최종 평가는 계속 보류한다.
 
 [V1 상세 보고서](V1_office3_replication.md) · [V1 수치 요약](../../configs/v1_office3_results_summary.json) · [G/M 당시 판정](A1_GM_route_decision.md) · [연구 계획](../pointmap_pose_error_decomposition_research_plan_v1.md)
+
+---
+
+## A2-S 이후 경로 판정
+
+**2026-10-27 (Asia/Seoul). A2-S 진단 실행 완료. Scalar 충분성은 scene-wide로 성립하지 않았고 RGB-only 보정 GO는 발행하지 않는다.**
+
+Office2에서 fixed 16-node field는 같은 S0+Sk+Sf common-mask MAE를 네 gauge/fold context 모두 낮췄다. 그러나 scalar/field gain ratio는 position fold 0과 두 orientation fold에서 0.90 미만이었고, 0.90 이상은 position fold 1 하나뿐이었다. 계획상 두 folds 모두 통과해야 하므로 office2 scalar 충분성은 성립하지 않는다. Common4에서 Sf는 Sk와 SkH보다 모두 낮았고 opposite-tile source Z error도 낮았다. GT-depth TSDF에서는 Sf가 scalar보다 나은 결과를 보였지만 이건 관측영역 geometry 진단이다.
+
+Office3에서는 Sk가 target MAE를 악화시켰고 Sf도 S0 대비 10% target 이득을 만들지 못했다. Opposite-tile source residual은 개선됐지만 target에서는 개선되지 않아 source/target mismatch로 기록한다. 이 결과는 source fit field가 validation target 성능을 보장하지 않음을 보여준다.
+
+따라서 **단순 scalar가 충분하다는 결론은 보류**하고, 이 고정 field에서 office2의 잔여 공간 이득이 관측됐다 하더라도 그것을 두 scene에 일반화하지 않는다. 다음 후보는 **별도 등록할 A2-O RGB 관측 가능성 진단**이다. A2-S는 전부 GT-oracle fit이므로 RGB-only 보정 가설을 시험하지 않았다. D/P 알고리즘, joint optimizer, office4는 실행하지 않으며 HKairport reference는 미해결로 남긴다.
+
+[A2-S 상세 결과](A2_S_scalar_spatial_results.md) · [protocol](../../configs/a2_s_scalar_spatial_protocol.json) · [수치 요약](../../configs/a2_s_results_summary.json) · [execution manifest](../../results/A2_S_scalar_spatial/2026-10-27/execution_manifest.json)
