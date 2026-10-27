@@ -1,0 +1,59 @@
+{
+  "status": "PARTIAL_EXECUTION_SUPPORT_FAILED",
+  "scientific_result": "NOT_ESTIMATED_INSUFFICIENT_RGB_SUPPORT",
+  "profile_selection_implementation": "REGISTERED_AND_EXECUTED_OFFICE2_SUPPORT_FAILED",
+  "execution_date": "2026-10-27",
+  "rgb_direction_supported": null,
+  "target_effect_supported": null,
+  "field_increment_supported": null,
+  "office2": {
+    "native_keyframes": 11,
+    "post_prefix_keyframes": 10,
+    "strict_candidates": 1200827,
+    "provenance_disjoint_pair_rows": 72,
+    "shared_source_pair_rows": 18,
+    "kf_with_two_pairs_each_pool": 10,
+    "profile_records": 40,
+    "supported_kf_per_gauge_fold": 0,
+    "fit_pairs_attempted": 160,
+    "fit_pairs_supported": 0,
+    "max_eligible_centers_per_pair": 171,
+    "min_required_centers_per_pair": 256,
+    "profile_rows": 0,
+    "mask_count": 0,
+    "selection_frozen": true,
+    "scene_support_pass": false
+  },
+  "office3": {
+    "known_validation_scene": true,
+    "native_keyframes": 8,
+    "post_prefix_keyframes": 7,
+    "strict_candidates": 855796,
+    "provenance_disjoint_pair_rows": 30,
+    "shared_source_pair_rows": 12,
+    "kf_with_two_pairs_each_pool": 7
+  },
+  "controls": {
+    "algebraic_primitive_suite": "PASS",
+    "full_synthetic_positive_negative_suite": "NOT_RUN",
+    "unit_tests": "PASS_5_TESTS"
+  },
+  "blockers": [
+    "Office2 support failed for all 40 gauge/fold/KF records: no fit pair retained the required 256 common-mask patch centers; max eligible count was 171.",
+    "evaluate/verify/seal and correction-map/source/target geometry evaluation are not enabled in scripts/run_a2_o.py.",
+    "Full synthetic positive/negative controls are not implemented; TSDF smoke requires missing open3d."
+  ],
+  "office4_accessed": false,
+  "hkairport_accessed": false,
+  "d_path_eligible": false,
+  "cuda_available_outside_sandbox": true,
+  "cuda_device": "NVIDIA GeForce RTX 5060",
+  "cuda_gaussian_renderer_smoke": "PASS",
+  "tsdf_smoke": "BLOCKED_OPEN3D_MISSING",
+  "office3_profile": "NOT_RUN_DEVELOPMENT_STAGE_INCOMPLETE",
+  "cuda_profile_used": false,
+  "selection_seal_sha256": "226bc2054240400384fd27d15c97d5c1d2e4e0434470e6c04acfe47ea642a83",
+  "tests": {
+    "full_repository_unittest": "PASS_179_TESTS"
+  }
+}

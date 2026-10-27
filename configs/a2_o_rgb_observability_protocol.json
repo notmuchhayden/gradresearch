@@ -1,0 +1,18 @@
+{
+  "experiment": "A2-O RGB observability and shared-bias diagnostic",
+  "status": "PRE_REGISTERED_DIAGNOSTIC",
+  "date": "2026-10-27",
+  "scenes": ["office2", "office3"],
+  "known_validation_scene": "office3",
+  "excluded": ["office4", "HKairport", "new_inference", "training", "joint_optimizer"],
+  "image": {"height": 288, "width": 512, "rgb_range": [0.0, 1.0], "camera_resize": "Splatt3R resize_img(512), center crop; transformed K"},
+  "source": {"native_confidence_min": 1.5, "min_original_frame": 200, "sample_stride": 4, "tile_grid": [8, 8], "tile_guard_px": 2, "patch_radius": 1, "texture_std_min": 0.02, "min_parallax_deg": 1.0, "min_centers_per_pair": 256, "min_pair_fraction": 0.5, "min_pairs_per_pool": 2},
+  "split": {"evidence_order": ["original_frame", "kf_idx"], "even_positions": "rgb_fit", "odd_positions": "rgb_audit", "fold0_fit_parity": 0, "fold1_fit_parity": 1, "target_frames": "range(201,1000,2)"},
+  "photo_loss": {"zncc_weight": 0.85, "l1_weight": 0.15, "gray_weights": [0.299, 0.587, 0.114], "zncc_clip": [-1.0, 1.0], "epsilon": 1e-12},
+  "geometry_loss": {"type": "huber_log_depth_ratio", "delta": 0.05},
+  "grid": {"scalar_start": -0.2, "scalar_stop": 0.2, "scalar_step": 0.01, "field_b_start": -0.1, "field_b_stop": 0.1, "field_b_step": 0.01, "field_modes": 15, "bilinear_nodes": [4, 4], "tie_epsilon": 1e-8, "profile_flat_epsilon": 1e-4, "min_gain_epsilon": 1e-4},
+  "visibility": {"edge_relative_jump": 0.05, "edge_dilation_px": 2, "z_abs_tolerance_m": 0.05, "z_relative_tolerance": 0.05, "ray_grid_mismatch_px": 1.0, "common_mask_across_candidates": true},
+  "support": {"min_pair_centers": 256, "min_fit_or_audit_fraction": 0.5, "min_field_centers_total": 1024, "min_each_field_region": 16, "min_design_eigen_ratio": 1e-8, "min_source_kf_fraction": 0.8, "min_candidate_fraction": 0.8},
+  "target": {"views": 400, "min_view_fraction": 0.8, "min_common_pixels": 1000, "min_common_interior_fraction": 0.5, "min_relative_mae_gain": 0.1, "max_correct_coverage_loss": 0.01, "depth_bins_m": [0.1, 1.0, 2.0, 4.0, 10.0]},
+  "execution": {"seed": 0, "torch_threads": 2, "opencv_threads": 2, "renderer_tf32": false, "reference_forbidden_in_rgb_adapter": true, "office3_gt_candidate_profiles_forbidden": true}
+}
